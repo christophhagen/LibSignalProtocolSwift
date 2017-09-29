@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CHAddress Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/CHAddress" class="dashAnchor"></a>
+    <a title="CHAddress Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CHAddress Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IdentityKeyStore.html">IdentityKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PreKeyStore.html">PreKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyStore.html">SenderKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionStore.html">SessionStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalInterface.html">SignalInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignedPreKeyStore.html">SignedPreKeyStore</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/SignalErrorType.html">SignalErrorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalLogLevel.html">SignalLogLevel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UInt32.html">UInt32</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC7cleanUp33_3F4DA91260B0B8025C1CBD6A8A64E9E0LLySvSg8userData_tF">cleanUp(userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC7cleanUp33_D0CA85FD3C456D42F01EDBFA029B9BD6LLySvSg8userData_tF">cleanUp(userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC7cleanup33_98D778FCB813511A919CD5A09B68A43BLLySvSg6caller_tF">cleanup(caller:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC7cleanup33_AAC659B64DB16D46D6F00513764E6A1DLLySvSg8userData_tF">cleanup(userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC14containsPreKey33_D0CA85FD3C456D42F01EDBFA029B9BD6LLs5Int32Vs6UInt32V2id_SvSg8userDatatF">containsPreKey(id:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC15containsSession33_3F4DA91260B0B8025C1CBD6A8A64E9E0LLs5Int32VSPySC23signal_protocol_addressVGSg0Q0_SvSg8userDatatF">containsSession(address:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC20containsSignedPreKey33_98D778FCB813511A919CD5A09B68A43BLLs5Int32Vs6UInt32V2id_SvSg6callertF">containsSignedPreKey(id:caller:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC7convert33_063ADA8EE3B91BE8DB570039B80EBE41LLAA9CHAddressV_Says5UInt8VGSgtSgSPySC23signal_protocol_addressVGSg_SpyAGGSg4dataSi6lengthtF">convert(_:data:length:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC17deleteAllSessions33_3F4DA91260B0B8025C1CBD6A8A64E9E0LLs5Int32VSPys4Int8VGSg4name_Si6lengthSvSg8userDatatF">deleteAllSessions(name:length:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC13deleteSession33_3F4DA91260B0B8025C1CBD6A8A64E9E0LLs5Int32VSPySC23signal_protocol_addressVGSg0Q0_SvSg8userDatatF">deleteSession(address:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC7destroy33_063ADA8EE3B91BE8DB570039B80EBE41LLySvSg8userData_tF">destroy(userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC18getIdentityKeyPair33_063ADA8EE3B91BE8DB570039B80EBE41LLs5Int32VSpySpySC13signal_bufferVGSgGSg10publicData_AK07privateQ0SvSg04userQ0tF">getIdentityKeyPair(publicData:privateData:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC22getLocalRegistrationID33_063ADA8EE3B91BE8DB570039B80EBE41LLs5Int32VSvSg8userData_Spys6UInt32VGSg012registrationE0tF">getLocalRegistrationID(userData:registrationID:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC20getSubDeviceSessions33_3F4DA91260B0B8025C1CBD6A8A64E9E0LLs5Int32VSpys13OpaquePointerVSgGSg8sessions_SPys4Int8VGSg4nameSi6lengthSvSg8userDatatF">getSubDeviceSessions(sessions:name:length:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC8instancexSgSvSg3for_tRlzClF">instance(for:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC17isTrustedIdentity33_063ADA8EE3B91BE8DB570039B80EBE41LLs5Int32VSPySC23signal_protocol_addressVGSg0O0_Spys5UInt8VGSg4dataSi6lengthSvSg8userDatatF">isTrustedIdentity(address:data:length:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC19levelRepresentation33_A88E8108A05A2E28B4442C0DC3F762B3LLSSs5Int32V0B0_tF">levelRepresentation(level:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC19levelRepresentation33_A88E8108A05A2E28B4442C0DC3F762B3LLSSAA14SignalLogLevelO03logP0_tF">levelRepresentation(logLevel:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC10loadPreKey33_D0CA85FD3C456D42F01EDBFA029B9BD6LLs5Int32VSpySpySC13signal_bufferVGSgGSg6record_s6UInt32V03preD2IDSvSg8userDatatF">loadPreKey(record:preKeyID:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC13loadSenderKey33_AAC659B64DB16D46D6F00513764E6A1DLLs5Int32VSpySpySC13signal_bufferVGSgGSg6record_SPySC0N25_protocol_sender_key_nameVGSg0rD4NameSvSg8userDatatF">loadSenderKey(record:senderKeyName:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC11loadSession33_3F4DA91260B0B8025C1CBD6A8A64E9E0LLs5Int32VSpySpySC13signal_bufferVGSgGSg6record_SPySC0O17_protocol_addressVGSg0S0SvSg8userDatatF">loadSession(record:address:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC16loadSignedPreKey33_98D778FCB813511A919CD5A09B68A43BLLs5Int32VSpySpySC13signal_bufferVGSgGSg6record_s6UInt32V06signeddE2IDSvSg8userDatatF">loadSignedPreKey(record:signedPreKeyID:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC17logInternalErrors33_A88E8108A05A2E28B4442C0DC3F762B3LLys5Int32V5level_SPys4Int8VGSg7messageSi6lengthSvSg8userDatatF">logInternalErrors(level:message:length:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC7pointerSvx3obj_tRlzClF">pointer(obj:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC12removePreKey33_D0CA85FD3C456D42F01EDBFA029B9BD6LLs5Int32Vs6UInt32V2id_SvSg8userDatatF">removePreKey(id:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC18removeSignedPreKey33_98D778FCB813511A919CD5A09B68A43BLLs5Int32Vs6UInt32V2id_SvSg6callertF">removeSignedPreKey(id:caller:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC12saveIdentity33_063ADA8EE3B91BE8DB570039B80EBE41LLs5Int32VSPySC23signal_protocol_addressVGSg0N0_Spys5UInt8VGSg4dataSi6lengthSvSg8userDatatF">saveIdentity(address:data:length:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC11storePreKey33_D0CA85FD3C456D42F01EDBFA029B9BD6LLs5Int32Vs6UInt32V2id_Spys5UInt8VGSg6recordSi6lengthSvSg8userDatatF">storePreKey(id:record:length:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC14storeSenderKey33_AAC659B64DB16D46D6F00513764E6A1DLLs5Int32VSPySC31signal_protocol_sender_key_nameVGSg0R0_Spys5UInt8VGSg6recordSi6lengthSvSg8userDatatF">storeSenderKey(name:record:length:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC12storeSession33_3F4DA91260B0B8025C1CBD6A8A64E9E0LLs5Int32VSPySC23signal_protocol_addressVGSg0Q0_Spys5UInt8VGSg4dataSi6lengthSvSg8userDatatF">storeSession(address:data:length:userData:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC17storeSignedPreKey33_98D778FCB813511A919CD5A09B68A43BLLs5Int32Vs6UInt32V2id_Spys5UInt8VGSg6recordSi6lengthSvSg6callertF">storeSignedPreKey(id:record:length:caller:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC16stringFromBufferSSSgSPys4Int8VGSg_Si6lengthtF">stringFromBuffer(_:length:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5TestC6unpack33_AAC659B64DB16D46D6F00513764E6A1DLLAA9CHAddressV_SStSgSPySC31signal_protocol_sender_key_nameVGSg0N2ID_tF">unpack(senderID:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentityKeyStoreDelegate.html">IdentityKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KeyStoreDelegate.html">KeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionStoreDelegate.html">SessionStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CHAddress.html">CHAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalError.html">SignalError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC8DeviceIDa">DeviceID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC13EncryptedDataa">EncryptedData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC15IdentityKeyPaira">IdentityKeyPair</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC6PreKeya">PreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC12PreKeyBundlea">PreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC8PreKeyIDa">PreKeyID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC13PreKeyMessagea">PreKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC14SignedPreKeyIDa">SignedPreKeyID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:5TestC15UnencryptedDataa">UnencryptedData</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CHAddress</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">CHAddress</span><span class="p">:</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                </div>
+              </div>
+            <p>An address to establish a session with a peer.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Variables"></a>
+                <a name="//apple_ref/swift/Section/Variables" class="dashAnchor"></a>
+                <a href="#/Variables">
+                  <h3 class="section-name">Variables</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressV13maximumLength33_9C482CE0893C4902DC38E12C0A4CCE37LLSivZ"></a>
+                    <a name="//apple_ref/swift/Variable/maximumLength" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressV13maximumLength33_9C482CE0893C4902DC38E12C0A4CCE37LLSivZ">maximumLength</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>maximum byte length of the recipient ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">maximumLength</span> <span class="o">=</span> <span class="mi">50</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressV8deviceIDs5Int32Vv"></a>
+                    <a name="//apple_ref/swift/Property/deviceID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressV8deviceIDs5Int32Vv">deviceID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The device identification number</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">deviceID</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:5TestC8DeviceIDa">DeviceID</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressV11recipientIDSSv"></a>
+                    <a name="//apple_ref/swift/Property/recipientID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressV11recipientIDSSv">recipientID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The recipient id, i.e. phone number or e-mail</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">recipientID</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressVACs5Int32V8deviceID_SS09recipientE0tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(deviceID:recipientID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressVACs5Int32V8deviceID_SS09recipientE0tcfc">init(deviceID:recipientID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new address.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">deviceID</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:5TestC8DeviceIDa">DeviceID</a></span><span class="p">,</span> <span class="nv">recipientID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>deviceID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The identification number of the device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recipientID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The phone number or similar identification token</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressVACSgSPySC23signal_protocol_addressVGSg4from_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressVACSgSPySC23signal_protocol_addressVGSg4from_tcfc">init(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new address from a pointer to a signal API struct.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Fails if the pointer is nil, the recipient ID is too long (see <code><a href="../Structs/CHAddress.html#/s:5TestC9CHAddressV13maximumLength33_9C482CE0893C4902DC38E12C0A4CCE37LLSivZ">CHAddress.maximumLength</a></code>), or the recipient ID is not a valid String
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">?(</span><span class="n">from</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">signal_protocol_address</span><span class="o">&gt;</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Pointer to the struct.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressVACSgSC23signal_protocol_addressV0E0_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(address:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressVACSgSC23signal_protocol_addressV0E0_tcfc">init(address:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new address from a signal API struct.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Fails if the recipient ID is too long (see <code><a href="../Structs/CHAddress.html#/s:5TestC9CHAddressV13maximumLength33_9C482CE0893C4902DC38E12C0A4CCE37LLSivZ">CHAddress.maximumLength</a></code>), or the recipient ID is not a valid String
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">?(</span><span class="nv">address</span><span class="p">:</span> <span class="n">signal_protocol_address</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Pointer to the struct.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Protocol%20CustomStringConvertible"></a>
+                <a name="//apple_ref/swift/Section/Protocol CustomStringConvertible" class="dashAnchor"></a>
+                <a href="#/Protocol%20CustomStringConvertible">
+                  <h3 class="section-name">Protocol CustomStringConvertible</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressV11descriptionSSv"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressV11descriptionSSv">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A description of the address, contains the device ID and the recipient ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Protocol%20Hashable"></a>
+                <a name="//apple_ref/swift/Section/Protocol Hashable" class="dashAnchor"></a>
+                <a href="#/Protocol%20Hashable">
+                  <h3 class="section-name">Protocol Hashable</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressV9hashValueSiv"></a>
+                    <a name="//apple_ref/swift/Property/hashValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressV9hashValueSiv">hashValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A hash of the address for storage</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">hashValue</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5TestC9CHAddressV2eeoiSbAC_ACtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5TestC9CHAddressV2eeoiSbAC_ACtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Two addresses are equal if the device ID and recipient ID match</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">CHAddress</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">CHAddress</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2017-09-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
