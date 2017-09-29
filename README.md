@@ -119,6 +119,7 @@ A: See the documentation of [libsignal-protocol-c](https://github.com/WhisperSys
 
 ## Future improvements
 I'm working to make this module even easier to use. The things I want to do next:
+- Create a nice Framework to simplify the import into existing projects
 - Handle the signed pre key ids internaly.
 - Provide a protocol to implement the server functionality.
 - Provide support for sending efficient messages to multiple recipients (group messaging)
