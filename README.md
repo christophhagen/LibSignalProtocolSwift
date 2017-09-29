@@ -97,14 +97,27 @@ let decryptedMessage = try! alice.decrypt(message, from: bobAddress)
 ```
 
 ### Identity change
-If a session exists between two parties and one of the participants changes his/her identity key, then a new session has to be established by again using a Pre Key Bundle and a Pre Key. When trying to decrypt a message from the same sender with a different identity key, then the `decrypt(_:from:)` method will fail with an error of type `SignalErrorType.untrustedIdentity`. If you choose to trust the new identity simply modify the function call:
+If a session exists between two parties and one of the participants changes his/her `Identity Key`, then a new session has to be established by again using a `Pre Key Bundle` and a `Pre Key`. When trying to decrypt a message from the same sender with a different `Identity Key`, then the `decrypt(_:from:)` method will fail with an error of type `SignalErrorType.untrustedIdentity`. If you choose to trust the new identity simply modify the function call:
 
 ```
 /* Decrypt message with changed identity key */
 let decryptedMessage = try! alice.decrypt(message, from: bobAddress, trustNewIdentity: true)
 ```
 
-## Future improvement
+## FAQ
+
+#### Q: Why did you copy the code from `libsignal-protocol-c`, and not use a package manager or something?
+A: The code from `libsignal-protocol-c` includes some warnings that I found distracting. I fixed these warnings and then didn't want to be bothered with the package manager stuff. I'll update the files whenever there is a significant change to the library. I know that's not how you should do it.
+#### Q: What does the `Pre Key Bundle` do?
+A: The `Pre Key Bundle` contains the identity of the creator (ideally never changed) and a `Signed Pre Key` (changed after a few days). Only one `Pre Key Bundle` is stored on the server for each address. When trying to establish a session, a copy of the current `Pre Key Bundle` is retrieved from the server.
+#### Q: What does the `Pre Key` do?
+A: A Pre Key is used in combination with the `Pre Key Bundle` to establish a session. Since the `Pre Key Bundle` is the same for multiple remote clients, the `Pre Key` guarantees a unique session for each connection. A number of `Pre Keys` should be uploaded to the server to enable new sessions, and a unique `Pre Key` is used for every session. `Pre Keys` are single use, and need to be deleted from the server once they are retrieved.
+#### Q: Why do I need a `Pre Key Bundle` AND a `Pre Key`?
+A: Although it is possible to combine each `Pre Key` with a copy of the `Pre Key Bundle`, this would consume additional storage on the server and more importantly more transmitted data for each client. A `Pre Key` has 37 Byte, and a `Pre Key Bundle` has 142. This would mean a fivefold increase in transmitted data if they were combined. Also, the `Pre Key Bundle` needs to be changed every few days, the `Pre Keys` do not.
+#### Q: Where can I learn more about the underlying encryption?
+A: See the documentation of [libsignal-protocol-c](https://github.com/WhisperSystems/libsignal-protocol-c), the [Java implementation](https://github.com/whispersystems/libsignal-protocol-java), and the [developer documentation](https://signal.org/docs/).
+
+## Future improvements
 I'm working to make this module even easier to use. The things I want to do next:
 - Handle the signed pre key ids internaly.
 - Provide a protocol to implement the server functionality.
