@@ -1,0 +1,1964 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		CE38B1AE1FBA2D620014A6A8 /* CommonCryptoModuleMap */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CE38B1AF1FBA2D620014A6A8 /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */;
+			buildPhases = (
+				CE38B1B21FBA2D6C0014A6A8 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CommonCryptoModuleMap;
+			productName = CommonCryptoModuleMap;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		206ED32B3C747657794774AD /* Pods_SignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F2B859B8E457B9C13FAD6E /* Pods_SignalProtocolSwift.framework */; };
+		258DD95D5BCF1D55B78C3C0A /* Pods_SignalProtocolSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CCFA1A865CE5BF2526C310 /* Pods_SignalProtocolSwiftTests.framework */; };
+		6ED31039AEA1F8E044773701 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4C96893CCC6BD0890622A7 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework */; };
+		CE38B1C41FBA2FBF0014A6A8 /* ProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B31FBA2FBD0014A6A8 /* ProtocolTests.swift */; };
+		CE38B1C51FBA2FBF0014A6A8 /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B41FBA2FBD0014A6A8 /* TestStore.swift */; };
+		CE38B1C61FBA2FBF0014A6A8 /* HKDFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B51FBA2FBD0014A6A8 /* HKDFTests.swift */; };
+		CE38B1C71FBA2FBF0014A6A8 /* CurveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B61FBA2FBE0014A6A8 /* CurveTests.swift */; };
+		CE38B1C81FBA2FBF0014A6A8 /* CompatibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B71FBA2FBE0014A6A8 /* CompatibilityTests.swift */; };
+		CE38B1CA1FBA2FBF0014A6A8 /* RatchetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B91FBA2FBE0014A6A8 /* RatchetTests.swift */; };
+		CE38B1CB1FBA2FBF0014A6A8 /* SessionRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1BA1FBA2FBE0014A6A8 /* SessionRecordTests.swift */; };
+		CE38B1CC1FBA2FBF0014A6A8 /* TestFakeCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1BB1FBA2FBE0014A6A8 /* TestFakeCryptoProvider.swift */; };
+		CE38B1CD1FBA2FBF0014A6A8 /* TestHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1BC1FBA2FBE0014A6A8 /* TestHelperFunctions.swift */; };
+		CE38B1CE1FBA2FBF0014A6A8 /* GroupCipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1BD1FBA2FBE0014A6A8 /* GroupCipherTests.swift */; };
+		CE38B1CF1FBA2FBF0014A6A8 /* FingerprintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1BE1FBA2FBE0014A6A8 /* FingerprintTests.swift */; };
+		CE38B1D01FBA2FBF0014A6A8 /* KeyHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1BF1FBA2FBE0014A6A8 /* KeyHelperTests.swift */; };
+		CE38B1D11FBA2FBF0014A6A8 /* DeviceConsistencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1C01FBA2FBF0014A6A8 /* DeviceConsistencyTests.swift */; };
+		CE38B1D21FBA2FBF0014A6A8 /* SessionCipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1C11FBA2FBF0014A6A8 /* SessionCipherTests.swift */; };
+		CE38B1D31FBA2FBF0014A6A8 /* SessionBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1C21FBA2FBF0014A6A8 /* SessionBuilderTests.swift */; };
+		CE38B1D41FBA2FBF0014A6A8 /* SenderKeyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1C31FBA2FBF0014A6A8 /* SenderKeyRecordTests.swift */; };
+		CE38B1D61FBA31F30014A6A8 /* DeviceConsistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1D51FBA31F30014A6A8 /* DeviceConsistency.swift */; };
+		CE38B1DA1FBA38B60014A6A8 /* SenderKeyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69831F1FBA124200E4B808 /* SenderKeyMessage.swift */; };
+		CE38B1DB1FBA38B60014A6A8 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69830C1FBA11C400E4B808 /* SessionPreKey.swift */; };
+		CE38B1DC1FBA38B60014A6A8 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983121FBA11F900E4B808 /* SessionRecord.swift */; };
+		CE38B1DD1FBA38B60014A6A8 /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983221FBA124200E4B808 /* PreKeySignalMessage.swift */; };
+		CE38B1DE1FBA38B60014A6A8 /* gen_labelset.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69823D1FBA0ABE00E4B808 /* gen_labelset.c */; };
+		CE38B1DF1FBA38B60014A6A8 /* ge_neg.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982341FBA0ABE00E4B808 /* ge_neg.c */; };
+		CE38B1E01FBA38B60014A6A8 /* ge_scalarmult_cofactor.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69824B1FBA0ABE00E4B808 /* ge_scalarmult_cofactor.c */; };
+		CE38B1E11FBA38B60014A6A8 /* SignedPrekeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983301FBA12BD00E4B808 /* SignedPrekeyStoreDelegate.swift */; };
+		CE38B1E21FBA38B60014A6A8 /* ge_p3_dbl.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827B1FBA0AC200E4B808 /* ge_p3_dbl.c */; };
+		CE38B1E31FBA38B60014A6A8 /* gen_veddsa.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69823A1FBA0ABE00E4B808 /* gen_veddsa.c */; };
+		CE38B1E41FBA38B60014A6A8 /* point_isreduced.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982411FBA0ABE00E4B808 /* point_isreduced.c */; };
+		CE38B1E51FBA38B60014A6A8 /* fe_montx_to_edy.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69822F1FBA0ABE00E4B808 /* fe_montx_to_edy.c */; };
+		CE38B1E61FBA38B60014A6A8 /* fe_add.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821E1FBA0ABC00E4B808 /* fe_add.c */; };
+		CE38B1E71FBA38B60014A6A8 /* hash.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825F1FBA0ABF00E4B808 /* hash.c */; };
+		CE38B1E81FBA38B60014A6A8 /* ge_p3_to_montx.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982571FBA0ABE00E4B808 /* ge_p3_to_montx.c */; };
+		CE38B1E91FBA38B60014A6A8 /* ReceiverChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983001FBA118A00E4B808 /* ReceiverChain.swift */; };
+		CE38B1EA1FBA38B60014A6A8 /* SenderChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983011FBA118A00E4B808 /* SenderChainKey.swift */; };
+		CE38B1EB1FBA38B60014A6A8 /* ge_msub.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825A1FBA0ABE00E4B808 /* ge_msub.c */; };
+		CE38B1EC1FBA38B60014A6A8 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983211FBA124200E4B808 /* SenderKeyDistributionMessage.swift */; };
+		CE38B1ED1FBA38B60014A6A8 /* sc_isreduced.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982431FBA0ABE00E4B808 /* sc_isreduced.c */; };
+		CE38B1EE1FBA38B60014A6A8 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983521FBA13D000E4B808 /* ScannableFingerprint.swift */; };
+		CE38B1EF1FBA38B60014A6A8 /* SessionSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69830B1FBA11C400E4B808 /* SessionSignedPreKey.swift */; };
+		CE38B1F01FBA38B60014A6A8 /* fe_0.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825B1FBA0ABE00E4B808 /* fe_0.c */; };
+		CE38B1F11FBA38B60014A6A8 /* ge_scalarmult.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982491FBA0ABE00E4B808 /* ge_scalarmult.c */; };
+		CE38B1F21FBA38B60014A6A8 /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69830D1FBA11C400E4B808 /* SessionPreKeyBundle.swift */; };
+		CE38B1F31FBA38B60014A6A8 /* PendingKeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983141FBA11F900E4B808 /* PendingKeyExchange.swift */; };
+		CE38B1F41FBA38B60014A6A8 /* fe_cmov.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982651FBA0AC000E4B808 /* fe_cmov.c */; };
+		CE38B1F51FBA38B60014A6A8 /* RatchetMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FC1FBA118A00E4B808 /* RatchetMessageKeys.swift */; };
+		CE38B1F61FBA38B60014A6A8 /* ge_p3_add.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69823C1FBA0ABE00E4B808 /* ge_p3_add.c */; };
+		CE38B1F71FBA38B60014A6A8 /* ge_p3_to_p2.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982791FBA0AC200E4B808 /* ge_p3_to_p2.c */; };
+		CE38B1F81FBA38B60014A6A8 /* internal_fast_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982121FBA0ABB00E4B808 /* internal_fast_tests.c */; };
+		CE38B1F91FBA38B60014A6A8 /* ge_madd.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821C1FBA0ABC00E4B808 /* ge_madd.c */; };
+		CE38B1FA1FBA38B60014A6A8 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983111FBA11F900E4B808 /* PendingPreKey.swift */; };
+		CE38B1FB1FBA38B60014A6A8 /* sc_reduce.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982761FBA0AC100E4B808 /* sc_reduce.c */; };
+		CE38B1FC1FBA38B60014A6A8 /* utility.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982441FBA0ABE00E4B808 /* utility.c */; };
+		CE38B1FD1FBA38B60014A6A8 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983151FBA11F900E4B808 /* SessionState.swift */; };
+		CE38B1FE1FBA38B60014A6A8 /* ge_p1p1_to_p2.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982231FBA0ABD00E4B808 /* ge_p1p1_to_p2.c */; };
+		CE38B1FF1FBA38B60014A6A8 /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825E1FBA0ABF00E4B808 /* blocks.c */; };
+		CE38B2001FBA38B60014A6A8 /* gen_eddsa.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982401FBA0ABE00E4B808 /* gen_eddsa.c */; };
+		CE38B2011FBA38B60014A6A8 /* SenderMessageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FA1FBA118A00E4B808 /* SenderMessageKey.swift */; };
+		CE38B2021FBA38B60014A6A8 /* ge_add.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982221FBA0ABC00E4B808 /* ge_add.c */; };
+		CE38B2041FBA38B60014A6A8 /* SessionStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983311FBA12BD00E4B808 /* SessionStoreDelegate.swift */; };
+		CE38B2051FBA38B60014A6A8 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FE1FBA118A00E4B808 /* HKDF.swift */; };
+		CE38B2061FBA38B60014A6A8 /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983441FBA132000E4B808 /* SenderKeyRecord.swift */; };
+		CE38B2071FBA38B60014A6A8 /* ge_p1p1_to_p3.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827A1FBA0AC200E4B808 /* ge_p1p1_to_p3.c */; };
+		CE38B2081FBA38B60014A6A8 /* ge_montx_to_p3.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982461FBA0ABE00E4B808 /* ge_montx_to_p3.c */; };
+		CE38B2091FBA38B60014A6A8 /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983431FBA132000E4B808 /* SignalCrypto.swift */; };
+		CE38B20A1FBA38B60014A6A8 /* ge_frombytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821F1FBA0ABC00E4B808 /* ge_frombytes.c */; };
+		CE38B20B1FBA38B60014A6A8 /* RatchetChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FF1FBA118A00E4B808 /* RatchetChainKey.swift */; };
+		CE38B20C1FBA38B60014A6A8 /* zeroize.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69824D1FBA0ABE00E4B808 /* zeroize.c */; };
+		CE38B20D1FBA38B60014A6A8 /* fe_sub.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982621FBA0ABF00E4B808 /* fe_sub.c */; };
+		CE38B20E1FBA38B60014A6A8 /* ge_sub.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827E1FBA0AC200E4B808 /* ge_sub.c */; };
+		CE38B20F1FBA38B60014A6A8 /* SenderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FD1FBA118A00E4B808 /* SenderChain.swift */; };
+		CE38B2101FBA38B60014A6A8 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983401FBA132000E4B808 /* SignalCommonCrypto.swift */; };
+		CE38B2111FBA38B60014A6A8 /* fe_isequal.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982451FBA0ABE00E4B808 /* fe_isequal.c */; };
+		CE38B2121FBA38B60014A6A8 /* sc_neg.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69822B1FBA0ABE00E4B808 /* sc_neg.c */; };
+		CE38B2131FBA38B60014A6A8 /* fe_isreduced.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982551FBA0ABE00E4B808 /* fe_isreduced.c */; };
+		CE38B2141FBA38B60014A6A8 /* fe_invert.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982601FBA0ABF00E4B808 /* fe_invert.c */; };
+		CE38B2151FBA38B60014A6A8 /* ge_isneutral.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982501FBA0ABE00E4B808 /* ge_isneutral.c */; };
+		CE38B2161FBA38B60014A6A8 /* fe_1.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825C1FBA0ABE00E4B808 /* fe_1.c */; };
+		CE38B2171FBA38B60014A6A8 /* open_modified.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982541FBA0ABE00E4B808 /* open_modified.c */; };
+		CE38B2181FBA38B60014A6A8 /* ge_p3_to_cached.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982581FBA0ABE00E4B808 /* ge_p3_to_cached.c */; };
+		CE38B2191FBA38B60014A6A8 /* sc_cmov.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982301FBA0ABE00E4B808 /* sc_cmov.c */; };
+		CE38B21A1FBA38B60014A6A8 /* ge_p2_dbl.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982691FBA0AC000E4B808 /* ge_p2_dbl.c */; };
+		CE38B21B1FBA38B60014A6A8 /* ge_p2_0.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827D1FBA0AC200E4B808 /* ge_p2_0.c */; };
+		CE38B21C1FBA38B60014A6A8 /* ge_double_scalarmult.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982741FBA0AC100E4B808 /* ge_double_scalarmult.c */; };
+		CE38B21D1FBA38B60014A6A8 /* open.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982671FBA0AC000E4B808 /* open.c */; };
+		CE38B21E1FBA38B60014A6A8 /* fe_sq.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982261FBA0ABD00E4B808 /* fe_sq.c */; };
+		CE38B21F1FBA38B60014A6A8 /* CipherTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69831E1FBA124100E4B808 /* CipherTextMessage.swift */; };
+		CE38B2201FBA38B60014A6A8 /* curve_sigs.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982351FBA0ABE00E4B808 /* curve_sigs.c */; };
+		CE38B2211FBA38B60014A6A8 /* WhisperTextProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69832A1FBA128100E4B808 /* WhisperTextProtocol.pb.swift */; };
+		CE38B2221FBA38B60014A6A8 /* fe_mont_rhs.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982331FBA0ABE00E4B808 /* fe_mont_rhs.c */; };
+		CE38B2231FBA38B60014A6A8 /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69834E1FBA13D000E4B808 /* Fingerprint.swift */; };
+		CE38B2241FBA38B60014A6A8 /* fe_tobytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982141FBA0ABB00E4B808 /* fe_tobytes.c */; };
+		CE38B2251FBA38B60014A6A8 /* sign.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982681FBA0AC000E4B808 /* sign.c */; };
+		CE38B2261FBA38B60014A6A8 /* sign_modified.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982481FBA0ABE00E4B808 /* sign_modified.c */; };
+		CE38B2271FBA38B60014A6A8 /* fe_isnegative.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982201FBA0ABC00E4B808 /* fe_isnegative.c */; };
+		CE38B2281FBA38B60014A6A8 /* compare.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69822D1FBA0ABE00E4B808 /* compare.c */; };
+		CE38B2291FBA38B60014A6A8 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983131FBA11F900E4B808 /* SessionBuilder.swift */; };
+		CE38B22A1FBA38B60014A6A8 /* ge_scalarmult_base.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827F1FBA0AC200E4B808 /* ge_scalarmult_base.c */; };
+		CE38B22B1FBA38B60014A6A8 /* sc_muladd.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69826B1FBA0AC000E4B808 /* sc_muladd.c */; };
+		CE38B22C1FBA38B60014A6A8 /* fe_mul.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982211FBA0ABC00E4B808 /* fe_mul.c */; };
+		CE38B22D1FBA38B60014A6A8 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983501FBA13D000E4B808 /* SignalError.swift */; };
+		CE38B22E1FBA38B60014A6A8 /* curve25519-donna.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982081FBA0A4100E4B808 /* curve25519-donna.c */; };
+		CE38B22F1FBA38B60014A6A8 /* GroupSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983161FBA11F900E4B808 /* GroupSessionBuilder.swift */; };
+		CE38B2301FBA38B60014A6A8 /* fe_frombytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982271FBA0ABD00E4B808 /* fe_frombytes.c */; };
+		CE38B2311FBA38B60014A6A8 /* fe_sqrt.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69824E1FBA0ABE00E4B808 /* fe_sqrt.c */; };
+		CE38B2321FBA38B60014A6A8 /* SessionCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983411FBA132000E4B808 /* SessionCipher.swift */; };
+		CE38B2331FBA38B60014A6A8 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982F31FBA112C00E4B808 /* PrivateKey.swift */; };
+		CE38B2341FBA38B60014A6A8 /* fe_pow22523.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982611FBA0ABF00E4B808 /* fe_pow22523.c */; };
+		CE38B2351FBA38B60014A6A8 /* fe_sq2.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982151FBA0ABB00E4B808 /* fe_sq2.c */; };
+		CE38B2361FBA38B60014A6A8 /* SignalProtocolStoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983321FBA12BD00E4B808 /* SignalProtocolStoreContext.swift */; };
+		CE38B2371FBA38B60014A6A8 /* RatchetRootKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FB1FBA118A00E4B808 /* RatchetRootKey.swift */; };
+		CE38B2381FBA38B60014A6A8 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983201FBA124200E4B808 /* SignalMessage.swift */; };
+		CE38B2391FBA38B60014A6A8 /* SignalLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983511FBA13D000E4B808 /* SignalLog.swift */; };
+		CE38B23A1FBA38B60014A6A8 /* internal_slow_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982111FBA0ABB00E4B808 /* internal_slow_tests.c */; };
+		CE38B23B1FBA38B60014A6A8 /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983451FBA132100E4B808 /* SenderKeyState.swift */; };
+		CE38B23C1FBA38B60014A6A8 /* ge_p3_0.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982771FBA0AC100E4B808 /* ge_p3_0.c */; };
+		CE38B23D1FBA38B60014A6A8 /* gen_x.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982381FBA0ABE00E4B808 /* gen_x.c */; };
+		CE38B23E1FBA38B60014A6A8 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982F41FBA112C00E4B808 /* KeyPair.swift */; };
+		CE38B23F1FBA38B60014A6A8 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69834F1FBA13D000E4B808 /* HelperFunctions.swift */; };
+		CE38B2401FBA38B60014A6A8 /* GroupCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69833F1FBA132000E4B808 /* GroupCipher.swift */; };
+		CE38B2411FBA38B60014A6A8 /* ge_precomp_0.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69826A1FBA0AC000E4B808 /* ge_precomp_0.c */; };
+		CE38B2421FBA38B60014A6A8 /* ge_p3_tobytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982191FBA0ABB00E4B808 /* ge_p3_tobytes.c */; };
+		CE38B2431FBA38B60014A6A8 /* fe_isnonzero.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982781FBA0AC100E4B808 /* fe_isnonzero.c */; };
+		CE38B2441FBA38B60014A6A8 /* xeddsa.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982521FBA0ABE00E4B808 /* xeddsa.c */; };
+		CE38B2451FBA38B60014A6A8 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982F51FBA112D00E4B808 /* PublicKey.swift */; };
+		CE38B2461FBA38B60014A6A8 /* DeviceConsistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1D51FBA31F30014A6A8 /* DeviceConsistency.swift */; };
+		CE38B2471FBA38B60014A6A8 /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983351FBA12BD00E4B808 /* SenderKeyStoreDelegate.swift */; };
+		CE38B2481FBA38B60014A6A8 /* elligator.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982511FBA0ABE00E4B808 /* elligator.c */; };
+		CE38B2491FBA38B60014A6A8 /* fe_neg.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982591FBA0ABE00E4B808 /* fe_neg.c */; };
+		CE38B24A1FBA38B60014A6A8 /* sc_clamp.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69822E1FBA0ABE00E4B808 /* sc_clamp.c */; };
+		CE38B24B1FBA38B60014A6A8 /* PreKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983331FBA12BD00E4B808 /* PreKeyStoreDelegate.swift */; };
+		CE38B24C1FBA38B60014A6A8 /* keygen.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982311FBA0ABE00E4B808 /* keygen.c */; };
+		CE38B24D1FBA38B60014A6A8 /* IdentityKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983341FBA12BD00E4B808 /* IdentityKeyStoreDelegate.swift */; };
+		CE38B24E1FBA38B60014A6A8 /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983291FBA128100E4B808 /* FingerprintProtocol.pb.swift */; };
+		CE38B24F1FBA38B60014A6A8 /* ge_tobytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821A1FBA0ABB00E4B808 /* ge_tobytes.c */; };
+		CE38B2501FBA38B60014A6A8 /* LocalStorageProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69832B1FBA128100E4B808 /* LocalStorageProtocol.pb.swift */; };
+		CE38B2511FBA38B60014A6A8 /* fe_copy.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821B1FBA0ABC00E4B808 /* fe_copy.c */; };
+		CE38B2531FBA38B60014A6A8 /* Pods_SignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F2B859B8E457B9C13FAD6E /* Pods_SignalProtocolSwift.framework */; };
+		CE38B2551FBA38B60014A6A8 /* crypto_sign.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69826F1FBA0AC100E4B808 /* crypto_sign.h */; };
+		CE38B2561FBA38B60014A6A8 /* crypto_sign_edwards25519sha512batch.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982731FBA0AC100E4B808 /* crypto_sign_edwards25519sha512batch.h */; };
+		CE38B2571FBA38B60014A6A8 /* sqrtm1.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69820D1FBA0ABB00E4B808 /* sqrtm1.h */; };
+		CE38B2581FBA38B60014A6A8 /* crypto_hash_sha512.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982321FBA0ABE00E4B808 /* crypto_hash_sha512.h */; };
+		CE38B2591FBA38B60014A6A8 /* fe.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982291FBA0ABD00E4B808 /* fe.h */; };
+		CE38B25A1FBA38B60014A6A8 /* gen_x.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69823F1FBA0ABE00E4B808 /* gen_x.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE38B25B1FBA38B60014A6A8 /* ge_sub.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982241FBA0ABD00E4B808 /* ge_sub.h */; };
+		CE38B25C1FBA38B60014A6A8 /* compare.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69824C1FBA0ABE00E4B808 /* compare.h */; };
+		CE38B25D1FBA38B60014A6A8 /* ge_p2_dbl.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982281FBA0ABD00E4B808 /* ge_p2_dbl.h */; };
+		CE38B25E1FBA38B60014A6A8 /* sc.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982161FBA0ABB00E4B808 /* sc.h */; };
+		CE38B25F1FBA38B60014A6A8 /* curve_sigs.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69824F1FBA0ABE00E4B808 /* curve_sigs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE38B2601FBA38B60014A6A8 /* xeddsa.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982471FBA0ABE00E4B808 /* xeddsa.h */; };
+		CE38B2611FBA38B60014A6A8 /* crypto_uint32.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69826D1FBA0AC100E4B808 /* crypto_uint32.h */; };
+		CE38B2621FBA38B60014A6A8 /* gen_labelset.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982421FBA0ABE00E4B808 /* gen_labelset.h */; };
+		CE38B2631FBA38B60014A6A8 /* crypto_int64.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982711FBA0AC100E4B808 /* crypto_int64.h */; };
+		CE38B2641FBA38B60014A6A8 /* keygen.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69824A1FBA0ABE00E4B808 /* keygen.h */; };
+		CE38B2651FBA38B60014A6A8 /* gen_veddsa.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69823E1FBA0ABE00E4B808 /* gen_veddsa.h */; };
+		CE38B2661FBA38B60014A6A8 /* base2.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982171FBA0ABB00E4B808 /* base2.h */; };
+		CE38B2671FBA38B60014A6A8 /* ge_msub.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69821D1FBA0ABC00E4B808 /* ge_msub.h */; };
+		CE38B2681FBA38B60014A6A8 /* gen_constants.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982371FBA0ABE00E4B808 /* gen_constants.h */; };
+		CE38B2691FBA38B60014A6A8 /* gen_eddsa.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982391FBA0ABE00E4B808 /* gen_eddsa.h */; };
+		CE38B26A1FBA38B60014A6A8 /* curve25519-donna.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982091FBA0A4100E4B808 /* curve25519-donna.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE38B26B1FBA38B60014A6A8 /* gen_crypto_additions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69823B1FBA0ABE00E4B808 /* gen_crypto_additions.h */; };
+		CE38B26C1FBA38B60014A6A8 /* internal_slow_tests.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982101FBA0ABB00E4B808 /* internal_slow_tests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE38B26D1FBA38B60014A6A8 /* base.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982181FBA0ABB00E4B808 /* base.h */; };
+		CE38B26E1FBA38B60014A6A8 /* crypto_uint64.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982721FBA0AC100E4B808 /* crypto_uint64.h */; };
+		CE38B26F1FBA38B60014A6A8 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6981EE1FBA033800E4B808 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE38B2701FBA38B60014A6A8 /* d.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982251FBA0ABD00E4B808 /* d.h */; };
+		CE38B2711FBA38B60014A6A8 /* crypto_additions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982561FBA0ABE00E4B808 /* crypto_additions.h */; };
+		CE38B2721FBA38B60014A6A8 /* ge_madd.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982131FBA0ABB00E4B808 /* ge_madd.h */; };
+		CE38B2731FBA38B60014A6A8 /* ge_add.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982631FBA0ABF00E4B808 /* ge_add.h */; };
+		CE38B2741FBA38B60014A6A8 /* crypto_int32.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69826E1FBA0AC100E4B808 /* crypto_int32.h */; };
+		CE38B2751FBA38B60014A6A8 /* d2.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69827C1FBA0AC200E4B808 /* d2.h */; };
+		CE38B2761FBA38B60014A6A8 /* pow22523.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982661FBA0AC000E4B808 /* pow22523.h */; };
+		CE38B2771FBA38B60014A6A8 /* utility.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982531FBA0ABE00E4B808 /* utility.h */; };
+		CE38B2781FBA38B60014A6A8 /* pow225521.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982751FBA0AC100E4B808 /* pow225521.h */; };
+		CE38B2791FBA38B60014A6A8 /* zeroize.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69822C1FBA0ABE00E4B808 /* zeroize.h */; };
+		CE38B27A1FBA38B60014A6A8 /* ge.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982641FBA0ABF00E4B808 /* ge.h */; };
+		CE38B27B1FBA38B60014A6A8 /* crypto_verify_32.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982701FBA0AC100E4B808 /* crypto_verify_32.h */; };
+		CE38B27C1FBA38B60014A6A8 /* internal_fast_tests.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69820F1FBA0ABB00E4B808 /* internal_fast_tests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE6981F51FBA033800E4B808 /* SignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6981EB1FBA033800E4B808 /* SignalProtocolSwift.framework */; };
+		CE6981FA1FBA033800E4B808 /* SignalProtocolSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6981F91FBA033800E4B808 /* SignalProtocolSwiftTests.swift */; };
+		CE6981FC1FBA033800E4B808 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6981EE1FBA033800E4B808 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE69820A1FBA0A4200E4B808 /* curve25519-donna.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982081FBA0A4100E4B808 /* curve25519-donna.c */; };
+		CE69820B1FBA0A4200E4B808 /* curve25519-donna.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982091FBA0A4100E4B808 /* curve25519-donna.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE6982801FBA0AC300E4B808 /* sqrtm1.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69820D1FBA0ABB00E4B808 /* sqrtm1.h */; };
+		CE6982811FBA0AC300E4B808 /* internal_fast_tests.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69820F1FBA0ABB00E4B808 /* internal_fast_tests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE6982821FBA0AC300E4B808 /* internal_slow_tests.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982101FBA0ABB00E4B808 /* internal_slow_tests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE6982831FBA0AC300E4B808 /* internal_slow_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982111FBA0ABB00E4B808 /* internal_slow_tests.c */; };
+		CE6982841FBA0AC300E4B808 /* internal_fast_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982121FBA0ABB00E4B808 /* internal_fast_tests.c */; };
+		CE6982851FBA0AC300E4B808 /* ge_madd.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982131FBA0ABB00E4B808 /* ge_madd.h */; };
+		CE6982861FBA0AC300E4B808 /* fe_tobytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982141FBA0ABB00E4B808 /* fe_tobytes.c */; };
+		CE6982871FBA0AC300E4B808 /* fe_sq2.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982151FBA0ABB00E4B808 /* fe_sq2.c */; };
+		CE6982881FBA0AC300E4B808 /* sc.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982161FBA0ABB00E4B808 /* sc.h */; };
+		CE6982891FBA0AC300E4B808 /* base2.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982171FBA0ABB00E4B808 /* base2.h */; };
+		CE69828A1FBA0AC300E4B808 /* base.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982181FBA0ABB00E4B808 /* base.h */; };
+		CE69828B1FBA0AC300E4B808 /* ge_p3_tobytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982191FBA0ABB00E4B808 /* ge_p3_tobytes.c */; };
+		CE69828C1FBA0AC300E4B808 /* ge_tobytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821A1FBA0ABB00E4B808 /* ge_tobytes.c */; };
+		CE69828D1FBA0AC300E4B808 /* fe_copy.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821B1FBA0ABC00E4B808 /* fe_copy.c */; };
+		CE69828E1FBA0AC300E4B808 /* ge_madd.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821C1FBA0ABC00E4B808 /* ge_madd.c */; };
+		CE69828F1FBA0AC300E4B808 /* ge_msub.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69821D1FBA0ABC00E4B808 /* ge_msub.h */; };
+		CE6982901FBA0AC300E4B808 /* fe_add.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821E1FBA0ABC00E4B808 /* fe_add.c */; };
+		CE6982911FBA0AC300E4B808 /* ge_frombytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821F1FBA0ABC00E4B808 /* ge_frombytes.c */; };
+		CE6982921FBA0AC300E4B808 /* fe_isnegative.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982201FBA0ABC00E4B808 /* fe_isnegative.c */; };
+		CE6982931FBA0AC300E4B808 /* fe_mul.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982211FBA0ABC00E4B808 /* fe_mul.c */; };
+		CE6982941FBA0AC300E4B808 /* ge_add.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982221FBA0ABC00E4B808 /* ge_add.c */; };
+		CE6982951FBA0AC300E4B808 /* ge_p1p1_to_p2.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982231FBA0ABD00E4B808 /* ge_p1p1_to_p2.c */; };
+		CE6982961FBA0AC300E4B808 /* ge_sub.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982241FBA0ABD00E4B808 /* ge_sub.h */; };
+		CE6982971FBA0AC300E4B808 /* d.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982251FBA0ABD00E4B808 /* d.h */; };
+		CE6982981FBA0AC300E4B808 /* fe_sq.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982261FBA0ABD00E4B808 /* fe_sq.c */; };
+		CE6982991FBA0AC300E4B808 /* fe_frombytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982271FBA0ABD00E4B808 /* fe_frombytes.c */; };
+		CE69829A1FBA0AC300E4B808 /* ge_p2_dbl.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982281FBA0ABD00E4B808 /* ge_p2_dbl.h */; };
+		CE69829B1FBA0AC300E4B808 /* fe.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982291FBA0ABD00E4B808 /* fe.h */; };
+		CE69829C1FBA0AC300E4B808 /* sc_neg.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69822B1FBA0ABE00E4B808 /* sc_neg.c */; };
+		CE69829D1FBA0AC300E4B808 /* zeroize.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69822C1FBA0ABE00E4B808 /* zeroize.h */; };
+		CE69829E1FBA0AC300E4B808 /* compare.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69822D1FBA0ABE00E4B808 /* compare.c */; };
+		CE69829F1FBA0AC300E4B808 /* sc_clamp.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69822E1FBA0ABE00E4B808 /* sc_clamp.c */; };
+		CE6982A01FBA0AC300E4B808 /* fe_montx_to_edy.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69822F1FBA0ABE00E4B808 /* fe_montx_to_edy.c */; };
+		CE6982A11FBA0AC300E4B808 /* sc_cmov.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982301FBA0ABE00E4B808 /* sc_cmov.c */; };
+		CE6982A21FBA0AC300E4B808 /* keygen.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982311FBA0ABE00E4B808 /* keygen.c */; };
+		CE6982A31FBA0AC300E4B808 /* crypto_hash_sha512.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982321FBA0ABE00E4B808 /* crypto_hash_sha512.h */; };
+		CE6982A41FBA0AC300E4B808 /* fe_mont_rhs.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982331FBA0ABE00E4B808 /* fe_mont_rhs.c */; };
+		CE6982A51FBA0AC300E4B808 /* ge_neg.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982341FBA0ABE00E4B808 /* ge_neg.c */; };
+		CE6982A61FBA0AC300E4B808 /* curve_sigs.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982351FBA0ABE00E4B808 /* curve_sigs.c */; };
+		CE6982A71FBA0AC300E4B808 /* gen_constants.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982371FBA0ABE00E4B808 /* gen_constants.h */; };
+		CE6982A81FBA0AC300E4B808 /* gen_x.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982381FBA0ABE00E4B808 /* gen_x.c */; };
+		CE6982A91FBA0AC300E4B808 /* gen_eddsa.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982391FBA0ABE00E4B808 /* gen_eddsa.h */; };
+		CE6982AA1FBA0AC300E4B808 /* gen_veddsa.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69823A1FBA0ABE00E4B808 /* gen_veddsa.c */; };
+		CE6982AB1FBA0AC300E4B808 /* gen_crypto_additions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69823B1FBA0ABE00E4B808 /* gen_crypto_additions.h */; };
+		CE6982AC1FBA0AC300E4B808 /* ge_p3_add.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69823C1FBA0ABE00E4B808 /* ge_p3_add.c */; };
+		CE6982AD1FBA0AC300E4B808 /* gen_labelset.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69823D1FBA0ABE00E4B808 /* gen_labelset.c */; };
+		CE6982AE1FBA0AC300E4B808 /* gen_veddsa.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69823E1FBA0ABE00E4B808 /* gen_veddsa.h */; };
+		CE6982AF1FBA0AC300E4B808 /* gen_x.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69823F1FBA0ABE00E4B808 /* gen_x.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE6982B01FBA0AC300E4B808 /* gen_eddsa.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982401FBA0ABE00E4B808 /* gen_eddsa.c */; };
+		CE6982B11FBA0AC300E4B808 /* point_isreduced.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982411FBA0ABE00E4B808 /* point_isreduced.c */; };
+		CE6982B21FBA0AC300E4B808 /* gen_labelset.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982421FBA0ABE00E4B808 /* gen_labelset.h */; };
+		CE6982B31FBA0AC300E4B808 /* sc_isreduced.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982431FBA0ABE00E4B808 /* sc_isreduced.c */; };
+		CE6982B41FBA0AC300E4B808 /* utility.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982441FBA0ABE00E4B808 /* utility.c */; };
+		CE6982B51FBA0AC300E4B808 /* fe_isequal.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982451FBA0ABE00E4B808 /* fe_isequal.c */; };
+		CE6982B61FBA0AC300E4B808 /* ge_montx_to_p3.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982461FBA0ABE00E4B808 /* ge_montx_to_p3.c */; };
+		CE6982B71FBA0AC300E4B808 /* xeddsa.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982471FBA0ABE00E4B808 /* xeddsa.h */; };
+		CE6982B81FBA0AC300E4B808 /* sign_modified.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982481FBA0ABE00E4B808 /* sign_modified.c */; };
+		CE6982B91FBA0AC300E4B808 /* ge_scalarmult.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982491FBA0ABE00E4B808 /* ge_scalarmult.c */; };
+		CE6982BA1FBA0AC300E4B808 /* keygen.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69824A1FBA0ABE00E4B808 /* keygen.h */; };
+		CE6982BB1FBA0AC300E4B808 /* ge_scalarmult_cofactor.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69824B1FBA0ABE00E4B808 /* ge_scalarmult_cofactor.c */; };
+		CE6982BC1FBA0AC300E4B808 /* compare.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69824C1FBA0ABE00E4B808 /* compare.h */; };
+		CE6982BD1FBA0AC300E4B808 /* zeroize.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69824D1FBA0ABE00E4B808 /* zeroize.c */; };
+		CE6982BE1FBA0AC300E4B808 /* fe_sqrt.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69824E1FBA0ABE00E4B808 /* fe_sqrt.c */; };
+		CE6982BF1FBA0AC300E4B808 /* curve_sigs.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69824F1FBA0ABE00E4B808 /* curve_sigs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE6982C01FBA0AC300E4B808 /* ge_isneutral.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982501FBA0ABE00E4B808 /* ge_isneutral.c */; };
+		CE6982C11FBA0AC300E4B808 /* elligator.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982511FBA0ABE00E4B808 /* elligator.c */; };
+		CE6982C21FBA0AC300E4B808 /* xeddsa.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982521FBA0ABE00E4B808 /* xeddsa.c */; };
+		CE6982C31FBA0AC300E4B808 /* utility.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982531FBA0ABE00E4B808 /* utility.h */; };
+		CE6982C41FBA0AC300E4B808 /* open_modified.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982541FBA0ABE00E4B808 /* open_modified.c */; };
+		CE6982C51FBA0AC300E4B808 /* fe_isreduced.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982551FBA0ABE00E4B808 /* fe_isreduced.c */; };
+		CE6982C61FBA0AC300E4B808 /* crypto_additions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982561FBA0ABE00E4B808 /* crypto_additions.h */; };
+		CE6982C71FBA0AC300E4B808 /* ge_p3_to_montx.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982571FBA0ABE00E4B808 /* ge_p3_to_montx.c */; };
+		CE6982C81FBA0AC300E4B808 /* ge_p3_to_cached.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982581FBA0ABE00E4B808 /* ge_p3_to_cached.c */; };
+		CE6982C91FBA0AC300E4B808 /* fe_neg.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982591FBA0ABE00E4B808 /* fe_neg.c */; };
+		CE6982CA1FBA0AC300E4B808 /* ge_msub.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825A1FBA0ABE00E4B808 /* ge_msub.c */; };
+		CE6982CB1FBA0AC300E4B808 /* fe_0.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825B1FBA0ABE00E4B808 /* fe_0.c */; };
+		CE6982CC1FBA0AC300E4B808 /* fe_1.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825C1FBA0ABE00E4B808 /* fe_1.c */; };
+		CE6982CD1FBA0AC300E4B808 /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825E1FBA0ABF00E4B808 /* blocks.c */; };
+		CE6982CE1FBA0AC300E4B808 /* hash.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69825F1FBA0ABF00E4B808 /* hash.c */; };
+		CE6982CF1FBA0AC300E4B808 /* fe_invert.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982601FBA0ABF00E4B808 /* fe_invert.c */; };
+		CE6982D01FBA0AC300E4B808 /* fe_pow22523.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982611FBA0ABF00E4B808 /* fe_pow22523.c */; };
+		CE6982D11FBA0AC300E4B808 /* fe_sub.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982621FBA0ABF00E4B808 /* fe_sub.c */; };
+		CE6982D21FBA0AC300E4B808 /* ge_add.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982631FBA0ABF00E4B808 /* ge_add.h */; };
+		CE6982D31FBA0AC300E4B808 /* ge.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982641FBA0ABF00E4B808 /* ge.h */; };
+		CE6982D41FBA0AC300E4B808 /* fe_cmov.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982651FBA0AC000E4B808 /* fe_cmov.c */; };
+		CE6982D51FBA0AC300E4B808 /* pow22523.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982661FBA0AC000E4B808 /* pow22523.h */; };
+		CE6982D61FBA0AC300E4B808 /* open.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982671FBA0AC000E4B808 /* open.c */; };
+		CE6982D71FBA0AC300E4B808 /* sign.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982681FBA0AC000E4B808 /* sign.c */; };
+		CE6982D81FBA0AC300E4B808 /* ge_p2_dbl.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982691FBA0AC000E4B808 /* ge_p2_dbl.c */; };
+		CE6982D91FBA0AC300E4B808 /* ge_precomp_0.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69826A1FBA0AC000E4B808 /* ge_precomp_0.c */; };
+		CE6982DA1FBA0AC300E4B808 /* sc_muladd.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69826B1FBA0AC000E4B808 /* sc_muladd.c */; };
+		CE6982DB1FBA0AC300E4B808 /* crypto_uint32.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69826D1FBA0AC100E4B808 /* crypto_uint32.h */; };
+		CE6982DC1FBA0AC300E4B808 /* crypto_int32.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69826E1FBA0AC100E4B808 /* crypto_int32.h */; };
+		CE6982DD1FBA0AC300E4B808 /* crypto_sign.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69826F1FBA0AC100E4B808 /* crypto_sign.h */; };
+		CE6982DE1FBA0AC300E4B808 /* crypto_verify_32.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982701FBA0AC100E4B808 /* crypto_verify_32.h */; };
+		CE6982DF1FBA0AC300E4B808 /* crypto_int64.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982711FBA0AC100E4B808 /* crypto_int64.h */; };
+		CE6982E01FBA0AC300E4B808 /* crypto_uint64.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982721FBA0AC100E4B808 /* crypto_uint64.h */; };
+		CE6982E11FBA0AC300E4B808 /* crypto_sign_edwards25519sha512batch.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982731FBA0AC100E4B808 /* crypto_sign_edwards25519sha512batch.h */; };
+		CE6982E21FBA0AC300E4B808 /* ge_double_scalarmult.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982741FBA0AC100E4B808 /* ge_double_scalarmult.c */; };
+		CE6982E31FBA0AC300E4B808 /* pow225521.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982751FBA0AC100E4B808 /* pow225521.h */; };
+		CE6982E41FBA0AC300E4B808 /* sc_reduce.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982761FBA0AC100E4B808 /* sc_reduce.c */; };
+		CE6982E51FBA0AC300E4B808 /* ge_p3_0.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982771FBA0AC100E4B808 /* ge_p3_0.c */; };
+		CE6982E61FBA0AC300E4B808 /* fe_isnonzero.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982781FBA0AC100E4B808 /* fe_isnonzero.c */; };
+		CE6982E71FBA0AC300E4B808 /* ge_p3_to_p2.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6982791FBA0AC200E4B808 /* ge_p3_to_p2.c */; };
+		CE6982E81FBA0AC300E4B808 /* ge_p1p1_to_p3.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827A1FBA0AC200E4B808 /* ge_p1p1_to_p3.c */; };
+		CE6982E91FBA0AC300E4B808 /* ge_p3_dbl.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827B1FBA0AC200E4B808 /* ge_p3_dbl.c */; };
+		CE6982EA1FBA0AC300E4B808 /* d2.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69827C1FBA0AC200E4B808 /* d2.h */; };
+		CE6982EB1FBA0AC300E4B808 /* ge_p2_0.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827D1FBA0AC200E4B808 /* ge_p2_0.c */; };
+		CE6982EC1FBA0AC300E4B808 /* ge_sub.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827E1FBA0AC200E4B808 /* ge_sub.c */; };
+		CE6982ED1FBA0AC300E4B808 /* ge_scalarmult_base.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69827F1FBA0AC200E4B808 /* ge_scalarmult_base.c */; };
+		CE6982F61FBA112D00E4B808 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982F31FBA112C00E4B808 /* PrivateKey.swift */; };
+		CE6982F71FBA112D00E4B808 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982F41FBA112C00E4B808 /* KeyPair.swift */; };
+		CE6982F81FBA112D00E4B808 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982F51FBA112D00E4B808 /* PublicKey.swift */; };
+		CE6983021FBA118A00E4B808 /* SenderMessageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FA1FBA118A00E4B808 /* SenderMessageKey.swift */; };
+		CE6983031FBA118A00E4B808 /* RatchetRootKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FB1FBA118A00E4B808 /* RatchetRootKey.swift */; };
+		CE6983041FBA118A00E4B808 /* RatchetMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FC1FBA118A00E4B808 /* RatchetMessageKeys.swift */; };
+		CE6983051FBA118A00E4B808 /* SenderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FD1FBA118A00E4B808 /* SenderChain.swift */; };
+		CE6983061FBA118A00E4B808 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FE1FBA118A00E4B808 /* HKDF.swift */; };
+		CE6983071FBA118A00E4B808 /* RatchetChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6982FF1FBA118A00E4B808 /* RatchetChainKey.swift */; };
+		CE6983081FBA118A00E4B808 /* ReceiverChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983001FBA118A00E4B808 /* ReceiverChain.swift */; };
+		CE6983091FBA118A00E4B808 /* SenderChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983011FBA118A00E4B808 /* SenderChainKey.swift */; };
+		CE69830E1FBA11C400E4B808 /* SessionSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69830B1FBA11C400E4B808 /* SessionSignedPreKey.swift */; };
+		CE69830F1FBA11C400E4B808 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69830C1FBA11C400E4B808 /* SessionPreKey.swift */; };
+		CE6983101FBA11C400E4B808 /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69830D1FBA11C400E4B808 /* SessionPreKeyBundle.swift */; };
+		CE6983171FBA11F900E4B808 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983111FBA11F900E4B808 /* PendingPreKey.swift */; };
+		CE6983181FBA11F900E4B808 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983121FBA11F900E4B808 /* SessionRecord.swift */; };
+		CE6983191FBA11F900E4B808 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983131FBA11F900E4B808 /* SessionBuilder.swift */; };
+		CE69831A1FBA11F900E4B808 /* PendingKeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983141FBA11F900E4B808 /* PendingKeyExchange.swift */; };
+		CE69831B1FBA11F900E4B808 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983151FBA11F900E4B808 /* SessionState.swift */; };
+		CE69831C1FBA11F900E4B808 /* GroupSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983161FBA11F900E4B808 /* GroupSessionBuilder.swift */; };
+		CE6983231FBA124200E4B808 /* CipherTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69831E1FBA124100E4B808 /* CipherTextMessage.swift */; };
+		CE6983241FBA124200E4B808 /* SenderKeyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69831F1FBA124200E4B808 /* SenderKeyMessage.swift */; };
+		CE6983251FBA124200E4B808 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983201FBA124200E4B808 /* SignalMessage.swift */; };
+		CE6983261FBA124200E4B808 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983211FBA124200E4B808 /* SenderKeyDistributionMessage.swift */; };
+		CE6983271FBA124200E4B808 /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983221FBA124200E4B808 /* PreKeySignalMessage.swift */; };
+		CE69832C1FBA128100E4B808 /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983291FBA128100E4B808 /* FingerprintProtocol.pb.swift */; };
+		CE69832D1FBA128100E4B808 /* WhisperTextProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69832A1FBA128100E4B808 /* WhisperTextProtocol.pb.swift */; };
+		CE69832E1FBA128100E4B808 /* LocalStorageProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69832B1FBA128100E4B808 /* LocalStorageProtocol.pb.swift */; };
+		CE6983361FBA12BD00E4B808 /* SignedPrekeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983301FBA12BD00E4B808 /* SignedPrekeyStoreDelegate.swift */; };
+		CE6983371FBA12BD00E4B808 /* SessionStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983311FBA12BD00E4B808 /* SessionStoreDelegate.swift */; };
+		CE6983381FBA12BD00E4B808 /* SignalProtocolStoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983321FBA12BD00E4B808 /* SignalProtocolStoreContext.swift */; };
+		CE6983391FBA12BD00E4B808 /* PreKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983331FBA12BD00E4B808 /* PreKeyStoreDelegate.swift */; };
+		CE69833A1FBA12BD00E4B808 /* IdentityKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983341FBA12BD00E4B808 /* IdentityKeyStoreDelegate.swift */; };
+		CE69833B1FBA12BD00E4B808 /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983351FBA12BD00E4B808 /* SenderKeyStoreDelegate.swift */; };
+		CE6983461FBA132100E4B808 /* GroupCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69833F1FBA132000E4B808 /* GroupCipher.swift */; };
+		CE6983471FBA132100E4B808 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983401FBA132000E4B808 /* SignalCommonCrypto.swift */; };
+		CE6983481FBA132100E4B808 /* SessionCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983411FBA132000E4B808 /* SessionCipher.swift */; };
+		CE69834A1FBA132100E4B808 /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983431FBA132000E4B808 /* SignalCrypto.swift */; };
+		CE69834B1FBA132100E4B808 /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983441FBA132000E4B808 /* SenderKeyRecord.swift */; };
+		CE69834C1FBA132100E4B808 /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983451FBA132100E4B808 /* SenderKeyState.swift */; };
+		CE6983531FBA13D000E4B808 /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69834E1FBA13D000E4B808 /* Fingerprint.swift */; };
+		CE6983541FBA13D000E4B808 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69834F1FBA13D000E4B808 /* HelperFunctions.swift */; };
+		CE6983551FBA13D000E4B808 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983501FBA13D000E4B808 /* SignalError.swift */; };
+		CE6983561FBA13D000E4B808 /* SignalLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983511FBA13D000E4B808 /* SignalLog.swift */; };
+		CE6983571FBA13D000E4B808 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983521FBA13D000E4B808 /* ScannableFingerprint.swift */; };
+		EBE3BC23519F6F09C61850D9 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0767D4BE102A687C9F4352 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE6981F61FBA033800E4B808 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6981E21FBA033800E4B808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE6981EA1FBA033800E4B808;
+			remoteInfo = SignalProtocolSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03CCFA1A865CE5BF2526C310 /* Pods_SignalProtocolSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27A951193C13AC8420AE1668 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig"; sourceTree = "<group>"; };
+		300C90D4382C3F191B1415D5 /* Pods-SignalProtocolSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift/Pods-SignalProtocolSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		310BD5568C33B8EB3C186EFE /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig"; sourceTree = "<group>"; };
+		4C4F2CFC0C228142E7770B39 /* Pods-SignalProtocolSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		62CB6E9BE196FB74E162000F /* Pods-SignalProtocolSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		72CAA42A849271A16CF2F749 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8C0767D4BE102A687C9F4352 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F2B859B8E457B9C13FAD6E /* Pods_SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0BD500C6CC2F746519E4ED2 /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C8E8F4138ECFAE6F28C5A5EE /* Pods-SignalProtocolSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift/Pods-SignalProtocolSwift.release.xcconfig"; sourceTree = "<group>"; };
+		CA4C96893CCC6BD0890622A7 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE38B1B31FBA2FBD0014A6A8 /* ProtocolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolTests.swift; sourceTree = "<group>"; };
+		CE38B1B41FBA2FBD0014A6A8 /* TestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
+		CE38B1B51FBA2FBD0014A6A8 /* HKDFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKDFTests.swift; sourceTree = "<group>"; };
+		CE38B1B61FBA2FBE0014A6A8 /* CurveTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveTests.swift; sourceTree = "<group>"; };
+		CE38B1B71FBA2FBE0014A6A8 /* CompatibilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibilityTests.swift; sourceTree = "<group>"; };
+		CE38B1B91FBA2FBE0014A6A8 /* RatchetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetTests.swift; sourceTree = "<group>"; };
+		CE38B1BA1FBA2FBE0014A6A8 /* SessionRecordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecordTests.swift; sourceTree = "<group>"; };
+		CE38B1BB1FBA2FBE0014A6A8 /* TestFakeCryptoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestFakeCryptoProvider.swift; sourceTree = "<group>"; };
+		CE38B1BC1FBA2FBE0014A6A8 /* TestHelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelperFunctions.swift; sourceTree = "<group>"; };
+		CE38B1BD1FBA2FBE0014A6A8 /* GroupCipherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCipherTests.swift; sourceTree = "<group>"; };
+		CE38B1BE1FBA2FBE0014A6A8 /* FingerprintTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerprintTests.swift; sourceTree = "<group>"; };
+		CE38B1BF1FBA2FBE0014A6A8 /* KeyHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyHelperTests.swift; sourceTree = "<group>"; };
+		CE38B1C01FBA2FBF0014A6A8 /* DeviceConsistencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConsistencyTests.swift; sourceTree = "<group>"; };
+		CE38B1C11FBA2FBF0014A6A8 /* SessionCipherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCipherTests.swift; sourceTree = "<group>"; };
+		CE38B1C21FBA2FBF0014A6A8 /* SessionBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionBuilderTests.swift; sourceTree = "<group>"; };
+		CE38B1C31FBA2FBF0014A6A8 /* SenderKeyRecordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyRecordTests.swift; sourceTree = "<group>"; };
+		CE38B1D51FBA31F30014A6A8 /* DeviceConsistency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConsistency.swift; sourceTree = "<group>"; };
+		CE38B2821FBA38B60014A6A8 /* SignalProtocolSwiftMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocolSwiftMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE38B2831FBA38B60014A6A8 /* macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "macOS-Info.plist"; path = "/Users/User/Development/Xcode/SignalProtocolSwift/macOS-Info.plist"; sourceTree = "<absolute>"; };
+		CE6981EB1FBA033800E4B808 /* SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6981EE1FBA033800E4B808 /* SignalProtocolSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalProtocolSwift.h; sourceTree = "<group>"; };
+		CE6981EF1FBA033800E4B808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE6981F41FBA033800E4B808 /* SignalProtocolSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalProtocolSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6981F91FBA033800E4B808 /* SignalProtocolSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalProtocolSwiftTests.swift; sourceTree = "<group>"; };
+		CE6981FB1FBA033800E4B808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE6982081FBA0A4100E4B808 /* curve25519-donna.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "curve25519-donna.c"; sourceTree = "<group>"; };
+		CE6982091FBA0A4100E4B808 /* curve25519-donna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "curve25519-donna.h"; sourceTree = "<group>"; };
+		CE69820D1FBA0ABB00E4B808 /* sqrtm1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqrtm1.h; sourceTree = "<group>"; };
+		CE69820F1FBA0ABB00E4B808 /* internal_fast_tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internal_fast_tests.h; sourceTree = "<group>"; };
+		CE6982101FBA0ABB00E4B808 /* internal_slow_tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internal_slow_tests.h; sourceTree = "<group>"; };
+		CE6982111FBA0ABB00E4B808 /* internal_slow_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = internal_slow_tests.c; sourceTree = "<group>"; };
+		CE6982121FBA0ABB00E4B808 /* internal_fast_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = internal_fast_tests.c; sourceTree = "<group>"; };
+		CE6982131FBA0ABB00E4B808 /* ge_madd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ge_madd.h; sourceTree = "<group>"; };
+		CE6982141FBA0ABB00E4B808 /* fe_tobytes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_tobytes.c; sourceTree = "<group>"; };
+		CE6982151FBA0ABB00E4B808 /* fe_sq2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_sq2.c; sourceTree = "<group>"; };
+		CE6982161FBA0ABB00E4B808 /* sc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc.h; sourceTree = "<group>"; };
+		CE6982171FBA0ABB00E4B808 /* base2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base2.h; sourceTree = "<group>"; };
+		CE6982181FBA0ABB00E4B808 /* base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base.h; sourceTree = "<group>"; };
+		CE6982191FBA0ABB00E4B808 /* ge_p3_tobytes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p3_tobytes.c; sourceTree = "<group>"; };
+		CE69821A1FBA0ABB00E4B808 /* ge_tobytes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_tobytes.c; sourceTree = "<group>"; };
+		CE69821B1FBA0ABC00E4B808 /* fe_copy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_copy.c; sourceTree = "<group>"; };
+		CE69821C1FBA0ABC00E4B808 /* ge_madd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_madd.c; sourceTree = "<group>"; };
+		CE69821D1FBA0ABC00E4B808 /* ge_msub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ge_msub.h; sourceTree = "<group>"; };
+		CE69821E1FBA0ABC00E4B808 /* fe_add.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_add.c; sourceTree = "<group>"; };
+		CE69821F1FBA0ABC00E4B808 /* ge_frombytes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_frombytes.c; sourceTree = "<group>"; };
+		CE6982201FBA0ABC00E4B808 /* fe_isnegative.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_isnegative.c; sourceTree = "<group>"; };
+		CE6982211FBA0ABC00E4B808 /* fe_mul.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_mul.c; sourceTree = "<group>"; };
+		CE6982221FBA0ABC00E4B808 /* ge_add.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_add.c; sourceTree = "<group>"; };
+		CE6982231FBA0ABD00E4B808 /* ge_p1p1_to_p2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p1p1_to_p2.c; sourceTree = "<group>"; };
+		CE6982241FBA0ABD00E4B808 /* ge_sub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ge_sub.h; sourceTree = "<group>"; };
+		CE6982251FBA0ABD00E4B808 /* d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = d.h; sourceTree = "<group>"; };
+		CE6982261FBA0ABD00E4B808 /* fe_sq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_sq.c; sourceTree = "<group>"; };
+		CE6982271FBA0ABD00E4B808 /* fe_frombytes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_frombytes.c; sourceTree = "<group>"; };
+		CE6982281FBA0ABD00E4B808 /* ge_p2_dbl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ge_p2_dbl.h; sourceTree = "<group>"; };
+		CE6982291FBA0ABD00E4B808 /* fe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fe.h; sourceTree = "<group>"; };
+		CE69822B1FBA0ABE00E4B808 /* sc_neg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sc_neg.c; sourceTree = "<group>"; };
+		CE69822C1FBA0ABE00E4B808 /* zeroize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zeroize.h; sourceTree = "<group>"; };
+		CE69822D1FBA0ABE00E4B808 /* compare.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compare.c; sourceTree = "<group>"; };
+		CE69822E1FBA0ABE00E4B808 /* sc_clamp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sc_clamp.c; sourceTree = "<group>"; };
+		CE69822F1FBA0ABE00E4B808 /* fe_montx_to_edy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_montx_to_edy.c; sourceTree = "<group>"; };
+		CE6982301FBA0ABE00E4B808 /* sc_cmov.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sc_cmov.c; sourceTree = "<group>"; };
+		CE6982311FBA0ABE00E4B808 /* keygen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keygen.c; sourceTree = "<group>"; };
+		CE6982321FBA0ABE00E4B808 /* crypto_hash_sha512.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_hash_sha512.h; sourceTree = "<group>"; };
+		CE6982331FBA0ABE00E4B808 /* fe_mont_rhs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_mont_rhs.c; sourceTree = "<group>"; };
+		CE6982341FBA0ABE00E4B808 /* ge_neg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_neg.c; sourceTree = "<group>"; };
+		CE6982351FBA0ABE00E4B808 /* curve_sigs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = curve_sigs.c; sourceTree = "<group>"; };
+		CE6982371FBA0ABE00E4B808 /* gen_constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gen_constants.h; sourceTree = "<group>"; };
+		CE6982381FBA0ABE00E4B808 /* gen_x.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gen_x.c; sourceTree = "<group>"; };
+		CE6982391FBA0ABE00E4B808 /* gen_eddsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gen_eddsa.h; sourceTree = "<group>"; };
+		CE69823A1FBA0ABE00E4B808 /* gen_veddsa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gen_veddsa.c; sourceTree = "<group>"; };
+		CE69823B1FBA0ABE00E4B808 /* gen_crypto_additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gen_crypto_additions.h; sourceTree = "<group>"; };
+		CE69823C1FBA0ABE00E4B808 /* ge_p3_add.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p3_add.c; sourceTree = "<group>"; };
+		CE69823D1FBA0ABE00E4B808 /* gen_labelset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gen_labelset.c; sourceTree = "<group>"; };
+		CE69823E1FBA0ABE00E4B808 /* gen_veddsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gen_veddsa.h; sourceTree = "<group>"; };
+		CE69823F1FBA0ABE00E4B808 /* gen_x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gen_x.h; sourceTree = "<group>"; };
+		CE6982401FBA0ABE00E4B808 /* gen_eddsa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gen_eddsa.c; sourceTree = "<group>"; };
+		CE6982411FBA0ABE00E4B808 /* point_isreduced.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = point_isreduced.c; sourceTree = "<group>"; };
+		CE6982421FBA0ABE00E4B808 /* gen_labelset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gen_labelset.h; sourceTree = "<group>"; };
+		CE6982431FBA0ABE00E4B808 /* sc_isreduced.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sc_isreduced.c; sourceTree = "<group>"; };
+		CE6982441FBA0ABE00E4B808 /* utility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utility.c; sourceTree = "<group>"; };
+		CE6982451FBA0ABE00E4B808 /* fe_isequal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_isequal.c; sourceTree = "<group>"; };
+		CE6982461FBA0ABE00E4B808 /* ge_montx_to_p3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_montx_to_p3.c; sourceTree = "<group>"; };
+		CE6982471FBA0ABE00E4B808 /* xeddsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xeddsa.h; sourceTree = "<group>"; };
+		CE6982481FBA0ABE00E4B808 /* sign_modified.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sign_modified.c; sourceTree = "<group>"; };
+		CE6982491FBA0ABE00E4B808 /* ge_scalarmult.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_scalarmult.c; sourceTree = "<group>"; };
+		CE69824A1FBA0ABE00E4B808 /* keygen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keygen.h; sourceTree = "<group>"; };
+		CE69824B1FBA0ABE00E4B808 /* ge_scalarmult_cofactor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_scalarmult_cofactor.c; sourceTree = "<group>"; };
+		CE69824C1FBA0ABE00E4B808 /* compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare.h; sourceTree = "<group>"; };
+		CE69824D1FBA0ABE00E4B808 /* zeroize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zeroize.c; sourceTree = "<group>"; };
+		CE69824E1FBA0ABE00E4B808 /* fe_sqrt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_sqrt.c; sourceTree = "<group>"; };
+		CE69824F1FBA0ABE00E4B808 /* curve_sigs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curve_sigs.h; sourceTree = "<group>"; };
+		CE6982501FBA0ABE00E4B808 /* ge_isneutral.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_isneutral.c; sourceTree = "<group>"; };
+		CE6982511FBA0ABE00E4B808 /* elligator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = elligator.c; sourceTree = "<group>"; };
+		CE6982521FBA0ABE00E4B808 /* xeddsa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xeddsa.c; sourceTree = "<group>"; };
+		CE6982531FBA0ABE00E4B808 /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
+		CE6982541FBA0ABE00E4B808 /* open_modified.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = open_modified.c; sourceTree = "<group>"; };
+		CE6982551FBA0ABE00E4B808 /* fe_isreduced.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_isreduced.c; sourceTree = "<group>"; };
+		CE6982561FBA0ABE00E4B808 /* crypto_additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_additions.h; sourceTree = "<group>"; };
+		CE6982571FBA0ABE00E4B808 /* ge_p3_to_montx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p3_to_montx.c; sourceTree = "<group>"; };
+		CE6982581FBA0ABE00E4B808 /* ge_p3_to_cached.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p3_to_cached.c; sourceTree = "<group>"; };
+		CE6982591FBA0ABE00E4B808 /* fe_neg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_neg.c; sourceTree = "<group>"; };
+		CE69825A1FBA0ABE00E4B808 /* ge_msub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_msub.c; sourceTree = "<group>"; };
+		CE69825B1FBA0ABE00E4B808 /* fe_0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_0.c; sourceTree = "<group>"; };
+		CE69825C1FBA0ABE00E4B808 /* fe_1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_1.c; sourceTree = "<group>"; };
+		CE69825E1FBA0ABF00E4B808 /* blocks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blocks.c; sourceTree = "<group>"; };
+		CE69825F1FBA0ABF00E4B808 /* hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hash.c; sourceTree = "<group>"; };
+		CE6982601FBA0ABF00E4B808 /* fe_invert.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_invert.c; sourceTree = "<group>"; };
+		CE6982611FBA0ABF00E4B808 /* fe_pow22523.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_pow22523.c; sourceTree = "<group>"; };
+		CE6982621FBA0ABF00E4B808 /* fe_sub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_sub.c; sourceTree = "<group>"; };
+		CE6982631FBA0ABF00E4B808 /* ge_add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ge_add.h; sourceTree = "<group>"; };
+		CE6982641FBA0ABF00E4B808 /* ge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ge.h; sourceTree = "<group>"; };
+		CE6982651FBA0AC000E4B808 /* fe_cmov.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_cmov.c; sourceTree = "<group>"; };
+		CE6982661FBA0AC000E4B808 /* pow22523.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pow22523.h; sourceTree = "<group>"; };
+		CE6982671FBA0AC000E4B808 /* open.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = open.c; sourceTree = "<group>"; };
+		CE6982681FBA0AC000E4B808 /* sign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sign.c; sourceTree = "<group>"; };
+		CE6982691FBA0AC000E4B808 /* ge_p2_dbl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p2_dbl.c; sourceTree = "<group>"; };
+		CE69826A1FBA0AC000E4B808 /* ge_precomp_0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_precomp_0.c; sourceTree = "<group>"; };
+		CE69826B1FBA0AC000E4B808 /* sc_muladd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sc_muladd.c; sourceTree = "<group>"; };
+		CE69826D1FBA0AC100E4B808 /* crypto_uint32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_uint32.h; sourceTree = "<group>"; };
+		CE69826E1FBA0AC100E4B808 /* crypto_int32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_int32.h; sourceTree = "<group>"; };
+		CE69826F1FBA0AC100E4B808 /* crypto_sign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_sign.h; sourceTree = "<group>"; };
+		CE6982701FBA0AC100E4B808 /* crypto_verify_32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_verify_32.h; sourceTree = "<group>"; };
+		CE6982711FBA0AC100E4B808 /* crypto_int64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_int64.h; sourceTree = "<group>"; };
+		CE6982721FBA0AC100E4B808 /* crypto_uint64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_uint64.h; sourceTree = "<group>"; };
+		CE6982731FBA0AC100E4B808 /* crypto_sign_edwards25519sha512batch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_sign_edwards25519sha512batch.h; sourceTree = "<group>"; };
+		CE6982741FBA0AC100E4B808 /* ge_double_scalarmult.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_double_scalarmult.c; sourceTree = "<group>"; };
+		CE6982751FBA0AC100E4B808 /* pow225521.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pow225521.h; sourceTree = "<group>"; };
+		CE6982761FBA0AC100E4B808 /* sc_reduce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sc_reduce.c; sourceTree = "<group>"; };
+		CE6982771FBA0AC100E4B808 /* ge_p3_0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p3_0.c; sourceTree = "<group>"; };
+		CE6982781FBA0AC100E4B808 /* fe_isnonzero.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe_isnonzero.c; sourceTree = "<group>"; };
+		CE6982791FBA0AC200E4B808 /* ge_p3_to_p2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p3_to_p2.c; sourceTree = "<group>"; };
+		CE69827A1FBA0AC200E4B808 /* ge_p1p1_to_p3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p1p1_to_p3.c; sourceTree = "<group>"; };
+		CE69827B1FBA0AC200E4B808 /* ge_p3_dbl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p3_dbl.c; sourceTree = "<group>"; };
+		CE69827C1FBA0AC200E4B808 /* d2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = d2.h; sourceTree = "<group>"; };
+		CE69827D1FBA0AC200E4B808 /* ge_p2_0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_p2_0.c; sourceTree = "<group>"; };
+		CE69827E1FBA0AC200E4B808 /* ge_sub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_sub.c; sourceTree = "<group>"; };
+		CE69827F1FBA0AC200E4B808 /* ge_scalarmult_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge_scalarmult_base.c; sourceTree = "<group>"; };
+		CE6982F31FBA112C00E4B808 /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		CE6982F41FBA112C00E4B808 /* KeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
+		CE6982F51FBA112D00E4B808 /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		CE6982FA1FBA118A00E4B808 /* SenderMessageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderMessageKey.swift; sourceTree = "<group>"; };
+		CE6982FB1FBA118A00E4B808 /* RatchetRootKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetRootKey.swift; sourceTree = "<group>"; };
+		CE6982FC1FBA118A00E4B808 /* RatchetMessageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetMessageKeys.swift; sourceTree = "<group>"; };
+		CE6982FD1FBA118A00E4B808 /* SenderChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderChain.swift; sourceTree = "<group>"; };
+		CE6982FE1FBA118A00E4B808 /* HKDF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKDF.swift; sourceTree = "<group>"; };
+		CE6982FF1FBA118A00E4B808 /* RatchetChainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetChainKey.swift; sourceTree = "<group>"; };
+		CE6983001FBA118A00E4B808 /* ReceiverChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverChain.swift; sourceTree = "<group>"; };
+		CE6983011FBA118A00E4B808 /* SenderChainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderChainKey.swift; sourceTree = "<group>"; };
+		CE69830B1FBA11C400E4B808 /* SessionSignedPreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionSignedPreKey.swift; sourceTree = "<group>"; };
+		CE69830C1FBA11C400E4B808 /* SessionPreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionPreKey.swift; sourceTree = "<group>"; };
+		CE69830D1FBA11C400E4B808 /* SessionPreKeyBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionPreKeyBundle.swift; sourceTree = "<group>"; };
+		CE6983111FBA11F900E4B808 /* PendingPreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingPreKey.swift; sourceTree = "<group>"; };
+		CE6983121FBA11F900E4B808 /* SessionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecord.swift; sourceTree = "<group>"; };
+		CE6983131FBA11F900E4B808 /* SessionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionBuilder.swift; sourceTree = "<group>"; };
+		CE6983141FBA11F900E4B808 /* PendingKeyExchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingKeyExchange.swift; sourceTree = "<group>"; };
+		CE6983151FBA11F900E4B808 /* SessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
+		CE6983161FBA11F900E4B808 /* GroupSessionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSessionBuilder.swift; sourceTree = "<group>"; };
+		CE69831E1FBA124100E4B808 /* CipherTextMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CipherTextMessage.swift; sourceTree = "<group>"; };
+		CE69831F1FBA124200E4B808 /* SenderKeyMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyMessage.swift; sourceTree = "<group>"; };
+		CE6983201FBA124200E4B808 /* SignalMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalMessage.swift; sourceTree = "<group>"; };
+		CE6983211FBA124200E4B808 /* SenderKeyDistributionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyDistributionMessage.swift; sourceTree = "<group>"; };
+		CE6983221FBA124200E4B808 /* PreKeySignalMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKeySignalMessage.swift; sourceTree = "<group>"; };
+		CE6983291FBA128100E4B808 /* FingerprintProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FingerprintProtocol.pb.swift; path = ProtocolBuffers/FingerprintProtocol.pb.swift; sourceTree = SOURCE_ROOT; };
+		CE69832A1FBA128100E4B808 /* WhisperTextProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhisperTextProtocol.pb.swift; path = ProtocolBuffers/WhisperTextProtocol.pb.swift; sourceTree = SOURCE_ROOT; };
+		CE69832B1FBA128100E4B808 /* LocalStorageProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalStorageProtocol.pb.swift; path = ProtocolBuffers/LocalStorageProtocol.pb.swift; sourceTree = SOURCE_ROOT; };
+		CE6983301FBA12BD00E4B808 /* SignedPrekeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedPrekeyStoreDelegate.swift; sourceTree = "<group>"; };
+		CE6983311FBA12BD00E4B808 /* SessionStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStoreDelegate.swift; sourceTree = "<group>"; };
+		CE6983321FBA12BD00E4B808 /* SignalProtocolStoreContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocolStoreContext.swift; sourceTree = "<group>"; };
+		CE6983331FBA12BD00E4B808 /* PreKeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKeyStoreDelegate.swift; sourceTree = "<group>"; };
+		CE6983341FBA12BD00E4B808 /* IdentityKeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityKeyStoreDelegate.swift; sourceTree = "<group>"; };
+		CE6983351FBA12BD00E4B808 /* SenderKeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyStoreDelegate.swift; sourceTree = "<group>"; };
+		CE69833F1FBA132000E4B808 /* GroupCipher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCipher.swift; sourceTree = "<group>"; };
+		CE6983401FBA132000E4B808 /* SignalCommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCommonCrypto.swift; sourceTree = "<group>"; };
+		CE6983411FBA132000E4B808 /* SessionCipher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCipher.swift; sourceTree = "<group>"; };
+		CE6983431FBA132000E4B808 /* SignalCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCrypto.swift; sourceTree = "<group>"; };
+		CE6983441FBA132000E4B808 /* SenderKeyRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyRecord.swift; sourceTree = "<group>"; };
+		CE6983451FBA132100E4B808 /* SenderKeyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyState.swift; sourceTree = "<group>"; };
+		CE69834E1FBA13D000E4B808 /* Fingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fingerprint.swift; sourceTree = "<group>"; };
+		CE69834F1FBA13D000E4B808 /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		CE6983501FBA13D000E4B808 /* SignalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalError.swift; sourceTree = "<group>"; };
+		CE6983511FBA13D000E4B808 /* SignalLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalLog.swift; sourceTree = "<group>"; };
+		CE6983521FBA13D000E4B808 /* ScannableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannableFingerprint.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE38B2521FBA38B60014A6A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE38B2531FBA38B60014A6A8 /* Pods_SignalProtocolSwift.framework in Frameworks */,
+				EBE3BC23519F6F09C61850D9 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6981E71FBA033800E4B808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				206ED32B3C747657794774AD /* Pods_SignalProtocolSwift.framework in Frameworks */,
+				6ED31039AEA1F8E044773701 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6981F11FBA033800E4B808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6981F51FBA033800E4B808 /* SignalProtocolSwift.framework in Frameworks */,
+				258DD95D5BCF1D55B78C3C0A /* Pods_SignalProtocolSwiftTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1355E7AAA6B6FEF0E8B604E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96F2B859B8E457B9C13FAD6E /* Pods_SignalProtocolSwift.framework */,
+				03CCFA1A865CE5BF2526C310 /* Pods_SignalProtocolSwiftTests.framework */,
+				CA4C96893CCC6BD0890622A7 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework */,
+				8C0767D4BE102A687C9F4352 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B8173CD8C5D4984379D9865 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				300C90D4382C3F191B1415D5 /* Pods-SignalProtocolSwift.debug.xcconfig */,
+				C8E8F4138ECFAE6F28C5A5EE /* Pods-SignalProtocolSwift.release.xcconfig */,
+				62CB6E9BE196FB74E162000F /* Pods-SignalProtocolSwiftTests.debug.xcconfig */,
+				4C4F2CFC0C228142E7770B39 /* Pods-SignalProtocolSwiftTests.release.xcconfig */,
+				72CAA42A849271A16CF2F749 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig */,
+				27A951193C13AC8420AE1668 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig */,
+				C0BD500C6CC2F746519E4ED2 /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig */,
+				310BD5568C33B8EB3C186EFE /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE6981E11FBA033800E4B808 = {
+			isa = PBXGroup;
+			children = (
+				CE6981ED1FBA033800E4B808 /* SignalProtocolSwift */,
+				CE6981F81FBA033800E4B808 /* SignalProtocolSwiftTests */,
+				CE6981EC1FBA033800E4B808 /* Products */,
+				5B8173CD8C5D4984379D9865 /* Pods */,
+				1355E7AAA6B6FEF0E8B604E4 /* Frameworks */,
+				CE38B2831FBA38B60014A6A8 /* macOS-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		CE6981EC1FBA033800E4B808 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE6981EB1FBA033800E4B808 /* SignalProtocolSwift.framework */,
+				CE6981F41FBA033800E4B808 /* SignalProtocolSwiftTests.xctest */,
+				CE38B2821FBA38B60014A6A8 /* SignalProtocolSwiftMacOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE6981ED1FBA033800E4B808 /* SignalProtocolSwift */ = {
+			isa = PBXGroup;
+			children = (
+				CE6981EF1FBA033800E4B808 /* Info.plist */,
+				CE6981EE1FBA033800E4B808 /* SignalProtocolSwift.h */,
+				CE69834D1FBA134800E4B808 /* Additional */,
+				CE6982071FBA0A1100E4B808 /* Curve25519 */,
+				CE6982F21FBA111400E4B808 /* EllipticKeys */,
+				CE69833E1FBA12E000E4B808 /* Encryption */,
+				CE69832F1FBA129300E4B808 /* LocalStorage */,
+				CE69831D1FBA121700E4B808 /* MessageExchange */,
+				CE6983281FBA126000E4B808 /* ProtocolBuffers */,
+				CE6982F91FBA114700E4B808 /* Ratchet */,
+				CE69830A1FBA119E00E4B808 /* Session */,
+			);
+			path = SignalProtocolSwift;
+			sourceTree = "<group>";
+		};
+		CE6981F81FBA033800E4B808 /* SignalProtocolSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE38B1B71FBA2FBE0014A6A8 /* CompatibilityTests.swift */,
+				CE38B1B61FBA2FBE0014A6A8 /* CurveTests.swift */,
+				CE38B1C01FBA2FBF0014A6A8 /* DeviceConsistencyTests.swift */,
+				CE38B1BE1FBA2FBE0014A6A8 /* FingerprintTests.swift */,
+				CE38B1BD1FBA2FBE0014A6A8 /* GroupCipherTests.swift */,
+				CE38B1B51FBA2FBD0014A6A8 /* HKDFTests.swift */,
+				CE6981FB1FBA033800E4B808 /* Info.plist */,
+				CE38B1BF1FBA2FBE0014A6A8 /* KeyHelperTests.swift */,
+				CE38B1B31FBA2FBD0014A6A8 /* ProtocolTests.swift */,
+				CE38B1B91FBA2FBE0014A6A8 /* RatchetTests.swift */,
+				CE38B1C31FBA2FBF0014A6A8 /* SenderKeyRecordTests.swift */,
+				CE38B1C21FBA2FBF0014A6A8 /* SessionBuilderTests.swift */,
+				CE38B1C11FBA2FBF0014A6A8 /* SessionCipherTests.swift */,
+				CE38B1BA1FBA2FBE0014A6A8 /* SessionRecordTests.swift */,
+				CE6981F91FBA033800E4B808 /* SignalProtocolSwiftTests.swift */,
+				CE38B1BB1FBA2FBE0014A6A8 /* TestFakeCryptoProvider.swift */,
+				CE38B1BC1FBA2FBE0014A6A8 /* TestHelperFunctions.swift */,
+				CE38B1B41FBA2FBD0014A6A8 /* TestStore.swift */,
+			);
+			path = SignalProtocolSwiftTests;
+			sourceTree = "<group>";
+		};
+		CE6982071FBA0A1100E4B808 /* Curve25519 */ = {
+			isa = PBXGroup;
+			children = (
+				CE69820C1FBA0A9F00E4B808 /* Ed25519 */,
+				CE6982081FBA0A4100E4B808 /* curve25519-donna.c */,
+				CE6982091FBA0A4100E4B808 /* curve25519-donna.h */,
+			);
+			path = Curve25519;
+			sourceTree = "<group>";
+		};
+		CE69820C1FBA0A9F00E4B808 /* Ed25519 */ = {
+			isa = PBXGroup;
+			children = (
+				CE69822A1FBA0ABE00E4B808 /* additions */,
+				CE6982181FBA0ABB00E4B808 /* base.h */,
+				CE6982171FBA0ABB00E4B808 /* base2.h */,
+				CE6982251FBA0ABD00E4B808 /* d.h */,
+				CE69827C1FBA0AC200E4B808 /* d2.h */,
+				CE69825B1FBA0ABE00E4B808 /* fe_0.c */,
+				CE69825C1FBA0ABE00E4B808 /* fe_1.c */,
+				CE69821E1FBA0ABC00E4B808 /* fe_add.c */,
+				CE6982651FBA0AC000E4B808 /* fe_cmov.c */,
+				CE69821B1FBA0ABC00E4B808 /* fe_copy.c */,
+				CE6982271FBA0ABD00E4B808 /* fe_frombytes.c */,
+				CE6982601FBA0ABF00E4B808 /* fe_invert.c */,
+				CE6982201FBA0ABC00E4B808 /* fe_isnegative.c */,
+				CE6982781FBA0AC100E4B808 /* fe_isnonzero.c */,
+				CE6982211FBA0ABC00E4B808 /* fe_mul.c */,
+				CE6982591FBA0ABE00E4B808 /* fe_neg.c */,
+				CE6982611FBA0ABF00E4B808 /* fe_pow22523.c */,
+				CE6982261FBA0ABD00E4B808 /* fe_sq.c */,
+				CE6982151FBA0ABB00E4B808 /* fe_sq2.c */,
+				CE6982621FBA0ABF00E4B808 /* fe_sub.c */,
+				CE6982141FBA0ABB00E4B808 /* fe_tobytes.c */,
+				CE6982291FBA0ABD00E4B808 /* fe.h */,
+				CE6982221FBA0ABC00E4B808 /* ge_add.c */,
+				CE6982631FBA0ABF00E4B808 /* ge_add.h */,
+				CE6982741FBA0AC100E4B808 /* ge_double_scalarmult.c */,
+				CE69821F1FBA0ABC00E4B808 /* ge_frombytes.c */,
+				CE69821C1FBA0ABC00E4B808 /* ge_madd.c */,
+				CE6982131FBA0ABB00E4B808 /* ge_madd.h */,
+				CE69825A1FBA0ABE00E4B808 /* ge_msub.c */,
+				CE69821D1FBA0ABC00E4B808 /* ge_msub.h */,
+				CE6982231FBA0ABD00E4B808 /* ge_p1p1_to_p2.c */,
+				CE69827A1FBA0AC200E4B808 /* ge_p1p1_to_p3.c */,
+				CE69827D1FBA0AC200E4B808 /* ge_p2_0.c */,
+				CE6982691FBA0AC000E4B808 /* ge_p2_dbl.c */,
+				CE6982281FBA0ABD00E4B808 /* ge_p2_dbl.h */,
+				CE6982771FBA0AC100E4B808 /* ge_p3_0.c */,
+				CE69827B1FBA0AC200E4B808 /* ge_p3_dbl.c */,
+				CE6982581FBA0ABE00E4B808 /* ge_p3_to_cached.c */,
+				CE6982791FBA0AC200E4B808 /* ge_p3_to_p2.c */,
+				CE6982191FBA0ABB00E4B808 /* ge_p3_tobytes.c */,
+				CE69826A1FBA0AC000E4B808 /* ge_precomp_0.c */,
+				CE69827F1FBA0AC200E4B808 /* ge_scalarmult_base.c */,
+				CE69827E1FBA0AC200E4B808 /* ge_sub.c */,
+				CE6982241FBA0ABD00E4B808 /* ge_sub.h */,
+				CE69821A1FBA0ABB00E4B808 /* ge_tobytes.c */,
+				CE6982641FBA0ABF00E4B808 /* ge.h */,
+				CE69826C1FBA0AC100E4B808 /* nacl_includes */,
+				CE69825D1FBA0ABF00E4B808 /* nacl_sha512 */,
+				CE6982671FBA0AC000E4B808 /* open.c */,
+				CE6982661FBA0AC000E4B808 /* pow22523.h */,
+				CE6982751FBA0AC100E4B808 /* pow225521.h */,
+				CE69826B1FBA0AC000E4B808 /* sc_muladd.c */,
+				CE6982761FBA0AC100E4B808 /* sc_reduce.c */,
+				CE6982161FBA0ABB00E4B808 /* sc.h */,
+				CE6982681FBA0AC000E4B808 /* sign.c */,
+				CE69820D1FBA0ABB00E4B808 /* sqrtm1.h */,
+				CE69820E1FBA0ABB00E4B808 /* tests */,
+			);
+			path = Ed25519;
+			sourceTree = "<group>";
+		};
+		CE69820E1FBA0ABB00E4B808 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				CE6982121FBA0ABB00E4B808 /* internal_fast_tests.c */,
+				CE69820F1FBA0ABB00E4B808 /* internal_fast_tests.h */,
+				CE6982111FBA0ABB00E4B808 /* internal_slow_tests.c */,
+				CE6982101FBA0ABB00E4B808 /* internal_slow_tests.h */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		CE69822A1FBA0ABE00E4B808 /* additions */ = {
+			isa = PBXGroup;
+			children = (
+				CE69822D1FBA0ABE00E4B808 /* compare.c */,
+				CE69824C1FBA0ABE00E4B808 /* compare.h */,
+				CE6982561FBA0ABE00E4B808 /* crypto_additions.h */,
+				CE6982321FBA0ABE00E4B808 /* crypto_hash_sha512.h */,
+				CE6982351FBA0ABE00E4B808 /* curve_sigs.c */,
+				CE69824F1FBA0ABE00E4B808 /* curve_sigs.h */,
+				CE6982511FBA0ABE00E4B808 /* elligator.c */,
+				CE6982451FBA0ABE00E4B808 /* fe_isequal.c */,
+				CE6982551FBA0ABE00E4B808 /* fe_isreduced.c */,
+				CE6982331FBA0ABE00E4B808 /* fe_mont_rhs.c */,
+				CE69822F1FBA0ABE00E4B808 /* fe_montx_to_edy.c */,
+				CE69824E1FBA0ABE00E4B808 /* fe_sqrt.c */,
+				CE6982501FBA0ABE00E4B808 /* ge_isneutral.c */,
+				CE6982461FBA0ABE00E4B808 /* ge_montx_to_p3.c */,
+				CE6982341FBA0ABE00E4B808 /* ge_neg.c */,
+				CE6982571FBA0ABE00E4B808 /* ge_p3_to_montx.c */,
+				CE69824B1FBA0ABE00E4B808 /* ge_scalarmult_cofactor.c */,
+				CE6982491FBA0ABE00E4B808 /* ge_scalarmult.c */,
+				CE6982361FBA0ABE00E4B808 /* generalized */,
+				CE6982311FBA0ABE00E4B808 /* keygen.c */,
+				CE69824A1FBA0ABE00E4B808 /* keygen.h */,
+				CE6982541FBA0ABE00E4B808 /* open_modified.c */,
+				CE69822E1FBA0ABE00E4B808 /* sc_clamp.c */,
+				CE6982301FBA0ABE00E4B808 /* sc_cmov.c */,
+				CE69822B1FBA0ABE00E4B808 /* sc_neg.c */,
+				CE6982481FBA0ABE00E4B808 /* sign_modified.c */,
+				CE6982441FBA0ABE00E4B808 /* utility.c */,
+				CE6982531FBA0ABE00E4B808 /* utility.h */,
+				CE6982521FBA0ABE00E4B808 /* xeddsa.c */,
+				CE6982471FBA0ABE00E4B808 /* xeddsa.h */,
+				CE69824D1FBA0ABE00E4B808 /* zeroize.c */,
+				CE69822C1FBA0ABE00E4B808 /* zeroize.h */,
+			);
+			path = additions;
+			sourceTree = "<group>";
+		};
+		CE6982361FBA0ABE00E4B808 /* generalized */ = {
+			isa = PBXGroup;
+			children = (
+				CE69823C1FBA0ABE00E4B808 /* ge_p3_add.c */,
+				CE6982371FBA0ABE00E4B808 /* gen_constants.h */,
+				CE69823B1FBA0ABE00E4B808 /* gen_crypto_additions.h */,
+				CE6982401FBA0ABE00E4B808 /* gen_eddsa.c */,
+				CE6982391FBA0ABE00E4B808 /* gen_eddsa.h */,
+				CE69823D1FBA0ABE00E4B808 /* gen_labelset.c */,
+				CE6982421FBA0ABE00E4B808 /* gen_labelset.h */,
+				CE69823A1FBA0ABE00E4B808 /* gen_veddsa.c */,
+				CE69823E1FBA0ABE00E4B808 /* gen_veddsa.h */,
+				CE6982381FBA0ABE00E4B808 /* gen_x.c */,
+				CE69823F1FBA0ABE00E4B808 /* gen_x.h */,
+				CE6982411FBA0ABE00E4B808 /* point_isreduced.c */,
+				CE6982431FBA0ABE00E4B808 /* sc_isreduced.c */,
+			);
+			path = generalized;
+			sourceTree = "<group>";
+		};
+		CE69825D1FBA0ABF00E4B808 /* nacl_sha512 */ = {
+			isa = PBXGroup;
+			children = (
+				CE69825E1FBA0ABF00E4B808 /* blocks.c */,
+				CE69825F1FBA0ABF00E4B808 /* hash.c */,
+			);
+			path = nacl_sha512;
+			sourceTree = "<group>";
+		};
+		CE69826C1FBA0AC100E4B808 /* nacl_includes */ = {
+			isa = PBXGroup;
+			children = (
+				CE69826D1FBA0AC100E4B808 /* crypto_uint32.h */,
+				CE69826E1FBA0AC100E4B808 /* crypto_int32.h */,
+				CE69826F1FBA0AC100E4B808 /* crypto_sign.h */,
+				CE6982701FBA0AC100E4B808 /* crypto_verify_32.h */,
+				CE6982711FBA0AC100E4B808 /* crypto_int64.h */,
+				CE6982721FBA0AC100E4B808 /* crypto_uint64.h */,
+				CE6982731FBA0AC100E4B808 /* crypto_sign_edwards25519sha512batch.h */,
+			);
+			path = nacl_includes;
+			sourceTree = "<group>";
+		};
+		CE6982F21FBA111400E4B808 /* EllipticKeys */ = {
+			isa = PBXGroup;
+			children = (
+				CE6982F41FBA112C00E4B808 /* KeyPair.swift */,
+				CE6982F31FBA112C00E4B808 /* PrivateKey.swift */,
+				CE6982F51FBA112D00E4B808 /* PublicKey.swift */,
+			);
+			path = EllipticKeys;
+			sourceTree = "<group>";
+		};
+		CE6982F91FBA114700E4B808 /* Ratchet */ = {
+			isa = PBXGroup;
+			children = (
+				CE6982FE1FBA118A00E4B808 /* HKDF.swift */,
+				CE6982FF1FBA118A00E4B808 /* RatchetChainKey.swift */,
+				CE6982FC1FBA118A00E4B808 /* RatchetMessageKeys.swift */,
+				CE6982FB1FBA118A00E4B808 /* RatchetRootKey.swift */,
+				CE6983001FBA118A00E4B808 /* ReceiverChain.swift */,
+				CE6982FD1FBA118A00E4B808 /* SenderChain.swift */,
+				CE6983011FBA118A00E4B808 /* SenderChainKey.swift */,
+				CE6982FA1FBA118A00E4B808 /* SenderMessageKey.swift */,
+			);
+			path = Ratchet;
+			sourceTree = "<group>";
+		};
+		CE69830A1FBA119E00E4B808 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				CE6983161FBA11F900E4B808 /* GroupSessionBuilder.swift */,
+				CE6983141FBA11F900E4B808 /* PendingKeyExchange.swift */,
+				CE6983111FBA11F900E4B808 /* PendingPreKey.swift */,
+				CE6983131FBA11F900E4B808 /* SessionBuilder.swift */,
+				CE69830C1FBA11C400E4B808 /* SessionPreKey.swift */,
+				CE69830D1FBA11C400E4B808 /* SessionPreKeyBundle.swift */,
+				CE6983121FBA11F900E4B808 /* SessionRecord.swift */,
+				CE69830B1FBA11C400E4B808 /* SessionSignedPreKey.swift */,
+				CE6983151FBA11F900E4B808 /* SessionState.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		CE69831D1FBA121700E4B808 /* MessageExchange */ = {
+			isa = PBXGroup;
+			children = (
+				CE69831E1FBA124100E4B808 /* CipherTextMessage.swift */,
+				CE6983221FBA124200E4B808 /* PreKeySignalMessage.swift */,
+				CE6983211FBA124200E4B808 /* SenderKeyDistributionMessage.swift */,
+				CE69831F1FBA124200E4B808 /* SenderKeyMessage.swift */,
+				CE6983201FBA124200E4B808 /* SignalMessage.swift */,
+			);
+			path = MessageExchange;
+			sourceTree = "<group>";
+		};
+		CE6983281FBA126000E4B808 /* ProtocolBuffers */ = {
+			isa = PBXGroup;
+			children = (
+				CE6983291FBA128100E4B808 /* FingerprintProtocol.pb.swift */,
+				CE69832B1FBA128100E4B808 /* LocalStorageProtocol.pb.swift */,
+				CE69832A1FBA128100E4B808 /* WhisperTextProtocol.pb.swift */,
+			);
+			path = ProtocolBuffers;
+			sourceTree = "<group>";
+		};
+		CE69832F1FBA129300E4B808 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CE6983341FBA12BD00E4B808 /* IdentityKeyStoreDelegate.swift */,
+				CE6983331FBA12BD00E4B808 /* PreKeyStoreDelegate.swift */,
+				CE6983351FBA12BD00E4B808 /* SenderKeyStoreDelegate.swift */,
+				CE6983311FBA12BD00E4B808 /* SessionStoreDelegate.swift */,
+				CE6983321FBA12BD00E4B808 /* SignalProtocolStoreContext.swift */,
+				CE6983301FBA12BD00E4B808 /* SignedPrekeyStoreDelegate.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		CE69833E1FBA12E000E4B808 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				CE69833F1FBA132000E4B808 /* GroupCipher.swift */,
+				CE6983441FBA132000E4B808 /* SenderKeyRecord.swift */,
+				CE6983451FBA132100E4B808 /* SenderKeyState.swift */,
+				CE6983411FBA132000E4B808 /* SessionCipher.swift */,
+				CE6983401FBA132000E4B808 /* SignalCommonCrypto.swift */,
+				CE6983431FBA132000E4B808 /* SignalCrypto.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
+		CE69834D1FBA134800E4B808 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				CE38B1D51FBA31F30014A6A8 /* DeviceConsistency.swift */,
+				CE69834E1FBA13D000E4B808 /* Fingerprint.swift */,
+				CE69834F1FBA13D000E4B808 /* HelperFunctions.swift */,
+				CE6983521FBA13D000E4B808 /* ScannableFingerprint.swift */,
+				CE6983501FBA13D000E4B808 /* SignalError.swift */,
+				CE6983511FBA13D000E4B808 /* SignalLog.swift */,
+			);
+			path = Additional;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CE38B2541FBA38B60014A6A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE38B2551FBA38B60014A6A8 /* crypto_sign.h in Headers */,
+				CE38B2561FBA38B60014A6A8 /* crypto_sign_edwards25519sha512batch.h in Headers */,
+				CE38B2571FBA38B60014A6A8 /* sqrtm1.h in Headers */,
+				CE38B2581FBA38B60014A6A8 /* crypto_hash_sha512.h in Headers */,
+				CE38B2591FBA38B60014A6A8 /* fe.h in Headers */,
+				CE38B25A1FBA38B60014A6A8 /* gen_x.h in Headers */,
+				CE38B25B1FBA38B60014A6A8 /* ge_sub.h in Headers */,
+				CE38B25C1FBA38B60014A6A8 /* compare.h in Headers */,
+				CE38B25D1FBA38B60014A6A8 /* ge_p2_dbl.h in Headers */,
+				CE38B25E1FBA38B60014A6A8 /* sc.h in Headers */,
+				CE38B25F1FBA38B60014A6A8 /* curve_sigs.h in Headers */,
+				CE38B2601FBA38B60014A6A8 /* xeddsa.h in Headers */,
+				CE38B2611FBA38B60014A6A8 /* crypto_uint32.h in Headers */,
+				CE38B2621FBA38B60014A6A8 /* gen_labelset.h in Headers */,
+				CE38B2631FBA38B60014A6A8 /* crypto_int64.h in Headers */,
+				CE38B2641FBA38B60014A6A8 /* keygen.h in Headers */,
+				CE38B2651FBA38B60014A6A8 /* gen_veddsa.h in Headers */,
+				CE38B2661FBA38B60014A6A8 /* base2.h in Headers */,
+				CE38B2671FBA38B60014A6A8 /* ge_msub.h in Headers */,
+				CE38B2681FBA38B60014A6A8 /* gen_constants.h in Headers */,
+				CE38B2691FBA38B60014A6A8 /* gen_eddsa.h in Headers */,
+				CE38B26A1FBA38B60014A6A8 /* curve25519-donna.h in Headers */,
+				CE38B26B1FBA38B60014A6A8 /* gen_crypto_additions.h in Headers */,
+				CE38B26C1FBA38B60014A6A8 /* internal_slow_tests.h in Headers */,
+				CE38B26D1FBA38B60014A6A8 /* base.h in Headers */,
+				CE38B26E1FBA38B60014A6A8 /* crypto_uint64.h in Headers */,
+				CE38B26F1FBA38B60014A6A8 /* SignalProtocolSwift.h in Headers */,
+				CE38B2701FBA38B60014A6A8 /* d.h in Headers */,
+				CE38B2711FBA38B60014A6A8 /* crypto_additions.h in Headers */,
+				CE38B2721FBA38B60014A6A8 /* ge_madd.h in Headers */,
+				CE38B2731FBA38B60014A6A8 /* ge_add.h in Headers */,
+				CE38B2741FBA38B60014A6A8 /* crypto_int32.h in Headers */,
+				CE38B2751FBA38B60014A6A8 /* d2.h in Headers */,
+				CE38B2761FBA38B60014A6A8 /* pow22523.h in Headers */,
+				CE38B2771FBA38B60014A6A8 /* utility.h in Headers */,
+				CE38B2781FBA38B60014A6A8 /* pow225521.h in Headers */,
+				CE38B2791FBA38B60014A6A8 /* zeroize.h in Headers */,
+				CE38B27A1FBA38B60014A6A8 /* ge.h in Headers */,
+				CE38B27B1FBA38B60014A6A8 /* crypto_verify_32.h in Headers */,
+				CE38B27C1FBA38B60014A6A8 /* internal_fast_tests.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6981E81FBA033800E4B808 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6982DD1FBA0AC300E4B808 /* crypto_sign.h in Headers */,
+				CE6982E11FBA0AC300E4B808 /* crypto_sign_edwards25519sha512batch.h in Headers */,
+				CE6982801FBA0AC300E4B808 /* sqrtm1.h in Headers */,
+				CE6982A31FBA0AC300E4B808 /* crypto_hash_sha512.h in Headers */,
+				CE69829B1FBA0AC300E4B808 /* fe.h in Headers */,
+				CE6982AF1FBA0AC300E4B808 /* gen_x.h in Headers */,
+				CE6982961FBA0AC300E4B808 /* ge_sub.h in Headers */,
+				CE6982BC1FBA0AC300E4B808 /* compare.h in Headers */,
+				CE69829A1FBA0AC300E4B808 /* ge_p2_dbl.h in Headers */,
+				CE6982881FBA0AC300E4B808 /* sc.h in Headers */,
+				CE6982BF1FBA0AC300E4B808 /* curve_sigs.h in Headers */,
+				CE6982B71FBA0AC300E4B808 /* xeddsa.h in Headers */,
+				CE6982DB1FBA0AC300E4B808 /* crypto_uint32.h in Headers */,
+				CE6982B21FBA0AC300E4B808 /* gen_labelset.h in Headers */,
+				CE6982DF1FBA0AC300E4B808 /* crypto_int64.h in Headers */,
+				CE6982BA1FBA0AC300E4B808 /* keygen.h in Headers */,
+				CE6982AE1FBA0AC300E4B808 /* gen_veddsa.h in Headers */,
+				CE6982891FBA0AC300E4B808 /* base2.h in Headers */,
+				CE69828F1FBA0AC300E4B808 /* ge_msub.h in Headers */,
+				CE6982A71FBA0AC300E4B808 /* gen_constants.h in Headers */,
+				CE6982A91FBA0AC300E4B808 /* gen_eddsa.h in Headers */,
+				CE69820B1FBA0A4200E4B808 /* curve25519-donna.h in Headers */,
+				CE6982AB1FBA0AC300E4B808 /* gen_crypto_additions.h in Headers */,
+				CE6982821FBA0AC300E4B808 /* internal_slow_tests.h in Headers */,
+				CE69828A1FBA0AC300E4B808 /* base.h in Headers */,
+				CE6982E01FBA0AC300E4B808 /* crypto_uint64.h in Headers */,
+				CE6981FC1FBA033800E4B808 /* SignalProtocolSwift.h in Headers */,
+				CE6982971FBA0AC300E4B808 /* d.h in Headers */,
+				CE6982C61FBA0AC300E4B808 /* crypto_additions.h in Headers */,
+				CE6982851FBA0AC300E4B808 /* ge_madd.h in Headers */,
+				CE6982D21FBA0AC300E4B808 /* ge_add.h in Headers */,
+				CE6982DC1FBA0AC300E4B808 /* crypto_int32.h in Headers */,
+				CE6982EA1FBA0AC300E4B808 /* d2.h in Headers */,
+				CE6982D51FBA0AC300E4B808 /* pow22523.h in Headers */,
+				CE6982C31FBA0AC300E4B808 /* utility.h in Headers */,
+				CE6982E31FBA0AC300E4B808 /* pow225521.h in Headers */,
+				CE69829D1FBA0AC300E4B808 /* zeroize.h in Headers */,
+				CE6982D31FBA0AC300E4B808 /* ge.h in Headers */,
+				CE6982DE1FBA0AC300E4B808 /* crypto_verify_32.h in Headers */,
+				CE6982811FBA0AC300E4B808 /* internal_fast_tests.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CE38B1D71FBA38B60014A6A8 /* SignalProtocolSwiftMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE38B27F1FBA38B60014A6A8 /* Build configuration list for PBXNativeTarget "SignalProtocolSwiftMacOS" */;
+			buildPhases = (
+				CE38B1D81FBA38B60014A6A8 /* [CP] Check Pods Manifest.lock */,
+				CE38B1D91FBA38B60014A6A8 /* Sources */,
+				CE38B2521FBA38B60014A6A8 /* Frameworks */,
+				CE38B2541FBA38B60014A6A8 /* Headers */,
+				CE38B27D1FBA38B60014A6A8 /* Resources */,
+				CE38B27E1FBA38B60014A6A8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SignalProtocolSwiftMacOS;
+			productName = SignalProtocolSwift;
+			productReference = CE38B2821FBA38B60014A6A8 /* SignalProtocolSwiftMacOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CE6981EA1FBA033800E4B808 /* SignalProtocolSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE6981FF1FBA033800E4B808 /* Build configuration list for PBXNativeTarget "SignalProtocolSwift" */;
+			buildPhases = (
+				0B4154F7AB41B78E79484BF0 /* [CP] Check Pods Manifest.lock */,
+				CE6981E61FBA033800E4B808 /* Sources */,
+				CE6981E71FBA033800E4B808 /* Frameworks */,
+				CE6981E81FBA033800E4B808 /* Headers */,
+				CE6981E91FBA033800E4B808 /* Resources */,
+				729BF2E83E2B1E06943846D2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SignalProtocolSwift;
+			productName = SignalProtocolSwift;
+			productReference = CE6981EB1FBA033800E4B808 /* SignalProtocolSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CE6981F31FBA033800E4B808 /* SignalProtocolSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE6982021FBA033800E4B808 /* Build configuration list for PBXNativeTarget "SignalProtocolSwiftTests" */;
+			buildPhases = (
+				0360F250E31BA00D1EAE9C43 /* [CP] Check Pods Manifest.lock */,
+				CE6981F01FBA033800E4B808 /* Sources */,
+				CE6981F11FBA033800E4B808 /* Frameworks */,
+				CE6981F21FBA033800E4B808 /* Resources */,
+				E6CBC54734B62126343BB76F /* [CP] Embed Pods Frameworks */,
+				89B9046CA96B8370AD14E3CA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE6981F71FBA033800E4B808 /* PBXTargetDependency */,
+			);
+			name = SignalProtocolSwiftTests;
+			productName = SignalProtocolSwiftTests;
+			productReference = CE6981F41FBA033800E4B808 /* SignalProtocolSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE6981E21FBA033800E4B808 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				TargetAttributes = {
+					CE38B1AE1FBA2D620014A6A8 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					CE38B1D71FBA38B60014A6A8 = {
+						ProvisioningStyle = Automatic;
+					};
+					CE6981EA1FBA033800E4B808 = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+					};
+					CE6981F31FBA033800E4B808 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CE6981E51FBA033800E4B808 /* Build configuration list for PBXProject "SignalProtocolSwift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE6981E11FBA033800E4B808;
+			productRefGroup = CE6981EC1FBA033800E4B808 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE6981EA1FBA033800E4B808 /* SignalProtocolSwift */,
+				CE38B1D71FBA38B60014A6A8 /* SignalProtocolSwiftMacOS */,
+				CE6981F31FBA033800E4B808 /* SignalProtocolSwiftTests */,
+				CE38B1AE1FBA2D620014A6A8 /* CommonCryptoModuleMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE38B27D1FBA38B60014A6A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6981E91FBA033800E4B808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6981F21FBA033800E4B808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0360F250E31BA00D1EAE9C43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SignalProtocolSwiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0B4154F7AB41B78E79484BF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		729BF2E83E2B1E06943846D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89B9046CA96B8370AD14E3CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE38B1B21FBA2D6C0014A6A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This if-statement means we'll only run the main script if the CommonCryptoModuleMap directory doesn't exist\n# Because otherwise the rest of the script causes a full recompile for anything where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger the rest of the script to run\nif [ -d \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\" ]; then\necho \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap directory already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule CommonCrypto [system] {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF";
+		};
+		CE38B1D81FBA38B60014A6A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE38B27E1FBA38B60014A6A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6CBC54734B62126343BB76F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf-iOS/SwiftProtobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE38B1D91FBA38B60014A6A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE38B1DA1FBA38B60014A6A8 /* SenderKeyMessage.swift in Sources */,
+				CE38B1DB1FBA38B60014A6A8 /* SessionPreKey.swift in Sources */,
+				CE38B1DC1FBA38B60014A6A8 /* SessionRecord.swift in Sources */,
+				CE38B1DD1FBA38B60014A6A8 /* PreKeySignalMessage.swift in Sources */,
+				CE38B1DE1FBA38B60014A6A8 /* gen_labelset.c in Sources */,
+				CE38B1DF1FBA38B60014A6A8 /* ge_neg.c in Sources */,
+				CE38B1E01FBA38B60014A6A8 /* ge_scalarmult_cofactor.c in Sources */,
+				CE38B1E11FBA38B60014A6A8 /* SignedPrekeyStoreDelegate.swift in Sources */,
+				CE38B1E21FBA38B60014A6A8 /* ge_p3_dbl.c in Sources */,
+				CE38B1E31FBA38B60014A6A8 /* gen_veddsa.c in Sources */,
+				CE38B1E41FBA38B60014A6A8 /* point_isreduced.c in Sources */,
+				CE38B1E51FBA38B60014A6A8 /* fe_montx_to_edy.c in Sources */,
+				CE38B1E61FBA38B60014A6A8 /* fe_add.c in Sources */,
+				CE38B1E71FBA38B60014A6A8 /* hash.c in Sources */,
+				CE38B1E81FBA38B60014A6A8 /* ge_p3_to_montx.c in Sources */,
+				CE38B1E91FBA38B60014A6A8 /* ReceiverChain.swift in Sources */,
+				CE38B1EA1FBA38B60014A6A8 /* SenderChainKey.swift in Sources */,
+				CE38B1EB1FBA38B60014A6A8 /* ge_msub.c in Sources */,
+				CE38B1EC1FBA38B60014A6A8 /* SenderKeyDistributionMessage.swift in Sources */,
+				CE38B1ED1FBA38B60014A6A8 /* sc_isreduced.c in Sources */,
+				CE38B1EE1FBA38B60014A6A8 /* ScannableFingerprint.swift in Sources */,
+				CE38B1EF1FBA38B60014A6A8 /* SessionSignedPreKey.swift in Sources */,
+				CE38B1F01FBA38B60014A6A8 /* fe_0.c in Sources */,
+				CE38B1F11FBA38B60014A6A8 /* ge_scalarmult.c in Sources */,
+				CE38B1F21FBA38B60014A6A8 /* SessionPreKeyBundle.swift in Sources */,
+				CE38B1F31FBA38B60014A6A8 /* PendingKeyExchange.swift in Sources */,
+				CE38B1F41FBA38B60014A6A8 /* fe_cmov.c in Sources */,
+				CE38B1F51FBA38B60014A6A8 /* RatchetMessageKeys.swift in Sources */,
+				CE38B1F61FBA38B60014A6A8 /* ge_p3_add.c in Sources */,
+				CE38B1F71FBA38B60014A6A8 /* ge_p3_to_p2.c in Sources */,
+				CE38B1F81FBA38B60014A6A8 /* internal_fast_tests.c in Sources */,
+				CE38B1F91FBA38B60014A6A8 /* ge_madd.c in Sources */,
+				CE38B1FA1FBA38B60014A6A8 /* PendingPreKey.swift in Sources */,
+				CE38B1FB1FBA38B60014A6A8 /* sc_reduce.c in Sources */,
+				CE38B1FC1FBA38B60014A6A8 /* utility.c in Sources */,
+				CE38B1FD1FBA38B60014A6A8 /* SessionState.swift in Sources */,
+				CE38B1FE1FBA38B60014A6A8 /* ge_p1p1_to_p2.c in Sources */,
+				CE38B1FF1FBA38B60014A6A8 /* blocks.c in Sources */,
+				CE38B2001FBA38B60014A6A8 /* gen_eddsa.c in Sources */,
+				CE38B2011FBA38B60014A6A8 /* SenderMessageKey.swift in Sources */,
+				CE38B2021FBA38B60014A6A8 /* ge_add.c in Sources */,
+				CE38B2041FBA38B60014A6A8 /* SessionStoreDelegate.swift in Sources */,
+				CE38B2051FBA38B60014A6A8 /* HKDF.swift in Sources */,
+				CE38B2061FBA38B60014A6A8 /* SenderKeyRecord.swift in Sources */,
+				CE38B2071FBA38B60014A6A8 /* ge_p1p1_to_p3.c in Sources */,
+				CE38B2081FBA38B60014A6A8 /* ge_montx_to_p3.c in Sources */,
+				CE38B2091FBA38B60014A6A8 /* SignalCrypto.swift in Sources */,
+				CE38B20A1FBA38B60014A6A8 /* ge_frombytes.c in Sources */,
+				CE38B20B1FBA38B60014A6A8 /* RatchetChainKey.swift in Sources */,
+				CE38B20C1FBA38B60014A6A8 /* zeroize.c in Sources */,
+				CE38B20D1FBA38B60014A6A8 /* fe_sub.c in Sources */,
+				CE38B20E1FBA38B60014A6A8 /* ge_sub.c in Sources */,
+				CE38B20F1FBA38B60014A6A8 /* SenderChain.swift in Sources */,
+				CE38B2101FBA38B60014A6A8 /* SignalCommonCrypto.swift in Sources */,
+				CE38B2111FBA38B60014A6A8 /* fe_isequal.c in Sources */,
+				CE38B2121FBA38B60014A6A8 /* sc_neg.c in Sources */,
+				CE38B2131FBA38B60014A6A8 /* fe_isreduced.c in Sources */,
+				CE38B2141FBA38B60014A6A8 /* fe_invert.c in Sources */,
+				CE38B2151FBA38B60014A6A8 /* ge_isneutral.c in Sources */,
+				CE38B2161FBA38B60014A6A8 /* fe_1.c in Sources */,
+				CE38B2171FBA38B60014A6A8 /* open_modified.c in Sources */,
+				CE38B2181FBA38B60014A6A8 /* ge_p3_to_cached.c in Sources */,
+				CE38B2191FBA38B60014A6A8 /* sc_cmov.c in Sources */,
+				CE38B21A1FBA38B60014A6A8 /* ge_p2_dbl.c in Sources */,
+				CE38B21B1FBA38B60014A6A8 /* ge_p2_0.c in Sources */,
+				CE38B21C1FBA38B60014A6A8 /* ge_double_scalarmult.c in Sources */,
+				CE38B21D1FBA38B60014A6A8 /* open.c in Sources */,
+				CE38B21E1FBA38B60014A6A8 /* fe_sq.c in Sources */,
+				CE38B21F1FBA38B60014A6A8 /* CipherTextMessage.swift in Sources */,
+				CE38B2201FBA38B60014A6A8 /* curve_sigs.c in Sources */,
+				CE38B2211FBA38B60014A6A8 /* WhisperTextProtocol.pb.swift in Sources */,
+				CE38B2221FBA38B60014A6A8 /* fe_mont_rhs.c in Sources */,
+				CE38B2231FBA38B60014A6A8 /* Fingerprint.swift in Sources */,
+				CE38B2241FBA38B60014A6A8 /* fe_tobytes.c in Sources */,
+				CE38B2251FBA38B60014A6A8 /* sign.c in Sources */,
+				CE38B2261FBA38B60014A6A8 /* sign_modified.c in Sources */,
+				CE38B2271FBA38B60014A6A8 /* fe_isnegative.c in Sources */,
+				CE38B2281FBA38B60014A6A8 /* compare.c in Sources */,
+				CE38B2291FBA38B60014A6A8 /* SessionBuilder.swift in Sources */,
+				CE38B22A1FBA38B60014A6A8 /* ge_scalarmult_base.c in Sources */,
+				CE38B22B1FBA38B60014A6A8 /* sc_muladd.c in Sources */,
+				CE38B22C1FBA38B60014A6A8 /* fe_mul.c in Sources */,
+				CE38B22D1FBA38B60014A6A8 /* SignalError.swift in Sources */,
+				CE38B22E1FBA38B60014A6A8 /* curve25519-donna.c in Sources */,
+				CE38B22F1FBA38B60014A6A8 /* GroupSessionBuilder.swift in Sources */,
+				CE38B2301FBA38B60014A6A8 /* fe_frombytes.c in Sources */,
+				CE38B2311FBA38B60014A6A8 /* fe_sqrt.c in Sources */,
+				CE38B2321FBA38B60014A6A8 /* SessionCipher.swift in Sources */,
+				CE38B2331FBA38B60014A6A8 /* PrivateKey.swift in Sources */,
+				CE38B2341FBA38B60014A6A8 /* fe_pow22523.c in Sources */,
+				CE38B2351FBA38B60014A6A8 /* fe_sq2.c in Sources */,
+				CE38B2361FBA38B60014A6A8 /* SignalProtocolStoreContext.swift in Sources */,
+				CE38B2371FBA38B60014A6A8 /* RatchetRootKey.swift in Sources */,
+				CE38B2381FBA38B60014A6A8 /* SignalMessage.swift in Sources */,
+				CE38B2391FBA38B60014A6A8 /* SignalLog.swift in Sources */,
+				CE38B23A1FBA38B60014A6A8 /* internal_slow_tests.c in Sources */,
+				CE38B23B1FBA38B60014A6A8 /* SenderKeyState.swift in Sources */,
+				CE38B23C1FBA38B60014A6A8 /* ge_p3_0.c in Sources */,
+				CE38B23D1FBA38B60014A6A8 /* gen_x.c in Sources */,
+				CE38B23E1FBA38B60014A6A8 /* KeyPair.swift in Sources */,
+				CE38B23F1FBA38B60014A6A8 /* HelperFunctions.swift in Sources */,
+				CE38B2401FBA38B60014A6A8 /* GroupCipher.swift in Sources */,
+				CE38B2411FBA38B60014A6A8 /* ge_precomp_0.c in Sources */,
+				CE38B2421FBA38B60014A6A8 /* ge_p3_tobytes.c in Sources */,
+				CE38B2431FBA38B60014A6A8 /* fe_isnonzero.c in Sources */,
+				CE38B2441FBA38B60014A6A8 /* xeddsa.c in Sources */,
+				CE38B2451FBA38B60014A6A8 /* PublicKey.swift in Sources */,
+				CE38B2461FBA38B60014A6A8 /* DeviceConsistency.swift in Sources */,
+				CE38B2471FBA38B60014A6A8 /* SenderKeyStoreDelegate.swift in Sources */,
+				CE38B2481FBA38B60014A6A8 /* elligator.c in Sources */,
+				CE38B2491FBA38B60014A6A8 /* fe_neg.c in Sources */,
+				CE38B24A1FBA38B60014A6A8 /* sc_clamp.c in Sources */,
+				CE38B24B1FBA38B60014A6A8 /* PreKeyStoreDelegate.swift in Sources */,
+				CE38B24C1FBA38B60014A6A8 /* keygen.c in Sources */,
+				CE38B24D1FBA38B60014A6A8 /* IdentityKeyStoreDelegate.swift in Sources */,
+				CE38B24E1FBA38B60014A6A8 /* FingerprintProtocol.pb.swift in Sources */,
+				CE38B24F1FBA38B60014A6A8 /* ge_tobytes.c in Sources */,
+				CE38B2501FBA38B60014A6A8 /* LocalStorageProtocol.pb.swift in Sources */,
+				CE38B2511FBA38B60014A6A8 /* fe_copy.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6981E61FBA033800E4B808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6983241FBA124200E4B808 /* SenderKeyMessage.swift in Sources */,
+				CE69830F1FBA11C400E4B808 /* SessionPreKey.swift in Sources */,
+				CE6983181FBA11F900E4B808 /* SessionRecord.swift in Sources */,
+				CE6983271FBA124200E4B808 /* PreKeySignalMessage.swift in Sources */,
+				CE6982AD1FBA0AC300E4B808 /* gen_labelset.c in Sources */,
+				CE6982A51FBA0AC300E4B808 /* ge_neg.c in Sources */,
+				CE6982BB1FBA0AC300E4B808 /* ge_scalarmult_cofactor.c in Sources */,
+				CE6983361FBA12BD00E4B808 /* SignedPrekeyStoreDelegate.swift in Sources */,
+				CE6982E91FBA0AC300E4B808 /* ge_p3_dbl.c in Sources */,
+				CE6982AA1FBA0AC300E4B808 /* gen_veddsa.c in Sources */,
+				CE6982B11FBA0AC300E4B808 /* point_isreduced.c in Sources */,
+				CE6982A01FBA0AC300E4B808 /* fe_montx_to_edy.c in Sources */,
+				CE6982901FBA0AC300E4B808 /* fe_add.c in Sources */,
+				CE6982CE1FBA0AC300E4B808 /* hash.c in Sources */,
+				CE6982C71FBA0AC300E4B808 /* ge_p3_to_montx.c in Sources */,
+				CE6983081FBA118A00E4B808 /* ReceiverChain.swift in Sources */,
+				CE6983091FBA118A00E4B808 /* SenderChainKey.swift in Sources */,
+				CE6982CA1FBA0AC300E4B808 /* ge_msub.c in Sources */,
+				CE6983261FBA124200E4B808 /* SenderKeyDistributionMessage.swift in Sources */,
+				CE6982B31FBA0AC300E4B808 /* sc_isreduced.c in Sources */,
+				CE6983571FBA13D000E4B808 /* ScannableFingerprint.swift in Sources */,
+				CE69830E1FBA11C400E4B808 /* SessionSignedPreKey.swift in Sources */,
+				CE6982CB1FBA0AC300E4B808 /* fe_0.c in Sources */,
+				CE6982B91FBA0AC300E4B808 /* ge_scalarmult.c in Sources */,
+				CE6983101FBA11C400E4B808 /* SessionPreKeyBundle.swift in Sources */,
+				CE69831A1FBA11F900E4B808 /* PendingKeyExchange.swift in Sources */,
+				CE6982D41FBA0AC300E4B808 /* fe_cmov.c in Sources */,
+				CE6983041FBA118A00E4B808 /* RatchetMessageKeys.swift in Sources */,
+				CE6982AC1FBA0AC300E4B808 /* ge_p3_add.c in Sources */,
+				CE6982E71FBA0AC300E4B808 /* ge_p3_to_p2.c in Sources */,
+				CE6982841FBA0AC300E4B808 /* internal_fast_tests.c in Sources */,
+				CE69828E1FBA0AC300E4B808 /* ge_madd.c in Sources */,
+				CE6983171FBA11F900E4B808 /* PendingPreKey.swift in Sources */,
+				CE6982E41FBA0AC300E4B808 /* sc_reduce.c in Sources */,
+				CE6982B41FBA0AC300E4B808 /* utility.c in Sources */,
+				CE69831B1FBA11F900E4B808 /* SessionState.swift in Sources */,
+				CE6982951FBA0AC300E4B808 /* ge_p1p1_to_p2.c in Sources */,
+				CE6982CD1FBA0AC300E4B808 /* blocks.c in Sources */,
+				CE6982B01FBA0AC300E4B808 /* gen_eddsa.c in Sources */,
+				CE6983021FBA118A00E4B808 /* SenderMessageKey.swift in Sources */,
+				CE6982941FBA0AC300E4B808 /* ge_add.c in Sources */,
+				CE6983371FBA12BD00E4B808 /* SessionStoreDelegate.swift in Sources */,
+				CE6983061FBA118A00E4B808 /* HKDF.swift in Sources */,
+				CE69834B1FBA132100E4B808 /* SenderKeyRecord.swift in Sources */,
+				CE6982E81FBA0AC300E4B808 /* ge_p1p1_to_p3.c in Sources */,
+				CE6982B61FBA0AC300E4B808 /* ge_montx_to_p3.c in Sources */,
+				CE69834A1FBA132100E4B808 /* SignalCrypto.swift in Sources */,
+				CE6982911FBA0AC300E4B808 /* ge_frombytes.c in Sources */,
+				CE6983071FBA118A00E4B808 /* RatchetChainKey.swift in Sources */,
+				CE6982BD1FBA0AC300E4B808 /* zeroize.c in Sources */,
+				CE6982D11FBA0AC300E4B808 /* fe_sub.c in Sources */,
+				CE6982EC1FBA0AC300E4B808 /* ge_sub.c in Sources */,
+				CE6983051FBA118A00E4B808 /* SenderChain.swift in Sources */,
+				CE6983471FBA132100E4B808 /* SignalCommonCrypto.swift in Sources */,
+				CE6982B51FBA0AC300E4B808 /* fe_isequal.c in Sources */,
+				CE69829C1FBA0AC300E4B808 /* sc_neg.c in Sources */,
+				CE6982C51FBA0AC300E4B808 /* fe_isreduced.c in Sources */,
+				CE6982CF1FBA0AC300E4B808 /* fe_invert.c in Sources */,
+				CE6982C01FBA0AC300E4B808 /* ge_isneutral.c in Sources */,
+				CE6982CC1FBA0AC300E4B808 /* fe_1.c in Sources */,
+				CE6982C41FBA0AC300E4B808 /* open_modified.c in Sources */,
+				CE6982C81FBA0AC300E4B808 /* ge_p3_to_cached.c in Sources */,
+				CE6982A11FBA0AC300E4B808 /* sc_cmov.c in Sources */,
+				CE6982D81FBA0AC300E4B808 /* ge_p2_dbl.c in Sources */,
+				CE6982EB1FBA0AC300E4B808 /* ge_p2_0.c in Sources */,
+				CE6982E21FBA0AC300E4B808 /* ge_double_scalarmult.c in Sources */,
+				CE6982D61FBA0AC300E4B808 /* open.c in Sources */,
+				CE6982981FBA0AC300E4B808 /* fe_sq.c in Sources */,
+				CE6983231FBA124200E4B808 /* CipherTextMessage.swift in Sources */,
+				CE6982A61FBA0AC300E4B808 /* curve_sigs.c in Sources */,
+				CE69832D1FBA128100E4B808 /* WhisperTextProtocol.pb.swift in Sources */,
+				CE6982A41FBA0AC300E4B808 /* fe_mont_rhs.c in Sources */,
+				CE6983531FBA13D000E4B808 /* Fingerprint.swift in Sources */,
+				CE6982861FBA0AC300E4B808 /* fe_tobytes.c in Sources */,
+				CE6982D71FBA0AC300E4B808 /* sign.c in Sources */,
+				CE6982B81FBA0AC300E4B808 /* sign_modified.c in Sources */,
+				CE6982921FBA0AC300E4B808 /* fe_isnegative.c in Sources */,
+				CE69829E1FBA0AC300E4B808 /* compare.c in Sources */,
+				CE6983191FBA11F900E4B808 /* SessionBuilder.swift in Sources */,
+				CE6982ED1FBA0AC300E4B808 /* ge_scalarmult_base.c in Sources */,
+				CE6982DA1FBA0AC300E4B808 /* sc_muladd.c in Sources */,
+				CE6982931FBA0AC300E4B808 /* fe_mul.c in Sources */,
+				CE6983551FBA13D000E4B808 /* SignalError.swift in Sources */,
+				CE69820A1FBA0A4200E4B808 /* curve25519-donna.c in Sources */,
+				CE69831C1FBA11F900E4B808 /* GroupSessionBuilder.swift in Sources */,
+				CE6982991FBA0AC300E4B808 /* fe_frombytes.c in Sources */,
+				CE6982BE1FBA0AC300E4B808 /* fe_sqrt.c in Sources */,
+				CE6983481FBA132100E4B808 /* SessionCipher.swift in Sources */,
+				CE6982F61FBA112D00E4B808 /* PrivateKey.swift in Sources */,
+				CE6982D01FBA0AC300E4B808 /* fe_pow22523.c in Sources */,
+				CE6982871FBA0AC300E4B808 /* fe_sq2.c in Sources */,
+				CE6983381FBA12BD00E4B808 /* SignalProtocolStoreContext.swift in Sources */,
+				CE6983031FBA118A00E4B808 /* RatchetRootKey.swift in Sources */,
+				CE6983251FBA124200E4B808 /* SignalMessage.swift in Sources */,
+				CE6983561FBA13D000E4B808 /* SignalLog.swift in Sources */,
+				CE6982831FBA0AC300E4B808 /* internal_slow_tests.c in Sources */,
+				CE69834C1FBA132100E4B808 /* SenderKeyState.swift in Sources */,
+				CE6982E51FBA0AC300E4B808 /* ge_p3_0.c in Sources */,
+				CE6982A81FBA0AC300E4B808 /* gen_x.c in Sources */,
+				CE6982F71FBA112D00E4B808 /* KeyPair.swift in Sources */,
+				CE6983541FBA13D000E4B808 /* HelperFunctions.swift in Sources */,
+				CE6983461FBA132100E4B808 /* GroupCipher.swift in Sources */,
+				CE6982D91FBA0AC300E4B808 /* ge_precomp_0.c in Sources */,
+				CE69828B1FBA0AC300E4B808 /* ge_p3_tobytes.c in Sources */,
+				CE6982E61FBA0AC300E4B808 /* fe_isnonzero.c in Sources */,
+				CE6982C21FBA0AC300E4B808 /* xeddsa.c in Sources */,
+				CE6982F81FBA112D00E4B808 /* PublicKey.swift in Sources */,
+				CE38B1D61FBA31F30014A6A8 /* DeviceConsistency.swift in Sources */,
+				CE69833B1FBA12BD00E4B808 /* SenderKeyStoreDelegate.swift in Sources */,
+				CE6982C11FBA0AC300E4B808 /* elligator.c in Sources */,
+				CE6982C91FBA0AC300E4B808 /* fe_neg.c in Sources */,
+				CE69829F1FBA0AC300E4B808 /* sc_clamp.c in Sources */,
+				CE6983391FBA12BD00E4B808 /* PreKeyStoreDelegate.swift in Sources */,
+				CE6982A21FBA0AC300E4B808 /* keygen.c in Sources */,
+				CE69833A1FBA12BD00E4B808 /* IdentityKeyStoreDelegate.swift in Sources */,
+				CE69832C1FBA128100E4B808 /* FingerprintProtocol.pb.swift in Sources */,
+				CE69828C1FBA0AC300E4B808 /* ge_tobytes.c in Sources */,
+				CE69832E1FBA128100E4B808 /* LocalStorageProtocol.pb.swift in Sources */,
+				CE69828D1FBA0AC300E4B808 /* fe_copy.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6981F01FBA033800E4B808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE38B1C71FBA2FBF0014A6A8 /* CurveTests.swift in Sources */,
+				CE38B1D11FBA2FBF0014A6A8 /* DeviceConsistencyTests.swift in Sources */,
+				CE6981FA1FBA033800E4B808 /* SignalProtocolSwiftTests.swift in Sources */,
+				CE38B1C81FBA2FBF0014A6A8 /* CompatibilityTests.swift in Sources */,
+				CE38B1CA1FBA2FBF0014A6A8 /* RatchetTests.swift in Sources */,
+				CE38B1D41FBA2FBF0014A6A8 /* SenderKeyRecordTests.swift in Sources */,
+				CE38B1D21FBA2FBF0014A6A8 /* SessionCipherTests.swift in Sources */,
+				CE38B1CE1FBA2FBF0014A6A8 /* GroupCipherTests.swift in Sources */,
+				CE38B1C51FBA2FBF0014A6A8 /* TestStore.swift in Sources */,
+				CE38B1CD1FBA2FBF0014A6A8 /* TestHelperFunctions.swift in Sources */,
+				CE38B1C61FBA2FBF0014A6A8 /* HKDFTests.swift in Sources */,
+				CE38B1D31FBA2FBF0014A6A8 /* SessionBuilderTests.swift in Sources */,
+				CE38B1D01FBA2FBF0014A6A8 /* KeyHelperTests.swift in Sources */,
+				CE38B1CB1FBA2FBF0014A6A8 /* SessionRecordTests.swift in Sources */,
+				CE38B1CC1FBA2FBF0014A6A8 /* TestFakeCryptoProvider.swift in Sources */,
+				CE38B1C41FBA2FBF0014A6A8 /* ProtocolTests.swift in Sources */,
+				CE38B1CF1FBA2FBF0014A6A8 /* FingerprintTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE6981F71FBA033800E4B808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE6981EA1FBA033800E4B808 /* SignalProtocolSwift */;
+			targetProxy = CE6981F61FBA033800E4B808 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CE38B1B01FBA2D620014A6A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator watchos watchsimulator";
+			};
+			name = Debug;
+		};
+		CE38B1B11FBA2D620014A6A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator watchos watchsimulator";
+			};
+			name = Release;
+		};
+		CE38B2801FBA38B60014A6A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0BD500C6CC2F746519E4ED2 /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE38B2811FBA38B60014A6A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 310BD5568C33B8EB3C186EFE /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE6981FD1FBA033800E4B808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CE6981FE1FBA033800E4B808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CE6982001FBA033800E4B808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72CAA42A849271A16CF2F749 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SignalProtocolSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE6982011FBA033800E4B808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27A951193C13AC8420AE1668 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SignalProtocolSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE6982031FBA033800E4B808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62CB6E9BE196FB74E162000F /* Pods-SignalProtocolSwiftTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				INFOPLIST_FILE = SignalProtocolSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE6982041FBA033800E4B808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C4F2CFC0C228142E7770B39 /* Pods-SignalProtocolSwiftTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				INFOPLIST_FILE = SignalProtocolSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE38B1AF1FBA2D620014A6A8 /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE38B1B01FBA2D620014A6A8 /* Debug */,
+				CE38B1B11FBA2D620014A6A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE38B27F1FBA38B60014A6A8 /* Build configuration list for PBXNativeTarget "SignalProtocolSwiftMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE38B2801FBA38B60014A6A8 /* Debug */,
+				CE38B2811FBA38B60014A6A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE6981E51FBA033800E4B808 /* Build configuration list for PBXProject "SignalProtocolSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6981FD1FBA033800E4B808 /* Debug */,
+				CE6981FE1FBA033800E4B808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE6981FF1FBA033800E4B808 /* Build configuration list for PBXNativeTarget "SignalProtocolSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6982001FBA033800E4B808 /* Debug */,
+				CE6982011FBA033800E4B808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE6982021FBA033800E4B808 /* Build configuration list for PBXNativeTarget "SignalProtocolSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6982031FBA033800E4B808 /* Debug */,
+				CE6982041FBA033800E4B808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE6981E21FBA033800E4B808 /* Project object */;
+}
