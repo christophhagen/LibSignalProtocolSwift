@@ -14,7 +14,7 @@ import Foundation
  Classes implementing this protocol can use `SignalInterface.init(keyStore:)`.
  It is also possible to provide each delegate separately.
  */
-protocol SignalProtocolStoreContext {
+public protocol SignalProtocolStoreContext {
 
     /// The Identity Key store that stores the records for the identity key module
     var identityKeyStore: IdentityKeyStoreDelegate { get }

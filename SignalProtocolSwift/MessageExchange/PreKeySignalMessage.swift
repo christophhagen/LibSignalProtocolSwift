@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PreKeySignalMessage {
+public struct PreKeySignalMessage {
 
     func baseMessage() throws -> CipherTextMessage {
         return CipherTextMessage(type: .preKey, data: try self.data())
@@ -48,7 +48,7 @@ struct PreKeySignalMessage {
 
 extension PreKeySignalMessage {
     
-    func data() throws -> Data {
+    public func data() throws -> Data {
         let ver = (version << 4) | CipherTextMessage.currentVersion
         return try Data([ver]) + object().serializedData()
     }
@@ -66,7 +66,7 @@ extension PreKeySignalMessage {
         }
     }
     
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         guard data.count > 1 else {
             throw SignalError.invalidProtoBuf
         }

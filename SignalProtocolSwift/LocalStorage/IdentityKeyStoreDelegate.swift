@@ -14,7 +14,7 @@ import Foundation
  unspecified data blobs. Register your implementation with an instance of `KeyStore` to
  receive events.
  */
-protocol IdentityKeyStoreDelegate {
+public protocol IdentityKeyStoreDelegate {
 
     /**
      Return the identity key pair. This key should be generated once at

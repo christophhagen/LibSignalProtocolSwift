@@ -12,7 +12,7 @@ import Foundation
  The public part of an elliptic curve key pair.
  The key has a length of `KeyPair.keyLength` byte.
  */
-struct PublicKey {
+public struct PublicKey {
     
     /// The base point for the Curve25519 elliptic curve
     private static let basePoint = [9] + [UInt8](repeating: 0, count: 31)
@@ -46,7 +46,7 @@ struct PublicKey {
      - returns: The public key
      - throws `SignalError.curveError` if the public key could not be created
      */
-    init(privateKey: PrivateKey) throws {
+    public init(privateKey: PrivateKey) throws {
         var key = [UInt8](repeating: 0, count: KeyPair.keyLength)
         guard curve25519_donna(&key, privateKey.key, PublicKey.basePoint) == 0 else {
             signalLog(level: .error, "Could not create public key from private key")
@@ -121,7 +121,7 @@ extension PublicKey: Comparable {
      - parameter rhs: The key of the right hand side
      - returns: The comparison result of  first pair of bytes that is not equal, or `false`
      */
-    static func <(lhs: PublicKey, rhs: PublicKey) -> Bool {
+    public static func <(lhs: PublicKey, rhs: PublicKey) -> Bool {
         for i in 0..<lhs.key.count {
             if lhs.key[i] != rhs.key[i] {
                 return lhs.key[i] < rhs.key[i]
@@ -136,7 +136,7 @@ extension PublicKey: Comparable {
      - parameter rhs: The key of the right hand side
      - returns: `true`, if the keys are equal
      */
-    static func ==(lhs: PublicKey, rhs: PublicKey) -> Bool {
+    public static func ==(lhs: PublicKey, rhs: PublicKey) -> Bool {
         return lhs.key == rhs.key
     }
 }

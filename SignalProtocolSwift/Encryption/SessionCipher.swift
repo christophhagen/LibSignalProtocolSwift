@@ -15,7 +15,7 @@ import Foundation
  this class can be used for all encrypt/decrypt operations
  within that session.
  */
-struct SessionCipher {
+public struct SessionCipher {
 
     // MARK: Variables
 
@@ -41,7 +41,7 @@ struct SessionCipher {
      - parameter remoteAddress: The remote address that messages will be encrypted to or decrypted from.
      - returns: A freshly allocated session cipher instance
      */
-    init(store: SignalProtocolStoreContext, remoteAddress: SignalAddress) {
+    public init(store: SignalProtocolStoreContext, remoteAddress: SignalAddress) {
         self.store = store
         self.remoteAddress = remoteAddress
         self.builder = SessionBuilder(remoteAddress: remoteAddress, store: store)
@@ -55,7 +55,7 @@ struct SessionCipher {
      - returns: The ciphertext message encrypted to the recipient+device tuple
      - throws: Errors of Type `SignalError`
      */
-    func encrypt(paddedMessage message: [UInt8]) throws -> CipherTextMessage {
+    public func encrypt(paddedMessage message: [UInt8]) throws -> CipherTextMessage {
         let record = try loadSession()
         guard let chainKey = record.state.senderChain?.chainKey else {
             throw SignalError.unknown
@@ -124,7 +124,7 @@ struct SessionCipher {
      `SignalError.invalidKey` when the message is formatted incorrectly.
      `SignalError.untrustedIdentity` when the identity key of the sender is untrusted.
      */
-    func decrypt(preKeySignalMessage ciphertext: PreKeySignalMessage) throws -> [UInt8] {
+    public func decrypt(preKeySignalMessage ciphertext: PreKeySignalMessage) throws -> [UInt8] {
         let record = try loadSession()
         let unsignedPreKeyId =
             try builder.process(preKeySignalMessage: ciphertext, sessionRecord: record)
@@ -143,7 +143,7 @@ struct SessionCipher {
      - returns: The decrypted plaintext.
      - throws: `SignalError.invalidMessage` if the input is not valid ciphertext. `SignalError.duplicateMessage` if the input is a message that has already been received. `SignalError.legacyMessage` if the input is a message formatted by a protocol version that is no longer supported. `SignalError.noSession` if there is no established session for this contact.
      */
-    func decrypt(signalMessage ciphertext: SignalMessage) throws -> [UInt8] {
+    public func decrypt(signalMessage ciphertext: SignalMessage) throws -> [UInt8] {
         let record = try loadSession()
         let plaintext = try decrypt(from: record, and: ciphertext)
 

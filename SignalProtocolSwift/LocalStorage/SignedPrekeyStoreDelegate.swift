@@ -14,7 +14,7 @@ import Foundation
  unspecified data blobs. Register your implementation with an instance of `KeyStore` to
  receive events.
  */
-protocol SignedPreKeyStoreDelegate {
+public protocol SignedPreKeyStoreDelegate {
 
     /**
      Provide a Signed Pre Key for a given id.

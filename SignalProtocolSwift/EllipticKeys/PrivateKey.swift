@@ -12,7 +12,7 @@ import Foundation
  The private part of an elliptic curve key pair.
  The key has a length of `KeyPair.keyLength` byte.
  */
-struct PrivateKey {
+public struct PrivateKey {
 
     /// The key material of length `KeyPair.keyLength`
     internal let key: [UInt8]
@@ -47,7 +47,7 @@ struct PrivateKey {
      Create a new random private key.
      - throws: Any error from `signalCryptoRandom(bytes:)`
      */
-    init() throws {
+    public init() throws {
         var random = try SignalCrypto.random(bytes: KeyPair.keyLength)
         random[0] &= 248 // 0b11111000
         random[31] = (random[31] & 127) | 64 // & 0b01111111 | 0b01000000
@@ -134,7 +134,7 @@ extension PrivateKey {
 }
 
 extension PrivateKey: Equatable {
-    static func ==(lhs: PrivateKey, rhs: PrivateKey) -> Bool {
+    public static func ==(lhs: PrivateKey, rhs: PrivateKey) -> Bool {
         return lhs.key == rhs.key
     }
 

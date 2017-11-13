@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct SignalAddress {
+public struct SignalAddress {
 
     var name: String
 
@@ -17,19 +17,19 @@ struct SignalAddress {
 }
 
 extension SignalAddress: Equatable {
-    static func ==(lhs: SignalAddress, rhs: SignalAddress) -> Bool {
+    public static func ==(lhs: SignalAddress, rhs: SignalAddress) -> Bool {
         return lhs.name == rhs.name && lhs.deviceId == rhs.deviceId
     }
 }
 
 extension SignalAddress: Hashable {
-    var hashValue: Int {
+    public var hashValue: Int {
         return name.hashValue + deviceId.hashValue
     }
 }
 
 extension SignalAddress: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         return "SignalAddress(\(name),\(deviceId))"
     }
 }
@@ -39,19 +39,19 @@ extension SignalAddress: CustomStringConvertible {
 /*
  * A representation of a (group + sender + device) tuple
  */
-struct SignalSenderKeyName {
+public struct SignalSenderKeyName {
     var groupId: String
     var sender: SignalAddress
 }
 
 extension SignalSenderKeyName: Equatable {
-    static func ==(lhs: SignalSenderKeyName, rhs: SignalSenderKeyName) -> Bool {
+    public static func ==(lhs: SignalSenderKeyName, rhs: SignalSenderKeyName) -> Bool {
         return lhs.groupId == rhs.groupId && lhs.sender == rhs.sender
     }
 }
 
 extension SignalSenderKeyName: Hashable {
-    var hashValue: Int {
+    public var hashValue: Int {
         return sender.hashValue + groupId.hashValue
     }
 }

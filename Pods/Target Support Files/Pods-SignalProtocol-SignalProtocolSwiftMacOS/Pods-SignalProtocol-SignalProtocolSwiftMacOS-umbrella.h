@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_SignalProtocolSwift_SignalProtocolSwiftMacOSVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_SignalProtocolSwift_SignalProtocolSwiftMacOSVersionString[];
+FOUNDATION_EXPORT double Pods_SignalProtocol_SignalProtocolSwiftMacOSVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SignalProtocol_SignalProtocolSwiftMacOSVersionString[];
 

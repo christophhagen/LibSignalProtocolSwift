@@ -21,9 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		206ED32B3C747657794774AD /* Pods_SignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F2B859B8E457B9C13FAD6E /* Pods_SignalProtocolSwift.framework */; };
 		258DD95D5BCF1D55B78C3C0A /* Pods_SignalProtocolSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CCFA1A865CE5BF2526C310 /* Pods_SignalProtocolSwiftTests.framework */; };
-		6ED31039AEA1F8E044773701 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4C96893CCC6BD0890622A7 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework */; };
+		940CE0D0FD324FA5C30124C1 /* Pods_SignalProtocol_SignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6253910457BFA8D6ECEEC051 /* Pods_SignalProtocol_SignalProtocolSwift.framework */; };
 		CE38B1C41FBA2FBF0014A6A8 /* ProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B31FBA2FBD0014A6A8 /* ProtocolTests.swift */; };
 		CE38B1C51FBA2FBF0014A6A8 /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B41FBA2FBD0014A6A8 /* TestStore.swift */; };
 		CE38B1C61FBA2FBF0014A6A8 /* HKDFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38B1B51FBA2FBD0014A6A8 /* HKDFTests.swift */; };
@@ -160,7 +159,6 @@
 		CE38B24F1FBA38B60014A6A8 /* ge_tobytes.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821A1FBA0ABB00E4B808 /* ge_tobytes.c */; };
 		CE38B2501FBA38B60014A6A8 /* LocalStorageProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69832B1FBA128100E4B808 /* LocalStorageProtocol.pb.swift */; };
 		CE38B2511FBA38B60014A6A8 /* fe_copy.c in Sources */ = {isa = PBXBuildFile; fileRef = CE69821B1FBA0ABC00E4B808 /* fe_copy.c */; };
-		CE38B2531FBA38B60014A6A8 /* Pods_SignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F2B859B8E457B9C13FAD6E /* Pods_SignalProtocolSwift.framework */; };
 		CE38B2551FBA38B60014A6A8 /* crypto_sign.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69826F1FBA0AC100E4B808 /* crypto_sign.h */; };
 		CE38B2561FBA38B60014A6A8 /* crypto_sign_edwards25519sha512batch.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6982731FBA0AC100E4B808 /* crypto_sign_edwards25519sha512batch.h */; };
 		CE38B2571FBA38B60014A6A8 /* sqrtm1.h in Headers */ = {isa = PBXBuildFile; fileRef = CE69820D1FBA0ABB00E4B808 /* sqrtm1.h */; };
@@ -362,9 +360,24 @@
 		CE6983561FBA13D000E4B808 /* SignalLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983511FBA13D000E4B808 /* SignalLog.swift */; };
 		CE6983571FBA13D000E4B808 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983521FBA13D000E4B808 /* ScannableFingerprint.swift */; };
 		EBE3BC23519F6F09C61850D9 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0767D4BE102A687C9F4352 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework */; };
+		F6F68E6AF4E4A494B5D4FA99 /* Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C2DA68F1E6D090CFABC5DE /* Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CE38B2C01FBA5A150014A6A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6981E21FBA033800E4B808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE38B1AE1FBA2D620014A6A8;
+			remoteInfo = CommonCryptoModuleMap;
+		};
+		CE38B2C21FBA5B7B0014A6A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6981E21FBA033800E4B808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE38B1AE1FBA2D620014A6A8;
+			remoteInfo = CommonCryptoModuleMap;
+		};
 		CE6981F61FBA033800E4B808 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE6981E21FBA033800E4B808 /* Project object */;
@@ -379,11 +392,14 @@
 		27A951193C13AC8420AE1668 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig"; sourceTree = "<group>"; };
 		300C90D4382C3F191B1415D5 /* Pods-SignalProtocolSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift/Pods-SignalProtocolSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		310BD5568C33B8EB3C186EFE /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig"; sourceTree = "<group>"; };
+		38C2DA68F1E6D090CFABC5DE /* Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B00DD60A0310467C1DD0368 /* Pods-SignalProtocol-SignalProtocolSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol-SignalProtocolSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol-SignalProtocolSwift/Pods-SignalProtocol-SignalProtocolSwift.release.xcconfig"; sourceTree = "<group>"; };
 		4C4F2CFC0C228142E7770B39 /* Pods-SignalProtocolSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		6253910457BFA8D6ECEEC051 /* Pods_SignalProtocol_SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocol_SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CB6E9BE196FB74E162000F /* Pods-SignalProtocolSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6EC7B2BC6669A435BBC7BDC2 /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol-SignalProtocolSwiftMacOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol-SignalProtocolSwiftMacOS/Pods-SignalProtocol-SignalProtocolSwiftMacOS.debug.xcconfig"; sourceTree = "<group>"; };
 		72CAA42A849271A16CF2F749 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8C0767D4BE102A687C9F4352 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96F2B859B8E457B9C13FAD6E /* Pods_SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0BD500C6CC2F746519E4ED2 /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C8E8F4138ECFAE6F28C5A5EE /* Pods-SignalProtocolSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift/Pods-SignalProtocolSwift.release.xcconfig"; sourceTree = "<group>"; };
 		CA4C96893CCC6BD0890622A7 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -569,6 +585,8 @@
 		CE6983501FBA13D000E4B808 /* SignalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalError.swift; sourceTree = "<group>"; };
 		CE6983511FBA13D000E4B808 /* SignalLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalLog.swift; sourceTree = "<group>"; };
 		CE6983521FBA13D000E4B808 /* ScannableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannableFingerprint.swift; sourceTree = "<group>"; };
+		DA1686BBB84637CED74362EF /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol-SignalProtocolSwiftMacOS/Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig"; sourceTree = "<group>"; };
+		DE4C36052067B12457087165 /* Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol-SignalProtocolSwift/Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,8 +594,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE38B2531FBA38B60014A6A8 /* Pods_SignalProtocolSwift.framework in Frameworks */,
 				EBE3BC23519F6F09C61850D9 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework in Frameworks */,
+				F6F68E6AF4E4A494B5D4FA99 /* Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,8 +603,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				206ED32B3C747657794774AD /* Pods_SignalProtocolSwift.framework in Frameworks */,
-				6ED31039AEA1F8E044773701 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework in Frameworks */,
+				940CE0D0FD324FA5C30124C1 /* Pods_SignalProtocol_SignalProtocolSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,10 +622,11 @@
 		1355E7AAA6B6FEF0E8B604E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				96F2B859B8E457B9C13FAD6E /* Pods_SignalProtocolSwift.framework */,
 				03CCFA1A865CE5BF2526C310 /* Pods_SignalProtocolSwiftTests.framework */,
 				CA4C96893CCC6BD0890622A7 /* Pods_SignalProtocolSwift_SignalProtocolSwiftIOS.framework */,
 				8C0767D4BE102A687C9F4352 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework */,
+				6253910457BFA8D6ECEEC051 /* Pods_SignalProtocol_SignalProtocolSwift.framework */,
+				38C2DA68F1E6D090CFABC5DE /* Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -624,6 +642,10 @@
 				27A951193C13AC8420AE1668 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig */,
 				C0BD500C6CC2F746519E4ED2 /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig */,
 				310BD5568C33B8EB3C186EFE /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig */,
+				DE4C36052067B12457087165 /* Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig */,
+				4B00DD60A0310467C1DD0368 /* Pods-SignalProtocol-SignalProtocolSwift.release.xcconfig */,
+				6EC7B2BC6669A435BBC7BDC2 /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.debug.xcconfig */,
+				DA1686BBB84637CED74362EF /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1076,6 +1098,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CE38B2C11FBA5A150014A6A8 /* PBXTargetDependency */,
 			);
 			name = SignalProtocolSwiftMacOS;
 			productName = SignalProtocolSwift;
@@ -1096,6 +1119,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CE38B2C31FBA5B7B0014A6A8 /* PBXTargetDependency */,
 			);
 			name = SignalProtocolSwift;
 			productName = SignalProtocolSwift;
@@ -1224,7 +1248,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SignalProtocol-SignalProtocolSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1243,7 +1267,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS/Pods-SignalProtocolSwift-SignalProtocolSwiftIOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocol-SignalProtocolSwift/Pods-SignalProtocol-SignalProtocolSwift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89B9046CA96B8370AD14E3CA /* [CP] Copy Pods Resources */ = {
@@ -1285,7 +1309,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SignalProtocol-SignalProtocolSwiftMacOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1304,7 +1328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS/Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocol-SignalProtocolSwiftMacOS/Pods-SignalProtocol-SignalProtocolSwiftMacOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6CBC54734B62126343BB76F /* [CP] Embed Pods Frameworks */ = {
@@ -1607,6 +1631,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CE38B2C11FBA5A150014A6A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE38B1AE1FBA2D620014A6A8 /* CommonCryptoModuleMap */;
+			targetProxy = CE38B2C01FBA5A150014A6A8 /* PBXContainerItemProxy */;
+		};
+		CE38B2C31FBA5B7B0014A6A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE38B1AE1FBA2D620014A6A8 /* CommonCryptoModuleMap */;
+			targetProxy = CE38B2C21FBA5B7B0014A6A8 /* PBXContainerItemProxy */;
+		};
 		CE6981F71FBA033800E4B808 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE6981EA1FBA033800E4B808 /* SignalProtocolSwift */;
@@ -1637,7 +1671,7 @@
 		};
 		CE38B2801FBA38B60014A6A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0BD500C6CC2F746519E4ED2 /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.debug.xcconfig */;
+			baseConfigurationReference = 6EC7B2BC6669A435BBC7BDC2 /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -1670,7 +1704,7 @@
 		};
 		CE38B2811FBA38B60014A6A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 310BD5568C33B8EB3C186EFE /* Pods-SignalProtocolSwift-SignalProtocolSwiftMacOS.release.xcconfig */;
+			baseConfigurationReference = DA1686BBB84637CED74362EF /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -1815,7 +1849,7 @@
 		};
 		CE6982001FBA033800E4B808 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72CAA42A849271A16CF2F749 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.debug.xcconfig */;
+			baseConfigurationReference = DE4C36052067B12457087165 /* Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -1848,7 +1882,7 @@
 		};
 		CE6982011FBA033800E4B808 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27A951193C13AC8420AE1668 /* Pods-SignalProtocolSwift-SignalProtocolSwiftIOS.release.xcconfig */;
+			baseConfigurationReference = 4B00DD60A0310467C1DD0368 /* Pods-SignalProtocol-SignalProtocolSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APPLICATION_EXTENSION_API_ONLY = YES;

@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct SignalMessage {
+public struct SignalMessage {
 
     /// The length of the MAC for a message in bytes
     static let macLength = 8
@@ -114,7 +114,7 @@ struct SignalMessage {
 
 extension SignalMessage {
 
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         guard data.count > SignalMessage.macLength else {
             signalLog(level: .warning, "Invalid length of SignalMessage: \(data.count)")
             throw SignalError.invalidMessage
@@ -145,7 +145,7 @@ extension SignalMessage {
         self.mac = mac
     }
 
-    func data() throws -> Data {
+    public func data() throws -> Data {
         let version = messageVersion << 4 | CipherTextMessage.currentVersion
         return try Data([version]) + object().serializedData() + Data(mac)
     }
@@ -162,7 +162,7 @@ extension SignalMessage {
 
 extension SignalMessage: Equatable {
 
-    static func ==(lhs: SignalMessage, rhs: SignalMessage) -> Bool {
+    public static func ==(lhs: SignalMessage, rhs: SignalMessage) -> Bool {
         guard lhs.messageVersion == rhs.messageVersion,
             lhs.counter == rhs.counter,
             lhs.previousCounter == rhs.previousCounter,

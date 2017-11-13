@@ -8,19 +8,19 @@
 
 import Foundation
 
-enum CipherTextType: Int32 {
+public enum CipherTextType: Int32 {
     case signal = 2
     case preKey = 3
     case senderKey = 4
     case senderKeyDistribution = 5
 }
 
-struct CipherTextMessage {
+public struct CipherTextMessage {
 
     static let currentVersion: UInt8 = 3
     static let unsupportedVersion: UInt8 = 1
 
-    var type: CipherTextType
+    public var type: CipherTextType
 
-    var data: Data
+    public var data: Data
 }

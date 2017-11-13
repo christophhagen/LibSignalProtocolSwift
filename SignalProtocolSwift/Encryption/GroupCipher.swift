@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GroupCipher {
+public struct GroupCipher {
 
     var store: SignalProtocolStoreContext
 
@@ -20,7 +20,7 @@ struct GroupCipher {
         self.senderKeyId = senderKeyId
     }
 
-    func encrypt(paddedPlaintext plaintext: [UInt8]) throws -> CipherTextMessage {
+    public func encrypt(paddedPlaintext plaintext: [UInt8]) throws -> CipherTextMessage {
 
         guard let record = try store.loadSenderKey(for: senderKeyId) else {
             throw SignalError.noSession
@@ -52,7 +52,7 @@ struct GroupCipher {
         return resultMessage
     }
 
-    func decrypt(ciphertext: SenderKeyMessage) throws -> [UInt8] {
+    public func decrypt(ciphertext: SenderKeyMessage) throws -> [UInt8] {
         guard let record = try store.loadSenderKey(for: senderKeyId) else {
             throw SignalError.noSession
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SenderKeyDistributionMessage {
+public struct SenderKeyDistributionMessage {
 
     var id: UInt32
 
@@ -32,7 +32,7 @@ struct SenderKeyDistributionMessage {
 
 extension SenderKeyDistributionMessage {
 
-    func data() throws -> Data {
+    public func data() throws -> Data {
         let version = (CipherTextMessage.currentVersion << 4) | CipherTextMessage.currentVersion
         return try Data([version]) + object.serializedData()
     }
@@ -46,7 +46,7 @@ extension SenderKeyDistributionMessage {
         }
     }
     
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         guard data.count > 1 else {
             throw SignalError.invalidProtoBuf
         }
@@ -74,7 +74,7 @@ extension SenderKeyDistributionMessage {
 }
 
 extension SenderKeyDistributionMessage: Equatable {
-    static func ==(lhs: SenderKeyDistributionMessage, rhs: SenderKeyDistributionMessage) -> Bool {
+    public static func ==(lhs: SenderKeyDistributionMessage, rhs: SenderKeyDistributionMessage) -> Bool {
         return lhs.id == rhs.id &&
             lhs.iteration == rhs.iteration &&
             lhs.chainKey == rhs.chainKey &&

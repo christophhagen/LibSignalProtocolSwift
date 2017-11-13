@@ -14,7 +14,7 @@ import Foundation
  unspecified data blobs. Register your implementation with an instance of `KeyStore` to
  receive events.
  */
-protocol SessionStoreDelegate {
+public protocol SessionStoreDelegate {
 
     /**
      Load a session for a given address.

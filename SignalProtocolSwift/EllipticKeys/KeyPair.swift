@@ -11,7 +11,7 @@ import Foundation
 /**
  A pair of public and private key for elliptic curve cryptopgraphy
  */
-struct KeyPair {
+public struct KeyPair {
 
     /// The length of the private and public key in bytes
     static let keyLength = 32
@@ -39,7 +39,7 @@ struct KeyPair {
      - parameter publicKey: The public part of the key pair
      - parameter privateKey: The private part of the key pair
      */
-    init(publicKey: PublicKey, privateKey: PrivateKey) {
+    public init(publicKey: PublicKey, privateKey: PrivateKey) {
         self.publicKey = publicKey
         self.privateKey = privateKey
     }
@@ -49,7 +49,7 @@ struct KeyPair {
      - returns: A new randomly created key pair
      - throws: `SignalError.noRandomBytes`
      */
-    init() throws {
+    public init() throws {
         let newPrivateKey = try PrivateKey()
         let newPublicKey = try PublicKey(privateKey: newPrivateKey)
         self.privateKey = newPrivateKey
@@ -79,7 +79,7 @@ extension KeyPair {
 
 extension KeyPair: Equatable {
 
-    static func ==(lhs: KeyPair, rhs: KeyPair) -> Bool {
+    public static func ==(lhs: KeyPair, rhs: KeyPair) -> Bool {
         return lhs.privateKey == rhs.privateKey && lhs.publicKey == rhs.publicKey
     }
 }

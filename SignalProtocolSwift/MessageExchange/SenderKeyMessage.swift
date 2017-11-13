@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SenderKeyMessage {
+public struct SenderKeyMessage {
 
     var messageVersion: UInt8
 
@@ -50,7 +50,7 @@ struct SenderKeyMessage {
 
 extension SenderKeyMessage {
 
-    func data() throws -> Data {
+    public func data() throws -> Data {
         let version = (self.messageVersion << 4) | CipherTextMessage.currentVersion
         return try [version] + object.serializedData() + signature
     }
@@ -63,7 +63,7 @@ extension SenderKeyMessage {
         }
     }
 
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         guard data.count > KeyPair.signatureLength else {
             throw SignalError.invalid
         }

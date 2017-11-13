@@ -14,7 +14,7 @@ import Foundation
  unspecified data blobs. Register your implementation with an instance of `KeyStore` to
  receive events.
  */
-protocol SenderKeyStoreDelegate {
+public protocol SenderKeyStoreDelegate {
 
     /**
      Returns a copy of the sender key record corresponding to the (groupId + senderId + deviceId) tuple.

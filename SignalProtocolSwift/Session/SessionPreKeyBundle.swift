@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SessionPreKeyBundle {
+public struct SessionPreKeyBundle {
 
     var registrationId: UInt32
 

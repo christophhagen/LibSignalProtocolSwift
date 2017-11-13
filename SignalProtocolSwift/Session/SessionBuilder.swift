@@ -23,7 +23,7 @@ import Foundation
  * their recipient name, and each logical recipient can have multiple
  * physical devices.
  */
-struct SessionBuilder {
+public struct SessionBuilder {
 
     var remoteAddress: SignalAddress
 
@@ -35,7 +35,7 @@ struct SessionBuilder {
      - parameter store: the context to store all state information in
      - parameter remoteAddress: the address of the remote user to build a session with
      */
-    init(remoteAddress: SignalAddress, store: SignalProtocolStoreContext) {
+    public init(remoteAddress: SignalAddress, store: SignalProtocolStoreContext) {
         self.remoteAddress = remoteAddress
         self.store = store
     }
@@ -109,7 +109,7 @@ struct SessionBuilder {
      - parameter bundle: A pre key bundle for the destination recipient, retrieved from a server.
      - throws: `SignalError` errors
      */
-    func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
+    public func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
         guard store.isTrusted(identity: bundle.identityKey, for: remoteAddress) else {
             signalLog(level: .warning, "Untrusted identity for PreKeyBundle")
             throw SignalError.untrustedIdentity
