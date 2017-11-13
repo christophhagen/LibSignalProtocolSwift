@@ -25,6 +25,9 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
+	SignalProtocolSwift is an almost pure Swift implementation of the Signal Protocol
+	for secure end-to-end encrypted messaging. It should be compatible to 
+	libsignal-protocol-c in terms of message compatibility and storage format.
                    DESC
 
   s.homepage     = "https://github.com/christophhagen/SignalProtocolSwift"
@@ -37,8 +40,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "License" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
