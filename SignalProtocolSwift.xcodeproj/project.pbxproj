@@ -416,7 +416,7 @@
 		CE38B1C21FBA2FBF0014A6A8 /* SessionBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionBuilderTests.swift; sourceTree = "<group>"; };
 		CE38B1C31FBA2FBF0014A6A8 /* SenderKeyRecordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyRecordTests.swift; sourceTree = "<group>"; };
 		CE38B1D51FBA31F30014A6A8 /* DeviceConsistency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConsistency.swift; sourceTree = "<group>"; };
-		CE38B2821FBA38B60014A6A8 /* SignalProtocolSwiftMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocolSwiftMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE38B2821FBA38B60014A6A8 /* SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE38B2831FBA38B60014A6A8 /* macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "macOS-Info.plist"; path = "/Users/User/Development/Xcode/SignalProtocolSwift/macOS-Info.plist"; sourceTree = "<absolute>"; };
 		CE6981EB1FBA033800E4B808 /* SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6981EE1FBA033800E4B808 /* SignalProtocolSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalProtocolSwift.h; sourceTree = "<group>"; };
@@ -680,7 +680,7 @@
 			children = (
 				CE6981EB1FBA033800E4B808 /* SignalProtocolSwift.framework */,
 				CE6981F41FBA033800E4B808 /* SignalProtocolSwiftTests.xctest */,
-				CE38B2821FBA38B60014A6A8 /* SignalProtocolSwiftMacOS.framework */,
+				CE38B2821FBA38B60014A6A8 /* SignalProtocolSwift.framework */,
 				CEDB8D6F1FBAFA710023277B /* CommonCrypto.framework */,
 			);
 			name = Products;
@@ -1136,7 +1136,7 @@
 			);
 			name = SignalProtocolSwiftMacOS;
 			productName = SignalProtocolSwift;
-			productReference = CE38B2821FBA38B60014A6A8 /* SignalProtocolSwiftMacOS.framework */;
+			productReference = CE38B2821FBA38B60014A6A8 /* SignalProtocolSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CE6981EA1FBA033800E4B808 /* SignalProtocolSwift */ = {
@@ -1758,7 +1758,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1791,7 +1791,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1936,7 +1936,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1969,7 +1969,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
