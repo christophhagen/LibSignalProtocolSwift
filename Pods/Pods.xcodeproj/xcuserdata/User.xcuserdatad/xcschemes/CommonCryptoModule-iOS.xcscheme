@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C881D0A57050C88B0C633C51E5F3A2A2"
-               BuildableName = "SwiftProtobuf.framework"
-               BlueprintName = "SwiftProtobuf-iOS"
+               BlueprintIdentifier = "912DF383E5B7ADE39634C096C9D71556"
+               BuildableName = "CommonCryptoModule.framework"
+               BlueprintName = "CommonCryptoModule-iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C881D0A57050C88B0C633C51E5F3A2A2"
-            BuildableName = "SwiftProtobuf.framework"
-            BlueprintName = "SwiftProtobuf-iOS"
+            BlueprintIdentifier = "912DF383E5B7ADE39634C096C9D71556"
+            BuildableName = "CommonCryptoModule.framework"
+            BlueprintName = "CommonCryptoModule-iOS"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

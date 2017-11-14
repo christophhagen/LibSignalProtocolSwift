@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CommonCrypto
+import CommonCryptoModule
 
 /**
  Implementation of the `SignalCryptoProvider` protocol using

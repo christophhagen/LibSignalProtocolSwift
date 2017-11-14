@@ -1,0 +1,6 @@
+framework module CommonCryptoModule {
+  umbrella header "CommonCryptoModule-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -364,20 +364,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CE38B2C01FBA5A150014A6A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE6981E21FBA033800E4B808 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE38B1AE1FBA2D620014A6A8;
-			remoteInfo = CommonCryptoModuleMap;
-		};
-		CE38B2C21FBA5B7B0014A6A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE6981E21FBA033800E4B808 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE38B1AE1FBA2D620014A6A8;
-			remoteInfo = CommonCryptoModuleMap;
-		};
 		CE6981F61FBA033800E4B808 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE6981E21FBA033800E4B808 /* Project object */;
@@ -1098,7 +1084,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CE38B2C11FBA5A150014A6A8 /* PBXTargetDependency */,
 			);
 			name = SignalProtocolSwiftMacOS;
 			productName = SignalProtocolSwift;
@@ -1119,7 +1104,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CE38B2C31FBA5B7B0014A6A8 /* PBXTargetDependency */,
 			);
 			name = SignalProtocolSwift;
 			productName = SignalProtocolSwift;
@@ -1338,10 +1322,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CommonCryptoModule-iOS/CommonCryptoModule.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf-iOS/SwiftProtobuf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCryptoModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1631,16 +1617,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CE38B2C11FBA5A150014A6A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE38B1AE1FBA2D620014A6A8 /* CommonCryptoModuleMap */;
-			targetProxy = CE38B2C01FBA5A150014A6A8 /* PBXContainerItemProxy */;
-		};
-		CE38B2C31FBA5B7B0014A6A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE38B1AE1FBA2D620014A6A8 /* CommonCryptoModuleMap */;
-			targetProxy = CE38B2C21FBA5B7B0014A6A8 /* PBXContainerItemProxy */;
-		};
 		CE6981F71FBA033800E4B808 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE6981EA1FBA033800E4B808 /* SignalProtocolSwift */;
