@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CommonCrypto.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>CommonCryptoModuleMap.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>7</integer>
 		</dict>
 		<key>SignalProtocolSwift copy.xcscheme</key>
 		<dict>
@@ -17,7 +22,7 @@
 		<key>SignalProtocolSwift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>5</integer>
 		</dict>
 		<key>SignalProtocolSwiftIOS.xcscheme</key>
 		<dict>
@@ -27,7 +32,7 @@
 		<key>SignalProtocolSwiftMacOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>6</integer>
 		</dict>
 	</dict>
 </dict>

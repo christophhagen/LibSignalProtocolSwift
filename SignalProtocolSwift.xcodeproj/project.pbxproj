@@ -359,6 +359,9 @@
 		CE6983551FBA13D000E4B808 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983501FBA13D000E4B808 /* SignalError.swift */; };
 		CE6983561FBA13D000E4B808 /* SignalLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983511FBA13D000E4B808 /* SignalLog.swift */; };
 		CE6983571FBA13D000E4B808 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6983521FBA13D000E4B808 /* ScannableFingerprint.swift */; };
+		CEDB8D7D1FBAFC790023277B /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB8D6F1FBAFA710023277B /* CommonCrypto.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CEDB8D7E1FBAFC7E0023277B /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB8D6F1FBAFA710023277B /* CommonCrypto.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CEDB8D801FBAFD6D0023277B /* CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDB8D7F1FBAFD6C0023277B /* CommonCrypto.h */; };
 		EBE3BC23519F6F09C61850D9 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0767D4BE102A687C9F4352 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework */; };
 		F6F68E6AF4E4A494B5D4FA99 /* Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C2DA68F1E6D090CFABC5DE /* Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework */; };
 /* End PBXBuildFile section */
@@ -370,6 +373,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CE6981EA1FBA033800E4B808;
 			remoteInfo = SignalProtocolSwift;
+		};
+		CEDB8D7B1FBAFC180023277B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6981E21FBA033800E4B808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEDB8D6E1FBAFA710023277B;
+			remoteInfo = CommonCrypto;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -571,6 +581,13 @@
 		CE6983501FBA13D000E4B808 /* SignalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalError.swift; sourceTree = "<group>"; };
 		CE6983511FBA13D000E4B808 /* SignalLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalLog.swift; sourceTree = "<group>"; };
 		CE6983521FBA13D000E4B808 /* ScannableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannableFingerprint.swift; sourceTree = "<group>"; };
+		CEDB8D6F1FBAFA710023277B /* CommonCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEDB8D721FBAFA710023277B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDB8D771FBAFAA90023277B /* CommonCrypto.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CommonCrypto.xcconfig; sourceTree = "<group>"; };
+		CEDB8D781FBAFB120023277B /* iphoneos.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = iphoneos.modulemap; sourceTree = "<group>"; };
+		CEDB8D791FBAFB500023277B /* iphonesimulator.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = iphonesimulator.modulemap; sourceTree = "<group>"; };
+		CEDB8D7A1FBAFB6D0023277B /* macosx.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = macosx.modulemap; sourceTree = "<group>"; };
+		CEDB8D7F1FBAFD6C0023277B /* CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonCrypto.h; sourceTree = "<group>"; };
 		DA1686BBB84637CED74362EF /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol-SignalProtocolSwiftMacOS/Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig"; sourceTree = "<group>"; };
 		DE4C36052067B12457087165 /* Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol-SignalProtocolSwift/Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -581,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE3BC23519F6F09C61850D9 /* Pods_SignalProtocolSwift_SignalProtocolSwiftMacOS.framework in Frameworks */,
+				CEDB8D7E1FBAFC7E0023277B /* CommonCrypto.framework in Frameworks */,
 				F6F68E6AF4E4A494B5D4FA99 /* Pods_SignalProtocol_SignalProtocolSwiftMacOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +607,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDB8D7D1FBAFC790023277B /* CommonCrypto.framework in Frameworks */,
 				940CE0D0FD324FA5C30124C1 /* Pods_SignalProtocol_SignalProtocolSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,6 +618,13 @@
 			files = (
 				CE6981F51FBA033800E4B808 /* SignalProtocolSwift.framework in Frameworks */,
 				258DD95D5BCF1D55B78C3C0A /* Pods_SignalProtocolSwiftTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEDB8D6B1FBAFA710023277B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +667,7 @@
 			children = (
 				CE6981ED1FBA033800E4B808 /* SignalProtocolSwift */,
 				CE6981F81FBA033800E4B808 /* SignalProtocolSwiftTests */,
+				CEDB8D701FBAFA710023277B /* CommonCrypto */,
 				CE6981EC1FBA033800E4B808 /* Products */,
 				5B8173CD8C5D4984379D9865 /* Pods */,
 				1355E7AAA6B6FEF0E8B604E4 /* Frameworks */,
@@ -654,6 +681,7 @@
 				CE6981EB1FBA033800E4B808 /* SignalProtocolSwift.framework */,
 				CE6981F41FBA033800E4B808 /* SignalProtocolSwiftTests.xctest */,
 				CE38B2821FBA38B60014A6A8 /* SignalProtocolSwiftMacOS.framework */,
+				CEDB8D6F1FBAFA710023277B /* CommonCrypto.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -970,6 +998,19 @@
 			path = Additional;
 			sourceTree = "<group>";
 		};
+		CEDB8D701FBAFA710023277B /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB8D7F1FBAFD6C0023277B /* CommonCrypto.h */,
+				CEDB8D721FBAFA710023277B /* Info.plist */,
+				CEDB8D771FBAFAA90023277B /* CommonCrypto.xcconfig */,
+				CEDB8D781FBAFB120023277B /* iphoneos.modulemap */,
+				CEDB8D791FBAFB500023277B /* iphonesimulator.modulemap */,
+				CEDB8D7A1FBAFB6D0023277B /* macosx.modulemap */,
+			);
+			path = CommonCrypto;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1067,6 +1108,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEDB8D6C1FBAFA710023277B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEDB8D801FBAFD6D0023277B /* CommonCrypto.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -1104,6 +1153,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CEDB8D7C1FBAFC180023277B /* PBXTargetDependency */,
 			);
 			name = SignalProtocolSwift;
 			productName = SignalProtocolSwift;
@@ -1131,6 +1181,24 @@
 			productReference = CE6981F41FBA033800E4B808 /* SignalProtocolSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CEDB8D6E1FBAFA710023277B /* CommonCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEDB8D741FBAFA710023277B /* Build configuration list for PBXNativeTarget "CommonCrypto" */;
+			buildPhases = (
+				CEDB8D6A1FBAFA710023277B /* Sources */,
+				CEDB8D6B1FBAFA710023277B /* Frameworks */,
+				CEDB8D6C1FBAFA710023277B /* Headers */,
+				CEDB8D6D1FBAFA710023277B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommonCrypto;
+			productName = CommonCrypto;
+			productReference = CEDB8D6F1FBAFA710023277B /* CommonCrypto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1156,6 +1224,10 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
+					CEDB8D6E1FBAFA710023277B = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = CE6981E51FBA033800E4B808 /* Build configuration list for PBXProject "SignalProtocolSwift" */;
@@ -1174,6 +1246,7 @@
 				CE38B1D71FBA38B60014A6A8 /* SignalProtocolSwiftMacOS */,
 				CE6981F31FBA033800E4B808 /* SignalProtocolSwiftTests */,
 				CE38B1AE1FBA2D620014A6A8 /* CommonCryptoModuleMap */,
+				CEDB8D6E1FBAFA710023277B /* CommonCrypto */,
 			);
 		};
 /* End PBXProject section */
@@ -1194,6 +1267,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CE6981F21FBA033800E4B808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEDB8D6D1FBAFA710023277B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1322,12 +1402,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwiftTests/Pods-SignalProtocolSwiftTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CommonCryptoModule-iOS/CommonCryptoModule.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf-iOS/SwiftProtobuf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCryptoModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1614,6 +1692,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEDB8D6A1FBAFA710023277B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1621,6 +1706,11 @@
 			isa = PBXTargetDependency;
 			target = CE6981EA1FBA033800E4B808 /* SignalProtocolSwift */;
 			targetProxy = CE6981F61FBA033800E4B808 /* PBXContainerItemProxy */;
+		};
+		CEDB8D7C1FBAFC180023277B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEDB8D6E1FBAFA710023277B /* CommonCrypto */;
+			targetProxy = CEDB8D7B1FBAFC180023277B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1650,7 +1740,7 @@
 			baseConfigurationReference = 6EC7B2BC6669A435BBC7BDC2 /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1683,7 +1773,7 @@
 			baseConfigurationReference = DA1686BBB84637CED74362EF /* Pods-SignalProtocol-SignalProtocolSwiftMacOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1828,7 +1918,7 @@
 			baseConfigurationReference = DE4C36052067B12457087165 /* Pods-SignalProtocol-SignalProtocolSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1861,7 +1951,7 @@
 			baseConfigurationReference = 4B00DD60A0310467C1DD0368 /* Pods-SignalProtocol-SignalProtocolSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1920,6 +2010,50 @@
 			};
 			name = Release;
 		};
+		CEDB8D751FBAFA710023277B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEDB8D771FBAFAA90023277B /* CommonCrypto.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCrypto/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEDB8D761FBAFA710023277B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEDB8D771FBAFAA90023277B /* CommonCrypto.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCrypto/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1964,6 +2098,15 @@
 			buildConfigurations = (
 				CE6982031FBA033800E4B808 /* Debug */,
 				CE6982041FBA033800E4B808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEDB8D741FBAFA710023277B /* Build configuration list for PBXNativeTarget "CommonCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEDB8D751FBAFA710023277B /* Debug */,
+				CEDB8D761FBAFA710023277B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

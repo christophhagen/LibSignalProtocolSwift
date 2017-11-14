@@ -7,7 +7,7 @@ abstract_target 'SignalProtocol' do
 
   # Protocol Buffers in Swift for local storage and message exchange
   pod 'SwiftProtobuf'
-  pod 'CommonCryptoModule', :git => 'https://github.com/christophhagen/CommonCryptoModule.git' 
+  # pod 'CommonCryptoModule', :git => 'https://github.com/christophhagen/CommonCryptoModule.git' 
 
   target 'SignalProtocolSwift' do
     platform :ios, '9.0'
