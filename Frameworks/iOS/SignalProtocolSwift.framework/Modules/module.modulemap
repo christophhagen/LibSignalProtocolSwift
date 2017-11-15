@@ -1,0 +1,11 @@
+framework module SignalProtocolSwift {
+  umbrella header "SignalProtocolSwift.h"
+
+  export *
+  module * { export * }
+}
+
+module SignalProtocolSwift.Swift {
+    header "SignalProtocolSwift-Swift.h"
+    requires objc
+}

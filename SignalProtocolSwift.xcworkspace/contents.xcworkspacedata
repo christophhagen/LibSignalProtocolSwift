@@ -5,6 +5,9 @@
       location = "group:SignalProtocolSwift.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:CommonCryptoModule/CommonCryptoModule.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,28 +1,34 @@
+use_frameworks!
 
-abstract_target 'SignalProtocol' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+abstract_target 'SignalProtocolSwift' do
 
   # Pods for SignalProtocolSwift
 
-  # Protocol Buffers in Swift for local storage and message exchange
+  # Protocol Buffers in Swift
   pod 'SwiftProtobuf'
-  # pod 'CommonCryptoModule', :git => 'https://github.com/christophhagen/CommonCryptoModule.git' 
 
-  target 'SignalProtocolSwift' do
-    platform :ios, '9.0'
 
-  end
-
-  target 'SignalProtocolSwiftMacOS' do 
-    platform :osx, '10.9'
-
-  end
-
-  target 'SignalProtocolSwiftTests' do
+  target 'SignalProtocolSwift-iOS' do
     platform :ios, '8.0'
-    inherit! :search_paths
-    # Pods for testing
+    
+    target 'SignalProtocolSwift-iOSTests' do
+      inherit! :search_paths
+      # Pods for testing
+    end
   end
 
+  target 'SignalProtocolSwift-macOS' do
+    platform :osx, '10.9'
+    # Pods for SignalProtocolSwift-macOS
+  end
+
+  target 'SignalProtocolSwift-tvOS' do
+    platform :tvos, '9.0'
+    # Pods for SignalProtocolSwift-tvOS
+  end
+
+  target 'SignalProtocolSwift-watchOS' do
+    platform :watchos, '2.0'
+    # Pods for SignalProtocolSwift-watchOS
+  end
 end

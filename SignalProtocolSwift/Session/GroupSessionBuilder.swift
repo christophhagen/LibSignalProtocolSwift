@@ -10,15 +10,27 @@ import Foundation
 
 
 
-struct GroupSessionBuilder {
+public struct GroupSessionBuilder {
 
     var store: SignalProtocolStoreContext
 
-    init(store: SignalProtocolStoreContext) {
+    public init(store: SignalProtocolStoreContext) {
         self.store = store
     }
 
-    func processSession(
+    public func processSession(
+        senderKeyName: SignalSenderKeyName,
+        distributionMessageData message: CipherTextMessage) throws {
+        guard message.type == .senderKeyDistribution else {
+            // TODO: Throw other error
+            throw SignalError.invalid
+        }
+        let object = try SenderKeyDistributionMessage(from: message.data)
+        try processSession(senderKeyName: senderKeyName,
+                           distributionMessage: object)
+    }
+
+    public func processSession(
         senderKeyName: SignalSenderKeyName,
         distributionMessage: SenderKeyDistributionMessage) throws {
 

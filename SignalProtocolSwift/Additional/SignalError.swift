@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SignalError: Error {
+public enum SignalError: Error {
     case noMemory /* Not enough space */
     case invalid /* Invalid argument */
     /* Custom error codes for error conditions specific to the library */

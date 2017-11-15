@@ -4,35 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CommonCrypto.xcscheme</key>
+		<key>SignalProtocolSwift-iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>9</integer>
 		</dict>
-		<key>CommonCryptoModuleMap.xcscheme</key>
+		<key>SignalProtocolSwift-macOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>10</integer>
 		</dict>
-		<key>SignalProtocolSwift copy.xcscheme</key>
+		<key>SignalProtocolSwift-tvOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>11</integer>
 		</dict>
-		<key>SignalProtocolSwift.xcscheme</key>
+		<key>SignalProtocolSwift-watchOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-		<key>SignalProtocolSwiftIOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-		<key>SignalProtocolSwiftMacOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>12</integer>
 		</dict>
 	</dict>
 </dict>

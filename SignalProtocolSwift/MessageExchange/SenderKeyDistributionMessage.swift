@@ -18,7 +18,7 @@ public struct SenderKeyDistributionMessage {
 
     var signatureKey: PublicKey
 
-    func baseMessage() throws -> CipherTextMessage {
+    public func baseMessage() throws -> CipherTextMessage {
         return CipherTextMessage(type: .senderKeyDistribution, data: try self.data())
     }
 

@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum SignalLogLevel: Int, CustomStringConvertible {
+public enum SignalLogLevel: Int, CustomStringConvertible {
     case error = 0
     case warning = 1
     case notice = 2
     case info = 3
     case debug = 4
 
-    var description: String {
+    public var description: String {
         switch self {
         case .error:
             return "ERROR"
@@ -32,7 +32,7 @@ enum SignalLogLevel: Int, CustomStringConvertible {
 }
 
 
-func signalLog(level: SignalLogLevel, _ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+public func signalLog(level: SignalLogLevel, _ message: String, file: String = #file, function: String = #function, line: Int = #line) {
     print("[\(level)] \(message)")
     //print("[\(level)] \(file)(\(line)): \(function): \(message)")
 }
