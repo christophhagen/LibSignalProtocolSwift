@@ -26,7 +26,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
         let result = SecRandomCopyBytes(nil, bytes, UnsafeMutableRawPointer(mutating: random))
 
         guard result == errSecSuccess else {
-            throw SignalError.noRandomBytes
+            throw SignalError(.noRandomBytes, "Error getting random bytes: \(result)")
         }
         return random
     }
@@ -60,7 +60,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
             CC_SHA512_Init(ptr)
             let result = CC_SHA512_Update(ptr, UnsafeRawPointer(message), CC_LONG(message.count))
             guard result == 1 else {
-                throw SignalError.digestError
+                throw SignalError(.digestError, "Error on SHA512 Update: \(result)")
             }
             var md = [UInt8](repeating: 0, count: Int(CC_SHA512_DIGEST_LENGTH))
             CC_SHA512_Final(&md, ptr)
@@ -124,7 +124,11 @@ struct SignalCommonCrypto: SignalCryptoProvider {
         let status = CCCrypt(operation, CCAlgorithm(kCCAlgorithmAES), CCOptions(kCCOptionPKCS7Padding),
             key, key.count, iv, message, message.count, ptr, dataLength, &dataOutMoved)
         guard status == kCCSuccess else {
-            throw encrypt ? SignalError.encryptionError : SignalError.decryptionError
+            if encrypt {
+                throw SignalError(.encryptionError, "AES (CBC mode) encryption error: \(status)")
+            } else {
+                throw SignalError(.decryptionError, "AES (CBC mode) decryption error: \(status)")
+            }
         }
 
         // Convert the pointers to a UInt8 array
@@ -178,7 +182,11 @@ struct SignalCommonCrypto: SignalCryptoProvider {
         defer { CCCryptorRelease(cryptoRef) }
 
         guard status == kCCSuccess, let ref = cryptoRef else {
-            throw encrypt ? SignalError.encryptionError : SignalError.decryptionError
+            if encrypt {
+                throw SignalError(.encryptionError, "AES (CTR mode) encryption init error: \(status)")
+            } else {
+                throw SignalError(.decryptionError, "AES (CTR mode) Decryption init error: \(status)")
+            }
         }
 
         let outputLength = CCCryptorGetOutputLength(ref, message.count, true)
@@ -192,8 +200,11 @@ struct SignalCommonCrypto: SignalCryptoProvider {
         }
 
         guard status == kCCSuccess else {
-            throw encrypt ? SignalError.encryptionError : SignalError.decryptionError
-
+            if encrypt {
+                throw SignalError(.encryptionError, "AES (CTR mode) encryption update error: \(status)")
+            } else {
+                throw SignalError(.decryptionError, "AES (CTR mode) Decryption update error: \(status)")
+            }
         }
 
         let available = outputLength - updateMovedLength
@@ -204,11 +215,15 @@ struct SignalCommonCrypto: SignalCryptoProvider {
         }
         let finalLength = updateMovedLength + finalMovedLength
         guard status == kCCSuccess else {
-            throw encrypt ? SignalError.encryptionError : SignalError.decryptionError
+            if encrypt {
+                throw SignalError(.encryptionError, "AES (CTR mode) encryption update error: \(status)")
+            } else {
+                throw SignalError(.decryptionError, "AES (CTR mode) Decryption update error: \(status)")
+            }
         }
         // For decryption, the final length can be less due to padding
         if encrypt && finalLength != outputLength {
-            throw encrypt ? SignalError.encryptionError : SignalError.decryptionError
+            throw SignalError(.encryptionError, "AES (CTR mode): Ouput length not correct \(finalLength), \(outputLength)")
         }
         return toArray(from: ptr, count: finalLength)
     }

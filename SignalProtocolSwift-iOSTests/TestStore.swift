@@ -62,6 +62,8 @@ class TestIdentityStore: IdentityKeyStoreDelegate {
 
 class TestPreKeyStore: PreKeyStoreDelegate {
 
+    var lastId: UInt32 = 0
+
     private var preKeys = [UInt32 : Data]()
 
     func preKey(for id: UInt32) -> Data? {
@@ -70,7 +72,8 @@ class TestPreKeyStore: PreKeyStoreDelegate {
 
     func store(preKey: Data, for id: UInt32) -> Bool {
         preKeys[id] = preKey
-        return preKeys[id] != nil
+        lastId = id
+        return true
     }
 
     func containsPreKey(for id: UInt32) -> Bool {
@@ -79,8 +82,9 @@ class TestPreKeyStore: PreKeyStoreDelegate {
 
     func removePreKey(for id: UInt32) -> Bool {
         preKeys[id] = nil
-        return preKeys[id] == nil
+        return true
     }
+
 }
 
 class TestSenderKeyStore: SenderKeyStoreDelegate {
@@ -105,8 +109,8 @@ class TestSessionStore: SessionStoreDelegate {
         return sessions[address]
     }
 
-    func subDeviceSessions(for recipientID: String) -> [Int32] {
-        return sessions.keys.filter { $0.name == recipientID }.map { $0.deviceId }
+    func subDeviceSessions(for recipientID: String) -> [UInt32] {
+        return sessions.keys.filter { $0.identifier == recipientID }.map { $0.deviceId }
     }
 
     func store(session: Data, for address: SignalAddress) -> Bool {
@@ -125,7 +129,7 @@ class TestSessionStore: SessionStoreDelegate {
 
     func deleteAllSessions(for recipientID: String) -> Int {
         var count = 0
-        for key in sessions.keys.filter({ $0.name == recipientID }) {
+        for key in sessions.keys.filter({ $0.identifier == recipientID }) {
             sessions[key] = nil
             count += 1
         }
@@ -137,13 +141,16 @@ class TestSignedPreKeyStore: SignedPreKeyStoreDelegate {
 
     private var signedKeys = [UInt32 : Data]()
 
+    var lastId: UInt32 = 0
+
     func signedPreKey(for id: UInt32) -> Data? {
         return signedKeys[id]
     }
 
     func store(signedPreKey: Data, for id: UInt32) -> Bool {
         signedKeys[id] = signedPreKey
-        return signedKeys[id] != nil
+        lastId = id
+        return true
     }
 
     func containsSignedPreKey(for id: UInt32) -> Bool {
@@ -152,8 +159,11 @@ class TestSignedPreKeyStore: SignedPreKeyStoreDelegate {
 
     func removeSignedPreKey(for id: UInt32) -> Bool {
         signedKeys[id] = nil
-        return signedKeys[id] == nil
+        return true
     }
 
+    func allIds() -> [UInt32] {
+        return [UInt32](signedKeys.keys)
+    }
 
 }

@@ -41,7 +41,7 @@ extension SenderChainKey {
     
     init(from object: Textsecure_SenderKeyStateStructure.SenderChainKey) throws {
         guard object.hasSeed, object.hasIteration else {
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Missing data in SenderChainKey Protobuf object")
         }
         self.chainKey = [UInt8](object.seed)
         self.iteration = object.iteration

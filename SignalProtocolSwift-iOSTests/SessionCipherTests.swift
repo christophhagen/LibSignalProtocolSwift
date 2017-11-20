@@ -9,8 +9,8 @@
 import XCTest
 @testable import SignalProtocolSwift
 
-private let aliceAddress = SignalAddress(name: "+14159999999", deviceId: 1)
-private let bobAddress = SignalAddress(name: "+14158888888", deviceId: 1)
+private let aliceAddress = SignalAddress(identifier: "+14159999999", deviceId: 1)
+private let bobAddress = SignalAddress(identifier: "+14158888888", deviceId: 1)
 
 
 class SessionCipherTests: XCTestCase {
@@ -198,7 +198,7 @@ class SessionCipherTests: XCTestCase {
         for i in 0..<2010 {
             do {
                 let aliceMessage = try aliceCipher.encrypt(paddedMessage: alicePlaintext)
-                if aliceMessage.type != .signal { throw SignalError.invalidMessage }
+                if aliceMessage.type != .signal { throw SignalError(.invalidMessage, "") }
                 let message = try SignalMessage(from: aliceMessage.data)
                 inflight.append(message)
             } catch {
@@ -210,10 +210,10 @@ class SessionCipherTests: XCTestCase {
         do {
             /* Try decrypting in-flight message 1001 */
             let message1001 = try bobCipher.decrypt(signalMessage: inflight[1000])
-            if message1001 != alicePlaintext { throw SignalError.invalidMessage }
+            if message1001 != alicePlaintext { throw SignalError(.invalidMessage, "") }
             /* Try decrypting in-flight message 2010 */
             let message2010 = try bobCipher.decrypt(signalMessage: inflight[2009])
-            if message2010 != alicePlaintext { throw SignalError.invalidMessage }
+            if message2010 != alicePlaintext { throw SignalError(.invalidMessage, "") }
 
         } catch {
             XCTFail("Could not decrypt message")
@@ -224,7 +224,7 @@ class SessionCipherTests: XCTestCase {
             let _ = try bobCipher.decrypt(signalMessage: inflight[0])
             XCTFail("Should not decrypt message")
             return
-        } catch let error as SignalError where error == .duplicateMessage {
+        } catch let error as SignalError where error.type == .duplicateMessage {
 
         } catch {
             XCTFail("Decryption failed with invalid error")
@@ -272,7 +272,7 @@ class SessionCipherTests: XCTestCase {
 
         /* Compare the messages */
         if plaintext != decrypted {
-            throw SignalError.invalidMessage
+            throw SignalError(.invalidMessage, "")
         }
     }
 }

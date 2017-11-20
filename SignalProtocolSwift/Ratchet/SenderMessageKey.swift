@@ -44,7 +44,7 @@ extension SenderMessageKey {
     
     init(from object: Textsecure_SenderKeyStateStructure.SenderMessageKey) throws {
         guard object.hasIteration, object.hasSeed else {
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Missing data in SenderMessageKey ProtoBuf object")
         }
         try self.init(iteration: object.iteration, seed: [UInt8](object.seed))
     }

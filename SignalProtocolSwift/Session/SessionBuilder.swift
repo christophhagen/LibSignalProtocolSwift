@@ -41,34 +41,41 @@ public struct SessionBuilder {
     }
 
     /**
-     Build a new session from a received pre_key_signal_message.
+     Build a new session from a received PreKeySignalMessage.
 
-     After a session is constructed in this way, the embedded signal_message can be decrypted.
+     After a session is constructed in this way, the embedded SignalMessage can be decrypted.
 
      - parameter message: The received `PreKeySignalMessage`.
-     - returns: the unsigned pre key ID, if available.
+     - returns: the unsigned pre key Id, if available.
      - throws: `SignalError.untrustedIdentity`, if the identity key of the
      sender is untrusted. `SignalError.invalidKeyID` when there is no local
-     pre_key_record that corresponds to the PreKey ID in the message.
+     PreKeyRecord that corresponds to the PreKey ID in the message.
      */
     func process(preKeySignalMessage message: PreKeySignalMessage, sessionRecord record: SessionRecord) throws -> UInt32? {
 
         let theirIdentityKey = message.identityKey
 
         guard store.isTrusted(identity: theirIdentityKey, for: remoteAddress) else {
-            throw SignalError.untrustedIdentity
+            throw SignalError(.untrustedIdentity, "Untrusted identity for \(remoteAddress)")
         }
         let result = try process(preKeySignalMessageV3: message, record: record)
         try store.save(identity: theirIdentityKey, for: remoteAddress)
         return result
     }
 
+    /**
+     Build a new session from a received PreKeySignalMessage.
+
+     - parameter message: The received `PreKeySignalMessage`.
+     - returns: the unsigned pre key Id, if available.
+     - throws: `SignalError` errors
+     */
     private func process(
         preKeySignalMessageV3 message: PreKeySignalMessage,
         record: SessionRecord) throws -> UInt32? {
 
         if record.hasSessionState(version: message.version, baseKey: message.baseKey) {
-            signalLog(level: .info, "We've already setup a session for this V3 message, letting bundled message fall through...")
+            // We've already setup a session for this V3 message, letting bundled message fall through...
             return nil
         }
 
@@ -111,13 +118,12 @@ public struct SessionBuilder {
      */
     public func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
         guard store.isTrusted(identity: bundle.identityKey, for: remoteAddress) else {
-            signalLog(level: .warning, "Untrusted identity for PreKeyBundle")
-            throw SignalError.untrustedIdentity
+            throw SignalError(.untrustedIdentity, "Untrusted identity for PreKeyBundle")
         }
 
         guard bundle.identityKey.verify(signature: bundle.signedPreKeySignature,
                                         for: bundle.signedPreKeyPublic.data) else {
-            throw SignalError.invalidSignature
+            throw SignalError(.invalidSignature, "Invalid message signature")
         }
 
         let session = try store.loadSession(for: remoteAddress)

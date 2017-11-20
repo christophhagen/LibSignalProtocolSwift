@@ -66,11 +66,7 @@ struct HKDF {
 
         for index in iterationStartOffset..<iterations+iterationStartOffset {
             let message = stepBuffer + info + [index]
-            do {
-                stepBuffer = try SignalCrypto.hmacSHA256(for: message, with: prk)
-            } catch {
-                throw SignalError.hmacError
-            }
+            stepBuffer = try SignalCrypto.hmacSHA256(for: message, with: prk)
             let stepSize = min(remainingLength, stepBuffer.count)
             result += stepBuffer[0..<stepSize]
             remainingLength -= stepSize

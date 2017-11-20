@@ -57,15 +57,12 @@ public struct SessionCipher {
      */
     public func encrypt(paddedMessage message: [UInt8]) throws -> CipherTextMessage {
         let record = try loadSession()
-        guard let chainKey = record.state.senderChain?.chainKey else {
-            throw SignalError.unknown
+        guard let senderChain = record.state.senderChain else {
+            throw SignalError(.unknown, "No sender chain for session state")
         }
-
+        let chainKey = senderChain.chainKey
         let messageKeys = try chainKey.messageKeys()
-
-        guard let senderEphemeral = record.state.senderChain?.ratchetKey.publicKey else {
-            throw SignalError.unknown
-        }
+        let senderEphemeral = senderChain.ratchetKey.publicKey
         let sessionVersion = record.state.version
 
         let ciphertext = try getCiphertext(
@@ -75,7 +72,7 @@ public struct SessionCipher {
 
         guard let localIdentityKey = record.state.localIdentity,
             let remoteIdentityKey = record.state.remoteIdentity else {
-            throw SignalError.unknown
+            throw SignalError(.unknown, "No local or remote identity in state")
         }
 
         let resultMessage = try SignalMessage(
@@ -184,10 +181,9 @@ public struct SessionCipher {
     private func decrypt(from record: SessionRecord, and signalMessage: SignalMessage) throws -> [UInt8] {
 
         do {
-            let plaintext = try decrypt(from: record.state, and: signalMessage)
-            return plaintext
-        } catch SignalError.invalidMessage {
-
+            return try decrypt(from: record.state, and: signalMessage)
+        } catch let error as SignalError where error.type == .invalidMessage {
+            // Invalid message means that the current state is not the right one
         }
 
         for index in 0..<record.previousStates.count {
@@ -197,13 +193,11 @@ public struct SessionCipher {
                 record.previousStates.remove(at: index)
                 record.promoteState(state: state)
                 return plaintext
-            } catch SignalError.invalidMessage {
-
+            } catch let error as SignalError where error.type == .invalidMessage {
+                // Invalid message means that the current state is not the right one
             }
         }
-
-        signalLog(level: .warning, "No valid sessions")
-        throw SignalError.invalidMessage
+        throw SignalError(.invalidMessage, "No valid sessions")
     }
 
     /**
@@ -217,13 +211,11 @@ public struct SessionCipher {
     private func decrypt(from state: SessionState, and signalMessage: SignalMessage) throws -> [UInt8] {
 
         guard state.senderChain != nil else {
-            signalLog(level: .warning, "Uninitialized session!")
-            throw SignalError.invalidMessage
+            throw SignalError(.invalidMessage, "Uninitialized session!")
         }
 
         guard signalMessage.messageVersion == state.version else {
-            signalLog(level: .warning, "Message version \(signalMessage.messageVersion), but session version \(state.version)")
-            throw SignalError.invalidMessage
+            throw SignalError(.invalidMessage, "Message version \(signalMessage.messageVersion), but session version \(state.version)")
         }
 
         let chainKey = try getOrCreateChainKey(state: state, theirEphemeral: signalMessage.senderRatchetKey)
@@ -235,17 +227,16 @@ public struct SessionCipher {
             counter: signalMessage.counter)
 
         guard let remoteIdentity = state.remoteIdentity else {
-            throw SignalError.unknown
+            throw SignalError(.unknown, "No remote identity in state")
         }
         guard let localIdentity = state.localIdentity else {
-            throw SignalError.unknown
+            throw SignalError(.unknown, "No local identity in state")
         }
-        guard signalMessage.verifyMac(
+        guard try signalMessage.verifyMac(
             senderIdentityKey: remoteIdentity,
             receiverIdentityKey: localIdentity,
             macKey: messageKeys.macKey) else {
-                signalLog(level: .warning, "Message mac not verified")
-                throw SignalError.invalidMessage
+                throw SignalError(.invalidMessage, "Message mac not verified")
         }
 
         let plaintext = try getPlaintext(
@@ -265,15 +256,13 @@ public struct SessionCipher {
 
         if chainKey.index > counter {
             guard let messageKeysResult = state.removeMessageKeys(for: theirEphemeral, and: counter) else {
-                signalLog(level: .warning, "Received message with old counter: \(chainKey.index), \(counter)")
-                throw SignalError.duplicateMessage
+                throw SignalError(.duplicateMessage, "Received message with old counter: \(chainKey.index), \(counter)")
             }
             return messageKeysResult
         }
 
         if counter - chainKey.index > SenderKeyState.messageKeyMaximum {
-            signalLog(level: .warning, "Over \(SenderKeyState.messageKeyMaximum) messages into the future!")
-            throw SignalError.invalidMessage
+            throw SignalError(.invalidMessage, "Over \(SenderKeyState.messageKeyMaximum) messages into the future!")
         }
 
         var currentChainKey = chainKey
@@ -295,12 +284,14 @@ public struct SessionCipher {
         }
 
         guard let rootKey = state.rootKey else {
-            throw SignalError.unknown
+            throw SignalError(.unknown, "No root key in state")
         }
 
-        guard let ourEphemeral = state.senderChain?.ratchetKey else {
-            throw SignalError.unknown
+        guard let senderChain = state.senderChain else {
+            throw SignalError(.unknown, "No sender chain in state")
         }
+
+        let ourEphemeral = senderChain.ratchetKey
 
         let (receiverRootKey, receiverChainKey) = try rootKey.createChain(
             theirRatchetKey: theirEphemeral,
@@ -316,9 +307,7 @@ public struct SessionCipher {
         let receiverChain = ReceiverChain(ratchetKey: theirEphemeral, chainKey: receiverChainKey)
         state.add(receiverChain: receiverChain)
 
-        guard let previousChainKey = state.senderChain?.chainKey else {
-            throw SignalError.unknown
-        }
+        let previousChainKey = senderChain.chainKey
 
         if previousChainKey.index > 0 {
             state.previousCounter = previousChainKey.index - 1

@@ -48,14 +48,14 @@ extension SenderKeyDistributionMessage {
     
     public init(from data: Data) throws {
         guard data.count > 1 else {
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "No data in SenderKeyDistributionMessage ProtoBuf data")
         }
         let version = (data[0] & 0xF0) >> 4
         if version < CipherTextMessage.currentVersion {
-            throw SignalError.legacyMessage
+            throw SignalError(.legacyMessage, "Old message version \(version)")
         }
         if version > CipherTextMessage.currentVersion {
-            throw SignalError.invalidVersion
+            throw SignalError(.invalidVersion, "Unknown version \(version)")
         }
         let object = try Textsecure_SenderKeyDistributionMessage(serializedData: data.advanced(by: 1))
         try self.init(from: object, version: version)
@@ -63,7 +63,7 @@ extension SenderKeyDistributionMessage {
 
     init(from object: Textsecure_SenderKeyDistributionMessage, version: UInt8) throws {
         guard object.hasID, object.hasIteration, object.hasChainKey, object.hasSigningKey else {
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyDistributionMessage Protobuf object")
         }
 
         self.id = object.id

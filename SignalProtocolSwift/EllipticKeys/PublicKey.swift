@@ -28,13 +28,11 @@ public struct PublicKey {
      */
     init(point: [UInt8]) throws {
         guard point.count == KeyPair.keyLength + 1 else {
-            signalLog(level: .error, "Invalid key length \(point.count)")
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Invalid key length \(point.count)")
         }
 
         guard point[0] == KeyPair.DJBType else {
-            signalLog(level: .error, "Invalid key type: \(point[0])")
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Invalid key type: \(point[0])")
         }
         key = Array(point[1..<point.count])
     }
@@ -48,9 +46,9 @@ public struct PublicKey {
      */
     public init(privateKey: PrivateKey) throws {
         var key = [UInt8](repeating: 0, count: KeyPair.keyLength)
-        guard curve25519_donna(&key, privateKey.key, PublicKey.basePoint) == 0 else {
-            signalLog(level: .error, "Could not create public key from private key")
-            throw SignalError.curveError
+        let result = curve25519_donna(&key, privateKey.key, PublicKey.basePoint)
+        guard result == 0 else {
+            throw SignalError(.curveError, "Could not create public key from private key: \(result)")
         }
         self.key = key
     }
@@ -63,11 +61,9 @@ public struct PublicKey {
      */
     func verify(signature: Data, for message: Data) -> Bool {
         guard signature.count == KeyPair.signatureLength else {
-            signalLog(level: .info, "Wrong signature length \(signature.count)")
             return false
         }
         guard key.count == KeyPair.keyLength else {
-            signalLog(level: .info, "Wrong key length \(key.count)")
             return false
         }
         let sig = [UInt8](signature)
@@ -84,15 +80,13 @@ public struct PublicKey {
      */
     func verify(vrfSignature: Data, for message: Data) throws -> Data {
         guard vrfSignature.count == KeyPair.vrfSignatureLength else {
-            signalLog(level: .error, "Invalid vrf signature length \(vrfSignature.count)")
-            throw SignalError.invalidLength
+            throw SignalError(.invalidLength, "Invalid vrf signature length \(vrfSignature.count)")
         }
 
         var vrfOutput = [UInt8](repeating: 0, count: KeyPair.vrfVerifyLength)
         let result = generalized_xveddsa_25519_verify(&vrfOutput, [UInt8](vrfSignature), key, [UInt8](message), UInt(message.count), nil, 0)
         guard result == 0 else {
-            signalLog(level: .error, "Invalid vrf signature \(result)")
-            throw SignalError.invalidSignature
+            throw SignalError(.invalidSignature,  "Invalid vrf signature \(result)")
         }
         return Data(vrfOutput)
     }
@@ -106,8 +100,7 @@ public struct PublicKey {
     func calculateAgreement(privateKey: PrivateKey) throws -> [UInt8] {
         var sharedKey = [UInt8](repeating: 0, count: KeyPair.keyLength)
         guard curve25519_donna(&sharedKey, privateKey.key, key) == 0 else {
-            signalLog(level: .error, "Could not calculate curve25519 agreement")
-            throw SignalError.curveError
+            throw SignalError(.curveError, "Could not calculate curve25519 agreement")
         }
         return sharedKey
     }

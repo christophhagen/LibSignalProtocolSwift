@@ -94,16 +94,15 @@ extension RatchetChainKey {
         self.kdf = HKDF(messageVersion: version)
     }
     
-    // TODO: Remove?
-//    init(from data: Data, version: HKDFVersion) throws {
-//        let object = try Textsecure_SessionStructure.Chain.ChainKey(serializedData: data)
-//        self.init(from: object, version: version)
-//    }
-//
-//    func data() throws -> Data {
-//        return try object.serializedData()
-//    }
-    
+    init(from data: Data, version: HKDFVersion) throws {
+        let object = try Textsecure_SessionStructure.Chain.ChainKey(serializedData: data)
+        self.init(from: object, version: version)
+    }
+
+    func data() throws -> Data {
+        return try object.serializedData()
+    }
+
     var object: Textsecure_SessionStructure.Chain.ChainKey {
         return Textsecure_SessionStructure.Chain.ChainKey.with {
             $0.index = self.index

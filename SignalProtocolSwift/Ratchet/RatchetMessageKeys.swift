@@ -26,16 +26,13 @@ struct RatchetMessageKeys {
 
     init(cipher: [UInt8], mac: [UInt8], iv: [UInt8], counter: UInt32) throws {
         guard cipher.count == RatchetMessageKeys.cipherKeyLength else {
-            signalLog(level: .error, "Invalid cipher key length \(cipher.count)")
-            throw SignalError.invalidLength
+            throw SignalError(.invalidLength, "Invalid cipher key length \(cipher.count)")
         }
         guard mac.count == RatchetMessageKeys.macKeyLength else {
-            signalLog(level: .error, "Invalid mac key length \(mac.count)")
-            throw SignalError.invalidLength
+            throw SignalError(.invalidLength, "Invalid mac key length \(mac.count)")
         }
         guard iv.count == RatchetMessageKeys.ivLength else {
-            signalLog(level: .error, "Invalid iv length \(iv.count)")
-            throw SignalError.invalidLength
+            throw SignalError(.invalidLength, "Invalid iv length \(iv.count)")
         }
         self.cipherKey = cipher
         self.macKey = mac
@@ -45,7 +42,7 @@ struct RatchetMessageKeys {
 
     init(from bytes: [UInt8]) throws {
         guard bytes.count == RatchetMessageKeys.derivedMessageSecretsSize + 4 else {
-            throw SignalError.invalidLength
+            throw SignalError(.invalidLength, "Missing bytes in RatchetMessageKeys data")
         }
         self.cipherKey = Array(bytes[0..<RatchetMessageKeys.cipherKeyLength])
         let length2 = RatchetMessageKeys.cipherKeyLength + RatchetMessageKeys.macKeyLength

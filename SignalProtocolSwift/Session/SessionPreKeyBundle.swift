@@ -26,4 +26,24 @@ public struct SessionPreKeyBundle {
 
     var identityKey: PublicKey
 
+    public init(
+        registrationId: UInt32,
+        deviceId: UInt32,
+        preKeyId: UInt32,
+        preKeyPublic: PublicKey?,
+        signedPreKeyId: UInt32,
+        signedPreKeyPublic: PublicKey,
+        signedPreKeySignature: Data,
+        identityKey: PublicKey) {
+
+        self.registrationId = registrationId
+        self.deviceId = deviceId
+        self.preKeyId = preKeyId
+        self.preKeyPublic = preKeyPublic
+        self.signedPreKeyId = signedPreKeyId
+        self.signedPreKeyPublic = signedPreKeyPublic
+        self.signedPreKeySignature = signedPreKeySignature
+        self.identityKey = identityKey
+    }
+
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 
-typealias RatchetIdentityKeyPair = KeyPair
+public typealias RatchetIdentityKeyPair = KeyPair
 
 struct SymmetricParameters {
     var ourIdentityKey: RatchetIdentityKeyPair
@@ -66,14 +66,14 @@ final class SessionState {
         }
     }
 
-    func set(chainKey: RatchetChainKey, for senderEphemeralKey: PublicKey) {
+    func set(chainKey: RatchetChainKey, for senderEphemeralKey: PublicKey) throws {
         for index in 0..<receiverChains.count {
             if receiverChains[index].ratchetKey == senderEphemeralKey {
                 receiverChains[index].chainKey = chainKey
                 return
             }
         }
-        signalLog(level: .warning, "Couldn't find receiver chain to set chain key on")
+        throw SignalError(.unknown, "Couldn't find receiver chain to set chain key on")
     }
 
     func set(messageKeys: RatchetMessageKeys, for senderEphemeral: PublicKey) {
@@ -105,8 +105,7 @@ final class SessionState {
 
     func set(receiverChainKey: RatchetChainKey, for senderEphemeral: PublicKey) throws {
         guard let node = findReceiverChain(for: senderEphemeral) else {
-            signalLog(level: .warning, "Couldn't find receiver chain to set chain key on")
-            throw SignalError.unknown
+            throw SignalError(.unknown, "Couldn't find receiver chain to set chain key on")
         }
         node.chainKey = receiverChainKey
     }
@@ -212,7 +211,12 @@ final class SessionState {
     // MARK: Protocol Buffers
     
     init(from object: Textsecure_SessionStructure) throws {
-        if object.sessionVersion > UInt8.max { throw SignalError.invalidProtoBuf }
+        guard object.hasSessionVersion else {
+            throw SignalError(.invalidProtoBuf, "Missing session version in SessionState ProtoBuf object")
+        }
+        if object.sessionVersion > UInt8.max {
+            throw SignalError(.invalidProtoBuf, "Invalid session version \(object.sessionVersion)")
+        }
         self.version = UInt8(object.sessionVersion)
         if object.hasLocalIdentityPublic {
             self.localIdentity = try PublicKey(from: object.localIdentityPublic)
@@ -221,7 +225,7 @@ final class SessionState {
             self.remoteIdentity = try PublicKey(from: object.remoteIdentityPublic)
         }
         guard let kdfVersion = HKDFVersion(rawValue: version) else {
-            throw SignalError.invalidVersion
+            throw SignalError(.invalidVersion, "Invalid KDF version \(version)")
         }
         if object.hasRootKey {
             self.rootKey = RatchetRootKey(from: object.rootKey, version: kdfVersion)

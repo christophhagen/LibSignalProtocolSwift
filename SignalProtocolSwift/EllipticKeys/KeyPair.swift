@@ -29,10 +29,10 @@ public struct KeyPair {
     static let vrfVerifyLength = 32
 
     /// The public part of the key pair
-    let publicKey: PublicKey
+    public let publicKey: PublicKey
 
     /// The private part of the key pair
-    let privateKey: PrivateKey
+    public let privateKey: PrivateKey
 
     /**
      Create a key pair from existing public and private keys

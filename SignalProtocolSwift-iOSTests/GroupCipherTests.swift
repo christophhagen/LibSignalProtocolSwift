@@ -11,7 +11,7 @@ import XCTest
 
 private let groupSender = SignalSenderKeyName(
     groupId: "nihilist history reading group",
-    sender: SignalAddress(name: "+14150001111", deviceId: 1))
+    sender: SignalAddress(identifier: "+14150001111", deviceId: 1))
 
 class GroupCipherTests: XCTestCase {
     
@@ -55,7 +55,7 @@ class GroupCipherTests: XCTestCase {
             let senderKeyMessage = try SenderKeyMessage(from: message.data)
             let _ = try bobGroupCipher.decrypt(ciphertext: senderKeyMessage)
             XCTFail("Did not fail to decrypt message")
-        } catch let error as SignalError where error == .noSession {
+        } catch let error as SignalError where error.type == .noSession {
             
         } catch {
             XCTFail("Did not fail to decrypt message with correct error")
@@ -184,7 +184,7 @@ class GroupCipherTests: XCTestCase {
                 let _ = try bobGroupCipher.decrypt(ciphertext: message1)
                 XCTFail("Should not decrypt message again")
                 return
-            } catch let error as SignalError where error == .duplicateMessage {
+            } catch let error as SignalError where error.type == .duplicateMessage {
                 
             }
             /* Have Bob decrypt the remaining messages */
@@ -343,7 +343,7 @@ class GroupCipherTests: XCTestCase {
 
     func testEncryptNoSession() {
         let aliceSenderName = SignalSenderKeyName(
-            groupId: "coolio groupio", sender: SignalAddress(name: "+10002223333", deviceId: 1))
+            groupId: "coolio groupio", sender: SignalAddress(identifier: "+10002223333", deviceId: 1))
 
         /* Create the test data store for Alice */
         let aliceStore = TestStore()
@@ -357,7 +357,7 @@ class GroupCipherTests: XCTestCase {
             let _ = try aliceGroupCipher.encrypt(paddedPlaintext: plaintext)
             XCTFail("Should fail with error")
             return
-        } catch let error as SignalError where error == .noSession {
+        } catch let error as SignalError where error.type == .noSession {
 
         } catch {
             XCTFail("Should fail with different error")
@@ -388,7 +388,7 @@ class GroupCipherTests: XCTestCase {
         do {
             let message = try SenderKeyMessage(from: tooFar.data)
             let _ = try bobCipher.decrypt(ciphertext: message)
-        } catch let error as SignalError where error == .invalidMessage {
+        } catch let error as SignalError where error.type == .invalidMessage {
 
         } catch {
             XCTFail("Failed with wrong error")
@@ -433,7 +433,7 @@ class GroupCipherTests: XCTestCase {
             let message1001 = try SenderKeyMessage(from: inflight[2009])
             let _ = try bobCipher.decrypt(ciphertext: message1001)
             XCTFail("Should not decrypt message 0")
-        } catch let error as SignalError where error == .duplicateMessage {
+        } catch let error as SignalError where error.type == .duplicateMessage {
 
         } catch {
             XCTFail("Should fail to decrypt message with different error")
@@ -474,7 +474,7 @@ class GroupCipherTests: XCTestCase {
             let _ = try bobGroupCipher.encrypt(paddedPlaintext: plaintext)
             XCTFail("Should fail to decrypt")
             return
-        } catch let error as SignalError where error == .invalidKey {
+        } catch let error as SignalError where error.type == .invalidKey {
 
         } catch {
             XCTFail("Failed with wrong error")

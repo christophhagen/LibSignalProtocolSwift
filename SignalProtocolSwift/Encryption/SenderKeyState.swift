@@ -80,7 +80,7 @@ final class SenderKeyState {
     init(from object: Textsecure_SenderKeyStateStructure) throws {
         guard object.hasSenderKeyID, object.hasSenderChainKey,
             object.hasSenderSigningKey, object.senderSigningKey.hasPublic else {
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Missing data in ProtoBuf object")
         }
         self.keyId = object.senderKeyID
         self.chainKey = try SenderChainKey(from: object.senderChainKey)
@@ -91,7 +91,7 @@ final class SenderKeyState {
         self.messageKeys = try object.senderMessageKeys.map { try SenderMessageKey(from: $0) }
     }
 
-    func object() throws -> Textsecure_SenderKeyStateStructure {
+    var object: Textsecure_SenderKeyStateStructure {
         return Textsecure_SenderKeyStateStructure.with {
             $0.senderKeyID = self.keyId
             $0.senderChainKey = self.chainKey.object
@@ -106,7 +106,7 @@ final class SenderKeyState {
     }
 
     func data() throws -> Data {
-        return try object().serializedData()
+        return try object.serializedData()
     }
 }
 

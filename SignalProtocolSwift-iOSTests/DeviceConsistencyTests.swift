@@ -23,21 +23,21 @@ class DeviceConsistencyTests: XCTestCase {
 
         /* Create device one commitment */
         shuffle(&keyArray)
-        guard let deviceOneCommitment = try? DeviceConsistencyCommitment(generation: 1, identityKeyList: keyArray) else {
+        guard let deviceOneCommitment = try? DeviceConsistencyCommitmentV0(generation: 1, identityKeyList: keyArray) else {
             XCTFail("Could not create first commitment")
             return
         }
 
         /* Create device two commitment */
         shuffle(&keyArray)
-        guard let deviceTwoCommitment = try? DeviceConsistencyCommitment(generation: 1, identityKeyList: keyArray) else {
+        guard let deviceTwoCommitment = try? DeviceConsistencyCommitmentV0(generation: 1, identityKeyList: keyArray) else {
             XCTFail("Could not create second commitment")
             return
         }
 
         /* Create device three commitment */
         shuffle(&keyArray)
-        guard let deviceThreeCommitment = try? DeviceConsistencyCommitment(generation: 1, identityKeyList: keyArray) else {
+        guard let deviceThreeCommitment = try? DeviceConsistencyCommitmentV0(generation: 1, identityKeyList: keyArray) else {
             XCTFail("Could not create third commitment")
             return
         }
@@ -55,7 +55,6 @@ class DeviceConsistencyTests: XCTestCase {
                 XCTFail("Could not create DeviceConsistencyMessages")
                 return
         }
-
 
         /* Create received device consistency messages */
         guard let receivedDeviceOneMessage = try? DeviceConsistencyMessage(
@@ -130,7 +129,7 @@ class DeviceConsistencyTests: XCTestCase {
     }
 
     private func generateCode(
-        commitment: DeviceConsistencyCommitment,
+        commitment: DeviceConsistencyCommitmentV0,
         message1: DeviceConsistencyMessage,
         message2: DeviceConsistencyMessage,
         message3: DeviceConsistencyMessage) throws -> String {

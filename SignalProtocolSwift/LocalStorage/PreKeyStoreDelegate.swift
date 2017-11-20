@@ -48,5 +48,10 @@ public protocol PreKeyStoreDelegate {
      - returns: `true` if the key was removed
      */
     func removePreKey(for id: UInt32) -> Bool
+
+    /**
+     Return the id of the last stored pre key.
+    */
+    var lastId: UInt32 { get }
     
 }

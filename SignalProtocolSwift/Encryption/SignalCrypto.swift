@@ -11,14 +11,14 @@ import Foundation
 /**
  Specifies the type of algorithm to use for encryption and decryption.
  */
-enum SignalEncryptionScheme {
+public enum SignalEncryptionScheme {
     /// Encrypt/decrypt with AES in CBC mode with PKCS5 padding
     case AES_CBCwithPKCS5
     /// Encrypt/decrypt with AES in CTR mode with no padding
     case AES_CTRnoPadding
 }
 
-protocol SignalCryptoProvider {
+public protocol SignalCryptoProvider {
     /**
      Create a number of secure random bytes.
      - parameter bytes: The number of random bytes to create
@@ -68,16 +68,12 @@ protocol SignalCryptoProvider {
 
 }
 
-struct SignalCrypto {
+public struct SignalCrypto {
 
     /**
      This variable can be set to provide custom crypto provider.
     */
-    static var provider: SignalCryptoProvider? = SignalCommonCrypto() {
-        didSet {
-            signalLog(level: .warning, "Crypto provider overwritten")
-        }
-    }
+    public static var provider: SignalCryptoProvider? = SignalCommonCrypto()
 
     /**
      Create a number of secure random bytes.
@@ -85,9 +81,9 @@ struct SignalCrypto {
      - returns: The random bytes of length `bytes`
      - throws: Should only throw errors of type `SignalError.noRandomBytes`
      */
-    static func random(bytes: Int) throws -> [UInt8] {
+    public static func random(bytes: Int) throws -> [UInt8] {
         guard let delegate = provider else {
-            throw SignalError.noCryptoDelegate
+            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
         }
         return try delegate.random(bytes: bytes)
     }
@@ -101,7 +97,7 @@ struct SignalCrypto {
      */
     static func hmacSHA256(for message: [UInt8], with salt: [UInt8]) throws -> [UInt8] {
         guard let delegate = provider else {
-            throw SignalError.noCryptoDelegate
+            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
         }
         return try delegate.hmacSHA256(for: message, with: salt)
     }
@@ -114,7 +110,7 @@ struct SignalCrypto {
      */
     static func sha512(for message: [UInt8]) throws -> [UInt8] {
         guard let delegate = provider else {
-            throw SignalError.noCryptoDelegate
+            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
         }
         return try delegate.sha512(for: message)
     }
@@ -130,7 +126,7 @@ struct SignalCrypto {
      */
     static func encrypt(message: [UInt8], with cipher: SignalEncryptionScheme, key: [UInt8], iv: [UInt8]) throws -> [UInt8] {
         guard let delegate = provider else {
-            throw SignalError.noCryptoDelegate
+            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
         }
         return try delegate.encrypt(message: message, with: cipher, key: key, iv: iv)
     }
@@ -146,7 +142,7 @@ struct SignalCrypto {
      */
     static func decrypt(message: [UInt8], with cipher: SignalEncryptionScheme, key: [UInt8], iv: [UInt8]) throws -> [UInt8] {
         guard let delegate = provider else {
-            throw SignalError.noCryptoDelegate
+            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
         }
         return try delegate.decrypt(message: message, with: cipher, key: key, iv: iv)
     }
@@ -157,11 +153,11 @@ struct SignalCrypto {
         return value & 0x7FFFFFFF % max
     }
 
-    static func generateIdentityKeyPair() throws -> KeyPair {
+    public static func generateIdentityKeyPair() throws -> KeyPair {
         return try KeyPair()
     }
 
-    static func generateRegistrationId(extendedRange: Bool) throws -> UInt32 {
+    public static func generateRegistrationId(extendedRange: Bool) throws -> UInt32 {
         let range = extendedRange ? UInt32(Int32.max) - 1 : 16380
 
         let data = try random(bytes: 4)
@@ -170,10 +166,10 @@ struct SignalCrypto {
         return value % range + 1
     }
 
-    static func generatePreKeys(start: UInt32, count: UInt32) throws -> [UInt32 : SessionPreKey] {
+    public static func generatePreKeys(start: UInt32, count: Int) throws -> [UInt32 : SessionPreKey] {
         var dict = [UInt32 : SessionPreKey]()
 
-        for i in 0..<count {
+        for i in 0..<UInt32(count) {
             let ecPair = try KeyPair()
             let id = (start - 1 + i) % (SessionPreKey.mediumMaxValue - 1) + 1
             dict[id] = SessionPreKey(id: id, keyPair: ecPair)
@@ -196,7 +192,7 @@ struct SignalCrypto {
         return result
     }
 
-    static func generateSignedPreKey(identitykeyPair: RatchetIdentityKeyPair, id: UInt32, timestamp: UInt64) throws -> SessionSignedPreKey {
+    public static func generateSignedPreKey(identitykeyPair: RatchetIdentityKeyPair, id: UInt32, timestamp: UInt64) throws -> SessionSignedPreKey {
 
         let ecPair = try KeyPair()
 

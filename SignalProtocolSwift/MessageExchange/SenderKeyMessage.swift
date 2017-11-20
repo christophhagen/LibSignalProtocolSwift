@@ -31,16 +31,11 @@ public struct SenderKeyMessage {
         self.cipherText = cipherText
         self.signature = Data()
         let data = try self.data()
-        guard data.count < 256 else {
-            throw SignalError.invalidSignature
-        }
         self.signature = try signatureKey.sign(message: data)
     }
 
-    func verify(signatureKey: PublicKey) -> Bool {
-        guard let record = try? self.data() else {
-            return false
-        }
+    func verify(signatureKey: PublicKey) throws -> Bool {
+        let record = try self.data()
         let length = record.count - KeyPair.signatureLength
         let message = record[0..<length]
         return signatureKey.verify(signature: signature, for: message)
@@ -65,14 +60,14 @@ extension SenderKeyMessage {
 
     public init(from data: Data) throws {
         guard data.count > KeyPair.signatureLength else {
-            throw SignalError.invalid
+            throw SignalError(.invalidLength, "Too few bytes in data for SenderKeyMessage")
         }
         let version = (data[0] & 0xF0) >> 4
         if version < CipherTextMessage.currentVersion {
-            throw SignalError.legacyMessage
+            throw SignalError(.legacyMessage, "Old SenderKeyMessage version \(version)")
         }
         if version > CipherTextMessage.currentVersion {
-            throw SignalError.invalidVersion
+            throw SignalError(.invalidVersion, "Unknown SenderKeyMessage version \(version)")
         }
         let length = data.count - KeyPair.signatureLength
         let content = data[1..<length]
@@ -83,7 +78,7 @@ extension SenderKeyMessage {
 
     init(from object: Textsecure_SenderKeyMessage, version: UInt8, signature: Data) throws {
         guard object.hasID, object.hasIteration, object.hasCiphertext else {
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyMessage object")
         }
         self.keyId = object.id
         self.iteration = object.iteration

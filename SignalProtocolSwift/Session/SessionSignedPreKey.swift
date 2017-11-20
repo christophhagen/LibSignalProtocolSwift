@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct SessionSignedPreKey {
+public struct SessionSignedPreKey {
 
-    var id: UInt32
+    public let id: UInt32
 
-    var keyPair: KeyPair
+    public let keyPair: KeyPair
 
-    var timestamp: UInt64
+    public let timestamp: UInt64
 
-    var signature: Data
+    public let signature: Data
 
     init(id: UInt32, timestamp: UInt64, keyPair: KeyPair, signature: Data) {
         self.id = id
@@ -28,7 +28,7 @@ struct SessionSignedPreKey {
 
 extension SessionSignedPreKey {
 
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         let object = try Textsecure_SignedPreKeyRecordStructure(serializedData: data)
         try self.init(from: object)
     }
@@ -36,7 +36,7 @@ extension SessionSignedPreKey {
     init(from object: Textsecure_SignedPreKeyRecordStructure) throws {
         guard object.hasID, object.hasPublicKey, object.hasPrivateKey,
             object.hasSignature, object.hasTimestamp else {
-                throw SignalError.invalidProtoBuf
+                throw SignalError(.invalidProtoBuf, "Missing data in SessionSignedPreKey object")
         }
         self.id = object.id
         self.keyPair = KeyPair(
@@ -56,7 +56,7 @@ extension SessionSignedPreKey {
         }
     }
 
-    func data() throws -> Data {
+    public func data() throws -> Data {
         return try object.serializedData()
     }
 }

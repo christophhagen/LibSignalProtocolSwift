@@ -36,17 +36,16 @@ extension SenderChain {
         }
         
     }
-    
-    // TODO: Remove?
-//    init(from data: Data, version: HKDFVersion) throws {
-//        let object = try Textsecure_SessionStructure.Chain(serializedData: data)
-//        self.init(from: object, version: version)
-//    }
-//
-//    func data() throws -> Data {
-//        return try object.serializedData()
-//    }
-    
+
+    init(from data: Data, version: HKDFVersion) throws {
+        let object = try Textsecure_SessionStructure.Chain(serializedData: data)
+        try self.init(from: object, version: version)
+    }
+
+    func data() throws -> Data {
+        return try object.serializedData()
+    }
+
     var object: Textsecure_SessionStructure.Chain {
         return Textsecure_SessionStructure.Chain.with {
             $0.senderRatchetKey = ratchetKey.publicKey.data

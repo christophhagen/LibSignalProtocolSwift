@@ -44,10 +44,10 @@ class ProtocolTests: XCTestCase {
                 return
         }
 
-        guard newMessage.verifyMac(
+        guard (try? newMessage.verifyMac(
             senderIdentityKey: senderIdentityKey,
             receiverIdentityKey: receiverIdentityKey,
-            macKey: macKey) else {
+            macKey: macKey)) ?? false else {
                 XCTFail("Invalid signature")
                 return
         }
@@ -134,7 +134,7 @@ class ProtocolTests: XCTestCase {
                 return
         }
 
-        guard message.verify(signatureKey: signatureKeyPair.publicKey) else {
+        guard (try? message.verify(signatureKey: signatureKeyPair.publicKey)) ?? false else {
             XCTFail("Invalid signature for SenderKeyMessage")
             return
         }
@@ -149,7 +149,7 @@ class ProtocolTests: XCTestCase {
             return
         }
 
-        guard newMessage.verify(signatureKey: signatureKeyPair.publicKey) else {
+        guard (try? newMessage.verify(signatureKey: signatureKeyPair.publicKey)) ?? false else {
             XCTFail("Invalid signature for SenderKeyMessage")
             return
         }

@@ -13,6 +13,18 @@
 		A39D972ED03DB02FB1FD82E5 /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E85D6F5E94886312BE6480 /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework */; };
 		CA5CD2C2B1802DFC3267769A /* Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B5A0E6546A3040779D78B /* Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework */; };
 		CE0ADFC51FBC33220054BED2 /* CommonCryptoModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB92051FBB5B4A0023277B /* CommonCryptoModule.framework */; };
+		CE0AE0141FBDDA950054BED2 /* SignalSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE0101FBDDA940054BED2 /* SignalSession.swift */; };
+		CE0AE0151FBDDA950054BED2 /* SignalServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE0111FBDDA940054BED2 /* SignalServer.swift */; };
+		CE0AE0161FBDDA950054BED2 /* SignalServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE0121FBDDA940054BED2 /* SignalServerConnection.swift */; };
+		CE0AE0171FBDDA950054BED2 /* PreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE0131FBDDA950054BED2 /* PreKeyBundle.swift */; };
+		CE0AE01B1FBDDAE70054BED2 /* TestServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE01A1FBDDAE70054BED2 /* TestServer.swift */; };
+		CE0AE01D1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE01C1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift */; };
+		CE6AB1CB1FC0AD7600DDE667 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CA1FC0AD7600DDE667 /* SignalAddress.swift */; };
+		CE6AB1CD1FC0ADFC00DDE667 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CC1FC0ADFC00DDE667 /* SignalSenderKeyName.swift */; };
+		CE6AB1CF1FC0C8AE00DDE667 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */; };
+		CE6AB1D11FC0C92900DDE667 /* DeviceConsistencySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1D01FC0C92900DDE667 /* DeviceConsistencySignature.swift */; };
+		CE6AB1D31FC0C95E00DDE667 /* DeviceConsistencyCommitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1D21FC0C95E00DDE667 /* DeviceConsistencyCommitment.swift */; };
+		CE6AB1D51FC0C98300DDE667 /* DeviceConsistencyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1D41FC0C98300DDE667 /* DeviceConsistencyMessage.swift */; };
 		CEDB8E791FBB51290023277B /* SignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB8E6F1FBB51290023277B /* SignalProtocolSwift.framework */; };
 		CEDB8EB51FBB53140023277B /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDB8EAF1FBB51940023277B /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEDB8F671FBB59EC0023277B /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EBE1FBB59EA0023277B /* PreKeySignalMessage.swift */; };
@@ -47,18 +59,14 @@
 		CEDB8F841FBB59EC0023277B /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */; };
 		CEDB8F851FBB59EC0023277B /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */; };
 		CEDB8F861FBB59EC0023277B /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */; };
-		CEDB8F871FBB59EC0023277B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* HelperFunctions.swift */; };
-		CEDB8F881FBB59EC0023277B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* HelperFunctions.swift */; };
-		CEDB8F891FBB59EC0023277B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* HelperFunctions.swift */; };
-		CEDB8F8A1FBB59EC0023277B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* HelperFunctions.swift */; };
+		CEDB8F871FBB59EC0023277B /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */; };
+		CEDB8F881FBB59EC0023277B /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */; };
+		CEDB8F891FBB59EC0023277B /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */; };
+		CEDB8F8A1FBB59EC0023277B /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */; };
 		CEDB8F8B1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
 		CEDB8F8C1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
 		CEDB8F8D1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
 		CEDB8F8E1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
-		CEDB8F8F1FBB59EC0023277B /* DeviceConsistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC91FBB59EB0023277B /* DeviceConsistency.swift */; };
-		CEDB8F901FBB59EC0023277B /* DeviceConsistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC91FBB59EB0023277B /* DeviceConsistency.swift */; };
-		CEDB8F911FBB59EC0023277B /* DeviceConsistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC91FBB59EB0023277B /* DeviceConsistency.swift */; };
-		CEDB8F921FBB59EC0023277B /* DeviceConsistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC91FBB59EB0023277B /* DeviceConsistency.swift */; };
 		CEDB8F931FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
 		CEDB8F941FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
 		CEDB8F951FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
@@ -693,6 +701,18 @@
 		9E23D9DF53E94203F01DCD60 /* Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS/Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BC1B689B9349B551FCF6CEB0 /* Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS/Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C32620A945E2E7894B93BF14 /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0AE0101FBDDA940054BED2 /* SignalSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSession.swift; sourceTree = "<group>"; };
+		CE0AE0111FBDDA940054BED2 /* SignalServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalServer.swift; sourceTree = "<group>"; };
+		CE0AE0121FBDDA940054BED2 /* SignalServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalServerConnection.swift; sourceTree = "<group>"; };
+		CE0AE0131FBDDA950054BED2 /* PreKeyBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKeyBundle.swift; sourceTree = "<group>"; };
+		CE0AE01A1FBDDAE70054BED2 /* TestServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestServer.swift; sourceTree = "<group>"; };
+		CE0AE01C1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCommunication_iOSTests.swift; sourceTree = "<group>"; };
+		CE6AB1CA1FC0AD7600DDE667 /* SignalAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalAddress.swift; sourceTree = "<group>"; };
+		CE6AB1CC1FC0ADFC00DDE667 /* SignalSenderKeyName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalSenderKeyName.swift; sourceTree = "<group>"; };
+		CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableFingerprint.swift; sourceTree = "<group>"; };
+		CE6AB1D01FC0C92900DDE667 /* DeviceConsistencySignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConsistencySignature.swift; sourceTree = "<group>"; };
+		CE6AB1D21FC0C95E00DDE667 /* DeviceConsistencyCommitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConsistencyCommitment.swift; sourceTree = "<group>"; };
+		CE6AB1D41FC0C98300DDE667 /* DeviceConsistencyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConsistencyMessage.swift; sourceTree = "<group>"; };
 		CEDB8E6F1FBB51290023277B /* SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDB8E781FBB51290023277B /* SignalProtocolSwift-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SignalProtocolSwift-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDB8E7F1FBB51290023277B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -708,9 +728,8 @@
 		CEDB8EC41FBB59EB0023277B /* SignalLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalLog.swift; sourceTree = "<group>"; };
 		CEDB8EC51FBB59EB0023277B /* SignalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalError.swift; sourceTree = "<group>"; };
 		CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fingerprint.swift; sourceTree = "<group>"; };
-		CEDB8EC71FBB59EB0023277B /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannableFingerprint.swift; sourceTree = "<group>"; };
-		CEDB8EC91FBB59EB0023277B /* DeviceConsistency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConsistency.swift; sourceTree = "<group>"; };
 		CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCommonCrypto.swift; sourceTree = "<group>"; };
 		CEDB8ECD1FBB59EB0023277B /* SenderKeyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyState.swift; sourceTree = "<group>"; };
 		CEDB8ECE1FBB59EB0023277B /* SessionCipher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCipher.swift; sourceTree = "<group>"; };
@@ -956,6 +975,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE0AE00F1FBDDA7C0054BED2 /* Simplified */ = {
+			isa = PBXGroup;
+			children = (
+				CE0AE0131FBDDA950054BED2 /* PreKeyBundle.swift */,
+				CE0AE0111FBDDA940054BED2 /* SignalServer.swift */,
+				CE0AE0121FBDDA940054BED2 /* SignalServerConnection.swift */,
+				CE0AE0101FBDDA940054BED2 /* SignalSession.swift */,
+			);
+			path = Simplified;
+			sourceTree = "<group>";
+		};
+		CE6AB1D61FC0C9A400DDE667 /* DeviceConsistency */ = {
+			isa = PBXGroup;
+			children = (
+				CE6AB1D21FC0C95E00DDE667 /* DeviceConsistencyCommitment.swift */,
+				CE6AB1D41FC0C98300DDE667 /* DeviceConsistencyMessage.swift */,
+				CE6AB1D01FC0C92900DDE667 /* DeviceConsistencySignature.swift */,
+			);
+			path = DeviceConsistency;
+			sourceTree = "<group>";
+		};
+		CE6AB1D71FC0CA0A00DDE667 /* Fingerprint */ = {
+			isa = PBXGroup;
+			children = (
+				CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */,
+				CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */,
+				CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */,
+			);
+			path = Fingerprint;
+			sourceTree = "<group>";
+		};
 		CEDB8E631FBB50F80023277B = {
 			isa = PBXGroup;
 			children = (
@@ -984,6 +1034,7 @@
 		CEDB8E7C1FBB51290023277B /* SignalProtocolSwift-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE0AE01C1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift */,
 				CEDB91DF1FBB5A600023277B /* CompatibilityTests.swift */,
 				CEDB91DE1FBB5A5F0023277B /* CurveTests.swift */,
 				CEDB91D51FBB5A5E0023277B /* DeviceConsistencyTests.swift */,
@@ -1001,6 +1052,7 @@
 				CEDB91E31FBB5A600023277B /* SignalProtocolSwiftTests.swift */,
 				CEDB91DA1FBB5A5F0023277B /* TestFakeCryptoProvider.swift */,
 				CEDB91D41FBB5A5E0023277B /* TestHelperFunctions.swift */,
+				CE0AE01A1FBDDAE70054BED2 /* TestServer.swift */,
 				CEDB91D91FBB5A5F0023277B /* TestStore.swift */,
 			);
 			path = "SignalProtocolSwift-iOSTests";
@@ -1009,9 +1061,12 @@
 		CEDB8EAE1FBB51740023277B /* SignalProtocolSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CE0AE00F1FBDDA7C0054BED2 /* Simplified */,
 				CEDB8EC31FBB59EB0023277B /* Additional */,
 				CEDB8ED91FBB59EB0023277B /* Curve25519 */,
+				CE6AB1D61FC0C9A400DDE667 /* DeviceConsistency */,
 				CEDB8F591FBB59EB0023277B /* EllipticKeys */,
+				CE6AB1D71FC0CA0A00DDE667 /* Fingerprint */,
 				CEDB8ECB1FBB59EB0023277B /* Encryption */,
 				CEDB8ED21FBB59EB0023277B /* LocalStorage */,
 				CEDB8EBD1FBB59EA0023277B /* MessageExchange */,
@@ -1037,12 +1092,11 @@
 		CEDB8EC31FBB59EB0023277B /* Additional */ = {
 			isa = PBXGroup;
 			children = (
-				CEDB8EC41FBB59EB0023277B /* SignalLog.swift */,
+				CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */,
+				CE6AB1CA1FC0AD7600DDE667 /* SignalAddress.swift */,
 				CEDB8EC51FBB59EB0023277B /* SignalError.swift */,
-				CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */,
-				CEDB8EC71FBB59EB0023277B /* HelperFunctions.swift */,
-				CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */,
-				CEDB8EC91FBB59EB0023277B /* DeviceConsistency.swift */,
+				CEDB8EC41FBB59EB0023277B /* SignalLog.swift */,
+				CE6AB1CC1FC0ADFC00DDE667 /* SignalSenderKeyName.swift */,
 			);
 			path = Additional;
 			sourceTree = "<group>";
@@ -1073,12 +1127,12 @@
 		CEDB8ED21FBB59EB0023277B /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
-				CEDB8ED31FBB59EB0023277B /* SenderKeyStoreDelegate.swift */,
 				CEDB8ED41FBB59EB0023277B /* IdentityKeyStoreDelegate.swift */,
+				CEDB8ED71FBB59EB0023277B /* PreKeyStoreDelegate.swift */,
+				CEDB8ED31FBB59EB0023277B /* SenderKeyStoreDelegate.swift */,
+				CEDB8ED81FBB59EB0023277B /* SessionStoreDelegate.swift */,
 				CEDB8ED51FBB59EB0023277B /* SignalProtocolStoreContext.swift */,
 				CEDB8ED61FBB59EB0023277B /* SignedPrekeyStoreDelegate.swift */,
-				CEDB8ED71FBB59EB0023277B /* PreKeyStoreDelegate.swift */,
-				CEDB8ED81FBB59EB0023277B /* SessionStoreDelegate.swift */,
 			);
 			path = LocalStorage;
 			sourceTree = "<group>";
@@ -1911,8 +1965,8 @@
 				CEDB91331FBB59EC0023277B /* ge_frombytes.c in Sources */,
 				CEDB91BF1FBB59EC0023277B /* SessionRecord.swift in Sources */,
 				CEDB8F971FBB59EC0023277B /* SenderKeyState.swift in Sources */,
-				CEDB8F8F1FBB59EC0023277B /* DeviceConsistency.swift in Sources */,
 				CEDB8FEB1FBB59EC0023277B /* fe_sub.c in Sources */,
+				CE6AB1CD1FC0ADFC00DDE667 /* SignalSenderKeyName.swift in Sources */,
 				CEDB91AF1FBB59EC0023277B /* PendingKeyExchange.swift in Sources */,
 				CEDB8FB71FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEDB903F1FBB59EC0023277B /* gen_x.c in Sources */,
@@ -1938,9 +1992,12 @@
 				CEDB907F1FBB59EC0023277B /* sign_modified.c in Sources */,
 				CEDB91071FBB59EC0023277B /* fe_neg.c in Sources */,
 				CEDB91971FBB59EC0023277B /* RatchetRootKey.swift in Sources */,
+				CE6AB1CF1FC0C8AE00DDE667 /* DisplayableFingerprint.swift in Sources */,
 				CEDB8F771FBB59EC0023277B /* SignalMessage.swift in Sources */,
 				CEDB90DB1FBB59EC0023277B /* internal_slow_tests.c in Sources */,
+				CE0AE0151FBDDA950054BED2 /* SignalServer.swift in Sources */,
 				CEDB90FF1FBB59EC0023277B /* ge_p3_to_cached.c in Sources */,
+				CE6AB1D51FC0C98300DDE667 /* DeviceConsistencyMessage.swift in Sources */,
 				CEDB905F1FBB59EC0023277B /* gen_eddsa.c in Sources */,
 				CEDB91931FBB59EC0023277B /* ReceiverChain.swift in Sources */,
 				CEDB908B1FBB59EC0023277B /* ge_scalarmult_cofactor.c in Sources */,
@@ -1957,6 +2014,8 @@
 				CEDB910F1FBB59EC0023277B /* ge_scalarmult_base.c in Sources */,
 				CEDB90931FBB59EC0023277B /* zeroize.c in Sources */,
 				CEDB8FAB1FBB59EC0023277B /* SenderKeyStoreDelegate.swift in Sources */,
+				CE0AE0171FBDDA950054BED2 /* PreKeyBundle.swift in Sources */,
+				CE6AB1D11FC0C92900DDE667 /* DeviceConsistencySignature.swift in Sources */,
 				CEDB92001FBB5A970023277B /* FingerprintProtocol.pb.swift in Sources */,
 				CEDB904F1FBB59EC0023277B /* ge_p3_add.c in Sources */,
 				CEDB90DF1FBB59EC0023277B /* internal_fast_tests.c in Sources */,
@@ -1983,7 +2042,7 @@
 				CEDB90171FBB59EC0023277B /* compare.c in Sources */,
 				CEDB91871FBB59EC0023277B /* HKDF.swift in Sources */,
 				CEDB8F7B1FBB59EC0023277B /* SignalLog.swift in Sources */,
-				CEDB8F871FBB59EC0023277B /* HelperFunctions.swift in Sources */,
+				CEDB8F871FBB59EC0023277B /* IntExtensions.swift in Sources */,
 				CEDB8F7F1FBB59EC0023277B /* SignalError.swift in Sources */,
 				CEDB909F1FBB59EC0023277B /* ge_isneutral.c in Sources */,
 				CEDB915F1FBB59EC0023277B /* open.c in Sources */,
@@ -2001,11 +2060,14 @@
 				CEDB8FA31FBB59EC0023277B /* SenderKeyRecord.swift in Sources */,
 				CEDB906F1FBB59EC0023277B /* utility.c in Sources */,
 				CEDB916B1FBB59EC0023277B /* fe_mul.c in Sources */,
+				CE0AE0161FBDDA950054BED2 /* SignalServerConnection.swift in Sources */,
 				CEDB91F81FBB5A970023277B /* LocalStorageProtocol.pb.swift in Sources */,
 				CEDB8F671FBB59EC0023277B /* PreKeySignalMessage.swift in Sources */,
 				CEDB91C71FBB59EC0023277B /* SessionPreKey.swift in Sources */,
+				CE0AE0141FBDDA950054BED2 /* SignalSession.swift in Sources */,
 				CEDB8FC71FBB59EC0023277B /* curve25519-donna.c in Sources */,
 				CEDB8FCF1FBB59EC0023277B /* fe_sq2.c in Sources */,
+				CE6AB1D31FC0C95E00DDE667 /* DeviceConsistencyCommitment.swift in Sources */,
 				CEDB8FE31FBB59EC0023277B /* ge_p3_dbl.c in Sources */,
 				CEDB900B1FBB59EC0023277B /* ge_tobytes.c in Sources */,
 				CEDB90FB1FBB59EC0023277B /* fe_tobytes.c in Sources */,
@@ -2014,6 +2076,7 @@
 				CEDB91631FBB59EC0023277B /* sc_reduce.c in Sources */,
 				CEDB90331FBB59EC0023277B /* ge_neg.c in Sources */,
 				CEDB90A71FBB59EC0023277B /* xeddsa.c in Sources */,
+				CE6AB1CB1FC0AD7600DDE667 /* SignalAddress.swift in Sources */,
 				CEDB918B1FBB59EC0023277B /* RatchetChainKey.swift in Sources */,
 				CEDB91031FBB59EC0023277B /* ge_add.c in Sources */,
 				CEDB8FDF1FBB59EC0023277B /* ge_p3_tobytes.c in Sources */,
@@ -2027,7 +2090,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEDB91E61FBB5A610023277B /* DeviceConsistencyTests.swift in Sources */,
+				CE0AE01D1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift in Sources */,
 				CEDB91E51FBB5A610023277B /* TestHelperFunctions.swift in Sources */,
+				CE0AE01B1FBDDAE70054BED2 /* TestServer.swift in Sources */,
 				CEDB91F01FBB5A610023277B /* CompatibilityTests.swift in Sources */,
 				CEDB91F31FBB5A610023277B /* SessionRecordTests.swift in Sources */,
 				CEDB91EB1FBB5A610023277B /* TestFakeCryptoProvider.swift in Sources */,
@@ -2061,7 +2126,6 @@
 				CEDB91341FBB59EC0023277B /* ge_frombytes.c in Sources */,
 				CEDB91C01FBB59EC0023277B /* SessionRecord.swift in Sources */,
 				CEDB8F981FBB59EC0023277B /* SenderKeyState.swift in Sources */,
-				CEDB8F901FBB59EC0023277B /* DeviceConsistency.swift in Sources */,
 				CEDB8FEC1FBB59EC0023277B /* fe_sub.c in Sources */,
 				CEDB91B01FBB59EC0023277B /* PendingKeyExchange.swift in Sources */,
 				CEDB8FB81FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
@@ -2133,7 +2197,7 @@
 				CEDB90181FBB59EC0023277B /* compare.c in Sources */,
 				CEDB91881FBB59EC0023277B /* HKDF.swift in Sources */,
 				CEDB8F7C1FBB59EC0023277B /* SignalLog.swift in Sources */,
-				CEDB8F881FBB59EC0023277B /* HelperFunctions.swift in Sources */,
+				CEDB8F881FBB59EC0023277B /* IntExtensions.swift in Sources */,
 				CEDB8F801FBB59EC0023277B /* SignalError.swift in Sources */,
 				CEDB90A01FBB59EC0023277B /* ge_isneutral.c in Sources */,
 				CEDB91601FBB59EC0023277B /* open.c in Sources */,
@@ -2187,7 +2251,6 @@
 				CEDB91361FBB59EC0023277B /* ge_frombytes.c in Sources */,
 				CEDB91C21FBB59EC0023277B /* SessionRecord.swift in Sources */,
 				CEDB8F9A1FBB59EC0023277B /* SenderKeyState.swift in Sources */,
-				CEDB8F921FBB59EC0023277B /* DeviceConsistency.swift in Sources */,
 				CEDB8FEE1FBB59EC0023277B /* fe_sub.c in Sources */,
 				CEDB91B21FBB59EC0023277B /* PendingKeyExchange.swift in Sources */,
 				CEDB8FBA1FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
@@ -2259,7 +2322,7 @@
 				CEDB901A1FBB59EC0023277B /* compare.c in Sources */,
 				CEDB918A1FBB59EC0023277B /* HKDF.swift in Sources */,
 				CEDB8F7E1FBB59EC0023277B /* SignalLog.swift in Sources */,
-				CEDB8F8A1FBB59EC0023277B /* HelperFunctions.swift in Sources */,
+				CEDB8F8A1FBB59EC0023277B /* IntExtensions.swift in Sources */,
 				CEDB8F821FBB59EC0023277B /* SignalError.swift in Sources */,
 				CEDB90A21FBB59EC0023277B /* ge_isneutral.c in Sources */,
 				CEDB91621FBB59EC0023277B /* open.c in Sources */,
@@ -2313,7 +2376,6 @@
 				CEDB91351FBB59EC0023277B /* ge_frombytes.c in Sources */,
 				CEDB91C11FBB59EC0023277B /* SessionRecord.swift in Sources */,
 				CEDB8F991FBB59EC0023277B /* SenderKeyState.swift in Sources */,
-				CEDB8F911FBB59EC0023277B /* DeviceConsistency.swift in Sources */,
 				CEDB8FED1FBB59EC0023277B /* fe_sub.c in Sources */,
 				CEDB91B11FBB59EC0023277B /* PendingKeyExchange.swift in Sources */,
 				CEDB8FB91FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
@@ -2385,7 +2447,7 @@
 				CEDB90191FBB59EC0023277B /* compare.c in Sources */,
 				CEDB91891FBB59EC0023277B /* HKDF.swift in Sources */,
 				CEDB8F7D1FBB59EC0023277B /* SignalLog.swift in Sources */,
-				CEDB8F891FBB59EC0023277B /* HelperFunctions.swift in Sources */,
+				CEDB8F891FBB59EC0023277B /* IntExtensions.swift in Sources */,
 				CEDB8F811FBB59EC0023277B /* SignalError.swift in Sources */,
 				CEDB90A11FBB59EC0023277B /* ge_isneutral.c in Sources */,
 				CEDB91611FBB59EC0023277B /* open.c in Sources */,
@@ -2513,13 +2575,14 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christophhagen.$(PROJECT_NAME)";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2582,13 +2645,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christophhagen.$(PROJECT_NAME)";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2787,7 +2851,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christophhagen.$(PROJECT_NAME)";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -2857,7 +2921,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christophhagen.$(PROJECT_NAME)";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -2930,7 +2994,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christophhagen.$(PROJECT_NAME)";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -2999,7 +3063,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christophhagen.$(PROJECT_NAME)";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -3075,7 +3139,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christophhagen.$(PROJECT_NAME)";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -3144,7 +3208,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christophhagen.$(PROJECT_NAME)";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = SignalProtocolSwift;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

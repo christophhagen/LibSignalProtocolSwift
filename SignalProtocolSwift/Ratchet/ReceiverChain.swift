@@ -67,15 +67,14 @@ final class ReceiverChain {
         self.messageKeys = object.messageKeys.map { RatchetMessageKeys(from: $0) }
     }
 
-    // TODO: Remove?
-//    convenience init(from data: Data, version: HKDFVersion) throws {
-//        let object = try Textsecure_SessionStructure.Chain(serializedData: data)
-//        try self.init(from: object, version: version)
-//    }
-//
-//    func data() throws -> Data {
-//        return try object.serializedData()
-//    }
+    convenience init(from data: Data, version: HKDFVersion) throws {
+        let object = try Textsecure_SessionStructure.Chain(serializedData: data)
+        try self.init(from: object, version: version)
+    }
+
+    func data() throws -> Data {
+        return try object.serializedData()
+    }
     
     var object: Textsecure_SessionStructure.Chain {
         return Textsecure_SessionStructure.Chain.with {

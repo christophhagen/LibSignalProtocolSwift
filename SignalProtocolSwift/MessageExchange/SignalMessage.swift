@@ -70,8 +70,7 @@ public struct SignalMessage {
         let longMac: [UInt8] = try SignalCrypto.hmacSHA256(for: bytes +  [UInt8](message), with: macKey)
 
         guard longMac.count >= SignalMessage.macLength else {
-            signalLog(level: .error, "MAC length invalid: Is \(SignalMessage.macLength), Maximum \(longMac.count)")
-            throw SignalError.hmacError
+            throw SignalError(.hmacError, "MAC length invalid: Is \(SignalMessage.macLength), Maximum \(longMac.count)")
         }
 
         return Array(longMac[0..<SignalMessage.macLength])
@@ -79,27 +78,20 @@ public struct SignalMessage {
 
     func verifyMac(senderIdentityKey: PublicKey,
                    receiverIdentityKey: PublicKey,
-                   macKey: [UInt8]) -> Bool {
+                   macKey: [UInt8]) throws -> Bool {
 
-        guard let data = try? self.data() else {
-            signalLog(level: .warning, "Could not serialize SignalMessage")
-            return false
-        }
+        let data = try self.data()
         let length = data.count - SignalMessage.macLength
         let content = data[0..<length]
 
-        guard let ourMac = try? getMac(
+        let ourMac = try getMac(
             senderIdentityKey: senderIdentityKey,
             receiverIdentityKey: receiverIdentityKey,
             macKey: macKey,
-            message: content) else {
-                signalLog(level: .warning, "Could not calculate mac for message")
-                return false
-        }
+            message: content)
 
         guard ourMac.count == SignalMessage.macLength else {
-            signalLog(level: .warning, "MAC length mismatch: \(mac.count) != \(SignalMessage.macLength)")
-            return false
+            throw SignalError(.hmacError, "MAC length mismatch: \(mac.count) != \(SignalMessage.macLength)")
         }
         return ourMac == mac
     }
@@ -116,8 +108,7 @@ extension SignalMessage {
 
     public init(from data: Data) throws {
         guard data.count > SignalMessage.macLength else {
-            signalLog(level: .warning, "Invalid length of SignalMessage: \(data.count)")
-            throw SignalError.invalidMessage
+            throw SignalError(.invalidMessage, "Invalid length of SignalMessage: \(data.count)")
         }
         let length = data.count - SignalMessage.macLength
         let mac =  [UInt8](data[length..<data.count])
@@ -125,8 +116,7 @@ extension SignalMessage {
         let version = (data[0] & 0xF0) >> 4
         guard version > CipherTextMessage.unsupportedVersion,
             version <= CipherTextMessage.currentVersion else {
-            signalLog(level: .warning, "Invalid version of SignalMessage: \(version)")
-            throw SignalError.invalidVersion
+            throw SignalError(.invalidVersion, "Invalid version of SignalMessage: \(version)")
         }
         let object = try Textsecure_SignalMessage(serializedData: newData)
         try self.init(from: object, version: version, mac: mac)
@@ -135,7 +125,7 @@ extension SignalMessage {
     init(from object: Textsecure_SignalMessage, version: UInt8, mac: [UInt8]) throws {
         guard object.hasCiphertext, object.hasCounter,
             object.hasRatchetKey, object.hasPreviousCounter else {
-                throw SignalError.invalidProtoBuf
+                throw SignalError(.invalidProtoBuf, "Missing data in SignalMessage ProtoBuf object")
         }
         self.counter = object.counter
         self.cipherText =  [UInt8](object.ciphertext)
@@ -147,10 +137,14 @@ extension SignalMessage {
 
     public func data() throws -> Data {
         let version = messageVersion << 4 | CipherTextMessage.currentVersion
-        return try Data([version]) + object().serializedData() + Data(mac)
+        do {
+            return try Data([version]) + object.serializedData() + Data(mac)
+        } catch {
+            throw SignalError(.invalidProtoBuf, "Could not serialize SignalMessage: \(error)")
+        }
     }
     
-    func object() throws -> Textsecure_SignalMessage {
+    var object: Textsecure_SignalMessage {
         return Textsecure_SignalMessage.with {
             $0.ciphertext = Data(self.cipherText)
             $0.counter = self.counter

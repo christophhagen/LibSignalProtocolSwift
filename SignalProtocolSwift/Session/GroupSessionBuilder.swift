@@ -22,8 +22,7 @@ public struct GroupSessionBuilder {
         senderKeyName: SignalSenderKeyName,
         distributionMessageData message: CipherTextMessage) throws {
         guard message.type == .senderKeyDistribution else {
-            // TODO: Throw other error
-            throw SignalError.invalid
+            throw SignalError(.invalidType, "Invalid message type \(message.type)")
         }
         let object = try SenderKeyDistributionMessage(from: message.data)
         try processSession(senderKeyName: senderKeyName,
@@ -46,12 +45,11 @@ public struct GroupSessionBuilder {
         try store.store(senderKey: senderKey, for: senderKeyName)
     }
 
-    func createSession(senderKeyName: SignalSenderKeyName) throws -> SenderKeyDistributionMessage {
+    public func createSession(senderKeyName: SignalSenderKeyName) throws -> SenderKeyDistributionMessage {
 
         let record = try store.loadSenderKey(for: senderKeyName) ?? SenderKeyRecord()
 
         if record.isEmpty {
-
             let senderKeyId = try SignalCrypto.generateSenderKeyId()
             let senderKey = try SignalCrypto.generateSenderKey()
             let senderSigningKey = try SignalCrypto.generateSenderSigningKey()
@@ -61,8 +59,9 @@ public struct GroupSessionBuilder {
                                 signatureKeyPair: senderSigningKey)
             try store.store(senderKey: record, for: senderKeyName)
         }
+
         guard let state = record.state else {
-            throw SignalError.unknown
+            throw SignalError(.unknown, "No state in record")
         }
 
         let chainKey = state.chainKey

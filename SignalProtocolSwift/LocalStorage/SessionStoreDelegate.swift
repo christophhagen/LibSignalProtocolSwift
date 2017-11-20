@@ -30,7 +30,7 @@ public protocol SessionStoreDelegate {
      - parameter recipientID: The name of the remote client.
      - returns: An array of recipient IDs
      */
-    func subDeviceSessions(for recipientID: String) -> [Int32]
+    func subDeviceSessions(for recipientID: String) -> [UInt32]
 
     /**
      Store a session record for a remote client.

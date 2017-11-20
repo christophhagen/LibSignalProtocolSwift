@@ -8,54 +8,9 @@
 
 import Foundation
 
-
-public struct SignalAddress {
-
-    var name: String
-
-    var deviceId: Int32
-}
-
-extension SignalAddress: Equatable {
-    public static func ==(lhs: SignalAddress, rhs: SignalAddress) -> Bool {
-        return lhs.name == rhs.name && lhs.deviceId == rhs.deviceId
-    }
-}
-
-extension SignalAddress: Hashable {
-    public var hashValue: Int {
-        return name.hashValue + deviceId.hashValue
-    }
-}
-
-extension SignalAddress: CustomStringConvertible {
-    public var description: String {
-        return "SignalAddress(\(name),\(deviceId))"
-    }
-}
-
-
-
-/*
- * A representation of a (group + sender + device) tuple
+/**
+ Extension to serialize Int32
  */
-public struct SignalSenderKeyName {
-    var groupId: String
-    var sender: SignalAddress
-}
-
-extension SignalSenderKeyName: Equatable {
-    public static func ==(lhs: SignalSenderKeyName, rhs: SignalSenderKeyName) -> Bool {
-        return lhs.groupId == rhs.groupId && lhs.sender == rhs.sender
-    }
-}
-
-extension SignalSenderKeyName: Hashable {
-    public var hashValue: Int {
-        return sender.hashValue + groupId.hashValue
-    }
-}
-
 extension Int32 {
     
     /// Represent an `Int32` as a 4-byte array of UInt8
@@ -69,7 +24,7 @@ extension Int32 {
     }
     
     /**
-     Create a `UInt32` from a 4-byte array of UInt8
+     Create a `Int32` from a 4-byte array of UInt8
      - parameter bytes: The 4-byte record
      */
     init?(from bytes: [UInt8]) {

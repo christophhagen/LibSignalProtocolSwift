@@ -11,8 +11,8 @@ import XCTest
 
 class SessionBuilderTests: XCTestCase {
 
-    private let aliceAddress = SignalAddress(name: "+14151111111", deviceId: 1)
-    private let bobAddress = SignalAddress(name: "+14152222222", deviceId: 1)
+    private let aliceAddress = SignalAddress(identifier: "+14151111111", deviceId: 1)
+    private let bobAddress = SignalAddress(identifier: "+14152222222", deviceId: 1)
 
     /**
      This test doesn't make sense for swift, since we can't call SessionBuilder.process(preKeyBundle:)
@@ -271,7 +271,7 @@ class SessionBuilderTests: XCTestCase {
             let _ = try bobSessionCipher.decrypt(preKeySignalMessage: alicePreKeySignalMessage)
             XCTFail("Could decrypt the message even though the identity should be untrusted")
             return
-        } catch let error as SignalError where error == .untrustedIdentity {
+        } catch let error as SignalError where error.type == .untrustedIdentity {
 
         } catch {
             XCTFail("Failed trying to decrypt message from Alice")
@@ -313,7 +313,7 @@ class SessionBuilderTests: XCTestCase {
         do {
             let _ = try newAliceSessionBuilder.process(preKeyBundle: bundle)
             XCTFail("Processing bundle should fail")
-        } catch let error as SignalError where error == .untrustedIdentity {
+        } catch let error as SignalError where error.type == .untrustedIdentity {
 
         } catch {
             XCTFail("Failed to process bundle, but not with the right error")
@@ -370,7 +370,7 @@ class SessionBuilderTests: XCTestCase {
             do {
                 try aliceSessionBuilder.process(preKeyBundle: bundle)
                 XCTFail("Processing bundle should fail")
-            } catch let error as SignalError where error == .invalidSignature {
+            } catch let error as SignalError where error.type == .invalidSignature {
 
             } catch {
                 XCTFail("Failed to process bundle, but not with the right error")
@@ -507,7 +507,7 @@ class SessionBuilderTests: XCTestCase {
             let message = try SignalMessage(from: bobOutgoingMessage.data)
             let decrypted = try aliceSessionCipher.decrypt(signalMessage: message)
             guard decrypted == originalMessage else {
-                throw SignalError.invalidMessage
+                throw SignalError(.invalidMessage, "")
             }
         } catch {
             XCTFail("Could not (correctly) decrypt message from Bob")
@@ -519,7 +519,7 @@ class SessionBuilderTests: XCTestCase {
             let incomingMessage2 = try PreKeySignalMessage(from: outgoingMessage2.data)
             let plaintext = try bobSessionCipher.decrypt(preKeySignalMessage: incomingMessage2)
             guard plaintext == originalMessage else {
-                throw SignalError.invalidMessage
+                throw SignalError(.invalidMessage, "")
             }
         } catch {
             XCTFail("Could not decrypt second PreKeySignalMessage")
@@ -531,7 +531,7 @@ class SessionBuilderTests: XCTestCase {
             let incomingMessage2 = try SignalMessage(from: bobOutgoingMessage2.data)
             let decrypted = try aliceSessionCipher.decrypt(signalMessage: incomingMessage2)
             guard decrypted == originalMessage else {
-                throw SignalError.invalidMessage
+                throw SignalError(.invalidMessage, "")
             }
         } catch {
             XCTFail("Could not encrypt or decrypt second SignalMessage")
@@ -629,7 +629,7 @@ class SessionBuilderTests: XCTestCase {
             let _ = try bobSessionCipher.decrypt(preKeySignalMessage: badIncomingMessage)
             XCTFail("Should not decrypt bad message")
             return
-        } catch let error as SignalError where error == .invalidMessage {
+        } catch let error as SignalError where error.type == .invalidMessage {
 
         } catch {
             XCTFail("Invalid error for decyption of bad message")
@@ -791,10 +791,10 @@ class SessionBuilderTests: XCTestCase {
         /* Simulate Alice sending a message to Bob */
         do {
             let aliceMessage = try aliceSessionCipher.encrypt(paddedMessage: originalMessage)
-            if aliceMessage.type != .signal { throw SignalError.invalidMessage }
+            if aliceMessage.type != .signal { throw SignalError(.invalidMessage, "") }
             let signalMessage = try SignalMessage(from: aliceMessage.data)
             let plaintext = try bobSessionCipher.decrypt(signalMessage: signalMessage)
-            if plaintext != originalMessage { throw SignalError.invalidMessage }
+            if plaintext != originalMessage { throw SignalError(.invalidMessage, "") }
         } catch {
             XCTFail("Could not encrypt or decrypt message to Bob")
             return
@@ -803,10 +803,10 @@ class SessionBuilderTests: XCTestCase {
         /* Simulate Bob sending a message to Alice */
         do {
             let bobMessage = try bobSessionCipher.encrypt(paddedMessage: originalMessage)
-            if bobMessage.type != .signal { throw SignalError.invalidMessage }
+            if bobMessage.type != .signal { throw SignalError(.invalidMessage, "") }
             let signalMessage = try SignalMessage(from: bobMessage.data)
             let plaintext = try aliceSessionCipher.decrypt(signalMessage: signalMessage)
-            if plaintext != originalMessage { throw SignalError.invalidMessage }
+            if plaintext != originalMessage { throw SignalError(.invalidMessage, "") }
         } catch {
             XCTFail("Could not encrypt or decrypt message to Alice")
             return
@@ -819,7 +819,7 @@ class SessionBuilderTests: XCTestCase {
                 let aliceLoopingMessage = try aliceSessionCipher.encrypt(paddedMessage: loopingMessage)
                 let aliceMessage = try SignalMessage(from: aliceLoopingMessage.data)
                 let plaintext = try bobSessionCipher.decrypt(signalMessage: aliceMessage)
-                if plaintext != loopingMessage { throw SignalError.invalidMessage }
+                if plaintext != loopingMessage { throw SignalError(.invalidMessage, "") }
             } catch {
                 XCTFail("Could not encrypt or decrypt message to Bob")
                 return
@@ -833,7 +833,7 @@ class SessionBuilderTests: XCTestCase {
                 let bobLoopingMessage = try bobSessionCipher.encrypt(paddedMessage: loopingMessage)
                 let bobMessage = try SignalMessage(from: bobLoopingMessage.data)
                 let plaintext = try aliceSessionCipher.decrypt(signalMessage: bobMessage)
-                if plaintext != loopingMessage { throw SignalError.invalidMessage }
+                if plaintext != loopingMessage { throw SignalError(.invalidMessage, "") }
             } catch {
                 XCTFail("Could not encrypt or decrypt message to Alice")
                 return
@@ -873,7 +873,7 @@ class SessionBuilderTests: XCTestCase {
             do {
                 let message = try SignalMessage(from: messages[i].1)
                 let plaintext = try bobSessionCipher.decrypt(signalMessage: message)
-                if plaintext != messages[i].0 { throw SignalError.invalidMessage }
+                if plaintext != messages[i].0 { throw SignalError(.invalidMessage, "") }
             } catch {
                 XCTFail("Could not decrypt shuffled message for Bob")
                 return
@@ -887,7 +887,7 @@ class SessionBuilderTests: XCTestCase {
             let ciphertext = try sender.encrypt(paddedMessage: loopingMessage)
             let message = try SignalMessage(from: ciphertext.data)
             let plaintext = try receiver.decrypt(signalMessage: message)
-            if plaintext != loopingMessage { throw SignalError.invalidMessage }
+            if plaintext != loopingMessage { throw SignalError(.invalidMessage, "") }
         }
     }
 }

@@ -93,14 +93,14 @@ final class SenderKeyRecord {
     
     // MARK: Protocol Buffers
 
-    func object() throws -> Textsecure_SenderKeyRecordStructure {
-        return try Textsecure_SenderKeyRecordStructure.with {
-            $0.senderKeyStates = try self.states.map { try $0.object() }
+    var object: Textsecure_SenderKeyRecordStructure {
+        return Textsecure_SenderKeyRecordStructure.with {
+            $0.senderKeyStates = self.states.map { $0.object }
         }
     }
     
     func data() throws -> Data {
-        return try object().serializedData()
+        return try object.serializedData()
     }
 
     init(from object: Textsecure_SenderKeyRecordStructure) throws {

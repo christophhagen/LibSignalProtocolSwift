@@ -25,8 +25,7 @@ public struct PrivateKey {
      */
     init(point: [UInt8]) throws {
         guard point.count == KeyPair.keyLength else {
-            signalLog(level: .error, "Invalid key length: \(point.count)")
-           throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Invalid key length: \(point.count)")
         }
 //        guard point[0] & 0b00000111 == 0 else {
 //            print("Invalid: \(point[0])")
@@ -62,21 +61,18 @@ public struct PrivateKey {
      */
     func sign(message: Data) throws -> Data {
         guard message.count < 256 else {
-            signalLog(level: .error, "Could not sign message, too long: \(message.count)")
-            throw SignalError.invalidSignature
+            throw SignalError(.invalidSignature, "Could not sign message, too long: \(message.count)")
         }
         let random = try SignalCrypto.random(bytes: KeyPair.signatureLength)
         var signature = [UInt8](repeating: 0, count: KeyPair.signatureLength)
 
         let length = message.count
         guard length > 0 else {
-            signalLog(level: .error, "Invalid length \(length)")
-            throw SignalError.invalidSignature
+            throw SignalError(.invalidSignature, "Invalid length \(length)")
         }
         let result = curve25519_sign(&signature, key, [UInt8](message), UInt(length), random)
         guard result == 0 else {
-            signalLog(level: .error, "Could not sign message: \(result), count \(message.count)")
-            throw SignalError.invalidSignature
+            throw SignalError(.invalidSignature, "Could not sign message: \(result), count \(message.count)")
         }
         return Data(signature)
     }
@@ -94,8 +90,7 @@ public struct PrivateKey {
 
         let result = generalized_xveddsa_25519_sign(&signature, key, [UInt8](message), UInt(message.count), random, nil, 0)
         guard result == 0 else {
-            signalLog(level: .error, "Signature failed \(result)")
-            throw SignalError.invalidSignature
+            throw SignalError(.invalidSignature, "Signature failed \(result)")
         }
         return Data(signature)
     }

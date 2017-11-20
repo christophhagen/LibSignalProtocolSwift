@@ -98,10 +98,10 @@ class CompatibilityTests: XCTestCase {
                 return
             }
 
-            guard recovered.verifyMac(
+            guard (try? recovered.verifyMac(
                 senderIdentityKey: alicePublicKey,
                 receiverIdentityKey: bobPublicKey,
-                macKey: macKey) else {
+                macKey: macKey)) ?? false else {
                     XCTFail("Invalid signature")
                     return
             }
@@ -152,12 +152,12 @@ class CompatibilityTests: XCTestCase {
                 return
             }
             let rebuilt = try SenderKeyMessage(from: serialized)
-            guard rebuilt.verify(signatureKey: alicePublicKey) else {
+            guard try rebuilt.verify(signatureKey: alicePublicKey) else {
                 XCTFail("Invalid signature")
                 return
             }
             let other = try SenderKeyMessage(from: Data(correct))
-            guard other.verify(signatureKey: alicePublicKey) else {
+            guard try other.verify(signatureKey: alicePublicKey) else {
                 XCTFail("Invalid signature")
                 return
             }

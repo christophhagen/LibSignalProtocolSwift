@@ -47,5 +47,16 @@ public protocol SignedPreKeyStoreDelegate {
      - parameter id: The Signed Pre Key id.
      - returns: `true` if the key was removed
      */
-    func removeSignedPreKey(for id: UInt32) -> Bool    
+    func removeSignedPreKey(for id: UInt32) -> Bool
+
+    /**
+     Get all Ids for the SignedPreKeys in the store.
+     - returns: An array of all ids for which a key is stored
+    */
+    func allIds() -> [UInt32]
+
+    /**
+     The id of the last SignedPreKey that was stored.
+    */
+    var lastId: UInt32 { get }
 }

@@ -42,9 +42,9 @@ extension SignalProtocolStoreContext {
      - returns: The identity key pair
      - throws: `SignalError.storageError`
      */
-    func getIdentityKey() throws -> KeyPair {
+    public func getIdentityKey() throws -> KeyPair {
         guard let key = identityKeyStore.identityKey else {
-            throw SignalError.storageError
+            throw SignalError(.storageError, "Could not get identity key from store")
         }
         return key
     }
@@ -55,9 +55,9 @@ extension SignalProtocolStoreContext {
      - returns: The local registration id
      - throws: `SignalError.storageError`
      */
-    func getLocalRegistrationID() throws -> UInt32 {
+    public func getLocalRegistrationID() throws -> UInt32 {
         guard let id =  identityKeyStore.localRegistrationID else {
-            throw SignalError.storageError
+            throw SignalError(.storageError, "Could not get local registration id from store")
         }
         return id
     }
@@ -73,7 +73,7 @@ extension SignalProtocolStoreContext {
      - parameter address: The address of the remote client
      - returns: `true` if trusted, `false` if not trusted
      */
-    func isTrusted(identity: PublicKey, for address: SignalAddress) -> Bool {
+    public func isTrusted(identity: PublicKey, for address: SignalAddress) -> Bool {
         return identityKeyStore.isTrusted(identity: identity.data, for: address)
     }
 
@@ -86,9 +86,9 @@ extension SignalProtocolStoreContext {
      - parameter address: The address of the remote client
      - returns: `true` on success
      */
-    func save(identity: PublicKey?, for address: SignalAddress) throws {
+    public func save(identity: PublicKey?, for address: SignalAddress) throws {
         guard identityKeyStore.save(identity: identity?.data, for: address) else {
-            throw SignalError.storageError
+            throw SignalError(.storageError, "Could not save identity for \(address)")
         }
     }
 }
@@ -102,27 +102,25 @@ extension SignalProtocolStoreContext {
      - returns: The pre key
      - throws: `SignalError.invalidKeyID`, `SignalError.storageError`
      */
-    func preKey(for id: UInt32) throws -> SessionPreKey {
+    public func preKey(for id: UInt32) throws -> SessionPreKey {
         guard let key = preKeyStore.preKey(for: id) else {
-            throw SignalError.invalidKeyID
+            throw SignalError(.invalidId, "No PreKey for id \(id)")
         }
-        do {
-            return try SessionPreKey(from: key)
-        } catch {
-            throw SignalError.storageError
-        }
+        return try SessionPreKey(from: key)
     }
 
     /**
      Store a pre key for a given id.
 
      - parameter preKey: The key to store
-     - throws: `SignalError.storageError`
+     - throws: `SignalErrorType.storageError`, `SignalErrorType.invalidProtoBuf`
      */
-    func store(preKey: SessionPreKey) throws {
-        guard preKeyStore.store(preKey: try preKey.data(), for: preKey.id) else {
-            signalLog(level: .warning, "Could not store PreKey in storage")
-            throw SignalError.storageError
+    public func store(preKey: SessionPreKey) throws {
+        guard let data = try? preKey.data() else {
+            throw SignalError(.invalidProtoBuf, "Could not serialize PreKey \(preKey.id)")
+        }
+        guard preKeyStore.store(preKey: data, for: preKey.id) else {
+            throw SignalError(.storageError, "Could not store PreKey \(preKey.id)")
         }
     }
 
@@ -132,7 +130,7 @@ extension SignalProtocolStoreContext {
      - parameter id: The pre key id
      - returns: `true` if a key exists
      */
-    func containsPreKey(for id: UInt32) -> Bool {
+    public func containsPreKey(for id: UInt32) -> Bool {
         return preKeyStore.containsPreKey(for: id)
     }
 
@@ -142,11 +140,14 @@ extension SignalProtocolStoreContext {
      - parameter id: The pre key id.
      - throws: `SignalError.storageError`
      */
-    func removePreKey(for id: UInt32) throws {
+    public func removePreKey(for id: UInt32) throws {
         guard preKeyStore.removePreKey(for: id) else {
-            signalLog(level: .warning, "Could not delete PreKey from storage")
-            throw SignalError.storageError
+            throw SignalError(.storageError, "Could not delete PreKey \(id)")
         }
+    }
+
+    var lastPreKeyId: UInt32 {
+        return preKeyStore.lastId
     }
 }
 
@@ -157,18 +158,13 @@ extension SignalProtocolStoreContext {
 
      - parameter senderKeyName: The address and group of the remote client
      - returns: The Sender Key, or nil if no key exists
-     - throws: `SignalError.storageError`
+     - throws: `SignalErrorType.invalidProtoBuf`
      */
     func loadSenderKey(for senderKeyName: SignalSenderKeyName) throws -> SenderKeyRecord? {
         guard let senderKey = senderKeyStore.loadSenderKey(senderKeyName: senderKeyName) else {
             return nil
         }
-        do {
-            return try SenderKeyRecord(from: senderKey)
-        } catch {
-            signalLog(level: .warning, "Could not deserialize SenderKeyRecord")
-            throw SignalError.storageError
-        }
+        return try SenderKeyRecord(from: senderKey)
     }
 
     /**
@@ -176,12 +172,14 @@ extension SignalProtocolStoreContext {
 
      - parameter senderKey: The key to store
      - parameter senderKeyName: The address and group of the remote client
-     - returns: `true` if the key was stored
+     - throws: `SignalErrorType.storageError`, `SignalErrorType.invalidProtoBuf`
      */
     func store(senderKey: SenderKeyRecord, for senderKeyName: SignalSenderKeyName) throws {
-        guard senderKeyStore.store(senderKey: try senderKey.data(), for: senderKeyName) else {
-            signalLog(level: .warning, "Could not store SenderKey in storage")
-            throw SignalError.storageError
+        guard let data = try? senderKey.data() else {
+            throw SignalError(.invalidProtoBuf, "Could not serialize record for \(senderKeyName)")
+        }
+        guard senderKeyStore.store(senderKey: data, for: senderKeyName) else {
+            throw SignalError(.storageError, "Could not store record for \(senderKeyName)")
         }
     }
 }
@@ -200,11 +198,7 @@ extension SignalProtocolStoreContext {
                 signalLog(level: .info, "Created new session for address \(address)")
                 return SessionRecord(state: nil)
         }
-        do {
-            return try SessionRecord(from: record)
-        } catch {
-            throw SignalError.storageError
-        }
+        return try SessionRecord(from: record)
     }
 
     /**
@@ -213,7 +207,7 @@ extension SignalProtocolStoreContext {
      - parameter recipientID: The name of the remote client.
      - returns: An array of recipient IDs
      */
-    func subDeviceSessions(for recipientID: String) -> [Int32] {
+    public func subDeviceSessions(for recipientID: String) -> [UInt32] {
         return sessionStore.subDeviceSessions(for: recipientID)
     }
 
@@ -225,8 +219,11 @@ extension SignalProtocolStoreContext {
      - throws: `SignalError.storageError`
      */
     func store(session: SessionRecord, for address: SignalAddress) throws {
-        guard sessionStore.store(session: try session.data(), for: address) else {
-            throw SignalError.storageError
+        guard let data = try? session.data() else {
+            throw SignalError(.invalidProtoBuf, "Could not serialize record for \(address)")
+        }
+        guard sessionStore.store(session: data, for: address) else {
+            throw SignalError(.storageError, "Could not store record for \(address)")
         }
     }
 
@@ -236,7 +233,7 @@ extension SignalProtocolStoreContext {
      - parameter address: The address of the remote client
      - returns: `true` if a record exists
      */
-    func containsSession(for address: SignalAddress) -> Bool {
+    public func containsSession(for address: SignalAddress) -> Bool {
         return sessionStore.containsSession(for: address)
     }
 
@@ -248,7 +245,7 @@ extension SignalProtocolStoreContext {
      */
     func deleteSession(for address: SignalAddress) throws {
         guard sessionStore.deleteSession(for: address) else {
-            throw SignalError.storageError
+            throw SignalError(.storageError, "Could not delete session for \(address)")
         }
     }
 
@@ -272,17 +269,11 @@ extension SignalProtocolStoreContext {
      - returns: The Signed Pre Key
      - throws: `SignalError.storageError`
      */
-    func signedPreKey(for id: UInt32) throws -> SessionSignedPreKey {
+    public func signedPreKey(for id: UInt32) throws -> SessionSignedPreKey {
         guard let record = signedPreKeyStore.signedPreKey(for: id) else {
-            signalLog(level: .warning, "No signed pre key stored for id \(id)")
-            throw SignalError.storageError
+            throw SignalError(.storageError, "No SignedPreKey \(id)")
         }
-        do {
-            return try SessionSignedPreKey(from: record)
-        } catch {
-            signalLog(level: .error, "Invalid stored signed pre key")
-            throw SignalError.storageError
-        }
+        return try SessionSignedPreKey(from: record)
     }
 
     /**
@@ -291,9 +282,12 @@ extension SignalProtocolStoreContext {
      - parameter signedPreKey: The Signed Pre Key to store
      - throws: `SignalError.storageError`
      */
-    func store(signedPreKey: SessionSignedPreKey) throws {
-        guard signedPreKeyStore.store(signedPreKey: try signedPreKey.data(), for: signedPreKey.id) else {
-                throw SignalError.storageError
+    public func store(signedPreKey: SessionSignedPreKey) throws {
+        guard let data = try? signedPreKey.data() else {
+            throw SignalError(.invalidProtoBuf, "Could not serialize SignedPreKey \(signedPreKey.id)")
+        }
+        guard signedPreKeyStore.store(signedPreKey: data, for: signedPreKey.id) else {
+            throw SignalError(.storageError, "Could not store SignedPreKey \(signedPreKey.id)")
         }
     }
 
@@ -303,7 +297,7 @@ extension SignalProtocolStoreContext {
      - parameter id: The Signed Pre Key id
      - returns: `true` if a key exists
      */
-    func containsSignedPreKey(for id: UInt32) -> Bool {
+    public func containsSignedPreKey(for id: UInt32) -> Bool {
         return signedPreKeyStore.containsSignedPreKey(for: id)
     }
 
@@ -313,9 +307,24 @@ extension SignalProtocolStoreContext {
      - parameter id: The Signed Pre Key id.
      - throws: `SignalError.storageError`
      */
-    func removeSignedPreKey(for id: UInt32) throws {
+    public func removeSignedPreKey(for id: UInt32) throws {
         guard signedPreKeyStore.removeSignedPreKey(for: id) else {
-            throw SignalError.storageError
+            throw SignalError(.storageError, "Could not remove SignedPreKey \(id)")
         }
+    }
+
+    /**
+     Get all Ids for the SignedPreKeys in the store.
+     - returns: An array of all ids for which a key is stored
+     */
+    public func allSignedPreKeyIds() -> [UInt32] {
+        return signedPreKeyStore.allIds()
+    }
+
+    /**
+     The id of the last SignedPreKey that was stored.
+     */
+    public var lastSignedPreKeyId: UInt32 {
+        return signedPreKeyStore.lastId
     }
 }

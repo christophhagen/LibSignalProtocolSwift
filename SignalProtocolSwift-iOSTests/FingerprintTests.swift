@@ -155,15 +155,15 @@ class FingerprintTests: XCTestCase {
                 XCTFail("Could not create keys")
                 return
         }
-        let generator = FingerprintGenerator(iterations: 5200, scannableVersion: version)
-
-        guard let aliceFingerprint = try? generator.fingerprint(
+        guard let aliceFingerprint = try? Fingerprint(
+            iterations: 5200, scannableVersion: version,
             localStableIdentifier: aliceId, localIdentity: aliceIdentity,
             remoteStableIdentifier: bobId, remoteIdentity: bobIdentity) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
-        guard let bobFingerprint = try? generator.fingerprint(
+        guard let bobFingerprint = try? Fingerprint(
+            iterations: 5200, scannableVersion: version,
             localStableIdentifier: bobId, localIdentity: bobIdentity,
             remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
                 XCTFail("Could not create fingerprint for Bob")
@@ -227,16 +227,16 @@ class FingerprintTests: XCTestCase {
                 XCTFail("Could not create keys")
                 return
         }
-        let generator = FingerprintGenerator(iterations: 1024, scannableVersion: version)
-
-        guard let aliceFingerprint = try? generator.fingerprint(
+        guard let aliceFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: version,
             localStableIdentifier: aliceId, localIdentity: aliceIdentity,
             remoteStableIdentifier: bobId, remoteIdentity: bobIdentity) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
-        guard let bobFingerprint = try? generator.fingerprint(
-            localStableIdentifier: bobId, localIdentity: bobIdentity,
+        guard let bobFingerprint = try? Fingerprint(
+                iterations: 1024, scannableVersion: version,
+                localStableIdentifier: bobId, localIdentity: bobIdentity,
             remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
                 XCTFail("Could not create fingerprint for Bob")
                 return
@@ -265,15 +265,16 @@ class FingerprintTests: XCTestCase {
             XCTFail("Could not create keys")
             return
         }
-        let generator = FingerprintGenerator(iterations: 1024, scannableVersion: .version1)
-        guard let aliceFingerprint = try? generator.fingerprint(
+        guard let aliceFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: .version1,
             localStableIdentifier: aliceId, localIdentityList: aliceKeyList,
             remoteStableIdentifier: bobId, remoteIdentityList: bobKeyList) else {
                 XCTFail("Could not create fingerprint for alice")
                 return
         }
 
-        guard let bobFingerprint = try? generator.fingerprint(
+        guard let bobFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: .version1,
             localStableIdentifier: bobId, localIdentityList: bobKeyList,
             remoteStableIdentifier: aliceId, remoteIdentityList: aliceKeyList) else {
                 XCTFail("Could not create fingerprint for bob")
@@ -290,15 +291,15 @@ class FingerprintTests: XCTestCase {
                 XCTFail("Could not create keys")
                 return
         }
-        let generator = FingerprintGenerator(iterations: 1024, scannableVersion: version)
-
-        guard let aliceFingerprint = try? generator.fingerprint(
+        guard let aliceFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: version,
             localStableIdentifier: aliceId, localIdentity: aliceIdentity,
             remoteStableIdentifier: bobId, remoteIdentity: mitmIdentity) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
-        guard let bobFingerprint = try? generator.fingerprint(
+        guard let bobFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: version,
             localStableIdentifier: bobId, localIdentity: bobIdentity,
             remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
                 XCTFail("Could not create fingerprint for Bob")
@@ -329,15 +330,15 @@ class FingerprintTests: XCTestCase {
                 XCTFail("Could not create keys")
                 return
         }
-        let generator = FingerprintGenerator(iterations: 1024, scannableVersion: .version0)
-
-        guard let aliceFingerprint = try? generator.fingerprint(
+        guard let aliceFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: .version0,
             localStableIdentifier: aliceId + "2", localIdentity: aliceIdentity,
             remoteStableIdentifier: bobId, remoteIdentity: bobIdentity) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
-        guard let bobFingerprint = try? generator.fingerprint(
+        guard let bobFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: .version0,
             localStableIdentifier: bobId, localIdentity: bobIdentity,
             remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
                 XCTFail("Could not create fingerprint for Bob")
@@ -350,7 +351,7 @@ class FingerprintTests: XCTestCase {
         do {
             let _ = try aliceFingerprint.scannable.matches(bobFingerprint.scannable)
             XCTFail("Should fail to match fingerprints")
-        } catch let error as SignalError where error == .fPIdentityMismatch {
+        } catch let error as SignalError where error.type == .fPIdentityMismatch {
 
         } catch {
             XCTFail("Should fail with other error")
@@ -359,7 +360,7 @@ class FingerprintTests: XCTestCase {
         do {
             let _ = try bobFingerprint.scannable.matches(aliceFingerprint.scannable)
             XCTFail("Should fail to match fingerprints")
-        } catch let error as SignalError where error == .fPIdentityMismatch {
+        } catch let error as SignalError where error.type == .fPIdentityMismatch {
 
         } catch {
             XCTFail("Should fail with other error")
@@ -373,18 +374,16 @@ class FingerprintTests: XCTestCase {
                 XCTFail("Could not create keys")
                 return
         }
-        let generator = FingerprintGenerator(iterations: 1024, scannableVersion: .version0)
-
-        guard let aliceFingerprint = try? generator.fingerprint(
+        guard let aliceFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: .version0,
             localStableIdentifier: aliceId, localIdentity: aliceIdentity,
             remoteStableIdentifier: bobId, remoteIdentity: bobIdentity) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
 
-        let generator2 = FingerprintGenerator(iterations: 1024, scannableVersion: .version1)
-
-        guard let bobFingerprint = try? generator2.fingerprint(
+        guard let bobFingerprint = try? Fingerprint(
+            iterations: 1024, scannableVersion: .version1,
             localStableIdentifier: bobId, localIdentity: bobIdentity,
             remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
                 XCTFail("Could not create fingerprint for Bob")
@@ -397,7 +396,7 @@ class FingerprintTests: XCTestCase {
 
         do {
             let _ = try aliceFingerprint.scannable.matches(bobFingerprint.scannable)
-        } catch let error as SignalError where error == .fPVersionMismatch {
+        } catch let error as SignalError where error.type == .fPVersionMismatch {
 
         } catch {
             XCTFail("Should fail with different error")
@@ -405,7 +404,7 @@ class FingerprintTests: XCTestCase {
         }
         do {
             let _ = try bobFingerprint.scannable.matches(aliceFingerprint.scannable)
-        } catch let error as SignalError where error == .fPVersionMismatch {
+        } catch let error as SignalError where error.type == .fPVersionMismatch {
 
         } catch {
             XCTFail("Should fail with different error")

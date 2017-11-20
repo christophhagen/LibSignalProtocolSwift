@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SessionPreKey {
+public struct SessionPreKey {
 
     static let mediumMaxValue: UInt32 = 0xFFFFFF
 
@@ -32,13 +32,13 @@ extension SessionPreKey {
         }
     }
     
-    func data() throws -> Data {
+    public func data() throws -> Data {
         return try object.serializedData()
     }
 
     init(from object: Textsecure_PreKeyRecordStructure) throws {
         guard object.hasID, object.hasPublicKey, object.hasPrivateKey else {
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Missing data in SessionPreKey object")
         }
         self.id = object.id
         self.keyPair = KeyPair(
@@ -46,7 +46,7 @@ extension SessionPreKey {
             privateKey: try PrivateKey(from: object.privateKey))
     }
     
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         let object = try Textsecure_PreKeyRecordStructure(serializedData: data)
         try self.init(from: object)
     }

@@ -68,13 +68,12 @@ extension PreKeySignalMessage {
     
     public init(from data: Data) throws {
         guard data.count > 1 else {
-            throw SignalError.invalidProtoBuf
+            throw SignalError(.invalidProtoBuf, "Too few bytes in PreKeySignalMessage data")
         }
         let ver = (data[0] & 0xF0) >> 4
         guard ver > CipherTextMessage.unsupportedVersion,
             ver <= CipherTextMessage.currentVersion else {
-                signalLog(level: .warning, "Invalid version of PreKeySignalMessage: \(ver)")
-                throw SignalError.invalidVersion
+                throw SignalError(.invalidVersion, "Invalid PreKeySignalMessage version \(ver)")
         }
         let object = try Textsecure_PreKeySignalMessage(serializedData: data.advanced(by: 1))
         try self.init(from: object, version: ver)
@@ -83,7 +82,7 @@ extension PreKeySignalMessage {
     init(from object: Textsecure_PreKeySignalMessage, version: UInt8) throws {
         guard object.hasBaseKey, object.hasMessage, object.hasIdentityKey,
             object.hasSignedPreKeyID, object.hasRegistrationID else {
-                throw SignalError.invalidProtoBuf
+                throw SignalError(.invalidProtoBuf, "Missing data in PreKeySignalMessage")
         }
         self.baseKey = try PublicKey(from: object.baseKey)
         self.identityKey = try PublicKey(from: object.identityKey)

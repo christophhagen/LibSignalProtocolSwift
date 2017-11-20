@@ -8,11 +8,20 @@
 
 import Foundation
 
-public enum CipherTextType: Int32 {
+public enum CipherTextType: UInt8, CustomStringConvertible {
     case signal = 2
     case preKey = 3
     case senderKey = 4
     case senderKeyDistribution = 5
+
+    public var description: String {
+        switch self {
+        case .signal: return "SignalMessage"
+        case .preKey: return "PreKeyMessage"
+        case .senderKey: return "SenderKeyMessage"
+        case .senderKeyDistribution: return "SenderKeyDistributionMessage"
+        }
+    }
 }
 
 public struct CipherTextMessage {
