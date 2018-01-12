@@ -15,15 +15,18 @@ import Foundation
  this class can be used for all encrypt/decrypt operations
  within that session.
  */
-public struct SessionCipher {
+public struct SessionCipher<Context: SignalProtocolStoreContext> {
 
     // MARK: Variables
 
-    var store: SignalProtocolStoreContext
+    /// The local data store to use for state information
+    private var store: Context
 
-    var remoteAddress: SignalAddress
+    /// The address of the remote party
+    private var remoteAddress: Context.Address
 
-    var builder: SessionBuilder
+    /// The session builder used to initialize a session
+    private var builder: SessionBuilder<Context>
 
     // MARK: Initialization
 
@@ -41,7 +44,7 @@ public struct SessionCipher {
      - parameter remoteAddress: The remote address that messages will be encrypted to or decrypted from.
      - returns: A freshly allocated session cipher instance
      */
-    public init(store: SignalProtocolStoreContext, remoteAddress: SignalAddress) {
+    public init(store: Context, remoteAddress: Context.Address) {
         self.store = store
         self.remoteAddress = remoteAddress
         self.builder = SessionBuilder(remoteAddress: remoteAddress, store: store)
@@ -55,7 +58,7 @@ public struct SessionCipher {
      - returns: The ciphertext message encrypted to the recipient+device tuple
      - throws: Errors of Type `SignalError`
      */
-    public func encrypt(paddedMessage message: [UInt8]) throws -> CipherTextMessage {
+    public func encrypt(paddedMessage message: Data) throws -> CipherTextMessage {
         let record = try loadSession()
         guard let senderChain = record.state.senderChain else {
             throw SignalError(.unknown, "No sender chain for session state")
@@ -66,7 +69,7 @@ public struct SessionCipher {
         let sessionVersion = record.state.version
 
         let ciphertext = try getCiphertext(
-            version: sessionVersion,
+            messageVersion: sessionVersion,
             messageKeys: messageKeys,
             plaintext: message)
 
@@ -101,7 +104,7 @@ public struct SessionCipher {
 
         let nextChainKey = try chainKey.next()
         record.state.senderChain?.chainKey = nextChainKey
-        try store.store(session: record, for: remoteAddress)
+        try store.sessionStore.store(session: record, for: remoteAddress)
         if preKeyMessage != nil {
             return try preKeyMessage!.baseMessage()
         }
@@ -121,14 +124,14 @@ public struct SessionCipher {
      `SignalError.invalidKey` when the message is formatted incorrectly.
      `SignalError.untrustedIdentity` when the identity key of the sender is untrusted.
      */
-    public func decrypt(preKeySignalMessage ciphertext: PreKeySignalMessage) throws -> [UInt8] {
+    public func decrypt(preKeySignalMessage ciphertext: PreKeySignalMessage) throws -> Data {
         let record = try loadSession()
         let unsignedPreKeyId =
             try builder.process(preKeySignalMessage: ciphertext, sessionRecord: record)
         let plaintext = try decrypt(from: record, and: ciphertext.message)
-        try store.store(session: record, for: remoteAddress)
-        if let id = unsignedPreKeyId, store.containsPreKey(for: id) {
-            try store.removePreKey(for: id)
+        try store.sessionStore.store(session: record, for: remoteAddress)
+        if let id = unsignedPreKeyId, store.preKeyStore.containsPreKey(for: id) {
+            try store.preKeyStore.removePreKey(for: id)
         }
         return plaintext
     }
@@ -138,18 +141,23 @@ public struct SessionCipher {
 
      - parameter ciphertext: The SignalMessage to decrypt.
      - returns: The decrypted plaintext.
-     - throws: `SignalError.invalidMessage` if the input is not valid ciphertext. `SignalError.duplicateMessage` if the input is a message that has already been received. `SignalError.legacyMessage` if the input is a message formatted by a protocol version that is no longer supported. `SignalError.noSession` if there is no established session for this contact.
+     - throws: `SignalError.invalidMessage` if the input is not valid ciphertext.
+     `SignalError.duplicateMessage` if the input is a message that has already been received.
+     `SignalError.legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
+     `SignalError.noSession` if there is no established session for this contact.
      */
-    public func decrypt(signalMessage ciphertext: SignalMessage) throws -> [UInt8] {
+    public func decrypt(signalMessage ciphertext: SignalMessage) throws -> Data {
         let record = try loadSession()
         let plaintext = try decrypt(from: record, and: ciphertext)
 
-        try store.store(session: record, for: remoteAddress)
+        try store.sessionStore.store(session: record, for: remoteAddress)
         return plaintext
     }
 
     /**
      Gets the remote registration ID for this session cipher.
+     - returns: The remote registration id
+     - throws: `SignalError`of type `storageError`
      */
     func getRemoteRegistrationId() throws -> UInt32 {
         return try loadSession().state.remoteRegistrationID
@@ -157,6 +165,8 @@ public struct SessionCipher {
 
     /**
      Gets the version of the session associated with this session cipher.
+     - throws: `SignalError`of type `storageError`
+     - returns: The session version
      */
     func getSessionVersion() throws -> UInt8 {
         return try loadSession().state.version
@@ -166,9 +176,11 @@ public struct SessionCipher {
 
     /**
      Load the session record for the remote address
+     - throws: `SignalError`of type `storageError`
+     - returns: The session record
     */
     private func loadSession() throws -> SessionRecord {
-        return try store.loadSession(for: remoteAddress)
+        return try store.sessionStore.loadSession(for: remoteAddress)
     }
 
     /**
@@ -178,7 +190,7 @@ public struct SessionCipher {
      - returns: The decrypted plaintext
      - throws: Errors of type `SignalError`
     */
-    private func decrypt(from record: SessionRecord, and signalMessage: SignalMessage) throws -> [UInt8] {
+    private func decrypt(from record: SessionRecord, and signalMessage: SignalMessage) throws -> Data {
 
         do {
             return try decrypt(from: record.state, and: signalMessage)
@@ -190,7 +202,6 @@ public struct SessionCipher {
             let state = record.previousStates[index]
             do {
                 let plaintext = try decrypt(from: state, and: signalMessage)
-                record.previousStates.remove(at: index)
                 record.promoteState(state: state)
                 return plaintext
             } catch let error as SignalError where error.type == .invalidMessage {
@@ -208,7 +219,7 @@ public struct SessionCipher {
      - returns: The decrypted plaintext
      - throws: Errors of type `SignalError`, `SignalError.invalidMessage` if the decryption failed.
     */
-    private func decrypt(from state: SessionState, and signalMessage: SignalMessage) throws -> [UInt8] {
+    private func decrypt(from state: SessionState, and signalMessage: SignalMessage) throws -> Data {
 
         guard state.senderChain != nil else {
             throw SignalError(.invalidMessage, "Uninitialized session!")
@@ -248,6 +259,15 @@ public struct SessionCipher {
         return plaintext
     }
 
+    /**
+     Retrieve previously stored message keys or create them from the chain.
+     - parameter state: The state in which decryption happens
+     - parameter theirEphemeral: The public key of the receiver chain to use
+     - parameter chainKey: The current chain key
+     - parameter counter: The counter of the message in the chain
+     - returns: The keys for the message
+     - throws: `SignalError` errors
+     */
     private func getOrCreateMessageKeys(
         state: SessionState,
         theirEphemeral: PublicKey,
@@ -277,6 +297,13 @@ public struct SessionCipher {
         return try currentChainKey.messageKeys()
     }
 
+    /**
+     Retrieve the chain key for a state and receiver chain key.
+     - parameter state: The state in which decryption happens
+     - parameter theirEphemeral: The public key of the receiver chain to use
+     - returns: The keys for the chain
+     - throws: `SignalError` errors
+     */
     private func getOrCreateChainKey(state: SessionState, theirEphemeral: PublicKey) throws -> RatchetChainKey {
 
         if let resultKey = state.receiverChain(for: theirEphemeral)?.chainKey {
@@ -322,51 +349,59 @@ public struct SessionCipher {
 
     }
 
-    private func getCiphertext(version: UInt8, messageKeys: RatchetMessageKeys, plaintext: [UInt8]) throws -> [UInt8] {
+    /**
+     Encrypt a message.
+     - parameter messageVersion: The ciphertext message version
+     - parameter messageKeys: The keys used for encryption
+     - parameter plaintext: The data to encrypt
+     - returns: The encrypted ciphertext
+     - throws: `SignalError` of type `encryptionError`
+    */
+    private func getCiphertext(messageVersion: UInt8, messageKeys: RatchetMessageKeys, plaintext: Data) throws -> Data {
 
+        let iv = getIV(for: messageVersion, messageKeys: messageKeys)
+        return try SignalCrypto.encrypt(
+            message: plaintext,
+            with: .AES_CTRnoPadding,
+            key: messageKeys.cipherKey,
+            iv: iv)
+    }
+
+    /**
+     Get the initialization vector for the message version.
+     - parameter version: The message version
+     - parameter messageKeys: The message keys
+     - returns: The iv
+    */
+    private func getIV(for version: UInt8, messageKeys: RatchetMessageKeys) -> Data {
         if version >= 3 {
-            return try SignalCrypto.encrypt(
-                message: plaintext,
-                with: .AES_CBCwithPKCS5,
-                key: messageKeys.cipherKey,
-                iv: messageKeys.iv)
+            return messageKeys.iv
         } else {
-            var iv = [UInt8](repeating: 0, count: 16)
+            var iv = Data(count: 16)
             let counter = messageKeys.counter
             iv[3] = UInt8(counter & 0x00FF)
             iv[2] = UInt8((counter >> 8) & 0x00FF)
             iv[1] = UInt8((counter >> 16) & 0x00FF)
             iv[0] = UInt8((counter >> 24) & 0x00FF)
-
-            return try SignalCrypto.encrypt(
-                message: plaintext,
-                with: .AES_CTRnoPadding,
-                key: messageKeys.cipherKey,
-                iv: iv)
+            return iv
         }
     }
 
-    private func getPlaintext(messageVersion: UInt8, messageKeys: RatchetMessageKeys, ciphertext: [UInt8]) throws -> [UInt8] {
+    /**
+     Decrypt a message.
+     - parameter version: The ciphertext message version
+     - parameter messageKeys: The keys used for encryption
+     - parameter plaintext: The data to encrypt
+     - returns: The encrypted ciphertext
+     - throws: `SignalError` of type `encryptionError`
+     */
+    private func getPlaintext(messageVersion: UInt8, messageKeys: RatchetMessageKeys, ciphertext: Data) throws -> Data {
 
-        if messageVersion >= 3 {
-            return try SignalCrypto.decrypt(
-                message: ciphertext,
-                with: .AES_CBCwithPKCS5,
-                key: messageKeys.cipherKey,
-                iv: messageKeys.iv)
-        } else {
-            var iv = [UInt8](repeating: 0, count: 16)
-            let counter = messageKeys.counter
-            iv[3] = UInt8(counter & 0x00FF)
-            iv[2] = UInt8((counter >> 8) & 0x00FF)
-            iv[1] = UInt8((counter >> 16) & 0x00FF)
-            iv[0] = UInt8((counter >> 24) & 0x00FF)
-
-            return try SignalCrypto.decrypt(
-                message: ciphertext,
-                with: .AES_CTRnoPadding,
-                key: messageKeys.cipherKey,
-                iv: iv)
-        }
+        let iv = getIV(for: messageVersion, messageKeys: messageKeys)
+        return try SignalCrypto.decrypt(
+            message: ciphertext,
+            with: .AES_CTRnoPadding,
+            key: messageKeys.cipherKey,
+            iv: iv)
     }
 }

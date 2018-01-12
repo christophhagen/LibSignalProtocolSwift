@@ -18,7 +18,7 @@ struct DeviceConsistencyCommitmentV0 {
     private static let codeVersion: UInt16 = 0
 
     /// An identifier used when hashing the identity keys
-    private static let version = "DeviceConsistencyCommitment_V0".asByteArray
+    private static let version = "DeviceConsistencyCommitment_V0".data(using: .utf8)!
 
     /// The generation of the message
     var generation: UInt32
@@ -34,12 +34,14 @@ struct DeviceConsistencyCommitmentV0 {
     */
     init(generation: UInt32, identityKeyList: [PublicKey]) throws {
         let list = identityKeyList.sorted()
-        var bytes = DeviceConsistencyCommitmentV0.version
-        bytes += generation.asByteArray
+        var gen = generation
+        let data = withUnsafePointer(to: &gen) { Data(bytes: $0, count: MemoryLayout<UInt32>.size) }
+
+        var bytes = DeviceConsistencyCommitmentV0.version + data
         for item in list {
-            bytes += item.array
+            bytes += item.data
         }
-        self.serialized = Data(try SignalCrypto.sha512(for: bytes))
+        self.serialized = try SignalCrypto.sha512(for: bytes)
         self.generation = generation
     }
 
@@ -55,27 +57,22 @@ struct DeviceConsistencyCommitmentV0 {
 
         let byte0 = UInt8(DeviceConsistencyCommitmentV0.codeVersion & 0x00FF)
         let byte1 = UInt8((DeviceConsistencyCommitmentV0.codeVersion & 0xFF00) >> 8)
-        var bytes = [byte0, byte1] +  [UInt8](self.serialized)
+        var bytes = Data([byte0, byte1]) + self.serialized
 
         for item in list {
-            bytes +=  [UInt8](item.vrfOutput)
+            bytes +=  item.vrfOutput
         }
 
         let hash = try SignalCrypto.sha512(for: bytes)
         guard hash.count >= 10 else {
             throw SignalError(.digestError, "SHA512 hash is only \(hash.count) bytes")
         }
-        let data = hash.map{ UInt64($0) }
+        let data = hash.map { UInt64($0) }
         let a1 = (data[0] << 32) | (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4]
         let a2 = (data[5] << 32) | (data[6] << 24) | (data[7] << 16) | (data[8] << 8) | data[9]
         let b1 = Int(a1) % 100000
         let b2 = Int(a2) % 100000
-        let longString = String(format: "%05d%05d", b1, b2).asByteArray
-        var stringBytes = Array(longString[0..<7])
-        stringBytes[6] = 0
-        guard let result = String.init(bytes: stringBytes, encoding: .utf8) else {
-            throw SignalError(.unknown, "Could not create String from bytes")
-        }
-        return result
+        let longString = String(format: "%05d%05d", b1, b2)
+        return String(longString.prefix(7))
     }
 }

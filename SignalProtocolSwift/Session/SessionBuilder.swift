@@ -23,19 +23,20 @@ import Foundation
  * their recipient name, and each logical recipient can have multiple
  * physical devices.
  */
-public struct SessionBuilder {
+public struct SessionBuilder<Context: SignalProtocolStoreContext> {
 
-    var remoteAddress: SignalAddress
+    /// The store to save and retrieve keys from
+    var store: Context
 
-    var store: SignalProtocolStoreContext
+    /// The address of the other party
+    var remoteAddress: Context.Address
 
     /**
      Constructs a session builder.
-
      - parameter store: the context to store all state information in
      - parameter remoteAddress: the address of the remote user to build a session with
      */
-    public init(remoteAddress: SignalAddress, store: SignalProtocolStoreContext) {
+    public init(remoteAddress: Context.Address, store: Context) {
         self.remoteAddress = remoteAddress
         self.store = store
     }
@@ -55,17 +56,16 @@ public struct SessionBuilder {
 
         let theirIdentityKey = message.identityKey
 
-        guard store.isTrusted(identity: theirIdentityKey, for: remoteAddress) else {
+        guard store.identityKeyStore.isTrusted(identity: theirIdentityKey, for: remoteAddress) else {
             throw SignalError(.untrustedIdentity, "Untrusted identity for \(remoteAddress)")
         }
         let result = try process(preKeySignalMessageV3: message, record: record)
-        try store.save(identity: theirIdentityKey, for: remoteAddress)
+        try store.identityKeyStore.store(identity: theirIdentityKey, for: remoteAddress)
         return result
     }
 
     /**
      Build a new session from a received PreKeySignalMessage.
-
      - parameter message: The received `PreKeySignalMessage`.
      - returns: the unsigned pre key Id, if available.
      - throws: `SignalError` errors
@@ -79,11 +79,11 @@ public struct SessionBuilder {
             return nil
         }
 
-        let ourSignedPreKey = try store.signedPreKey(for: message.signedPreKeyId)
-        let ourIdentityKey = try store.getIdentityKey()
+        let ourSignedPreKey: SessionSignedPreKey = try store.signedPreKeyStore.signedPreKey(for: message.signedPreKeyId)
+        let ourIdentityKey = try store.identityKeyStore.getIdentityKey()
         let ourOneTimePreKey: SessionPreKey?
         if let preKeyID = message.preKeyId {
-            ourOneTimePreKey = try store.preKey(for: preKeyID)
+            ourOneTimePreKey = try store.preKeyStore.preKey(for: preKeyID)
         } else {
             ourOneTimePreKey = nil
         }
@@ -100,7 +100,7 @@ public struct SessionBuilder {
             theirIdentityKey: message.identityKey,
             theirBaseKey: message.baseKey)
 
-        record.state.localRegistrationID = try store.getLocalRegistrationID()
+        record.state.localRegistrationID = try store.identityKeyStore.getLocalRegistrationID()
         record.state.remoteRegistrationID = message.registrationId
         record.state.aliceBaseKey = message.baseKey
 
@@ -117,7 +117,7 @@ public struct SessionBuilder {
      - throws: `SignalError` errors
      */
     public func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
-        guard store.isTrusted(identity: bundle.identityKey, for: remoteAddress) else {
+        guard store.identityKeyStore.isTrusted(identity: bundle.identityKey, for: remoteAddress) else {
             throw SignalError(.untrustedIdentity, "Untrusted identity for PreKeyBundle")
         }
 
@@ -126,11 +126,11 @@ public struct SessionBuilder {
             throw SignalError(.invalidSignature, "Invalid message signature")
         }
 
-        let session = try store.loadSession(for: remoteAddress)
+        let session: SessionRecord = try store.sessionStore.loadSession(for: remoteAddress)
         let ourBaseKey = try KeyPair()
         let preKeyId = bundle.preKeyPublic != nil ? bundle.preKeyId : nil
 
-        let ourIdentityKey = try store.getIdentityKey()
+        let ourIdentityKey = try store.identityKeyStore.getIdentityKey()
         if !session.isFresh {
             session.archiveCurrentState()
         }
@@ -148,11 +148,11 @@ public struct SessionBuilder {
             signedPreKeyId: bundle.signedPreKeyId,
             baseKey: ourBaseKey.publicKey)
 
-        session.state.localRegistrationID = try store.getLocalRegistrationID()
+        session.state.localRegistrationID = try store.identityKeyStore.getLocalRegistrationID()
         session.state.remoteRegistrationID = bundle.registrationId
         session.state.aliceBaseKey = ourBaseKey.publicKey
 
-        try store.store(session: session, for: remoteAddress)
-        try store.save(identity: bundle.identityKey, for: remoteAddress)
+        try store.sessionStore.store(session: session, for: remoteAddress)
+        try store.identityKeyStore.store(identity: bundle.identityKey, for: remoteAddress)
     }
 }

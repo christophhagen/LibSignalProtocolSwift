@@ -18,14 +18,20 @@ public enum SignalEncryptionScheme {
     case AES_CTRnoPadding
 }
 
+/**
+ The `SignalCryptoProvider` protocol can be implemented to provide a custom
+ implementation of the cryptographic functions. Set the crypto provider
+ by setting the static `provider` variable of the SignalCrypto class
+ */
 public protocol SignalCryptoProvider {
+
     /**
      Create a number of secure random bytes.
      - parameter bytes: The number of random bytes to create
      - returns: The random bytes of length `bytes`
      - throws: Should only throw errors of type `SignalError.noRandomBytes`
      */
-    func random(bytes: Int) throws -> [UInt8]
+    func random(bytes: Int) throws -> Data
 
     /**
      Authenticate a message with the HMAC based on SHA256.
@@ -33,16 +39,16 @@ public protocol SignalCryptoProvider {
      - salt: The salt for the HMAC.
      - returns: The HMAC
      - throws: Should only throw errors of type `SignalError.hmacError`
-    */
-    func hmacSHA256(for message: [UInt8], with salt: [UInt8]) throws -> [UInt8]
+     */
+    func hmacSHA256(for message: Data, with salt: Data) throws -> Data
 
     /**
      Return the SHA512 message digest.
      - parameter message: The message to calculate the digest for
      - returns: The SHA512 digest
      - throws: Should only throw errors of type `SignalError.digestError`
-    */
-    func sha512(for message: [UInt8]) throws -> [UInt8]
+     */
+    func sha512(for message: Data) throws -> Data
 
     /**
      Encrypt a message with the given scheme.
@@ -52,8 +58,8 @@ public protocol SignalCryptoProvider {
      - parameter iv: The initialization vector
      - returns: The encrypted message
      - throws: Should only throw errors of type `SignalError.encryptionError`
-    */
-    func encrypt(message: [UInt8], with cipher: SignalEncryptionScheme, key: [UInt8], iv: [UInt8]) throws -> [UInt8]
+     */
+    func encrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data
 
     /**
      Decrypt a message with the given scheme.
@@ -64,16 +70,21 @@ public protocol SignalCryptoProvider {
      - returns: The decrypted message
      - throws: Should only throw errors of type `SignalError.decryptionError`
      */
-    func decrypt(message: [UInt8], with cipher: SignalEncryptionScheme, key: [UInt8], iv: [UInt8]) throws -> [UInt8]
+    func decrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data
 
 }
 
+/**
+ The `SignalCrypto`
+ */
 public struct SignalCrypto {
 
+    // MARK: Public crypto provider functions
+
     /**
-     This variable can be set to provide custom crypto provider.
-    */
-    public static var provider: SignalCryptoProvider? = SignalCommonCrypto()
+     This variable can be set to provide a custom crypto provider.
+     */
+    public static var provider: SignalCryptoProvider = SignalCommonCrypto()
 
     /**
      Create a number of secure random bytes.
@@ -81,11 +92,8 @@ public struct SignalCrypto {
      - returns: The random bytes of length `bytes`
      - throws: Should only throw errors of type `SignalError.noRandomBytes`
      */
-    public static func random(bytes: Int) throws -> [UInt8] {
-        guard let delegate = provider else {
-            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
-        }
-        return try delegate.random(bytes: bytes)
+    public static func random(bytes: Int) throws -> Data {
+        return try provider.random(bytes: bytes)
     }
 
     /**
@@ -95,11 +103,8 @@ public struct SignalCrypto {
      - returns: The HMAC
      - throws: Should only throw errors of type `SignalError.hmacError`
      */
-    static func hmacSHA256(for message: [UInt8], with salt: [UInt8]) throws -> [UInt8] {
-        guard let delegate = provider else {
-            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
-        }
-        return try delegate.hmacSHA256(for: message, with: salt)
+    static func hmacSHA256(for message: Data, with salt: Data) throws -> Data {
+        return try provider.hmacSHA256(for: message, with: salt)
     }
 
     /**
@@ -108,11 +113,8 @@ public struct SignalCrypto {
      - returns: The SHA512 digest
      - throws: Should only throw errors of type `SignalError.digestError`
      */
-    static func sha512(for message: [UInt8]) throws -> [UInt8] {
-        guard let delegate = provider else {
-            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
-        }
-        return try delegate.sha512(for: message)
+    static func sha512(for message: Data) throws -> Data {
+        return try provider.sha512(for: message)
     }
 
     /**
@@ -124,11 +126,8 @@ public struct SignalCrypto {
      - returns: The encrypted message
      - throws: Should only throw errors of type `SignalError.encryptionError`
      */
-    static func encrypt(message: [UInt8], with cipher: SignalEncryptionScheme, key: [UInt8], iv: [UInt8]) throws -> [UInt8] {
-        guard let delegate = provider else {
-            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
-        }
-        return try delegate.encrypt(message: message, with: cipher, key: key, iv: iv)
+    static func encrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data {
+        return try provider.encrypt(message: message, with: cipher, key: key, iv: iv)
     }
 
     /**
@@ -140,68 +139,121 @@ public struct SignalCrypto {
      - returns: The decrypted message
      - throws: Should only throw errors of type `SignalError.decryptionError`
      */
-    static func decrypt(message: [UInt8], with cipher: SignalEncryptionScheme, key: [UInt8], iv: [UInt8]) throws -> [UInt8] {
-        guard let delegate = provider else {
-            throw SignalError(.noCryptoProvider, "No Crypto delegate set")
-        }
-        return try delegate.decrypt(message: message, with: cipher, key: key, iv: iv)
+    static func decrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data {
+        return try provider.decrypt(message: message, with: cipher, key: key, iv: iv)
     }
 
-    static func getRandomSequence(max: Int32) throws -> Int32 {
-        let data = try random(bytes: 4)
-        let value = Int32(from: data)!
-        return value & 0x7FFFFFFF % max
-    }
+    // MARK: Useful helper functions
 
+    /**
+     Generate an identity key pair.  Clients should only do this once, at install time.
+     - returns: The generated identity key pair
+     - throws: `SignalError` errors:
+     `noRandomBytes` if the crypto provider can't provide random bytes.
+     `curveError` if no public key could be created from the random private key.
+     */
     public static func generateIdentityKeyPair() throws -> KeyPair {
         return try KeyPair()
     }
 
-    public static func generateRegistrationId(extendedRange: Bool) throws -> UInt32 {
-        let range = extendedRange ? UInt32(Int32.max) - 1 : 16380
-
+    /**
+     Generate a registration ID.  Clients should only do this once, at install time.
+     - parameter extendedRange: By default (`false`), the generated registration
+     ID is sized to require the minimal possible protobuf encoding overhead.
+     Specify `True` if the caller needs the full range of `Int32.max` at the
+     cost of slightly higher encoding overhead.
+     - returns: the generated registration ID
+     - throws: `SignalError` of type `noRandomBytes`
+     */
+    public static func generateRegistrationId(extendedRange: Bool = false) throws -> UInt32 {
         let data = try random(bytes: 4)
-        let value = UInt32(from: data)!
-
-        return value % range + 1
+        let value: UInt32 = data.withUnsafeBytes { $0.pointee }
+        if extendedRange {
+            return value % 16380 + 1
+        }
+        return value
     }
 
-    public static func generatePreKeys(start: UInt32, count: Int) throws -> [UInt32 : SessionPreKey] {
-        var dict = [UInt32 : SessionPreKey]()
+    /**
+     Generate a list of PreKeys.
+
+     - note: Clients should do this at install time, and
+     subsequently any time the list of PreKeys stored on the server runs low.
+
+     - warning:
+     Pre key IDs are shorts, so they will eventually be repeated.  Clients should
+     store pre keys in a circular buffer, so that they are repeated as infrequently
+     as possible.
+
+     - parameter start: the starting pre key ID, inclusive.
+     - parameter count: the number of pre keys to generate.
+     - returns: The pre keys
+     - throws: `SignalError` errors:
+     `noRandomBytes` if the crypto provider can't provide random bytes.
+     `curveError` if no public key could be created from a random private key.
+     */
+    public static func generatePreKeys(start: UInt32, count: Int) throws -> [SessionPreKey] {
+        var dict = [SessionPreKey]()
 
         for i in 0..<UInt32(count) {
-            let ecPair = try KeyPair()
-            let id = (start - 1 + i) % (SessionPreKey.mediumMaxValue - 1) + 1
-            dict[id] = SessionPreKey(id: id, keyPair: ecPair)
+            dict.append(try SessionPreKey(index: start &+ i))
         }
         return dict
     }
 
+    /**
+     Generate a signed pre key.
+
+     - note: The following errors can be thrown:
+     - `noRandomBytes`, if the crypto provider can't provide random bytes.
+     - `curveError`, if no public key could be created from the random private key.
+     - `invalidLength`, if the public key is more than 256 or 0 byte.
+     - `invalidSignature`, if the message could not be signed.
+     - parameter identitykeyPair: the local client's identity key pair.
+     - parameter id: the pre key ID to assign the generated signed pre key
+     - parameter timestamp: the current time in milliseconds since the UNIX epoch
+     - throws: `SignalError` errors
+     */
+    public static func generateSignedPreKey(identitykeyPair: RatchetIdentityKeyPair, id: UInt32, timestamp: UInt64) throws -> SessionSignedPreKey {
+        return try SessionSignedPreKey(id: id, signatureKey: identitykeyPair.privateKey, timestamp: timestamp)
+    }
+
+    /**
+     Generate a sender key ID.
+     - returns: The generated ID
+     - throws: `SignalError` of type `noRandomBytes`, if the crypto provider can't provide random bytes.
+     */
     static func generateSenderKeyId() throws -> UInt32 {
         let data = try random(bytes: 4)
-        let value = UInt32(from: data)!
+        let value: UInt32 = data.withUnsafeBytes { $0.pointee }
         return value & 0x7FFFFFFF
     }
 
-    static func generateSenderKey() throws -> [UInt8] {
-       return try random(bytes: 32)
+    /**
+     Generate a sender key.
+     - returns: The sender key bytes
+     - throws: `SignalError` of type `noRandomBytes`, if the crypto provider can't provide random bytes.
+     */
+    static func generateSenderKey() throws -> Data {
+        return try Data(random(bytes: 32))
     }
-
+    
+    /**
+     Generate a sender signing key pair
+     - returns: the generated key pair
+     - throws: `SignalError` errors:
+     `noRandomBytes` if the crypto provider can't provide random bytes.
+     `curveError` if no public key could be created from the random private key.
+     */
     static func generateSenderSigningKey() throws -> KeyPair {
         let result = try KeyPair()
         return result
     }
 
-    public static func generateSignedPreKey(identitykeyPair: RatchetIdentityKeyPair, id: UInt32, timestamp: UInt64) throws -> SessionSignedPreKey {
+    /**
+     SignalCrypto only has static functions and there is no need to create any instances
+     */
+    private init() {
 
-        let ecPair = try KeyPair()
-
-        let signature = try identitykeyPair.privateKey.sign(message: ecPair.publicKey.data)
-
-        return SessionSignedPreKey(
-            id: id,
-            timestamp: timestamp,
-            keyPair: ecPair,
-            signature: signature)
     }
 }

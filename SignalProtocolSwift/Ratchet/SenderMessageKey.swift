@@ -8,24 +8,43 @@
 
 import Foundation
 
+/**
+ A message key in a chain to encrypt/decrypt messages
+ */
 struct SenderMessageKey {
 
-    private static let infoMaterial = [UInt8]("WhisperGroup".utf8)
+    /// The info used when creating the keys from the seed
+    private static let infoMaterial = "WhisperGroup".data(using: .utf8)!
 
+    /// The length of the initialization vector
     private static let ivLength = 16
+
+    /// The length of the key
     private static let cipherKeyLength = 32
+
+    /// The combined length of iv and key
     private static let secretLength = ivLength + cipherKeyLength
 
+    /// The iteration of the message key in the chain
     var iteration: UInt32
 
-    var iv: [UInt8]
+    /// The initialization vector
+    var iv: Data
 
-    var cipherKey: [UInt8]
+    /// The encryption/decryption key
+    var cipherKey: Data
 
-    var seed: [UInt8]
+    /// The seed used to derive the key and iv
+    private var seed: Data
 
-    init(iteration: UInt32, seed: [UInt8]) throws {
-        let salt = [UInt8](repeating: 0, count: RatchetChainKey.hashOutputSize)
+    /**
+     Create a message key from the components.
+     - parameter iteration: The iteration of the message key in the chain
+     - parameter seed: The seed used to derive the key and iv
+     - throws: `SignalError` of type `hmacError`, if the HMAC authentication fails
+    */
+    init(iteration: UInt32, seed: Data) throws {
+        let salt = Data(count: RatchetChainKey.hashOutputSize)
 
         let kdf = HKDF(messageVersion: .version3)
         let derivative = try kdf.deriveSecrets(material: seed,
@@ -35,20 +54,28 @@ struct SenderMessageKey {
 
         self.iteration = iteration
         self.seed = seed
-        self.iv = Array(derivative[0..<SenderMessageKey.ivLength])
-        self.cipherKey = Array(derivative[SenderMessageKey.ivLength..<derivative.count])
+        self.iv = derivative[0..<SenderMessageKey.ivLength]
+        self.cipherKey = derivative.advanced(by: SenderMessageKey.ivLength)
     }
 }
 
+// MARK: Protocol Buffers
+
 extension SenderMessageKey {
-    
+
+    /**
+     Create a message key from a ProtoBuf object.
+     - parameter object: The message key ProtoBuf object.
+     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
+     */
     init(from object: Textsecure_SenderKeyStateStructure.SenderMessageKey) throws {
         guard object.hasIteration, object.hasSeed else {
             throw SignalError(.invalidProtoBuf, "Missing data in SenderMessageKey ProtoBuf object")
         }
-        try self.init(iteration: object.iteration, seed: [UInt8](object.seed))
+        try self.init(iteration: object.iteration, seed: object.seed)
     }
-    
+
+    /// Convert the sender chain key to a ProtoBuf object
     var object: Textsecure_SenderKeyStateStructure.SenderMessageKey {
         return Textsecure_SenderKeyStateStructure.SenderMessageKey.with {
             $0.iteration = self.iteration
@@ -57,7 +84,16 @@ extension SenderMessageKey {
     }
 }
 
+// MARK: Equatable protocol
+
 extension SenderMessageKey: Equatable {
+
+    /**
+     Compare two sender message keys for equality.
+     - parameter lhs: The first key
+     - parameter rhs: The second key
+     - returns: `True`, if the keys are equal
+     */
     static func ==(lhs: SenderMessageKey, rhs: SenderMessageKey) -> Bool {
         return lhs.iteration == rhs.iteration &&
             lhs.iv == rhs.iv &&

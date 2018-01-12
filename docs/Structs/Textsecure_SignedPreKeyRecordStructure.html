@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Textsecure_SignedPreKeyRecordStructure Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Textsecure_SignedPreKeyRecordStructure" class="dashAnchor"></a>
+    <a title="Textsecure_SignedPreKeyRecordStructure Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SignalProtocolSwift Docs</a> (67% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SignalProtocolSwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Textsecure_SignedPreKeyRecordStructure Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverChain.html">ReceiverChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyRecord.html">SenderKeyRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyState.html">SenderKeyState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionRecord.html">SessionRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionState.html">SessionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalError.html">SignalError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalServerConnection.html">SignalServerConnection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalSession.html">SignalSession</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:19SignalProtocolSwift17_protobuf_package33_7B16A7A4E7BDB2CD7EDBB6D1DE44458BLLSSv">_protobuf_package</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:19SignalProtocolSwift17_protobuf_package33_B61F772530EC94A88F4E359FBF48E3EDLLSSv">_protobuf_package</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:19SignalProtocolSwift17_protobuf_package33_EE56743D1C562490EBAD0CF9157C9085LLSSv">_protobuf_package</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:19SignalProtocolSwift14preKeyMaxCount33_30804935529DB09A6738898B8DEDA252LLSiv">preKeyMaxCount</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CipherTextType.html">CipherTextType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HKDFVersion.html">HKDFVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalErrorType.html">SignalErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift14getFingerprint33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift13getLogicalKey33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVSayAA06PublicF0VG3for_tF">getLogicalKey(for:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentityKeyStoreDelegate.html">IdentityKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ScannableFingerprint.html">ScannableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionStoreDelegate.html">SessionStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:19SignalProtocolSwift0a7AddressB0P">SignalAddressProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalServer.html">SignalServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyCommitmentV0.html">DeviceConsistencyCommitmentV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyMessage.html">DeviceConsistencyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencySignature.html">DeviceConsistencySignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint.html">Fingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint/Version.html">– Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GroupCipher.html">GroupCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HKDF.html">HKDF</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyPair.html">KeyPair</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PendingPreKey.html">PendingPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeyBundle.html">PreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeyBundle/Identity.html">– Identity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeyBundle/SignedPreKey.html">– SignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeyBundle/PreKey.html">– PreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PrivateKey.html">PrivateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicKey.html">PublicKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetChainKey.html">RatchetChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetRootKey.html">RatchetRootKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChain.html">SenderChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChainKey.html">SenderChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyDistributionMessage.html">SenderKeyDistributionMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyMessage.html">SenderKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderMessageKey.html">SenderMessageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionBuilder.html">SessionBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionCipher.html">SessionCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKey.html">SessionPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalAddress.html">SignalAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCrypto.html">SignalCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalMessage.html">SignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_CombinedFingerprints.html">Textsecure_CombinedFingerprints</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_CombinedFingerprints/_StorageClass.html">– _StorageClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_DeviceConsistencyCodeMessage.html">Textsecure_DeviceConsistencyCodeMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_IdentityKeyPairStructure.html">Textsecure_IdentityKeyPairStructure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_KeyExchangeMessage.html">Textsecure_KeyExchangeMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_LogicalFingerprint.html">Textsecure_LogicalFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_PreKeyRecordStructure.html">Textsecure_PreKeyRecordStructure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_PreKeySignalMessage.html">Textsecure_PreKeySignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_RecordStructure.html">Textsecure_RecordStructure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_RecordStructure/_StorageClass.html">– _StorageClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SenderKeyDistributionMessage.html">Textsecure_SenderKeyDistributionMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SenderKeyMessage.html">Textsecure_SenderKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SenderKeyRecordStructure.html">Textsecure_SenderKeyRecordStructure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SenderKeyStateStructure.html">Textsecure_SenderKeyStateStructure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SenderKeyStateStructure/SenderChainKey.html">– SenderChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SenderKeyStateStructure/SenderMessageKey.html">– SenderMessageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SenderKeyStateStructure/SenderSigningKey.html">– SenderSigningKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SenderKeyStateStructure/_StorageClass.html">– _StorageClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SessionStructure.html">Textsecure_SessionStructure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SessionStructure/Chain.html">– Chain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SessionStructure/PendingKeyExchange.html">– PendingKeyExchange</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SessionStructure/PendingPreKey.html">– PendingPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SessionStructure/_StorageClass.html">– _StorageClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SignalMessage.html">Textsecure_SignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html">Textsecure_SignedPreKeyRecordStructure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/_GeneratedWithProtocGenSwiftVersion.html">_GeneratedWithProtocGenSwiftVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/_GeneratedWithProtocGenSwiftVersion.html#/s:19SignalProtocolSwift023_GeneratedWithProtocGenC7Version33_7B16A7A4E7BDB2CD7EDBB6D1DE44458BLLV2_2V">– _2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/_GeneratedWithProtocGenSwiftVersion.html">_GeneratedWithProtocGenSwiftVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/_GeneratedWithProtocGenSwiftVersion.html#/s:19SignalProtocolSwift023_GeneratedWithProtocGenC7Version33_B61F772530EC94A88F4E359FBF48E3EDLLV2_2V">– _2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/_GeneratedWithProtocGenSwiftVersion.html">_GeneratedWithProtocGenSwiftVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/_GeneratedWithProtocGenSwiftVersion.html#/s:19SignalProtocolSwift023_GeneratedWithProtocGenC7Version33_EE56743D1C562490EBAD0CF9157C9085LLV2_2V">– _2</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:19SignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Textsecure_SignedPreKeyRecordStructure</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV16protoMessageNameSSvZ"></a>
+                    <a name="//apple_ref/swift/Variable/protoMessageName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV16protoMessageNameSSvZ">protoMessageName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV2ids6UInt32Vv"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV2ids6UInt32Vv">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV5hasIDSbv"></a>
+                    <a name="//apple_ref/swift/Property/hasID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV5hasIDSbv">hasID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV2ids6UInt32Vv">id</a></code> has been explicitly set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">hasID</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV7clearIDyyF"></a>
+                    <a name="//apple_ref/swift/Method/clearID()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV7clearIDyyF">clearID()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clears the value of <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV2ids6UInt32Vv">id</a></code>. Subsequent reads from it will return its default value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">clearID</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV06publicG010Foundation4DataVv"></a>
+                    <a name="//apple_ref/swift/Property/publicKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV06publicG010Foundation4DataVv">publicKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV09hasPublicG0Sbv"></a>
+                    <a name="//apple_ref/swift/Property/hasPublicKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV09hasPublicG0Sbv">hasPublicKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV06publicG010Foundation4DataVv">publicKey</a></code> has been explicitly set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">hasPublicKey</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV011clearPublicG0yyF"></a>
+                    <a name="//apple_ref/swift/Method/clearPublicKey()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV011clearPublicG0yyF">clearPublicKey()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clears the value of <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV06publicG010Foundation4DataVv">publicKey</a></code>. Subsequent reads from it will return its default value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">clearPublicKey</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV07privateG010Foundation4DataVv"></a>
+                    <a name="//apple_ref/swift/Property/privateKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV07privateG010Foundation4DataVv">privateKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV010hasPrivateG0Sbv"></a>
+                    <a name="//apple_ref/swift/Property/hasPrivateKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV010hasPrivateG0Sbv">hasPrivateKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV07privateG010Foundation4DataVv">privateKey</a></code> has been explicitly set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">hasPrivateKey</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV012clearPrivateG0yyF"></a>
+                    <a name="//apple_ref/swift/Method/clearPrivateKey()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV012clearPrivateG0yyF">clearPrivateKey()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clears the value of <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV07privateG010Foundation4DataVv">privateKey</a></code>. Subsequent reads from it will return its default value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">clearPrivateKey</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV9signature10Foundation4DataVv"></a>
+                    <a name="//apple_ref/swift/Property/signature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV9signature10Foundation4DataVv">signature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV12hasSignatureSbv"></a>
+                    <a name="//apple_ref/swift/Property/hasSignature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV12hasSignatureSbv">hasSignature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV9signature10Foundation4DataVv">signature</a></code> has been explicitly set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">hasSignature</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV14clearSignatureyyF"></a>
+                    <a name="//apple_ref/swift/Method/clearSignature()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV14clearSignatureyyF">clearSignature()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clears the value of <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV9signature10Foundation4DataVv">signature</a></code>. Subsequent reads from it will return its default value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">clearSignature</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV9timestamps6UInt64Vv"></a>
+                    <a name="//apple_ref/swift/Property/timestamp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV9timestamps6UInt64Vv">timestamp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV12hasTimestampSbv"></a>
+                    <a name="//apple_ref/swift/Property/hasTimestamp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV12hasTimestampSbv">hasTimestamp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV9timestamps6UInt64Vv">timestamp</a></code> has been explicitly set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">hasTimestamp</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV14clearTimestampyyF"></a>
+                    <a name="//apple_ref/swift/Method/clearTimestamp()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV14clearTimestampyyF">clearTimestamp()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clears the value of <code><a href="../Structs/Textsecure_SignedPreKeyRecordStructure.html#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV9timestamps6UInt64Vv">timestamp</a></code>. Subsequent reads from it will return its default value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">clearTimestamp</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV13unknownFieldsXev"></a>
+                    <a name="//apple_ref/swift/Property/unknownFields" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV13unknownFieldsXev">unknownFields</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureVACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureVACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV13decodeMessageyxz7decoder_tKlF"></a>
+                    <a name="//apple_ref/swift/Method/decodeMessage(decoder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV13decodeMessageyxz7decoder_tKlF">decodeMessage(decoder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used by the decoding initializers in the SwiftProtobuf library, not generally
+used directly. <code>init(serializedData:)</code>, <code>init(jsonUTF8Data:)</code>, and other decoding
+initializers are defined in the SwiftProtobuf library. See the Message and
+Message+*Additions` files.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="n">decodeMessage</span><span class="o">&lt;</span><span class="kt">D</span><span class="p">:</span> <span class="kt">SwiftProtobuf</span><span class="o">.</span><span class="kt">Decoder</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">decoder</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">D</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV8traverseyxz7visitor_tKlF"></a>
+                    <a name="//apple_ref/swift/Method/traverse(visitor:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV8traverseyxz7visitor_tKlF">traverse(visitor:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used by the encoding methods of the SwiftProtobuf library, not generally
+used directly. <code>Message.serializedData()</code>, <code>Message.jsonUTF8Data()</code>, and
+other serializer methods are defined in the SwiftProtobuf library. See the
+<code>Message</code> and <code>Message+*Additions</code> files.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="n">traverse</span><span class="o">&lt;</span><span class="kt">V</span><span class="p">:</span> <span class="kt">SwiftProtobuf</span><span class="o">.</span><span class="kt">Visitor</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">visitor</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">V</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV3_id33_B61F772530EC94A88F4E359FBF48E3EDLLs6UInt32VSgv"></a>
+                    <a name="//apple_ref/swift/Property/_id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV3_id33_B61F772530EC94A88F4E359FBF48E3EDLLs6UInt32VSgv">_id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV07_publicG033_B61F772530EC94A88F4E359FBF48E3EDLL10Foundation4DataVSgv"></a>
+                    <a name="//apple_ref/swift/Property/_publicKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV07_publicG033_B61F772530EC94A88F4E359FBF48E3EDLL10Foundation4DataVSgv">_publicKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV08_privateG033_B61F772530EC94A88F4E359FBF48E3EDLL10Foundation4DataVSgv"></a>
+                    <a name="//apple_ref/swift/Property/_privateKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV08_privateG033_B61F772530EC94A88F4E359FBF48E3EDLL10Foundation4DataVSgv">_privateKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV10_signature33_B61F772530EC94A88F4E359FBF48E3EDLL10Foundation4DataVSgv"></a>
+                    <a name="//apple_ref/swift/Property/_signature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV10_signature33_B61F772530EC94A88F4E359FBF48E3EDLL10Foundation4DataVSgv">_signature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV10_timestamp33_B61F772530EC94A88F4E359FBF48E3EDLLs6UInt64VSgv"></a>
+                    <a name="//apple_ref/swift/Property/_timestamp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV10_timestamp33_B61F772530EC94A88F4E359FBF48E3EDLLs6UInt64VSgv">_timestamp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV17_protobuf_nameMapXevZ"></a>
+                    <a name="//apple_ref/swift/Variable/_protobuf_nameMap" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV17_protobuf_nameMapXevZ">_protobuf_nameMap</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV29_protobuf_generated_isEqualToSbAC5other_tF"></a>
+                    <a name="//apple_ref/swift/Method/_protobuf_generated_isEqualTo(other:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift38Textsecure_SignedPreKeyRecordStructureV29_protobuf_generated_isEqualToSbAC5other_tF">_protobuf_generated_isEqualTo(other:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen/SignalProtocolSwift" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

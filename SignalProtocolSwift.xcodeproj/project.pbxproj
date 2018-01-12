@@ -19,6 +19,9 @@
 		CE0AE0171FBDDA950054BED2 /* PreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE0131FBDDA950054BED2 /* PreKeyBundle.swift */; };
 		CE0AE01B1FBDDAE70054BED2 /* TestServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE01A1FBDDAE70054BED2 /* TestServer.swift */; };
 		CE0AE01D1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE01C1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift */; };
+		CE1CD7D920090AE400F5E582 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */; };
+		CE1CD7DA20090AE400F5E582 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */; };
+		CE1CD7DB20090AE500F5E582 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */; };
 		CE6AB1CB1FC0AD7600DDE667 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CA1FC0AD7600DDE667 /* SignalAddress.swift */; };
 		CE6AB1CD1FC0ADFC00DDE667 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CC1FC0ADFC00DDE667 /* SignalSenderKeyName.swift */; };
 		CE6AB1CF1FC0C8AE00DDE667 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */; };
@@ -47,10 +50,6 @@
 		CEDB8F781FBB59EC0023277B /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC21FBB59EA0023277B /* SignalMessage.swift */; };
 		CEDB8F791FBB59EC0023277B /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC21FBB59EA0023277B /* SignalMessage.swift */; };
 		CEDB8F7A1FBB59EC0023277B /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC21FBB59EA0023277B /* SignalMessage.swift */; };
-		CEDB8F7B1FBB59EC0023277B /* SignalLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC41FBB59EB0023277B /* SignalLog.swift */; };
-		CEDB8F7C1FBB59EC0023277B /* SignalLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC41FBB59EB0023277B /* SignalLog.swift */; };
-		CEDB8F7D1FBB59EC0023277B /* SignalLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC41FBB59EB0023277B /* SignalLog.swift */; };
-		CEDB8F7E1FBB59EC0023277B /* SignalLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC41FBB59EB0023277B /* SignalLog.swift */; };
 		CEDB8F7F1FBB59EC0023277B /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC51FBB59EB0023277B /* SignalError.swift */; };
 		CEDB8F801FBB59EC0023277B /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC51FBB59EB0023277B /* SignalError.swift */; };
 		CEDB8F811FBB59EC0023277B /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC51FBB59EB0023277B /* SignalError.swift */; };
@@ -59,10 +58,6 @@
 		CEDB8F841FBB59EC0023277B /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */; };
 		CEDB8F851FBB59EC0023277B /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */; };
 		CEDB8F861FBB59EC0023277B /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */; };
-		CEDB8F871FBB59EC0023277B /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */; };
-		CEDB8F881FBB59EC0023277B /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */; };
-		CEDB8F891FBB59EC0023277B /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */; };
-		CEDB8F8A1FBB59EC0023277B /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */; };
 		CEDB8F8B1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
 		CEDB8F8C1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
 		CEDB8F8D1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
@@ -607,14 +602,6 @@
 		CEDB91AC1FBB59EC0023277B /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5C1FBB59EB0023277B /* PrivateKey.swift */; };
 		CEDB91AD1FBB59EC0023277B /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5C1FBB59EB0023277B /* PrivateKey.swift */; };
 		CEDB91AE1FBB59EC0023277B /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5C1FBB59EB0023277B /* PrivateKey.swift */; };
-		CEDB91AF1FBB59EC0023277B /* PendingKeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5E1FBB59EB0023277B /* PendingKeyExchange.swift */; };
-		CEDB91B01FBB59EC0023277B /* PendingKeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5E1FBB59EB0023277B /* PendingKeyExchange.swift */; };
-		CEDB91B11FBB59EC0023277B /* PendingKeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5E1FBB59EB0023277B /* PendingKeyExchange.swift */; };
-		CEDB91B21FBB59EC0023277B /* PendingKeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5E1FBB59EB0023277B /* PendingKeyExchange.swift */; };
-		CEDB91B31FBB59EC0023277B /* GroupSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5F1FBB59EB0023277B /* GroupSessionBuilder.swift */; };
-		CEDB91B41FBB59EC0023277B /* GroupSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5F1FBB59EB0023277B /* GroupSessionBuilder.swift */; };
-		CEDB91B51FBB59EC0023277B /* GroupSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5F1FBB59EB0023277B /* GroupSessionBuilder.swift */; };
-		CEDB91B61FBB59EC0023277B /* GroupSessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F5F1FBB59EB0023277B /* GroupSessionBuilder.swift */; };
 		CEDB91B71FBB59EC0023277B /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F601FBB59EB0023277B /* SessionPreKeyBundle.swift */; };
 		CEDB91B81FBB59EC0023277B /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F601FBB59EB0023277B /* SessionPreKeyBundle.swift */; };
 		CEDB91B91FBB59EC0023277B /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8F601FBB59EB0023277B /* SessionPreKeyBundle.swift */; };
@@ -725,10 +712,8 @@
 		CEDB8EC01FBB59EA0023277B /* SenderKeyDistributionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyDistributionMessage.swift; sourceTree = "<group>"; };
 		CEDB8EC11FBB59EA0023277B /* CipherTextMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CipherTextMessage.swift; sourceTree = "<group>"; };
 		CEDB8EC21FBB59EA0023277B /* SignalMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalMessage.swift; sourceTree = "<group>"; };
-		CEDB8EC41FBB59EB0023277B /* SignalLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalLog.swift; sourceTree = "<group>"; };
 		CEDB8EC51FBB59EB0023277B /* SignalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalError.swift; sourceTree = "<group>"; };
 		CEDB8EC61FBB59EB0023277B /* Fingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fingerprint.swift; sourceTree = "<group>"; };
-		CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannableFingerprint.swift; sourceTree = "<group>"; };
 		CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCommonCrypto.swift; sourceTree = "<group>"; };
 		CEDB8ECD1FBB59EB0023277B /* SenderKeyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyState.swift; sourceTree = "<group>"; };
@@ -865,8 +850,6 @@
 		CEDB8F5A1FBB59EB0023277B /* KeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
 		CEDB8F5B1FBB59EB0023277B /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
 		CEDB8F5C1FBB59EB0023277B /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
-		CEDB8F5E1FBB59EB0023277B /* PendingKeyExchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingKeyExchange.swift; sourceTree = "<group>"; };
-		CEDB8F5F1FBB59EB0023277B /* GroupSessionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSessionBuilder.swift; sourceTree = "<group>"; };
 		CEDB8F601FBB59EB0023277B /* SessionPreKeyBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionPreKeyBundle.swift; sourceTree = "<group>"; };
 		CEDB8F611FBB59EB0023277B /* SessionSignedPreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionSignedPreKey.swift; sourceTree = "<group>"; };
 		CEDB8F621FBB59EB0023277B /* SessionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecord.swift; sourceTree = "<group>"; };
@@ -1034,14 +1017,12 @@
 		CEDB8E7C1FBB51290023277B /* SignalProtocolSwift-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE0AE01C1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift */,
 				CEDB91DF1FBB5A600023277B /* CompatibilityTests.swift */,
 				CEDB91DE1FBB5A5F0023277B /* CurveTests.swift */,
 				CEDB91D51FBB5A5E0023277B /* DeviceConsistencyTests.swift */,
 				CEDB91E11FBB5A600023277B /* FingerprintTests.swift */,
 				CEDB91DB1FBB5A5F0023277B /* GroupCipherTests.swift */,
 				CEDB91DD1FBB5A5F0023277B /* HKDFTests.swift */,
-				CEDB8E7F1FBB51290023277B /* Info.plist */,
 				CEDB91D31FBB5A5E0023277B /* KeyHelperTests.swift */,
 				CEDB91D61FBB5A5E0023277B /* ProtocolTests.swift */,
 				CEDB91E01FBB5A600023277B /* RatchetTests.swift */,
@@ -1049,11 +1030,13 @@
 				CEDB91DC1FBB5A5F0023277B /* SessionBuilderTests.swift */,
 				CEDB91D81FBB5A5E0023277B /* SessionCipherTests.swift */,
 				CEDB91E21FBB5A600023277B /* SessionRecordTests.swift */,
+				CE0AE01C1FBDDB080054BED2 /* SignalCommunication_iOSTests.swift */,
 				CEDB91E31FBB5A600023277B /* SignalProtocolSwiftTests.swift */,
 				CEDB91DA1FBB5A5F0023277B /* TestFakeCryptoProvider.swift */,
 				CEDB91D41FBB5A5E0023277B /* TestHelperFunctions.swift */,
 				CE0AE01A1FBDDAE70054BED2 /* TestServer.swift */,
 				CEDB91D91FBB5A5F0023277B /* TestStore.swift */,
+				CEDB8E7F1FBB51290023277B /* Info.plist */,
 			);
 			path = "SignalProtocolSwift-iOSTests";
 			sourceTree = "<group>";
@@ -1092,10 +1075,8 @@
 		CEDB8EC31FBB59EB0023277B /* Additional */ = {
 			isa = PBXGroup;
 			children = (
-				CEDB8EC71FBB59EB0023277B /* IntExtensions.swift */,
 				CE6AB1CA1FC0AD7600DDE667 /* SignalAddress.swift */,
 				CEDB8EC51FBB59EB0023277B /* SignalError.swift */,
-				CEDB8EC41FBB59EB0023277B /* SignalLog.swift */,
 				CE6AB1CC1FC0ADFC00DDE667 /* SignalSenderKeyName.swift */,
 			);
 			path = Additional;
@@ -1332,8 +1313,6 @@
 		CEDB8F5D1FBB59EB0023277B /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				CEDB8F5F1FBB59EB0023277B /* GroupSessionBuilder.swift */,
-				CEDB8F5E1FBB59EB0023277B /* PendingKeyExchange.swift */,
 				CEDB8F631FBB59EB0023277B /* PendingPreKey.swift */,
 				CEDB8F651FBB59EB0023277B /* SessionBuilder.swift */,
 				CEDB8F641FBB59EB0023277B /* SessionPreKey.swift */,
@@ -1676,7 +1655,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					CEDB8E6E1FBB51290023277B = {
 						CreatedOnToolsVersion = 9.1;
@@ -1956,7 +1935,6 @@
 			files = (
 				CEDB8FFB1FBB59EC0023277B /* fe_add.c in Sources */,
 				CEDB8FAF1FBB59EC0023277B /* IdentityKeyStoreDelegate.swift in Sources */,
-				CEDB91B31FBB59EC0023277B /* GroupSessionBuilder.swift in Sources */,
 				CEDB8FBF1FBB59EC0023277B /* SessionStoreDelegate.swift in Sources */,
 				CEDB8FBB1FBB59EC0023277B /* PreKeyStoreDelegate.swift in Sources */,
 				CEDB90CF1FBB59EC0023277B /* fe_1.c in Sources */,
@@ -1967,7 +1945,6 @@
 				CEDB8F971FBB59EC0023277B /* SenderKeyState.swift in Sources */,
 				CEDB8FEB1FBB59EC0023277B /* fe_sub.c in Sources */,
 				CE6AB1CD1FC0ADFC00DDE667 /* SignalSenderKeyName.swift in Sources */,
-				CEDB91AF1FBB59EC0023277B /* PendingKeyExchange.swift in Sources */,
 				CEDB8FB71FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEDB903F1FBB59EC0023277B /* gen_x.c in Sources */,
 				CEDB8FF31FBB59EC0023277B /* fe_isnonzero.c in Sources */,
@@ -2041,8 +2018,6 @@
 				CEDB90231FBB59EC0023277B /* sc_cmov.c in Sources */,
 				CEDB90171FBB59EC0023277B /* compare.c in Sources */,
 				CEDB91871FBB59EC0023277B /* HKDF.swift in Sources */,
-				CEDB8F7B1FBB59EC0023277B /* SignalLog.swift in Sources */,
-				CEDB8F871FBB59EC0023277B /* IntExtensions.swift in Sources */,
 				CEDB8F7F1FBB59EC0023277B /* SignalError.swift in Sources */,
 				CEDB909F1FBB59EC0023277B /* ge_isneutral.c in Sources */,
 				CEDB915F1FBB59EC0023277B /* open.c in Sources */,
@@ -2117,7 +2092,6 @@
 			files = (
 				CEDB8FFC1FBB59EC0023277B /* fe_add.c in Sources */,
 				CEDB8FB01FBB59EC0023277B /* IdentityKeyStoreDelegate.swift in Sources */,
-				CEDB91B41FBB59EC0023277B /* GroupSessionBuilder.swift in Sources */,
 				CEDB8FC01FBB59EC0023277B /* SessionStoreDelegate.swift in Sources */,
 				CEDB8FBC1FBB59EC0023277B /* PreKeyStoreDelegate.swift in Sources */,
 				CEDB90D01FBB59EC0023277B /* fe_1.c in Sources */,
@@ -2127,7 +2101,6 @@
 				CEDB91C01FBB59EC0023277B /* SessionRecord.swift in Sources */,
 				CEDB8F981FBB59EC0023277B /* SenderKeyState.swift in Sources */,
 				CEDB8FEC1FBB59EC0023277B /* fe_sub.c in Sources */,
-				CEDB91B01FBB59EC0023277B /* PendingKeyExchange.swift in Sources */,
 				CEDB8FB81FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEDB90401FBB59EC0023277B /* gen_x.c in Sources */,
 				CEDB8FF41FBB59EC0023277B /* fe_isnonzero.c in Sources */,
@@ -2196,8 +2169,6 @@
 				CEDB90241FBB59EC0023277B /* sc_cmov.c in Sources */,
 				CEDB90181FBB59EC0023277B /* compare.c in Sources */,
 				CEDB91881FBB59EC0023277B /* HKDF.swift in Sources */,
-				CEDB8F7C1FBB59EC0023277B /* SignalLog.swift in Sources */,
-				CEDB8F881FBB59EC0023277B /* IntExtensions.swift in Sources */,
 				CEDB8F801FBB59EC0023277B /* SignalError.swift in Sources */,
 				CEDB90A01FBB59EC0023277B /* ge_isneutral.c in Sources */,
 				CEDB91601FBB59EC0023277B /* open.c in Sources */,
@@ -2214,6 +2185,7 @@
 				CEDB91801FBB59EC0023277B /* hash.c in Sources */,
 				CEDB8FA41FBB59EC0023277B /* SenderKeyRecord.swift in Sources */,
 				CEDB90701FBB59EC0023277B /* utility.c in Sources */,
+				CE1CD7D920090AE400F5E582 /* DisplayableFingerprint.swift in Sources */,
 				CEDB916C1FBB59EC0023277B /* fe_mul.c in Sources */,
 				CEDB91F91FBB5A970023277B /* LocalStorageProtocol.pb.swift in Sources */,
 				CEDB8F681FBB59EC0023277B /* PreKeySignalMessage.swift in Sources */,
@@ -2242,7 +2214,6 @@
 			files = (
 				CEDB8FFE1FBB59EC0023277B /* fe_add.c in Sources */,
 				CEDB8FB21FBB59EC0023277B /* IdentityKeyStoreDelegate.swift in Sources */,
-				CEDB91B61FBB59EC0023277B /* GroupSessionBuilder.swift in Sources */,
 				CEDB8FC21FBB59EC0023277B /* SessionStoreDelegate.swift in Sources */,
 				CEDB8FBE1FBB59EC0023277B /* PreKeyStoreDelegate.swift in Sources */,
 				CEDB90D21FBB59EC0023277B /* fe_1.c in Sources */,
@@ -2252,7 +2223,6 @@
 				CEDB91C21FBB59EC0023277B /* SessionRecord.swift in Sources */,
 				CEDB8F9A1FBB59EC0023277B /* SenderKeyState.swift in Sources */,
 				CEDB8FEE1FBB59EC0023277B /* fe_sub.c in Sources */,
-				CEDB91B21FBB59EC0023277B /* PendingKeyExchange.swift in Sources */,
 				CEDB8FBA1FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEDB90421FBB59EC0023277B /* gen_x.c in Sources */,
 				CEDB8FF61FBB59EC0023277B /* fe_isnonzero.c in Sources */,
@@ -2321,8 +2291,6 @@
 				CEDB90261FBB59EC0023277B /* sc_cmov.c in Sources */,
 				CEDB901A1FBB59EC0023277B /* compare.c in Sources */,
 				CEDB918A1FBB59EC0023277B /* HKDF.swift in Sources */,
-				CEDB8F7E1FBB59EC0023277B /* SignalLog.swift in Sources */,
-				CEDB8F8A1FBB59EC0023277B /* IntExtensions.swift in Sources */,
 				CEDB8F821FBB59EC0023277B /* SignalError.swift in Sources */,
 				CEDB90A21FBB59EC0023277B /* ge_isneutral.c in Sources */,
 				CEDB91621FBB59EC0023277B /* open.c in Sources */,
@@ -2339,6 +2307,7 @@
 				CEDB91821FBB59EC0023277B /* hash.c in Sources */,
 				CEDB8FA61FBB59EC0023277B /* SenderKeyRecord.swift in Sources */,
 				CEDB90721FBB59EC0023277B /* utility.c in Sources */,
+				CE1CD7DB20090AE500F5E582 /* DisplayableFingerprint.swift in Sources */,
 				CEDB916E1FBB59EC0023277B /* fe_mul.c in Sources */,
 				CEDB91FB1FBB5A970023277B /* LocalStorageProtocol.pb.swift in Sources */,
 				CEDB8F6A1FBB59EC0023277B /* PreKeySignalMessage.swift in Sources */,
@@ -2367,7 +2336,6 @@
 			files = (
 				CEDB8FFD1FBB59EC0023277B /* fe_add.c in Sources */,
 				CEDB8FB11FBB59EC0023277B /* IdentityKeyStoreDelegate.swift in Sources */,
-				CEDB91B51FBB59EC0023277B /* GroupSessionBuilder.swift in Sources */,
 				CEDB8FC11FBB59EC0023277B /* SessionStoreDelegate.swift in Sources */,
 				CEDB8FBD1FBB59EC0023277B /* PreKeyStoreDelegate.swift in Sources */,
 				CEDB90D11FBB59EC0023277B /* fe_1.c in Sources */,
@@ -2377,7 +2345,6 @@
 				CEDB91C11FBB59EC0023277B /* SessionRecord.swift in Sources */,
 				CEDB8F991FBB59EC0023277B /* SenderKeyState.swift in Sources */,
 				CEDB8FED1FBB59EC0023277B /* fe_sub.c in Sources */,
-				CEDB91B11FBB59EC0023277B /* PendingKeyExchange.swift in Sources */,
 				CEDB8FB91FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEDB90411FBB59EC0023277B /* gen_x.c in Sources */,
 				CEDB8FF51FBB59EC0023277B /* fe_isnonzero.c in Sources */,
@@ -2446,8 +2413,6 @@
 				CEDB90251FBB59EC0023277B /* sc_cmov.c in Sources */,
 				CEDB90191FBB59EC0023277B /* compare.c in Sources */,
 				CEDB91891FBB59EC0023277B /* HKDF.swift in Sources */,
-				CEDB8F7D1FBB59EC0023277B /* SignalLog.swift in Sources */,
-				CEDB8F891FBB59EC0023277B /* IntExtensions.swift in Sources */,
 				CEDB8F811FBB59EC0023277B /* SignalError.swift in Sources */,
 				CEDB90A11FBB59EC0023277B /* ge_isneutral.c in Sources */,
 				CEDB91611FBB59EC0023277B /* open.c in Sources */,
@@ -2464,6 +2429,7 @@
 				CEDB91811FBB59EC0023277B /* hash.c in Sources */,
 				CEDB8FA51FBB59EC0023277B /* SenderKeyRecord.swift in Sources */,
 				CEDB90711FBB59EC0023277B /* utility.c in Sources */,
+				CE1CD7DA20090AE400F5E582 /* DisplayableFingerprint.swift in Sources */,
 				CEDB916D1FBB59EC0023277B /* fe_mul.c in Sources */,
 				CEDB91FA1FBB5A970023277B /* LocalStorageProtocol.pb.swift in Sources */,
 				CEDB8F691FBB59EC0023277B /* PreKeySignalMessage.swift in Sources */,
@@ -2500,6 +2466,31 @@
 		CEDB8E681FBB50F80023277B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Debug;
@@ -2507,6 +2498,29 @@
 		CEDB8E691FBB50F80023277B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Release;
@@ -2543,6 +2557,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2620,6 +2635,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2816,7 +2832,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -2893,7 +2909,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;

@@ -30,14 +30,10 @@ public struct PreKeyBundle {
         /// The registration id of the remote client
         let registrationId: UInt32
 
-        /// The device id of the device for the recipient
-        let deviceId: UInt32
-
         /// Create an identity from the components
-        public init(key: PublicKey, registrationId: UInt32, deviceId: UInt32) {
+        public init(key: PublicKey, registrationId: UInt32) {
             self.key = key
             self.registrationId = registrationId
-            self.deviceId = deviceId
         }
     }
 

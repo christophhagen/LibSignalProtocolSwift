@@ -55,7 +55,7 @@ struct DisplayableFingerprint {
      - returns: The display string
     */
     private static func createDisplayString(fingerprint: Data) -> String {
-        let data = [UInt8](fingerprint).map { UInt64($0) }
+        let data = fingerprint.map { UInt64($0) }
         var output = ""
         for i in stride(from: 0, to: 30, by: 5) {
             let chunk = (data[i] << 32) | (data[i+1] << 24)

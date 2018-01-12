@@ -24,7 +24,7 @@ class SessionBuilderTests: XCTestCase {
         let aliceSessionBuilder = SessionBuilder(remoteAddress: bobAddress, store: aliceStore)
 
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.getLocalRegistrationID() else {
+        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
             XCTFail("No local registration id for Bob")
             return
         }
@@ -32,7 +32,7 @@ class SessionBuilderTests: XCTestCase {
             XCTFail("Could not create pre key pair")
             return
         }
-        guard let bobIdentityKeyPair = try? bobStore.getIdentityKey() else {
+        guard let bobIdentityKeyPair = try? bobStore.identityKeyStore.getIdentityKey() else {
             XCTFail("Could not get Bob identity key pair")
             return
         }
@@ -59,7 +59,7 @@ class SessionBuilderTests: XCTestCase {
         let aliceSessionBuilder = SessionBuilder(remoteAddress: bobAddress, store: aliceStore)
 
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.getLocalRegistrationID() else {
+        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
             XCTFail("No local registration id for Bob")
             return
         }
@@ -68,7 +68,7 @@ class SessionBuilderTests: XCTestCase {
             XCTFail("Could not create pre key pairs")
             return
         }
-        guard let bobIdentityKeyPair = try? bobStore.getIdentityKey() else {
+        guard let bobIdentityKeyPair = try? bobStore.identityKeyStore.getIdentityKey() else {
             XCTFail("Could not get Bob identity key pair")
             return
         }
@@ -98,8 +98,8 @@ class SessionBuilderTests: XCTestCase {
             return
         }
 
-        guard aliceStore.containsSession(for: bobAddress),
-        let loadedRecord = try? aliceStore.loadSession(for: bobAddress) else {
+        guard aliceStore.sessionStore.containsSession(for: bobAddress),
+            let loadedRecord: SessionRecord = try? aliceStore.sessionStore.loadSession(for: bobAddress) else {
             XCTFail("Could not load session")
             return
         }
@@ -108,7 +108,7 @@ class SessionBuilderTests: XCTestCase {
             return
         }
 
-        let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".asByteArray
+        let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".data(using: .utf8)!
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
         guard let outgoingMessage = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage) else {
             XCTFail("Could not encrypt message")
@@ -124,7 +124,7 @@ class SessionBuilderTests: XCTestCase {
         }
         let bobPreKeyRecord = SessionPreKey(id: bobPreKey.preKeyId, keyPair: bobPreKeyPair)
         do {
-            try bobStore.store(preKey: bobPreKeyRecord)
+            try bobStore.preKeyStore.store(preKey: bobPreKeyRecord)
         } catch {
             XCTFail("Could not store preKey")
             return
@@ -137,7 +137,7 @@ class SessionBuilderTests: XCTestCase {
             signature: bobSignedPreKeySignature)
 
         do {
-            try bobStore.store(signedPreKey: bobSignedPreKeyRecord)
+            try bobStore.signedPreKeyStore.store(signedPreKey: bobSignedPreKeyRecord)
         } catch {
             XCTFail("Could not store SignedPreKey")
             return
@@ -150,11 +150,11 @@ class SessionBuilderTests: XCTestCase {
             return
         }
 
-        guard bobStore.containsSession(for: aliceAddress) else {
+        guard bobStore.sessionStore.containsSession(for: aliceAddress) else {
             XCTFail("No session created")
             return
         }
-        guard let aliceRecipientSessionRecord = try? bobStore.loadSession(for: aliceAddress) else {
+        guard let aliceRecipientSessionRecord: SessionRecord = try? bobStore.sessionStore.loadSession(for: aliceAddress) else {
             XCTFail("Could not load session for Alice")
             return
         }
@@ -199,7 +199,7 @@ class SessionBuilderTests: XCTestCase {
             return
         }
 
-        guard let newBobIdentityKeyPair = try? bobStore.getIdentityKey() else {
+        guard let newBobIdentityKeyPair = try? bobStore.identityKeyStore.getIdentityKey() else {
             XCTFail("Could not get Bob identity key pair")
             return
         }
@@ -225,7 +225,7 @@ class SessionBuilderTests: XCTestCase {
         /* Save the new pre key and signed pre key in Bob's data store */
         let newBobPreKeyRecord = SessionPreKey(id: newBobPreKey.preKeyId, keyPair: newBobPreKeyPair)
         do {
-            try bobStore.store(preKey: newBobPreKeyRecord)
+            try bobStore.preKeyStore.store(preKey: newBobPreKeyRecord)
         } catch {
             XCTFail("Could not store new preKey")
             return
@@ -238,7 +238,7 @@ class SessionBuilderTests: XCTestCase {
             signature: newBobSignedPreKeySignature)
 
         do {
-            try bobStore.store(signedPreKey: newBobSignedPreKeyRecord)
+            try bobStore.signedPreKeyStore.store(signedPreKey: newBobSignedPreKeyRecord)
         } catch {
             XCTFail("Could not store new SignedPreKey")
             return
@@ -280,7 +280,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Save the identity key to Bob's store */
         do {
-            try bobStore.save(identity: alicePreKeySignalMessage.identityKey, for: aliceAddress)
+            try bobStore.identityKeyStore.store(identity: alicePreKeySignalMessage.identityKey, for: aliceAddress)
         } catch {
             XCTFail("Could not store identity key")
             return
@@ -328,7 +328,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create Bob's data store */
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.getLocalRegistrationID() else {
+        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
             XCTFail("Could not get local registration id")
             return
         }
@@ -336,14 +336,14 @@ class SessionBuilderTests: XCTestCase {
         /* Create Bob's regular and signed pre key pairs */
         guard let bobPreKeyPair = try? KeyPair(),
             let bobSignedPreKeyPair = try? KeyPair(),
-            let bobIdentityKeyPair = try? bobStore.getIdentityKey() else {
+            let bobIdentityKeyPair = try? bobStore.identityKeyStore.getIdentityKey() else {
             XCTFail("Could not generate pre key pair and signed pre key pair for bob")
             return
         }
 
         /* Create Bob's signed pre key signature */
         guard let bobSignedPreKeySignature =
-            try? bobStore.getIdentityKey().privateKey.sign(message: bobSignedPreKeyPair.publicKey.data) else {
+            try? bobStore.identityKeyStore.getIdentityKey().privateKey.sign(message: bobSignedPreKeyPair.publicKey.data) else {
                 XCTFail("Could not sign signed pre key")
                 return
         }
@@ -411,7 +411,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create Bob's data store */
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.getLocalRegistrationID() else {
+        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
             XCTFail("Could not get local registration id")
             return
         }
@@ -419,14 +419,14 @@ class SessionBuilderTests: XCTestCase {
         /* Create Bob's regular and signed pre key pairs */
         guard let bobPreKeyPair = try? KeyPair(),
             let bobSignedPreKeyPair = try? KeyPair(),
-            let bobIdentityKeyPair = try? bobStore.getIdentityKey() else {
+            let bobIdentityKeyPair = try? bobStore.identityKeyStore.getIdentityKey() else {
                 XCTFail("Could not generate pre key pair and signed pre key pair for bob")
                 return
         }
 
         /* Create Bob's signed pre key signature */
         guard let bobSignedPreKeySignature =
-            try? bobStore.getIdentityKey().privateKey.sign(message: bobSignedPreKeyPair.publicKey.data) else {
+            try? bobStore.identityKeyStore.getIdentityKey().privateKey.sign(message: bobSignedPreKeyPair.publicKey.data) else {
                 XCTFail("Could not sign signed pre key")
                 return
         }
@@ -445,13 +445,13 @@ class SessionBuilderTests: XCTestCase {
         /* Add Bob's pre keys to Bob's data store */
         do {
             let preKey = SessionPreKey(id: bobPreKey.preKeyId, keyPair: bobPreKeyPair)
-            try bobStore.store(preKey: preKey)
+            try bobStore.preKeyStore.store(preKey: preKey)
             let signedPreKey = SessionSignedPreKey(
                 id: bobPreKey.signedPreKeyId,
                 timestamp: UInt64(Date().timeIntervalSince1970),
                 keyPair: bobSignedPreKeyPair,
                 signature: bobSignedPreKeySignature)
-            try bobStore.store(signedPreKey: signedPreKey)
+            try bobStore.signedPreKeyStore.store(signedPreKey: signedPreKey)
         } catch {
             XCTFail("Could not store pre key or signed pre key")
             return
@@ -466,7 +466,7 @@ class SessionBuilderTests: XCTestCase {
         }
 
         /* Initialize Alice's session cipher */
-        let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".asByteArray
+        let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".data(using: .utf8)!
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
 
         guard let outgoingMessage1 = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage),
@@ -546,7 +546,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create Bob's data store */
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.getLocalRegistrationID() else {
+        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
             XCTFail("Could not get local registration id")
             return
         }
@@ -554,14 +554,14 @@ class SessionBuilderTests: XCTestCase {
         /* Create Bob's regular and signed pre key pairs */
         guard let bobPreKeyPair = try? KeyPair(),
             let bobSignedPreKeyPair = try? KeyPair(),
-            let bobIdentityKeyPair = try? bobStore.getIdentityKey() else {
+            let bobIdentityKeyPair = try? bobStore.identityKeyStore.getIdentityKey() else {
                 XCTFail("Could not generate pre key pair and signed pre key pair for bob")
                 return
         }
 
         /* Create Bob's signed pre key signature */
         guard let bobSignedPreKeySignature =
-            try? bobStore.getIdentityKey().privateKey.sign(message: bobSignedPreKeyPair.publicKey.data) else {
+            try? bobStore.identityKeyStore.getIdentityKey().privateKey.sign(message: bobSignedPreKeyPair.publicKey.data) else {
                 XCTFail("Could not sign signed pre key")
                 return
         }
@@ -580,13 +580,13 @@ class SessionBuilderTests: XCTestCase {
         /* Add Bob's pre keys to Bob's data store */
         do {
             let preKey = SessionPreKey(id: bobPreKey.preKeyId, keyPair: bobPreKeyPair)
-            try bobStore.store(preKey: preKey)
+            try bobStore.preKeyStore.store(preKey: preKey)
             let signedPreKey = SessionSignedPreKey(
                 id: bobPreKey.signedPreKeyId,
                 timestamp: UInt64(Date().timeIntervalSince1970),
                 keyPair: bobSignedPreKeyPair,
                 signature: bobSignedPreKeySignature)
-            try bobStore.store(signedPreKey: signedPreKey)
+            try bobStore.signedPreKeyStore.store(signedPreKey: signedPreKey)
         } catch {
             XCTFail("Could not store pre key or signed pre key")
             return
@@ -601,7 +601,7 @@ class SessionBuilderTests: XCTestCase {
         }
 
         /* Initialize Alice's session cipher */
-        let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".asByteArray
+        let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".data(using: .utf8)!
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
 
         guard let outgoingMessage1 = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage) else {
@@ -637,7 +637,7 @@ class SessionBuilderTests: XCTestCase {
         }
 
         /* Make sure the pre key is there */
-        guard bobStore.containsPreKey(for: 31337) else {
+        guard bobStore.preKeyStore.containsPreKey(for: 31337) else {
             XCTFail("Bob has no pre key")
             return
         }
@@ -656,7 +656,7 @@ class SessionBuilderTests: XCTestCase {
         }
 
         /* Make sure the pre key is no longer there */
-        guard bobStore.containsPreKey(for: 31337) == false else {
+        guard bobStore.preKeyStore.containsPreKey(for: 31337) == false else {
             XCTFail("Bob still has the pre key")
             return
         }
@@ -669,7 +669,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create Bob's data store */
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.getLocalRegistrationID() else {
+        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
             XCTFail("Could not get local registration id")
             return
         }
@@ -677,14 +677,14 @@ class SessionBuilderTests: XCTestCase {
         /* Create Bob's regular and signed pre key pairs */
         guard let bobPreKeyPair = try? KeyPair(),
             let bobSignedPreKeyPair = try? KeyPair(),
-            let bobIdentityKeyPair = try? bobStore.getIdentityKey() else {
+            let bobIdentityKeyPair = try? bobStore.identityKeyStore.getIdentityKey() else {
                 XCTFail("Could not generate pre key pair and signed pre key pair for bob")
                 return
         }
 
         /* Create Bob's signed pre key signature */
         guard let bobSignedPreKeySignature =
-            try? bobStore.getIdentityKey().privateKey.sign(message: bobSignedPreKeyPair.publicKey.data) else {
+            try? bobStore.identityKeyStore.getIdentityKey().privateKey.sign(message: bobSignedPreKeyPair.publicKey.data) else {
                 XCTFail("Could not sign signed pre key")
                 return
         }
@@ -709,15 +709,15 @@ class SessionBuilderTests: XCTestCase {
         }
 
         /* Find and verify the session version in Alice's store */
-        guard aliceStore.containsSession(for: bobAddress),
-            let record = try? aliceStore.loadSession(for: bobAddress),
+        guard aliceStore.sessionStore.containsSession(for: bobAddress),
+            let record: SessionRecord = try? aliceStore.sessionStore.loadSession(for: bobAddress),
             record.state.version == 3 else {
                 XCTFail("Alice has no valid session (version)")
                 return
         }
 
         /* Initialize Alice's session cipher */
-        let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".asByteArray
+        let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".data(using: .utf8)!
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
 
         guard let outgoingMessage = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage) else {
@@ -738,13 +738,13 @@ class SessionBuilderTests: XCTestCase {
         /* Add Bob's pre keys to Bob's data store */
         do {
             let preKey = SessionPreKey(id: bobPreKey.preKeyId, keyPair: bobPreKeyPair)
-            try bobStore.store(preKey: preKey)
+            try bobStore.preKeyStore.store(preKey: preKey)
             let signedPreKey = SessionSignedPreKey(
                 id: bobPreKey.signedPreKeyId,
                 timestamp: UInt64(Date().timeIntervalSince1970),
                 keyPair: bobSignedPreKeyPair,
                 signature: bobSignedPreKeySignature)
-            try bobStore.store(signedPreKey: signedPreKey)
+            try bobStore.signedPreKeyStore.store(signedPreKey: signedPreKey)
         } catch {
             XCTFail("Could not store pre key or signed pre key")
             return
@@ -758,8 +758,8 @@ class SessionBuilderTests: XCTestCase {
             return
         }
 
-        guard bobStore.containsSession(for: aliceAddress),
-            let record1 = try? bobStore.loadSession(for: aliceAddress),
+        guard bobStore.sessionStore.containsSession(for: aliceAddress),
+            let record1: SessionRecord = try? bobStore.sessionStore.loadSession(for: aliceAddress),
             record1.state.version == 3,
             record1.state.aliceBaseKey != nil else {
                 XCTFail("Bob has no or invalid session for Alice")
@@ -768,25 +768,25 @@ class SessionBuilderTests: XCTestCase {
         XCTAssert(plaintext == originalMessage, "Decrypted message invalid")
     }
 
-    private func createLoopingMessage(index: Int) -> [UInt8] {
-        var data = "You can only desire based on what you know:  ".asByteArray
+    private func createLoopingMessage(index: Int) -> Data {
+        var data = "You can only desire based on what you know:  ".data(using: .utf8)!
         data[data.count-1] = UInt8(index)
         return data
     }
-    private func createLoopingMessageShort(index: Int) -> [UInt8] {
-        var data = "What do we mean by saying that existence precedes essence? We mean that man first of all exists, encounters himself, surges up in the world--and defines himself aftward.  ".asByteArray
+    private func createLoopingMessageShort(index: Int) -> Data {
+        var data = "What do we mean by saying that existence precedes essence? We mean that man first of all exists, encounters himself, surges up in the world--and defines himself aftward.  ".data(using: .utf8)!
         data[data.count-1] = UInt8(index)
         return data
     }
 
-    private func runInteraction(aliceStore: SignalProtocolStoreContext, bobStore: SignalProtocolStoreContext) {
+    private func runInteraction(aliceStore: TestStore, bobStore: TestStore) {
 
         /* Create the session ciphers */
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
         let bobSessionCipher = SessionCipher(store: bobStore, remoteAddress: aliceAddress)
 
         /* Create a test message */
-        let originalMessage = "smert ze smert".asByteArray
+        let originalMessage = "smert ze smert".data(using: .utf8)!
 
         /* Simulate Alice sending a message to Bob */
         do {
@@ -841,7 +841,7 @@ class SessionBuilderTests: XCTestCase {
         }
 
         /* Generate a shuffled list of encrypted messages for later use */
-        var messages = [([UInt8], Data)]()
+        var messages = [(Data, Data)]()
         for i in 0..<10 {
             let plaintext = createLoopingMessage(index: i)
             guard let ciphertext = try? aliceSessionCipher.encrypt(paddedMessage: plaintext) else {
@@ -881,7 +881,7 @@ class SessionBuilderTests: XCTestCase {
         }
     }
 
-    private func sendLoopingMessage(from sender: SessionCipher, to receiver: SessionCipher) throws {
+    private func sendLoopingMessage(from sender: SessionCipher<TestStore>, to receiver: SessionCipher<TestStore>) throws {
         for i in 0..<10 {
             let loopingMessage = createLoopingMessage(index: i)
             let ciphertext = try sender.encrypt(paddedMessage: loopingMessage)

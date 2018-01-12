@@ -10,6 +10,8 @@ import Foundation
 
 final class TestServer: SignalServer {
 
+    typealias ServerAddress = SignalAddress
+
     private static var identities = [SignalAddress : PreKeyBundle.Identity]()
 
     private static var signedKeys = [SignalAddress : PreKeyBundle.SignedPreKey]()

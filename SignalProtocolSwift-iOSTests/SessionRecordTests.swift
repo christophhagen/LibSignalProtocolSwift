@@ -94,7 +94,7 @@ class SessionRecordTests: XCTestCase {
 
     func testSessionReceiverChainCount() {
         let kdf = HKDF(messageVersion: .version2)
-        let keySeed = [UInt8](repeating: 0x42, count: 32)
+        let keySeed = Data(repeating: 0x42, count: 32)
 
         /* Create 7 instances of receiver chain data */
         var chainKeys = [RatchetChainKey]()
@@ -155,7 +155,7 @@ class SessionRecordTests: XCTestCase {
 
         /* Set the root key */
         let kdf = HKDF(messageVersion: .version2)
-        let keySeed = [UInt8](repeating: 0x42, count: 32)
+        let keySeed = Data(repeating: 0x42, count: 32)
         state.rootKey = RatchetRootKey(kdf: kdf, key: keySeed)
 
         /* Set the previous counter */
@@ -181,6 +181,9 @@ class SessionRecordTests: XCTestCase {
                 state.set(messageKeys: messageKeys, for: key)
             } catch {
                 XCTFail("Could not get message keys for ratchet key 1")
+                if let err = error as? SignalError {
+                    print(err.longDescription)
+                }
                 return false
             }
         }
@@ -196,21 +199,6 @@ class SessionRecordTests: XCTestCase {
                 XCTFail("Could not get message keys for ratchet key 2")
                 return false
             }
-        }
-
-        /* Set pending key exchange */
-        do {
-            let ourBaseKey = try KeyPair()
-            let ourRatchetKey = try KeyPair()
-            let ourIdentityKey = try KeyPair()
-            state.pendingKeyExchange = PendingKeyExchange(
-                sequence: 42,
-                localBaseKey: ourBaseKey,
-                localRatchetKey: ourRatchetKey,
-                localIdentityKey: ourIdentityKey)
-        } catch {
-            XCTFail("Could not set pending key exchange")
-            return false
         }
 
         /* Set pending pre-key */

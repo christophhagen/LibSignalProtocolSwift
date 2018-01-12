@@ -9,57 +9,94 @@
 import Foundation
 
 /**
- The sender chain of a ratchet
+ The sender chain of a ratchet used to encrypt messages for sending.
  */
 struct SenderChain {
-    var ratchetKey: KeyPair
-    var chainKey: RatchetChainKey
-    var messageKeys: [UInt32 : RatchetMessageKeys]
 
+    /// The key pair of the ratchet
+    var ratchetKey: KeyPair
+
+    /// The current chain key of the ratchet
+    var chainKey: RatchetChainKey
+
+    /**
+     Create a sender chain from the components.
+     - parameter ratchetKey: The key pair of the ratchet
+     - parameter chainKey: The current chain key of the ratchet
+    */
     init(ratchetKey: KeyPair, chainKey: RatchetChainKey) {
         self.ratchetKey = ratchetKey
         self.chainKey = chainKey
-        self.messageKeys = [:]
     }
 }
 
+// MARK: Protocol buffers
+
 extension SenderChain {
-    
+
+    /**
+     Create a sender chain from a protobuf object.
+     - parameter object: The protobuf object
+     - parameter version: The kdf version of the chain key
+     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
+    */
     init(from object: Textsecure_SessionStructure.Chain, version: HKDFVersion) throws {
-        self.chainKey = RatchetChainKey(from: object.chainKey, version: version)
-        self.ratchetKey = KeyPair(
-            publicKey:  try PublicKey(from: object.senderRatchetKey),
-            privateKey: try PrivateKey(from: object.senderRatchetKeyPrivate))
-        self.messageKeys = [:]
-        for item in object.messageKeys.map({ RatchetMessageKeys(from: $0) }) {
-            self.messageKeys[item.counter] = item
+        guard object.hasChainKey, object.hasSenderRatchetKey, object.hasSenderRatchetKeyPrivate else {
+                throw SignalError(.invalidProtoBuf, "Missing data in ProtoBuf object")
         }
-        
+        self.chainKey = try RatchetChainKey(from: object.chainKey, version: version)
+        let publicKey = try PublicKey(from: object.senderRatchetKey)
+        let privateKey = try PrivateKey(from: object.senderRatchetKeyPrivate)
+        self.ratchetKey = KeyPair(publicKey: publicKey, privateKey: privateKey)
     }
 
+    /**
+     Create a sender chain from serialized data.
+     - parameter data: The serialized data.
+     - parameter version: The kdf version of the chain key
+     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
+     */
     init(from data: Data, version: HKDFVersion) throws {
-        let object = try Textsecure_SessionStructure.Chain(serializedData: data)
+        let object: Textsecure_SessionStructure.Chain
+        do {
+            object = try Textsecure_SessionStructure.Chain(serializedData: data)
+        } catch {
+            throw SignalError(.invalidProtoBuf, "Could not create sender chain ProtoBuf object")
+        }
         try self.init(from: object, version: version)
     }
 
+    /**
+     Convert the sender chain to data.
+     - returns: The serialized data.
+     - throws: `SignalError` of type `invalidProtoBuf`, if the chain could not be serialized
+     */
     func data() throws -> Data {
-        return try object.serializedData()
+        do {
+            return try object.serializedData()
+        } catch {
+            throw SignalError(.invalidProtoBuf, "Could not serialize sender chain ProtoBuf object")
+        }
     }
 
+    /// The sender chain converted to a protobuf object
     var object: Textsecure_SessionStructure.Chain {
         return Textsecure_SessionStructure.Chain.with {
             $0.senderRatchetKey = ratchetKey.publicKey.data
             $0.senderRatchetKeyPrivate = ratchetKey.privateKey.data
             $0.chainKey = chainKey.object
-            $0.messageKeys = messageKeys.values.map { $0.object }
         }
     }
 }
 
 extension SenderChain: Equatable {
+    /**
+     Compare two sender chains for equality.
+     - parameter lhs: The first chain
+     - parameter rhs: The second chain
+     - returns: `True`, if the chains are equal
+     */
     static func ==(lhs: SenderChain, rhs: SenderChain) -> Bool {
-        return lhs.ratchetKey == rhs.ratchetKey &&
-            lhs.chainKey == rhs.chainKey &&
-            lhs.messageKeys == rhs.messageKeys
+        return lhs.ratchetKey == rhs.ratchetKey && lhs.chainKey == rhs.chainKey
     }
 }

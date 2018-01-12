@@ -18,7 +18,7 @@ public struct PublicKey {
     private static let basePoint = [9] + [UInt8](repeating: 0, count: 31)
 
     /// The key material of length `KeyPair.keyLength`
-    internal let key: [UInt8]
+    private let key: Data
 
     /**
      'Create a public key from a UInt8 array. Checks
@@ -26,7 +26,7 @@ public struct PublicKey {
      - parameter point: The input point as an array
      - returns: The key, if valid, or `nil`
      */
-    init(point: [UInt8]) throws {
+    init(point: Data) throws {
         guard point.count == KeyPair.keyLength + 1 else {
             throw SignalError(.invalidProtoBuf, "Invalid key length \(point.count)")
         }
@@ -34,7 +34,7 @@ public struct PublicKey {
         guard point[0] == KeyPair.DJBType else {
             throw SignalError(.invalidProtoBuf, "Invalid key type: \(point[0])")
         }
-        key = Array(point[1..<point.count])
+        key = point.advanced(by: 1)
     }
 
     /**
@@ -45,8 +45,12 @@ public struct PublicKey {
      - throws `SignalError.curveError` if the public key could not be created
      */
     public init(privateKey: PrivateKey) throws {
-        var key = [UInt8](repeating: 0, count: KeyPair.keyLength)
-        let result = curve25519_donna(&key, privateKey.key, PublicKey.basePoint)
+        var key = Data(count: KeyPair.keyLength)
+        let result: Int32 = key.withUnsafeMutableBytes { keyPtr in
+            privateKey.data.withUnsafeBytes {
+                curve25519_donna(keyPtr, $0, PublicKey.basePoint)
+            }
+        }
         guard result == 0 else {
             throw SignalError(.curveError, "Could not create public key from private key: \(result)")
         }
@@ -66,8 +70,14 @@ public struct PublicKey {
         guard key.count == KeyPair.keyLength else {
             return false
         }
-        let sig = [UInt8](signature)
-        return curve25519_verify(sig, key, [UInt8](message), UInt(message.count)) == 0
+        let result = signature.withUnsafeBytes { signaturePtr in
+            key.withUnsafeBytes { keyPtr in
+                message.withUnsafeBytes { messagePtr in
+                    curve25519_verify(signaturePtr, keyPtr, messagePtr, UInt(message.count))
+                }
+            }
+        }
+        return result == 0
     }
 
     /**
@@ -83,12 +93,20 @@ public struct PublicKey {
             throw SignalError(.invalidLength, "Invalid vrf signature length \(vrfSignature.count)")
         }
 
-        var vrfOutput = [UInt8](repeating: 0, count: KeyPair.vrfVerifyLength)
-        let result = generalized_xveddsa_25519_verify(&vrfOutput, [UInt8](vrfSignature), key, [UInt8](message), UInt(message.count), nil, 0)
+        var output = Data(count: KeyPair.vrfVerifyLength)
+        let result = key.withUnsafeBytes { keyPtr in
+            message.withUnsafeBytes { messagePtr in
+                vrfSignature.withUnsafeBytes { vrfPtr in
+                    output.withUnsafeMutableBytes { outputPtr in
+                        generalized_xveddsa_25519_verify(outputPtr, vrfPtr, keyPtr, messagePtr, UInt(message.count), nil, 0)
+                    }
+                }
+            }
+        }
         guard result == 0 else {
             throw SignalError(.invalidSignature,  "Invalid vrf signature \(result)")
         }
-        return Data(vrfOutput)
+        return output
     }
 
     /**
@@ -97,9 +115,16 @@ public struct PublicKey {
      - parameter privateKey: The private key from the other party
      - returns: The agreement data, or `nil` on error
      */
-    func calculateAgreement(privateKey: PrivateKey) throws -> [UInt8] {
-        var sharedKey = [UInt8](repeating: 0, count: KeyPair.keyLength)
-        guard curve25519_donna(&sharedKey, privateKey.key, key) == 0 else {
+    func calculateAgreement(privateKey: PrivateKey) throws -> Data {
+        var sharedKey = Data(count: KeyPair.keyLength)
+        let result: Int32 = sharedKey.withUnsafeMutableBytes { sharedKeyPtr in
+            privateKey.data.withUnsafeBytes { dataPtr in
+                key.withUnsafeBytes { keyPtr in
+                    curve25519_donna(sharedKeyPtr, dataPtr, keyPtr)
+                }
+            }
+        }
+        guard result == 0 else {
             throw SignalError(.curveError, "Could not calculate curve25519 agreement")
         }
         return sharedKey
@@ -134,17 +159,18 @@ extension PublicKey: Comparable {
     }
 }
 
+// MARK: Protocol Buffers
+
 extension PublicKey {
 
     /**
      Create a public key from a serialized record.
-     - note
      - parameter data: The byte record of the object
      - returns: The object
      - throws: `SignalError.invalidProtoBuf`
      */
     init(from data: Data) throws {
-        try self.init(point: [UInt8](data))
+        try self.init(point: data)
     }
 
     /**
@@ -152,10 +178,6 @@ extension PublicKey {
      - returns: The byte record
      */
     var data: Data {
-        return Data(array)
-    }
-    
-    var array: [UInt8] {
-        return [KeyPair.DJBType] + key
+        return Data([KeyPair.DJBType]) + key
     }
 }

@@ -19,15 +19,13 @@ class GroupCipherTests: XCTestCase {
         /* Create the test data stores */
         let aliceStore = TestStore()
         let bobStore = TestStore()
-        /* Create the session builder */
-        let aliceSessionBuilder = GroupSessionBuilder(store: aliceStore)
         /* Create the group ciphers */
-        let aliceGroupCipher = GroupCipher(store: aliceStore, senderKeyId: groupSender)
-        let bobGroupCipher = GroupCipher(store: bobStore, senderKeyId: groupSender)
+        let aliceGroupCipher = GroupCipher(address: groupSender, store: aliceStore)
+        let bobGroupCipher = GroupCipher(address: groupSender, store: bobStore)
         
         /* Create the sender key distribution messages */
         guard let sentAliceDistributionMessage =
-            try? aliceSessionBuilder.createSession(senderKeyName: groupSender) else {
+            try? aliceGroupCipher.createSession() else {
                 XCTFail("Could not create distribution message")
                 return
         }
@@ -44,7 +42,7 @@ class GroupCipherTests: XCTestCase {
         /* Intentionally omitting Bob's processing of received_alice_distribution_message */
         
         /* Encrypt a test message from Alice */
-        let alicePlaintext = "smert ze smert".asByteArray
+        let alicePlaintext = "smert ze smert".data(using: .utf8)!
         guard let message = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext) else {
             XCTFail("could not encrypt message")
             return
@@ -67,17 +65,13 @@ class GroupCipherTests: XCTestCase {
         /* Create the test data stores */
         let aliceStore = TestStore()
         let bobStore = TestStore()
-        /* Create the session builders */
-        let aliceSessionBuilder = GroupSessionBuilder(store: aliceStore)
-        let bobSessionBuilder = GroupSessionBuilder(store: bobStore)
-        
         /* Create the group ciphers */
-        let aliceGroupCipher = GroupCipher(store: aliceStore, senderKeyId: groupSender)
-        let bobGroupCipher = GroupCipher(store: bobStore, senderKeyId: groupSender)
+        let aliceGroupCipher = GroupCipher(address: groupSender, store: aliceStore)
+        let bobGroupCipher = GroupCipher(address: groupSender, store: bobStore)
         
         /* Create the sender key distribution messages */
         guard let sentAliceDistributionMessage =
-            try? aliceSessionBuilder.createSession(senderKeyName: groupSender) else {
+            try? aliceGroupCipher.createSession() else {
                 XCTFail("Could not create distribution message")
                 return
         }
@@ -93,16 +87,14 @@ class GroupCipherTests: XCTestCase {
         
         /* Processing Alice's distribution message */
         do {
-            try bobSessionBuilder.processSession(
-                senderKeyName: groupSender,
-                distributionMessage: receivedDistributionMessage)
+            try bobGroupCipher.process(distributionMessage: receivedDistributionMessage)
         } catch {
             XCTFail("Could not process distribution message")
             return
         }
         
         /* Encrypt a test message from Alice */
-        let alicePlaintext = "smert ze smert".asByteArray
+        let alicePlaintext = "smert ze smert".data(using: .utf8)!
         guard let encrypted = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext) else {
             XCTFail("could not encrypt message")
             return
@@ -126,17 +118,13 @@ class GroupCipherTests: XCTestCase {
         /* Create the test data stores */
         let aliceStore = TestStore()
         let bobStore = TestStore()
-        /* Create the session builders */
-        let aliceSessionBuilder = GroupSessionBuilder(store: aliceStore)
-        let bobSessionBuilder = GroupSessionBuilder(store: bobStore)
-        
         /* Create the group ciphers */
-        let aliceGroupCipher = GroupCipher(store: aliceStore, senderKeyId: groupSender)
-        let bobGroupCipher = GroupCipher(store: bobStore, senderKeyId: groupSender)
+        let aliceGroupCipher = GroupCipher(address: groupSender, store: aliceStore)
+        let bobGroupCipher = GroupCipher(address: groupSender, store: bobStore)
         
         /* Create the sender key distribution messages */
         guard let sentAliceDistributionMessage =
-            try? aliceSessionBuilder.createSession(senderKeyName: groupSender) else {
+            try? aliceGroupCipher.createSession() else {
                 XCTFail("Could not create distribution message")
                 return
         }
@@ -152,18 +140,16 @@ class GroupCipherTests: XCTestCase {
         
         /* Processing Alice's distribution message */
         do {
-            try bobSessionBuilder.processSession(
-                senderKeyName: groupSender,
-                distributionMessage: receivedDistributionMessage)
+            try bobGroupCipher.process(distributionMessage: receivedDistributionMessage)
         } catch {
             XCTFail("Could not process distribution message")
             return
         }
         
         /* Prepare some text to encrypt */
-        let alicePlaintext = "smert ze smert".asByteArray
-        let alicePlaintext2 = "smert ze smert2".asByteArray
-        let alicePlaintext3 = "smert ze smert3".asByteArray
+        let alicePlaintext = "smert ze smert".data(using: .utf8)!
+        let alicePlaintext2 = "smert ze smert2".data(using: .utf8)!
+        let alicePlaintext3 = "smert ze smert3".data(using: .utf8)!
         
         /* Encrypt a series of messages from Alice */
         guard let ciphertext1 = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext),
@@ -206,22 +192,20 @@ class GroupCipherTests: XCTestCase {
         /* Create the test data stores */
         let aliceStore = TestStore()
         let bobStore = TestStore()
-        /* Create the session builders */
-        let aliceSessionBuilder = GroupSessionBuilder(store: aliceStore)
-        
+
         /* Create the group ciphers */
-        let aliceGroupCipher = GroupCipher(store: aliceStore, senderKeyId: groupSender)
+        let aliceGroupCipher = GroupCipher(address: groupSender, store: aliceStore)
         
         /* Create the sender key distribution messages */
         guard let _ =
-            try? aliceSessionBuilder.createSession(senderKeyName: groupSender) else {
+            try? aliceGroupCipher.createSession() else {
                 XCTFail("Could not create distribution message")
                 return
         }
         
         /* Pretend this was sent to some people other than Bob */
         for i in 0..<100 {
-            let alicePlaintext = "up the punks up the punks up the punks".asByteArray
+            let alicePlaintext = "up the punks up the punks up the punks".data(using: .utf8)!
             guard let _ = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext) else {
                 XCTFail("Could not encrypt message \(i)")
                 return
@@ -230,12 +214,11 @@ class GroupCipherTests: XCTestCase {
         
         
         /* Now Bob Joins */
-        let bobSessionBuilder = GroupSessionBuilder(store: bobStore)
-        let bobGroupCipher = GroupCipher(store: bobStore, senderKeyId: groupSender)
+        let bobGroupCipher = GroupCipher(address: groupSender, store: bobStore)
         
         /* Create Alice's sender key distribution message for Bob */
         guard let sentAliceDistributionMessage =
-            try? aliceSessionBuilder.createSession(senderKeyName: groupSender) else {
+            try? aliceGroupCipher.createSession() else {
                 XCTFail("Could not create distribution message")
                 return
         }
@@ -252,9 +235,7 @@ class GroupCipherTests: XCTestCase {
         
         /* Have Bob process Alice's distribution message */
         do {
-            try bobSessionBuilder.processSession(
-                senderKeyName: groupSender,
-                distributionMessage: receivedDistributionMessage)
+            try bobGroupCipher.process(distributionMessage: receivedDistributionMessage)
         } catch {
             XCTFail("Could not process distribution message")
             return
@@ -262,7 +243,7 @@ class GroupCipherTests: XCTestCase {
         
         /* Alice sends a message welcoming Bob */
         do {
-            let plaintext = "welcome to the group".asByteArray
+            let plaintext = "welcome to the group".data(using: .utf8)!
             let ciphertext = try aliceGroupCipher.encrypt(paddedPlaintext: plaintext)
             let message = try SenderKeyMessage(from: ciphertext.data)
             /* Bob decrypts the message */
@@ -277,30 +258,24 @@ class GroupCipherTests: XCTestCase {
         }
     }
 
-    private func createWorkingSession() -> (GroupCipher, GroupCipher)? {
+    private func createWorkingSession() -> (GroupCipher<TestStore>, GroupCipher<TestStore>)? {
         /* Create the test data stores */
         let aliceStore = TestStore()
         let bobStore = TestStore()
-        /* Create the session builders */
-        let aliceSessionBuilder = GroupSessionBuilder(store: aliceStore)
-        let bobSessionBuilder = GroupSessionBuilder(store: bobStore)
-
         /* Create the group ciphers */
-        let aliceGroupCipher = GroupCipher(store: aliceStore, senderKeyId: groupSender)
-        let bobGroupCipher = GroupCipher(store: bobStore, senderKeyId: groupSender)
+        let aliceGroupCipher = GroupCipher(address: groupSender, store: aliceStore)
+        let bobGroupCipher = GroupCipher(address: groupSender, store: bobStore)
 
         /* Create Alice's sender key distribution message */
         guard let aliceDistributionMessage =
-            try? aliceSessionBuilder.createSession(senderKeyName: groupSender) else {
+            try? aliceGroupCipher.createSession() else {
                 XCTFail("Could not create distribution message")
                 return nil
         }
 
         /* Have Bob process the distribution message */
         do {
-            try bobSessionBuilder.processSession(
-                senderKeyName: groupSender,
-                distributionMessage: aliceDistributionMessage)
+            try bobGroupCipher.process(distributionMessage: aliceDistributionMessage)
         } catch {
             XCTFail("Could not process distribution message")
             return nil
@@ -313,7 +288,7 @@ class GroupCipherTests: XCTestCase {
             return
         }
         /* Populate a batch of 100 messages */
-        let plaintext = "up the punks".asByteArray
+        let plaintext = "up the punks".data(using: .utf8)!
         var ciphertexts = [Data]()
         for _ in 0..<100 {
             guard let message = try? aliceCipher.encrypt(paddedPlaintext: plaintext) else {
@@ -349,11 +324,11 @@ class GroupCipherTests: XCTestCase {
         let aliceStore = TestStore()
 
         /* Create Alice's group cipher */
-        let aliceGroupCipher = GroupCipher(store: aliceStore, senderKeyId: aliceSenderName)
+        let aliceGroupCipher = GroupCipher(address: aliceSenderName, store: aliceStore)
 
         /* Try to encrypt without a session */
         do {
-            let plaintext = "up the punks".asByteArray
+            let plaintext = "up the punks".data(using: .utf8)!
             let _ = try aliceGroupCipher.encrypt(paddedPlaintext: plaintext)
             XCTFail("Should fail with error")
             return
@@ -371,7 +346,7 @@ class GroupCipherTests: XCTestCase {
         }
 
         /* Have Alice encrypt a batch of 2001 messages */
-        let plaintext = "up the punks".asByteArray
+        let plaintext = "up the punks".data(using: .utf8)!
         for _ in 0..<2001 {
             guard let _ = try? aliceCipher.encrypt(paddedPlaintext: plaintext) else {
                 XCTFail("Could not encrypt message")
@@ -379,7 +354,7 @@ class GroupCipherTests: XCTestCase {
             }
         }
         /* Have Alice encrypt a message too far in the future */
-        let tooFarText = "notta gonna worka".asByteArray
+        let tooFarText = "notta gonna worka".data(using: .utf8)!
         guard let tooFar = try? aliceCipher.encrypt(paddedPlaintext: tooFarText) else {
             XCTFail("Could not encrypt message")
             return
@@ -401,7 +376,7 @@ class GroupCipherTests: XCTestCase {
             return
         }
 
-        let plaintext = "up the punks".asByteArray
+        let plaintext = "up the punks".data(using: .utf8)!
         var inflight = [Data]()
         for _ in 0..<2010 {
             guard let message = try? aliceCipher.encrypt(paddedPlaintext: plaintext) else {
@@ -445,31 +420,27 @@ class GroupCipherTests: XCTestCase {
         /* Create the test data stores */
         let aliceStore = TestStore()
         let bobStore = TestStore()
-        /* Create the session builders */
-        let aliceSessionBuilder = GroupSessionBuilder(store: aliceStore)
-        let bobSessionBuilder = GroupSessionBuilder(store: bobStore)
-
         /* Create the group ciphers */
-        let bobGroupCipher = GroupCipher(store: bobStore, senderKeyId: groupSender)
+        let bobGroupCipher = GroupCipher(address: groupSender, store: bobStore)
+        let aliceGroupCipher = GroupCipher(address: groupSender, store: aliceStore)
+
 
         /* Create Alice's sender key distribution message */
         guard let aliceDistributionMessage =
-            try? aliceSessionBuilder.createSession(senderKeyName: groupSender) else {
+            try? aliceGroupCipher.createSession() else {
                 XCTFail("Could not create distribution message")
                 return
         }
         /* Processing Alice's distribution message */
         do {
-            try bobSessionBuilder.processSession(
-                senderKeyName: groupSender,
-                distributionMessage: aliceDistributionMessage)
+            try bobGroupCipher.process(distributionMessage: aliceDistributionMessage)
         } catch {
             XCTFail("Could not process distribution message")
             return
         }
 
         /* Encrypt a test message from Bob, which should fail because no message was received from Alice yet */
-        let plaintext = "smert ze smert".asByteArray
+        let plaintext = "smert ze smert".data(using: .utf8)!
         do {
             let _ = try bobGroupCipher.encrypt(paddedPlaintext: plaintext)
             XCTFail("Should fail to decrypt")

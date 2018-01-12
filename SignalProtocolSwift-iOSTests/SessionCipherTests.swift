@@ -73,8 +73,8 @@ class SessionCipherTests: XCTestCase {
 
         /* Store the two sessions in their data stores */
         do {
-            try aliceStore.store(session: aliceRecord, for: bobAddress)
-            try bobStore.store(session: bobRecord, for: aliceAddress)
+            try aliceStore.sessionStore.store(session: aliceRecord, for: bobAddress)
+            try bobStore.sessionStore.store(session: bobRecord, for: aliceAddress)
         } catch {
             XCTFail("Could not store sessions")
             return
@@ -85,7 +85,7 @@ class SessionCipherTests: XCTestCase {
         let bobCipher = SessionCipher(store: bobStore, remoteAddress: aliceAddress)
 
          /* Encrypt a test message from Alice */
-        let alicePlaintext = "This is a plaintext message.".asByteArray
+        let alicePlaintext = "This is a plaintext message.".data(using: .utf8)!
         guard let aliceMessage = try? aliceCipher.encrypt(paddedMessage: alicePlaintext) else {
             XCTFail("Could not encrypt message from Alice")
             return
@@ -103,7 +103,7 @@ class SessionCipherTests: XCTestCase {
         }
 
         /* Encrypt a reply from Bob */
-        let bobReply = "This is a message from Bob.".asByteArray
+        let bobReply = "This is a message from Bob.".data(using: .utf8)!
         guard let replyMessage = try? bobCipher.encrypt(paddedMessage: bobReply) else {
             XCTFail("Could not encrypt reply from Bob")
             return
@@ -181,8 +181,8 @@ class SessionCipherTests: XCTestCase {
 
         /* Store the two sessions in their data stores */
         do {
-            try aliceStore.store(session: aliceSessionRecord, for: bobAddress)
-            try bobStore.store(session: bobSessionRecord, for: aliceAddress)
+            try aliceStore.sessionStore.store(session: aliceSessionRecord, for: bobAddress)
+            try bobStore.sessionStore.store(session: bobSessionRecord, for: aliceAddress)
         } catch {
             XCTFail("Could not store sessions")
             return
@@ -193,7 +193,7 @@ class SessionCipherTests: XCTestCase {
         let bobCipher = SessionCipher(store: bobStore, remoteAddress: aliceAddress)
 
         /* Encrypt enough messages to go past our limit */
-        let alicePlaintext = "you've never been so hungry, you've never been so cold".asByteArray
+        let alicePlaintext = "you've never been so hungry, you've never been so cold".data(using: .utf8)!
         var inflight = [SignalMessage]()
         for i in 0..<2010 {
             do {
@@ -232,20 +232,20 @@ class SessionCipherTests: XCTestCase {
         }
     }
 
-    private func generateTestMessageCollections(cipher: SessionCipher, size: Int) throws -> [([UInt8], Data)] {
+    private func generateTestMessageCollections(cipher: SessionCipher<TestStore>, size: Int) throws -> [(Data, Data)] {
         /*
          * This test message is kept here as a byte array constant, rather than
          * a string literal, since it contains characters not valid in ASCII.
          * A null placeholder is located at the end, which is replaced with an
          * index value when generated derived test messages.
          */
-        let testMessage: [UInt8] =
+        let testMessage = Data(
             [0xD1, 0x81, 0xD0, 0xBC, 0xD0, 0xB5, 0xD1, 0x80,
              0xD1, 0x82, 0xD1, 0x8C, 0x20, 0xD0, 0xB7, 0xD0,
              0xB0, 0x20, 0xD1, 0x81, 0xD0, 0xBC, 0xD0, 0xB5,
-             0xD1, 0x80, 0xD1, 0x82, 0xD1, 0x8C, 0x20, 0x00]
+             0xD1, 0x80, 0xD1, 0x82, 0xD1, 0x8C, 0x20, 0x00])
 
-        var messages = [([UInt8], Data)]()
+        var messages = [(Data, Data)]()
         for i in 0..<size {
             /* Generate the plaintext */
             var plaintext = testMessage
@@ -263,7 +263,7 @@ class SessionCipherTests: XCTestCase {
         return messages
     }
 
-    private func decryptAndCompareMessages(cipher: SessionCipher, ciphertext: Data, plaintext: [UInt8]) throws {
+    private func decryptAndCompareMessages(cipher: SessionCipher<TestStore>, ciphertext: Data, plaintext: Data) throws {
         /* Create a signal_message from the ciphertext */
         let message = try SignalMessage(from: ciphertext)
 

@@ -11,6 +11,9 @@ import XCTest
 
 class DeviceConsistencyTests: XCTestCase {
 
+    /**
+     Test the consistency of device codes across multiple devices.
+    */
     func testDeviceConsistency() {
         /* Create three device key pairs */
         guard let deviceOne = try? KeyPair(),

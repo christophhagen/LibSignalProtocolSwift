@@ -14,13 +14,13 @@ import Foundation
 struct RatchetChainKey {
 
     /// The seed used as input material for the KDF to derive the message keys
-    private static let messageKeySeed: [UInt8] = [0x01]
+    private static let messageKeySeed = Data([0x01])
 
     /// The seed used as input material for the KDF to derive the chain keys
-    private static let chainKeySeed: [UInt8] = [0x02]
+    private static let chainKeySeed = Data([0x02])
 
     /// The seed used as info material for the KDF to derive the message keys
-    private static let keyMaterialSeed = [UInt8]("WhisperMessageKeys".utf8)
+    private static let keyMaterialSeed = "WhisperMessageKeys".data(using: .utf8)!
 
     /// The size of the chain key
     static let secretSize = 32
@@ -36,12 +36,12 @@ struct RatchetChainKey {
     /**
      The current key of the ratchet chain, 32 byte
      */
-    var key: [UInt8]
+    var key: Data
 
     /// The current index of the chain
     var index: UInt32
 
-    init(kdf: HKDF, key: [UInt8], index : UInt32) {
+    init(kdf: HKDF, key: Data, index : UInt32) {
         self.kdf = kdf
         self.key = key
         self.index = index
@@ -52,7 +52,7 @@ struct RatchetChainKey {
      - parameter seed: The input for the HMAC
      - returns: The HMAC of the seed with the key as the salt
      - throws: `SignalError.hmacError` if CryptoSwift doesn't work */
-    private func getBaseMaterial(seed: [UInt8]) throws -> [UInt8] {
+    private func getBaseMaterial(seed: Data) throws -> Data {
         return try SignalCrypto.hmacSHA256(for: seed, with: key)
     }
 
@@ -64,7 +64,7 @@ struct RatchetChainKey {
     func messageKeys() throws -> RatchetMessageKeys {
         let inputKeyMaterial = try getBaseMaterial(seed: RatchetChainKey.messageKeySeed)
 
-        let salt = [UInt8](repeating: 0, count: RatchetChainKey.hashOutputSize)
+        let salt = Data(count: RatchetChainKey.hashOutputSize)
         let keyMaterialData =
             try kdf.deriveSecrets(
                 material: inputKeyMaterial,
@@ -72,7 +72,9 @@ struct RatchetChainKey {
                 info: RatchetChainKey.keyMaterialSeed,
                 outputLength: RatchetMessageKeys.derivedMessageSecretsSize)
 
-        return try RatchetMessageKeys(from: keyMaterialData + index.asByteArray)
+        var temp = index
+        let indexData = withUnsafePointer(to: &temp) { Data(bytes: $0, count: MemoryLayout<UInt32>.size) }
+        return try RatchetMessageKeys(material: keyMaterialData + indexData)
     }
 
     /**
@@ -87,34 +89,64 @@ struct RatchetChainKey {
 }
 
 extension RatchetChainKey {
-    
-    init(from object: Textsecure_SessionStructure.Chain.ChainKey, version: HKDFVersion) {
+
+    /**
+     Create a chain key from a ProtoBuf object.
+     - parameter object: The ProtoBuf object
+     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
+     */
+    init(from object: Textsecure_SessionStructure.Chain.ChainKey, version: HKDFVersion) throws {
+        guard object.hasIndex, object.hasKey else {
+            throw SignalError(.invalidProtoBuf, "Missing data in RatchetChainKey protobuf object")
+        }
         self.index = object.index
-        self.key = [UInt8](object.key)
+        self.key = object.key
         self.kdf = HKDF(messageVersion: version)
     }
-    
+
+    /**
+     Create a ratchet chain key from serialized data.
+     - note: The types of errors thrown are:
+     `invalidProtoBuf`, if data is missing or corrupt
+     - parameter data: The serialized data
+     - throws: `SignalError` errors
+     */
     init(from data: Data, version: HKDFVersion) throws {
-        let object = try Textsecure_SessionStructure.Chain.ChainKey(serializedData: data)
-        self.init(from: object, version: version)
+        let object: Textsecure_SessionStructure.Chain.ChainKey
+        do {
+            object = try Textsecure_SessionStructure.Chain.ChainKey(serializedData: data)
+        } catch {
+            throw SignalError(.invalidProtoBuf, "Could not create RatchetChainKey object: \(error)")
+        }
+        try self.init(from: object, version: version)
     }
 
+    /**
+     Serialize the key.
+     - returns: The serialized keys
+     - throws: `SignalError` of type `invalidProtoBuf`
+     */
     func data() throws -> Data {
         return try object.serializedData()
     }
 
+    /// The chain key converted to a ProtoBuf object
     var object: Textsecure_SessionStructure.Chain.ChainKey {
         return Textsecure_SessionStructure.Chain.ChainKey.with {
             $0.index = self.index
-            $0.key = Data(self.key)
+            $0.key = self.key
         }
     }
 }
 
 extension RatchetChainKey: Equatable {
+    /**
+     Compare two SignalMessages for equality.
+     - parameter lhs: The first message
+     - parameter rhs: The second message
+     - returns: `True`, if the keys are equal
+     */
     static func ==(lhs: RatchetChainKey, rhs: RatchetChainKey) -> Bool {
-        return lhs.kdf == rhs.kdf &&
-        lhs.key == rhs.key &&
-        lhs.index == rhs.index
+        return lhs.kdf == rhs.kdf && lhs.key == rhs.key && lhs.index == rhs.index
     }
 }

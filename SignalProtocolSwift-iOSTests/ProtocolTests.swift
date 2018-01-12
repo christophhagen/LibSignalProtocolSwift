@@ -9,7 +9,7 @@
 import XCTest
 @testable import SignalProtocolSwift
 
-private let ciphertext = [UInt8]("WhisperCipherText".utf8)
+private let ciphertext = "WhisperCipherText".data(using: .utf8)!
 
 class ProtocolTests: XCTestCase {
 
@@ -19,7 +19,7 @@ class ProtocolTests: XCTestCase {
         let senderIdentityKey = try! KeyPair().publicKey
         let receiverIdentityKey = try! KeyPair().publicKey
 
-        let macKey = [UInt8](repeating: 1, count: RatchetMessageKeys.macKeyLength)
+        let macKey = Data(count: RatchetMessageKeys.macKeyLength)
 
         guard let message = try? SignalMessage(
             messageVersion: 3,
@@ -69,7 +69,7 @@ class ProtocolTests: XCTestCase {
                 return
         }
 
-        let macKey = [UInt8](repeating: 1, count: RatchetMessageKeys.macKeyLength)
+        let macKey = Data(count: RatchetMessageKeys.macKeyLength)
 
         guard let message = try? SignalMessage(
             messageVersion: 3,
@@ -168,7 +168,7 @@ class ProtocolTests: XCTestCase {
             XCTFail("Could not create keys")
             return
         }
-        let chainKey = "WhisperChainKey".asByteArray
+        let chainKey = "WhisperChainKey".data(using: .utf8)!
         let message = SenderKeyDistributionMessage(
             id: 10, iteration: 1,
             chainKey: chainKey, signatureKey: signatureKey)

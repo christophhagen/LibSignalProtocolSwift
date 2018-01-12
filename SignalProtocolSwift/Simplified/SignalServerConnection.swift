@@ -7,15 +7,15 @@
 
 import Foundation
 
-public final class SignalServerConnection {
+private let preKeyMaxCount = 10
 
-    private static let preKeyMaxCount = 10
+public final class SignalServerConnection<Context: SignalProtocolStoreContext, Server: SignalServer> where Server.ServerAddress == SignalAddress {
 
-    private let store: SignalProtocolStoreContext
+    private let store: Context
 
-    private let server: SignalServer
+    private let server: Server
 
-    init(store: SignalProtocolStoreContext, server: SignalServer) {
+    init(store: Context, server: Server) {
         self.store = store
         self.server = server
     }
@@ -24,13 +24,11 @@ public final class SignalServerConnection {
      Store the identity of the local client on the server.
      */
     public func uploadIdentity() throws {
-        let address = server.ownAddress
-        let key = try store.getIdentityKey().publicKey
-        let registrationId = try store.getLocalRegistrationID()
+        let key = try store.identityKeyStore.getIdentityKey().publicKey
+        let registrationId = try store.identityKeyStore.getLocalRegistrationID()
         let identity = PreKeyBundle.Identity(
             key: key,
-            registrationId: registrationId,
-            deviceId: address.deviceId)
+            registrationId: registrationId)
         try server.upload(identity: identity)
     }
 
@@ -40,8 +38,8 @@ public final class SignalServerConnection {
      - returns: `True` on success
      */
     public func uploadNewSignedPreKey() throws {
-        let identity = try store.getIdentityKey()
-        let id = store.lastSignedPreKeyId &+ 1
+        let identity = try store.identityKeyStore.getIdentityKey()
+        let id = store.signedPreKeyStore.lastId &+ 1
         let timestamp = UInt64(Date().timeIntervalSince1970)
 
         let signedKey = try SignalCrypto.generateSignedPreKey(
@@ -55,7 +53,7 @@ public final class SignalServerConnection {
             signature: signedKey.signature)
 
         try server.upload(signedPreKey: signedPreKey)
-        try store.store(signedPreKey: signedKey)
+        try store.signedPreKeyStore.store(signedPreKey: signedKey)
     }
 
     /**
@@ -65,12 +63,12 @@ public final class SignalServerConnection {
      */
     public func uploadPreKeys() throws {
         let remaining = try server.preKeyCount()
-        let count = SignalServerConnection.preKeyMaxCount - remaining
-        let start = store.lastPreKeyId + 1
+        let count = preKeyMaxCount - remaining
+        let start = store.preKeyStore.lastId &+ 1
         let keys = try SignalCrypto.generatePreKeys(start: start, count: count)
-        let mappedKeys = keys.values.map { PreKeyBundle.PreKey(id: $0.id, key: $0.keyPair.publicKey) }
+        let mappedKeys = keys.map { PreKeyBundle.PreKey(id: $0.id, key: $0.keyPair.publicKey) }
         try server.upload(preKeys: mappedKeys)
-        try keys.values.forEach{ try store.store(preKey: $0) }
+        try keys.forEach{ try store.preKeyStore.store(preKey: $0) }
     }
 
     /**

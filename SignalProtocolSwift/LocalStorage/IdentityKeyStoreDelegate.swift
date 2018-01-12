@@ -16,17 +16,25 @@ import Foundation
  */
 public protocol IdentityKeyStoreDelegate {
 
+    associatedtype Address: Hashable
+
     /**
      Return the identity key pair. This key should be generated once at
      install time by calling `KeyStore.generateIdentityKeyPair()`.
+     - note: An appropriate error should be thrown, if no identity key exists
+     - returns: The identity key pair
+     - throws: `SignalError` of type `storageError`
      */
-    var identityKey : KeyPair? { get set }
+    func getIdentityKey() throws -> KeyPair
 
     /**
      Return the local registration id. This id should be generated once at
      install time by calling `KeyStore.generateRegistrationID()`.
+     - note: An appropriate error should be thrown if no local registration id exists
+     - returns: The local registration id
+     - throws: `SignalError` of type `storageError`
      */
-    var localRegistrationID: UInt32? { get set }
+    func getLocalRegistrationID() throws -> UInt32
 
     /**
      Determine whether a remote client's identity is trusted. The convention is
@@ -35,20 +43,53 @@ public protocol IdentityKeyStoreDelegate {
      the local store, or if it matches the saved key for a recipient in the local store.
      Only if it mismatches an entry in the local store is it considered 'untrusted.'
 
-     - parameter identity: The identity key to verify (can be nil)
+     - parameter identity: The identity key to verify
      - parameter address: The address of the remote client
      - returns: `true` if trusted, `false` if not trusted
      */
-    func isTrusted(identity: Data, for address: SignalAddress) -> Bool
+    func isTrusted(identity: Data, for address: Address) -> Bool
 
     /**
      Store a remote client's identity key as trusted. The value of key_data may be null.
      In this case remove the key data from the identity store, but retain any metadata
      that may be kept alongside it.
 
-     - parameter identity: The identity key (may be null)
+     - note: An appropriate error should be thrown if the identity could not be saved
+     - parameter identity: The identity key data (may be nil, if the key should be removed)
      - parameter address: The address of the remote client
-     - returns: `true` on success
+     - throws: `SignalError` of type `storageError`
      */
-    func save(identity: Data?, for address: SignalAddress) -> Bool
+    func store(identity: Data?, for address: Address) throws
+}
+
+extension IdentityKeyStoreDelegate {
+
+    /**
+     Store a remote client's identity key as trusted. The value of key_data may be null.
+     In this case remove the key data from the identity store, but retain any metadata
+     that may be kept alongside it.
+
+     - note: An appropriate error should be thrown if the identity could not be saved
+     - parameter identity: The identity key (may be nil, if the key should be removed)
+     - parameter address: The address of the remote client
+     - throws: `SignalError` of type `storageError`
+     */
+    func store(identity: PublicKey?, for address: Address) throws {
+        try store(identity: identity?.data, for: address)
+    }
+
+    /**
+     Determine whether a remote client's identity is trusted. The convention is
+     that the TextSecure protocol is 'trust on first use.'  This means that an
+     identity key is considered 'trusted' if there is no entry for the recipient in
+     the local store, or if it matches the saved key for a recipient in the local store.
+     Only if it mismatches an entry in the local store is it considered 'untrusted.'
+
+     - parameter identity: The identity key to verify
+     - parameter address: The address of the remote client
+     - returns: `true` if trusted, `false` if not trusted
+     */
+    func isTrusted(identity: PublicKey, for address: Address) -> Bool {
+        return isTrusted(identity: identity.data, for: address)
+    }
 }

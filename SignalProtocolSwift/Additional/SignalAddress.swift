@@ -7,9 +7,13 @@
 
 import Foundation
 
+public protocol SignalAddressProtocol: Hashable, CustomStringConvertible {
+
+}
+
 /**
  A `SignalAddress` identifies a single device of a Signal user, with a user
- `identifier` (such as a phone number), and the `deviceId` which
+ `identifier` (such as a phone number), and the `deviceId` which specifies the device
  */
 public struct SignalAddress {
 

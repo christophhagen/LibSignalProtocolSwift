@@ -7,17 +7,16 @@
 
 import Foundation
 
-
 /*
  * A representation of a (group + sender + device) tuple
  */
 public struct SignalSenderKeyName {
 
     /// The group identifier (such as the name)
-    var groupId: String
+    let groupId: String
 
     /// The contact
-    var sender: SignalAddress
+    let sender: SignalAddress
 
     /**
      Create a new `SignalSenderKeyName`

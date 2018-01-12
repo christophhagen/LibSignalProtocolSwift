@@ -11,22 +11,22 @@ import Foundation
  A session is used to handle all message processing and encryption/decryption
  of incoming and outgoing messages.
  */
-public final class SignalSession {
+public final class SignalSession<Context: SignalProtocolStoreContext> where Context.Address == SignalAddress {
 
-    /**
-     Set the data store for the sessions. This has to be done before
-     accessing any functions are used.
-     */
-    static var store: SignalProtocolStoreContext?
+    /// The storage for the keys and other data
+    private let store: Context
 
-    private var remoteAddress: SignalAddress
+    /// The address of the remote party
+    private var remoteAddress: Context.Address
 
     /**
      Establish a new session before processing a PreKeyMessage, or to encrypt/decrypt in an already existing session.
      - parameter address: The address of the remote client
+     - parameter
      */
-    public init(for address: SignalAddress) {
+    public init(for address: Context.Address, store: Context) {
         self.remoteAddress = address
+        self.store = store
     }
 
     /**
@@ -35,8 +35,8 @@ public final class SignalSession {
      - parameter preKeyBundle: The pre key bundle of the remote
      - throws: `SignalError` errors
      */
-    public convenience init(for address: SignalAddress, with preKeyBundle: PreKeyBundle) throws {
-        self.init(for: address)
+    public convenience init(for address: Context.Address, with preKeyBundle: PreKeyBundle, in store: Context) throws {
+        self.init(for: address, store: store)
         try process(preKeyBundle)
     }
 
@@ -46,12 +46,9 @@ public final class SignalSession {
      - throws: `SignalError` errors
      */
     private func process(_ preKeyBundle: PreKeyBundle) throws {
-        guard let store = SignalSession.store else {
-            throw SignalError(.storageError, "No key store set")
-        }
         let bundle = SessionPreKeyBundle(
             registrationId: preKeyBundle.identity.registrationId,
-            deviceId: preKeyBundle.identity.deviceId,
+            deviceId: remoteAddress.deviceId,
             preKeyId: preKeyBundle.preKey?.id ?? 0,
             preKeyPublic: preKeyBundle.preKey?.key,
             signedPreKeyId: preKeyBundle.signedPreKey.id,
@@ -59,7 +56,7 @@ public final class SignalSession {
             signedPreKeySignature: preKeyBundle.signedPreKey.signature,
             identityKey: preKeyBundle.identity.key)
 
-        let builder = SessionBuilder(remoteAddress: remoteAddress, store: store)
+        let builder = SessionBuilder<Context>(remoteAddress: remoteAddress, store: store)
         try builder.process(preKeyBundle: bundle)
     }
 
@@ -75,9 +72,6 @@ public final class SignalSession {
         }
         let data = message.advanced(by: 1)
 
-        guard let store = SignalSession.store else {
-            throw SignalError(.storageError, "No data store set")
-        }
         let cipher = SessionCipher(store: store, remoteAddress: self.remoteAddress)
 
         switch type {
@@ -98,9 +92,9 @@ public final class SignalSession {
      - returns: The decrypted message
      - throws: `SignalError` errors
      */
-    private func decrypt(preKeyMessage data: Data, cipher: SessionCipher) throws -> Data {
+    private func decrypt(preKeyMessage data: Data, cipher: SessionCipher<Context>) throws -> Data {
         let preKeyMessage = try PreKeySignalMessage(from: data)
-        return try Data(cipher.decrypt(preKeySignalMessage: preKeyMessage))
+        return try cipher.decrypt(preKeySignalMessage: preKeyMessage)
     }
 
     /**
@@ -110,9 +104,9 @@ public final class SignalSession {
      - returns: The decrypted message
      - throws: `SignalError` errors
     */
-    private func decrypt(signalMessage data: Data, cipher: SessionCipher) throws -> Data {
+    private func decrypt(signalMessage data: Data, cipher: SessionCipher<Context>) throws -> Data {
         let signalMessage = try SignalMessage(from: data)
-        return try Data(cipher.decrypt(signalMessage: signalMessage))
+        return try cipher.decrypt(signalMessage: signalMessage)
     }
 
     /**
@@ -122,22 +116,8 @@ public final class SignalSession {
      - throws: `SignalError` errors
      */
     public func encrypt(_ data: Data) throws -> Data {
-        let bytes = [UInt8](data)
-        return try encrypt(bytes)
-    }
-
-    /**
-     Encrypt an array of bytes
-     - parameter bytes: The bytes to encrypt
-     - returns: The encrypted message
-     - throws: `SignalError` errors
-     */
-    public func encrypt(_ bytes: [UInt8]) throws -> Data {
-        guard let store = SignalSession.store else {
-            throw SignalError(.storageError, "No data store set")
-        }
         let cipher = SessionCipher(store: store, remoteAddress: self.remoteAddress)
-        let ciphertext = try cipher.encrypt(paddedMessage: bytes)
+        let ciphertext = try cipher.encrypt(paddedMessage: data)
         let firstByte = Data([ciphertext.type.rawValue])
         return firstByte + ciphertext.data
     }

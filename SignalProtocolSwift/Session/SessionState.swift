@@ -8,41 +8,74 @@
 
 import Foundation
 
-
+/// An elliptic key pair specifically used for identification in a ratchet
 public typealias RatchetIdentityKeyPair = KeyPair
 
+/// All parameters needed to establish a session
 struct SymmetricParameters {
+
+    /// The identity of the local party
     var ourIdentityKey: RatchetIdentityKeyPair
+
+    /// The base key for the ratchet of the local party
     var ourBaseKey: KeyPair
+
+    /// The initial key used for the ratchet
     var ourRatchetKey: KeyPair
+
+    /// The base key of the remote party
     var theirBaseKey: PublicKey
+
+    /// The ratchet key used by the remote party
     var theirRatchetKey: PublicKey
+
+    /// The identity of the remote party
     var theirIdentityKey: PublicKey
 
+    /// Indicate if the session was initialized as Alice
     var isAlice: Bool {
         // FIXME: This might be incorrect
         return ourBaseKey.publicKey < theirBaseKey
     }
 }
 
-
+/**
+ A session state contains all data needed for communicating with a remote party.
+ */
 final class SessionState {
-    
+
+    /// The current version of the message encryption
     private static let cipherTextCurrentVersion: UInt8 = 3
+
+    /// The maximum number of receiver chains for the remote party
     private static let maxReceiverChains = 5
 
+    /// The info material used for the derivation of chain and root keys
+    private static let keyInfo = "WhisperText".data(using: .utf8)!
+
+    /// The version of the session
     var version: UInt8 = 2
+
+    /// The last counter in the previous sender chain
     var previousCounter: UInt32 = 0
+
+    /// the id of the remote party
     var remoteRegistrationID: UInt32 = 0
+
+    /// The id of the local party
     var localRegistrationID: UInt32 = 0
+
+    ///
     var needsRefresh: Bool = false
 
+    /// The identity key of the local party
     var localIdentity: PublicKey?
+
+    /// The identity key of the remote party
     var remoteIdentity: PublicKey?
     var rootKey: RatchetRootKey?
     var senderChain: SenderChain?
     var receiverChains: [ReceiverChain]
-    var pendingKeyExchange: PendingKeyExchange?
     var pendingPreKey: PendingPreKey?
     var aliceBaseKey: PublicKey?
 
@@ -119,11 +152,11 @@ final class SessionState {
         theirRatchetKey: PublicKey) throws {
 
         let sendingRatchetKey = try KeyPair()
-        let secret1 = [UInt8](repeating: 0xFF, count: 32)
+        let secret1 = Data(repeating: 0xFF, count: 32)
         let secret2 = try theirSignedPreKey.calculateAgreement(privateKey: ourIdentityKey.privateKey)
         let secret3 = try theirIdentityKey.calculateAgreement(privateKey: ourBaseKey.privateKey)
         let secret4 = try theirSignedPreKey.calculateAgreement(privateKey: ourBaseKey.privateKey)
-        let secret5 = try theirOneTimePreKey?.calculateAgreement(privateKey: ourBaseKey.privateKey) ?? []
+        let secret5 = try theirOneTimePreKey?.calculateAgreement(privateKey: ourBaseKey.privateKey) ?? Data()
         let secret = secret1 + secret2 + secret3 + secret4 + secret5
 
         let (derivedRoot, derivedChain) = try calculateDerivedKeys(secret: secret)
@@ -154,11 +187,11 @@ final class SessionState {
         theirIdentityKey: PublicKey,
         theirBaseKey: PublicKey) throws {
 
-        let secret1 = [UInt8](repeating: 0xFF, count: 32)
+        let secret1 = Data(repeating: 0xFF, count: 32)
         let secret2 = try theirIdentityKey.calculateAgreement(privateKey: ourSignedPreKey.privateKey)
         let secret3 = try theirBaseKey.calculateAgreement(privateKey: ourIdentityKey.privateKey)
         let secret4 = try theirBaseKey.calculateAgreement(privateKey: ourSignedPreKey.privateKey)
-        let secret5 = try ourOneTimePreKey?.privateKey.calculateAgreement(publicKey: theirBaseKey) ?? []
+        let secret5 = try ourOneTimePreKey?.privateKey.calculateAgreement(publicKey: theirBaseKey) ?? Data()
         let secret = secret1 + secret2 + secret3 + secret4 + secret5
         let (derivedRoot, derivedChain) = try calculateDerivedKeys(secret: secret)
 
@@ -190,22 +223,12 @@ final class SessionState {
         }
     }
 
-    private func calculateDerivedKeys(secret: [UInt8]) throws -> (rootKey: RatchetRootKey, chainKey: RatchetChainKey) {
-
-        let keyInfo = [UInt8]("WhisperText".utf8)
+    private func calculateDerivedKeys(secret: Data) throws -> (rootKey: RatchetRootKey, chainKey: RatchetChainKey) {
 
         let kdf = HKDF(messageVersion: .version3)
-        let salt = [UInt8](repeating: 0, count: RatchetChainKey.hashOutputSize)
+        let salt = Data(count: RatchetChainKey.hashOutputSize)
 
-        let output = try kdf.deriveSecrets(material: secret, salt: salt, info: keyInfo, outputLength: RatchetRootKey.derivedRootSecretsSize)
-
-        let rootKeyMaterial = Array(output[0..<RatchetRootKey.secretSize])
-        let rootKey = RatchetRootKey(kdf: kdf, key: rootKeyMaterial)
-
-        let chainKeyMaterial = Array(output[RatchetRootKey.secretSize..<output.count])
-        let chainKey = RatchetChainKey(kdf: kdf, key: chainKeyMaterial, index: 0)
-
-        return (rootKey, chainKey)
+        return try kdf.chainAndRootKey(material: secret, salt: salt, info: SessionState.keyInfo)
     }
 
     // MARK: Protocol Buffers
@@ -235,9 +258,6 @@ final class SessionState {
             self.senderChain = try SenderChain(from: object.senderChain, version: kdfVersion)
         }
         self.receiverChains = try object.receiverChains.map { try ReceiverChain(from: $0, version: kdfVersion) }
-        if object.hasPendingKeyExchange {
-            self.pendingKeyExchange = try PendingKeyExchange(serializedObject: object.pendingKeyExchange)
-        }
         if object.hasPendingPreKey {
             self.pendingPreKey = try PendingPreKey(serializedObject: object.pendingPreKey)
         }
@@ -254,8 +274,8 @@ final class SessionState {
         try self.init(from: object)
     }
 
-    func object() throws -> Textsecure_SessionStructure {
-        return try Textsecure_SessionStructure.with {
+    var object: Textsecure_SessionStructure {
+        return Textsecure_SessionStructure.with {
             $0.sessionVersion = UInt32(self.version)
             if let item = self.localIdentity {
                 $0.localIdentityPublic = item.data
@@ -271,9 +291,6 @@ final class SessionState {
                 $0.senderChain = item.object
             }
             $0.receiverChains = receiverChains.map { $0.object }
-            if let item = self.pendingKeyExchange {
-                $0.pendingKeyExchange = try item.serializedObject()
-            }
             if let item = self.pendingPreKey {
                 $0.pendingPreKey = item.object
             }
@@ -287,7 +304,7 @@ final class SessionState {
     }
     
     func data() throws -> Data {
-        return try object().serializedData()
+        return try object.serializedData()
     }
 }
 
@@ -307,8 +324,7 @@ extension SessionState: Equatable {
                 return false
         }
         guard lhs.receiverChains == rhs.receiverChains,
-        lhs.pendingKeyExchange == rhs.pendingKeyExchange,
-        lhs.pendingPreKey == rhs.pendingPreKey,
+            lhs.pendingPreKey == rhs.pendingPreKey,
             lhs.aliceBaseKey == rhs.aliceBaseKey else {
                 return false
         }

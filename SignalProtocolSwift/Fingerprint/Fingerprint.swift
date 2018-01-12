@@ -112,12 +112,15 @@ private func getLogicalKey(for keyList: [PublicKey]) -> Data {
  - throws `SignalError.invalidLength` if the SHA512 digest is too short
  */
 private func getFingerprint(identity: Data, stableIdentifier: String, iterations: Int) throws -> Data {
-    var hashBuffer = [0, Fingerprint.version] + identity + stableIdentifier.asByteArray
+    guard let id = stableIdentifier.data(using: .utf8) else {
+        throw SignalError(.unknown, "Stable identifier \(stableIdentifier) could not be converted to data")
+    }
+    var hashBuffer = Data([0, Fingerprint.version]) + identity + id
     for _ in 0..<iterations {
-        hashBuffer = try SignalCrypto.sha512(for: hashBuffer + [UInt8](identity))
+        hashBuffer = try SignalCrypto.sha512(for: hashBuffer + identity)
     }
     guard hashBuffer.count >= Fingerprint.length else {
         throw SignalError(.invalidLength, "Invalid SHA512 hash length \(hashBuffer.count)")
     }
-    return Data(hashBuffer)
+    return hashBuffer
 }

@@ -16,20 +16,21 @@ class SignalCommunication_iOSTests: XCTestCase {
 
 
     func testExample() {
-        // Create environement for Alice
+        // Create environment for Alice
         let aliceStore = TestStore()
-        let aliceIdentity = try! aliceStore.getIdentityKey()
+        let aliceIdentity = try! aliceStore.identityKeyStore.getIdentityKey()
 
         // Create the server connection for Alice
-        let aliceServer = SignalServerConnection(
+        let aliceServer = TestServer(ownAddress: aliceAddress, signatureKey: aliceIdentity.privateKey)
+        let aliceConnection = SignalServerConnection<TestStore, TestServer>(
             store: aliceStore,
-            server: TestServer(ownAddress: aliceAddress, signatureKey: aliceIdentity.privateKey))
+            server: aliceServer)
 
         do {
             // Upload identity and keys
-            try aliceServer.uploadIdentity()
-            try aliceServer.uploadNewSignedPreKey()
-            try aliceServer.uploadPreKeys()
+            try aliceConnection.uploadIdentity()
+            try aliceConnection.uploadNewSignedPreKey()
+            try aliceConnection.uploadPreKeys()
         } catch {
             // See the documentation for the types of errors that can be thrown here
             XCTFail("Something went wrong")
@@ -37,22 +38,19 @@ class SignalCommunication_iOSTests: XCTestCase {
 
         // Create environement for Bob
         let bobStore = TestStore()
-        let bobIdentity = try! bobStore.getIdentityKey()
+        let bobIdentity = try! bobStore.identityKeyStore.getIdentityKey()
 
         // Create the server connection for Bob
         let bobServer = SignalServerConnection(
             store: bobStore,
             server: TestServer(ownAddress: bobAddress, signatureKey: bobIdentity.privateKey))
 
-        // Set key store to Bob's store
-        SignalSession.store = bobStore
-
         do {
             // Get the PreKeyBundle from the server
             let preKeyBundle = try bobServer.preKeyBundle(for: aliceAddress)
 
             // Create a new session by processing the PreKeyBundle
-            let session = try SignalSession(for: aliceAddress, with: preKeyBundle)
+            let session = try SignalSession(for: aliceAddress, with: preKeyBundle, in: bobStore)
 
             // Here Alice can send messages to Bob
             let encryptedMessage = try session.encrypt("Hello Alice, it's Bob".data(using: .utf8)!)
@@ -67,12 +65,9 @@ class SignalCommunication_iOSTests: XCTestCase {
             XCTFail("Something went wrong: \(error)")
         }
 
-        // Set key store to Alice's store
-        SignalSession.store = aliceStore
-
         do {
             // Have Alice retrieve the new messages from the server
-            let messages = try aliceServer.messages()
+            let messages = try aliceConnection.messages()
 
             // Only look at messages from Bob
             guard let bobMessages = messages[bobAddress] else {
@@ -80,7 +75,7 @@ class SignalCommunication_iOSTests: XCTestCase {
             }
 
             // Create session to decrypt message
-            let session = SignalSession(for: bobAddress)
+            let session = SignalSession(for: bobAddress, store: aliceStore)
 
             // Decrypt Bob's messages
             for message in bobMessages {

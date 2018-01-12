@@ -7,15 +7,17 @@
 
 import Foundation
 
-protocol SignalServer {
+public protocol SignalServer {
 
-    var ownAddress: SignalAddress { get }
+    associatedtype ServerAddress: Hashable
+
+    var ownAddress: ServerAddress { get }
 
     /**
      Initialize the server with the sending address and the signature
      key used to authenticate the user.
     */
-    init(ownAddress: SignalAddress, signatureKey: PrivateKey)
+    init(ownAddress: ServerAddress, signatureKey: PrivateKey)
 
     /**
      Store the identity of the local client on the server.
@@ -49,14 +51,14 @@ protocol SignalServer {
      - returns: A dictionary of the messages indexed by the sender address.
      - throws: Errors if the messages can't be retrieved
      */
-    func messages() throws -> [SignalAddress : [Data]]
+    func messages() throws -> [ServerAddress : [Data]]
 
     /**
      Retrieve all messages from a specific sender.
      - returns: The messages from the sender as an array.
      - throws: Errors if the messages can't be retrieved
     */
-    func messages(from sender: SignalAddress) throws -> [Data]
+    func messages(from sender: ServerAddress) throws -> [Data]
 
     /**
      Upload a message to a recipient.
@@ -64,7 +66,7 @@ protocol SignalServer {
      - parameter receiver: The intended recipient of the message
      - returns: `True` on success
     */
-    func upload(message: Data, for receiver: SignalAddress) throws
+    func upload(message: Data, for receiver: ServerAddress) throws
 
     /**
      Upload messages to a recipient.
@@ -72,12 +74,12 @@ protocol SignalServer {
      - parameter receiver: The intended recipient of the messages
      - returns: `True` on success
      */
-    func upload(messages: [Data], for receiver: SignalAddress) throws
+    func upload(messages: [Data], for receiver: ServerAddress) throws
 
     /**
      Get a PreKeyBundle to create a new session with another client.
      - parameter address: The remote address for which to get the bundle.
      - returns: The PreKeyBundle for the recipient.
     */
-    func preKeyBundle(for address: SignalAddress) throws -> PreKeyBundle
+    func preKeyBundle(for address: ServerAddress) throws -> PreKeyBundle
 }
