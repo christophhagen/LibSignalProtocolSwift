@@ -155,6 +155,16 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
     }
 
     /**
+     Build a new session from a `SessionPreKeyBundle` retrieved from a server.
+
+     - parameter bundle: A pre key bundle for the destination recipient, retrieved from a server.
+     - throws: `SignalError` errors
+     */
+    func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
+        try builder.process(preKeyBundle: bundle)
+    }
+
+    /**
      Gets the remote registration ID for this session cipher.
      - returns: The remote registration id
      - throws: `SignalError`of type `storageError`

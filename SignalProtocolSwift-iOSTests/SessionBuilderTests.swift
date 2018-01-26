@@ -15,7 +15,7 @@ class SessionBuilderTests: XCTestCase {
     private let bobAddress = SignalAddress(identifier: "+14152222222", deviceId: 1)
 
     /**
-     This test doesn't make sense for swift, since we can't call SessionBuilder.process(preKeyBundle:)
+     This test doesn't make sense for swift, since we can't call `SessionBuilder.process(preKeyBundle:)`
      without a signedPreKey. If we provide any prekey, then the signature verification will fail before
      the missing unsigned pre key is checked.
     */

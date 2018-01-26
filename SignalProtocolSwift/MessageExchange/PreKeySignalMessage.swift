@@ -28,7 +28,7 @@ public struct PreKeySignalMessage {
     /// The base key used for the message
     var baseKey: PublicKey
 
-    ///
+    /// The identity key of the sender
     var identityKey: PublicKey
 
     /// The message included in the pre key message
