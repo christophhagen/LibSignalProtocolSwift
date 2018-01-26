@@ -4,9 +4,6 @@ abstract_target 'SignalProtocolSwift' do
 
   # Pods for SignalProtocolSwift
 
-  # Cryptographic functions powered by CommonCrypto
-  pod 'CommonCryptoModule', '~> 1.0.2'
-
   # Protocol Buffers in Swift
   pod 'SwiftProtobuf'
 
@@ -17,6 +14,10 @@ abstract_target 'SignalProtocolSwift' do
     target 'SignalProtocolSwift-iOSTests' do
       inherit! :search_paths
       # Pods for testing
+
+      # Cryptographic functions powered by CommonCrypto
+      pod 'CommonCryptoModule', '~> 1.0.2'
+
     end
   end
 

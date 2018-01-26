@@ -9,7 +9,10 @@ import Foundation
 
 
 /**
- The `SignalCrypto`
+ The `SignalCrypto` struct exposes all necessary cryptocraphic functions to the protocol.
+ The underlying implementation of these functions is left to the user of the protocol.
+ Implement a provider that conforms to the `SignalCryptoProvider` protocol and set the `
+ `SignalCrypto.provider` variable bevor using any of the protocol functions.
  */
 public struct SignalCrypto {
 
@@ -18,7 +21,7 @@ public struct SignalCrypto {
     /**
      This variable can be set to provide a custom crypto provider.
      */
-    public static var provider: SignalCryptoProvider = SignalCommonCrypto()
+    public static var provider: SignalCryptoProvider = DummyCryptoProvider()
 
     /**
      Create a number of secure random bytes.

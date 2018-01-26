@@ -11,6 +11,12 @@ import XCTest
 
 class SenderKeyRecordTests: XCTestCase {
 
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     private func createTestSenderKeyState(id: UInt32, iteration: UInt32) throws -> SenderKeyState {
         let senderKey = try SignalCrypto.generateSenderKey()
         let chainKey = SenderChainKey(iteration: iteration, chainKey: senderKey)

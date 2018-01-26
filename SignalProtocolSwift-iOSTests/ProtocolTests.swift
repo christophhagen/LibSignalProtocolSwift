@@ -13,6 +13,12 @@ private let ciphertext = "WhisperCipherText".data(using: .utf8)!
 
 class ProtocolTests: XCTestCase {
 
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     func testSerializeSignalMessage() {
 
         let senderRatchetKey = try! KeyPair().publicKey

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "137F584267DFDAE2ED429AAF03ECC205"
+               BlueprintIdentifier = "ED454D63BD4308A8F5023B4DA3115D17"
                BuildableName = "Pods_SignalProtocolSwift_iOSTests.framework"
                BlueprintName = "Pods-SignalProtocolSwift-iOSTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "137F584267DFDAE2ED429AAF03ECC205"
+            BlueprintIdentifier = "ED454D63BD4308A8F5023B4DA3115D17"
             BuildableName = "Pods_SignalProtocolSwift_iOSTests.framework"
             BlueprintName = "Pods-SignalProtocolSwift-iOSTests"
             ReferencedContainer = "container:Pods.xcodeproj">

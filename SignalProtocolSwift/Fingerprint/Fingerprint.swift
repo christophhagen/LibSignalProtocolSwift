@@ -26,9 +26,9 @@ public struct Fingerprint {
         case version1 = 1
     }
 
-    var displayable: DisplayableFingerprint
+    let displayable: DisplayableFingerprint
 
-    var scannable: ScannableFingerprint
+    let scannable: ScannableFingerprint
 
     init(iterations: Int,
          scannableVersion: Version,

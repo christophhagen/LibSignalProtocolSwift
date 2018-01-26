@@ -9,11 +9,13 @@
 import XCTest
 @testable import SignalProtocolSwift
 
-private let aliceAddress = SignalAddress(identifier: "+14159999999", deviceId: 1)
-private let bobAddress = SignalAddress(identifier: "+14158888888", deviceId: 1)
-
-
 class SessionCipherTests: XCTestCase {
+
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
 
     func testBasicSessionV3() {
         /* Create Alice's session record */

@@ -11,8 +11,11 @@ import XCTest
 
 class SessionBuilderTests: XCTestCase {
 
-    private let aliceAddress = SignalAddress(identifier: "+14151111111", deviceId: 1)
-    private let bobAddress = SignalAddress(identifier: "+14152222222", deviceId: 1)
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
 
     /**
      This test doesn't make sense for swift, since we can't call `SessionBuilder.process(preKeyBundle:)`

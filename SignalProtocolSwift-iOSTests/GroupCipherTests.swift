@@ -14,7 +14,13 @@ private let groupSender = SignalSenderKeyName(
     sender: SignalAddress(identifier: "+14150001111", deviceId: 1))
 
 class GroupCipherTests: XCTestCase {
-    
+
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     func testNoSession() {
         /* Create the test data stores */
         let aliceStore = TestStore()

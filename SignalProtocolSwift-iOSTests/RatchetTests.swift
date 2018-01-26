@@ -11,6 +11,12 @@ import XCTest
 
 class RatchetTests: XCTestCase {
 
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     func testChainKeyDerivationV2() {
 
         let messageKey = Data([

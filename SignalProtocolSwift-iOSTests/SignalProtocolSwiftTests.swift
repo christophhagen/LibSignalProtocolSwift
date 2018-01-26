@@ -10,6 +10,12 @@ import XCTest
 
 class SignalProtocolSwiftTests: XCTestCase {
 
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     func testSHA512() {
         let input = Data([0,1,2,3,4,5,6,7,8,9,10,11,12])
         let correctHash = Data([182, 227, 10, 64, 22, 2, 148, 134,

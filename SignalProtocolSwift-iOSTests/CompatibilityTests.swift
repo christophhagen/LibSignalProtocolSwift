@@ -48,6 +48,12 @@ private let macKey = Data([9,8,7,6,5,4,3,2])
 
 class CompatibilityTests: XCTestCase {
 
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     /**
      Check if a SignalMessage can correctly be serialized
     */

@@ -10,7 +10,13 @@ import XCTest
 @testable import SignalProtocolSwift
 
 class SessionRecordTests: XCTestCase {
-    
+
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     func testSerializeSingleSession() {
         guard let testRatchetKey1 = try? KeyPair().publicKey,
             let testRatchetKey2 = try? KeyPair().publicKey else {

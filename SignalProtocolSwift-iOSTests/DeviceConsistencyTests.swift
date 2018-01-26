@@ -11,6 +11,12 @@ import XCTest
 
 class DeviceConsistencyTests: XCTestCase {
 
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     /**
      Test the consistency of device codes across multiple devices.
     */

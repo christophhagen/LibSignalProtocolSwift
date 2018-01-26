@@ -10,7 +10,13 @@ import XCTest
 @testable import SignalProtocolSwift
 
 class HKDFTests: XCTestCase {
-    
+
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     func testVectorV3() {
         let ikm = Data([
             0x0b, 0x0b, 0x0b, 0x0b, 0x0b, 0x0b, 0x0b, 0x0b,

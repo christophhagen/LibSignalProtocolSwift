@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B9C059370646CA6DF1643CE088DEB71"
+               BlueprintIdentifier = "0DCAC42DDDAD468ED1AA7367C26DAE07"
                BuildableName = "SwiftProtobuf.framework"
                BlueprintName = "SwiftProtobuf-watchOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5B9C059370646CA6DF1643CE088DEB71"
+            BlueprintIdentifier = "0DCAC42DDDAD468ED1AA7367C26DAE07"
             BuildableName = "SwiftProtobuf.framework"
             BlueprintName = "SwiftProtobuf-watchOS"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -4,22 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CommonCryptoModule-iOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>CommonCryptoModule-macOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>CommonCryptoModule-tvOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>CommonCryptoModule-watchOS.xcscheme</key>
+		<key>CommonCryptoModule.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

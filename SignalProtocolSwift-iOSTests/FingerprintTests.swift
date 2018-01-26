@@ -84,6 +84,12 @@ private let bobId = "+14153333333"
 
 class FingerprintTests: XCTestCase {
 
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     private func testScannableFingerprintSerialize(version: Fingerprint.Version) {
         guard let aliceIdentity = try? KeyPair().publicKey,
             let bobIdentity = try? KeyPair().publicKey else {

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEE9A54C3C8B3276AD4CA574785911B0"
+               BlueprintIdentifier = "92C60811E6D83BF6D960099135693F3B"
                BuildableName = "Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework"
                BlueprintName = "Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEE9A54C3C8B3276AD4CA574785911B0"
+            BlueprintIdentifier = "92C60811E6D83BF6D960099135693F3B"
             BuildableName = "Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework"
             BlueprintName = "Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS"
             ReferencedContainer = "container:Pods.xcodeproj">

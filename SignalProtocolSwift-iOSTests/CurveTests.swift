@@ -17,6 +17,12 @@ private let shared = Data([
 
 class CurveTests: XCTestCase {
 
+    override func setUp() {
+        super.setUp()
+        // Always set the crypto provider before use
+        SignalCrypto.provider = SignalCommonCrypto()
+    }
+
     func testFastSHA512() {
         guard sha512_fast_test(1) == 0 else {
             XCTFail("SHA512 fast test failed")
