@@ -1,6 +1,6 @@
 //
 //  SignalProtocolStoreContext.swift
-//  libsignal-protocol-swift
+//  SignalProtocolSwift
 //
 //  Created by User on 01.11.17.
 //  Copyright © 2017 User. All rights reserved.
@@ -23,7 +23,6 @@ public protocol SignalProtocolStoreContext {
     associatedtype SenderKeyStore: SenderKeyStoreDelegate where SenderKeyStore.Address == GroupAddress
 
     associatedtype SessionStore: SessionStoreDelegate where SessionStore.Address == Address
-
 
     /// The Identity Key store that stores the records for the identity key module
     var identityKeyStore: IdentityKeyStore { get }

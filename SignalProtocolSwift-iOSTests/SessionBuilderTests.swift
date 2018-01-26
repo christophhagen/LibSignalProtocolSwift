@@ -1,6 +1,6 @@
 //
 //  SessionBuilderTests.swift
-//  libsignal-protocol-swiftTests
+//  SignalProtocolSwiftTests
 //
 //  Created by User on 05.11.17.
 //  Copyright © 2017 User. All rights reserved.
@@ -399,7 +399,7 @@ class SessionBuilderTests: XCTestCase {
     }
 
     func testRepeatBundleMessageV2() {
-        /* This test doesn't make sense in libsignal-protocol-swift, since
+        /* This test doesn't make sense in SignalProtocolSwift, since
          a pre key bundle can't be created without a signed pre key.
          */
     }

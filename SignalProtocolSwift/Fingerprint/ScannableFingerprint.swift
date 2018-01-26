@@ -1,6 +1,6 @@
 //
 //  ScannableFingerprint.swift
-//  libsignal-protocol-swift
+//  SignalProtocolSwift
 //
 //  Created by User on 11.11.17.
 //  Copyright © 2017 User. All rights reserved.

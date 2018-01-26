@@ -1,6 +1,6 @@
 //
 //  CurveTests.swift
-//  libsignal-protocol-swiftTests
+//  SignalProtocolSwiftTests
 //
 //  Created by User on 24.10.17.
 //  Copyright © 2017 User. All rights reserved.

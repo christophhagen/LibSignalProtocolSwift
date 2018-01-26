@@ -1,6 +1,6 @@
 //
 //  TestHelperFunctions.swift
-//  libsignal-protocol-swiftTests
+//  SignalProtocolSwiftTests
 //
 //  Created by User on 08.11.17.
 //  Copyright © 2017 User. All rights reserved.
@@ -40,6 +40,9 @@ func createBobAndAlice() throws -> (alice: KeyPair, bob: KeyPair) {
     return (alice, bob)
 }
 
+/**
+ Randomize an array of elements
+ */
 func shuffle<T>(_ buffer: inout [T]) {
     guard buffer.count > 1 else {
         return
