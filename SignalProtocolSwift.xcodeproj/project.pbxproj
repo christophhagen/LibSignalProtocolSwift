@@ -12,8 +12,6 @@
 		9673D54212FD93436136DD88 /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C39939D10CC91C7138C1A4B /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework */; };
 		A39D972ED03DB02FB1FD82E5 /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E85D6F5E94886312BE6480 /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework */; };
 		CA5CD2C2B1802DFC3267769A /* Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B5A0E6546A3040779D78B /* Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework */; };
-		CE0ADFC51FBC33220054BED2 /* CommonCryptoModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB92051FBB5B4A0023277B /* CommonCryptoModule.framework */; };
-		CE0AE01B1FBDDAE70054BED2 /* TestServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AE01A1FBDDAE70054BED2 /* TestServer.swift */; };
 		CE1CD7D920090AE400F5E582 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */; };
 		CE1CD7DA20090AE400F5E582 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */; };
 		CE1CD7DB20090AE500F5E582 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */; };
@@ -23,6 +21,16 @@
 		CE6AB1D11FC0C92900DDE667 /* DeviceConsistencySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1D01FC0C92900DDE667 /* DeviceConsistencySignature.swift */; };
 		CE6AB1D31FC0C95E00DDE667 /* DeviceConsistencyCommitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1D21FC0C95E00DDE667 /* DeviceConsistencyCommitment.swift */; };
 		CE6AB1D51FC0C98300DDE667 /* DeviceConsistencyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB1D41FC0C98300DDE667 /* DeviceConsistencyMessage.swift */; };
+		CEB45127201BD1E9002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
+		CEB45128201BD1E9002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
+		CEB45129201BD1E9002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
+		CEB4512A201BD1E9002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
+		CEB45134201BD9FE002BB845 /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45133201BD9FE002BB845 /* SignalCrypto.swift */; };
+		CEB45137201BDB4F002BB845 /* TestIdentityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45136201BDB4F002BB845 /* TestIdentityStore.swift */; };
+		CEB45139201BDB61002BB845 /* TestPreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45138201BDB61002BB845 /* TestPreKeyStore.swift */; };
+		CEB4513B201BDB77002BB845 /* TestSenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4513A201BDB77002BB845 /* TestSenderKeyStore.swift */; };
+		CEB4513D201BDBBA002BB845 /* TestSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4513C201BDBBA002BB845 /* TestSessionStore.swift */; };
+		CEB4513F201BDBE5002BB845 /* TestSignedPreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4513E201BDBE5002BB845 /* TestSignedPreKeyStore.swift */; };
 		CEDB8E791FBB51290023277B /* SignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB8E6F1FBB51290023277B /* SignalProtocolSwift.framework */; };
 		CEDB8EB51FBB53140023277B /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDB8EAF1FBB51940023277B /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEDB8F671FBB59EC0023277B /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EBE1FBB59EA0023277B /* PreKeySignalMessage.swift */; };
@@ -57,10 +65,6 @@
 		CEDB8F8C1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
 		CEDB8F8D1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
 		CEDB8F8E1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */; };
-		CEDB8F931FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
-		CEDB8F941FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
-		CEDB8F951FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
-		CEDB8F961FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */; };
 		CEDB8F971FBB59EC0023277B /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECD1FBB59EB0023277B /* SenderKeyState.swift */; };
 		CEDB8F981FBB59EC0023277B /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECD1FBB59EB0023277B /* SenderKeyState.swift */; };
 		CEDB8F991FBB59EC0023277B /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ECD1FBB59EB0023277B /* SenderKeyState.swift */; };
@@ -77,10 +81,10 @@
 		CEDB8FA41FBB59EC0023277B /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED01FBB59EB0023277B /* SenderKeyRecord.swift */; };
 		CEDB8FA51FBB59EC0023277B /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED01FBB59EB0023277B /* SenderKeyRecord.swift */; };
 		CEDB8FA61FBB59EC0023277B /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED01FBB59EB0023277B /* SenderKeyRecord.swift */; };
-		CEDB8FA71FBB59EC0023277B /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED11FBB59EB0023277B /* SignalCrypto.swift */; };
-		CEDB8FA81FBB59EC0023277B /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED11FBB59EB0023277B /* SignalCrypto.swift */; };
-		CEDB8FA91FBB59EC0023277B /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED11FBB59EB0023277B /* SignalCrypto.swift */; };
-		CEDB8FAA1FBB59EC0023277B /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED11FBB59EB0023277B /* SignalCrypto.swift */; };
+		CEDB8FA71FBB59EC0023277B /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED11FBB59EB0023277B /* SignalCryptoProvider.swift */; };
+		CEDB8FA81FBB59EC0023277B /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED11FBB59EB0023277B /* SignalCryptoProvider.swift */; };
+		CEDB8FA91FBB59EC0023277B /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED11FBB59EB0023277B /* SignalCryptoProvider.swift */; };
+		CEDB8FAA1FBB59EC0023277B /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED11FBB59EB0023277B /* SignalCryptoProvider.swift */; };
 		CEDB8FAB1FBB59EC0023277B /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED31FBB59EB0023277B /* SenderKeyStoreDelegate.swift */; };
 		CEDB8FAC1FBB59EC0023277B /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED31FBB59EB0023277B /* SenderKeyStoreDelegate.swift */; };
 		CEDB8FAD1FBB59EC0023277B /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8ED31FBB59EB0023277B /* SenderKeyStoreDelegate.swift */; };
@@ -654,9 +658,6 @@
 		CEDB92011FBB5A970023277B /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB91F71FBB5A970023277B /* FingerprintProtocol.pb.swift */; };
 		CEDB92021FBB5A970023277B /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB91F71FBB5A970023277B /* FingerprintProtocol.pb.swift */; };
 		CEDB92031FBB5A970023277B /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB91F71FBB5A970023277B /* FingerprintProtocol.pb.swift */; };
-		CEDB92041FBB5B4A0023277B /* CommonCryptoModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB92051FBB5B4A0023277B /* CommonCryptoModule.framework */; };
-		CEDB92061FBB5B530023277B /* CommonCryptoModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB92071FBB5B530023277B /* CommonCryptoModule.framework */; };
-		CEDB920A1FBB5B5D0023277B /* CommonCryptoModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB920B1FBB5B5D0023277B /* CommonCryptoModule.framework */; };
 		CEDB92211FBB89DE0023277B /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDB8EAF1FBB51940023277B /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEDB92221FBB89DE0023277B /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDB8EAF1FBB51940023277B /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEDB92231FBB89DF0023277B /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDB8EAF1FBB51940023277B /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -683,13 +684,18 @@
 		9E23D9DF53E94203F01DCD60 /* Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS/Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BC1B689B9349B551FCF6CEB0 /* Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS/Pods-SignalProtocolSwift-SignalProtocolSwift-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C32620A945E2E7894B93BF14 /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0AE01A1FBDDAE70054BED2 /* TestServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestServer.swift; sourceTree = "<group>"; };
 		CE6AB1CA1FC0AD7600DDE667 /* SignalAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalAddress.swift; sourceTree = "<group>"; };
 		CE6AB1CC1FC0ADFC00DDE667 /* SignalSenderKeyName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalSenderKeyName.swift; sourceTree = "<group>"; };
 		CE6AB1CE1FC0C8AE00DDE667 /* DisplayableFingerprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableFingerprint.swift; sourceTree = "<group>"; };
 		CE6AB1D01FC0C92900DDE667 /* DeviceConsistencySignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConsistencySignature.swift; sourceTree = "<group>"; };
 		CE6AB1D21FC0C95E00DDE667 /* DeviceConsistencyCommitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConsistencyCommitment.swift; sourceTree = "<group>"; };
 		CE6AB1D41FC0C98300DDE667 /* DeviceConsistencyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConsistencyMessage.swift; sourceTree = "<group>"; };
+		CEB45133201BD9FE002BB845 /* SignalCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalCrypto.swift; sourceTree = "<group>"; };
+		CEB45136201BDB4F002BB845 /* TestIdentityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIdentityStore.swift; sourceTree = "<group>"; };
+		CEB45138201BDB61002BB845 /* TestPreKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPreKeyStore.swift; sourceTree = "<group>"; };
+		CEB4513A201BDB77002BB845 /* TestSenderKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSenderKeyStore.swift; sourceTree = "<group>"; };
+		CEB4513C201BDBBA002BB845 /* TestSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSessionStore.swift; sourceTree = "<group>"; };
+		CEB4513E201BDBE5002BB845 /* TestSignedPreKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSignedPreKeyStore.swift; sourceTree = "<group>"; };
 		CEDB8E6F1FBB51290023277B /* SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDB8E781FBB51290023277B /* SignalProtocolSwift-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SignalProtocolSwift-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDB8E7F1FBB51290023277B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -710,7 +716,7 @@
 		CEDB8ECE1FBB59EB0023277B /* SessionCipher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCipher.swift; sourceTree = "<group>"; };
 		CEDB8ECF1FBB59EB0023277B /* GroupCipher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCipher.swift; sourceTree = "<group>"; };
 		CEDB8ED01FBB59EB0023277B /* SenderKeyRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyRecord.swift; sourceTree = "<group>"; };
-		CEDB8ED11FBB59EB0023277B /* SignalCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCrypto.swift; sourceTree = "<group>"; };
+		CEDB8ED11FBB59EB0023277B /* SignalCryptoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCryptoProvider.swift; sourceTree = "<group>"; };
 		CEDB8ED31FBB59EB0023277B /* SenderKeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyStoreDelegate.swift; sourceTree = "<group>"; };
 		CEDB8ED41FBB59EB0023277B /* IdentityKeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityKeyStoreDelegate.swift; sourceTree = "<group>"; };
 		CEDB8ED51FBB59EB0023277B /* SignalProtocolStoreContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocolStoreContext.swift; sourceTree = "<group>"; };
@@ -867,10 +873,6 @@
 		CEDB91F51FBB5A970023277B /* LocalStorageProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageProtocol.pb.swift; sourceTree = "<group>"; };
 		CEDB91F61FBB5A970023277B /* WhisperTextProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperTextProtocol.pb.swift; sourceTree = "<group>"; };
 		CEDB91F71FBB5A970023277B /* FingerprintProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerprintProtocol.pb.swift; sourceTree = "<group>"; };
-		CEDB92051FBB5B4A0023277B /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonCryptoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEDB92071FBB5B530023277B /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonCryptoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEDB92091FBB5B590023277B /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonCryptoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEDB920B1FBB5B5D0023277B /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonCryptoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDB920D1FBB89080023277B /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		CEDB920E1FBB89080023277B /* Info-macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		CEDB920F1FBB89090023277B /* Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
@@ -888,7 +890,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEDB92041FBB5B4A0023277B /* CommonCryptoModule.framework in Frameworks */,
 				A39D972ED03DB02FB1FD82E5 /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -906,7 +907,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEDB92061FBB5B530023277B /* CommonCryptoModule.framework in Frameworks */,
 				9673D54212FD93436136DD88 /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,7 +915,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEDB920A1FBB5B5D0023277B /* CommonCryptoModule.framework in Frameworks */,
 				CA5CD2C2B1802DFC3267769A /* Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -924,7 +923,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0ADFC51FBC33220054BED2 /* CommonCryptoModule.framework in Frameworks */,
 				0B0918EBF9BFD1CFADF83850 /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -935,10 +933,6 @@
 		B7AD3F083919AB784AF5D14F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEDB920B1FBB5B5D0023277B /* CommonCryptoModule.framework */,
-				CEDB92091FBB5B590023277B /* CommonCryptoModule.framework */,
-				CEDB92071FBB5B530023277B /* CommonCryptoModule.framework */,
-				CEDB92051FBB5B4A0023277B /* CommonCryptoModule.framework */,
 				E5E85D6F5E94886312BE6480 /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework */,
 				5C39939D10CC91C7138C1A4B /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework */,
 				C32620A945E2E7894B93BF14 /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework */,
@@ -966,6 +960,20 @@
 				CEDB8EC81FBB59EB0023277B /* ScannableFingerprint.swift */,
 			);
 			path = Fingerprint;
+			sourceTree = "<group>";
+		};
+		CEB45135201BDB08002BB845 /* TestImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB91DA1FBB5A5F0023277B /* TestFakeCryptoProvider.swift */,
+				CEB45136201BDB4F002BB845 /* TestIdentityStore.swift */,
+				CEB45138201BDB61002BB845 /* TestPreKeyStore.swift */,
+				CEB4513A201BDB77002BB845 /* TestSenderKeyStore.swift */,
+				CEB4513C201BDBBA002BB845 /* TestSessionStore.swift */,
+				CEB4513E201BDBE5002BB845 /* TestSignedPreKeyStore.swift */,
+				CEDB91D91FBB5A5F0023277B /* TestStore.swift */,
+			);
+			path = TestImplementation;
 			sourceTree = "<group>";
 		};
 		CEDB8E631FBB50F80023277B = {
@@ -1010,10 +1018,8 @@
 				CEDB91D81FBB5A5E0023277B /* SessionCipherTests.swift */,
 				CEDB91E21FBB5A600023277B /* SessionRecordTests.swift */,
 				CEDB91E31FBB5A600023277B /* SignalProtocolSwiftTests.swift */,
-				CEDB91DA1FBB5A5F0023277B /* TestFakeCryptoProvider.swift */,
 				CEDB91D41FBB5A5E0023277B /* TestHelperFunctions.swift */,
-				CE0AE01A1FBDDAE70054BED2 /* TestServer.swift */,
-				CEDB91D91FBB5A5F0023277B /* TestStore.swift */,
+				CEB45135201BDB08002BB845 /* TestImplementation */,
 				CEDB8E7F1FBB51290023277B /* Info.plist */,
 			);
 			path = "SignalProtocolSwift-iOSTests";
@@ -1077,7 +1083,8 @@
 				CEDB8ECD1FBB59EB0023277B /* SenderKeyState.swift */,
 				CEDB8ECE1FBB59EB0023277B /* SessionCipher.swift */,
 				CEDB8ECC1FBB59EB0023277B /* SignalCommonCrypto.swift */,
-				CEDB8ED11FBB59EB0023277B /* SignalCrypto.swift */,
+				CEB45133201BD9FE002BB845 /* SignalCrypto.swift */,
+				CEDB8ED11FBB59EB0023277B /* SignalCryptoProvider.swift */,
 			);
 			path = Encryption;
 			sourceTree = "<group>";
@@ -1874,10 +1881,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocolSwift-iOSTests/Pods-SignalProtocolSwift-iOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CommonCryptoModule-iOS/CommonCryptoModule.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf-iOS/SwiftProtobuf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCryptoModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1921,6 +1930,7 @@
 				CEDB91BF1FBB59EC0023277B /* SessionRecord.swift in Sources */,
 				CEDB8F971FBB59EC0023277B /* SenderKeyState.swift in Sources */,
 				CEDB8FEB1FBB59EC0023277B /* fe_sub.c in Sources */,
+				CEB45129201BD1E9002BB845 /* SignalCommonCrypto.swift in Sources */,
 				CE6AB1CD1FC0ADFC00DDE667 /* SignalSenderKeyName.swift in Sources */,
 				CEDB8FB71FBB59EC0023277B /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEDB903F1FBB59EC0023277B /* gen_x.c in Sources */,
@@ -1933,6 +1943,7 @@
 				CEDB911F1FBB59EC0023277B /* fe_frombytes.c in Sources */,
 				CEDB91671FBB59EC0023277B /* ge_p1p1_to_p3.c in Sources */,
 				CEDB90BF1FBB59EC0023277B /* ge_p2_0.c in Sources */,
+				CEB45134201BD9FE002BB845 /* SignalCrypto.swift in Sources */,
 				CEDB901B1FBB59EC0023277B /* sc_clamp.c in Sources */,
 				CEDB90031FBB59EC0023277B /* ge_p1p1_to_p2.c in Sources */,
 				CEDB91AB1FBB59EC0023277B /* PrivateKey.swift in Sources */,
@@ -1957,7 +1968,6 @@
 				CEDB90BB1FBB59EC0023277B /* ge_p3_to_montx.c in Sources */,
 				CEDB91271FBB59EC0023277B /* fe_isnegative.c in Sources */,
 				CEDB8F8B1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */,
-				CEDB8F931FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */,
 				CEDB91CF1FBB59EC0023277B /* SessionState.swift in Sources */,
 				CEDB90E71FBB59EC0023277B /* sign.c in Sources */,
 				CEDB91A31FBB59EC0023277B /* KeyPair.swift in Sources */,
@@ -1973,7 +1983,7 @@
 				CEDB90DF1FBB59EC0023277B /* internal_fast_tests.c in Sources */,
 				CEDB90471FBB59EC0023277B /* gen_veddsa.c in Sources */,
 				CEDB901F1FBB59EC0023277B /* fe_montx_to_edy.c in Sources */,
-				CEDB8FA71FBB59EC0023277B /* SignalCrypto.swift in Sources */,
+				CEDB8FA71FBB59EC0023277B /* SignalCryptoProvider.swift in Sources */,
 				CEDB90CB1FBB59EC0023277B /* ge_p2_dbl.c in Sources */,
 				CEDB91771FBB59EC0023277B /* ge_p3_to_p2.c in Sources */,
 				CEDB90C31FBB59EC0023277B /* ge_p3_0.c in Sources */,
@@ -2039,9 +2049,11 @@
 			files = (
 				CEDB91E61FBB5A610023277B /* DeviceConsistencyTests.swift in Sources */,
 				CEDB91E51FBB5A610023277B /* TestHelperFunctions.swift in Sources */,
-				CE0AE01B1FBDDAE70054BED2 /* TestServer.swift in Sources */,
+				CEB45139201BDB61002BB845 /* TestPreKeyStore.swift in Sources */,
 				CEDB91F01FBB5A610023277B /* CompatibilityTests.swift in Sources */,
+				CEB4513D201BDBBA002BB845 /* TestSessionStore.swift in Sources */,
 				CEDB91F31FBB5A610023277B /* SessionRecordTests.swift in Sources */,
+				CEB4513B201BDB77002BB845 /* TestSenderKeyStore.swift in Sources */,
 				CEDB91EB1FBB5A610023277B /* TestFakeCryptoProvider.swift in Sources */,
 				CEDB91ED1FBB5A610023277B /* SessionBuilderTests.swift in Sources */,
 				CEDB91E41FBB5A610023277B /* KeyHelperTests.swift in Sources */,
@@ -2052,9 +2064,11 @@
 				CEDB91E81FBB5A610023277B /* SenderKeyRecordTests.swift in Sources */,
 				CEDB91EC1FBB5A610023277B /* GroupCipherTests.swift in Sources */,
 				CEDB91F21FBB5A610023277B /* FingerprintTests.swift in Sources */,
+				CEB4513F201BDBE5002BB845 /* TestSignedPreKeyStore.swift in Sources */,
 				CEDB91EE1FBB5A610023277B /* HKDFTests.swift in Sources */,
 				CEDB91EF1FBB5A610023277B /* CurveTests.swift in Sources */,
 				CEDB91EA1FBB5A610023277B /* TestStore.swift in Sources */,
+				CEB45137201BDB4F002BB845 /* TestIdentityStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2106,7 +2120,6 @@
 				CEDB90BC1FBB59EC0023277B /* ge_p3_to_montx.c in Sources */,
 				CEDB91281FBB59EC0023277B /* fe_isnegative.c in Sources */,
 				CEDB8F8C1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */,
-				CEDB8F941FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */,
 				CEDB91D01FBB59EC0023277B /* SessionState.swift in Sources */,
 				CEDB90E81FBB59EC0023277B /* sign.c in Sources */,
 				CEDB91A41FBB59EC0023277B /* KeyPair.swift in Sources */,
@@ -2121,9 +2134,10 @@
 				CEDB90E01FBB59EC0023277B /* internal_fast_tests.c in Sources */,
 				CEDB90481FBB59EC0023277B /* gen_veddsa.c in Sources */,
 				CEDB90201FBB59EC0023277B /* fe_montx_to_edy.c in Sources */,
-				CEDB8FA81FBB59EC0023277B /* SignalCrypto.swift in Sources */,
+				CEDB8FA81FBB59EC0023277B /* SignalCryptoProvider.swift in Sources */,
 				CEDB90CC1FBB59EC0023277B /* ge_p2_dbl.c in Sources */,
 				CEDB91781FBB59EC0023277B /* ge_p3_to_p2.c in Sources */,
+				CEB45127201BD1E9002BB845 /* SignalCommonCrypto.swift in Sources */,
 				CEDB90C41FBB59EC0023277B /* ge_p3_0.c in Sources */,
 				CEDB90E41FBB59EC0023277B /* fe_copy.c in Sources */,
 				CEDB90101FBB59EC0023277B /* sc_neg.c in Sources */,
@@ -2228,7 +2242,6 @@
 				CEDB90BE1FBB59EC0023277B /* ge_p3_to_montx.c in Sources */,
 				CEDB912A1FBB59EC0023277B /* fe_isnegative.c in Sources */,
 				CEDB8F8E1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */,
-				CEDB8F961FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */,
 				CEDB91D21FBB59EC0023277B /* SessionState.swift in Sources */,
 				CEDB90EA1FBB59EC0023277B /* sign.c in Sources */,
 				CEDB91A61FBB59EC0023277B /* KeyPair.swift in Sources */,
@@ -2243,9 +2256,10 @@
 				CEDB90E21FBB59EC0023277B /* internal_fast_tests.c in Sources */,
 				CEDB904A1FBB59EC0023277B /* gen_veddsa.c in Sources */,
 				CEDB90221FBB59EC0023277B /* fe_montx_to_edy.c in Sources */,
-				CEDB8FAA1FBB59EC0023277B /* SignalCrypto.swift in Sources */,
+				CEDB8FAA1FBB59EC0023277B /* SignalCryptoProvider.swift in Sources */,
 				CEDB90CE1FBB59EC0023277B /* ge_p2_dbl.c in Sources */,
 				CEDB917A1FBB59EC0023277B /* ge_p3_to_p2.c in Sources */,
+				CEB45128201BD1E9002BB845 /* SignalCommonCrypto.swift in Sources */,
 				CEDB90C61FBB59EC0023277B /* ge_p3_0.c in Sources */,
 				CEDB90E61FBB59EC0023277B /* fe_copy.c in Sources */,
 				CEDB90121FBB59EC0023277B /* sc_neg.c in Sources */,
@@ -2350,7 +2364,6 @@
 				CEDB90BD1FBB59EC0023277B /* ge_p3_to_montx.c in Sources */,
 				CEDB91291FBB59EC0023277B /* fe_isnegative.c in Sources */,
 				CEDB8F8D1FBB59EC0023277B /* ScannableFingerprint.swift in Sources */,
-				CEDB8F951FBB59EC0023277B /* SignalCommonCrypto.swift in Sources */,
 				CEDB91D11FBB59EC0023277B /* SessionState.swift in Sources */,
 				CEDB90E91FBB59EC0023277B /* sign.c in Sources */,
 				CEDB91A51FBB59EC0023277B /* KeyPair.swift in Sources */,
@@ -2365,9 +2378,10 @@
 				CEDB90E11FBB59EC0023277B /* internal_fast_tests.c in Sources */,
 				CEDB90491FBB59EC0023277B /* gen_veddsa.c in Sources */,
 				CEDB90211FBB59EC0023277B /* fe_montx_to_edy.c in Sources */,
-				CEDB8FA91FBB59EC0023277B /* SignalCrypto.swift in Sources */,
+				CEDB8FA91FBB59EC0023277B /* SignalCryptoProvider.swift in Sources */,
 				CEDB90CD1FBB59EC0023277B /* ge_p2_dbl.c in Sources */,
 				CEDB91791FBB59EC0023277B /* ge_p3_to_p2.c in Sources */,
+				CEB4512A201BD1E9002BB845 /* SignalCommonCrypto.swift in Sources */,
 				CEDB90C51FBB59EC0023277B /* ge_p3_0.c in Sources */,
 				CEDB90E51FBB59EC0023277B /* fe_copy.c in Sources */,
 				CEDB90111FBB59EC0023277B /* sc_neg.c in Sources */,

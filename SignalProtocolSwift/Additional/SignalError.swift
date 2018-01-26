@@ -1,6 +1,6 @@
 //
 //  SignalError.swift
-//  libsignal-protocol-swift
+//  SignalProtocolSwift
 //
 //  Created by User on 07.10.17.
 //  Copyright © 2017 User. All rights reserved.
@@ -113,7 +113,7 @@ public final class SignalError: CustomStringConvertible, Error {
      - parameter file: A String describing the file where the error occured
      - parameter function: A String describing the function where the error occured
     */
-    init(_ type: SignalErrorType,
+    public init(_ type: SignalErrorType,
          _ message: String? = nil,
          cause: SignalError? = nil,
          file: String = #file,
@@ -132,7 +132,7 @@ public final class SignalError: CustomStringConvertible, Error {
      - parameter file: A String describing the file where the error occured
      - parameter function: A String describing the function where the error occured
      */
-    init(_ message: String,
+    public init(_ message: String,
          cause: SignalError,
          file: String = #file,
          function: String = #function) {
@@ -150,7 +150,7 @@ public final class SignalError: CustomStringConvertible, Error {
      - parameter file: A String describing the file where the error occured
      - parameter function: A String describing the function where the error occured
      */
-    convenience init(_ message: String,
+    public convenience init(_ message: String,
          cause: Error,
          file: String = #file,
          function: String = #function) {

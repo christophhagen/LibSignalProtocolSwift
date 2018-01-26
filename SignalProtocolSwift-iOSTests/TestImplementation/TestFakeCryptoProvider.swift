@@ -1,13 +1,12 @@
 //
 //  TestFakeCryptoProvider.swift
-//  libsignal-protocol-swiftTests
+//  SignalProtocolSwiftTests
 //
 //  Created by User on 12.11.17.
 //  Copyright © 2017 User. All rights reserved.
 //
 
-import Foundation
-@testable import SignalProtocolSwift
+import SignalProtocolSwift
 
 class TestFakeCryptoProvider: SignalCryptoProvider {
 

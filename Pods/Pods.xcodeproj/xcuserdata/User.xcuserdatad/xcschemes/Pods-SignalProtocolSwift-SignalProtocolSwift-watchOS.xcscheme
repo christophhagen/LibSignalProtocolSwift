@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4E168DA2591E1450B7F50258E578FEE4"
+               BlueprintIdentifier = "6CDC18A4E67F316D2D0D4CD2C3519BC9"
                BuildableName = "Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework"
                BlueprintName = "Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4E168DA2591E1450B7F50258E578FEE4"
+            BlueprintIdentifier = "6CDC18A4E67F316D2D0D4CD2C3519BC9"
             BuildableName = "Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework"
             BlueprintName = "Pods-SignalProtocolSwift-SignalProtocolSwift-watchOS"
             ReferencedContainer = "container:Pods.xcodeproj">

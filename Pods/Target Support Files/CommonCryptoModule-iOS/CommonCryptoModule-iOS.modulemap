@@ -1,0 +1,6 @@
+framework module CommonCryptoModule {
+  umbrella header "CommonCryptoModule-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

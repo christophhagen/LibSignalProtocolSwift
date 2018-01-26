@@ -1,6 +1,6 @@
 //
 //  SignalCommonCrypto.swift
-//  libsignal-protocol-swift
+//  SignalProtocolSwift
 //
 //  Created by User on 11.11.17.
 //  Copyright © 2017 User. All rights reserved.
@@ -13,7 +13,11 @@ import CommonCryptoModule
  Implementation of the `SignalCryptoProvider` protocol using
  CommonCrypto.
  */
-struct SignalCommonCrypto: SignalCryptoProvider {
+public struct SignalCommonCrypto: SignalCryptoProvider {
+
+    public init() {
+        
+    }
 
     /**
      Create a number of random bytes
@@ -21,7 +25,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - returns: An array of `bytes` length with random numbers
      - throws: `SignalError.noRandomBytes`
      */
-    func random(bytes: Int) throws -> Data {
+    public func random(bytes: Int) throws -> Data {
         let random = [UInt8](repeating: 0, count: bytes)
         let result = SecRandomCopyBytes(nil, bytes, UnsafeMutableRawPointer(mutating: random))
 
@@ -37,7 +41,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - parameter salt: The salt for the HMAC
      - returns: The HMAC
      */
-    func hmacSHA256(for message: Data, with salt: Data) throws -> Data {
+    public func hmacSHA256(for message: Data, with salt: Data) throws -> Data {
         var context = CCHmacContext()
 
         let bytes = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
@@ -65,7 +69,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - returns: The digest
      - throws: `SignalError.digestError`
      */
-    func sha512(for message: Data) throws -> Data {
+    public func sha512(for message: Data) throws -> Data {
         var context = CC_SHA512_CTX()
         return try withUnsafeMutablePointer(to: &context) { contextPtr in
             CC_SHA512_Init(contextPtr)
@@ -97,7 +101,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - returns: The encrypted message
      - throws: `SignalError.encryptionError`
      */
-    func encrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data {
+    public func encrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data {
         switch cipher {
         case .AES_CBCwithPKCS5:
             return try process(cbc: message, key: key, iv: iv, encrypt: true)
@@ -115,7 +119,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - returns: The decrypted message
      - throws: `SignalError.decryptionError`
      */
-    func decrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data {
+    public func decrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data {
         switch cipher {
         case .AES_CBCwithPKCS5:
             return try process(cbc: message, key: key, iv: iv, encrypt: false)
@@ -133,7 +137,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - returns: The encrypted/decrypted message
      - throws: `SignalError.encryptionError`, `SignalError.decryptionError`
      */
-    func process(cbc message: Data, key: Data, iv: Data, encrypt: Bool) throws -> Data {
+    public func process(cbc message: Data, key: Data, iv: Data, encrypt: Bool) throws -> Data {
         let operation = encrypt ? CCOperation(kCCEncrypt) : CCOperation(kCCDecrypt)
         // Create output memory that can fit the output data
         let dataLength = message.count + kCCBlockSizeAES128
@@ -181,7 +185,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - returns: The encrypted message
      - throws: `SignalError.encryptionError`
      */
-    func encrypt(ctr message: Data, key: Data, iv: Data) throws -> Data {
+    public func encrypt(ctr message: Data, key: Data, iv: Data) throws -> Data {
         return try process(ctr: message, key: key, iv: iv, encrypt: true)
     }
 
@@ -193,7 +197,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - returns: The decrypted message
      - throws: `SignalError.decryptionError`
      */
-    func decrypt(ctr message: Data, key: Data, iv: Data) throws -> Data {
+    public func decrypt(ctr message: Data, key: Data, iv: Data) throws -> Data {
         return try process(ctr: message, key: key, iv: iv, encrypt: false)
     }
 
@@ -206,7 +210,7 @@ struct SignalCommonCrypto: SignalCryptoProvider {
      - returns: The encrypted/decrypted message
      - throws: `SignalError.encryptionError`, `SignalError.decryptionError`
      */
-    func process(ctr message: Data, key: Data, iv: Data, encrypt: Bool) throws -> Data {
+    public func process(ctr message: Data, key: Data, iv: Data, encrypt: Bool) throws -> Data {
         var cryptoRef: CCCryptorRef? = nil
         var status: Int32 = key.withUnsafeBytes { (ptr1: UnsafePointer<UInt8>) in
             let keyPtr = UnsafeRawPointer(ptr1)

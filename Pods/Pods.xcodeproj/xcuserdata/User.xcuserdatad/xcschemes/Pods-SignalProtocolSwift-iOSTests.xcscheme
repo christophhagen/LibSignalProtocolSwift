@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B9A8BF412080962FB6F78C3DDF2DCB93"
+               BlueprintIdentifier = "137F584267DFDAE2ED429AAF03ECC205"
                BuildableName = "Pods_SignalProtocolSwift_iOSTests.framework"
                BlueprintName = "Pods-SignalProtocolSwift-iOSTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B9A8BF412080962FB6F78C3DDF2DCB93"
+            BlueprintIdentifier = "137F584267DFDAE2ED429AAF03ECC205"
             BuildableName = "Pods_SignalProtocolSwift_iOSTests.framework"
             BlueprintName = "Pods-SignalProtocolSwift-iOSTests"
             ReferencedContainer = "container:Pods.xcodeproj">

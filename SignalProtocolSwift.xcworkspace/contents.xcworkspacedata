@@ -5,9 +5,9 @@
       location = "group:/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CommonCryptoModule/CommonCryptoModule.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:SignalProtocolSwift.xcodeproj">
    </FileRef>
 </Workspace>
