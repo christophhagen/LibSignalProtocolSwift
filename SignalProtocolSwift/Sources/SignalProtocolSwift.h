@@ -1,6 +1,6 @@
 //
-//  SignalProtocolSwift_iOS.h
-//  SignalProtocolSwift-iOS
+//  SignalProtocolSwift.h
+//  SignalProtocolSwift
 //
 //  Created by User on 14.11.17.
 //
