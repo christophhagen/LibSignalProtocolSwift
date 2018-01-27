@@ -12,17 +12,22 @@ class TestIdentityStore: IdentityKeyStoreDelegate {
 
     typealias Address = SignalAddress
 
-    private var identityKey: KeyPair!
+    private var identityKey: Data!
 
     private var localRegistrationID: UInt32!
 
     private var identities = [SignalAddress : Data]()
 
-    func getIdentityKey() throws -> KeyPair {
+
+    func getIdentityKeyData() throws -> Data {
         if identityKey == nil {
             identityKey = try SignalCrypto.generateIdentityKeyPair()
         }
         return identityKey
+    }
+
+    func store(identityKeyData: Data) {
+        identityKey = identityKeyData
     }
 
     func getLocalRegistrationID() throws -> UInt32 {

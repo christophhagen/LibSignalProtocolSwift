@@ -20,12 +20,19 @@ public protocol IdentityKeyStoreDelegate {
 
     /**
      Return the identity key pair. This key should be generated once at
-     install time by calling `KeyStore.generateIdentityKeyPair()`.
+     install time by calling `SignalCrypto.generateIdentityKeyPair()`.
      - note: An appropriate error should be thrown, if no identity key exists
-     - returns: The identity key pair
+     - returns: The identity key pair data
      - throws: `SignalError` of type `storageError`
      */
-    func getIdentityKey() throws -> KeyPair
+    func getIdentityKeyData() throws -> Data
+
+    /**
+     Save the identity key pair.
+     - parameter identityKeyData: The data to store
+     - throws: `SignalError` of type `storageError`, if the data could not be saved
+     */
+    func store(identityKeyData: Data) throws
 
     /**
      Return the local registration id. This id should be generated once at
@@ -63,6 +70,32 @@ public protocol IdentityKeyStoreDelegate {
 }
 
 extension IdentityKeyStoreDelegate {
+
+    /**
+     Return the identity key pair. This key should be generated once at
+     install time by calling `KeyStore.generateIdentityKeyPair()`.
+     - note: Possible errors:
+     - `storageError` if the key data could not be accessed
+     - `invalidProtBuf` if the data is corrupt
+     - returns: The identity key pair
+     - throws: `SignalError` errors
+     */
+    func getIdentityKey() throws -> KeyPair {
+        let identity = try getIdentityKeyData()
+        return try KeyPair(from: identity)
+    }
+
+    /**
+     Save the identity key pair.
+     - note: Possible errors:
+     - `invalidProtBuf` if key could not be converted to data
+     - `storageError`, if the data could not be saved
+     - parameter identityKeyData: The data to store
+     - throws: `SignalError` errors
+     */
+    func store(identityKey: KeyPair) throws {
+        try store(identityKeyData: try identityKey.data())
+    }
 
     /**
      Store a remote client's identity key as trusted. The value of key_data may be null.

@@ -148,7 +148,7 @@ class KeyHelperTests: XCTestCase {
             0x74, 0x04, 0x29, 0xe8, 0x81, 0x3f, 0x8f, 0x48,
             0x01, 0x00, 0x00])
         
-        guard let identityKeyPair = try? SignalCrypto.generateIdentityKeyPair() else {
+        guard let identityKeyPair = try? KeyPair() else {
             XCTFail("Could not generate identity key pair")
             return
         }

@@ -85,13 +85,13 @@ public struct SignalCrypto {
 
     /**
      Generate an identity key pair.  Clients should only do this once, at install time.
-     - returns: The generated identity key pair
+     - returns: The generated identity key pair data
      - throws: `SignalError` errors:
      `noRandomBytes` if the crypto provider can't provide random bytes.
      `curveError` if no public key could be created from the random private key.
      */
-    public static func generateIdentityKeyPair() throws -> KeyPair {
-        return try KeyPair()
+    public static func generateIdentityKeyPair() throws -> Data {
+        return try KeyPair().data()
     }
 
     /**

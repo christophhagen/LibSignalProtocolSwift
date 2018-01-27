@@ -44,7 +44,7 @@ The standard process to establish an encrypted session between two devices (two 
 - Alice receives Bob's `PreKeyMessage` from the server and decryptes the message.
 - The encrypted session is established for both Alice and Bob.
 
-### Creating keys
+### Creating identity and keys
 
 Before any secure communication can happen, at least one user needs to upload all necessary ingredients for a `PreKeyBundle` to the server.
 
