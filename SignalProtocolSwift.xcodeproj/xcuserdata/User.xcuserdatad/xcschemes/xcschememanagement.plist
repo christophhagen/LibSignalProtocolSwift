@@ -4,25 +4,43 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SignalProtocolSwift-iOS.xcscheme_^#shared#^_</key>
+		<key>SignalProtocolSwift iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>0</integer>
 		</dict>
-		<key>SignalProtocolSwift-macOS.xcscheme_^#shared#^_</key>
+		<key>SignalProtocolSwift macOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>20</integer>
 		</dict>
-		<key>SignalProtocolSwift-tvOS.xcscheme_^#shared#^_</key>
+		<key>SignalProtocolSwift tvOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>1</integer>
 		</dict>
-		<key>SignalProtocolSwift-watchOS.xcscheme_^#shared#^_</key>
+		<key>SignalProtocolSwift watchOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>2</integer>
+		</dict>
+		<key>SignalProtocolSwiftTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>CEB45A44201CB2E6002BB845</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEB45A5A201CB3AE002BB845</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

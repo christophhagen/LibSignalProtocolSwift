@@ -13,7 +13,8 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SignalProtocolSwift Docs</a> (67% documented)</p>
+        <p><a href="index.html">SignalProtocolSwift Docs</a> (66% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -47,12 +48,6 @@
               <li class="nav-group-task">
                 <a href="Classes/SignalError.html">SignalError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SignalServerConnection.html">SignalServerConnection</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/SignalSession.html">SignalSession</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -66,9 +61,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Global Variables.html#/s:19SignalProtocolSwift17_protobuf_package33_EE56743D1C562490EBAD0CF9157C9085LLSSv">_protobuf_package</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Global Variables.html#/s:19SignalProtocolSwift14preKeyMaxCount33_30804935529DB09A6738898B8DEDA252LLSiv">preKeyMaxCount</a>
               </li>
             </ul>
           </li>
@@ -131,9 +123,6 @@
                 <a href="Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/SignalServer.html">SignalServer</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
               </li>
             </ul>
@@ -173,18 +162,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PendingPreKey.html">PendingPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle.html">PreKeyBundle</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/Identity.html">– Identity</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/SignedPreKey.html">– SignedPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/PreKey.html">– PreKey</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
@@ -408,9 +385,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift14SenderKeyStateC"></a>
-                    <a name="//apple_ref/swift/Class/SenderKeyState" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift14SenderKeyStateC">SenderKeyState</a>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC"></a>
+                    <a name="//apple_ref/swift/Class/SignalError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC">SignalError</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -418,50 +395,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A state of a group message session with a recipient,
-which saves the message keys of out-of-order messages
-and generates new keys for messages.
-Each session can have multiple states.</p>
+                        <p>All errors thrown by <code>SignalProtocolSwift</code> are <code>SignalError</code> objects.</p>
 
-                        <a href="Classes/SenderKeyState.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/SignalError.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">SenderKeyState</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift13ReceiverChainC"></a>
-                    <a name="//apple_ref/swift/Class/ReceiverChain" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift13ReceiverChainC">ReceiverChain</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A receiver chain is the part of the ratchet that creates the message keys for the received messages.</p>
-
-                        <a href="Classes/ReceiverChain.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">ReceiverChain</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">SignalError</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Error</span></code></pre>
 
                         </div>
                       </div>
@@ -507,9 +449,9 @@ Each session can have multiple states.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift0A5ErrorC"></a>
-                    <a name="//apple_ref/swift/Class/SignalError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC">SignalError</a>
+                    <a name="/s:19SignalProtocolSwift13ReceiverChainC"></a>
+                    <a name="//apple_ref/swift/Class/ReceiverChain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift13ReceiverChainC">ReceiverChain</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -517,15 +459,50 @@ Each session can have multiple states.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All errors thrown by <code>SignalProtocolSwift</code> are <code>SignalError</code> objects.</p>
+                        <p>A receiver chain is the part of the ratchet that creates the message keys for the received messages.</p>
 
-                        <a href="Classes/SignalError.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/ReceiverChain.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">SignalError</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Error</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">ReceiverChain</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift14SenderKeyStateC"></a>
+                    <a name="//apple_ref/swift/Class/SenderKeyState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift14SenderKeyStateC">SenderKeyState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A state of a group message session with a recipient,
+which saves the message keys of out-of-order messages
+and generates new keys for messages.
+Each session can have multiple states.</p>
+
+                        <a href="Classes/SenderKeyState.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">SenderKeyState</span></code></pre>
 
                         </div>
                       </div>
@@ -566,67 +543,10 @@ Each session can have multiple states.</p>
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift0A16ServerConnectionC"></a>
-                    <a name="//apple_ref/swift/Class/SignalServerConnection" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift0A16ServerConnectionC">SignalServerConnection</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                        <a href="Classes/SignalServerConnection.html" class="slightly-smaller">See more</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift0A7SessionC"></a>
-                    <a name="//apple_ref/swift/Class/SignalSession" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift0A7SessionC">SignalSession</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A session is used to handle all message processing and encryption/decryption
-of incoming and outgoing messages.</p>
-
-                        <a href="Classes/SignalSession.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">SignalSession</span><span class="o">&lt;</span><span class="kt">Context</span><span class="p">:</span> <span class="kt"><a href="Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a></span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span> <span class="o">==</span> <span class="kt"><a href="Structs/SignalAddress.html">SignalAddress</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen/SignalProtocolSwift" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-12)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-27)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

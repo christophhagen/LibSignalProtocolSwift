@@ -10,9 +10,10 @@ import Foundation
 
 /**
  The `SignalCrypto` struct exposes all necessary cryptocraphic functions to the protocol.
- The underlying implementation of these functions is left to the user of the protocol.
+ By default CommonCrypto is used to provide these functions, but a custom provider can be
+ implemented as well.
  Implement a provider that conforms to the `SignalCryptoProvider` protocol and set the `
- `SignalCrypto.provider` variable bevor using any of the protocol functions.
+ `SignalCrypto.provider` variable to customise the implementation.
  */
 public struct SignalCrypto {
 
@@ -21,7 +22,7 @@ public struct SignalCrypto {
     /**
      This variable can be set to provide a custom crypto provider.
      */
-    public static var provider: SignalCryptoProvider = DummyCryptoProvider()
+    public static var provider: SignalCryptoProvider = SignalCommonCrypto()
 
     /**
      Create a number of secure random bytes.

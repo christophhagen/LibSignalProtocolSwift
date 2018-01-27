@@ -2869,62 +2869,6 @@
       "symbol": "SessionState.data()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
-    },
-    {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Simplified/SignalServer.swift",
-      "line": 10,
-      "symbol": "SignalServer",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Simplified/SignalServer.swift",
-      "line": 14,
-      "symbol": "SignalServer.ownAddress",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Simplified/SignalServerConnection.swift",
-      "line": 10,
-      "symbol": "preKeyMaxCount",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Simplified/SignalServerConnection.swift",
-      "line": 12,
-      "symbol": "SignalServerConnection",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Simplified/SignalServerConnection.swift",
-      "line": 14,
-      "symbol": "SignalServerConnection.store",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Simplified/SignalServerConnection.swift",
-      "line": 16,
-      "symbol": "SignalServerConnection.server",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Simplified/SignalServerConnection.swift",
-      "line": 18,
-      "symbol": "SignalServerConnection.init(store:server:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Simplified/SignalServerConnection.swift",
-      "line": 103,
-      "symbol": "SignalServerConnection.messages()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/User/Development/Github/SignalProtocolSwift"

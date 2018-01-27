@@ -1,28 +1,25 @@
-Pod::Spec.new do |s|
+Pod::Spec.new do |spec|
+    spec.name = 'SignalProtocolSwift'
+    spec.summary = 'A Swift implementation of the Signal Protocol API'
+    spec.license = 'MIT'
 
-  s.name         = "SignalProtocolSwift"
-  s.version      = "0.9.4"
-  s.summary      = "Swift implementation of the Signal Protocol for secure messaging."
-  s.description  = <<-DESC
-	SignalProtocolSwift is an almost pure Swift implementation of the Signal Protocol
-	for secure end-to-end encrypted messaging. It should be compatible to 
-	libsignal-protocol-c in terms of message compatibility and storage format.
-                   DESC
+    spec.version = '0.9'
+    spec.source = {
+        :git => 'https://github.com/christophhagen/SignalProtocolSwift.git',
+        :tag => spec.version
+    }
 
-  s.homepage     = "https://github.com/christophhagen/SignalProtocolSwift"
-  s.license      = { :type => "MIT", :file => "License" }
-  s.author    = "Christoph Hagen"
+    spec.authors = { 'Christoph Hagen' => 'christoph@spacemasters.eu' } 
+    spec.homepage = 'https://github.com/christophhagen/SignalProtocolSwift'
 
-  s.ios.deployment_target = "9.0"
-  s.osx.deployment_target = "10.9"
-  s.watchos.deployment_target = "4.0"
-  s.tvos.deployment_target = "9.0"
+    spec.ios.deployment_target = '9.0'
+    spec.osx.deployment_target = '10.9'
+    spec.tvos.deployment_target = '9.0'
+    spec.watchos.deployment_target = '4.0'
 
-  s.source       = { :git => "https://github.com/christophhagen/SignalProtocolSwift.git", :tag => "#{s.version}" }
+    spec.source_files = 'SignalProtocolSwift/**/*.{swift,h,c}'
+    spec.public_header_files = ''
 
-  s.source_files  = "SignalProtocolSwift/**/**/*.{c,swift}"
-  s.public_header_files = ["SignalProtocolSwift/Curve25519/curve25519-donna.h", "SignalProtocolSwift/Curve25519/Ed25519/additions/curve_sigs.h", "SignalProtocolSwift/Curve25519/Ed25519/additions/generalized/gen_x.h", "SignalProtocolSwift/Curve25519/Ed25519/tests/internal_fast_tests.h", "SignalProtocolSwift/Curve25519/Ed25519/tests/internal_slow_tests.h"]
-  s.resources  = "SignalProtocolSwift/Curve25519/**/*.{h}"
-
-  s.dependency "SwiftProtobuf", "~> 1.0.1"
+    spec.dependency 'SwiftProtobuf'
+    spec.dependency 'Curve25519'
 end

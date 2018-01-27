@@ -1,0 +1,6 @@
+framework module Curve25519 {
+  umbrella header "Curve25519-watchOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

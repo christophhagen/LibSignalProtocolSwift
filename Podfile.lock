@@ -1,15 +1,27 @@
 PODS:
   - CommonCryptoModule (1.0.2)
-  - SwiftProtobuf (1.0.1)
+  - Curve25519 (0.7)
+  - SwiftProtobuf (1.0.2)
 
 DEPENDENCIES:
   - CommonCryptoModule (~> 1.0.2)
+  - Curve25519 (from `https://github.com/christophhagen/Curve25519`)
   - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  Curve25519:
+    :git: https://github.com/christophhagen/Curve25519
+
+CHECKOUT OPTIONS:
+  Curve25519:
+    :commit: 46f74da97cb8ed28d2cc21958417e0bf3006bc13
+    :git: https://github.com/christophhagen/Curve25519
 
 SPEC CHECKSUMS:
   CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
-  SwiftProtobuf: 78b2f4f3b282cad8cedf855358ec5c1921aaf633
+  Curve25519: 77784acba0a1ec9c79f111242e2c9c3ffd642652
+  SwiftProtobuf: e41d205c91eac0fb46823f2561712407fefdaf4e
 
-PODFILE CHECKSUM: 290ef94126083d03dfad94be4e89c3ba0435630a
+PODFILE CHECKSUM: 8ed4337d18788b3644014bc801d6d878000753af
 
 COCOAPODS: 1.4.0

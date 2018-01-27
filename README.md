@@ -43,7 +43,7 @@ let session = try Session(for: bobAddress, with: preKeyBundle)
 
 // The message to encrypt
 let message = "Hello Bob, it's Alice".data(using: .utf8)
-  
+
 // Here Alice can send messages to Bob
 let encryptedMessage = try session.encrypt(message)
 
@@ -93,3 +93,10 @@ let encryptedMessage = try session.encrypt(message)
 
 // Upload the message to the server
 ````
+
+### Miscellaneous
+
+#### Generate docs:
+
+Run in project root:
+`jazzy --min-acl private -a 'Christoph Hagen' -u 'https://github.com/christophhagen' -g 'https://github.com/christophhagen/SignalProtocolSwift'`

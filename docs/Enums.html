@@ -13,7 +13,8 @@
     <a title="Enums  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SignalProtocolSwift Docs</a> (67% documented)</p>
+        <p><a href="index.html">SignalProtocolSwift Docs</a> (66% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -47,12 +48,6 @@
               <li class="nav-group-task">
                 <a href="Classes/SignalError.html">SignalError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SignalServerConnection.html">SignalServerConnection</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/SignalSession.html">SignalSession</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -66,9 +61,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Global Variables.html#/s:19SignalProtocolSwift17_protobuf_package33_EE56743D1C562490EBAD0CF9157C9085LLSSv">_protobuf_package</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Global Variables.html#/s:19SignalProtocolSwift14preKeyMaxCount33_30804935529DB09A6738898B8DEDA252LLSiv">preKeyMaxCount</a>
               </li>
             </ul>
           </li>
@@ -131,9 +123,6 @@
                 <a href="Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/SignalServer.html">SignalServer</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
               </li>
             </ul>
@@ -173,18 +162,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PendingPreKey.html">PendingPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle.html">PreKeyBundle</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/Identity.html">– Identity</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/SignedPreKey.html">– SignedPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/PreKey.html">– PreKey</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
@@ -376,70 +353,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift14CipherTextTypeO"></a>
-                    <a name="//apple_ref/swift/Enum/CipherTextType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift14CipherTextTypeO">CipherTextType</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The <code>CipherTextType</code> enum describes the different types of messages.</p>
-
-                        <a href="Enums/CipherTextType.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CipherTextType</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift0A16EncryptionSchemeO"></a>
-                    <a name="//apple_ref/swift/Enum/SignalEncryptionScheme" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift0A16EncryptionSchemeO">SignalEncryptionScheme</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Specifies the type of algorithm to use for encryption and decryption.</p>
-
-                        <a href="Enums/SignalEncryptionScheme.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SignalEncryptionScheme</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:19SignalProtocolSwift11HKDFVersionO"></a>
                     <a name="//apple_ref/swift/Enum/HKDFVersion" class="dashAnchor"></a>
                     <a class="token" href="#/s:19SignalProtocolSwift11HKDFVersionO">HKDFVersion</a>
@@ -499,10 +412,74 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift14CipherTextTypeO"></a>
+                    <a name="//apple_ref/swift/Enum/CipherTextType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift14CipherTextTypeO">CipherTextType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>CipherTextType</code> enum describes the different types of messages.</p>
+
+                        <a href="Enums/CipherTextType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CipherTextType</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A16EncryptionSchemeO"></a>
+                    <a name="//apple_ref/swift/Enum/SignalEncryptionScheme" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A16EncryptionSchemeO">SignalEncryptionScheme</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies the type of algorithm to use for encryption and decryption.</p>
+
+                        <a href="Enums/SignalEncryptionScheme.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SignalEncryptionScheme</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen/SignalProtocolSwift" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-12)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-27)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

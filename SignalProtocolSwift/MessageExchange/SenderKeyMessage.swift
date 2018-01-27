@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Curve25519
 
 /**
  A sender key message is used to send an encrypted message in an existing group session.
@@ -68,11 +69,11 @@ public struct SenderKeyMessage {
      - throws: `SignalError` of type `invalidProtoBuf`, if the ProtoBuf object can't be serialized for the signature.
     */
     func verify(signatureKey: PublicKey) throws -> Bool {
-        guard signature.count == KeyPair.signatureLength else {
+        guard signature.count == Curve25519.signatureLength else {
             return false
         }
         let record = try self.data()
-        let length = record.count - KeyPair.signatureLength
+        let length = record.count - Curve25519.signatureLength
         let message = record[0..<length]
         return signatureKey.verify(signature: signature, for: message)
     }
@@ -115,11 +116,11 @@ extension SenderKeyMessage {
      - throws: `SignalError` errors
      */
     public init(from data: Data) throws {
-        guard data.count > KeyPair.signatureLength else {
+        guard data.count > Curve25519.signatureLength else {
             throw SignalError(.invalidProtoBuf, "Too few bytes in data for SenderKeyMessage")
         }
         let version = (data[0] & 0xF0) >> 4
-        let length = data.count - KeyPair.signatureLength
+        let length = data.count - Curve25519.signatureLength
         guard length > 1 else {
             throw SignalError(.invalidProtoBuf, "Too few bytes in data for SenderKeyMessage")
         }
@@ -154,7 +155,7 @@ extension SenderKeyMessage {
         guard object.hasID, object.hasIteration, object.hasCiphertext else {
             throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyMessage object")
         }
-        guard signature.count == KeyPair.signatureLength else {
+        guard signature.count == Curve25519.signatureLength else {
             throw SignalError(.invalidSignature, "Invalid signature length \(signature.count)")
         }
         self.keyId = object.id

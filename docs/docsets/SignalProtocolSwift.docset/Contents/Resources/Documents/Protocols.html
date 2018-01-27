@@ -13,7 +13,8 @@
     <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SignalProtocolSwift Docs</a> (67% documented)</p>
+        <p><a href="index.html">SignalProtocolSwift Docs</a> (66% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -47,12 +48,6 @@
               <li class="nav-group-task">
                 <a href="Classes/SignalError.html">SignalError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SignalServerConnection.html">SignalServerConnection</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/SignalSession.html">SignalSession</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -66,9 +61,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Global Variables.html#/s:19SignalProtocolSwift17_protobuf_package33_EE56743D1C562490EBAD0CF9157C9085LLSSv">_protobuf_package</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Global Variables.html#/s:19SignalProtocolSwift14preKeyMaxCount33_30804935529DB09A6738898B8DEDA252LLSiv">preKeyMaxCount</a>
               </li>
             </ul>
           </li>
@@ -131,9 +123,6 @@
                 <a href="Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/SignalServer.html">SignalServer</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
               </li>
             </ul>
@@ -173,18 +162,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PendingPreKey.html">PendingPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle.html">PreKeyBundle</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/Identity.html">– Identity</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/SignedPreKey.html">– SignedPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/PreKeyBundle/PreKey.html">– PreKey</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
@@ -376,41 +353,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift24IdentityKeyStoreDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/IdentityKeyStoreDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift24IdentityKeyStoreDelegateP">IdentityKeyStoreDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Implement the <code>IdentityKeyStoreDelegate</code> protocol to handle the Identity Keys of the
-Signal Protocol API. The keys should be stored in a secure database and be treated as
-unspecified data blobs. Register your implementation with an instance of <code>KeyStore</code> to
-receive events.</p>
-
-                        <a href="Protocols/IdentityKeyStoreDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">IdentityKeyStoreDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:19SignalProtocolSwift20SessionStoreDelegateP"></a>
                     <a name="//apple_ref/swift/Protocol/SessionStoreDelegate" class="dashAnchor"></a>
                     <a class="token" href="#/s:19SignalProtocolSwift20SessionStoreDelegateP">SessionStoreDelegate</a>
@@ -446,41 +388,6 @@ receive events.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift19PreKeyStoreDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/PreKeyStoreDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift19PreKeyStoreDelegateP">PreKeyStoreDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Implement the <code>PreKeyStoreDelegate</code> protocol to handle the Pre Key storage of the
-Signal Protocol API. The keys should be stored in a secure database and be treated as
-unspecified data blobs. Register your implementation with an instance of <code>KeyStore</code> to
-receive events.</p>
-
-                        <a href="Protocols/PreKeyStoreDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PreKeyStoreDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:19SignalProtocolSwift0aB12StoreContextP"></a>
                     <a name="//apple_ref/swift/Protocol/SignalProtocolStoreContext" class="dashAnchor"></a>
                     <a class="token" href="#/s:19SignalProtocolSwift0aB12StoreContextP">SignalProtocolStoreContext</a>
@@ -500,97 +407,6 @@ receive events.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignalProtocolStoreContext</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift25SignedPreKeyStoreDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/SignedPreKeyStoreDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift25SignedPreKeyStoreDelegateP">SignedPreKeyStoreDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Implement the <code>SignedPreKeyStoreDelegate</code> protocol to handle the Signed Pre Key storage of the
-Signal Protocol API. The keys should be stored in a secure database and be treated as
-unspecified data blobs. Register your implementation with an instance of <code>KeyStore</code> to
-receive events.</p>
-
-                        <a href="Protocols/SignedPreKeyStoreDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignedPreKeyStoreDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift0A6ServerP"></a>
-                    <a name="//apple_ref/swift/Protocol/SignalServer" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift0A6ServerP">SignalServer</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                        <a href="Protocols/SignalServer.html" class="slightly-smaller">See more</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift20ScannableFingerprintP"></a>
-                    <a name="//apple_ref/swift/Protocol/ScannableFingerprint" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift20ScannableFingerprintP">ScannableFingerprint</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This protocol defines the main building blocks of a scannable fingerprint.</p>
-
-                        <a href="Protocols/ScannableFingerprint.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">ScannableFingerprint</span></code></pre>
 
                         </div>
                       </div>
@@ -639,6 +455,99 @@ receive events.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:19SignalProtocolSwift0a7AddressB0P"></a>
+                    <a name="//apple_ref/swift/Protocol/SignalAddressProtocol" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0a7AddressB0P">SignalAddressProtocol</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift19PreKeyStoreDelegateP"></a>
+                    <a name="//apple_ref/swift/Protocol/PreKeyStoreDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift19PreKeyStoreDelegateP">PreKeyStoreDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement the <code>PreKeyStoreDelegate</code> protocol to handle the Pre Key storage of the
+Signal Protocol API. The keys should be stored in a secure database and be treated as
+unspecified data blobs. Register your implementation with an instance of <code>KeyStore</code> to
+receive events.</p>
+
+                        <a href="Protocols/PreKeyStoreDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PreKeyStoreDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift24IdentityKeyStoreDelegateP"></a>
+                    <a name="//apple_ref/swift/Protocol/IdentityKeyStoreDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift24IdentityKeyStoreDelegateP">IdentityKeyStoreDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement the <code>IdentityKeyStoreDelegate</code> protocol to handle the Identity Keys of the
+Signal Protocol API. The keys should be stored in a secure database and be treated as
+unspecified data blobs. Register your implementation with an instance of <code>KeyStore</code> to
+receive events.</p>
+
+                        <a href="Protocols/IdentityKeyStoreDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">IdentityKeyStoreDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:19SignalProtocolSwift0A14CryptoProviderP"></a>
                     <a name="//apple_ref/swift/Protocol/SignalCryptoProvider" class="dashAnchor"></a>
                     <a class="token" href="#/s:19SignalProtocolSwift0A14CryptoProviderP">SignalCryptoProvider</a>
@@ -673,9 +582,9 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift0a7AddressB0P"></a>
-                    <a name="//apple_ref/swift/Protocol/SignalAddressProtocol" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift0a7AddressB0P">SignalAddressProtocol</a>
+                    <a name="/s:19SignalProtocolSwift20ScannableFingerprintP"></a>
+                    <a name="//apple_ref/swift/Protocol/ScannableFingerprint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift20ScannableFingerprintP">ScannableFingerprint</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -683,8 +592,52 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This protocol defines the main building blocks of a scannable fingerprint.</p>
 
+                        <a href="Protocols/ScannableFingerprint.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">ScannableFingerprint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift25SignedPreKeyStoreDelegateP"></a>
+                    <a name="//apple_ref/swift/Protocol/SignedPreKeyStoreDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift25SignedPreKeyStoreDelegateP">SignedPreKeyStoreDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement the <code>SignedPreKeyStoreDelegate</code> protocol to handle the Signed Pre Key storage of the
+Signal Protocol API. The keys should be stored in a secure database and be treated as
+unspecified data blobs. Register your implementation with an instance of <code>KeyStore</code> to
+receive events.</p>
+
+                        <a href="Protocols/SignedPreKeyStoreDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignedPreKeyStoreDelegate</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -694,7 +647,7 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen/SignalProtocolSwift" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-12)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-27)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

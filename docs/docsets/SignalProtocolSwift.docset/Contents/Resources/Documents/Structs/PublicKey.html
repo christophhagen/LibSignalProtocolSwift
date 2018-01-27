@@ -14,7 +14,8 @@
     <a title="PublicKey Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SignalProtocolSwift Docs</a> (67% documented)</p>
+        <p><a href="../index.html">SignalProtocolSwift Docs</a> (66% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -48,12 +49,6 @@
               <li class="nav-group-task">
                 <a href="../Classes/SignalError.html">SignalError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SignalServerConnection.html">SignalServerConnection</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SignalSession.html">SignalSession</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -67,9 +62,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:19SignalProtocolSwift17_protobuf_package33_EE56743D1C562490EBAD0CF9157C9085LLSSv">_protobuf_package</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:19SignalProtocolSwift14preKeyMaxCount33_30804935529DB09A6738898B8DEDA252LLSiv">preKeyMaxCount</a>
               </li>
             </ul>
           </li>
@@ -132,9 +124,6 @@
                 <a href="../Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols/SignalServer.html">SignalServer</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
               </li>
             </ul>
@@ -174,18 +163,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PendingPreKey.html">PendingPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/PreKeyBundle.html">PreKeyBundle</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/PreKeyBundle/Identity.html">– Identity</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/PreKeyBundle/SignedPreKey.html">– SignedPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/PreKeyBundle/PreKey.html">– PreKey</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
@@ -375,7 +352,7 @@
                 </div>
               </div>
             <p>The public part of an elliptic curve key pair.
-The key has a length of <code><a href="../Structs/KeyPair.html#/s:19SignalProtocolSwift7KeyPairV9keyLengthSivZ">KeyPair.keyLength</a></code> byte.</p>
+The key has a length of <code>KeyPair.keyLength</code> byte.</p>
 
           </section>
           <section class="section task-group-section">
@@ -384,9 +361,9 @@ The key has a length of <code><a href="../Structs/KeyPair.html#/s:19SignalProtoc
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift9PublicKeyV9basePoint33_C141A904704E7F20E5032632019AD8E0LLSays5UInt8VGvZ"></a>
+                    <a name="/s:19SignalProtocolSwift9PublicKeyV9basePoint33_C141A904704E7F20E5032632019AD8E0LL10Foundation4DataVvZ"></a>
                     <a name="//apple_ref/swift/Variable/basePoint" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift9PublicKeyV9basePoint33_C141A904704E7F20E5032632019AD8E0LLSays5UInt8VGvZ">basePoint</a>
+                    <a class="token" href="#/s:19SignalProtocolSwift9PublicKeyV9basePoint33_C141A904704E7F20E5032632019AD8E0LL10Foundation4DataVvZ">basePoint</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -401,7 +378,7 @@ The key has a length of <code><a href="../Structs/KeyPair.html#/s:19SignalProtoc
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">basePoint</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">](</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">31</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">basePoint</span> <span class="o">=</span> <span class="kt">Data</span><span class="p">([</span><span class="mi">9</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">](</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">31</span><span class="p">))</span></code></pre>
 
                         </div>
                       </div>
@@ -421,7 +398,7 @@ The key has a length of <code><a href="../Structs/KeyPair.html#/s:19SignalProtoc
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The key material of length <code><a href="../Structs/KeyPair.html#/s:19SignalProtocolSwift7KeyPairV9keyLengthSivZ">KeyPair.keyLength</a></code></p>
+                        <p>The key material of length <code>KeyPair.keyLength</code></p>
 
                       </div>
                       <div class="declaration">
@@ -535,10 +512,6 @@ Fails if the key could not be generated.</p>
                           </tbody>
                         </table>
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The public key</p>
-                      </div>
                     </section>
                   </div>
                 </li>
@@ -620,8 +593,7 @@ Fails if the key could not be generated.</p>
                         <p>Verify that the vrf signature corresponds to the message.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
-    <code>SignalError.invalidLength</code> if the signature has the wrong length,
-<code>SignalError.invalidSignature</code> if the signature is invalid
+    <code>SignalError.invalidSignature</code> if the signature is invalid
 
 </div>
 
@@ -688,7 +660,7 @@ Fails if the key could not be generated.</p>
                         <p>Calculate the shared agreement between the given private key and the public key.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    The returned data has a length of <code><a href="../Structs/KeyPair.html#/s:19SignalProtocolSwift7KeyPairV9keyLengthSivZ">KeyPair.keyLength</a></code> byte.
+    The returned data has a length of <code>KeyPair.keyLength</code> byte.
 
 </div>
 
@@ -950,7 +922,7 @@ Fails if the key could not be generated.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen/SignalProtocolSwift" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-12)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-27)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
