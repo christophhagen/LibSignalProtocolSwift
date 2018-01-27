@@ -98,8 +98,28 @@ extension SessionPreKey {
         do {
             object = try Textsecure_PreKeyRecordStructure(serializedData: data)
         } catch {
-            throw SignalError(.invalidProtoBuf, "Could not createSessionPreKey Protbuf object: \(error)")
+            throw SignalError(.invalidProtoBuf, "Could not create SessionPreKey ProtoBuf object: \(error)")
         }
         try self.init(from: object)
+    }
+}
+
+extension SessionPreKey {
+
+    /**
+     The public data serialized.
+     - returns: The serialized public data.
+     - throws: `SignalError` of type `invalidProtoBuf`
+     */
+    func publicData() throws -> Data {
+        return try publicObject.data()
+    }
+
+    /**
+     The public components of the pre key.
+     - returns: the public pre key
+    */
+    var publicObject: SessionPublicPreKey {
+        return SessionPublicPreKey(preKey: self)
     }
 }

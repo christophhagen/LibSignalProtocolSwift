@@ -44,17 +44,30 @@ The standard process to establish an encrypted session between two devices (two 
 - Alice receives Bob's `PreKeyMessage` from the server and decryptes the message.
 - The encrypted session is established for both Alice and Bob.
 
+### Creating keys
+
+Before any secure communication can happen, at least one user needs to upload all necessary ingredients for a `PreKeyBundle` to the server.
+
+````swift
+// Create the identity key and store it (only done once)
+
+// Create a SignedPreKey and store it (changes every few days)
+
+// Create unsigned PreKeys (created as needed)
+
+````
 ### Creating a session from a PreKeyBundle
 
 Let's assume that Alice (who has the `SignalAddress` aliceAddress) wants to establish a session with Bob (`SignalAddress` bobAddress)
 ````swift
 // Download the PreKeyBundle from the server
 
-// Create a new session by processing the downloaded PreKeyBundle
-let session = try Session(for: bobAddress, with: preKeyBundle)
+// Create a new session by processing the PreKeyBundle
+let session = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
+try session.process(preKeyBundle: preKeyBundle)
 
 // The message to encrypt
-let message = "Hello Bob, it's Alice".data(using: .utf8)
+let message = "Hello Bob, it's Alice".data(using: .utf8)!
 
 // Here Alice can send messages to Bob
 let encryptedMessage = try session.encrypt(message)
