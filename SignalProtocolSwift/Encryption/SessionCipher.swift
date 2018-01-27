@@ -108,16 +108,44 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
 
     /**
      Decrypt a message.
+     
+     - note: Possible errors:
+     - `invalidMessage` if the input is not valid ciphertext.
+     - `duplicateMessage` if the input is a message that has already been received.
+     - `legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
+     - `invalidKeyID` when there is no local pre_key_record that corresponds to the pre key ID in the message.
+     - `invalidKey` when the message is formatted incorrectly.
+     - `untrustedIdentity` when the identity key of the sender is untrusted.
+     - `legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
+     - `noSession` if there is no established session for this contact.
+     - `invalidType` if the type of the message is not supported
+    */
+    public func decrypt(_ message: CipherTextMessage) throws -> Data {
+        switch message.type {
+        case .preKey:
+            let mess = try PreKeySignalMessage(from: message.data)
+            return try decrypt(preKeySignalMessage: mess)
+        case .signal:
+            let mess = try SignalMessage(from: message.data)
+            return try decrypt(signalMessage: mess)
+        default:
+            throw SignalError(.invalidType, "Not a PreKeySignalMessage or SignalMessage")
+        }
+    }
 
+    /**
+     Decrypt a message.
+
+     - note: Possible errors:
+     - `invalidMessage` if the input is not valid ciphertext.
+     - `duplicateMessage` if the input is a message that has already been received.
+     - `legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
+     - `invalidKeyID` when there is no local pre_key_record that corresponds to the pre key ID in the message.
+     - `invalidKey` when the message is formatted incorrectly.
+     - `untrustedIdentity` when the identity key of the sender is untrusted.
      - parameter ciphertext: The PreKeySignalMessage to decrypt.
      - returns: The decrypted plaintext
-     - throws: `SignalError.invalidMessage` if the input is not valid ciphertext.
-     `SignalError.duplicateMessage` if the input is a message that has already been received.
-     `SignalError.legacyMessage` if the input is a message formatted by a protocol
-     version that is no longer supported. `SignalError.invalidKeyID` when there is no
-     local pre_key_record that corresponds to the pre key ID in the message.
-     `SignalError.invalidKey` when the message is formatted incorrectly.
-     `SignalError.untrustedIdentity` when the identity key of the sender is untrusted.
+     - throws: `SignalError` errors
      */
     public func decrypt(preKeySignalMessage ciphertext: PreKeySignalMessage) throws -> Data {
         let record = try loadSession()
@@ -136,12 +164,15 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
     /**
     Decrypt a message.
 
+     - note: Possible errors:
+     - `invalidMessage` if the input is not valid ciphertext.
+     - `duplicateMessage` if the input is a message that has already been received.
+     - `legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
+     - `noSession` if there is no established session for this contact.
+
      - parameter ciphertext: The SignalMessage to decrypt.
      - returns: The decrypted plaintext.
-     - throws: `SignalError.invalidMessage` if the input is not valid ciphertext.
-     `SignalError.duplicateMessage` if the input is a message that has already been received.
-     `SignalError.legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
-     `SignalError.noSession` if there is no established session for this contact.
+     - throws: `SignalError` errors
      */
     public func decrypt(signalMessage ciphertext: SignalMessage) throws -> Data {
         let record = try loadSession()
