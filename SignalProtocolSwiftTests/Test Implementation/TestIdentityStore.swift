@@ -18,7 +18,6 @@ class TestIdentityStore: IdentityKeyStoreDelegate {
 
     private var identities = [SignalAddress : Data]()
 
-
     func getIdentityKeyData() throws -> Data {
         if identityKey == nil {
             identityKey = try SignalCrypto.generateIdentityKeyPair()

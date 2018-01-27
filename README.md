@@ -7,8 +7,9 @@ This Swift library is intended for educational purposes only, in order to show t
 
 ## Installation
 
-You can install `SignalProtocolSwift` through [Cocoapods](https://cocoapods.org), by adding the following to your Podfile:
-````
+You can install `SignalProtocolSwift` through [Cocoapods](https://cocoapods.org), by adding the following to your `Podfile`:
+
+````ruby
 pod 'SignalProtocolSwift', :git => 'https://github.com/christophhagen/SignalProtocolSwift'
 pod 'Curve25519', :git => 'https://github.com/christophhagen/Curve25519'
 ````
@@ -50,17 +51,31 @@ Before any secure communication can happen, at least one user needs to upload al
 
 ````swift
 // Create the identity key and store it (only done once)
+let identity: Data = try bobStore.createIdentityKey()
 
-// Create a SignedPreKey and store it (changes every few days)
+// Create pre keys and save them in the store
+let preKeys: Data = try bobStore.createPreKeys(start: 1, count: 10)
 
-// Create unsigned PreKeys (created as needed)
+// Create a signed pre key and save it in the store
+let signedPreKey: Data = try bobStore.createSignedPrekey(id: 1)
 
+// Upload identity, preKeys, and signedPreKey to the server
 ````
+
 ### Creating a session from a PreKeyBundle
 
 Let's assume that Alice (who has the `SignalAddress` aliceAddress) wants to establish a session with Bob (`SignalAddress` bobAddress)
+
 ````swift
-// Download the PreKeyBundle from the server
+// Download Bob's identity, preKey, and signedPreKey from the server
+
+// Create PreKeyBundle
+let preKeyBundle = try SessionPreKeyBundle(
+    registrationId: 0, // Not used
+    deviceId: bobAddress.deviceId,
+    preKey: preKey,
+    signedPreKey: signedPreKey,
+    identityKey: identity)
 
 // Create a new session by processing the PreKeyBundle
 let session = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
@@ -77,6 +92,7 @@ let encryptedMessage = try session.encrypt(message)
 
 ### Creating a session from a received PreKeySignalMessage
 Let's continue the above example and assume Bob receives the message from Alice. Bob can then establish the session:
+
 ````swift
 // Get the message from the server
 
@@ -97,16 +113,17 @@ let encryptedMessage = try session.encrypt(string: message)
 
 ### Using an already established session
 Now Alice can receive Bob's messages:
+
 ````swift
-// Get each messages from the server
+// Get each message from the server
 
 // Decrypt each message
 let decryptedMessage = try session.decrypt(message)
 ````
 
 Or send her own:
-````swift
 
+````swift
 // Create the session to use
 let session = Session(for: bobAddress)
 
