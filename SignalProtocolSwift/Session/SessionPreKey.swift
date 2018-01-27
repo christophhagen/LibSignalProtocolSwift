@@ -18,7 +18,7 @@ public struct SessionPreKey {
     static let mediumMaxValue: UInt32 = 0xFFFFFF
 
     /// The id of the pre key
-    var id: UInt32
+    public let id: UInt32
 
     /// The key pair of the pre key
     var keyPair: KeyPair

@@ -123,12 +123,13 @@ public struct SignalCrypto {
      store pre keys in a circular buffer, so that they are repeated as infrequently
      as possible.
 
+     - note: The following errors can be thrown:
+     - `noRandomBytes` if the crypto provider can't provide random bytes.
+     - `curveError` if no public key could be created from a random private key.
      - parameter start: the starting pre key ID, inclusive.
      - parameter count: the number of pre keys to generate.
      - returns: The pre keys
-     - throws: `SignalError` errors:
-     `noRandomBytes` if the crypto provider can't provide random bytes.
-     `curveError` if no public key could be created from a random private key.
+     - throws: `SignalError` errors
      */
     public static func generatePreKeys(start: UInt32, count: Int) throws -> [SessionPreKey] {
         var dict = [SessionPreKey]()
@@ -147,13 +148,13 @@ public struct SignalCrypto {
      - `curveError`, if no public key could be created from the random private key.
      - `invalidLength`, if the public key is more than 256 or 0 byte.
      - `invalidSignature`, if the message could not be signed.
-     - parameter identitykeyPair: the local client's identity key pair.
+     - parameter identityKey: the local client's private identity key.
      - parameter id: the pre key ID to assign the generated signed pre key
-     - parameter timestamp: the current time in milliseconds since the UNIX epoch
+     - parameter timestamp: the current time, defaults to seconds from 1970
      - throws: `SignalError` errors
      */
-    public static func generateSignedPreKey(identitykeyPair: RatchetIdentityKeyPair, id: UInt32, timestamp: UInt64) throws -> SessionSignedPreKey {
-        return try SessionSignedPreKey(id: id, signatureKey: identitykeyPair.privateKey, timestamp: timestamp)
+    public static func generateSignedPreKey(identityKey: PrivateKey, id: UInt32, timestamp: UInt64 = UInt64(Date().timeIntervalSince1970)) throws -> SessionSignedPreKey {
+        return try SessionSignedPreKey(id: id, signatureKey: privateKey, timestamp: timestamp)
     }
 
     /**
