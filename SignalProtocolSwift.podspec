@@ -22,4 +22,5 @@ Pod::Spec.new do |spec|
 
     spec.dependency 'SwiftProtobuf'
     spec.dependency 'Curve25519'
+    spec.dependency 'CommonCryptoModule'
 end
