@@ -11,9 +11,8 @@ import Foundation
 /**
  The main entry point for Signal Protocol encrypt/decrypt operations.
 
- Once a session has been established with session_builder,
- this class can be used for all encrypt/decrypt operations
- within that session.
+ This class can be used to establish a session by processing a pre key bundle
+ and for all subsequent encrypt/decrypt operations within that session.
  */
 public struct SessionCipher<Context: SignalProtocolStoreContext> {
 
@@ -25,15 +24,12 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
     /// The address of the remote party
     private var remoteAddress: Context.Address
 
-    /// The session builder used to initialize a session
-    private var builder: SessionBuilder<Context>
-
     // MARK: Initialization
 
     /**
      Construct a session cipher for encrypt/decrypt operations on a session.
-     In order to use session_cipher, a session must have already been created
-     and stored using session_builder.
+     In order to use a SessionCipher, a session must be created by processing a
+     pre key bundle or a PreKeySignalMessage.
 
      The store and global contexts must remain valid for the lifetime of the
      session cipher.
@@ -47,7 +43,6 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
     public init(store: Context, remoteAddress: Context.Address) {
         self.store = store
         self.remoteAddress = remoteAddress
-        self.builder = SessionBuilder(remoteAddress: remoteAddress, store: store)
     }
 
     // MARK: Public functions
@@ -126,6 +121,8 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
      */
     public func decrypt(preKeySignalMessage ciphertext: PreKeySignalMessage) throws -> Data {
         let record = try loadSession()
+
+        let builder = SessionBuilder(remoteAddress: remoteAddress, store: store)
         let unsignedPreKeyId =
             try builder.process(preKeySignalMessage: ciphertext, sessionRecord: record)
         let plaintext = try decrypt(from: record, and: ciphertext.message)
@@ -160,7 +157,8 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
      - parameter bundle: A pre key bundle for the destination recipient, retrieved from a server.
      - throws: `SignalError` errors
      */
-    func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
+    public func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
+        let builder = SessionBuilder(remoteAddress: remoteAddress, store: store)
         try builder.process(preKeyBundle: bundle)
     }
 
