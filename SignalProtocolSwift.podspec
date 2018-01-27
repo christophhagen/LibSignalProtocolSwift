@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SignalProtocolSwift"
-  s.version      = "0.9.3"
+  s.version      = "0.9.4"
   s.summary      = "Swift implementation of the Signal Protocol for secure messaging."
   s.description  = <<-DESC
 	SignalProtocolSwift is an almost pure Swift implementation of the Signal Protocol
@@ -20,7 +20,8 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/christophhagen/SignalProtocolSwift.git", :tag => "#{s.version}" }
 
-  s.source_files  = "SignalProtocolSwift/**/*.{c,h,swift}"
+  s.source_files  = "SignalProtocolSwift/*/*.{c,swift}, SignalProtocolSwift/Sources/SignalProtocolSwift.h"
+  s.resources  = "SignalProtocolSwift/Curve25519/*/*.{h}"
 
   s.dependency "SwiftProtobuf", "~> 1.0.1"
 end
