@@ -153,7 +153,7 @@ class KeyHelperTests: XCTestCase {
             return
         }
         guard let signed = try? SignalCrypto.generateSignedPreKey(
-            identitykeyPair: identityKeyPair,
+            identityKey: identityKeyPair.privateKey,
             id: 1234,
             timestamp: timestamp) else {
                 XCTFail("Could not create signed pre key")

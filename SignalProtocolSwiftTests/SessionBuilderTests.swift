@@ -107,7 +107,7 @@ class SessionBuilderTests: XCTestCase {
 
         let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".data(using: .utf8)!
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
-        guard let outgoingMessage = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage) else {
+        guard let outgoingMessage = try? aliceSessionCipher.encrypt(originalMessage) else {
             XCTFail("Could not encrypt message")
             return
         }
@@ -166,7 +166,7 @@ class SessionBuilderTests: XCTestCase {
             return
         }
 
-        guard let bobOutgoingMessage = try? bobSessionCipher.encrypt(paddedMessage: originalMessage) else {
+        guard let bobOutgoingMessage = try? bobSessionCipher.encrypt(originalMessage) else {
             XCTFail("Could not encrypt message for Alice")
             return
         }
@@ -250,7 +250,7 @@ class SessionBuilderTests: XCTestCase {
         }
 
         /* Have Alice encrypt a message for Bob */
-        guard let newOutgoingMessage = try? newAliceSessionCipher.encrypt(paddedMessage: originalMessage) else {
+        guard let newOutgoingMessage = try? newAliceSessionCipher.encrypt(originalMessage) else {
             XCTFail("Could not encrypt message for Bob")
             return
         }
@@ -466,8 +466,8 @@ class SessionBuilderTests: XCTestCase {
         let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".data(using: .utf8)!
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
 
-        guard let outgoingMessage1 = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage),
-            let outgoingMessage2 = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage) else {
+        guard let outgoingMessage1 = try? aliceSessionCipher.encrypt(originalMessage),
+            let outgoingMessage2 = try? aliceSessionCipher.encrypt(originalMessage) else {
                 XCTFail("Could not encrypt messages")
                 return
         }
@@ -494,7 +494,7 @@ class SessionBuilderTests: XCTestCase {
         }
 
         /* Construct an outgoing message from Bob back to Alice */
-        guard let bobOutgoingMessage = try? bobSessionCipher.encrypt(paddedMessage: originalMessage) else {
+        guard let bobOutgoingMessage = try? bobSessionCipher.encrypt(originalMessage) else {
             XCTFail("Could not encrypt message from Bob")
             return
         }
@@ -524,7 +524,7 @@ class SessionBuilderTests: XCTestCase {
         }
 
         do {
-            let bobOutgoingMessage2 = try bobSessionCipher.encrypt(paddedMessage: originalMessage)
+            let bobOutgoingMessage2 = try bobSessionCipher.encrypt(originalMessage)
             let incomingMessage2 = try SignalMessage(from: bobOutgoingMessage2.data)
             let decrypted = try aliceSessionCipher.decrypt(signalMessage: incomingMessage2)
             guard decrypted == originalMessage else {
@@ -601,7 +601,7 @@ class SessionBuilderTests: XCTestCase {
         let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".data(using: .utf8)!
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
 
-        guard let outgoingMessage1 = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage) else {
+        guard let outgoingMessage1 = try? aliceSessionCipher.encrypt(originalMessage) else {
                 XCTFail("Could not encrypt messages")
                 return
         }
@@ -717,7 +717,7 @@ class SessionBuilderTests: XCTestCase {
         let originalMessage = "L'homme est condamnÈ ‡ Ítre libre".data(using: .utf8)!
         let aliceSessionCipher = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
 
-        guard let outgoingMessage = try? aliceSessionCipher.encrypt(paddedMessage: originalMessage) else {
+        guard let outgoingMessage = try? aliceSessionCipher.encrypt(originalMessage) else {
             XCTFail("Could not encrypt messages")
             return
         }
@@ -787,7 +787,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Simulate Alice sending a message to Bob */
         do {
-            let aliceMessage = try aliceSessionCipher.encrypt(paddedMessage: originalMessage)
+            let aliceMessage = try aliceSessionCipher.encrypt(originalMessage)
             if aliceMessage.type != .signal { throw SignalError(.invalidMessage, "") }
             let signalMessage = try SignalMessage(from: aliceMessage.data)
             let plaintext = try bobSessionCipher.decrypt(signalMessage: signalMessage)
@@ -799,7 +799,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Simulate Bob sending a message to Alice */
         do {
-            let bobMessage = try bobSessionCipher.encrypt(paddedMessage: originalMessage)
+            let bobMessage = try bobSessionCipher.encrypt(originalMessage)
             if bobMessage.type != .signal { throw SignalError(.invalidMessage, "") }
             let signalMessage = try SignalMessage(from: bobMessage.data)
             let plaintext = try aliceSessionCipher.decrypt(signalMessage: signalMessage)
@@ -813,7 +813,7 @@ class SessionBuilderTests: XCTestCase {
         for i in 0..<10 {
             let loopingMessage = createLoopingMessage(index: i)
             do {
-                let aliceLoopingMessage = try aliceSessionCipher.encrypt(paddedMessage: loopingMessage)
+                let aliceLoopingMessage = try aliceSessionCipher.encrypt(loopingMessage)
                 let aliceMessage = try SignalMessage(from: aliceLoopingMessage.data)
                 let plaintext = try bobSessionCipher.decrypt(signalMessage: aliceMessage)
                 if plaintext != loopingMessage { throw SignalError(.invalidMessage, "") }
@@ -827,7 +827,7 @@ class SessionBuilderTests: XCTestCase {
         for i in 0..<10 {
             let loopingMessage = createLoopingMessage(index: i)
             do {
-                let bobLoopingMessage = try bobSessionCipher.encrypt(paddedMessage: loopingMessage)
+                let bobLoopingMessage = try bobSessionCipher.encrypt(loopingMessage)
                 let bobMessage = try SignalMessage(from: bobLoopingMessage.data)
                 let plaintext = try aliceSessionCipher.decrypt(signalMessage: bobMessage)
                 if plaintext != loopingMessage { throw SignalError(.invalidMessage, "") }
@@ -841,7 +841,7 @@ class SessionBuilderTests: XCTestCase {
         var messages = [(Data, Data)]()
         for i in 0..<10 {
             let plaintext = createLoopingMessage(index: i)
-            guard let ciphertext = try? aliceSessionCipher.encrypt(paddedMessage: plaintext) else {
+            guard let ciphertext = try? aliceSessionCipher.encrypt(plaintext) else {
                 XCTFail("Could not encrypt message for Bob")
                 return
             }
@@ -881,7 +881,7 @@ class SessionBuilderTests: XCTestCase {
     private func sendLoopingMessage(from sender: SessionCipher<TestStore>, to receiver: SessionCipher<TestStore>) throws {
         for i in 0..<10 {
             let loopingMessage = createLoopingMessage(index: i)
-            let ciphertext = try sender.encrypt(paddedMessage: loopingMessage)
+            let ciphertext = try sender.encrypt(loopingMessage)
             let message = try SignalMessage(from: ciphertext.data)
             let plaintext = try receiver.decrypt(signalMessage: message)
             if plaintext != loopingMessage { throw SignalError(.invalidMessage, "") }

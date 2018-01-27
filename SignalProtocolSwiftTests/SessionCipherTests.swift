@@ -82,7 +82,7 @@ class SessionCipherTests: XCTestCase {
 
          /* Encrypt a test message from Alice */
         let alicePlaintext = "This is a plaintext message.".data(using: .utf8)!
-        guard let aliceMessage = try? aliceCipher.encrypt(paddedMessage: alicePlaintext) else {
+        guard let aliceMessage = try? aliceCipher.encrypt(alicePlaintext) else {
             XCTFail("Could not encrypt message from Alice")
             return
         }
@@ -100,7 +100,7 @@ class SessionCipherTests: XCTestCase {
 
         /* Encrypt a reply from Bob */
         let bobReply = "This is a message from Bob.".data(using: .utf8)!
-        guard let replyMessage = try? bobCipher.encrypt(paddedMessage: bobReply) else {
+        guard let replyMessage = try? bobCipher.encrypt(bobReply) else {
             XCTFail("Could not encrypt reply from Bob")
             return
         }
@@ -193,7 +193,7 @@ class SessionCipherTests: XCTestCase {
         var inflight = [SignalMessage]()
         for i in 0..<2010 {
             do {
-                let aliceMessage = try aliceCipher.encrypt(paddedMessage: alicePlaintext)
+                let aliceMessage = try aliceCipher.encrypt(alicePlaintext)
                 if aliceMessage.type != .signal { throw SignalError(.invalidMessage, "") }
                 let message = try SignalMessage(from: aliceMessage.data)
                 inflight.append(message)
@@ -248,7 +248,7 @@ class SessionCipherTests: XCTestCase {
             plaintext[testMessage.count-1] = UInt8(i)
 
             /* Generate the ciphertext */
-            let encryptedMessage = try cipher.encrypt(paddedMessage: plaintext)
+            let encryptedMessage = try cipher.encrypt(plaintext)
 
             /* Add the generated messages to the arrays */
             messages.append((plaintext,encryptedMessage.data))

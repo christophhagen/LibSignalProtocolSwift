@@ -53,7 +53,7 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
      - returns: The ciphertext message encrypted to the recipient+device tuple
      - throws: Errors of Type `SignalError`
      */
-    public func encrypt(paddedMessage message: Data) throws -> CipherTextMessage {
+    public func encrypt(_ message: Data) throws -> CipherTextMessage {
         let record = try loadSession()
         guard let senderChain = record.state.senderChain else {
             throw SignalError(.unknown, "No sender chain for session state")
