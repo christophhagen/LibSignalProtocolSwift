@@ -5,6 +5,16 @@ A Swift implementation of the Signal Protocol API (libsignal-protocol-c)
 
 This Swift library is intended for educational purposes only, in order to show the way the Signal Protocol works.
 
+## Installation
+
+You can install `SignalProtocolSwift` through [Cocoapods](https://cocoapods.org), by adding the following to your Podfile:
+````
+pod 'SignalProtocolSwift', :git => 'https://github.com/christophhagen/SignalProtocolSwift'
+pod 'Curve25519', :git => 'https://github.com/christophhagen/Curve25519'
+````
+
+`Curve25519` is my framework to use the elliptic curve functions in Swift.
+
 ## Prerequisites
 
 ### Local storage
@@ -15,11 +25,13 @@ The Signal Protocol needs local storage for message keys, identities and other s
 - `SessionStoreDelegate` for storing and retrieving the sessions
 - `SignedPreKeyStoreDelegate` for storing and retrieving signed pre keys
 
+You can have a look at the [test implementation](https://github.com/christophhagen/SignalProtocolSwift/tree/master/SignalProtocolSwiftTests/Test%20Implementation) for inspiration.
+
 ### Server for message delivery
 The server that stores the messages for retrieval needs to store the following data for each `SignalAddress`:
-- `IdentityKeyPublicData`: The public part of the identity key of the device
-- `SignedPreKeyData`: The current signed pre key
-- `PreKeyData`: A number of unsigned pre keys
+- `Public Identity Key Data`: The public part of the identity key of the device
+- `Signed Pre Key`: The current signed pre key
+- `Pre Keys`: A number of unsigned pre keys
 - `Messages`: The new messages to deliver
 
 ## Usage
