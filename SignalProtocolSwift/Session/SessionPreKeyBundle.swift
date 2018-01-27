@@ -68,4 +68,29 @@ public struct SessionPreKeyBundle {
         self.identityKey = identityKey
     }
 
+    /**
+     Create a pre key bundle from its components.
+     - parameter registrationId: The registration id of the remote party
+     - parameter deviceId: The device id of the remote party
+     - parameter preKey: The pre key to use
+     - parameter signedPreKey: The signed pre key
+     - parameter identityKey: The identity key of the remote party
+     */
+    public init(registrationId: UInt32,
+                deviceId: UInt32,
+                preKey: SessionPreKey,
+                signedPreKey: SessionSignedPreKey,
+                identityKey: PublicKey) {
+
+        self.registrationId = registrationId
+        self.deviceId = deviceId
+        self.preKeyId = preKey.id
+        self.preKeyPublic = preKey.keyPair.publicKey
+        self.signedPreKeyId = signedPreKey.id
+        self.signedPreKeyPublic = signedPreKey.keyPair.publicKey
+        self.signedPreKeySignature = signedPreKey.signature
+        self.identityKey = identityKey
+
+    }
+
 }

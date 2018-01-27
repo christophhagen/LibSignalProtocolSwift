@@ -154,7 +154,7 @@ public struct SignalCrypto {
      - throws: `SignalError` errors
      */
     public static func generateSignedPreKey(identityKey: PrivateKey, id: UInt32, timestamp: UInt64 = UInt64(Date().timeIntervalSince1970)) throws -> SessionSignedPreKey {
-        return try SessionSignedPreKey(id: id, signatureKey: privateKey, timestamp: timestamp)
+        return try SessionSignedPreKey(id: id, signatureKey: identityKey, timestamp: timestamp)
     }
 
     /**

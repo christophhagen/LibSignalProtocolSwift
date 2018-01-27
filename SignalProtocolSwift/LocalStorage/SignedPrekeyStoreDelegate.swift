@@ -20,7 +20,7 @@ public protocol SignedPreKeyStoreDelegate {
      Provide a Signed Pre Key for a given id.
      - parameter id: The Signed Pre Key Id
      - returns: The Signed Pre Key
-     - throws: `SignalError` of type `storageError` if no key exists for the id
+     - throws: `SignalError` of type `invalidId` if no key exists for the id
      */
     func signedPreKey(for id: UInt32) throws -> Data
 
@@ -63,7 +63,7 @@ extension SignedPreKeyStoreDelegate {
     /**
      Provide a Signed Pre Key for a given id.
      - note: Possible errors:
-     - `storageError`, if no pre key exists for the id
+     - `invalidId`, if no pre key exists for the id
      - `invalidProtobuf`, if the key data is corrupt
      - parameter id: The Signed Pre Key ID
      - returns: The Signed Pre Key

@@ -74,7 +74,6 @@ extension SignalProtocolStoreContext {
      - `curveError` if no public key could be created from a random private key.
      - `storageError`, if the keys could not be stored
      - `invalidProtoBuf`, if the keys could not be serialized
-
      - parameter start: the starting pre key ID, inclusive.
      - parameter count: the number of pre keys to generate.
      - returns: The pre keys
@@ -86,5 +85,28 @@ extension SignalProtocolStoreContext {
             try preKeyStore.store(preKey: key)
         }
         return keys
+    }
+
+    /**
+     Create a PreKeyBundle for the given ids.
+
+     - note: Possible errors:
+     - `invalidId`, if no key with the right id exists
+     - `invalidProtoBuf`, if key data is corrupt or missing
+     - `storageError`, if the registrationID or identity key can't be accessed
+     - parameter deviceId: The id of the device
+     - parameter preKeyId: The id of the pre key (must be stored)
+     - parameter signedPreKeyId: The id of the signed pre key (must be stored)
+     - returns: The pre key bundle
+     - throws: `SignalError` errors
+    */
+    public func createPreKeyBundle(deviceId: UInt32, preKeyId: UInt32, signedPreKeyId: UInt32) throws -> SessionPreKeyBundle {
+
+        return SessionPreKeyBundle(
+            registrationId: try identityKeyStore.getLocalRegistrationID(),
+            deviceId: deviceId,
+            preKey: try preKeyStore.preKey(for: preKeyId),
+            signedPreKey: try signedPreKeyStore.signedPreKey(for: signedPreKeyId),
+            identityKey: try identityKeyStore.getIdentityKey().publicKey)
     }
 }
