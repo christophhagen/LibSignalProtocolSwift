@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/christophhagen/SignalProtocolSwift.git", :tag => "#{s.version}" }
 
-  s.source_files  = "SignalProtocolSwift/**/*.{c,swift}, SignalProtocolSwift/Sources/SignalProtocolSwift.h"
+  s.source_files  = "SignalProtocolSwift/**/**/*.{c,swift}, SignalProtocolSwift/Sources/SignalProtocolSwift.h"
   s.resources  = "SignalProtocolSwift/Curve25519/**/*.{h}"
 
   s.dependency "SwiftProtobuf", "~> 1.0.1"
