@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SenderChain Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/SenderChain" class="dashAnchor"></a>
+    <a title="SenderChain Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SignalProtocolSwift Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SignalProtocolSwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SenderChain Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverChain.html">ReceiverChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyRecord.html">SenderKeyRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyState.html">SenderKeyState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionRecord.html">SessionRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionState.html">SessionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalError.html">SignalError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CipherTextType.html">CipherTextType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HKDFVersion.html">HKDFVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalErrorType.html">SignalErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift14getFingerprint33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift13getLogicalKey33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVSayAA06PublicF0VG3for_tF">getLogicalKey(for:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentityKeyStoreDelegate.html">IdentityKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ScannableFingerprint.html">ScannableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionStoreDelegate.html">SessionStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyCommitmentV0.html">DeviceConsistencyCommitmentV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyMessage.html">DeviceConsistencyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencySignature.html">DeviceConsistencySignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint.html">Fingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint/Version.html">– Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GroupCipher.html">GroupCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HKDF.html">HKDF</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyPair.html">KeyPair</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PendingPreKey.html">PendingPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PrivateKey.html">PrivateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicKey.html">PublicKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetChainKey.html">RatchetChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetRootKey.html">RatchetRootKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChain.html">SenderChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChainKey.html">SenderChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyDistributionMessage.html">SenderKeyDistributionMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyMessage.html">SenderKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderMessageKey.html">SenderMessageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionBuilder.html">SessionBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionCipher.html">SessionCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKey.html">SessionPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPublicPreKey.html">SessionPublicPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPublicSignedPreKey.html">SessionPublicSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalAddress.html">SignalAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCrypto.html">SignalCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalMessage.html">SignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:19SignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SenderChain</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">SenderChain</span></code></pre>
+
+                </div>
+              </div>
+            <p>The sender chain of a ratchet used to encrypt messages for sending.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift11SenderChainV10ratchetKeyAA0G4PairVv"></a>
+                    <a name="//apple_ref/swift/Property/ratchetKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift11SenderChainV10ratchetKeyAA0G4PairVv">ratchetKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The key pair of the ratchet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">ratchetKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/KeyPair.html">KeyPair</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift11SenderChainV8chainKeyAA07RatcheteG0Vv"></a>
+                    <a name="//apple_ref/swift/Property/chainKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift11SenderChainV8chainKeyAA07RatcheteG0Vv">chainKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current chain key of the ratchet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">chainKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift11SenderChainVAcA7KeyPairV07ratchetF0_AA07RatcheteF0V05chainF0tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(ratchetKey:chainKey:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift11SenderChainVAcA7KeyPairV07ratchetF0_AA07RatcheteF0V05chainF0tcfc">init(ratchetKey:chainKey:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a sender chain from the components.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">ratchetKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/KeyPair.html">KeyPair</a></span><span class="p">,</span> <span class="nv">chainKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ratchetKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key pair of the ratchet</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>chainKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current chain key of the ratchet</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift11SenderChainVAcA27Textsecure_SessionStructureV0E0V4from_AA11HKDFVersionO7versiontKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:version:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift11SenderChainVAcA27Textsecure_SessionStructureV0E0V4from_AA11HKDFVersionO7versiontKcfc">init(from:version:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a sender chain from a protobuf object.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>invalidProtoBuf</code>, if data is missing or corrupt
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Textsecure_SessionStructure</span><span class="o">.</span><span class="kt">Chain</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Enums/HKDFVersion.html">HKDFVersion</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The protobuf object</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The kdf version of the chain key</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift11SenderChainVAC10Foundation4DataV4from_AA11HKDFVersionO7versiontKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:version:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift11SenderChainVAC10Foundation4DataV4from_AA11HKDFVersionO7versiontKcfc">init(from:version:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a sender chain from serialized data.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>invalidProtoBuf</code>, if data is missing or corrupt
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Enums/HKDFVersion.html">HKDFVersion</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The serialized data.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The kdf version of the chain key</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift11SenderChainV4data10Foundation4DataVyKF"></a>
+                    <a name="//apple_ref/swift/Method/data()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift11SenderChainV4data10Foundation4DataVyKF">data()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert the sender chain to data.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>invalidProtoBuf</code>, if the chain could not be serialized
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">data</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The serialized data.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift11SenderChainV6objectAA27Textsecure_SessionStructureV0E0Vv"></a>
+                    <a name="//apple_ref/swift/Property/object" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift11SenderChainV6objectAA27Textsecure_SessionStructureV0E0Vv">object</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The sender chain converted to a protobuf object</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Textsecure_SessionStructure</span><span class="o">.</span><span class="kt">Chain</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift11SenderChainV2eeoiSbAC_ACtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift11SenderChainV2eeoiSbAC_ACtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compare two sender chains for equality.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">SenderChain</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">SenderChain</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>True</code>, if the chains are equal</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

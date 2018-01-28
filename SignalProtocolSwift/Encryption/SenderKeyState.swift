@@ -28,6 +28,7 @@ final class SenderKeyState {
     /// The signature key
     var signaturePublicKey: PublicKey
 
+    /// The private part of the signature key, optional
     var signaturePrivateKey: PrivateKey?
 
     /// Dictionary of message keys indexed by iteration

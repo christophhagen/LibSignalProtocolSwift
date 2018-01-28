@@ -28,19 +28,21 @@ struct RatchetChainKey {
     /// The size of the HKDF expand output
     static let hashOutputSize = 32
 
-    /**
-     The object for the key derivation function
-     */
+    /// The object for the key derivation function
     private let kdf: HKDF
 
-    /**
-     The current key of the ratchet chain, 32 byte
-     */
+    /// The current key of the ratchet chain, 32 byte
     var key: Data
 
     /// The current index of the chain
     var index: UInt32
 
+    /**
+     Create a ratchet chain key from the components
+     - parameter kdf: The key derivation function
+     - parameter key: The chain key
+     - parameter index: The index in the chain
+     */
     init(kdf: HKDF, key: Data, index : UInt32) {
         self.kdf = kdf
         self.key = key

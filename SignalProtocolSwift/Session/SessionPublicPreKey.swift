@@ -30,6 +30,10 @@ public struct SessionPublicPreKey {
         self.key = key
     }
 
+    /**
+     Create a public pre key from a complete pre key
+     - parameter preKey: The complete pre key:
+     */
     init(preKey: SessionPreKey) {
         self.id = preKey.id
         self.key = preKey.keyPair.publicKey

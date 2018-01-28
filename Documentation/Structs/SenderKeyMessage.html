@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SenderKeyMessage Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/SenderKeyMessage" class="dashAnchor"></a>
+    <a title="SenderKeyMessage Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SignalProtocolSwift Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SignalProtocolSwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SenderKeyMessage Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverChain.html">ReceiverChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyRecord.html">SenderKeyRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyState.html">SenderKeyState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionRecord.html">SessionRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionState.html">SessionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalError.html">SignalError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CipherTextType.html">CipherTextType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HKDFVersion.html">HKDFVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalErrorType.html">SignalErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift14getFingerprint33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift13getLogicalKey33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVSayAA06PublicF0VG3for_tF">getLogicalKey(for:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentityKeyStoreDelegate.html">IdentityKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ScannableFingerprint.html">ScannableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionStoreDelegate.html">SessionStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyCommitmentV0.html">DeviceConsistencyCommitmentV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyMessage.html">DeviceConsistencyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencySignature.html">DeviceConsistencySignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint.html">Fingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint/Version.html">– Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GroupCipher.html">GroupCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HKDF.html">HKDF</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyPair.html">KeyPair</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PendingPreKey.html">PendingPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PrivateKey.html">PrivateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicKey.html">PublicKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetChainKey.html">RatchetChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetRootKey.html">RatchetRootKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChain.html">SenderChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChainKey.html">SenderChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyDistributionMessage.html">SenderKeyDistributionMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyMessage.html">SenderKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderMessageKey.html">SenderMessageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionBuilder.html">SessionBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionCipher.html">SessionCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKey.html">SessionPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPublicPreKey.html">SessionPublicPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPublicSignedPreKey.html">SessionPublicSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalAddress.html">SignalAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCrypto.html">SignalCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalMessage.html">SignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:19SignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SenderKeyMessage</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SenderKeyMessage</span></code></pre>
+
+                </div>
+              </div>
+            <p>A sender key message is used to send an encrypted message in an existing group session.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV14messageVersions5UInt8Vv"></a>
+                    <a name="//apple_ref/swift/Property/messageVersion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV14messageVersions5UInt8Vv">messageVersion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The version of the message</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">messageVersion</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV5keyIds6UInt32Vv"></a>
+                    <a name="//apple_ref/swift/Property/keyId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV5keyIds6UInt32Vv">keyId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The id of the key that was used</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">keyId</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV9iterations6UInt32Vv"></a>
+                    <a name="//apple_ref/swift/Property/iteration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV9iterations6UInt32Vv">iteration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The iteration of the chain key</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">iteration</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV10cipherText10Foundation4DataVv"></a>
+                    <a name="//apple_ref/swift/Property/cipherText" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV10cipherText10Foundation4DataVv">cipherText</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The encrypted ciphertext</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">cipherText</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV9signature10Foundation4DataVv"></a>
+                    <a name="//apple_ref/swift/Property/signature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV9signature10Foundation4DataVv">signature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The signature of the message</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">signature</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV04baseF0AA010CipherTextF0VyKF"></a>
+                    <a name="//apple_ref/swift/Method/baseMessage()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV04baseF0AA010CipherTextF0VyKF">baseMessage()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Return the message serialized</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">baseMessage</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CipherTextMessage.html">CipherTextMessage</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageVACs6UInt32V5keyId_AE9iteration10Foundation4DataV10cipherTextAA07PrivateE0V09signatureE0tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(keyId:iteration:cipherText:signatureKey:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageVACs6UInt32V5keyId_AE9iteration10Foundation4DataV10cipherTextAA07PrivateE0V09signatureE0tKcfc">init(keyId:iteration:cipherText:signatureKey:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a <code>SenderKeyMessage</code> from the components.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The possible error types are:
+<code>invalidProtoBuf</code>, if the ProtoBuf object can&rsquo;t be serialized for the signature.
+<code>invalidLength</code>, if the message is more than 256 or 0 byte.
+<code>invalidSignature</code>, if the message could not be signed.
+<code>noRandomBytes</code>, if the crypto provider could not provide random bytes for the signature.
+
+</div>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> errors
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">keyId</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">,</span> <span class="nv">iteration</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">,</span> <span class="nv">cipherText</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">signatureKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PrivateKey.html">PrivateKey</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keyId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the key that was used</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>iteration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The iteration of the chain key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cipherText</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The encrypted ciphertext</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>signatureKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key used for the message signature</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV6verifySbAA06PublicE0V09signatureE0_tKF"></a>
+                    <a name="//apple_ref/swift/Method/verify(signatureKey:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV6verifySbAA06PublicE0V09signatureE0_tKF">verify(signatureKey:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verify that the signature matches the message.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The possible error types are:</p>
+
+</div>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p><code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>invalidProtoBuf</code>, if the ProtoBuf object can&rsquo;t be serialized for the signature.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">verify</span><span class="p">(</span><span class="nv">signatureKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>signatureKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key used to verify the message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>True</code>, if the signature matches</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV4data10Foundation4DataVyKF"></a>
+                    <a name="//apple_ref/swift/Method/data()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV4data10Foundation4DataVyKF">data()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Serialize the message.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>invalidProtoBuf</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">data</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The serialized message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageV6objectAA011Textsecure_deF0Vv"></a>
+                    <a name="//apple_ref/swift/Property/object" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageV6objectAA011Textsecure_deF0Vv">object</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert the sender key message to a ProtoBuf object</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Textsecure_SenderKeyMessage</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageVAC10Foundation4DataV4from_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageVAC10Foundation4DataV4from_tKcfc">init(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a sender key message from serialized data.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The types of errors thrown are:
+<code>invalidProtoBuf</code>, if data is missing or corrupt
+<code>invalidSignature</code>, if the signature length is incorrect
+<code>legacyMessage</code>, if the message version is older than the current version
+<code>invalidVersion</code>, if the message version is newer than the current version
+
+</div>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> errors
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The serialized data</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift16SenderKeyMessageVAcA011Textsecure_deF0V4from_s5UInt8V7version10Foundation4DataV9signaturetKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:version:signature:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift16SenderKeyMessageVAcA011Textsecure_deF0V4from_s5UInt8V7version10Foundation4DataV9signaturetKcfc">init(from:version:signature:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a sender key message from a ProtoBuf object.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The types of errors thrown are:
+<code>invalidProtoBuf</code>, if data is missing or corrupt
+<code>invalidSignature</code>, if the signature length is incorrect
+<code>legacyMessage</code>, if the message version is older than the current version
+<code>invalidVersion</code>, if the message version is newer than the current version
+
+</div>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> errors
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Textsecure_SenderKeyMessage</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">signature</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ProtoBuf object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

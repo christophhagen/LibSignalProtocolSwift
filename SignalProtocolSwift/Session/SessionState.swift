@@ -65,24 +65,39 @@ final class SessionState {
     /// The id of the local party
     var localRegistrationID: UInt32 = 0
 
-    ///
-    var needsRefresh: Bool = false
-
     /// The identity key of the local party
     var localIdentity: PublicKey?
 
     /// The identity key of the remote party
     var remoteIdentity: PublicKey?
+
+    /// The root key of the state
     var rootKey: RatchetRootKey?
+
+    /// The sender chain of the state
     var senderChain: SenderChain?
+
+    /// The receiver chains of the state
     var receiverChains: [ReceiverChain]
+
+    /// An optional pending pre key
     var pendingPreKey: PendingPreKey?
+
+    /// The base key
     var aliceBaseKey: PublicKey?
 
+    /**
+     Create a new sender state
+     */
     init() {
         self.receiverChains = [ReceiverChain]()
     }
 
+    /**
+     Find a receiver chain for a sender key.
+     - parameter senderEphemeralKey: The public key of the receiver chain
+     - returns: The receiver chain for the key, or nil
+     */
     func receiverChain(for senderEphemeralKey: PublicKey) -> ReceiverChain? {
         for chain in receiverChains {
             if chain.ratchetKey == senderEphemeralKey {
@@ -92,6 +107,10 @@ final class SessionState {
         return nil
     }
 
+    /**
+     Add a receiver chain to the state.
+     - parameter receiverChain: The chain to add
+     */
     func add(receiverChain: ReceiverChain) {
         receiverChains.insert(receiverChain, at: 0)
         if receiverChains.count > SessionState.maxReceiverChains {
@@ -99,6 +118,12 @@ final class SessionState {
         }
     }
 
+    /**
+     Set the chain key for a given sender key
+     - parameter chainKey: The chain key to set
+     - parameter senderEphemeralKey: The key of the receiver chain
+     - throws: `SignalError` of type `.unknown`, if no receiver chain matches the key
+     */
     func set(chainKey: RatchetChainKey, for senderEphemeralKey: PublicKey) throws {
         for index in 0..<receiverChains.count {
             if receiverChains[index].ratchetKey == senderEphemeralKey {
@@ -109,40 +134,63 @@ final class SessionState {
         throw SignalError(.unknown, "Couldn't find receiver chain to set chain key on")
     }
 
+    /**
+     Set the message keys for a given sender key
+     - parameter messageKeys: The keys to set
+     - parameter senderEphemeral: The key of the receiver chain
+     - throws: `SignalError` of type `.unknown`, if no receiver chain matches the key
+     */
     func set(messageKeys: RatchetMessageKeys, for senderEphemeral: PublicKey) {
-        if let chain = findReceiverChain(for: senderEphemeral) {
+        if let chain = receiverChain(for: senderEphemeral) {
             chain.add(messageKey: messageKeys)
         }
     }
 
+    /**
+     Remove message keys
+     - parameter senderEphemeral: The key of the receiver chain
+     - parameter counter: The message counter in the chain
+     - returns: The removed message keys, if found
+     */
     func removeMessageKeys(for senderEphemeral: PublicKey, and counter: UInt32) -> RatchetMessageKeys? {
-
-        guard let chain = findReceiverChain(for: senderEphemeral) else {
+        guard let chain = receiverChain(for: senderEphemeral) else {
             return nil
         }
         return chain.removeMessageKey(for: counter)
     }
 
-    func findReceiverChain(for senderEphemeral: PublicKey) -> ReceiverChain? {
-        for item in receiverChains {
-            if item.ratchetKey == senderEphemeral {
-                return item
-            }
-        }
-        return nil
+    /**
+     Find the chain key of a receiver chain
+     - parameter senderEphemeral: The key of the receiver chain
+     - returns: The chain key, if found
+     */
+    func receiverChainKey(for senderEphemeral: PublicKey) -> RatchetChainKey? {
+        return receiverChain(for: senderEphemeral)?.chainKey
     }
 
-    func getReceiverChainKey(for senderEphemeral: PublicKey) -> RatchetChainKey? {
-        return findReceiverChain(for: senderEphemeral)?.chainKey
-    }
-
+    /**
+     Set the chain key of a receiver chain
+     - parameter senderEphemeral: The key of the receiver chain
+     - parameter receiverChainKey: The chain key to set
+     - throws: `SignalError` of type `.unknown`, if no receiver chain matches the key
+     */
     func set(receiverChainKey: RatchetChainKey, for senderEphemeral: PublicKey) throws {
-        guard let node = findReceiverChain(for: senderEphemeral) else {
+        guard let node = receiverChain(for: senderEphemeral) else {
             throw SignalError(.unknown, "Couldn't find receiver chain to set chain key on")
         }
         node.chainKey = receiverChainKey
     }
 
+    /**
+     Initialise a session state.
+     - parameter ourIdentityKey: The local identity key
+     - parameter ourBaseKey: The local base key
+     - parameter theirIdentityKey: The remote identity key
+     - parameter theirSignedPreKey: The signed pre key of the remote
+     - parameter theirOneTimePreKey: The public pre key of the remote
+     - parameter theirRatchetKey: The public key of the remote ratchet
+     - throws: `SignalError` errors
+     */
     func aliceInitialize(
         ourIdentityKey: RatchetIdentityKeyPair,
         ourBaseKey: KeyPair,
@@ -179,6 +227,16 @@ final class SessionState {
         self.rootKey = sendingChainRoot
     }
 
+    /**
+     Initialise a session state.
+     - parameter ourIdentityKey: The local identity key
+     - parameter ourSignedPreKey: The local signed pre key
+     - parameter ourOneTimePreKey: The local pre key
+     - parameter ourRatchetKey: The local ratchet key
+     - parameter theirIdentityKey: The identity key of the remote
+     - parameter theirBaseKey: The base key of the remote
+     - throws: `SignalError` errors
+     */
     func bobInitialize(
         ourIdentityKey: RatchetIdentityKeyPair,
         ourSignedPreKey: KeyPair,
@@ -202,6 +260,11 @@ final class SessionState {
         self.rootKey = derivedRoot
     }
 
+    /**
+     Initialise a session state.
+     - parameter params: The keys for initialization
+     - throws: `SignalError` errors
+     */
     func symmetricInitialize(parameters params: SymmetricParameters) throws {
 
         if params.isAlice {
@@ -223,6 +286,11 @@ final class SessionState {
         }
     }
 
+    /**
+     Create the root and chain key from the secret.
+     - parameter secret: The input for the KDF
+     - returns: The root and chain key
+     */
     private func calculateDerivedKeys(secret: Data) throws -> (rootKey: RatchetRootKey, chainKey: RatchetChainKey) {
 
         let kdf = HKDF(messageVersion: .version3)
@@ -232,7 +300,12 @@ final class SessionState {
     }
 
     // MARK: Protocol Buffers
-    
+
+    /**
+     Create a state from a protobuf object.
+     - parameter object: The protobuf object.
+     - throws: `SignalError` of type `.invalidProtoBuf`
+     */
     init(from object: Textsecure_SessionStructure) throws {
         guard object.hasSessionVersion else {
             throw SignalError(.invalidProtoBuf, "Missing session version in SessionState ProtoBuf object")
@@ -263,17 +336,27 @@ final class SessionState {
         }
         self.remoteRegistrationID = object.remoteRegistrationID
         self.localRegistrationID = object.localRegistrationID
-        self.needsRefresh = object.needsRefresh
         if object.hasAliceBaseKey {
             self.aliceBaseKey = try PublicKey(from: object.aliceBaseKey)
         }
     }
 
+    /**
+     Create a state from serialized data.
+     - parameter data: The serialized record.
+     - throws: `SignalError` of type `.invalidProtoBuf`
+     */
     convenience init(from data: Data) throws {
-        let object = try Textsecure_SessionStructure(serializedData: data)
+        let object: Textsecure_SessionStructure
+        do {
+            object = try Textsecure_SessionStructure(serializedData: data)
+        } catch {
+            throw SignalError(.invalidProtoBuf, "Invalid SessionState record: \(error)")
+        }
         try self.init(from: object)
     }
 
+    /// The state converted to a protobuf object
     var object: Textsecure_SessionStructure {
         return Textsecure_SessionStructure.with {
             $0.sessionVersion = UInt32(self.version)
@@ -296,25 +379,41 @@ final class SessionState {
             }
             $0.remoteRegistrationID = self.remoteRegistrationID
             $0.localRegistrationID = self.localRegistrationID
-            $0.needsRefresh = self.needsRefresh
             if let item = self.aliceBaseKey {
                 $0.aliceBaseKey = item.data
             }
         }
     }
-    
+
+    /**
+     Serialize the session state.
+     - returns: The serialized record
+     - throws: `SignalError` of type `.invalidProtoBuf`
+     */
     func data() throws -> Data {
-        return try object.serializedData()
+        do {
+            return try object.serializedData()
+        } catch {
+            throw SignalError(.invalidProtoBuf, "Could not serialize SessionState: \(error)")
+        }
     }
 }
 
+// MARK: Protocol Equatable
+
 extension SessionState: Equatable {
+
+    /**
+     Compare tow session states.
+     - parameter lhs: The first state
+     - parameter rhs: The second state
+     - returns: `true` if the states are equal
+     */
     static func ==(lhs: SessionState, rhs: SessionState) -> Bool {
         guard lhs.version == rhs.version,
             lhs.previousCounter == rhs.previousCounter,
             lhs.remoteRegistrationID == rhs.remoteRegistrationID,
-            lhs.localRegistrationID == rhs.localRegistrationID,
-            lhs.needsRefresh == rhs.needsRefresh else {
+            lhs.localRegistrationID == rhs.localRegistrationID else {
                 return false
         }
         guard lhs.localIdentity == rhs.localIdentity,

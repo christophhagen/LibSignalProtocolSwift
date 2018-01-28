@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SignalError Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SignalError" class="dashAnchor"></a>
+    <a title="SignalError Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SignalProtocolSwift Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SignalProtocolSwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SignalError Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverChain.html">ReceiverChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyRecord.html">SenderKeyRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyState.html">SenderKeyState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionRecord.html">SessionRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionState.html">SessionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalError.html">SignalError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CipherTextType.html">CipherTextType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HKDFVersion.html">HKDFVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalErrorType.html">SignalErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift14getFingerprint33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift13getLogicalKey33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVSayAA06PublicF0VG3for_tF">getLogicalKey(for:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentityKeyStoreDelegate.html">IdentityKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ScannableFingerprint.html">ScannableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionStoreDelegate.html">SessionStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyCommitmentV0.html">DeviceConsistencyCommitmentV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyMessage.html">DeviceConsistencyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencySignature.html">DeviceConsistencySignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint.html">Fingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint/Version.html">– Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GroupCipher.html">GroupCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HKDF.html">HKDF</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyPair.html">KeyPair</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PendingPreKey.html">PendingPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PrivateKey.html">PrivateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicKey.html">PublicKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetChainKey.html">RatchetChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetRootKey.html">RatchetRootKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChain.html">SenderChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChainKey.html">SenderChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyDistributionMessage.html">SenderKeyDistributionMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyMessage.html">SenderKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderMessageKey.html">SenderMessageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionBuilder.html">SessionBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionCipher.html">SessionCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKey.html">SessionPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPublicPreKey.html">SessionPublicPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPublicSignedPreKey.html">SessionPublicSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalAddress.html">SignalAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCrypto.html">SignalCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalMessage.html">SignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:19SignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SignalError</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">SignalError</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Error</span></code></pre>
+
+                </div>
+              </div>
+            <p>All errors thrown by <code>SignalProtocolSwift</code> are <code>SignalError</code> objects.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC4typeAA0aD4TypeOv"></a>
+                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC4typeAA0aD4TypeOv">type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The error type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalErrorType.html">SignalErrorType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC7messageSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/message" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC7messageSSSgv">message</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A decribing message accompaning the error</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC5causeACSgv"></a>
+                    <a name="//apple_ref/swift/Property/cause" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC5causeACSgv">cause</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If the error occured in a subfunction, then this variable can be used to construct an error trace.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">cause</span><span class="p">:</span> <span class="kt">SignalError</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC8functionSSv"></a>
+                    <a name="//apple_ref/swift/Property/function" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC8functionSSv">function</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The function were the error occured</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC4fileSSv"></a>
+                    <a name="//apple_ref/swift/Property/file" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC4fileSSv">file</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The file that the error occured in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorCAcA0aD4TypeO_SSSgACSg5causeSS4fileSS8functiontcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:_:cause:file:function:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorCAcA0aD4TypeO_SSSgACSg5causeSS4fileSS8functiontcfc">init(_:_:cause:file:function:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new <code>SignalError</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalErrorType.html">SignalErrorType</a></span><span class="p">,</span>
+         <span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+         <span class="nv">cause</span><span class="p">:</span> <span class="kt">SignalError</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+         <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="err">#</span><span class="n"><a href="../Classes/SignalError.html#/s:19SignalProtocolSwift0A5ErrorC4fileSSv">file</a></span><span class="p">,</span>
+         <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="err">#</span><span class="n"><a href="../Classes/SignalError.html#/s:19SignalProtocolSwift0A5ErrorC8functionSSv">function</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The error type</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A decription of why the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cause</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional error thrown by a subroutine</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>file</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String describing the file where the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>function</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String describing the function where the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorCACSS_AC5causeSS4fileSS8functiontcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:cause:file:function:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorCACSS_AC5causeSS4fileSS8functiontcfc">init(_:cause:file:function:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new <code>SignalError</code> using an already exisiting <code>SignalError</code> from a subroutine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+         <span class="nv">cause</span><span class="p">:</span> <span class="kt">SignalError</span><span class="p">,</span>
+         <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="err">#</span><span class="n"><a href="../Classes/SignalError.html#/s:19SignalProtocolSwift0A5ErrorC4fileSSv">file</a></span><span class="p">,</span>
+         <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="err">#</span><span class="n"><a href="../Classes/SignalError.html#/s:19SignalProtocolSwift0A5ErrorC8functionSSv">function</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A decription of why the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cause</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The error thrown by the subroutine</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>file</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String describing the file where the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>function</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String describing the function where the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorCACSS_s0D0_p5causeSS4fileSS8functiontcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:cause:file:function:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorCACSS_s0D0_p5causeSS4fileSS8functiontcfc">init(_:cause:file:function:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new <code>SignalError</code> using an already exisiting <code>Error</code> from a subroutine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+         <span class="nv">cause</span><span class="p">:</span> <span class="kt">Error</span><span class="p">,</span>
+         <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="err">#</span><span class="n"><a href="../Classes/SignalError.html#/s:19SignalProtocolSwift0A5ErrorC4fileSSv">file</a></span><span class="p">,</span>
+         <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="err">#</span><span class="n"><a href="../Classes/SignalError.html#/s:19SignalProtocolSwift0A5ErrorC8functionSSv">function</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A decription of why the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cause</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The error thrown by the subroutine</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>file</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String describing the file where the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>function</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String describing the function where the error occured</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC11descriptionSSv"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC11descriptionSSv">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A decription of the error, including all contained errors, without function and file names</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC16shortDescriptionSSv"></a>
+                    <a name="//apple_ref/swift/Property/shortDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC16shortDescriptionSSv">shortDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A short decription of the error without the contained errors</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">shortDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC15longDescriptionSSv"></a>
+                    <a name="//apple_ref/swift/Property/longDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC15longDescriptionSSv">longDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A decription of the error, including all contained errors, as well as function and file names</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">longDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC5trace33_2C9B88E60358FA5A10162D102B4629F1LLSSv"></a>
+                    <a name="//apple_ref/swift/Property/trace" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC5trace33_2C9B88E60358FA5A10162D102B4629F1LLSSv">trace</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The trace of the error which is used to build the <code><a href="../Classes/SignalError.html#/s:19SignalProtocolSwift0A5ErrorC15longDescriptionSSv">longDescription</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">trace</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift0A5ErrorC20localizedDescriptionSSv"></a>
+                    <a name="//apple_ref/swift/Property/localizedDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift0A5ErrorC20localizedDescriptionSSv">localizedDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The description of the error</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">localizedDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

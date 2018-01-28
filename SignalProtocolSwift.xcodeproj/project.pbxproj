@@ -238,6 +238,8 @@
 		CEC812E6201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
 		CEC812E7201E35980018D42E /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
 		CEC812E8201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
+		CEC812EA201E3A050018D42E /* ScannableFingerprintV0.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC812E9201E3A050018D42E /* ScannableFingerprintV0.swift */; };
+		CEC812EC201E3A220018D42E /* ScannableFingerprintV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC812EB201E3A220018D42E /* ScannableFingerprintV1.swift */; };
 		D839E8CE4B2456E48173BB3F /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FAD81585E0F77CDB87E46F /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -349,6 +351,8 @@
 		CEB45BC6201CCF31002BB845 /* CurveTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveTests.swift; sourceTree = "<group>"; };
 		CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPublicPreKey.swift; sourceTree = "<group>"; };
 		CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPublicSignedPreKey.swift; sourceTree = "<group>"; };
+		CEC812E9201E3A050018D42E /* ScannableFingerprintV0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannableFingerprintV0.swift; sourceTree = "<group>"; };
+		CEC812EB201E3A220018D42E /* ScannableFingerprintV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannableFingerprintV1.swift; sourceTree = "<group>"; };
 		DD351464F8FC9A55BE05F9DD /* Pods_SignalProtocolSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38CC68B23F5243C62FF8CF9 /* Pods-SignalProtocolSwift-SignalProtocolSwift tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift tvOS/Pods-SignalProtocolSwift-SignalProtocolSwift tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FB1271EECD9B67E799F21AAA /* Pods-SignalProtocolSwift-SignalProtocolSwift watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift watchOS/Pods-SignalProtocolSwift-SignalProtocolSwift watchOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -534,6 +538,8 @@
 				CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */,
 				CEB45A82201CB4CF002BB845 /* Fingerprint.swift */,
 				CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */,
+				CEC812E9201E3A050018D42E /* ScannableFingerprintV0.swift */,
+				CEC812EB201E3A220018D42E /* ScannableFingerprintV1.swift */,
 			);
 			path = Fingerprint;
 			sourceTree = "<group>";
@@ -568,14 +574,14 @@
 		CEB45A93201CB4D0002BB845 /* Ratchet */ = {
 			isa = PBXGroup;
 			children = (
-				CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */,
 				CEB45A95201CB4D0002BB845 /* HKDF.swift */,
 				CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */,
-				CEB45A97201CB4D0002BB845 /* SenderChain.swift */,
-				CEB45A98201CB4D0002BB845 /* ReceiverChain.swift */,
+				CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */,
 				CEB45A99201CB4D0002BB845 /* RatchetRootKey.swift */,
-				CEB45A9A201CB4D0002BB845 /* SenderMessageKey.swift */,
+				CEB45A98201CB4D0002BB845 /* ReceiverChain.swift */,
+				CEB45A97201CB4D0002BB845 /* SenderChain.swift */,
 				CEB45A9B201CB4D0002BB845 /* SenderChainKey.swift */,
+				CEB45A9A201CB4D0002BB845 /* SenderMessageKey.swift */,
 			);
 			path = Ratchet;
 			sourceTree = "<group>";
@@ -1095,8 +1101,10 @@
 				CEB45ACC201CB4D0002BB845 /* ReceiverChain.swift in Sources */,
 				CEB45ACA201CB4D0002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45AAB201CB4D0002BB845 /* CipherTextMessage.swift in Sources */,
+				CEC812EA201E3A050018D42E /* ScannableFingerprintV0.swift in Sources */,
 				CEB45AD2201CB4D0002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
 				CEB45ABD201CB4D0002BB845 /* GroupCipher.swift in Sources */,
+				CEC812EC201E3A220018D42E /* ScannableFingerprintV1.swift in Sources */,
 				CEB45ACB201CB4D0002BB845 /* SenderChain.swift in Sources */,
 				CEB45AD1201CB4D0002BB845 /* DeviceConsistencyMessage.swift in Sources */,
 				CEB45B47201CC640002BB845 /* SignalCommonCrypto.swift in Sources */,

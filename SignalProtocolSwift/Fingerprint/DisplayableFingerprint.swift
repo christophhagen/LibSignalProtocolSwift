@@ -7,13 +7,19 @@
 
 import Foundation
 
+/**
+ A Fingerprint to verify the keys specifically for displaying to the user
+ */
 struct DisplayableFingerprint {
 
-    var local: String
+    /// Fingerprint String of the local device
+    let local: String
 
-    var remote: String
+    /// Fingerprint String of the remote device
+    let remote: String
 
-    var displayText: String
+    /// Displaytext
+    let displayText: String
 
     /**
      Create a displayable fingerprint from local and remote fingerprint data.

@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SessionState Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SessionState" class="dashAnchor"></a>
+    <a title="SessionState Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SignalProtocolSwift Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SignalProtocolSwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SessionState Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverChain.html">ReceiverChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyRecord.html">SenderKeyRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyState.html">SenderKeyState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionRecord.html">SessionRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionState.html">SessionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalError.html">SignalError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CipherTextType.html">CipherTextType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HKDFVersion.html">HKDFVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalErrorType.html">SignalErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift14getFingerprint33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:19SignalProtocolSwift13getLogicalKey33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVSayAA06PublicF0VG3for_tF">getLogicalKey(for:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentityKeyStoreDelegate.html">IdentityKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ScannableFingerprint.html">ScannableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionStoreDelegate.html">SessionStoreDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignedPreKeyStoreDelegate.html">SignedPreKeyStoreDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyCommitmentV0.html">DeviceConsistencyCommitmentV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyMessage.html">DeviceConsistencyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencySignature.html">DeviceConsistencySignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint.html">Fingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint/Version.html">– Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GroupCipher.html">GroupCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HKDF.html">HKDF</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyPair.html">KeyPair</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PendingPreKey.html">PendingPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PrivateKey.html">PrivateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicKey.html">PublicKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetChainKey.html">RatchetChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetRootKey.html">RatchetRootKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChain.html">SenderChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChainKey.html">SenderChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyDistributionMessage.html">SenderKeyDistributionMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyMessage.html">SenderKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderMessageKey.html">SenderMessageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionBuilder.html">SessionBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionCipher.html">SessionCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKey.html">SessionPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPublicPreKey.html">SessionPublicPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPublicSignedPreKey.html">SessionPublicSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalAddress.html">SignalAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCrypto.html">SignalCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalMessage.html">SignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:19SignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SessionState</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">SessionState</span></code></pre>
+
+                </div>
+              </div>
+            <p>A session state contains all data needed for communicating with a remote party.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC24cipherTextCurrentVersion33_639F4D9E35BCA0DD2378B78191F499AALLs5UInt8VvZ"></a>
+                    <a name="//apple_ref/swift/Variable/cipherTextCurrentVersion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC24cipherTextCurrentVersion33_639F4D9E35BCA0DD2378B78191F499AALLs5UInt8VvZ">cipherTextCurrentVersion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current version of the message encryption</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">cipherTextCurrentVersion</span><span class="p">:</span> <span class="kt">UInt8</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC17maxReceiverChains33_639F4D9E35BCA0DD2378B78191F499AALLSivZ"></a>
+                    <a name="//apple_ref/swift/Variable/maxReceiverChains" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC17maxReceiverChains33_639F4D9E35BCA0DD2378B78191F499AALLSivZ">maxReceiverChains</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The maximum number of receiver chains for the remote party</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">maxReceiverChains</span> <span class="o">=</span> <span class="mi">5</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC7keyInfo33_639F4D9E35BCA0DD2378B78191F499AALL10Foundation4DataVvZ"></a>
+                    <a name="//apple_ref/swift/Variable/keyInfo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC7keyInfo33_639F4D9E35BCA0DD2378B78191F499AALL10Foundation4DataVvZ">keyInfo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The info material used for the derivation of chain and root keys</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">keyInfo</span> <span class="o">=</span> <span class="s">"WhisperText"</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="o">.</span><span class="n">utf8</span><span class="p">)</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC7versions5UInt8Vv"></a>
+                    <a name="//apple_ref/swift/Property/version" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC7versions5UInt8Vv">version</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The version of the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">UInt8</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC15previousCounters6UInt32Vv"></a>
+                    <a name="//apple_ref/swift/Property/previousCounter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC15previousCounters6UInt32Vv">previousCounter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The last counter in the previous sender chain</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">previousCounter</span><span class="p">:</span> <span class="kt">UInt32</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC20remoteRegistrationIDs6UInt32Vv"></a>
+                    <a name="//apple_ref/swift/Property/remoteRegistrationID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC20remoteRegistrationIDs6UInt32Vv">remoteRegistrationID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>the id of the remote party</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">remoteRegistrationID</span><span class="p">:</span> <span class="kt">UInt32</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC19localRegistrationIDs6UInt32Vv"></a>
+                    <a name="//apple_ref/swift/Property/localRegistrationID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC19localRegistrationIDs6UInt32Vv">localRegistrationID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The id of the local party</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">localRegistrationID</span><span class="p">:</span> <span class="kt">UInt32</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC13localIdentityAA9PublicKeyVSgv"></a>
+                    <a name="//apple_ref/swift/Property/localIdentity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC13localIdentityAA9PublicKeyVSgv">localIdentity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The identity key of the local party</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">localIdentity</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC14remoteIdentityAA9PublicKeyVSgv"></a>
+                    <a name="//apple_ref/swift/Property/remoteIdentity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC14remoteIdentityAA9PublicKeyVSgv">remoteIdentity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The identity key of the remote party</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">remoteIdentity</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC7rootKeyAA011RatchetRootG0VSgv"></a>
+                    <a name="//apple_ref/swift/Property/rootKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC7rootKeyAA011RatchetRootG0VSgv">rootKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The root key of the state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">rootKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetRootKey.html">RatchetRootKey</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC11senderChainAA06SenderG0VSgv"></a>
+                    <a name="//apple_ref/swift/Property/senderChain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC11senderChainAA06SenderG0VSgv">senderChain</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The sender chain of the state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">senderChain</span><span class="p">:</span> <span class="kt"><a href="../Structs/SenderChain.html">SenderChain</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC14receiverChainsSayAA13ReceiverChainCGv"></a>
+                    <a name="//apple_ref/swift/Property/receiverChains" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC14receiverChainsSayAA13ReceiverChainCGv">receiverChains</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The receiver chains of the state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">receiverChains</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/ReceiverChain.html">ReceiverChain</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC13pendingPreKeyAA07PendinggH0VSgv"></a>
+                    <a name="//apple_ref/swift/Property/pendingPreKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC13pendingPreKeyAA07PendinggH0VSgv">pendingPreKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An optional pending pre key</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">pendingPreKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PendingPreKey.html">PendingPreKey</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC12aliceBaseKeyAA06PublicH0VSgv"></a>
+                    <a name="//apple_ref/swift/Property/aliceBaseKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC12aliceBaseKeyAA06PublicH0VSgv">aliceBaseKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The base key</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">aliceBaseKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new sender state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC13receiverChainAA08ReceiverG0CSgAA9PublicKeyV3for_tF"></a>
+                    <a name="//apple_ref/swift/Method/receiverChain(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC13receiverChainAA08ReceiverG0CSgAA9PublicKeyV3for_tF">receiverChain(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Find a receiver chain for a sender key.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">receiverChain</span><span class="p">(</span><span class="k">for</span> <span class="nv">senderEphemeralKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ReceiverChain.html">ReceiverChain</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>senderEphemeralKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The public key of the receiver chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The receiver chain for the key, or nil</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC3addyAA13ReceiverChainC08receiverH0_tF"></a>
+                    <a name="//apple_ref/swift/Method/add(receiverChain:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC3addyAA13ReceiverChainC08receiverH0_tF">add(receiverChain:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add a receiver chain to the state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">receiverChain</span><span class="p">:</span> <span class="kt"><a href="../Classes/ReceiverChain.html">ReceiverChain</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>receiverChain</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The chain to add</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC3setyAA15RatchetChainKeyV05chainI0_AA06PublicI0V3fortKF"></a>
+                    <a name="//apple_ref/swift/Method/set(chainKey:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC3setyAA15RatchetChainKeyV05chainI0_AA06PublicI0V3fortKF">set(chainKey:for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the chain key for a given sender key</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>.unknown</code>, if no receiver chain matches the key
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">chainKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span><span class="p">,</span> <span class="k">for</span> <span class="nv">senderEphemeralKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>chainKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The chain key to set</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>senderEphemeralKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key of the receiver chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC3setyAA18RatchetMessageKeysV07messageI0_AA9PublicKeyV3fortF"></a>
+                    <a name="//apple_ref/swift/Method/set(messageKeys:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC3setyAA18RatchetMessageKeysV07messageI0_AA9PublicKeyV3fortF">set(messageKeys:for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the message keys for a given sender key</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>.unknown</code>, if no receiver chain matches the key
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">messageKeys</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a></span><span class="p">,</span> <span class="k">for</span> <span class="nv">senderEphemeral</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>messageKeys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The keys to set</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>senderEphemeral</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key of the receiver chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC17removeMessageKeysAA07RatchetgH0VSgAA9PublicKeyV3for_s6UInt32V3andtF"></a>
+                    <a name="//apple_ref/swift/Method/removeMessageKeys(for:and:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC17removeMessageKeysAA07RatchetgH0VSgAA9PublicKeyV3for_s6UInt32V3andtF">removeMessageKeys(for:and:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove message keys</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">removeMessageKeys</span><span class="p">(</span><span class="k">for</span> <span class="nv">senderEphemeral</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span> <span class="n">and</span> <span class="nv">counter</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>senderEphemeral</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key of the receiver chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>counter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message counter in the chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The removed message keys, if found</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC16receiverChainKeyAA07RatchetgH0VSgAA06PublicH0V3for_tF"></a>
+                    <a name="//apple_ref/swift/Method/receiverChainKey(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC16receiverChainKeyAA07RatchetgH0VSgAA06PublicH0V3for_tF">receiverChainKey(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Find the chain key of a receiver chain</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">receiverChainKey</span><span class="p">(</span><span class="k">for</span> <span class="nv">senderEphemeral</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>senderEphemeral</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key of the receiver chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The chain key, if found</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC3setyAA15RatchetChainKeyV08receiverhI0_AA06PublicI0V3fortKF"></a>
+                    <a name="//apple_ref/swift/Method/set(receiverChainKey:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC3setyAA15RatchetChainKeyV08receiverhI0_AA06PublicI0V3fortKF">set(receiverChainKey:for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the chain key of a receiver chain</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>.unknown</code>, if no receiver chain matches the key
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">receiverChainKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span><span class="p">,</span> <span class="k">for</span> <span class="nv">senderEphemeral</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>senderEphemeral</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key of the receiver chain</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>receiverChainKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The chain key to set</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC15aliceInitializeyAA7KeyPairV011ourIdentityH0_AF0j4BaseH0AA06PublicH0V05theirkH0AJ0n9SignedPreH0AJSg0n7OneTimepH0AJ0n7RatchetH0tKF"></a>
+                    <a name="//apple_ref/swift/Method/aliceInitialize(ourIdentityKey:ourBaseKey:theirIdentityKey:theirSignedPreKey:theirOneTimePreKey:theirRatchetKey:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC15aliceInitializeyAA7KeyPairV011ourIdentityH0_AF0j4BaseH0AA06PublicH0V05theirkH0AJ0n9SignedPreH0AJSg0n7OneTimepH0AJ0n7RatchetH0tKF">aliceInitialize(ourIdentityKey:ourBaseKey:theirIdentityKey:theirSignedPreKey:theirOneTimePreKey:theirRatchetKey:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialise a session state.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> errors
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">aliceInitialize</span><span class="p">(</span>
+        <span class="nv">ourIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:19SignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a></span><span class="p">,</span>
+        <span class="nv">ourBaseKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/KeyPair.html">KeyPair</a></span><span class="p">,</span>
+        <span class="nv">theirIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+        <span class="nv">theirSignedPreKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+        <span class="nv">theirOneTimePreKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">?,</span>
+        <span class="nv">theirRatchetKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ourIdentityKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The local identity key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ourBaseKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The local base key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theirIdentityKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The remote identity key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theirSignedPreKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The signed pre key of the remote</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theirOneTimePreKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The public pre key of the remote</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theirRatchetKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The public key of the remote ratchet</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC13bobInitializeyAA7KeyPairV011ourIdentityH0_AF0j9SignedPreH0AFSg0j7OneTimemH0AF0j7RatchetH0AA06PublicH0V05theirkH0AM0r4BaseH0tKF"></a>
+                    <a name="//apple_ref/swift/Method/bobInitialize(ourIdentityKey:ourSignedPreKey:ourOneTimePreKey:ourRatchetKey:theirIdentityKey:theirBaseKey:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC13bobInitializeyAA7KeyPairV011ourIdentityH0_AF0j9SignedPreH0AFSg0j7OneTimemH0AF0j7RatchetH0AA06PublicH0V05theirkH0AM0r4BaseH0tKF">bobInitialize(ourIdentityKey:ourSignedPreKey:ourOneTimePreKey:ourRatchetKey:theirIdentityKey:theirBaseKey:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialise a session state.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> errors
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">bobInitialize</span><span class="p">(</span>
+        <span class="nv">ourIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:19SignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a></span><span class="p">,</span>
+        <span class="nv">ourSignedPreKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/KeyPair.html">KeyPair</a></span><span class="p">,</span>
+        <span class="nv">ourOneTimePreKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/KeyPair.html">KeyPair</a></span><span class="p">?,</span>
+        <span class="nv">ourRatchetKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/KeyPair.html">KeyPair</a></span><span class="p">,</span>
+        <span class="nv">theirIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+        <span class="nv">theirBaseKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ourIdentityKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The local identity key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ourSignedPreKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The local signed pre key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ourOneTimePreKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The local pre key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ourRatchetKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The local ratchet key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theirIdentityKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The identity key of the remote</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theirBaseKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The base key of the remote</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC19symmetricInitializeyAA19SymmetricParametersV10parameters_tKF"></a>
+                    <a name="//apple_ref/swift/Method/symmetricInitialize(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC19symmetricInitializeyAA19SymmetricParametersV10parameters_tKF">symmetricInitialize(parameters:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialise a session state.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> errors
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">symmetricInitialize</span><span class="p">(</span><span class="n">parameters</span> <span class="nv">params</span><span class="p">:</span> <span class="kt"><a href="../Structs/SymmetricParameters.html">SymmetricParameters</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>params</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The keys for initialization</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC20calculateDerivedKeys33_639F4D9E35BCA0DD2378B78191F499AALLAA14RatchetRootKeyV04rootS0_AA0q5ChainS0V05chainS0t10Foundation4DataV6secret_tKF"></a>
+                    <a name="//apple_ref/swift/Method/calculateDerivedKeys(secret:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC20calculateDerivedKeys33_639F4D9E35BCA0DD2378B78191F499AALLAA14RatchetRootKeyV04rootS0_AA0q5ChainS0V05chainS0t10Foundation4DataV6secret_tKF">calculateDerivedKeys(secret:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create the root and chain key from the secret.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">calculateDerivedKeys</span><span class="p">(</span><span class="nv">secret</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">rootKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetRootKey.html">RatchetRootKey</a></span><span class="p">,</span> <span class="nv">chainKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>secret</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The input for the KDF</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The root and chain key</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Protocol%20Buffers"></a>
+                <a name="//apple_ref/swift/Section/Protocol Buffers" class="dashAnchor"></a>
+                <a href="#/Protocol%20Buffers">
+                  <h3 class="section-name">Protocol Buffers</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateCAcA011Textsecure_D9StructureV4from_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateCAcA011Textsecure_D9StructureV4from_tKcfc">init(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a state from a protobuf object.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>.invalidProtoBuf</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Textsecure_SessionStructure</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The protobuf object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateCAC10Foundation4DataV4from_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateCAC10Foundation4DataV4from_tKcfc">init(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a state from serialized data.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>.invalidProtoBuf</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The serialized record.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC6objectAA011Textsecure_D9StructureVv"></a>
+                    <a name="//apple_ref/swift/Property/object" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC6objectAA011Textsecure_D9StructureVv">object</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The state converted to a protobuf object</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Textsecure_SessionStructure</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC4data10Foundation4DataVyKF"></a>
+                    <a name="//apple_ref/swift/Method/data()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC4data10Foundation4DataVyKF">data()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Serialize the session state.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>.invalidProtoBuf</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">data</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The serialized record</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift12SessionStateC2eeoiSbAC_ACtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift12SessionStateC2eeoiSbAC_ACtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compare tow session states.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">SessionState</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">SessionState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first state</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second state</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the states are equal</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

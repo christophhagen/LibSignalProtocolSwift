@@ -94,7 +94,12 @@ final class ReceiverChain {
     }
     
     // MARK: Protocol Buffers
-    
+
+    /**
+     Create a receiver chain from a protobuf object.
+     - parameter object: The protobuf object
+     - throws: `SignaError` of type `invalidProtoBuf`, if data is missing or corrupt.
+     */
     init(from object: Textsecure_SessionStructure.Chain, version: HKDFVersion) throws {
         self.ratchetKey = try PublicKey(from: object.senderRatchetKey)
         self.chainKey = try RatchetChainKey(from: object.chainKey, version: version)

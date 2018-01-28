@@ -1,0 +1,12 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Ratchet/RatchetChainKey.swift",
+      "line": 44,
+      "symbol": "RatchetChainKey.init(kdf:key:index:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/User/Development/Github/SignalProtocolSwift"
+}

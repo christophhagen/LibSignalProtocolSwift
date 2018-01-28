@@ -22,14 +22,30 @@ public struct Fingerprint {
 
     /// The version of the scannable fingerprint
     enum Version: UInt32 {
+
+        /// Older version, including local identifiers
         case version0 = 0
+
+        /// New version, only fingerprint data
         case version1 = 1
     }
 
+    /// The displayable part of the fingerprint
     let displayable: DisplayableFingerprint
 
+    /// The scannable part of the fingerprint
     let scannable: ScannableFingerprint
 
+    /**
+     Create a new fingerprint.
+     - parameter iterations: The number of iterations for the creation of the fingerprints
+     - parameter scannableVersion: The version of the scannable fingerprint
+     - parameter localStableIdentifier: The id of the local party
+     - parameter localIdentity: Identity data of the local party
+     - parameter remoteStableIdentifier: The id of the remote party
+     - parameter remoteIdentity: Identity data of the remote party
+     - throws: `SignalError` errors
+     */
     init(iterations: Int,
          scannableVersion: Version,
          localStableIdentifier: String,
@@ -61,6 +77,16 @@ public struct Fingerprint {
         }
     }
 
+    /**
+     Create a new fingerprint.
+     - parameter iterations: The number of iterations for the creation of the fingerprints
+     - parameter scannableVersion: The version of the scannable fingerprint
+     - parameter localStableIdentifier: The id of the local party
+     - parameter localIdentity: The public key of the local party
+     - parameter remoteStableIdentifier: The id of the remote party
+     - parameter remoteIdentity: The public key of the remote party
+     - throws: `SignalError` errors
+     */
     init(iterations: Int,
          scannableVersion: Fingerprint.Version,
          localStableIdentifier: String,
@@ -76,6 +102,16 @@ public struct Fingerprint {
             remoteIdentity: remoteIdentity.data)
     }
 
+    /**
+     Create a new fingerprint.
+     - parameter iterations: The number of iterations for the creation of the fingerprints
+     - parameter scannableVersion: The version of the scannable fingerprint
+     - parameter localStableIdentifier: The id of the local party
+     - parameter localIdentity: The public keys of the local parties
+     - parameter remoteStableIdentifier: The id of the remote party
+     - parameter remoteIdentity: The public keys of the remote parties
+     - throws: `SignalError` errors
+     */
     init(iterations: Int,
          scannableVersion: Fingerprint.Version,
          localStableIdentifier: String,
@@ -95,6 +131,8 @@ public struct Fingerprint {
 /**
  Serialize the list of public keys by first sorting the keys and then
  concatenating the key data.
+ - parameter keyList: The public keys
+ - returns: The data of the sorted keys
  */
 private func getLogicalKey(for keyList: [PublicKey]) -> Data {
     let list = keyList.sorted()
