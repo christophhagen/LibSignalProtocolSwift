@@ -10,7 +10,7 @@ abstract_target 'SignalProtocolSwift' do
   pod 'SwiftProtobuf'
 
   # Elliptic Curve functions
-  pod 'Curve25519', :git => 'https://github.com/christophhagen/Curve25519'
+  pod 'Curve25519'
 
   # Cryptographic functions powered by CommonCrypto
   pod 'CommonCryptoModule', '~> 1.0.2'

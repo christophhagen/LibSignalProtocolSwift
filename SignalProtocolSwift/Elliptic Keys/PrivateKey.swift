@@ -80,10 +80,11 @@ public struct PrivateKey {
     func sign(message: Data) throws -> Data {
         let random = try SignalCrypto.random(bytes: Curve25519.signatureLength)
 
-        guard let signature = Curve25519.signature(for: message, privateKey: key, randomData: random) else {
-            throw SignalError(.invalidSignature, "Could not sign message")
+        do {
+            return try Curve25519.signature(for: message, privateKey: key, randomData: random)
+        } catch {
+            throw SignalError(.invalidSignature, "Could not sign message: \(error)")
         }
-        return signature
     }
 
     /**
@@ -93,12 +94,13 @@ public struct PrivateKey {
      - throws: `SignalError`
      */
     func signVRF(message: Data) throws -> Data {
-        let random = try SignalCrypto.random(bytes: 64)
+        let random = try SignalCrypto.random(bytes: 32)
 
-        guard let signature = Curve25519.vrfSignature(for: message, privateKey: key, randomData: random) else {
-            throw SignalError(.invalidSignature, "VRF signature failed")
+        do {
+            return try Curve25519.vrfSignature(for: message, privateKey: key, randomData: random)
+        } catch {
+            throw SignalError(.invalidSignature, "VRF signature failed: \(error)")
         }
-        return signature
     }
 
     /**
@@ -111,6 +113,20 @@ public struct PrivateKey {
         return try publicKey.calculateAgreement(privateKey: self)
     }
 }
+
+extension PrivateKey: Equatable {
+    /**
+     Compare two private keys for equality.
+     - parameter lhs: The first key.
+     - parameter rhs: The second key.
+     - returns: `True`, if the keys are equal
+     */
+    public static func ==(lhs: PrivateKey, rhs: PrivateKey) -> Bool {
+        return lhs.key == rhs.key
+    }
+}
+
+// MARK: Protocol Buffers
 
 extension PrivateKey {
 
@@ -127,17 +143,5 @@ extension PrivateKey {
     /// Convert the key to serialized data
     var data: Data {
         return key
-    }
-}
-
-extension PrivateKey: Equatable {
-    /**
-     Compare two private keys for equality.
-     - parameter lhs: The first key.
-     - parameter rhs: The second key.
-     - returns: `True`, if the keys are equal
-     */
-    public static func ==(lhs: PrivateKey, rhs: PrivateKey) -> Bool {
-        return lhs.key == rhs.key
     }
 }

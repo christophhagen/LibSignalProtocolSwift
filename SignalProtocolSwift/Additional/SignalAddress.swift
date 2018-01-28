@@ -7,10 +7,6 @@
 
 import Foundation
 
-public protocol SignalAddressProtocol: Hashable, CustomStringConvertible {
-
-}
-
 /**
  A `SignalAddress` identifies a single device of a Signal user, with a user
  `identifier` (such as a phone number), and the `deviceId` which specifies the device
@@ -35,6 +31,7 @@ public struct SignalAddress {
 }
 
 extension SignalAddress: Equatable {
+
     /**
      Compare two SignalAddresses. Two `SignalAddress` objects are
      equal if both their identifier and deviceId are equal.
@@ -48,6 +45,7 @@ extension SignalAddress: Equatable {
 }
 
 extension SignalAddress: Hashable {
+
     /**
      A hash value of the address, constructed by summing the
      hash of the identifier and the hash of the deviceId.
@@ -60,6 +58,10 @@ extension SignalAddress: Hashable {
 }
 
 extension SignalAddress: CustomStringConvertible {
+
+    /**
+     A description of the SignalAddress.
+     */
     public var description: String {
         return "SignalAddress(\(identifier),\(deviceId))"
     }

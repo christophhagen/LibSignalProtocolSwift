@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "431E464728FC829F7409217010315894"
+               BlueprintIdentifier = "C7EBB9D2EEB4050D5988599A3511E5CE"
                BuildableName = "Curve25519.framework"
                BlueprintName = "Curve25519-macOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "431E464728FC829F7409217010315894"
+            BlueprintIdentifier = "C7EBB9D2EEB4050D5988599A3511E5CE"
             BuildableName = "Curve25519.framework"
             BlueprintName = "Curve25519-macOS"
             ReferencedContainer = "container:Pods.xcodeproj">

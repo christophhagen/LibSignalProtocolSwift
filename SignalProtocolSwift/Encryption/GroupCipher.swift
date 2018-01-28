@@ -116,7 +116,7 @@ public struct GroupCipher<Context: SignalProtocolStoreContext> {
      - returns: The encrypted message
      - throws: `SignalError` errors
     */
-    public func encrypt(paddedPlaintext plaintext: Data) throws -> CipherTextMessage {
+    public func encrypt(_ plaintext: Data) throws -> CipherTextMessage {
         let record = try loadRecord()
 
         guard let state = record.state else {

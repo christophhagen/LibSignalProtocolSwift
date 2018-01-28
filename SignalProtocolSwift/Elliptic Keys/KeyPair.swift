@@ -120,7 +120,7 @@ public struct KeyPair {
     }
 }
 
-// MARK: Serialization
+// MARK: Protocol Buffers
 
 /**
  Provide the possibility to convert a `KeyPair` from and to bytes
@@ -138,6 +138,18 @@ extension KeyPair {
             object = try Textsecure_IdentityKeyPairStructure(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create key pair from data: \(error)")
+        }
+        try self.init(from: object)
+    }
+
+    /**
+     Create a key pair from a protobuf object.
+     - parameter object: The protobuf object.
+     - throws: `SignalError` of type `invalidProtoBuf`
+     */
+    init(from object: Textsecure_IdentityKeyPairStructure) throws {
+        guard object.hasPublicKey, object.hasPrivateKey else {
+            throw SignalError(.invalidProtoBuf, "Missing data in KeyPair ProtoBuf object")
         }
         self.publicKey = try PublicKey(from: object.publicKey)
         self.privateKey = try PrivateKey(from: object.privateKey)

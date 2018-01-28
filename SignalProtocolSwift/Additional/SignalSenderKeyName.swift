@@ -7,7 +7,7 @@
 
 import Foundation
 
-/*
+/**
  * A representation of a (group + sender + device) tuple
  */
 public struct SignalSenderKeyName {
@@ -22,7 +22,7 @@ public struct SignalSenderKeyName {
      Create a new `SignalSenderKeyName`
      - parameter groupId: The group identifier (such as the name)
      - parameter sender: The contact
-    */
+     */
     public init(groupId: String, sender: SignalAddress) {
         self.groupId = groupId
         self.sender = sender
@@ -55,6 +55,10 @@ extension SignalSenderKeyName: Hashable {
 }
 
 extension SignalSenderKeyName: CustomStringConvertible {
+
+    /**
+     A String representation of the sender key name.
+     */
     public var description: String {
         return "SignalSenderKeyName(group: \(groupId), id: \(sender.identifier), device: \(sender.deviceId))"
     }

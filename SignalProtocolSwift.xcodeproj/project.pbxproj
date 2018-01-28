@@ -232,6 +232,12 @@
 		CEB45C58201CD455002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB45C89201D081C002BB845 /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
 		CEB45C8B201D0A21002BB845 /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
+		CEC812E3201E35970018D42E /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
+		CEC812E4201E35970018D42E /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
+		CEC812E5201E35980018D42E /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
+		CEC812E6201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
+		CEC812E7201E35980018D42E /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
+		CEC812E8201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
 		D839E8CE4B2456E48173BB3F /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FAD81585E0F77CDB87E46F /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -535,13 +541,13 @@
 		CEB45A84201CB4CF002BB845 /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
-				CEB45A85201CB4CF002BB845 /* SenderKeyState.swift */,
-				CEB45A86201CB4CF002BB845 /* SessionCipher.swift */,
 				CEB45A87201CB4CF002BB845 /* GroupCipher.swift */,
 				CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */,
+				CEB45A85201CB4CF002BB845 /* SenderKeyState.swift */,
+				CEB45A86201CB4CF002BB845 /* SessionCipher.swift */,
+				CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */,
 				CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */,
 				CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */,
-				CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */,
 			);
 			path = Encryption;
 			sourceTree = "<group>";
@@ -1158,6 +1164,7 @@
 				CEB45C11201CD426002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C12201CD426002BB845 /* SenderKeyMessage.swift in Sources */,
 				CEB45C41201CD44A002BB845 /* SessionPreKeyBundle.swift in Sources */,
+				CEC812E4201E35970018D42E /* SessionPublicSignedPreKey.swift in Sources */,
 				CEB45C43201CD44A002BB845 /* SessionRecord.swift in Sources */,
 				CEB45BCA201CD405002BB845 /* SignalAddress.swift in Sources */,
 				CEB45C20201CD42F002BB845 /* WhisperTextProtocol.pb.swift in Sources */,
@@ -1182,6 +1189,7 @@
 				CEB45C2B201CD444002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C45201CD44A002BB845 /* SessionPreKey.swift in Sources */,
 				CEB45BFB201CD41C002BB845 /* ScannableFingerprint.swift in Sources */,
+				CEC812E3201E35970018D42E /* SessionPublicPreKey.swift in Sources */,
 				CEB45C30201CD444002BB845 /* SenderChainKey.swift in Sources */,
 				CEB45C15201CD426002BB845 /* SignalMessage.swift in Sources */,
 				CEB45BD2201CD40B002BB845 /* DeviceConsistencySignature.swift in Sources */,
@@ -1213,6 +1221,7 @@
 				CEB45C16201CD427002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C17201CD427002BB845 /* SenderKeyMessage.swift in Sources */,
 				CEB45C4F201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */,
+				CEC812E6201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */,
 				CEB45C51201CD44B002BB845 /* SessionRecord.swift in Sources */,
 				CEB45BCD201CD406002BB845 /* SignalAddress.swift in Sources */,
 				CEB45C23201CD430002BB845 /* WhisperTextProtocol.pb.swift in Sources */,
@@ -1237,6 +1246,7 @@
 				CEB45C33201CD445002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C53201CD44B002BB845 /* SessionPreKey.swift in Sources */,
 				CEB45BF8201CD41B002BB845 /* ScannableFingerprint.swift in Sources */,
+				CEC812E5201E35980018D42E /* SessionPublicPreKey.swift in Sources */,
 				CEB45C38201CD445002BB845 /* SenderChainKey.swift in Sources */,
 				CEB45C1A201CD427002BB845 /* SignalMessage.swift in Sources */,
 				CEB45BD5201CD40C002BB845 /* DeviceConsistencySignature.swift in Sources */,
@@ -1268,6 +1278,7 @@
 				CEB45C1B201CD427002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C1C201CD427002BB845 /* SenderKeyMessage.swift in Sources */,
 				CEB45C48201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */,
+				CEC812E8201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */,
 				CEB45C4A201CD44B002BB845 /* SessionRecord.swift in Sources */,
 				CEB45BD0201CD406002BB845 /* SignalAddress.swift in Sources */,
 				CEB45C26201CD430002BB845 /* WhisperTextProtocol.pb.swift in Sources */,
@@ -1292,6 +1303,7 @@
 				CEB45C3B201CD445002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C4C201CD44B002BB845 /* SessionPreKey.swift in Sources */,
 				CEB45BFE201CD41C002BB845 /* ScannableFingerprint.swift in Sources */,
+				CEC812E7201E35980018D42E /* SessionPublicPreKey.swift in Sources */,
 				CEB45C40201CD445002BB845 /* SenderChainKey.swift in Sources */,
 				CEB45C1F201CD427002BB845 /* SignalMessage.swift in Sources */,
 				CEB45BD8201CD40C002BB845 /* DeviceConsistencySignature.swift in Sources */,
@@ -1515,7 +1527,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC49F84043A19EFB1BEFB2B5 /* Pods-SignalProtocolSwift-SignalProtocolSwift macOS.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1540,7 +1552,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B0727B860E784173DD65302 /* Pods-SignalProtocolSwift-SignalProtocolSwift macOS.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;

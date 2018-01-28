@@ -11,7 +11,9 @@ import Foundation
 /**
  Curve25519 provides access to elliptic curve signature, agreement and verification functions.
  */
-public struct Curve25519 {
+public final class Curve25519 {
+
+    // MARK: Key Constants
 
     /// The length of the private and public key in bytes
     public static let keyLength = 32
@@ -19,25 +21,40 @@ public struct Curve25519 {
     /// The length of a signature in bytes
     public static let signatureLength = 64
 
+    /// The number of random bytes needed for signing
+    public static let randomLength = 64
+
+    // MARK: VRF Constants
+
     /// The length of a VRF signature in bytes
     public static let vrfSignatureLength = 96
 
+    /// The number of random bytes needed for signing
+    public static let vrfRandomLength = 32
+
     /// The length of the VRF verification output in bytes
-    static let vrfVerifyLength = 32
+    public static let vrfVerifyLength = 32
 
     // MARK: Public keys
 
     /**
      Generate a public key from a given private key.
      Fails if the key could not be generated.
+     - note: Possible errors are:
+     - `keyLength` if the private key is less than 32 byte
+     - `basepointLength` if the basepoint is less than 32 byte
+     - `curveError` if the curve donna implementation can't calculate the public key
      - parameter privateKey: The private key of the pair, 32 byte
      - parameter basepoint: The basepoint of the curve, 32 byte
-     - returns: The public key (32 byte), or nil on failure
+     - returns: The public key (32 byte)
+     - throws: `CurveError` errors
      */
-    public static func publicKey(for privateKey: Data, basepoint: Data) -> Data? {
-        guard privateKey.count >= keyLength,
-            basepoint.count >= keyLength else {
-            return nil
+    public static func publicKey(for privateKey: Data, basepoint: Data) throws -> Data {
+        guard privateKey.count >= keyLength else {
+            throw CurveError.keyLength(privateKey.count)
+        }
+        guard basepoint.count >= keyLength else {
+            throw CurveError.basepointLength(basepoint.count)
         }
 
         var key = Data(count: keyLength)
@@ -50,7 +67,7 @@ public struct Curve25519 {
         }
         
         guard result == 0 else {
-            return nil
+            throw CurveError.curveError(result)
         }
         return key
     }
@@ -59,17 +76,26 @@ public struct Curve25519 {
 
     /**
      Calculate the signature for the given message.
+     - note: Possible errors are:
+     - `keyLength` if the private key is less than 32 byte
+     - `randomLength` if the random data is less than 64 byte
+     - `curveError` if the curve implementation can't calculate the signature
      - parameter message: The message to sign
      - parameter privateKey: The private key used for signing
      - parameter randomData: 64 byte of random data
-     - returns: The signature of the message, `KeyPair.signatureLength` bytes, or nil on failure
+     - returns: The signature of the message, `Curve25519.signatureLength` bytes
+     - throws: `CurveError` errors
      */
-    public static func signature(for message: Data, privateKey: Data, randomData: Data) -> Data? {
+    public static func signature(for message: Data, privateKey: Data, randomData: Data) throws -> Data {
         let length = message.count
-        guard length > 0,
-            randomData.count >= signatureLength,
-            privateKey.count >= keyLength else {
-            return nil
+        guard length > 0 else {
+            throw CurveError.messageLength(length)
+        }
+        guard randomData.count >= randomLength else {
+            throw CurveError.randomLength(randomData.count)
+        }
+        guard privateKey.count >= keyLength else {
+            throw CurveError.keyLength(privateKey.count)
         }
         var signature = Data(count: signatureLength)
         let result = randomData.withUnsafeBytes{ (randomPtr: UnsafePointer<UInt8>) in
@@ -82,24 +108,34 @@ public struct Curve25519 {
             }
         }
         guard result == 0 else {
-            return nil
+            throw CurveError.curveError(result)
         }
         return signature
     }
 
     /**
      Calculates a unique Curve25519 signature for the private key
+     - note: Possible errors are:
+     - `messageLength` if the message has length 0
+     - `keyLength` if the private key is less than 32 byte
+     - `randomLength` if the random data is less than 32 byte
+     - `curveError` if the curve implementation can't calculate the signature
      - parameter message: The message to sign
      - parameter privateKey: The 32-byte private key to use for signing
-     - parameter randomData: 64 byte of random data
-     - returns: The 96-byte signature on success, nil on failure
+     - parameter randomData: 32 byte of random data
+     - returns: The 96-byte signature
+     - throws: `CurveError` errors
      */
-    public static func vrfSignature(for message: Data, privateKey: Data, randomData: Data) -> Data? {
-        let length = UInt(message.count)
-        guard length > 0,
-            randomData.count >= signatureLength,
-            privateKey.count >= keyLength else {
-                return nil
+    public static func vrfSignature(for message: Data, privateKey: Data, randomData: Data) throws -> Data {
+        let length = message.count
+        guard length > 0 else {
+            throw CurveError.messageLength(length)
+        }
+        guard randomData.count >= vrfRandomLength else {
+            throw CurveError.randomLength(randomData.count)
+        }
+        guard privateKey.count >= keyLength else {
+            throw CurveError.keyLength(privateKey.count)
         }
 
         var signature = Data(count: Curve25519.vrfSignatureLength)
@@ -108,13 +144,13 @@ public struct Curve25519 {
             signature.withUnsafeMutableBytes { (sigPtr: UnsafeMutablePointer<UInt8>) in
                 randomData.withUnsafeBytes{ (randomPtr: UnsafePointer<UInt8>) in
                     privateKey.withUnsafeBytes{ (keyPtr: UnsafePointer<UInt8>) in
-                        generalized_xveddsa_25519_sign(sigPtr, keyPtr, messagePtr, length, randomPtr, nil, 0)
+                        generalized_xveddsa_25519_sign(sigPtr, keyPtr, messagePtr, UInt(length), randomPtr, nil, 0)
                     }
                 }
             }
         }
         guard result == 0 else {
-            return nil
+            throw CurveError.curveError(result)
         }
         return signature
     }
@@ -125,8 +161,8 @@ public struct Curve25519 {
      Verify that the signature corresponds to the message.
      - parameter signature: The signature data
      - parameter message: The message for which the signature is checked
-     - parameter publicKey: The public key to verify the signature with
-     - returns: True, if the signature is valid
+     - parameter publicKey: The 32-byte public key to verify the signature with
+     - returns: `true`, if the signature is valid
      */
     public static func verify(signature: Data, for message: Data, publicKey: Data) -> Bool {
         guard signature.count == signatureLength,
@@ -145,15 +181,22 @@ public struct Curve25519 {
 
     /**
      Verify that the vrf signature corresponds to the message.
-     - parameter signature: The vrf signature data
+     - note: Possible errors are:
+     - `keyLength` if the public key is less than 32 byte
+     - `signatureLength` if the signature data is not 96 byte
+     - `curveError` if the curve implementation can't calculate the vrf output
+     - parameter vrfSignature: The vrf signature data (96 byte)
      - parameter message: The message for which the signature is checked
-     - parameter publicKey: The public key to verify the signature with
-     - returns: The vrf output, or nil on failure
+     - parameter publicKey: The 32-byte public key to verify the signature with
+     - returns: The vrf output (32 byte)
+     - throws: `CurveError` errors
      */
-    public static func verify(vrfSignature: Data, for message: Data, publicKey: Data) -> Data? {
-        guard vrfSignature.count == vrfSignatureLength,
-            publicKey.count >= keyLength else {
-            return nil
+    public static func verify(vrfSignature: Data, for message: Data, publicKey: Data) throws -> Data {
+        guard vrfSignature.count == vrfSignatureLength else {
+            throw CurveError.signatureLength(vrfSignature.count)
+        }
+        guard publicKey.count >= keyLength else {
+            throw CurveError.keyLength(publicKey.count)
         }
 
         var output = Data(count: vrfVerifyLength)
@@ -167,7 +210,7 @@ public struct Curve25519 {
             }
         }
         guard result == 0 else {
-            return nil
+            throw CurveError.curveError(result)
         }
         return output
     }
@@ -175,16 +218,21 @@ public struct Curve25519 {
     // MARK: Agreements
 
     /**
-     Calculate the shared agreement between a private key a public key.
-     - note: The returned data has a length of `KeyPair.keyLength` byte.
+     Calculate the shared agreement between a private key and a public key.
+     - note: Possible errors are:
+     - `keyLength` if the public/private key is less than 32 byte
+     - `curveError` if the curve implementation can't calculate the agreement
      - parameter privateKey: The private key for the agreement
      - parameter publicKey: The public key for the agreement
-     - returns: The agreement data, or `nil` on failure
+     - returns: The agreement data (32 byte)
+     - throws: `CurveError` errors
      */
-    public static func calculateAgreement(privateKey: Data, publicKey: Data) -> Data? {
-        guard publicKey.count >= keyLength,
-            privateKey.count >= keyLength else {
-            return nil
+    public static func calculateAgreement(privateKey: Data, publicKey: Data) throws -> Data {
+        guard publicKey.count >= keyLength else {
+            throw CurveError.keyLength(publicKey.count)
+        }
+        guard privateKey.count >= keyLength else {
+            throw CurveError.keyLength(privateKey.count)
         }
 
         var sharedKey = Data(count: keyLength)
@@ -196,7 +244,7 @@ public struct Curve25519 {
             }
         }
         guard result == 0 else {
-            return nil
+            throw CurveError.curveError(result)
         }
         return sharedKey
     }

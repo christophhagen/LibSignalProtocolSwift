@@ -45,10 +45,11 @@ public struct PublicKey {
      - throws `SignalError.curveError` if the public key could not be created
      */
     public init(privateKey: PrivateKey) throws {
-        guard let key = Curve25519.publicKey(for: privateKey.data, basepoint: PublicKey.basePoint) else {
-            throw SignalError(.curveError, "Could not create public key from private key")
+        do {
+            self.key = try Curve25519.publicKey(for: privateKey.data, basepoint: PublicKey.basePoint)
+        } catch {
+            throw SignalError(.curveError, "Could not create public key from private key: \(error)")
         }
-        self.key = key
     }
 
     /**
@@ -69,10 +70,11 @@ public struct PublicKey {
      - throws: `SignalError.invalidSignature` if the signature is invalid
      */
     func verify(vrfSignature: Data, for message: Data) throws -> Data {
-        guard let output = Curve25519.verify(vrfSignature: vrfSignature, for: message, publicKey: key) else {
-            throw SignalError(.invalidSignature,  "Invalid vrf signature")
+        do {
+            return try Curve25519.verify(vrfSignature: vrfSignature, for: message, publicKey: key)
+        } catch {
+            throw SignalError(.invalidSignature, "Invalid vrf signature: \(error)")
         }
-        return output
     }
 
     /**
@@ -82,10 +84,11 @@ public struct PublicKey {
      - returns: The agreement data, or `nil` on error
      */
     func calculateAgreement(privateKey: PrivateKey) throws -> Data {
-        guard let shared = Curve25519.calculateAgreement(privateKey: privateKey.data, publicKey: key) else {
-            throw SignalError(.curveError, "Could not calculate curve25519 agreement")
+        do {
+          return try Curve25519.calculateAgreement(privateKey: privateKey.data, publicKey: key)
+        } catch {
+            throw SignalError(.curveError, "Could not calculate curve25519 agreement: \(error)")
         }
-        return shared
     }
 }
 

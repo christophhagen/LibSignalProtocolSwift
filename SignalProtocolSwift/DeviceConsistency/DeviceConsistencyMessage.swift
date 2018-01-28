@@ -39,8 +39,11 @@ struct DeviceConsistencyMessage {
         self.signature = DeviceConsistencySignature(signature: signature, vrfOutput: vrfOutput)
         self.generation = commitment.generation
     }
+}
 
-    // MARK: Protocol Buffers
+// MARK: Protocol Buffers
+
+extension DeviceConsistencyMessage {
 
     /**
      The message serialized through a protocol buffer.

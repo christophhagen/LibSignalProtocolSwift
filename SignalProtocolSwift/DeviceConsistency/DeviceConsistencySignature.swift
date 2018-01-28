@@ -30,6 +30,7 @@ struct DeviceConsistencySignature {
 }
 
 extension DeviceConsistencySignature: Comparable {
+    
     /**
      Compare two consistency signatures.
      - note: The signatures are compared solely by their vrf outputs

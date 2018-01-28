@@ -1,9 +1,14 @@
 # SignalProtocolSwift
-A Swift implementation of the Signal Protocol API (libsignal-protocol-c)
+A Swift implementation of the Signal Protocol. The [Signal Protocol](https://en.wikipedia.org/wiki/Signal_Protocol)
+can be used for secure, end-to-end encrypted messaging in synchronous and asynchronous environments. It has
+many desirable cryptographic features and can handle missing and out-of-order messages. The Signal protocol
+is used by the [Signal Messenger](signal.org) as well as WhatsApp, Facebook, Skype and others. Additional
+information can be found [here](https://signal.org/docs/).
 
 ## Purpose
 
 This Swift library is intended for educational purposes only, in order to show the way the Signal Protocol works.
+It mimics the functionality and structure of the [Signal Protocol C implementation](https://github.com/signalapp/libsignal-protocol-c).
 
 ## Installation
 
@@ -11,10 +16,9 @@ You can install `SignalProtocolSwift` through [Cocoapods](https://cocoapods.org)
 
 ````ruby
 pod 'SignalProtocolSwift', :git => 'https://github.com/christophhagen/SignalProtocolSwift'
-pod 'Curve25519', :git => 'https://github.com/christophhagen/Curve25519'
 ````
 
-`Curve25519` is my framework to use the elliptic curve functions in Swift.
+[Curve25519](https://github.com/christophhagen/Curve25519) is my framework to use the elliptic curve functions in Swift.
 
 ## Prerequisites
 
@@ -31,9 +35,9 @@ You can have a look at the [test implementation](https://github.com/christophhag
 ### Server for message delivery
 The server that stores the messages for retrieval needs to store the following data for each `SignalAddress`:
 - `Public Identity Key Data`: The public part of the identity key of the device
-- `Signed Pre Key`: The current signed pre key
+- `Signed Pre Key Data`: The current signed pre key
 - `Pre Keys`: A number of unsigned pre keys
-- `Messages`: The new messages to deliver
+- `Messages`: The messages to deliver
 
 ## Usage
 

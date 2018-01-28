@@ -43,7 +43,7 @@ class GroupCipherTests: XCTestCase {
         
         /* Encrypt a test message from Alice */
         let alicePlaintext = "smert ze smert".data(using: .utf8)!
-        guard let message = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext) else {
+        guard let message = try? aliceGroupCipher.encrypt(alicePlaintext) else {
             XCTFail("could not encrypt message")
             return
         }
@@ -95,7 +95,7 @@ class GroupCipherTests: XCTestCase {
         
         /* Encrypt a test message from Alice */
         let alicePlaintext = "smert ze smert".data(using: .utf8)!
-        guard let encrypted = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext) else {
+        guard let encrypted = try? aliceGroupCipher.encrypt(alicePlaintext) else {
             XCTFail("could not encrypt message")
             return
         }
@@ -152,9 +152,9 @@ class GroupCipherTests: XCTestCase {
         let alicePlaintext3 = "smert ze smert3".data(using: .utf8)!
         
         /* Encrypt a series of messages from Alice */
-        guard let ciphertext1 = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext),
-            let ciphertext2 = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext2),
-            let ciphertext3 = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext3) else {
+        guard let ciphertext1 = try? aliceGroupCipher.encrypt(alicePlaintext),
+            let ciphertext2 = try? aliceGroupCipher.encrypt(alicePlaintext2),
+            let ciphertext3 = try? aliceGroupCipher.encrypt(alicePlaintext3) else {
                 XCTFail("could not encrypt messages")
                 return
         }
@@ -206,7 +206,7 @@ class GroupCipherTests: XCTestCase {
         /* Pretend this was sent to some people other than Bob */
         for i in 0..<100 {
             let alicePlaintext = "up the punks up the punks up the punks".data(using: .utf8)!
-            guard let _ = try? aliceGroupCipher.encrypt(paddedPlaintext: alicePlaintext) else {
+            guard let _ = try? aliceGroupCipher.encrypt(alicePlaintext) else {
                 XCTFail("Could not encrypt message \(i)")
                 return
             }
@@ -244,7 +244,7 @@ class GroupCipherTests: XCTestCase {
         /* Alice sends a message welcoming Bob */
         do {
             let plaintext = "welcome to the group".data(using: .utf8)!
-            let ciphertext = try aliceGroupCipher.encrypt(paddedPlaintext: plaintext)
+            let ciphertext = try aliceGroupCipher.encrypt(plaintext)
             let message = try SenderKeyMessage(from: ciphertext.data)
             /* Bob decrypts the message */
             let decrypted = try bobGroupCipher.decrypt(ciphertext: message)
@@ -291,7 +291,7 @@ class GroupCipherTests: XCTestCase {
         let plaintext = "up the punks".data(using: .utf8)!
         var ciphertexts = [Data]()
         for _ in 0..<100 {
-            guard let message = try? aliceCipher.encrypt(paddedPlaintext: plaintext) else {
+            guard let message = try? aliceCipher.encrypt(plaintext) else {
                 XCTFail("Could not encrypt message")
                 return
             }
@@ -329,7 +329,7 @@ class GroupCipherTests: XCTestCase {
         /* Try to encrypt without a session */
         do {
             let plaintext = "up the punks".data(using: .utf8)!
-            let _ = try aliceGroupCipher.encrypt(paddedPlaintext: plaintext)
+            let _ = try aliceGroupCipher.encrypt(plaintext)
             XCTFail("Should fail with error")
             return
         } catch let error as SignalError where error.type == .noSession {
@@ -348,14 +348,14 @@ class GroupCipherTests: XCTestCase {
         /* Have Alice encrypt a batch of 2001 messages */
         let plaintext = "up the punks".data(using: .utf8)!
         for _ in 0..<2001 {
-            guard let _ = try? aliceCipher.encrypt(paddedPlaintext: plaintext) else {
+            guard let _ = try? aliceCipher.encrypt(plaintext) else {
                 XCTFail("Could not encrypt message")
                 return
             }
         }
         /* Have Alice encrypt a message too far in the future */
         let tooFarText = "notta gonna worka".data(using: .utf8)!
-        guard let tooFar = try? aliceCipher.encrypt(paddedPlaintext: tooFarText) else {
+        guard let tooFar = try? aliceCipher.encrypt(tooFarText) else {
             XCTFail("Could not encrypt message")
             return
         }
@@ -379,7 +379,7 @@ class GroupCipherTests: XCTestCase {
         let plaintext = "up the punks".data(using: .utf8)!
         var inflight = [Data]()
         for _ in 0..<2010 {
-            guard let message = try? aliceCipher.encrypt(paddedPlaintext: plaintext) else {
+            guard let message = try? aliceCipher.encrypt(plaintext) else {
                 XCTFail("Could not encrypt message")
                 return
             }
@@ -442,7 +442,7 @@ class GroupCipherTests: XCTestCase {
         /* Encrypt a test message from Bob, which should fail because no message was received from Alice yet */
         let plaintext = "smert ze smert".data(using: .utf8)!
         do {
-            let _ = try bobGroupCipher.encrypt(paddedPlaintext: plaintext)
+            let _ = try bobGroupCipher.encrypt(plaintext)
             XCTFail("Should fail to decrypt")
             return
         } catch let error as SignalError where error.type == .invalidKey {

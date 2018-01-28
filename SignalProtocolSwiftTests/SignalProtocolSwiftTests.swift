@@ -90,30 +90,23 @@ class SignalProtocolSwiftTests: XCTestCase {
         }
     }
 
-    func testInvalidSignature() {
-        for i in 0..<10000 {
-            guard testSignedKey() else {
-                XCTFail("Something went wrong for round \(i)...")
-                return
-            }
-        }
-    }
-
-    private func testSignedKey() -> Bool {
+    func testSignedKey() {
 
         guard let keys = try? KeyPair(),
             let signedKey = try? KeyPair() else {
-            return false
+                XCTFail("Could not create key pairs")
+                return
         }
         let key = signedKey.publicKey
         let data = key.data
         guard let signature = try? keys.privateKey.sign(message: data) else {
-            return false
+            XCTFail("Could not sign message")
+            return
         }
         guard keys.publicKey.verify(signature: signature, for: data) else {
-            return false
+            XCTFail("Could not verify signed key")
+            return
         }
-        return true
     }
 
 }
