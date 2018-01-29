@@ -43,7 +43,7 @@ The server that stores the messages for retrieval needs to store the following d
 
 The standard process to establish an encrypted session between two devices (two distinct `SignalAddress`es) is usually as follows:
 
-- Alice uploads her `Identity` (`PublicKey`, `deviceId` and `registrationId`) and a `SignedPreKey` to the server, as well as a number of unsigned `PreKey`s.
+- Alice uploads her `Identity`  and a `SignedPreKey` to the server, as well as a number of unsigned `PreKey`s.
 - Bob retrieves a `PreKeyBundle` from the server, consisting of Alice's `Identity`, the `SignedPreKey`, and one of the `PreKey`s (which is then deleted from the server).
 - Bob creates a session by processing the `PreKeyBundle` and encrypting a `PreKeyMessage` which he uploads to the server.
 - Alice receives Bob's `PreKeyMessage` from the server and decryptes the message.
@@ -75,8 +75,6 @@ Let's assume that Alice (who has the `SignalAddress` aliceAddress) wants to esta
 
 // Create PreKeyBundle
 let preKeyBundle = try SessionPreKeyBundle(
-    registrationId: 0, // Not used
-    deviceId: bobAddress.deviceId,
     preKey: preKey,
     signedPreKey: signedPreKey,
     identityKey: identity)

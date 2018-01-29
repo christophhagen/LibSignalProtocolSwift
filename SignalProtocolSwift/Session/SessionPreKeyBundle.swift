@@ -79,13 +79,11 @@ public struct SessionPreKeyBundle {
 
     /**
      Create a pre key bundle from its components.
-     - parameter deviceId: The device id of the remote party
      - parameter preKey: The pre key data to use
      - parameter signedPreKey: The signed pre key data
      - parameter identityKey: The identity key data of the remote party
      */
-    public init(deviceId: UInt32,
-                preKey: Data,
+    public init(preKey: Data,
                 signedPreKey: Data,
                 identityKey: Data) throws {
 

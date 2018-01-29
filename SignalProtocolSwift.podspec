@@ -19,8 +19,7 @@ Pod::Spec.new do |spec|
     spec.watchos.deployment_target = '4.0'
 
     spec.source_files = 'SignalProtocolSwift/**/*.{swift,h,c}'
-    spec.public_header_files = ''
-
+    
     spec.dependency 'SwiftProtobuf'
     spec.dependency 'Curve25519'
     spec.dependency 'CommonCryptoModule'
