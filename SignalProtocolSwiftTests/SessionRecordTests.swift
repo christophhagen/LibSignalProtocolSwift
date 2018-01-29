@@ -210,8 +210,6 @@ class SessionRecordTests: XCTestCase {
             return false
         }
 
-        state.remoteRegistrationID = 0xDEADBEEF
-        state.localRegistrationID = 0xBAADF00D
         guard let aliceBaseKey = try? KeyPair().publicKey else {
             XCTFail("Could not create base key for Alice")
             return false

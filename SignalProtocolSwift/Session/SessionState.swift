@@ -59,12 +59,6 @@ final class SessionState {
     /// The last counter in the previous sender chain
     var previousCounter: UInt32 = 0
 
-    /// the id of the remote party
-    var remoteRegistrationID: UInt32 = 0
-
-    /// The id of the local party
-    var localRegistrationID: UInt32 = 0
-
     /// The identity key of the local party
     var localIdentity: PublicKey?
 
@@ -334,8 +328,6 @@ final class SessionState {
         if object.hasPendingPreKey {
             self.pendingPreKey = try PendingPreKey(serializedObject: object.pendingPreKey)
         }
-        self.remoteRegistrationID = object.remoteRegistrationID
-        self.localRegistrationID = object.localRegistrationID
         if object.hasAliceBaseKey {
             self.aliceBaseKey = try PublicKey(from: object.aliceBaseKey)
         }
@@ -377,8 +369,6 @@ final class SessionState {
             if let item = self.pendingPreKey {
                 $0.pendingPreKey = item.object
             }
-            $0.remoteRegistrationID = self.remoteRegistrationID
-            $0.localRegistrationID = self.localRegistrationID
             if let item = self.aliceBaseKey {
                 $0.aliceBaseKey = item.data
             }
@@ -411,9 +401,7 @@ extension SessionState: Equatable {
      */
     static func ==(lhs: SessionState, rhs: SessionState) -> Bool {
         guard lhs.version == rhs.version,
-            lhs.previousCounter == rhs.previousCounter,
-            lhs.remoteRegistrationID == rhs.remoteRegistrationID,
-            lhs.localRegistrationID == rhs.localRegistrationID else {
+            lhs.previousCounter == rhs.previousCounter else {
                 return false
         }
         guard lhs.localIdentity == rhs.localIdentity,

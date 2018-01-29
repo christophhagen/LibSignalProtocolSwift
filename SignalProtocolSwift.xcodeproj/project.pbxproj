@@ -462,9 +462,9 @@
 		CEB45A50201CB2FD002BB845 /* Elliptic Keys */ = {
 			isa = PBXGroup;
 			children = (
+				CEB45A55201CB320002BB845 /* KeyPair.swift */,
 				CEB45A51201CB30E002BB845 /* PrivateKey.swift */,
 				CEB45A53201CB318002BB845 /* PublicKey.swift */,
-				CEB45A55201CB320002BB845 /* KeyPair.swift */,
 			);
 			path = "Elliptic Keys";
 			sourceTree = "<group>";

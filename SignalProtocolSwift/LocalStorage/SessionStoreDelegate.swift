@@ -11,8 +11,7 @@ import Foundation
 /**
  Implement the `SessionStoreDelegate` protocol to handle the Session records of the
  Signal Protocol API. The records should be stored in a secure database and be treated as
- unspecified data blobs. Register your implementation with an instance of `KeyStore` to
- receive events.
+ unspecified data blobs. 
  */
 public protocol SessionStoreDelegate {
 

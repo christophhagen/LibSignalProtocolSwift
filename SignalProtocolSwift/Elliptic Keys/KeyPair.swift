@@ -17,7 +17,6 @@ public struct KeyPair {
     /// Type declaration (only needed for compatibility)
     static let DJBType: UInt8 = 0x05
 
-    
     /// The public part of the key pair
     public let publicKey: PublicKey
 
@@ -44,10 +43,8 @@ public struct KeyPair {
      `curveError` if no public key could be created from the random private key.
      */
     public init() throws {
-        let newPrivateKey = try PrivateKey()
-        let newPublicKey = try PublicKey(privateKey: newPrivateKey)
-        self.privateKey = newPrivateKey
-        self.publicKey = newPublicKey
+        self.privateKey = try PrivateKey()
+        self.publicKey = try PublicKey(privateKey: self.privateKey)
     }
 
     // MARK: Exposed private key functions

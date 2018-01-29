@@ -35,7 +35,7 @@ public struct Fingerprint {
      - parameter remoteIdentity: Identity data of the remote party
      - throws: `SignalError` errors
      */
-    init(iterations: Int,
+    public init(iterations: Int,
          localStableIdentifier: String,
          localIdentity: Data,
          remoteStableIdentifier: String,

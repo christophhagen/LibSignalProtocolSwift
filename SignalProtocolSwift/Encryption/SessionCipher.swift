@@ -87,7 +87,6 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
         if let pendingPreKey = record.state.pendingPreKey {
             preKeyMessage = PreKeySignalMessage(
                 messageVersion: sessionVersion,
-                registrationId: record.state.localRegistrationID,
                 preKeyId: pendingPreKey.preKeyId,
                 signedPreKeyId: pendingPreKey.signedPreKeyId,
                 baseKey: pendingPreKey.baseKey,
@@ -191,15 +190,6 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
     public func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
         let builder = SessionBuilder(remoteAddress: remoteAddress, store: store)
         try builder.process(preKeyBundle: bundle)
-    }
-
-    /**
-     Gets the remote registration ID for this session cipher.
-     - returns: The remote registration id
-     - throws: `SignalError`of type `storageError`
-     */
-    func getRemoteRegistrationId() throws -> UInt32 {
-        return try loadSession().state.remoteRegistrationID
     }
 
     /**

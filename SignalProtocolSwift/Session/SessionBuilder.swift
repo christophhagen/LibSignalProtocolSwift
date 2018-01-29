@@ -56,7 +56,7 @@ struct SessionBuilder<Context: SignalProtocolStoreContext> {
 
         let theirIdentityKey = message.identityKey
 
-        guard store.identityKeyStore.isTrusted(identity: theirIdentityKey, for: remoteAddress) else {
+        guard try store.identityKeyStore.isTrusted(identity: theirIdentityKey, for: remoteAddress) else {
             throw SignalError(.untrustedIdentity, "Untrusted identity for \(remoteAddress)")
         }
         let result = try process(preKeySignalMessageV3: message, record: record)
@@ -100,8 +100,6 @@ struct SessionBuilder<Context: SignalProtocolStoreContext> {
             theirIdentityKey: message.identityKey,
             theirBaseKey: message.baseKey)
 
-        record.state.localRegistrationID = try store.identityKeyStore.getLocalRegistrationID()
-        record.state.remoteRegistrationID = message.registrationId
         record.state.aliceBaseKey = message.baseKey
 
         if message.preKeyId != SessionPreKey.mediumMaxValue {
@@ -117,7 +115,7 @@ struct SessionBuilder<Context: SignalProtocolStoreContext> {
      - throws: `SignalError` errors
      */
     func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
-        guard store.identityKeyStore.isTrusted(identity: bundle.identityKey, for: remoteAddress) else {
+        guard try store.identityKeyStore.isTrusted(identity: bundle.identityKey, for: remoteAddress) else {
             throw SignalError(.untrustedIdentity, "Untrusted identity for PreKeyBundle")
         }
 
@@ -148,8 +146,6 @@ struct SessionBuilder<Context: SignalProtocolStoreContext> {
             signedPreKeyId: bundle.signedPreKeyId,
             baseKey: ourBaseKey.publicKey)
 
-        session.state.localRegistrationID = try store.identityKeyStore.getLocalRegistrationID()
-        session.state.remoteRegistrationID = bundle.registrationId
         session.state.aliceBaseKey = ourBaseKey.publicKey
 
         try store.sessionStore.store(session: session, for: remoteAddress)

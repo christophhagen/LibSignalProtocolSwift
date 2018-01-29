@@ -88,7 +88,6 @@ class ProtocolTests: XCTestCase {
 
         let preKeyMessage = PreKeySignalMessage(
             messageVersion: 3,
-            registrationId: 42,
             preKeyId: preKeyId,
             signedPreKeyId: 72,
             baseKey: baseKey,
@@ -107,7 +106,6 @@ class ProtocolTests: XCTestCase {
 
         guard newMessage.version == preKeyMessage.version,
             newMessage.identityKey == preKeyMessage.identityKey,
-            newMessage.registrationId == preKeyMessage.registrationId,
             newMessage.preKeyId == preKeyMessage.preKeyId,
             newMessage.signedPreKeyId == preKeyMessage.signedPreKeyId,
             newMessage.baseKey == preKeyMessage.baseKey,

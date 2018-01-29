@@ -21,10 +21,7 @@ class SessionBuilderTests: XCTestCase {
         let aliceSessionBuilder = SessionBuilder(remoteAddress: bobAddress, store: aliceStore)
 
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
-            XCTFail("No local registration id for Bob")
-            return
-        }
+
         guard let bobPreKeyPair = try? KeyPair() else {
             XCTFail("Could not create pre key pair")
             return
@@ -34,7 +31,6 @@ class SessionBuilderTests: XCTestCase {
             return
         }
         let bundle = SessionPreKeyBundle(
-            registrationId: bobLocalRegistrationId,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: 0,
@@ -55,10 +51,7 @@ class SessionBuilderTests: XCTestCase {
         let aliceSessionBuilder = SessionBuilder(remoteAddress: bobAddress, store: aliceStore)
 
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
-            XCTFail("No local registration id for Bob")
-            return
-        }
+        
         guard let bobPreKeyPair = try? KeyPair(),
             let bobSignedPreKeyPair = try? KeyPair() else {
             XCTFail("Could not create pre key pairs")
@@ -78,7 +71,6 @@ class SessionBuilderTests: XCTestCase {
         let signedPreKeyId: UInt32 = 22
 
         let bobPreKey = SessionPreKeyBundle(
-            registrationId: bobLocalRegistrationId,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: signedPreKeyId,
@@ -208,7 +200,6 @@ class SessionBuilderTests: XCTestCase {
         let newSignedPreKeyId: UInt32 = 23
 
         let newBobPreKey = SessionPreKeyBundle(
-            registrationId: bobLocalRegistrationId,
             preKeyId: 31338,
             preKeyPublic: newBobPreKeyPair.publicKey,
             signedPreKeyId: newSignedPreKeyId,
@@ -295,7 +286,6 @@ class SessionBuilderTests: XCTestCase {
         }
 
         let bundle = SessionPreKeyBundle(
-            registrationId: bobLocalRegistrationId,
             preKeyId: 31337,
             preKeyPublic: testPublicKey,
             signedPreKeyId: 23,
@@ -321,10 +311,6 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create Bob's data store */
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
-            XCTFail("Could not get local registration id")
-            return
-        }
 
         /* Create Bob's regular and signed pre key pairs */
         guard let bobPreKeyPair = try? KeyPair(),
@@ -349,7 +335,6 @@ class SessionBuilderTests: XCTestCase {
 
             /* Create a pre key bundle */
             let bundle = SessionPreKeyBundle(
-                registrationId: bobLocalRegistrationId,
                 preKeyId: 31337,
                 preKeyPublic: bobPreKeyPair.publicKey,
                 signedPreKeyId: 22,
@@ -372,7 +357,6 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create a correct pre key bundle */
         let bundle = SessionPreKeyBundle(
-            registrationId: bobLocalRegistrationId,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: 22,
@@ -402,10 +386,6 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create Bob's data store */
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
-            XCTFail("Could not get local registration id")
-            return
-        }
 
         /* Create Bob's regular and signed pre key pairs */
         guard let bobPreKeyPair = try? KeyPair(),
@@ -424,7 +404,6 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create a pre key bundle */
         let bobPreKey = SessionPreKeyBundle(
-            registrationId: bobLocalRegistrationId,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: 22,
@@ -536,11 +515,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create Bob's data store */
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
-            XCTFail("Could not get local registration id")
-            return
-        }
-
+        
         /* Create Bob's regular and signed pre key pairs */
         guard let bobPreKeyPair = try? KeyPair(),
             let bobSignedPreKeyPair = try? KeyPair(),
@@ -558,7 +533,6 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create a pre key bundle */
         let bobPreKey = SessionPreKeyBundle(
-            registrationId: bobLocalRegistrationId,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: 22,
@@ -658,11 +632,7 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create Bob's data store */
         let bobStore = TestStore()
-        guard let bobLocalRegistrationId = try? bobStore.identityKeyStore.getLocalRegistrationID() else {
-            XCTFail("Could not get local registration id")
-            return
-        }
-
+        
         /* Create Bob's regular and signed pre key pairs */
         guard let bobPreKeyPair = try? KeyPair(),
             let bobSignedPreKeyPair = try? KeyPair(),
@@ -680,7 +650,6 @@ class SessionBuilderTests: XCTestCase {
 
         /* Create a pre key bundle */
         let bobPreKey = SessionPreKeyBundle(
-            registrationId: bobLocalRegistrationId,
             preKeyId: 0,
             preKeyPublic: nil,
             signedPreKeyId: 22,

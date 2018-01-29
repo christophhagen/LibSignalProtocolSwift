@@ -11,8 +11,7 @@ import Foundation
 /**
  Implement the `SignedPreKeyStoreDelegate` protocol to handle the Signed Pre Key storage of the
  Signal Protocol API. The keys should be stored in a secure database and be treated as
- unspecified data blobs. Register your implementation with an instance of `KeyStore` to
- receive events.
+ unspecified data blobs. 
  */
 public protocol SignedPreKeyStoreDelegate {
 

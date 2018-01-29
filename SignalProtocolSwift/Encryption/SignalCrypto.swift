@@ -95,24 +95,6 @@ public struct SignalCrypto {
     }
 
     /**
-     Generate a registration ID.  Clients should only do this once, at install time.
-     - parameter extendedRange: By default (`false`), the generated registration
-     ID is sized to require the minimal possible protobuf encoding overhead.
-     Specify `True` if the caller needs the full range of `Int32.max` at the
-     cost of slightly higher encoding overhead.
-     - returns: the generated registration ID
-     - throws: `SignalError` of type `noRandomBytes`
-     */
-    public static func generateRegistrationId(extendedRange: Bool = false) throws -> UInt32 {
-        let data = try random(bytes: 4)
-        let value: UInt32 = data.withUnsafeBytes { $0.pointee }
-        if extendedRange {
-            return value % 16380 + 1
-        }
-        return value
-    }
-
-    /**
      Generate a list of PreKeys.
 
      - note: Clients should do this at install time, and

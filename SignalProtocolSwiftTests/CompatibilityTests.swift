@@ -172,7 +172,7 @@ class CompatibilityTests: XCTestCase {
                                          senderIdentityKey: alice.publicKey, receiverIdentityKey: bob.publicKey)
 
         let preKeyMessage = PreKeySignalMessage(
-            messageVersion: 3, registrationId: 123, preKeyId: 2345, signedPreKeyId: 3456,
+            messageVersion: 3, preKeyId: 2345, signedPreKeyId: 3456,
             baseKey: baseKey, identityKey: alice.publicKey, message: message)
 
         guard let record = try? preKeyMessage.baseMessage().data else {

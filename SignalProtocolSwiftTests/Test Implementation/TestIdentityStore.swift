@@ -14,8 +14,6 @@ class TestIdentityStore: IdentityKeyStoreDelegate {
 
     private var identityKey: Data!
 
-    private var localRegistrationID: UInt32!
-
     private var identities = [SignalAddress : Data]()
 
     func getIdentityKeyData() throws -> Data {
@@ -29,20 +27,10 @@ class TestIdentityStore: IdentityKeyStoreDelegate {
         identityKey = identityKeyData
     }
 
-    func getLocalRegistrationID() throws -> UInt32 {
-        if localRegistrationID == nil {
-            localRegistrationID = try SignalCrypto.generateRegistrationId(extendedRange: false)
-        }
-        return localRegistrationID
+    func identity(for address: SignalAddress) throws -> Data? {
+        return identities[address]
     }
 
-    func isTrusted(identity: Data, for address: SignalAddress) -> Bool {
-        guard let id = identities[address] else {
-            // Trust if no identity exists for address
-            return true
-        }
-        return id == identity
-    }
 
     func store(identity: Data?, for address: SignalAddress) throws {
         identities[address] = identity
