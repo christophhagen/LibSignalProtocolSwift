@@ -2,8 +2,6 @@ use_frameworks!
 
 abstract_target 'SignalProtocolSwift' do
 
-
-
   # Pods for SignalProtocolSwift
 
   # Protocol Buffers in Swift
