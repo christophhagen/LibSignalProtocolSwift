@@ -14,7 +14,6 @@ abstract_target 'SignalProtocolSwift' do
   pod 'CommonCryptoModule', '~> 1.0.2'
 
 
-
   # iOS
   target 'SignalProtocolSwift iOS' do
     platform :ios, '9.0'
