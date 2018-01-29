@@ -8,7 +8,7 @@
 
 import XCTest
 import Curve25519
-@testable import SignalProtocolSwift
+@testable import SignalProtocol
 
 // The result from forming an agreement between alice and bob
 private let shared = Data([

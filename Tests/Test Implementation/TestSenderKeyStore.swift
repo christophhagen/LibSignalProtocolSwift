@@ -5,7 +5,8 @@
 //  Created by User on 26.01.18.
 //
 
-import SignalProtocolSwift
+import Foundation
+import SignalProtocol
 
 /**
  Implement the `SenderKeyStore` protocol to handle the sender key storage of the Signal Protocol.

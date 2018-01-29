@@ -5,7 +5,8 @@
 //  Created by User on 26.01.18.
 //
 
-import SignalProtocolSwift
+import Foundation
+import SignalProtocol
 
 /**
  Implement the `SessionStore` protocol to handle the session records of the Signal Protocol.

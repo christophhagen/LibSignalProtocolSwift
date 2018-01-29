@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SignalProtocolSwift
+@testable import SignalProtocol
 
 private let groupSender = SignalSenderKeyName(
     groupId: "nihilist history reading group",

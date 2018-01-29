@@ -5,7 +5,8 @@
 //  Created by User on 26.01.18.
 //
 
-import SignalProtocolSwift
+import Foundation
+import SignalProtocol
 
 /**
  Implement the `SignedPreKeyStore` protocol to handle the signed pre key storage of the Signal Protocol.

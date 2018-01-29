@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SignalProtocolSwift
+@testable import SignalProtocol
 
 class RatchetTests: XCTestCase {
 

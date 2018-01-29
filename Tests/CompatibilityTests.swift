@@ -8,7 +8,7 @@
 
 import XCTest
 import Curve25519
-@testable import SignalProtocolSwift
+@testable import SignalProtocol
 
 
 private let ratchetKey = Data([

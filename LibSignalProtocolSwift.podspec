@@ -9,6 +9,7 @@ Pod::Spec.new do |spec|
         :tag => spec.version
     }
     spec.swift_version = '4.0'
+    spec.module_name  = 'SignalProtocol'
 
     spec.authors = { 'Christoph Hagen' => 'christoph@spacemasters.eu' } 
     spec.homepage = 'https://github.com/christophhagen/LibSignalProtocolSwift'
@@ -18,7 +19,7 @@ Pod::Spec.new do |spec|
     spec.tvos.deployment_target = '9.0'
     spec.watchos.deployment_target = '4.0'
 
-    spec.source_files = 'SignalProtocolSwift/**/*.{swift,h,c}'
+    spec.source_files = 'Sources/**/*.{swift,h}'
     
     spec.dependency 'SwiftProtobuf'
     spec.dependency 'Curve25519'

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:LibSignalProtocolSwift.xcodeproj">
+      location = "group:/Users/User/Development/Github/LibSignalProtocolSwift/SignalProtocol.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

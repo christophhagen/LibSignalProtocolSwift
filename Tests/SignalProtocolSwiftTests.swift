@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SignalProtocolSwift
+@testable import SignalProtocol
 
 class SignalProtocolSwiftTests: XCTestCase {
 
