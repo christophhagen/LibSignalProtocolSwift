@@ -35,7 +35,6 @@ class SessionBuilderTests: XCTestCase {
         }
         let bundle = SessionPreKeyBundle(
             registrationId: bobLocalRegistrationId,
-            deviceId: 1,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: 0,
@@ -80,7 +79,6 @@ class SessionBuilderTests: XCTestCase {
 
         let bobPreKey = SessionPreKeyBundle(
             registrationId: bobLocalRegistrationId,
-            deviceId: 1,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: signedPreKeyId,
@@ -211,7 +209,6 @@ class SessionBuilderTests: XCTestCase {
 
         let newBobPreKey = SessionPreKeyBundle(
             registrationId: bobLocalRegistrationId,
-            deviceId: 1,
             preKeyId: 31338,
             preKeyPublic: newBobPreKeyPair.publicKey,
             signedPreKeyId: newSignedPreKeyId,
@@ -299,7 +296,6 @@ class SessionBuilderTests: XCTestCase {
 
         let bundle = SessionPreKeyBundle(
             registrationId: bobLocalRegistrationId,
-            deviceId: 1,
             preKeyId: 31337,
             preKeyPublic: testPublicKey,
             signedPreKeyId: 23,
@@ -354,7 +350,6 @@ class SessionBuilderTests: XCTestCase {
             /* Create a pre key bundle */
             let bundle = SessionPreKeyBundle(
                 registrationId: bobLocalRegistrationId,
-                deviceId: 1,
                 preKeyId: 31337,
                 preKeyPublic: bobPreKeyPair.publicKey,
                 signedPreKeyId: 22,
@@ -378,7 +373,6 @@ class SessionBuilderTests: XCTestCase {
         /* Create a correct pre key bundle */
         let bundle = SessionPreKeyBundle(
             registrationId: bobLocalRegistrationId,
-            deviceId: 1,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: 22,
@@ -431,7 +425,6 @@ class SessionBuilderTests: XCTestCase {
         /* Create a pre key bundle */
         let bobPreKey = SessionPreKeyBundle(
             registrationId: bobLocalRegistrationId,
-            deviceId: 1,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: 22,
@@ -566,7 +559,6 @@ class SessionBuilderTests: XCTestCase {
         /* Create a pre key bundle */
         let bobPreKey = SessionPreKeyBundle(
             registrationId: bobLocalRegistrationId,
-            deviceId: 1,
             preKeyId: 31337,
             preKeyPublic: bobPreKeyPair.publicKey,
             signedPreKeyId: 22,
@@ -689,7 +681,6 @@ class SessionBuilderTests: XCTestCase {
         /* Create a pre key bundle */
         let bobPreKey = SessionPreKeyBundle(
             registrationId: bobLocalRegistrationId,
-            deviceId: 1,
             preKeyId: 0,
             preKeyPublic: nil,
             signedPreKeyId: 22,

@@ -10,7 +10,7 @@ import Foundation
 /**
  A Fingerprint to verify the keys specifically for displaying to the user
  */
-struct DisplayableFingerprint {
+public struct DisplayableFingerprint {
 
     /// Fingerprint String of the local device
     let local: String
@@ -19,7 +19,7 @@ struct DisplayableFingerprint {
     let remote: String
 
     /// Displaytext
-    let displayText: String
+    public let displayText: String
 
     /**
      Create a displayable fingerprint from local and remote fingerprint data.
@@ -43,7 +43,7 @@ struct DisplayableFingerprint {
      - parameter remoteFingerprint: The remote fingerprint data
      - throws: The `SignalError` with `invalidLength` if the fingerprint data is invalid
      */
-    init(localFingerprint: Data, remoteFingerprint: Data) throws {
+    public init(localFingerprint: Data, remoteFingerprint: Data) throws {
         guard localFingerprint.count >= Fingerprint.length else {
             throw SignalError(.invalidLength, "Invalid local fingerprint length \(localFingerprint.count)")
         }

@@ -18,28 +18,17 @@ public struct Fingerprint {
     static let version: UInt8 = 0
 
     /// The length of a fingerprint
-    static let length = 30
-
-    /// The version of the scannable fingerprint
-    enum Version: UInt32 {
-
-        /// Older version, including local identifiers
-        case version0 = 0
-
-        /// New version, only fingerprint data
-        case version1 = 1
-    }
+    public static let length = 30
 
     /// The displayable part of the fingerprint
-    let displayable: DisplayableFingerprint
+    public let displayable: DisplayableFingerprint
 
     /// The scannable part of the fingerprint
-    let scannable: ScannableFingerprint
+    public let scannable: ScannableFingerprint
 
     /**
      Create a new fingerprint.
      - parameter iterations: The number of iterations for the creation of the fingerprints
-     - parameter scannableVersion: The version of the scannable fingerprint
      - parameter localStableIdentifier: The id of the local party
      - parameter localIdentity: Identity data of the local party
      - parameter remoteStableIdentifier: The id of the remote party
@@ -47,7 +36,6 @@ public struct Fingerprint {
      - throws: `SignalError` errors
      */
     init(iterations: Int,
-         scannableVersion: Version,
          localStableIdentifier: String,
          localIdentity: Data,
          remoteStableIdentifier: String,
@@ -57,45 +45,37 @@ public struct Fingerprint {
             identity: localIdentity,
             stableIdentifier: localStableIdentifier,
             iterations: iterations)
+
         let remoteFingerprint = try getFingerprint(
             identity: remoteIdentity,
             stableIdentifier: remoteStableIdentifier,
             iterations: iterations)
-        self.displayable = try DisplayableFingerprint(localFingerprint: localFingerprint, remoteFingerprint: remoteFingerprint)
 
-        switch scannableVersion {
-        case .version0:
-            self.scannable = ScannableFingerprintV0(
-                localStableIdentifier: localStableIdentifier,
-                localFingerprint: localIdentity,
-                remoteStableIdentifier: remoteStableIdentifier,
-                remoteFingerprint: remoteIdentity)
-        case .version1:
-            self.scannable = try ScannableFingerprintV1(
-                localFingerprint: localFingerprint,
-                remoteFingerprint: remoteFingerprint)
-        }
+        self.displayable = try DisplayableFingerprint(
+            localFingerprint: localFingerprint,
+            remoteFingerprint: remoteFingerprint)
+
+        self.scannable = try ScannableFingerprint(
+            localFingerprint: localFingerprint,
+            remoteFingerprint: remoteFingerprint)
     }
 
     /**
      Create a new fingerprint.
      - parameter iterations: The number of iterations for the creation of the fingerprints
-     - parameter scannableVersion: The version of the scannable fingerprint
      - parameter localStableIdentifier: The id of the local party
      - parameter localIdentity: The public key of the local party
      - parameter remoteStableIdentifier: The id of the remote party
      - parameter remoteIdentity: The public key of the remote party
      - throws: `SignalError` errors
      */
-    init(iterations: Int,
-         scannableVersion: Fingerprint.Version,
+    public init(iterations: Int,
          localStableIdentifier: String,
          localIdentity: PublicKey,
          remoteStableIdentifier: String,
          remoteIdentity: PublicKey) throws {
         try self.init(
             iterations: iterations,
-            scannableVersion: scannableVersion,
             localStableIdentifier: localStableIdentifier,
             localIdentity: localIdentity.data,
             remoteStableIdentifier: remoteStableIdentifier,
@@ -105,22 +85,19 @@ public struct Fingerprint {
     /**
      Create a new fingerprint.
      - parameter iterations: The number of iterations for the creation of the fingerprints
-     - parameter scannableVersion: The version of the scannable fingerprint
      - parameter localStableIdentifier: The id of the local party
      - parameter localIdentity: The public keys of the local parties
      - parameter remoteStableIdentifier: The id of the remote party
      - parameter remoteIdentity: The public keys of the remote parties
      - throws: `SignalError` errors
      */
-    init(iterations: Int,
-         scannableVersion: Fingerprint.Version,
+    public init(iterations: Int,
          localStableIdentifier: String,
          localIdentityList: [PublicKey],
          remoteStableIdentifier: String,
          remoteIdentityList: [PublicKey]) throws {
         try self.init(
             iterations: iterations,
-            scannableVersion: scannableVersion,
             localStableIdentifier: localStableIdentifier,
             localIdentity: getLogicalKey(for: localIdentityList),
             remoteStableIdentifier: remoteStableIdentifier,

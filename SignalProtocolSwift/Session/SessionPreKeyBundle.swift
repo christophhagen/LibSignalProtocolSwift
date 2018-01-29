@@ -16,9 +16,6 @@ public struct SessionPreKeyBundle {
     /// The registration id of the remote party
     var registrationId: UInt32
 
-    /// The device id of the remote party
-    var deviceId: UInt32
-
     /// The id of the pre key that was used
     var preKeyId: UInt32
 
@@ -50,7 +47,6 @@ public struct SessionPreKeyBundle {
     */
     public init(
         registrationId: UInt32,
-        deviceId: UInt32,
         preKeyId: UInt32,
         preKeyPublic: PublicKey?,
         signedPreKeyId: UInt32,
@@ -59,7 +55,6 @@ public struct SessionPreKeyBundle {
         identityKey: PublicKey) {
 
         self.registrationId = registrationId
-        self.deviceId = deviceId
         self.preKeyId = preKeyId
         self.preKeyPublic = preKeyPublic
         self.signedPreKeyId = signedPreKeyId
@@ -77,13 +72,11 @@ public struct SessionPreKeyBundle {
      - parameter identityKey: The identity key of the remote party
      */
     init(registrationId: UInt32,
-                deviceId: UInt32,
                 preKey: SessionPublicPreKey,
                 signedPreKey: SessionPublicSignedPreKey,
                 identityKey: PublicKey) {
 
         self.registrationId = registrationId
-        self.deviceId = deviceId
         self.preKeyId = preKey.id
         self.preKeyPublic = preKey.key
         self.signedPreKeyId = signedPreKey.id
@@ -108,7 +101,6 @@ public struct SessionPreKeyBundle {
                 identityKey: Data) throws {
 
         self.init(registrationId: registrationId,
-                  deviceId: deviceId,
                   preKey: try SessionPublicPreKey(from: preKey),
                   signedPreKey: try SessionPublicSignedPreKey(from: signedPreKey),
                   identityKey: try PublicKey(from: identityKey))

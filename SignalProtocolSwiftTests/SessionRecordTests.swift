@@ -121,13 +121,13 @@ class SessionRecordTests: XCTestCase {
 
         /* Verify that only the latter 5 are actually there */
         for i in 0..<2 {
-            if state.getReceiverChainKey(for: ratchetKeys[i]) != nil {
+            if state.receiverChainKey(for: ratchetKeys[i]) != nil {
                 XCTFail("Should not have receiver chain")
                 return
             }
         }
         for i in 2..<7 {
-            guard let key = state.getReceiverChainKey(for: ratchetKeys[i]) else {
+            guard let key = state.receiverChainKey(for: ratchetKeys[i]) else {
                 XCTFail("Could not get receiver chain")
                 return
             }
