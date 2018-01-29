@@ -1,0 +1,1740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F4A66D94F06E0A68FF80AE9 /* Pods_LibSignalProtocolSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBD8272FA9D2E387BA8567C /* Pods_LibSignalProtocolSwift_Tests.framework */; };
+		2B63F6D996E0308D57938D7A /* Pods_SignalProtocolSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD351464F8FC9A55BE05F9DD /* Pods_SignalProtocolSwift_Tests.framework */; };
+		37B4CCC75DB9A1D9700ED63C /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF2604919C7D18EB6994326A /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */; };
+		628A7FEA13872DC7D517B1AA /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077A0A91E1D03DD677895CA6 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */; };
+		CE53032C201F47920004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
+		CE53032E201F4EDA0004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
+		CE53032F201F57A70004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
+		CE530330201F57A70004942F /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
+		CE530331201F57A70004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
+		CE530332201F57A70004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
+		CE530333201F57A70004942F /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
+		CE530334201F57A70004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
+		CE530335201F57A80004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
+		CE530336201F57A80004942F /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
+		CE530337201F57A80004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
+		CEB45A4A201CB2E6002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEB45A52201CB30E002BB845 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A51201CB30E002BB845 /* PrivateKey.swift */; };
+		CEB45A54201CB318002BB845 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A53201CB318002BB845 /* PublicKey.swift */; };
+		CEB45A56201CB320002BB845 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A55201CB320002BB845 /* KeyPair.swift */; };
+		CEB45A60201CB3AE002BB845 /* LibSignalProtocolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB45A45201CB2E6002BB845 /* LibSignalProtocolSwift.framework */; };
+		CEB45A68201CB427002BB845 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A67201CB427002BB845 /* SignalError.swift */; };
+		CEB45A6B201CB4BC002BB845 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
+		CEB45A6C201CB4BC002BB845 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
+		CEB45AA8201CB4D0002BB845 /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6E201CB4CF002BB845 /* PreKeySignalMessage.swift */; };
+		CEB45AA9201CB4D0002BB845 /* SenderKeyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6F201CB4CF002BB845 /* SenderKeyMessage.swift */; };
+		CEB45AAA201CB4D0002BB845 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */; };
+		CEB45AAB201CB4D0002BB845 /* CipherTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */; };
+		CEB45AAC201CB4D0002BB845 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A72201CB4CF002BB845 /* SignalMessage.swift */; };
+		CEB45AB8201CB4D0002BB845 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */; };
+		CEB45AB9201CB4D0002BB845 /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A82201CB4CF002BB845 /* Fingerprint.swift */; };
+		CEB45ABA201CB4D0002BB845 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */; };
+		CEB45ABB201CB4D0002BB845 /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A85201CB4CF002BB845 /* SenderKeyState.swift */; };
+		CEB45ABC201CB4D0002BB845 /* SessionCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A86201CB4CF002BB845 /* SessionCipher.swift */; };
+		CEB45ABD201CB4D0002BB845 /* GroupCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A87201CB4CF002BB845 /* GroupCipher.swift */; };
+		CEB45ABE201CB4D0002BB845 /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */; };
+		CEB45ABF201CB4D0002BB845 /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */; };
+		CEB45AC0201CB4D0002BB845 /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */; };
+		CEB45AC2201CB4D0002BB845 /* SenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */; };
+		CEB45AC3201CB4D0002BB845 /* IdentityKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */; };
+		CEB45AC4201CB4D0002BB845 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* KeyStore.swift */; };
+		CEB45AC5201CB4D0002BB845 /* SignedPrekeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */; };
+		CEB45AC6201CB4D0002BB845 /* PreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */; };
+		CEB45AC7201CB4D0002BB845 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStore.swift */; };
+		CEB45AC8201CB4D0002BB845 /* RatchetMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */; };
+		CEB45AC9201CB4D0002BB845 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A95201CB4D0002BB845 /* HKDF.swift */; };
+		CEB45ACA201CB4D0002BB845 /* RatchetChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */; };
+		CEB45ACB201CB4D0002BB845 /* SenderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A97201CB4D0002BB845 /* SenderChain.swift */; };
+		CEB45ACC201CB4D0002BB845 /* ReceiverChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A98201CB4D0002BB845 /* ReceiverChain.swift */; };
+		CEB45ACD201CB4D0002BB845 /* RatchetRootKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A99201CB4D0002BB845 /* RatchetRootKey.swift */; };
+		CEB45ACE201CB4D0002BB845 /* SenderMessageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9A201CB4D0002BB845 /* SenderMessageKey.swift */; };
+		CEB45ACF201CB4D0002BB845 /* SenderChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9B201CB4D0002BB845 /* SenderChainKey.swift */; };
+		CEB45AD0201CB4D0002BB845 /* DeviceConsistencySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9D201CB4D0002BB845 /* DeviceConsistencySignature.swift */; };
+		CEB45AD1201CB4D0002BB845 /* DeviceConsistencyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9E201CB4D0002BB845 /* DeviceConsistencyMessage.swift */; };
+		CEB45AD2201CB4D0002BB845 /* DeviceConsistencyCommitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9F201CB4D0002BB845 /* DeviceConsistencyCommitment.swift */; };
+		CEB45AD3201CB4D0002BB845 /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */; };
+		CEB45AD4201CB4D0002BB845 /* SessionSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */; };
+		CEB45AD5201CB4D0002BB845 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */; };
+		CEB45AD6201CB4D0002BB845 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */; };
+		CEB45AD7201CB4D0002BB845 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */; };
+		CEB45AD8201CB4D0002BB845 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
+		CEB45AD9201CB4D0002BB845 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA7201CB4D0002BB845 /* SessionState.swift */; };
+		CEB45B47201CC640002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */; };
+		CEB45B48201CC648002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */; };
+		CEB45B49201CC649002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */; };
+		CEB45B4A201CC649002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */; };
+		CEB45B98201CC6FD002BB845 /* CompatibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B80201CC6F6002BB845 /* CompatibilityTests.swift */; };
+		CEB45B9A201CC6FD002BB845 /* DeviceConsistencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B82201CC6F6002BB845 /* DeviceConsistencyTests.swift */; };
+		CEB45B9B201CC6FD002BB845 /* FingerprintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B86201CC6F6002BB845 /* FingerprintTests.swift */; };
+		CEB45B9C201CC6FD002BB845 /* GroupCipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B87201CC6F6002BB845 /* GroupCipherTests.swift */; };
+		CEB45B9D201CC6FD002BB845 /* HKDFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B7C201CC6F5002BB845 /* HKDFTests.swift */; };
+		CEB45B9E201CC6FD002BB845 /* KeyHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B84201CC6F6002BB845 /* KeyHelperTests.swift */; };
+		CEB45B9F201CC6FD002BB845 /* ProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B85201CC6F6002BB845 /* ProtocolTests.swift */; };
+		CEB45BA0201CC6FD002BB845 /* RatchetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B7F201CC6F6002BB845 /* RatchetTests.swift */; };
+		CEB45BA1201CC6FD002BB845 /* SenderKeyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B88201CC6F7002BB845 /* SenderKeyRecordTests.swift */; };
+		CEB45BA2201CC6FD002BB845 /* SessionBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B7E201CC6F6002BB845 /* SessionBuilderTests.swift */; };
+		CEB45BA3201CC6FD002BB845 /* SessionCipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B83201CC6F6002BB845 /* SessionCipherTests.swift */; };
+		CEB45BA4201CC6FD002BB845 /* SessionRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B7D201CC6F6002BB845 /* SessionRecordTests.swift */; };
+		CEB45BA6201CC6FD002BB845 /* TestHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B7B201CC6F5002BB845 /* TestHelperFunctions.swift */; };
+		CEB45BB6201CC716002BB845 /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BA8201CC70B002BB845 /* TestStore.swift */; };
+		CEB45BB7201CC716002BB845 /* TestIdentityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BA9201CC70B002BB845 /* TestIdentityStore.swift */; };
+		CEB45BB8201CC716002BB845 /* TestFakeCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BAA201CC70B002BB845 /* TestFakeCryptoProvider.swift */; };
+		CEB45BB9201CC716002BB845 /* TestSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BAB201CC70B002BB845 /* TestSessionStore.swift */; };
+		CEB45BBA201CC716002BB845 /* TestPreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BAC201CC70C002BB845 /* TestPreKeyStore.swift */; };
+		CEB45BBB201CC716002BB845 /* TestSenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BAD201CC70C002BB845 /* TestSenderKeyStore.swift */; };
+		CEB45BBC201CC716002BB845 /* TestSignedPreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BAE201CC70C002BB845 /* TestSignedPreKeyStore.swift */; };
+		CEB45BBF201CC7A6002BB845 /* SignalProtocolSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BBD201CC7A2002BB845 /* SignalProtocolSwiftTests.swift */; };
+		CEB45BC8201CD03A002BB845 /* CurveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BC6201CCF31002BB845 /* CurveTests.swift */; };
+		CEB45BC9201CD405002BB845 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A67201CB427002BB845 /* SignalError.swift */; };
+		CEB45BCA201CD405002BB845 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
+		CEB45BCB201CD405002BB845 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
+		CEB45BCC201CD406002BB845 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A67201CB427002BB845 /* SignalError.swift */; };
+		CEB45BCD201CD406002BB845 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
+		CEB45BCE201CD406002BB845 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
+		CEB45BCF201CD406002BB845 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A67201CB427002BB845 /* SignalError.swift */; };
+		CEB45BD0201CD406002BB845 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
+		CEB45BD1201CD406002BB845 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
+		CEB45BD2201CD40B002BB845 /* DeviceConsistencySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9D201CB4D0002BB845 /* DeviceConsistencySignature.swift */; };
+		CEB45BD3201CD40B002BB845 /* DeviceConsistencyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9E201CB4D0002BB845 /* DeviceConsistencyMessage.swift */; };
+		CEB45BD4201CD40B002BB845 /* DeviceConsistencyCommitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9F201CB4D0002BB845 /* DeviceConsistencyCommitment.swift */; };
+		CEB45BD5201CD40C002BB845 /* DeviceConsistencySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9D201CB4D0002BB845 /* DeviceConsistencySignature.swift */; };
+		CEB45BD6201CD40C002BB845 /* DeviceConsistencyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9E201CB4D0002BB845 /* DeviceConsistencyMessage.swift */; };
+		CEB45BD7201CD40C002BB845 /* DeviceConsistencyCommitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9F201CB4D0002BB845 /* DeviceConsistencyCommitment.swift */; };
+		CEB45BD8201CD40C002BB845 /* DeviceConsistencySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9D201CB4D0002BB845 /* DeviceConsistencySignature.swift */; };
+		CEB45BD9201CD40C002BB845 /* DeviceConsistencyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9E201CB4D0002BB845 /* DeviceConsistencyMessage.swift */; };
+		CEB45BDA201CD40C002BB845 /* DeviceConsistencyCommitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9F201CB4D0002BB845 /* DeviceConsistencyCommitment.swift */; };
+		CEB45BDB201CD411002BB845 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A51201CB30E002BB845 /* PrivateKey.swift */; };
+		CEB45BDC201CD411002BB845 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A53201CB318002BB845 /* PublicKey.swift */; };
+		CEB45BDD201CD411002BB845 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A55201CB320002BB845 /* KeyPair.swift */; };
+		CEB45BDE201CD411002BB845 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A51201CB30E002BB845 /* PrivateKey.swift */; };
+		CEB45BDF201CD411002BB845 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A53201CB318002BB845 /* PublicKey.swift */; };
+		CEB45BE0201CD411002BB845 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A55201CB320002BB845 /* KeyPair.swift */; };
+		CEB45BE1201CD412002BB845 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A51201CB30E002BB845 /* PrivateKey.swift */; };
+		CEB45BE2201CD412002BB845 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A53201CB318002BB845 /* PublicKey.swift */; };
+		CEB45BE3201CD412002BB845 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A55201CB320002BB845 /* KeyPair.swift */; };
+		CEB45BE4201CD416002BB845 /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A85201CB4CF002BB845 /* SenderKeyState.swift */; };
+		CEB45BE5201CD416002BB845 /* SessionCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A86201CB4CF002BB845 /* SessionCipher.swift */; };
+		CEB45BE6201CD416002BB845 /* GroupCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A87201CB4CF002BB845 /* GroupCipher.swift */; };
+		CEB45BE7201CD416002BB845 /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */; };
+		CEB45BE8201CD416002BB845 /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */; };
+		CEB45BE9201CD416002BB845 /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */; };
+		CEB45BEA201CD417002BB845 /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A85201CB4CF002BB845 /* SenderKeyState.swift */; };
+		CEB45BEB201CD417002BB845 /* SessionCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A86201CB4CF002BB845 /* SessionCipher.swift */; };
+		CEB45BEC201CD417002BB845 /* GroupCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A87201CB4CF002BB845 /* GroupCipher.swift */; };
+		CEB45BED201CD417002BB845 /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */; };
+		CEB45BEE201CD417002BB845 /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */; };
+		CEB45BEF201CD417002BB845 /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */; };
+		CEB45BF0201CD417002BB845 /* SenderKeyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A85201CB4CF002BB845 /* SenderKeyState.swift */; };
+		CEB45BF1201CD417002BB845 /* SessionCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A86201CB4CF002BB845 /* SessionCipher.swift */; };
+		CEB45BF2201CD417002BB845 /* GroupCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A87201CB4CF002BB845 /* GroupCipher.swift */; };
+		CEB45BF3201CD417002BB845 /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */; };
+		CEB45BF4201CD417002BB845 /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */; };
+		CEB45BF5201CD417002BB845 /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */; };
+		CEB45BF6201CD41B002BB845 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */; };
+		CEB45BF7201CD41B002BB845 /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A82201CB4CF002BB845 /* Fingerprint.swift */; };
+		CEB45BF8201CD41B002BB845 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */; };
+		CEB45BF9201CD41C002BB845 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */; };
+		CEB45BFA201CD41C002BB845 /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A82201CB4CF002BB845 /* Fingerprint.swift */; };
+		CEB45BFB201CD41C002BB845 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */; };
+		CEB45BFC201CD41C002BB845 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */; };
+		CEB45BFD201CD41C002BB845 /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A82201CB4CF002BB845 /* Fingerprint.swift */; };
+		CEB45BFE201CD41C002BB845 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */; };
+		CEB45BFF201CD421002BB845 /* SenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */; };
+		CEB45C00201CD421002BB845 /* IdentityKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */; };
+		CEB45C01201CD421002BB845 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* KeyStore.swift */; };
+		CEB45C02201CD421002BB845 /* SignedPrekeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */; };
+		CEB45C03201CD421002BB845 /* PreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */; };
+		CEB45C04201CD421002BB845 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStore.swift */; };
+		CEB45C05201CD422002BB845 /* SenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */; };
+		CEB45C06201CD422002BB845 /* IdentityKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */; };
+		CEB45C07201CD422002BB845 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* KeyStore.swift */; };
+		CEB45C08201CD422002BB845 /* SignedPrekeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */; };
+		CEB45C09201CD422002BB845 /* PreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */; };
+		CEB45C0A201CD422002BB845 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStore.swift */; };
+		CEB45C0B201CD422002BB845 /* SenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */; };
+		CEB45C0C201CD422002BB845 /* IdentityKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */; };
+		CEB45C0D201CD422002BB845 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* KeyStore.swift */; };
+		CEB45C0E201CD422002BB845 /* SignedPrekeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */; };
+		CEB45C0F201CD422002BB845 /* PreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */; };
+		CEB45C10201CD422002BB845 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStore.swift */; };
+		CEB45C11201CD426002BB845 /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6E201CB4CF002BB845 /* PreKeySignalMessage.swift */; };
+		CEB45C12201CD426002BB845 /* SenderKeyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6F201CB4CF002BB845 /* SenderKeyMessage.swift */; };
+		CEB45C13201CD426002BB845 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */; };
+		CEB45C14201CD426002BB845 /* CipherTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */; };
+		CEB45C15201CD426002BB845 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A72201CB4CF002BB845 /* SignalMessage.swift */; };
+		CEB45C16201CD427002BB845 /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6E201CB4CF002BB845 /* PreKeySignalMessage.swift */; };
+		CEB45C17201CD427002BB845 /* SenderKeyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6F201CB4CF002BB845 /* SenderKeyMessage.swift */; };
+		CEB45C18201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */; };
+		CEB45C19201CD427002BB845 /* CipherTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */; };
+		CEB45C1A201CD427002BB845 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A72201CB4CF002BB845 /* SignalMessage.swift */; };
+		CEB45C1B201CD427002BB845 /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6E201CB4CF002BB845 /* PreKeySignalMessage.swift */; };
+		CEB45C1C201CD427002BB845 /* SenderKeyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6F201CB4CF002BB845 /* SenderKeyMessage.swift */; };
+		CEB45C1D201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */; };
+		CEB45C1E201CD427002BB845 /* CipherTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */; };
+		CEB45C1F201CD427002BB845 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A72201CB4CF002BB845 /* SignalMessage.swift */; };
+		CEB45C29201CD444002BB845 /* RatchetMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */; };
+		CEB45C2A201CD444002BB845 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A95201CB4D0002BB845 /* HKDF.swift */; };
+		CEB45C2B201CD444002BB845 /* RatchetChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */; };
+		CEB45C2C201CD444002BB845 /* SenderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A97201CB4D0002BB845 /* SenderChain.swift */; };
+		CEB45C2D201CD444002BB845 /* ReceiverChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A98201CB4D0002BB845 /* ReceiverChain.swift */; };
+		CEB45C2E201CD444002BB845 /* RatchetRootKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A99201CB4D0002BB845 /* RatchetRootKey.swift */; };
+		CEB45C2F201CD444002BB845 /* SenderMessageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9A201CB4D0002BB845 /* SenderMessageKey.swift */; };
+		CEB45C30201CD444002BB845 /* SenderChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9B201CB4D0002BB845 /* SenderChainKey.swift */; };
+		CEB45C31201CD445002BB845 /* RatchetMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */; };
+		CEB45C32201CD445002BB845 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A95201CB4D0002BB845 /* HKDF.swift */; };
+		CEB45C33201CD445002BB845 /* RatchetChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */; };
+		CEB45C34201CD445002BB845 /* SenderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A97201CB4D0002BB845 /* SenderChain.swift */; };
+		CEB45C35201CD445002BB845 /* ReceiverChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A98201CB4D0002BB845 /* ReceiverChain.swift */; };
+		CEB45C36201CD445002BB845 /* RatchetRootKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A99201CB4D0002BB845 /* RatchetRootKey.swift */; };
+		CEB45C37201CD445002BB845 /* SenderMessageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9A201CB4D0002BB845 /* SenderMessageKey.swift */; };
+		CEB45C38201CD445002BB845 /* SenderChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9B201CB4D0002BB845 /* SenderChainKey.swift */; };
+		CEB45C39201CD445002BB845 /* RatchetMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */; };
+		CEB45C3A201CD445002BB845 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A95201CB4D0002BB845 /* HKDF.swift */; };
+		CEB45C3B201CD445002BB845 /* RatchetChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */; };
+		CEB45C3C201CD445002BB845 /* SenderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A97201CB4D0002BB845 /* SenderChain.swift */; };
+		CEB45C3D201CD445002BB845 /* ReceiverChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A98201CB4D0002BB845 /* ReceiverChain.swift */; };
+		CEB45C3E201CD445002BB845 /* RatchetRootKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A99201CB4D0002BB845 /* RatchetRootKey.swift */; };
+		CEB45C3F201CD445002BB845 /* SenderMessageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9A201CB4D0002BB845 /* SenderMessageKey.swift */; };
+		CEB45C40201CD445002BB845 /* SenderChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9B201CB4D0002BB845 /* SenderChainKey.swift */; };
+		CEB45C41201CD44A002BB845 /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */; };
+		CEB45C42201CD44A002BB845 /* SessionSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */; };
+		CEB45C43201CD44A002BB845 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */; };
+		CEB45C44201CD44A002BB845 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */; };
+		CEB45C45201CD44A002BB845 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */; };
+		CEB45C46201CD44A002BB845 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
+		CEB45C47201CD44A002BB845 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA7201CB4D0002BB845 /* SessionState.swift */; };
+		CEB45C48201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */; };
+		CEB45C49201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */; };
+		CEB45C4A201CD44B002BB845 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */; };
+		CEB45C4B201CD44B002BB845 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */; };
+		CEB45C4C201CD44B002BB845 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */; };
+		CEB45C4D201CD44B002BB845 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
+		CEB45C4E201CD44B002BB845 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA7201CB4D0002BB845 /* SessionState.swift */; };
+		CEB45C4F201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */; };
+		CEB45C50201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */; };
+		CEB45C51201CD44B002BB845 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */; };
+		CEB45C52201CD44B002BB845 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */; };
+		CEB45C53201CD44B002BB845 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */; };
+		CEB45C54201CD44B002BB845 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
+		CEB45C55201CD44B002BB845 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA7201CB4D0002BB845 /* SessionState.swift */; };
+		CEB45C56201CD455002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEB45C57201CD455002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEB45C58201CD455002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEB45C89201D081C002BB845 /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
+		CEB45C8B201D0A21002BB845 /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
+		CEC812E3201E35970018D42E /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
+		CEC812E4201E35970018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
+		CEC812E5201E35980018D42E /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
+		CEC812E6201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
+		CEC812E7201E35980018D42E /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
+		CEC812E8201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
+		CEC81310201F42020018D42E /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
+		EADBC08DBC0C9A6CA74803D0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6A95D8419ED17B37EA7DE /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */; };
+		EF2D63A73F5DA22F72A84793 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1374417731551C32C813AFE /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEB45A61201CB3AE002BB845 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB45A3C201CB2E6002BB845 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEB45A44201CB2E6002BB845;
+			remoteInfo = SignalProtocolSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		010E2220089C187449436277 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		077A0A91E1D03DD677895CA6 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2826F2778F158CD32730C902 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		328F18E63E967B55D2D2E446 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		34EFB0B51E05A9C9F6A1638F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig"; sourceTree = "<group>"; };
+		4FBD8272FA9D2E387BA8567C /* Pods_LibSignalProtocolSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5774948A33CE710A91729622 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		78445AB11A6B6C03490848ED /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C7F8C48D5A45F962540C14F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig"; sourceTree = "<group>"; };
+		97FAD81585E0F77CDB87E46F /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9994E1818E84F9F6DAAE7105 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		A1403FB452D2D1FFE0913A3E /* Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3482E904FEF2E039F316062 /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests.release.xcconfig"; sourceTree = "<group>"; };
+		AB543D11ECD3A6519E1100EF /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE53032B201F47920004942F /* LocalStorage.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.pb.swift; sourceTree = "<group>"; };
+		CE53032D201F4ED90004942F /* Messages.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.pb.swift; sourceTree = "<group>"; };
+		CEB45A45201CB2E6002BB845 /* LibSignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LibSignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalProtocolSwift.h; sourceTree = "<group>"; };
+		CEB45A49201CB2E6002BB845 /* Info iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info iOS.plist"; sourceTree = "<group>"; };
+		CEB45A51201CB30E002BB845 /* PrivateKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		CEB45A53201CB318002BB845 /* PublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		CEB45A55201CB320002BB845 /* KeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
+		CEB45A5B201CB3AE002BB845 /* LibSignalProtocolSwift Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LibSignalProtocolSwift Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB45A5F201CB3AE002BB845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB45A67201CB427002BB845 /* SignalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalError.swift; sourceTree = "<group>"; };
+		CEB45A69201CB4BC002BB845 /* SignalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalAddress.swift; sourceTree = "<group>"; };
+		CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSenderKeyName.swift; sourceTree = "<group>"; };
+		CEB45A6E201CB4CF002BB845 /* PreKeySignalMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKeySignalMessage.swift; sourceTree = "<group>"; };
+		CEB45A6F201CB4CF002BB845 /* SenderKeyMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyMessage.swift; sourceTree = "<group>"; };
+		CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyDistributionMessage.swift; sourceTree = "<group>"; };
+		CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CipherTextMessage.swift; sourceTree = "<group>"; };
+		CEB45A72201CB4CF002BB845 /* SignalMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalMessage.swift; sourceTree = "<group>"; };
+		CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayableFingerprint.swift; sourceTree = "<group>"; };
+		CEB45A82201CB4CF002BB845 /* Fingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fingerprint.swift; sourceTree = "<group>"; };
+		CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannableFingerprint.swift; sourceTree = "<group>"; };
+		CEB45A85201CB4CF002BB845 /* SenderKeyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyState.swift; sourceTree = "<group>"; };
+		CEB45A86201CB4CF002BB845 /* SessionCipher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCipher.swift; sourceTree = "<group>"; };
+		CEB45A87201CB4CF002BB845 /* GroupCipher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCipher.swift; sourceTree = "<group>"; };
+		CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyRecord.swift; sourceTree = "<group>"; };
+		CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCrypto.swift; sourceTree = "<group>"; };
+		CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCryptoProvider.swift; sourceTree = "<group>"; };
+		CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyStore.swift; sourceTree = "<group>"; };
+		CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityKeyStore.swift; sourceTree = "<group>"; };
+		CEB45A8F201CB4D0002BB845 /* KeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStore.swift; sourceTree = "<group>"; };
+		CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedPrekeyStore.swift; sourceTree = "<group>"; };
+		CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKeyStore.swift; sourceTree = "<group>"; };
+		CEB45A92201CB4D0002BB845 /* SessionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetMessageKeys.swift; sourceTree = "<group>"; };
+		CEB45A95201CB4D0002BB845 /* HKDF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKDF.swift; sourceTree = "<group>"; };
+		CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetChainKey.swift; sourceTree = "<group>"; };
+		CEB45A97201CB4D0002BB845 /* SenderChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderChain.swift; sourceTree = "<group>"; };
+		CEB45A98201CB4D0002BB845 /* ReceiverChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverChain.swift; sourceTree = "<group>"; };
+		CEB45A99201CB4D0002BB845 /* RatchetRootKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetRootKey.swift; sourceTree = "<group>"; };
+		CEB45A9A201CB4D0002BB845 /* SenderMessageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderMessageKey.swift; sourceTree = "<group>"; };
+		CEB45A9B201CB4D0002BB845 /* SenderChainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderChainKey.swift; sourceTree = "<group>"; };
+		CEB45A9D201CB4D0002BB845 /* DeviceConsistencySignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConsistencySignature.swift; sourceTree = "<group>"; };
+		CEB45A9E201CB4D0002BB845 /* DeviceConsistencyMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConsistencyMessage.swift; sourceTree = "<group>"; };
+		CEB45A9F201CB4D0002BB845 /* DeviceConsistencyCommitment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConsistencyCommitment.swift; sourceTree = "<group>"; };
+		CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionPreKeyBundle.swift; sourceTree = "<group>"; };
+		CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionSignedPreKey.swift; sourceTree = "<group>"; };
+		CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecord.swift; sourceTree = "<group>"; };
+		CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingPreKey.swift; sourceTree = "<group>"; };
+		CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionPreKey.swift; sourceTree = "<group>"; };
+		CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionBuilder.swift; sourceTree = "<group>"; };
+		CEB45AA7201CB4D0002BB845 /* SessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
+		CEB45AFD201CC35A002BB845 /* LibSignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LibSignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB45B00201CC35A002BB845 /* Info macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info macOS.plist"; sourceTree = "<group>"; };
+		CEB45B0A201CC383002BB845 /* LibSignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LibSignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB45B0D201CC383002BB845 /* Info tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info tvOS.plist"; sourceTree = "<group>"; };
+		CEB45B17201CC39B002BB845 /* LibSignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LibSignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB45B1A201CC39C002BB845 /* Info watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info watchOS.plist"; sourceTree = "<group>"; };
+		CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCommonCrypto.swift; sourceTree = "<group>"; };
+		CEB45B7B201CC6F5002BB845 /* TestHelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelperFunctions.swift; sourceTree = "<group>"; };
+		CEB45B7C201CC6F5002BB845 /* HKDFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKDFTests.swift; sourceTree = "<group>"; };
+		CEB45B7D201CC6F6002BB845 /* SessionRecordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecordTests.swift; sourceTree = "<group>"; };
+		CEB45B7E201CC6F6002BB845 /* SessionBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionBuilderTests.swift; sourceTree = "<group>"; };
+		CEB45B7F201CC6F6002BB845 /* RatchetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetTests.swift; sourceTree = "<group>"; };
+		CEB45B80201CC6F6002BB845 /* CompatibilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibilityTests.swift; sourceTree = "<group>"; };
+		CEB45B82201CC6F6002BB845 /* DeviceConsistencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConsistencyTests.swift; sourceTree = "<group>"; };
+		CEB45B83201CC6F6002BB845 /* SessionCipherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCipherTests.swift; sourceTree = "<group>"; };
+		CEB45B84201CC6F6002BB845 /* KeyHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyHelperTests.swift; sourceTree = "<group>"; };
+		CEB45B85201CC6F6002BB845 /* ProtocolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolTests.swift; sourceTree = "<group>"; };
+		CEB45B86201CC6F6002BB845 /* FingerprintTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerprintTests.swift; sourceTree = "<group>"; };
+		CEB45B87201CC6F6002BB845 /* GroupCipherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCipherTests.swift; sourceTree = "<group>"; };
+		CEB45B88201CC6F7002BB845 /* SenderKeyRecordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyRecordTests.swift; sourceTree = "<group>"; };
+		CEB45BA8201CC70B002BB845 /* TestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
+		CEB45BA9201CC70B002BB845 /* TestIdentityStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestIdentityStore.swift; sourceTree = "<group>"; };
+		CEB45BAA201CC70B002BB845 /* TestFakeCryptoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestFakeCryptoProvider.swift; sourceTree = "<group>"; };
+		CEB45BAB201CC70B002BB845 /* TestSessionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSessionStore.swift; sourceTree = "<group>"; };
+		CEB45BAC201CC70C002BB845 /* TestPreKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPreKeyStore.swift; sourceTree = "<group>"; };
+		CEB45BAD201CC70C002BB845 /* TestSenderKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSenderKeyStore.swift; sourceTree = "<group>"; };
+		CEB45BAE201CC70C002BB845 /* TestSignedPreKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSignedPreKeyStore.swift; sourceTree = "<group>"; };
+		CEB45BBD201CC7A2002BB845 /* SignalProtocolSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocolSwiftTests.swift; sourceTree = "<group>"; };
+		CEB45BC6201CCF31002BB845 /* CurveTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveTests.swift; sourceTree = "<group>"; };
+		CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPreKeyPublic.swift; sourceTree = "<group>"; };
+		CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSignedPreKeyPublic.swift; sourceTree = "<group>"; };
+		CEC8130F201F42020018D42E /* Fingerprint.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fingerprint.pb.swift; sourceTree = "<group>"; };
+		D4F6A95D8419ED17B37EA7DE /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD351464F8FC9A55BE05F9DD /* Pods_SignalProtocolSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1374417731551C32C813AFE /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5F15600F679C0D56DC65690 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB267DC8000EEE11123A60E7 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EF2604919C7D18EB6994326A /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEB45A41201CB2E6002BB845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37B4CCC75DB9A1D9700ED63C /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45A58201CB3AE002BB845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45A60201CB3AE002BB845 /* LibSignalProtocolSwift.framework in Frameworks */,
+				2B63F6D996E0308D57938D7A /* Pods_SignalProtocolSwift_Tests.framework in Frameworks */,
+				1F4A66D94F06E0A68FF80AE9 /* Pods_LibSignalProtocolSwift_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45AF9201CC35A002BB845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EADBC08DBC0C9A6CA74803D0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45B06201CC383002BB845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				628A7FEA13872DC7D517B1AA /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45B13201CC39B002BB845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2D63A73F5DA22F72A84793 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B8E92F8ACA06AC6761A584B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5F15600F679C0D56DC65690 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */,
+				A3482E904FEF2E039F316062 /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */,
+				010E2220089C187449436277 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */,
+				8C7F8C48D5A45F962540C14F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */,
+				EB267DC8000EEE11123A60E7 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */,
+				34EFB0B51E05A9C9F6A1638F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */,
+				328F18E63E967B55D2D2E446 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */,
+				9994E1818E84F9F6DAAE7105 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */,
+				2826F2778F158CD32730C902 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */,
+				5774948A33CE710A91729622 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CEB45A3B201CB2E6002BB845 = {
+			isa = PBXGroup;
+			children = (
+				CEB45A47201CB2E6002BB845 /* Sources */,
+				CEB45A5C201CB3AE002BB845 /* Tests */,
+				CEB45A46201CB2E6002BB845 /* Products */,
+				E6BC3082E9A2B16C2277100F /* Frameworks */,
+				B8E92F8ACA06AC6761A584B9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		CEB45A46201CB2E6002BB845 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A45201CB2E6002BB845 /* LibSignalProtocolSwift.framework */,
+				CEB45A5B201CB3AE002BB845 /* LibSignalProtocolSwift Tests.xctest */,
+				CEB45AFD201CC35A002BB845 /* LibSignalProtocolSwift.framework */,
+				CEB45B0A201CC383002BB845 /* LibSignalProtocolSwift.framework */,
+				CEB45B17201CC39B002BB845 /* LibSignalProtocolSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB45A47201CB2E6002BB845 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A66201CB418002BB845 /* Additional */,
+				CEB45A9C201CB4D0002BB845 /* DeviceConsistency */,
+				CEB45A50201CB2FD002BB845 /* Elliptic Keys */,
+				CEB45A84201CB4CF002BB845 /* Encryption */,
+				CEB45A80201CB4CF002BB845 /* Fingerprint */,
+				CEB45A8C201CB4D0002BB845 /* LocalStorage */,
+				CEB45A6D201CB4CF002BB845 /* MessageExchange */,
+				CEB45A73201CB4CF002BB845 /* ProtocolBuffers */,
+				CEB45A93201CB4D0002BB845 /* Ratchet */,
+				CEB45AA0201CB4D0002BB845 /* Session */,
+				CEB45B1F201CC3FB002BB845 /* Info */,
+				CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CEB45A50201CB2FD002BB845 /* Elliptic Keys */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A55201CB320002BB845 /* KeyPair.swift */,
+				CEB45A51201CB30E002BB845 /* PrivateKey.swift */,
+				CEB45A53201CB318002BB845 /* PublicKey.swift */,
+			);
+			path = "Elliptic Keys";
+			sourceTree = "<group>";
+		};
+		CEB45A5C201CB3AE002BB845 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45B80201CC6F6002BB845 /* CompatibilityTests.swift */,
+				CEB45BC6201CCF31002BB845 /* CurveTests.swift */,
+				CEB45B82201CC6F6002BB845 /* DeviceConsistencyTests.swift */,
+				CEB45B86201CC6F6002BB845 /* FingerprintTests.swift */,
+				CEB45B87201CC6F6002BB845 /* GroupCipherTests.swift */,
+				CEB45B7C201CC6F5002BB845 /* HKDFTests.swift */,
+				CEB45A5F201CB3AE002BB845 /* Info.plist */,
+				CEB45B84201CC6F6002BB845 /* KeyHelperTests.swift */,
+				CEB45B85201CC6F6002BB845 /* ProtocolTests.swift */,
+				CEB45B7F201CC6F6002BB845 /* RatchetTests.swift */,
+				CEB45B88201CC6F7002BB845 /* SenderKeyRecordTests.swift */,
+				CEB45B7E201CC6F6002BB845 /* SessionBuilderTests.swift */,
+				CEB45B83201CC6F6002BB845 /* SessionCipherTests.swift */,
+				CEB45B7D201CC6F6002BB845 /* SessionRecordTests.swift */,
+				CEB45BBD201CC7A2002BB845 /* SignalProtocolSwiftTests.swift */,
+				CEB45BA7201CC70B002BB845 /* Test Implementation */,
+				CEB45B7B201CC6F5002BB845 /* TestHelperFunctions.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CEB45A66201CB418002BB845 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A67201CB427002BB845 /* SignalError.swift */,
+				CEB45A69201CB4BC002BB845 /* SignalAddress.swift */,
+				CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */,
+			);
+			path = Additional;
+			sourceTree = "<group>";
+		};
+		CEB45A6D201CB4CF002BB845 /* MessageExchange */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A6E201CB4CF002BB845 /* PreKeySignalMessage.swift */,
+				CEB45A6F201CB4CF002BB845 /* SenderKeyMessage.swift */,
+				CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */,
+				CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */,
+				CEB45A72201CB4CF002BB845 /* SignalMessage.swift */,
+			);
+			path = MessageExchange;
+			sourceTree = "<group>";
+		};
+		CEB45A73201CB4CF002BB845 /* ProtocolBuffers */ = {
+			isa = PBXGroup;
+			children = (
+				CE53032D201F4ED90004942F /* Messages.pb.swift */,
+				CEC8130F201F42020018D42E /* Fingerprint.pb.swift */,
+				CE53032B201F47920004942F /* LocalStorage.pb.swift */,
+			);
+			path = ProtocolBuffers;
+			sourceTree = "<group>";
+		};
+		CEB45A80201CB4CF002BB845 /* Fingerprint */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */,
+				CEB45A82201CB4CF002BB845 /* Fingerprint.swift */,
+				CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */,
+			);
+			path = Fingerprint;
+			sourceTree = "<group>";
+		};
+		CEB45A84201CB4CF002BB845 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A87201CB4CF002BB845 /* GroupCipher.swift */,
+				CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */,
+				CEB45A85201CB4CF002BB845 /* SenderKeyState.swift */,
+				CEB45A86201CB4CF002BB845 /* SessionCipher.swift */,
+				CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */,
+				CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */,
+				CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
+		CEB45A8C201CB4D0002BB845 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */,
+				CEB45A8F201CB4D0002BB845 /* KeyStore.swift */,
+				CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */,
+				CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */,
+				CEB45A92201CB4D0002BB845 /* SessionStore.swift */,
+				CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		CEB45A93201CB4D0002BB845 /* Ratchet */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A95201CB4D0002BB845 /* HKDF.swift */,
+				CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */,
+				CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */,
+				CEB45A99201CB4D0002BB845 /* RatchetRootKey.swift */,
+				CEB45A98201CB4D0002BB845 /* ReceiverChain.swift */,
+				CEB45A97201CB4D0002BB845 /* SenderChain.swift */,
+				CEB45A9B201CB4D0002BB845 /* SenderChainKey.swift */,
+				CEB45A9A201CB4D0002BB845 /* SenderMessageKey.swift */,
+			);
+			path = Ratchet;
+			sourceTree = "<group>";
+		};
+		CEB45A9C201CB4D0002BB845 /* DeviceConsistency */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A9D201CB4D0002BB845 /* DeviceConsistencySignature.swift */,
+				CEB45A9E201CB4D0002BB845 /* DeviceConsistencyMessage.swift */,
+				CEB45A9F201CB4D0002BB845 /* DeviceConsistencyCommitment.swift */,
+			);
+			path = DeviceConsistency;
+			sourceTree = "<group>";
+		};
+		CEB45AA0201CB4D0002BB845 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */,
+				CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */,
+				CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */,
+				CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */,
+				CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */,
+				CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */,
+				CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */,
+				CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */,
+				CEB45AA7201CB4D0002BB845 /* SessionState.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		CEB45B1F201CC3FB002BB845 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A49201CB2E6002BB845 /* Info iOS.plist */,
+				CEB45B00201CC35A002BB845 /* Info macOS.plist */,
+				CEB45B0D201CC383002BB845 /* Info tvOS.plist */,
+				CEB45B1A201CC39C002BB845 /* Info watchOS.plist */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		CEB45BA7201CC70B002BB845 /* Test Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45BAA201CC70B002BB845 /* TestFakeCryptoProvider.swift */,
+				CEB45BA9201CC70B002BB845 /* TestIdentityStore.swift */,
+				CEB45BAC201CC70C002BB845 /* TestPreKeyStore.swift */,
+				CEB45BAD201CC70C002BB845 /* TestSenderKeyStore.swift */,
+				CEB45BAB201CC70B002BB845 /* TestSessionStore.swift */,
+				CEB45BAE201CC70C002BB845 /* TestSignedPreKeyStore.swift */,
+				CEB45BA8201CC70B002BB845 /* TestStore.swift */,
+			);
+			path = "Test Implementation";
+			sourceTree = "<group>";
+		};
+		E6BC3082E9A2B16C2277100F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD351464F8FC9A55BE05F9DD /* Pods_SignalProtocolSwift_Tests.framework */,
+				78445AB11A6B6C03490848ED /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework */,
+				97FAD81585E0F77CDB87E46F /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework */,
+				AB543D11ECD3A6519E1100EF /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework */,
+				A1403FB452D2D1FFE0913A3E /* Pods_SignalProtocolSwift_SignalProtocolSwift_watchOS.framework */,
+				4FBD8272FA9D2E387BA8567C /* Pods_LibSignalProtocolSwift_Tests.framework */,
+				EF2604919C7D18EB6994326A /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */,
+				D4F6A95D8419ED17B37EA7DE /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */,
+				077A0A91E1D03DD677895CA6 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */,
+				E1374417731551C32C813AFE /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CEB45A42201CB2E6002BB845 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45A4A201CB2E6002BB845 /* SignalProtocolSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45AFA201CC35A002BB845 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45C56201CD455002BB845 /* SignalProtocolSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45B07201CC383002BB845 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45C57201CD455002BB845 /* SignalProtocolSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45B14201CC39B002BB845 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45C58201CD455002BB845 /* SignalProtocolSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CEB45A44201CB2E6002BB845 /* LibSignalProtocolSwift iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB45A4D201CB2E6002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift iOS" */;
+			buildPhases = (
+				A52860033CF10961B83D5ED4 /* [CP] Check Pods Manifest.lock */,
+				CEB45A40201CB2E6002BB845 /* Sources */,
+				CEB45A41201CB2E6002BB845 /* Frameworks */,
+				CEB45A42201CB2E6002BB845 /* Headers */,
+				CEB45A43201CB2E6002BB845 /* Resources */,
+				B8B84AE9790E88F33AE71DB9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LibSignalProtocolSwift iOS";
+			productName = SignalProtocolSwift;
+			productReference = CEB45A45201CB2E6002BB845 /* LibSignalProtocolSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CEB45A5A201CB3AE002BB845 /* LibSignalProtocolSwift Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB45A65201CB3AE002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift Tests" */;
+			buildPhases = (
+				B1C28BC52F5D2BE0BFF7827E /* [CP] Check Pods Manifest.lock */,
+				CEB45A57201CB3AE002BB845 /* Sources */,
+				CEB45A58201CB3AE002BB845 /* Frameworks */,
+				CEB45A59201CB3AE002BB845 /* Resources */,
+				39C257CF061C1E4E922F7141 /* [CP] Embed Pods Frameworks */,
+				19D83ED96FE33670BABB0464 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEB45A62201CB3AE002BB845 /* PBXTargetDependency */,
+			);
+			name = "LibSignalProtocolSwift Tests";
+			productName = SignalProtocolSwiftTests;
+			productReference = CEB45A5B201CB3AE002BB845 /* LibSignalProtocolSwift Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEB45AFC201CC35A002BB845 /* LibSignalProtocolSwift macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB45B02201CC35A002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift macOS" */;
+			buildPhases = (
+				860439F2EC30771BDD53FF88 /* [CP] Check Pods Manifest.lock */,
+				CEB45AF8201CC35A002BB845 /* Sources */,
+				CEB45AF9201CC35A002BB845 /* Frameworks */,
+				CEB45AFA201CC35A002BB845 /* Headers */,
+				CEB45AFB201CC35A002BB845 /* Resources */,
+				6C030F24B343DCCB70639599 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LibSignalProtocolSwift macOS";
+			productName = "SignalProtocolSwift macOS";
+			productReference = CEB45AFD201CC35A002BB845 /* LibSignalProtocolSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CEB45B09201CC383002BB845 /* LibSignalProtocolSwift tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB45B0F201CC383002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift tvOS" */;
+			buildPhases = (
+				A2427FDB4A2BAA76758ECFC8 /* [CP] Check Pods Manifest.lock */,
+				CEB45B05201CC383002BB845 /* Sources */,
+				CEB45B06201CC383002BB845 /* Frameworks */,
+				CEB45B07201CC383002BB845 /* Headers */,
+				CEB45B08201CC383002BB845 /* Resources */,
+				D7B0E3023C245EF1FDAE9AC9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LibSignalProtocolSwift tvOS";
+			productName = "SwiftProtocolSwift tvOS";
+			productReference = CEB45B0A201CC383002BB845 /* LibSignalProtocolSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CEB45B16201CC39B002BB845 /* LibSignalProtocolSwift watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB45B1C201CC39C002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift watchOS" */;
+			buildPhases = (
+				CF8B158077BAC4CEC16E3A4F /* [CP] Check Pods Manifest.lock */,
+				CEB45B12201CC39B002BB845 /* Sources */,
+				CEB45B13201CC39B002BB845 /* Frameworks */,
+				CEB45B14201CC39B002BB845 /* Headers */,
+				CEB45B15201CC39B002BB845 /* Resources */,
+				6A572A8A1B87E43AEB5B4744 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LibSignalProtocolSwift watchOS";
+			productName = "SwiftProtocolSwift watchOS";
+			productReference = CEB45B17201CC39B002BB845 /* LibSignalProtocolSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEB45A3C201CB2E6002BB845 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = User;
+				TargetAttributes = {
+					CEB45A44201CB2E6002BB845 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					CEB45A5A201CB3AE002BB845 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					CEB45AFC201CC35A002BB845 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					CEB45B09201CC383002BB845 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					CEB45B16201CC39B002BB845 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CEB45A3F201CB2E6002BB845 /* Build configuration list for PBXProject "LibSignalProtocolSwift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEB45A3B201CB2E6002BB845;
+			productRefGroup = CEB45A46201CB2E6002BB845 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEB45A44201CB2E6002BB845 /* LibSignalProtocolSwift iOS */,
+				CEB45AFC201CC35A002BB845 /* LibSignalProtocolSwift macOS */,
+				CEB45B09201CC383002BB845 /* LibSignalProtocolSwift tvOS */,
+				CEB45B16201CC39B002BB845 /* LibSignalProtocolSwift watchOS */,
+				CEB45A5A201CB3AE002BB845 /* LibSignalProtocolSwift Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEB45A43201CB2E6002BB845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45A59201CB3AE002BB845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45AFB201CC35A002BB845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45B08201CC383002BB845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45B15201CC39B002BB845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19D83ED96FE33670BABB0464 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39C257CF061C1E4E922F7141 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CommonCryptoModule-iOS/CommonCryptoModule.framework",
+				"${BUILT_PRODUCTS_DIR}/Curve25519-iOS/Curve25519.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf-iOS/SwiftProtobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCryptoModule.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curve25519.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A572A8A1B87E43AEB5B4744 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C030F24B343DCCB70639599 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		860439F2EC30771BDD53FF88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2427FDB4A2BAA76758ECFC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A52860033CF10961B83D5ED4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1C28BC52F5D2BE0BFF7827E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8B84AE9790E88F33AE71DB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF8B158077BAC4CEC16E3A4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7B0E3023C245EF1FDAE9AC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEB45A40201CB2E6002BB845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45ABF201CB4D0002BB845 /* SignalCrypto.swift in Sources */,
+				CEB45AB8201CB4D0002BB845 /* DisplayableFingerprint.swift in Sources */,
+				CEB45AC9201CB4D0002BB845 /* HKDF.swift in Sources */,
+				CEB45AD0201CB4D0002BB845 /* DeviceConsistencySignature.swift in Sources */,
+				CEB45AA9201CB4D0002BB845 /* SenderKeyMessage.swift in Sources */,
+				CEB45AD3201CB4D0002BB845 /* SessionPreKeyBundle.swift in Sources */,
+				CEB45AD5201CB4D0002BB845 /* SessionRecord.swift in Sources */,
+				CEB45C8B201D0A21002BB845 /* SessionSignedPreKeyPublic.swift in Sources */,
+				CEB45ABC201CB4D0002BB845 /* SessionCipher.swift in Sources */,
+				CEB45AC7201CB4D0002BB845 /* SessionStore.swift in Sources */,
+				CEB45AC4201CB4D0002BB845 /* KeyStore.swift in Sources */,
+				CEB45ACF201CB4D0002BB845 /* SenderChainKey.swift in Sources */,
+				CEB45AC2201CB4D0002BB845 /* SenderKeyStore.swift in Sources */,
+				CEB45AD4201CB4D0002BB845 /* SessionSignedPreKey.swift in Sources */,
+				CEB45AB9201CB4D0002BB845 /* Fingerprint.swift in Sources */,
+				CEB45A68201CB427002BB845 /* SignalError.swift in Sources */,
+				CEB45AD9201CB4D0002BB845 /* SessionState.swift in Sources */,
+				CEB45A56201CB320002BB845 /* KeyPair.swift in Sources */,
+				CEB45A6B201CB4BC002BB845 /* SignalAddress.swift in Sources */,
+				CEB45A54201CB318002BB845 /* PublicKey.swift in Sources */,
+				CE53032E201F4EDA0004942F /* Messages.pb.swift in Sources */,
+				CEB45ACC201CB4D0002BB845 /* ReceiverChain.swift in Sources */,
+				CEB45ACA201CB4D0002BB845 /* RatchetChainKey.swift in Sources */,
+				CEB45AAB201CB4D0002BB845 /* CipherTextMessage.swift in Sources */,
+				CEB45AD2201CB4D0002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
+				CEB45ABD201CB4D0002BB845 /* GroupCipher.swift in Sources */,
+				CEB45ACB201CB4D0002BB845 /* SenderChain.swift in Sources */,
+				CEB45AD1201CB4D0002BB845 /* DeviceConsistencyMessage.swift in Sources */,
+				CEB45B47201CC640002BB845 /* SignalCommonCrypto.swift in Sources */,
+				CEB45AC6201CB4D0002BB845 /* PreKeyStore.swift in Sources */,
+				CEB45AD7201CB4D0002BB845 /* SessionPreKey.swift in Sources */,
+				CEB45AC3201CB4D0002BB845 /* IdentityKeyStore.swift in Sources */,
+				CEB45C89201D081C002BB845 /* SessionPreKeyPublic.swift in Sources */,
+				CEB45AA8201CB4D0002BB845 /* PreKeySignalMessage.swift in Sources */,
+				CEC81310201F42020018D42E /* Fingerprint.pb.swift in Sources */,
+				CEB45ACE201CB4D0002BB845 /* SenderMessageKey.swift in Sources */,
+				CEB45AC0201CB4D0002BB845 /* SignalCryptoProvider.swift in Sources */,
+				CEB45AAA201CB4D0002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
+				CEB45AD6201CB4D0002BB845 /* PendingPreKey.swift in Sources */,
+				CEB45ABA201CB4D0002BB845 /* ScannableFingerprint.swift in Sources */,
+				CEB45AAC201CB4D0002BB845 /* SignalMessage.swift in Sources */,
+				CEB45A52201CB30E002BB845 /* PrivateKey.swift in Sources */,
+				CEB45AC8201CB4D0002BB845 /* RatchetMessageKeys.swift in Sources */,
+				CEB45AC5201CB4D0002BB845 /* SignedPrekeyStore.swift in Sources */,
+				CEB45ABB201CB4D0002BB845 /* SenderKeyState.swift in Sources */,
+				CEB45ABE201CB4D0002BB845 /* SenderKeyRecord.swift in Sources */,
+				CEB45A6C201CB4BC002BB845 /* SignalSenderKeyName.swift in Sources */,
+				CEB45ACD201CB4D0002BB845 /* RatchetRootKey.swift in Sources */,
+				CE53032C201F47920004942F /* LocalStorage.pb.swift in Sources */,
+				CEB45AD8201CB4D0002BB845 /* SessionBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45A57201CB3AE002BB845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45BA6201CC6FD002BB845 /* TestHelperFunctions.swift in Sources */,
+				CEB45B9B201CC6FD002BB845 /* FingerprintTests.swift in Sources */,
+				CEB45BB9201CC716002BB845 /* TestSessionStore.swift in Sources */,
+				CEB45BBF201CC7A6002BB845 /* SignalProtocolSwiftTests.swift in Sources */,
+				CEB45BA3201CC6FD002BB845 /* SessionCipherTests.swift in Sources */,
+				CEB45B98201CC6FD002BB845 /* CompatibilityTests.swift in Sources */,
+				CEB45B9E201CC6FD002BB845 /* KeyHelperTests.swift in Sources */,
+				CEB45B9F201CC6FD002BB845 /* ProtocolTests.swift in Sources */,
+				CEB45BB6201CC716002BB845 /* TestStore.swift in Sources */,
+				CEB45BBA201CC716002BB845 /* TestPreKeyStore.swift in Sources */,
+				CEB45BA2201CC6FD002BB845 /* SessionBuilderTests.swift in Sources */,
+				CEB45B9A201CC6FD002BB845 /* DeviceConsistencyTests.swift in Sources */,
+				CEB45BB7201CC716002BB845 /* TestIdentityStore.swift in Sources */,
+				CEB45BBB201CC716002BB845 /* TestSenderKeyStore.swift in Sources */,
+				CEB45B9C201CC6FD002BB845 /* GroupCipherTests.swift in Sources */,
+				CEB45BB8201CC716002BB845 /* TestFakeCryptoProvider.swift in Sources */,
+				CEB45B9D201CC6FD002BB845 /* HKDFTests.swift in Sources */,
+				CEB45BBC201CC716002BB845 /* TestSignedPreKeyStore.swift in Sources */,
+				CEB45BA1201CC6FD002BB845 /* SenderKeyRecordTests.swift in Sources */,
+				CEB45BA0201CC6FD002BB845 /* RatchetTests.swift in Sources */,
+				CEB45BA4201CC6FD002BB845 /* SessionRecordTests.swift in Sources */,
+				CEB45BC8201CD03A002BB845 /* CurveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45AF8201CC35A002BB845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45BE4201CD416002BB845 /* SenderKeyState.swift in Sources */,
+				CEB45BD4201CD40B002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
+				CEB45C02201CD421002BB845 /* SignedPrekeyStore.swift in Sources */,
+				CEB45C01201CD421002BB845 /* KeyStore.swift in Sources */,
+				CE53032F201F57A70004942F /* Messages.pb.swift in Sources */,
+				CEB45C03201CD421002BB845 /* PreKeyStore.swift in Sources */,
+				CEB45C2C201CD444002BB845 /* SenderChain.swift in Sources */,
+				CEB45C11201CD426002BB845 /* PreKeySignalMessage.swift in Sources */,
+				CEB45C12201CD426002BB845 /* SenderKeyMessage.swift in Sources */,
+				CEB45C41201CD44A002BB845 /* SessionPreKeyBundle.swift in Sources */,
+				CEC812E4201E35970018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
+				CEB45C43201CD44A002BB845 /* SessionRecord.swift in Sources */,
+				CEB45BCA201CD405002BB845 /* SignalAddress.swift in Sources */,
+				CEB45BCB201CD405002BB845 /* SignalSenderKeyName.swift in Sources */,
+				CEB45C29201CD444002BB845 /* RatchetMessageKeys.swift in Sources */,
+				CEB45C42201CD44A002BB845 /* SessionSignedPreKey.swift in Sources */,
+				CEB45C04201CD421002BB845 /* SessionStore.swift in Sources */,
+				CEB45BD3201CD40B002BB845 /* DeviceConsistencyMessage.swift in Sources */,
+				CEB45C47201CD44A002BB845 /* SessionState.swift in Sources */,
+				CEB45BE7201CD416002BB845 /* SenderKeyRecord.swift in Sources */,
+				CEB45BE5201CD416002BB845 /* SessionCipher.swift in Sources */,
+				CEB45BE6201CD416002BB845 /* GroupCipher.swift in Sources */,
+				CEB45C14201CD426002BB845 /* CipherTextMessage.swift in Sources */,
+				CEB45C2A201CD444002BB845 /* HKDF.swift in Sources */,
+				CEB45BC9201CD405002BB845 /* SignalError.swift in Sources */,
+				CEB45C2D201CD444002BB845 /* ReceiverChain.swift in Sources */,
+				CEB45BF9201CD41C002BB845 /* DisplayableFingerprint.swift in Sources */,
+				CEB45C2F201CD444002BB845 /* SenderMessageKey.swift in Sources */,
+				CEB45C13201CD426002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
+				CEB45C2B201CD444002BB845 /* RatchetChainKey.swift in Sources */,
+				CEB45C45201CD44A002BB845 /* SessionPreKey.swift in Sources */,
+				CE530330201F57A70004942F /* Fingerprint.pb.swift in Sources */,
+				CEB45BFB201CD41C002BB845 /* ScannableFingerprint.swift in Sources */,
+				CEC812E3201E35970018D42E /* SessionPreKeyPublic.swift in Sources */,
+				CEB45C30201CD444002BB845 /* SenderChainKey.swift in Sources */,
+				CEB45C15201CD426002BB845 /* SignalMessage.swift in Sources */,
+				CEB45BD2201CD40B002BB845 /* DeviceConsistencySignature.swift in Sources */,
+				CEB45B48201CC648002BB845 /* SignalCommonCrypto.swift in Sources */,
+				CEB45C44201CD44A002BB845 /* PendingPreKey.swift in Sources */,
+				CEB45BFA201CD41C002BB845 /* Fingerprint.swift in Sources */,
+				CE530331201F57A70004942F /* LocalStorage.pb.swift in Sources */,
+				CEB45BE8201CD416002BB845 /* SignalCrypto.swift in Sources */,
+				CEB45BDD201CD411002BB845 /* KeyPair.swift in Sources */,
+				CEB45BDC201CD411002BB845 /* PublicKey.swift in Sources */,
+				CEB45BFF201CD421002BB845 /* SenderKeyStore.swift in Sources */,
+				CEB45C00201CD421002BB845 /* IdentityKeyStore.swift in Sources */,
+				CEB45BDB201CD411002BB845 /* PrivateKey.swift in Sources */,
+				CEB45BE9201CD416002BB845 /* SignalCryptoProvider.swift in Sources */,
+				CEB45C2E201CD444002BB845 /* RatchetRootKey.swift in Sources */,
+				CEB45C46201CD44A002BB845 /* SessionBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45B05201CC383002BB845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45BEA201CD417002BB845 /* SenderKeyState.swift in Sources */,
+				CEB45BD7201CD40C002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
+				CEB45C08201CD422002BB845 /* SignedPrekeyStore.swift in Sources */,
+				CEB45C07201CD422002BB845 /* KeyStore.swift in Sources */,
+				CE530332201F57A70004942F /* Messages.pb.swift in Sources */,
+				CEB45C09201CD422002BB845 /* PreKeyStore.swift in Sources */,
+				CEB45C34201CD445002BB845 /* SenderChain.swift in Sources */,
+				CEB45C16201CD427002BB845 /* PreKeySignalMessage.swift in Sources */,
+				CEB45C17201CD427002BB845 /* SenderKeyMessage.swift in Sources */,
+				CEB45C4F201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */,
+				CEC812E6201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
+				CEB45C51201CD44B002BB845 /* SessionRecord.swift in Sources */,
+				CEB45BCD201CD406002BB845 /* SignalAddress.swift in Sources */,
+				CEB45BCE201CD406002BB845 /* SignalSenderKeyName.swift in Sources */,
+				CEB45C31201CD445002BB845 /* RatchetMessageKeys.swift in Sources */,
+				CEB45C50201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */,
+				CEB45C0A201CD422002BB845 /* SessionStore.swift in Sources */,
+				CEB45BD6201CD40C002BB845 /* DeviceConsistencyMessage.swift in Sources */,
+				CEB45C55201CD44B002BB845 /* SessionState.swift in Sources */,
+				CEB45BED201CD417002BB845 /* SenderKeyRecord.swift in Sources */,
+				CEB45BEB201CD417002BB845 /* SessionCipher.swift in Sources */,
+				CEB45BEC201CD417002BB845 /* GroupCipher.swift in Sources */,
+				CEB45C19201CD427002BB845 /* CipherTextMessage.swift in Sources */,
+				CEB45C32201CD445002BB845 /* HKDF.swift in Sources */,
+				CEB45BCC201CD406002BB845 /* SignalError.swift in Sources */,
+				CEB45C35201CD445002BB845 /* ReceiverChain.swift in Sources */,
+				CEB45BF6201CD41B002BB845 /* DisplayableFingerprint.swift in Sources */,
+				CEB45C37201CD445002BB845 /* SenderMessageKey.swift in Sources */,
+				CEB45C18201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
+				CEB45C33201CD445002BB845 /* RatchetChainKey.swift in Sources */,
+				CEB45C53201CD44B002BB845 /* SessionPreKey.swift in Sources */,
+				CE530333201F57A70004942F /* Fingerprint.pb.swift in Sources */,
+				CEB45BF8201CD41B002BB845 /* ScannableFingerprint.swift in Sources */,
+				CEC812E5201E35980018D42E /* SessionPreKeyPublic.swift in Sources */,
+				CEB45C38201CD445002BB845 /* SenderChainKey.swift in Sources */,
+				CEB45C1A201CD427002BB845 /* SignalMessage.swift in Sources */,
+				CEB45BD5201CD40C002BB845 /* DeviceConsistencySignature.swift in Sources */,
+				CEB45B49201CC649002BB845 /* SignalCommonCrypto.swift in Sources */,
+				CEB45C52201CD44B002BB845 /* PendingPreKey.swift in Sources */,
+				CEB45BF7201CD41B002BB845 /* Fingerprint.swift in Sources */,
+				CE530334201F57A70004942F /* LocalStorage.pb.swift in Sources */,
+				CEB45BEE201CD417002BB845 /* SignalCrypto.swift in Sources */,
+				CEB45BE0201CD411002BB845 /* KeyPair.swift in Sources */,
+				CEB45BDF201CD411002BB845 /* PublicKey.swift in Sources */,
+				CEB45C05201CD422002BB845 /* SenderKeyStore.swift in Sources */,
+				CEB45C06201CD422002BB845 /* IdentityKeyStore.swift in Sources */,
+				CEB45BDE201CD411002BB845 /* PrivateKey.swift in Sources */,
+				CEB45BEF201CD417002BB845 /* SignalCryptoProvider.swift in Sources */,
+				CEB45C36201CD445002BB845 /* RatchetRootKey.swift in Sources */,
+				CEB45C54201CD44B002BB845 /* SessionBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB45B12201CC39B002BB845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB45BF0201CD417002BB845 /* SenderKeyState.swift in Sources */,
+				CEB45BDA201CD40C002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
+				CEB45C0E201CD422002BB845 /* SignedPrekeyStore.swift in Sources */,
+				CEB45C0D201CD422002BB845 /* KeyStore.swift in Sources */,
+				CE530335201F57A80004942F /* Messages.pb.swift in Sources */,
+				CEB45C0F201CD422002BB845 /* PreKeyStore.swift in Sources */,
+				CEB45C3C201CD445002BB845 /* SenderChain.swift in Sources */,
+				CEB45C1B201CD427002BB845 /* PreKeySignalMessage.swift in Sources */,
+				CEB45C1C201CD427002BB845 /* SenderKeyMessage.swift in Sources */,
+				CEB45C48201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */,
+				CEC812E8201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
+				CEB45C4A201CD44B002BB845 /* SessionRecord.swift in Sources */,
+				CEB45BD0201CD406002BB845 /* SignalAddress.swift in Sources */,
+				CEB45BD1201CD406002BB845 /* SignalSenderKeyName.swift in Sources */,
+				CEB45C39201CD445002BB845 /* RatchetMessageKeys.swift in Sources */,
+				CEB45C49201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */,
+				CEB45C10201CD422002BB845 /* SessionStore.swift in Sources */,
+				CEB45BD9201CD40C002BB845 /* DeviceConsistencyMessage.swift in Sources */,
+				CEB45C4E201CD44B002BB845 /* SessionState.swift in Sources */,
+				CEB45BF3201CD417002BB845 /* SenderKeyRecord.swift in Sources */,
+				CEB45BF1201CD417002BB845 /* SessionCipher.swift in Sources */,
+				CEB45BF2201CD417002BB845 /* GroupCipher.swift in Sources */,
+				CEB45C1E201CD427002BB845 /* CipherTextMessage.swift in Sources */,
+				CEB45C3A201CD445002BB845 /* HKDF.swift in Sources */,
+				CEB45BCF201CD406002BB845 /* SignalError.swift in Sources */,
+				CEB45C3D201CD445002BB845 /* ReceiverChain.swift in Sources */,
+				CEB45BFC201CD41C002BB845 /* DisplayableFingerprint.swift in Sources */,
+				CEB45C3F201CD445002BB845 /* SenderMessageKey.swift in Sources */,
+				CEB45C1D201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
+				CEB45C3B201CD445002BB845 /* RatchetChainKey.swift in Sources */,
+				CEB45C4C201CD44B002BB845 /* SessionPreKey.swift in Sources */,
+				CE530336201F57A80004942F /* Fingerprint.pb.swift in Sources */,
+				CEB45BFE201CD41C002BB845 /* ScannableFingerprint.swift in Sources */,
+				CEC812E7201E35980018D42E /* SessionPreKeyPublic.swift in Sources */,
+				CEB45C40201CD445002BB845 /* SenderChainKey.swift in Sources */,
+				CEB45C1F201CD427002BB845 /* SignalMessage.swift in Sources */,
+				CEB45BD8201CD40C002BB845 /* DeviceConsistencySignature.swift in Sources */,
+				CEB45B4A201CC649002BB845 /* SignalCommonCrypto.swift in Sources */,
+				CEB45C4B201CD44B002BB845 /* PendingPreKey.swift in Sources */,
+				CEB45BFD201CD41C002BB845 /* Fingerprint.swift in Sources */,
+				CE530337201F57A80004942F /* LocalStorage.pb.swift in Sources */,
+				CEB45BF4201CD417002BB845 /* SignalCrypto.swift in Sources */,
+				CEB45BE3201CD412002BB845 /* KeyPair.swift in Sources */,
+				CEB45BE2201CD412002BB845 /* PublicKey.swift in Sources */,
+				CEB45C0B201CD422002BB845 /* SenderKeyStore.swift in Sources */,
+				CEB45C0C201CD422002BB845 /* IdentityKeyStore.swift in Sources */,
+				CEB45BE1201CD412002BB845 /* PrivateKey.swift in Sources */,
+				CEB45BF5201CD417002BB845 /* SignalCryptoProvider.swift in Sources */,
+				CEB45C3E201CD445002BB845 /* RatchetRootKey.swift in Sources */,
+				CEB45C4D201CD44B002BB845 /* SessionBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEB45A62201CB3AE002BB845 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEB45A44201CB2E6002BB845 /* LibSignalProtocolSwift iOS */;
+			targetProxy = CEB45A61201CB3AE002BB845 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CEB45A4B201CB2E6002BB845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CEB45A4C201CB2E6002BB845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CEB45A4E201CB2E6002BB845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 010E2220089C187449436277 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
+				PRODUCT_NAME = LibSignalProtocolSwift;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEB45A4F201CB2E6002BB845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C7F8C48D5A45F962540C14F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwift;
+				PRODUCT_NAME = LibSignalProtocolSwift;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEB45A63201CB3AE002BB845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F15600F679C0D56DC65690 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEB45A64201CB3AE002BB845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3482E904FEF2E039F316062 /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = christophhagen.SignalProtocolSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEB45B03201CC35A002BB845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB267DC8000EEE11123A60E7 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info macOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SignalProtocolSwift-macOS";
+				PRODUCT_NAME = LibSignalProtocolSwift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		CEB45B04201CC35A002BB845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34EFB0B51E05A9C9F6A1638F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info macOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SignalProtocolSwift-macOS";
+				PRODUCT_NAME = LibSignalProtocolSwift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		CEB45B10201CC383002BB845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 328F18E63E967B55D2D2E446 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SwiftProtocolSwift-tvOS";
+				PRODUCT_NAME = LibSignalProtocolSwift;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		CEB45B11201CC383002BB845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9994E1818E84F9F6DAAE7105 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SwiftProtocolSwift-tvOS";
+				PRODUCT_NAME = LibSignalProtocolSwift;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		CEB45B1D201CC39C002BB845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2826F2778F158CD32730C902 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info watchOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SwiftProtocolSwift-watchOS";
+				PRODUCT_NAME = LibSignalProtocolSwift;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		CEB45B1E201CC39C002BB845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5774948A33CE710A91729622 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info watchOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SwiftProtocolSwift-watchOS";
+				PRODUCT_NAME = LibSignalProtocolSwift;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEB45A3F201CB2E6002BB845 /* Build configuration list for PBXProject "LibSignalProtocolSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB45A4B201CB2E6002BB845 /* Debug */,
+				CEB45A4C201CB2E6002BB845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB45A4D201CB2E6002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB45A4E201CB2E6002BB845 /* Debug */,
+				CEB45A4F201CB2E6002BB845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB45A65201CB3AE002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB45A63201CB3AE002BB845 /* Debug */,
+				CEB45A64201CB3AE002BB845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB45B02201CC35A002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB45B03201CC35A002BB845 /* Debug */,
+				CEB45B04201CC35A002BB845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB45B0F201CC383002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB45B10201CC383002BB845 /* Debug */,
+				CEB45B11201CC383002BB845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB45B1C201CC39C002BB845 /* Build configuration list for PBXNativeTarget "LibSignalProtocolSwift watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB45B1D201CC39C002BB845 /* Debug */,
+				CEB45B1E201CC39C002BB845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEB45A3C201CB2E6002BB845 /* Project object */;
+}

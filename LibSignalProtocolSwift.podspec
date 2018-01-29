@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name = 'LibSignalProtocolSwift'
-    spec.summary = 'A Swift implementation of the Signal Protocol API'
+    spec.summary = 'A Swift implementation of the Signal Protocol'
     spec.license = 'MIT'
 
     spec.version = '0.9.8'

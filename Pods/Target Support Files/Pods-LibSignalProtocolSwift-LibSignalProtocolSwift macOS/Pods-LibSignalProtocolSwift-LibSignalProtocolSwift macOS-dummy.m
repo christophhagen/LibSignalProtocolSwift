@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS : NSObject
+@end
+@implementation PodsDummy_Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS
+@end

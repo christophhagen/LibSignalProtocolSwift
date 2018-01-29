@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SessionStore Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/SessionStore" class="dashAnchor"></a>
+    <a title="SessionStore Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">LibSignalProtocolSwift Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/SignalProtocolSwift"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">LibSignalProtocolSwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SessionStore Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverChain.html">ReceiverChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyRecord.html">SenderKeyRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyState.html">SenderKeyState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionRecord.html">SessionRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionState.html">SessionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalError.html">SignalError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CipherTextType.html">CipherTextType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HKDFVersion.html">HKDFVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalErrorType.html">SignalErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:22LibSignalProtocolSwift14getFingerprint33_6A8261713B71FB60AB9C03E79A4B86FFLL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:22LibSignalProtocolSwift13getLogicalKey33_6A8261713B71FB60AB9C03E79A4B86FFLL10Foundation4DataVSayAA06PublicG0VG3for_tF">getLogicalKey(for:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KeyStore.html">KeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreKeyStore.html">PreKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SenderKeyStore.html">SenderKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionStore.html">SessionStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignedPreKeyStore.html">SignedPreKeyStore</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyCommitmentV0.html">DeviceConsistencyCommitmentV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyMessage.html">DeviceConsistencyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencySignature.html">DeviceConsistencySignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint.html">Fingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GroupCipher.html">GroupCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HKDF.html">HKDF</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyPair.html">KeyPair</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PendingPreKey.html">PendingPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PrivateKey.html">PrivateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicKey.html">PublicKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetChainKey.html">RatchetChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetRootKey.html">RatchetRootKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprint.html">ScannableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChain.html">SenderChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChainKey.html">SenderChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyDistributionMessage.html">SenderKeyDistributionMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyMessage.html">SenderKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderMessageKey.html">SenderMessageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionBuilder.html">SessionBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionCipher.html">SessionCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKey.html">SessionPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyPublic.html">SessionPreKeyPublic</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalAddress.html">SignalAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCrypto.html">SignalCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalMessage.html">SignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22LibSignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SessionStore</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SessionStore</span></code></pre>
+
+                </div>
+              </div>
+            <p>Implement the <code>SessionStore</code> protocol to handle the session records of the
+Signal Protocol. The records should be stored in a secure database and be treated as
+unspecified data blobs.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22LibSignalProtocolSwift12SessionStoreP7Address"></a>
+                    <a name="//apple_ref/swift/Alias/Address" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22LibSignalProtocolSwift12SessionStoreP7Address">Address</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The type that distinguishes different devices/users</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">associatedtype</span> <span class="kt">Address</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22LibSignalProtocolSwift12SessionStoreP04loadE010Foundation4DataVSg7AddressQz3for_tKF"></a>
+                    <a name="//apple_ref/swift/Method/loadSession(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22LibSignalProtocolSwift12SessionStoreP04loadE010Foundation4DataVSg7AddressQz3for_tKF">loadSession(for:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Load a session for a given address.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>storageError</code>
+
+</div>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Load a session for a given address.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code>SignalError</code> of type <code>storageError</code> for an invalid record
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">loadSession</span><span class="p">(</span><span class="k">for</span> <span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SessionStore.html#/s:22LibSignalProtocolSwift12SessionStoreP7Address">Address</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The address of the remote client</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The session record, or nil if no record exists</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22LibSignalProtocolSwift12SessionStoreP5storey10Foundation4DataV7session_7AddressQz3fortKF"></a>
+                    <a name="//apple_ref/swift/Method/store(session:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22LibSignalProtocolSwift12SessionStoreP5storey10Foundation4DataV7session_7AddressQz3fortKF">store(session:for:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Store a session record for a remote client.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>storageError</code>
+
+</div>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Store a session record for a remote client.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Possible errors:
+
+</div>
+<li><code>storageError</code>, if the session record could not be stored</li>
+<li><code>invalidProtoBuf</code>, if the session record could not be serialized</li>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code>SignalError</code> errors
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">store</span><span class="p">(</span><span class="nv">session</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="k">for</span> <span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SessionStore.html#/s:22LibSignalProtocolSwift12SessionStoreP7Address">Address</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>session</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The session record to store</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The address of the remote client</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> on success, <code>false</code> on error</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22LibSignalProtocolSwift12SessionStoreP08containsE0Sb7AddressQz3for_tF"></a>
+                    <a name="//apple_ref/swift/Method/containsSession(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22LibSignalProtocolSwift12SessionStoreP08containsE0Sb7AddressQz3for_tF">containsSession(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicate if a record exists for the client address</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">containsSession</span><span class="p">(</span><span class="k">for</span> <span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SessionStore.html#/s:22LibSignalProtocolSwift12SessionStoreP7Address">Address</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The address of the remote client</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if a record exists</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22LibSignalProtocolSwift12SessionStoreP06deleteE0y7AddressQz3for_tKF"></a>
+                    <a name="//apple_ref/swift/Method/deleteSession(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22LibSignalProtocolSwift12SessionStoreP06deleteE0y7AddressQz3for_tKF">deleteSession(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delete a session for a remote client.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>storageError</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">deleteSession</span><span class="p">(</span><span class="k">for</span> <span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SessionStore.html#/s:22LibSignalProtocolSwift12SessionStoreP7Address">Address</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The address of the remote client</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the session was deleted</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

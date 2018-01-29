@@ -1,8 +1,8 @@
 use_frameworks!
 
-abstract_target 'SignalProtocolSwift' do
+abstract_target 'LibSignalProtocolSwift' do
 
-  # Pods for SignalProtocolSwift
+  # Pods for LibSignalProtocolSwift
 
   # Protocol Buffers in Swift
   pod 'SwiftProtobuf'
@@ -15,10 +15,10 @@ abstract_target 'SignalProtocolSwift' do
 
 
   # iOS
-  target 'SignalProtocolSwift iOS' do
+  target 'LibSignalProtocolSwift iOS' do
     platform :ios, '9.0'
     
-    target 'SignalProtocolSwift Tests' do
+    target 'LibSignalProtocolSwift Tests' do
       inherit! :search_paths
       # Pods for testing
 
@@ -27,22 +27,22 @@ abstract_target 'SignalProtocolSwift' do
 
 
   # macOS
-  target 'SignalProtocolSwift macOS' do
+  target 'LibSignalProtocolSwift macOS' do
     platform :osx, '10.9'
-    # Pods for SignalProtocolSwift macOS
+    # Pods for LibSignalProtocolSwift macOS
   end
 
 
   # tvOS
-  target 'SignalProtocolSwift tvOS' do
+  target 'LibSignalProtocolSwift tvOS' do
     platform :tvos, '9.0'
-    # Pods for SignalProtocolSwift tvOS
+    # Pods for LibSignalProtocolSwift tvOS
   end
 
 
   # watchOS
-  target 'SignalProtocolSwift watchOS' do
+  target 'LibSignalProtocolSwift watchOS' do
     platform :watchos, '4.0'
-    # Pods for SignalProtocolSwift watchOS
+    # Pods for LibSignalProtocolSwift watchOS
   end
 end

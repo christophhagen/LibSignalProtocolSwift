@@ -60,35 +60,35 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>Pods-SignalProtocolSwift Tests.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>Pods-SignalProtocolSwift-SignalProtocolSwift iOS.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
-		<key>Pods-SignalProtocolSwift-SignalProtocolSwift macOS.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
-		<key>Pods-SignalProtocolSwift-SignalProtocolSwift tvOS.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>Pods-SignalProtocolSwift-SignalProtocolSwift watchOS.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
