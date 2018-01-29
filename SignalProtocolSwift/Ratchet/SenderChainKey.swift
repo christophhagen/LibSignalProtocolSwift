@@ -58,7 +58,7 @@ extension SenderChainKey {
      - parameter object: The chain key ProtoBuf object.
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from object: Textsecure_SenderKeyStateStructure.SenderChainKey) throws {
+    init(from object: Signal_SenderKeyState.SenderChainKey) throws {
         guard object.hasSeed, object.hasIteration else {
             throw SignalError(.invalidProtoBuf, "Missing data in SenderChainKey Protobuf object")
         }
@@ -67,8 +67,8 @@ extension SenderChainKey {
     }
 
     /// Convert the sender chain key to a ProtoBuf object
-    var object: Textsecure_SenderKeyStateStructure.SenderChainKey {
-        return Textsecure_SenderKeyStateStructure.SenderChainKey.with {
+    var object: Signal_SenderKeyState.SenderChainKey {
+        return Signal_SenderKeyState.SenderChainKey.with {
             $0.seed = self.chainKey
             $0.iteration = self.iteration
         }

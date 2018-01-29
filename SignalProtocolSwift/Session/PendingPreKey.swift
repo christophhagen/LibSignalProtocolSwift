@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- A pre key sent out as a pre key message
+ A pre key sent out as a pre key message, until a message is received from the other party
  */
 struct PendingPreKey {
 
@@ -33,7 +33,7 @@ extension PendingPreKey {
      - parameter object: The ProtoBuf object.
      - throws: `SignalError` error of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(serializedObject object: Textsecure_SessionStructure.PendingPreKey) throws {
+    init(serializedObject object: Signal_Session.PendingPreKey) throws {
         guard object.hasBaseKey, object.hasSignedPreKeyID else {
             throw SignalError(.invalidProtoBuf, "Missing data in object")
         }
@@ -54,7 +54,7 @@ extension PendingPreKey {
      */
     init(from data: Data) throws {
         do {
-            let object = try Textsecure_SessionStructure.PendingPreKey(serializedData: data)
+            let object = try Signal_Session.PendingPreKey(serializedData: data)
             try self.init(serializedObject: object)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not deserialize PendingPreKey: \(error.localizedDescription)")
@@ -75,8 +75,8 @@ extension PendingPreKey {
     }
 
     /// Create a ProtoBuf object for serialization.
-    var object: Textsecure_SessionStructure.PendingPreKey {
-        return Textsecure_SessionStructure.PendingPreKey.with {
+    var object: Signal_Session.PendingPreKey {
+        return Signal_Session.PendingPreKey.with {
             if let item = preKeyId {
                 $0.preKeyID = item
             }

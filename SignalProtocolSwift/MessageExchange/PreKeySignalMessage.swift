@@ -89,8 +89,8 @@ extension PreKeySignalMessage {
      - returns: The object
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    func object() throws -> Textsecure_PreKeySignalMessage {
-        return try Textsecure_PreKeySignalMessage.with {
+    func object() throws -> Signal_PreKeySignalMessage {
+        return try Signal_PreKeySignalMessage.with {
             if let id = self.preKeyId {
                 $0.preKeyID = id
             }
@@ -118,9 +118,9 @@ extension PreKeySignalMessage {
             ver <= CipherTextMessage.currentVersion else {
                 throw SignalError(.invalidVersion, "Invalid PreKeySignalMessage version \(ver)")
         }
-        let object: Textsecure_PreKeySignalMessage
+        let object: Signal_PreKeySignalMessage
         do {
-            object = try Textsecure_PreKeySignalMessage(serializedData: data.advanced(by: 1))
+            object = try Signal_PreKeySignalMessage(serializedData: data.advanced(by: 1))
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create PreKeySignalMessage object: \(error)")
         }
@@ -134,7 +134,7 @@ extension PreKeySignalMessage {
      - parameter object: The serialized data.
      - throws: `SignalError` errors
      */
-    init(from object: Textsecure_PreKeySignalMessage, version: UInt8) throws {
+    init(from object: Signal_PreKeySignalMessage, version: UInt8) throws {
         guard object.hasBaseKey, object.hasMessage, object.hasIdentityKey,
             object.hasSignedPreKeyID else {
                 throw SignalError(.invalidProtoBuf, "Missing data in PreKeySignalMessage")

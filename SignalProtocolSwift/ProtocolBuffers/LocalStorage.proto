@@ -1,0 +1,105 @@
+syntax = "proto2";
+
+package Signal;
+
+message Session {
+    message Chain {
+        optional bytes senderRatchetKey = 1;
+        optional bytes senderRatchetKeyPrivate = 2;
+
+        message ChainKey {
+            optional uint32 index = 1;
+            optional bytes  key   = 2;
+        }
+
+        optional ChainKey chainKey = 3;
+
+        message MessageKey {
+            optional uint32 index     = 1;
+            optional bytes  cipherKey = 2;
+            optional bytes  macKey    = 3;
+            optional bytes  iv        = 4;
+        }
+
+        repeated MessageKey messageKeys = 4;
+    }
+
+    message PendingPreKey {
+        optional uint32 preKeyId       = 1;
+        optional int32  signedPreKeyId = 2;
+        optional bytes  baseKey        = 3;
+    }
+
+    optional uint32 sessionVersion       = 1;
+    optional bytes localIdentityPublic   = 2;
+    optional bytes remoteIdentityPublic  = 3;
+
+    optional bytes rootKey               = 4;
+    optional uint32 previousCounter      = 5;
+
+    optional Chain senderChain           = 6;
+    repeated Chain receiverChains        = 7;
+
+    optional PendingPreKey pendingPreKey = 8;
+
+    optional bytes aliceBaseKey          = 9;
+}
+
+message Record {
+    optional Session currentSession   = 1;
+    repeated Session previousSessions = 2;
+}
+
+message PreKey {
+
+    message PublicPart {
+	optional uint32 id  = 1;
+        optional bytes  key = 2;
+    }
+
+    optional PublicPart publicKey  = 1;
+    optional bytes      privateKey = 2;
+}
+
+message SignedPreKey {
+    message PublicPart {
+        optional uint32  id        = 1;
+        optional bytes   key       = 2;
+        optional bytes   signature = 3;
+        optional fixed64 timestamp = 4;
+    }
+
+    optional PublicPart publicKey  = 1;
+    optional bytes      privateKey = 2;
+}
+
+message KeyPair {
+    optional bytes publicKey  = 1;
+    optional bytes privateKey = 2;
+}
+
+message SenderKeyState {
+    message SenderChainKey {
+        optional uint32 iteration = 1;
+        optional bytes  seed      = 2;
+    }
+
+    message SenderMessageKey {
+        optional uint32 iteration = 1;
+        optional bytes  seed      = 2;
+    }
+
+    message SenderSigningKey {
+        optional bytes public  = 1;
+        optional bytes private = 2;
+    }
+
+    optional uint32           senderKeyId       = 1;
+    optional SenderChainKey   senderChainKey    = 2;
+    optional SenderSigningKey senderSigningKey  = 3;
+    repeated SenderMessageKey senderMessageKeys = 4;
+}
+
+message SenderKeyRecord {
+    repeated SenderKeyState senderKeyStates = 1;
+}

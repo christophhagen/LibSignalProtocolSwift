@@ -126,8 +126,8 @@ final class SenderKeyRecord {
     // MARK: Protocol Buffers
 
     /// The record converted to a ProtoBuf object for storage
-    var object: Textsecure_SenderKeyRecordStructure {
-        return Textsecure_SenderKeyRecordStructure.with {
+    var object: Signal_SenderKeyRecord {
+        return Signal_SenderKeyRecord.with {
             $0.senderKeyStates = self.states.map { $0.object }
         }
     }
@@ -151,7 +151,7 @@ final class SenderKeyRecord {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` `invalidProtoBuf` if the object is corrupted.
     */
-    init(from object: Textsecure_SenderKeyRecordStructure) throws {
+    init(from object: Signal_SenderKeyRecord) throws {
         self.states = try object.senderKeyStates.map { try SenderKeyState(from: $0) }
     }
 
@@ -162,9 +162,9 @@ final class SenderKeyRecord {
      - throws: `SignalError` `invalidProtoBuf` if the data is corrupted.
      */
     convenience init(from data: Data) throws {
-        let object: Textsecure_SenderKeyRecordStructure
+        let object: Signal_SenderKeyRecord
         do {
-            object = try Textsecure_SenderKeyRecordStructure(serializedData: data)
+            object = try Signal_SenderKeyRecord(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create SenderKeyRecord object: \(error)")
         }

@@ -131,7 +131,7 @@ final class SenderKeyState {
      - parameter data: The serialized data.
     */
     convenience init(from data: Data) throws {
-        let object = try Textsecure_SenderKeyStateStructure(serializedData: data)
+        let object = try Signal_SenderKeyState(serializedData: data)
         try self.init(from: object)
     }
 
@@ -140,7 +140,7 @@ final class SenderKeyState {
      - note: This function can be used together with the class variable `object`, to store and retrieve objects from databases.
      - parameter object: The ProtoBuf object containing the data.
      */
-    init(from object: Textsecure_SenderKeyStateStructure) throws {
+    init(from object: Signal_SenderKeyState) throws {
         guard object.hasSenderKeyID, object.hasSenderChainKey,
             object.hasSenderSigningKey, object.senderSigningKey.hasPublic else {
             throw SignalError(.invalidProtoBuf, "Missing data in ProtoBuf object")
@@ -155,11 +155,11 @@ final class SenderKeyState {
     }
 
     /// The state converted to a ProtoBuf object
-    var object: Textsecure_SenderKeyStateStructure {
-        return Textsecure_SenderKeyStateStructure.with {
+    var object: Signal_SenderKeyState {
+        return Signal_SenderKeyState.with {
             $0.senderKeyID = self.keyId
             $0.senderChainKey = self.chainKey.object
-            $0.senderSigningKey = Textsecure_SenderKeyStateStructure.SenderSigningKey.with {
+            $0.senderSigningKey = Signal_SenderKeyState.SenderSigningKey.with {
                 $0.public = self.signaturePublicKey.data
                 if let key = self.signaturePrivateKey {
                     $0.private = key.data

@@ -162,8 +162,8 @@ extension SignalMessage {
     }
 
     /// Convert signal message to a ProtoBuf object
-    var object: Textsecure_SignalMessage {
-        return Textsecure_SignalMessage.with {
+    var object: Signal_SignalMessage {
+        return Signal_SignalMessage.with {
             $0.ciphertext = self.cipherText
             $0.counter = self.counter
             $0.previousCounter = self.previousCounter
@@ -193,9 +193,9 @@ extension SignalMessage {
             version <= CipherTextMessage.currentVersion else {
                 throw SignalError(.invalidVersion, "Invalid version of SignalMessage: \(version)")
         }
-        let object: Textsecure_SignalMessage
+        let object: Signal_SignalMessage
         do {
-            object = try Textsecure_SignalMessage(serializedData: newData)
+            object = try Signal_SignalMessage(serializedData: newData)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create SignalMessage ProtoBuf object: \(error)")
         }
@@ -207,7 +207,7 @@ extension SignalMessage {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from object: Textsecure_SignalMessage, version: UInt8, mac: Data) throws {
+    init(from object: Signal_SignalMessage, version: UInt8, mac: Data) throws {
         guard object.hasCiphertext, object.hasCounter,
             object.hasRatchetKey, object.hasPreviousCounter else {
                 throw SignalError(.invalidProtoBuf, "Missing data in SignalMessage ProtoBuf object")

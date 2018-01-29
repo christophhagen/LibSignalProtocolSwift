@@ -83,6 +83,6 @@ extension SignedPreKeyStoreDelegate {
      */
     public func store(signedPreKey: SessionSignedPreKey) throws {
         let data = try signedPreKey.data()
-        try store(signedPreKey: data, for: signedPreKey.id)
+        try store(signedPreKey: data, for: signedPreKey.publicKey.id)
     }
 }

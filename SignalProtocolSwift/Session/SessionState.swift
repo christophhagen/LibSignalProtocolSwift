@@ -300,7 +300,7 @@ final class SessionState {
      - parameter object: The protobuf object.
      - throws: `SignalError` of type `.invalidProtoBuf`
      */
-    init(from object: Textsecure_SessionStructure) throws {
+    init(from object: Signal_Session) throws {
         guard object.hasSessionVersion else {
             throw SignalError(.invalidProtoBuf, "Missing session version in SessionState ProtoBuf object")
         }
@@ -339,9 +339,9 @@ final class SessionState {
      - throws: `SignalError` of type `.invalidProtoBuf`
      */
     convenience init(from data: Data) throws {
-        let object: Textsecure_SessionStructure
+        let object: Signal_Session
         do {
-            object = try Textsecure_SessionStructure(serializedData: data)
+            object = try Signal_Session(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Invalid SessionState record: \(error)")
         }
@@ -349,8 +349,8 @@ final class SessionState {
     }
 
     /// The state converted to a protobuf object
-    var object: Textsecure_SessionStructure {
-        return Textsecure_SessionStructure.with {
+    var object: Signal_Session {
+        return Signal_Session.with {
             $0.sessionVersion = UInt32(self.version)
             if let item = self.localIdentity {
                 $0.localIdentityPublic = item.data

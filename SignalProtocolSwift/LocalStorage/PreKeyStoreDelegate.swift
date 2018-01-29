@@ -80,6 +80,6 @@ extension PreKeyStoreDelegate {
      */
     public func store(preKey: SessionPreKey) throws {
         let data = try preKey.data()
-        try store(preKey: data, for: preKey.id)
+        try store(preKey: data, for: preKey.publicKey.id)
     }
 }

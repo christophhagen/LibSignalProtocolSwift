@@ -17,11 +17,11 @@ public struct SessionPreKey {
     /// The upper bound (inclusive) of the pre key id
     static let mediumMaxValue: UInt32 = 0xFFFFFF
 
-    /// The id of the pre key
-    public let id: UInt32
+    /// The public data of the pre key (id and public key)
+    public let publicKey: SessionPreKeyPublic
 
-    /// The key pair of the pre key
-    var keyPair: KeyPair
+    /// The private key of the pre key
+    let privateKey: PrivateKey
 
     /**
      Create a pre key from the components
@@ -29,8 +29,8 @@ public struct SessionPreKey {
      - parameter keyPair: The key pair of the pre key
     */
     init(id: UInt32, keyPair: KeyPair) {
-        self.id = id
-        self.keyPair = keyPair
+        self.publicKey = SessionPreKeyPublic(id: id, key: keyPair.publicKey)
+        self.privateKey = keyPair.privateKey
     }
 
     /**
@@ -42,8 +42,14 @@ public struct SessionPreKey {
      - throws: `SignalError` errors
     */
     init(index: UInt32) throws {
-        self.id = (index - 1) % (SessionPreKey.mediumMaxValue - 1) + 1
-        self.keyPair = try KeyPair()
+        let id = (index - 1) % (SessionPreKey.mediumMaxValue - 1) + 1
+        let keyPair = try KeyPair()
+        self.init(id: id, keyPair: keyPair)
+    }
+
+    /// The key pair of the signed pre key
+    var keyPair: KeyPair {
+        return KeyPair(publicKey: publicKey.key, privateKey: privateKey)
     }
 }
 
@@ -52,11 +58,10 @@ public struct SessionPreKey {
 extension SessionPreKey {
 
     /// Convert the pre key to a ProtoBuf object
-    var object: Textsecure_PreKeyRecordStructure {
-        return Textsecure_PreKeyRecordStructure.with {
-            $0.id = self.id
-            $0.publicKey = keyPair.publicKey.data
-            $0.privateKey = keyPair.privateKey.data
+    var object: Signal_PreKey {
+        return Signal_PreKey.with {
+            $0.publicKey = publicKey.object
+            $0.privateKey = privateKey.data
         }
     }
 
@@ -78,14 +83,12 @@ extension SessionPreKey {
      - parameter object: The ProtoBuf object.
      - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
      */
-    init(from object: Textsecure_PreKeyRecordStructure) throws {
-        guard object.hasID, object.hasPublicKey, object.hasPrivateKey else {
+    init(from object: Signal_PreKey) throws {
+        guard object.hasPublicKey, object.hasPrivateKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in SessionPreKey object")
         }
-        self.id = object.id
-        self.keyPair = KeyPair(
-            publicKey: try PublicKey(from: object.publicKey),
-            privateKey: try PrivateKey(from: object.privateKey))
+        self.publicKey = try SessionPreKeyPublic(from: object.publicKey)
+        self.privateKey = try PrivateKey(from: object.privateKey)
     }
 
     /**
@@ -94,32 +97,12 @@ extension SessionPreKey {
      - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
      */
     public init(from data: Data) throws {
-        let object: Textsecure_PreKeyRecordStructure
+        let object: Signal_PreKey
         do {
-            object = try Textsecure_PreKeyRecordStructure(serializedData: data)
+            object = try Signal_PreKey(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create SessionPreKey ProtoBuf object: \(error)")
         }
         try self.init(from: object)
-    }
-}
-
-extension SessionPreKey {
-
-    /**
-     The public data serialized.
-     - returns: The serialized public data.
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    func publicData() throws -> Data {
-        return try publicObject.data()
-    }
-
-    /**
-     The public components of the pre key.
-     - returns: the public pre key
-    */
-    var publicObject: SessionPublicPreKey {
-        return SessionPublicPreKey(preKey: self)
     }
 }

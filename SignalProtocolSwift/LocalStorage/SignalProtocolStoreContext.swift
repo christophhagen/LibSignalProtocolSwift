@@ -81,7 +81,7 @@ extension SignalProtocolStoreContext {
             id: id, timestamp: timestamp)
 
         try signedPreKeyStore.store(signedPreKey: key)
-        return try key.publicData()
+        return try key.publicKey.data()
     }
 
     /**
@@ -101,6 +101,6 @@ extension SignalProtocolStoreContext {
         for key in keys {
             try preKeyStore.store(preKey: key)
         }
-        return try keys.map { try $0.publicData() }
+        return try keys.map { try $0.publicKey.data() }
     }
 }

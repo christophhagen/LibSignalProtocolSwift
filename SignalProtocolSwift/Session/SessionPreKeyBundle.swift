@@ -64,8 +64,8 @@ public struct SessionPreKeyBundle {
      - parameter signedPreKey: The signed pre key
      - parameter identityKey: The identity key of the remote party
      */
-    init(preKey: SessionPublicPreKey,
-         signedPreKey: SessionPublicSignedPreKey,
+    init(preKey: SessionPreKeyPublic,
+         signedPreKey: SessionSignedPreKeyPublic,
          identityKey: PublicKey) {
 
         self.preKeyId = preKey.id
@@ -89,8 +89,8 @@ public struct SessionPreKeyBundle {
                 signedPreKey: Data,
                 identityKey: Data) throws {
 
-        self.init(preKey: try SessionPublicPreKey(from: preKey),
-                  signedPreKey: try SessionPublicSignedPreKey(from: signedPreKey),
+        self.init(preKey: try SessionPreKeyPublic(from: preKey),
+                  signedPreKey: try SessionSignedPreKeyPublic(from: signedPreKey),
                   identityKey: try PublicKey(from: identityKey))
     }
 }

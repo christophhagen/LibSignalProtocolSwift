@@ -51,27 +51,23 @@ extension ScannableFingerprint {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    init(from object: Textsecure_CombinedFingerprints) throws {
-        guard object.hasLocalFingerprint, object.hasRemoteFingerprint, object.hasVersion else {
+    init(from object: Signal_Fingerprint) throws {
+        guard object.hasLocal, object.hasRemote, object.hasVersion else {
             throw SignalError(.invalidProtoBuf, "Missing data in Fingerprint protobuf")
         }
         guard object.version == ScannableFingerprint.version else {
             throw SignalError(.invalidProtoBuf, "Invalid fingerprint version \(object.version)")
         }
-        try self.init(localFingerprint: object.localFingerprint.content,
-                      remoteFingerprint: object.remoteFingerprint.content)
+        try self.init(localFingerprint: object.local,
+                      remoteFingerprint: object.remote)
     }
 
     /// The fingerprint converted to a ProtoBuf object
-    var object: Textsecure_CombinedFingerprints {
-        return Textsecure_CombinedFingerprints.with {
+    var object: Signal_Fingerprint {
+        return Signal_Fingerprint.with {
             $0.version = ScannableFingerprint.version
-            $0.localFingerprint = Textsecure_LogicalFingerprint.with {
-                $0.content = self.localFingerprint
-            }
-            $0.remoteFingerprint = Textsecure_LogicalFingerprint.with {
-                $0.content = self.remoteFingerprint
-            }
+            $0.local = self.localFingerprint
+            $0.remote = self.remoteFingerprint
         }
     }
 
@@ -81,9 +77,9 @@ extension ScannableFingerprint {
      - throws: `SignalError` of type `invalidProtoBuf` and `invalidVersion`
      */
     init(from data: Data) throws {
-        let object: Textsecure_CombinedFingerprints
+        let object: Signal_Fingerprint
         do {
-            object = try Textsecure_CombinedFingerprints(serializedData: data)
+            object = try Signal_Fingerprint(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not deserialize data: \(error.localizedDescription)")
         }

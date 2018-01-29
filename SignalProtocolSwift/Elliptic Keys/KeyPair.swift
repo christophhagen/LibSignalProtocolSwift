@@ -130,9 +130,9 @@ extension KeyPair {
      - throws: `SignalError` of type `invalidProtoBuf`
      */
     init(from data: Data) throws {
-        let object: Textsecure_IdentityKeyPairStructure
+        let object: Signal_KeyPair
         do {
-            object = try Textsecure_IdentityKeyPairStructure(serializedData: data)
+            object = try Signal_KeyPair(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create key pair from data: \(error)")
         }
@@ -144,7 +144,7 @@ extension KeyPair {
      - parameter object: The protobuf object.
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    init(from object: Textsecure_IdentityKeyPairStructure) throws {
+    init(from object: Signal_KeyPair) throws {
         guard object.hasPublicKey, object.hasPrivateKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in KeyPair ProtoBuf object")
         }
@@ -153,8 +153,8 @@ extension KeyPair {
     }
 
     /// The key pair converted to a ProtoBuf object
-    var object: Textsecure_IdentityKeyPairStructure {
-        return Textsecure_IdentityKeyPairStructure.with {
+    var object: Signal_KeyPair {
+        return Signal_KeyPair.with {
             $0.publicKey = self.publicKey.data
             $0.privateKey = self.privateKey.data
         }

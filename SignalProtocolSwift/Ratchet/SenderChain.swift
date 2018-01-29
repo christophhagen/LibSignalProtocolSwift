@@ -40,7 +40,7 @@ extension SenderChain {
      - parameter version: The kdf version of the chain key
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
     */
-    init(from object: Textsecure_SessionStructure.Chain, version: HKDFVersion) throws {
+    init(from object: Signal_Session.Chain, version: HKDFVersion) throws {
         guard object.hasChainKey, object.hasSenderRatchetKey, object.hasSenderRatchetKeyPrivate else {
                 throw SignalError(.invalidProtoBuf, "Missing data in ProtoBuf object")
         }
@@ -57,9 +57,9 @@ extension SenderChain {
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
     init(from data: Data, version: HKDFVersion) throws {
-        let object: Textsecure_SessionStructure.Chain
+        let object: Signal_Session.Chain
         do {
-            object = try Textsecure_SessionStructure.Chain(serializedData: data)
+            object = try Signal_Session.Chain(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create sender chain ProtoBuf object")
         }
@@ -80,8 +80,8 @@ extension SenderChain {
     }
 
     /// The sender chain converted to a protobuf object
-    var object: Textsecure_SessionStructure.Chain {
-        return Textsecure_SessionStructure.Chain.with {
+    var object: Signal_Session.Chain {
+        return Signal_Session.Chain.with {
             $0.senderRatchetKey = ratchetKey.publicKey.data
             $0.senderRatchetKeyPrivate = ratchetKey.privateKey.data
             $0.chainKey = chainKey.object

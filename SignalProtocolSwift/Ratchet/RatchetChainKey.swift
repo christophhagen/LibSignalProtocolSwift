@@ -97,7 +97,7 @@ extension RatchetChainKey {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from object: Textsecure_SessionStructure.Chain.ChainKey, version: HKDFVersion) throws {
+    init(from object: Signal_Session.Chain.ChainKey, version: HKDFVersion) throws {
         guard object.hasIndex, object.hasKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in RatchetChainKey protobuf object")
         }
@@ -114,9 +114,9 @@ extension RatchetChainKey {
      - throws: `SignalError` errors
      */
     init(from data: Data, version: HKDFVersion) throws {
-        let object: Textsecure_SessionStructure.Chain.ChainKey
+        let object: Signal_Session.Chain.ChainKey
         do {
-            object = try Textsecure_SessionStructure.Chain.ChainKey(serializedData: data)
+            object = try Signal_Session.Chain.ChainKey(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create RatchetChainKey object: \(error)")
         }
@@ -133,8 +133,8 @@ extension RatchetChainKey {
     }
 
     /// The chain key converted to a ProtoBuf object
-    var object: Textsecure_SessionStructure.Chain.ChainKey {
-        return Textsecure_SessionStructure.Chain.ChainKey.with {
+    var object: Signal_Session.Chain.ChainKey {
+        return Signal_Session.Chain.ChainKey.with {
             $0.index = self.index
             $0.key = self.key
         }

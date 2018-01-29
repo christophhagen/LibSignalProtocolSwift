@@ -97,8 +97,8 @@ extension SenderKeyMessage {
     }
 
     /// Convert the sender key message to a ProtoBuf object
-    var object: Textsecure_SenderKeyMessage {
-        return Textsecure_SenderKeyMessage.with {
+    var object: Signal_SenderKeyMessage {
+        return Signal_SenderKeyMessage.with {
             $0.id = self.keyId
             $0.iteration = self.iteration
             $0.ciphertext = Data(self.cipherText)
@@ -126,9 +126,9 @@ extension SenderKeyMessage {
         }
         let content = data[1..<length]
         let signature = data[length..<data.count]
-        let object: Textsecure_SenderKeyMessage
+        let object: Signal_SenderKeyMessage
         do {
-            object = try Textsecure_SenderKeyMessage(serializedData: content)
+            object = try Signal_SenderKeyMessage(serializedData: content)
         } catch {
            throw SignalError(.invalidProtoBuf, "Could not create sender key message object: \(error)")
         }
@@ -145,7 +145,7 @@ extension SenderKeyMessage {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` errors
      */
-    init(from object: Textsecure_SenderKeyMessage, version: UInt8, signature: Data) throws {
+    init(from object: Signal_SenderKeyMessage, version: UInt8, signature: Data) throws {
         if version < CipherTextMessage.currentVersion {
             throw SignalError(.legacyMessage, "Old SenderKeyMessage version \(version)")
         }

@@ -112,8 +112,8 @@ final class SessionRecord {
     }
 
     /// Convert the record to a ProtoBuf object for storage
-    var object: Textsecure_RecordStructure {
-        return Textsecure_RecordStructure.with {
+    var object: Signal_Record {
+        return Signal_Record.with {
             $0.currentSession = self.state.object
             $0.previousSessions = self.previousStates.map { $0.object }
         }
@@ -125,9 +125,9 @@ final class SessionRecord {
      - throws: `SignalError` error of type `invalidProtoBuf`, if data is missing or corrupt
      */
     convenience init(from data: Data) throws {
-        let object: Textsecure_RecordStructure
+        let object: Signal_Record
         do {
-            object = try Textsecure_RecordStructure(serializedData: data)
+            object = try Signal_Record(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not deserialize SessionRecord ProtoBuf object: \(error)")
         }
@@ -140,7 +140,7 @@ final class SessionRecord {
      - parameter object: The ProtoBuf object.
      - throws: `SignalError` error of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from object: Textsecure_RecordStructure) throws {
+    init(from object: Signal_Record) throws {
         self.state = try SessionState(from: object.currentSession)
         self.previousStates = try object.previousSessions.map { try SessionState(from: $0) }
         self.isFresh = false

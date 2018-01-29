@@ -85,7 +85,7 @@ extension RatchetMessageKeys {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from object: Textsecure_SessionStructure.Chain.MessageKey) throws {
+    init(from object: Signal_Session.Chain.MessageKey) throws {
         guard object.hasIndex, object.hasCipherKey, object.hasIv, object.hasMacKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in RatchetMessageKeys protobuf object")
         }
@@ -101,9 +101,9 @@ extension RatchetMessageKeys {
      - throws: `SignalError` of type `invalidProtoBuf`
      */
     init(from data: Data) throws {
-        let object: Textsecure_SessionStructure.Chain.MessageKey
+        let object: Signal_Session.Chain.MessageKey
         do {
-            object = try Textsecure_SessionStructure.Chain.MessageKey(serializedData: data)
+            object = try Signal_Session.Chain.MessageKey(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create RatchetMessageKeys from Protobuf object: \(error)")
         }
@@ -120,8 +120,8 @@ extension RatchetMessageKeys {
     }
     
     /// The message keys converted to a ProtoBuf object
-    var object: Textsecure_SessionStructure.Chain.MessageKey {
-        return Textsecure_SessionStructure.Chain.MessageKey.with {
+    var object: Signal_Session.Chain.MessageKey {
+        return Signal_Session.Chain.MessageKey.with {
             $0.index = self.counter
             $0.cipherKey = self.cipherKey
             $0.iv = self.iv

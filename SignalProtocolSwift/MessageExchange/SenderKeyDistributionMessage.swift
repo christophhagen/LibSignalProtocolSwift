@@ -86,8 +86,8 @@ extension SenderKeyDistributionMessage {
     }
 
     /// Convert the distribution message to a ProtoBuf object
-    var object: Textsecure_SenderKeyDistributionMessage {
-        return Textsecure_SenderKeyDistributionMessage.with {
+    var object: Signal_SenderKeyDistributionMessage {
+        return Signal_SenderKeyDistributionMessage.with {
             $0.id = self.id
             $0.iteration = self.iteration
             $0.chainKey = self.chainKey
@@ -115,9 +115,9 @@ extension SenderKeyDistributionMessage {
         if version > CipherTextMessage.currentVersion {
             throw SignalError(.invalidVersion, "Unknown version \(version)")
         }
-        let object: Textsecure_SenderKeyDistributionMessage
+        let object: Signal_SenderKeyDistributionMessage
         do {
-            object = try Textsecure_SenderKeyDistributionMessage(serializedData: data.advanced(by: 1))
+            object = try Signal_SenderKeyDistributionMessage(serializedData: data.advanced(by: 1))
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create distribution message object: \(error)")
         }
@@ -129,7 +129,7 @@ extension SenderKeyDistributionMessage {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from object: Textsecure_SenderKeyDistributionMessage, version: UInt8) throws {
+    init(from object: Signal_SenderKeyDistributionMessage, version: UInt8) throws {
         guard object.hasID, object.hasIteration, object.hasChainKey, object.hasSigningKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyDistributionMessage Protobuf object")
         }

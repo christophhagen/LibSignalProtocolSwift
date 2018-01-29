@@ -11,6 +11,17 @@
 		2B63F6D996E0308D57938D7A /* Pods_SignalProtocolSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD351464F8FC9A55BE05F9DD /* Pods_SignalProtocolSwift_Tests.framework */; };
 		5367BEB5AF689B4285C9485C /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78445AB11A6B6C03490848ED /* Pods_SignalProtocolSwift_SignalProtocolSwift_iOS.framework */; };
 		53B83CFD44CFB40C97C72520 /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB543D11ECD3A6519E1100EF /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework */; };
+		CE53032C201F47920004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
+		CE53032E201F4EDA0004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
+		CE53032F201F57A70004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
+		CE530330201F57A70004942F /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
+		CE530331201F57A70004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
+		CE530332201F57A70004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
+		CE530333201F57A70004942F /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
+		CE530334201F57A70004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
+		CE530335201F57A80004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
+		CE530336201F57A80004942F /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
+		CE530337201F57A80004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
 		CEB45A4A201CB2E6002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB45A52201CB30E002BB845 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A51201CB30E002BB845 /* PrivateKey.swift */; };
 		CEB45A54201CB318002BB845 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A53201CB318002BB845 /* PublicKey.swift */; };
@@ -24,9 +35,6 @@
 		CEB45AAA201CB4D0002BB845 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */; };
 		CEB45AAB201CB4D0002BB845 /* CipherTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */; };
 		CEB45AAC201CB4D0002BB845 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A72201CB4CF002BB845 /* SignalMessage.swift */; };
-		CEB45AAD201CB4D0002BB845 /* WhisperTextProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A74201CB4CF002BB845 /* WhisperTextProtocol.pb.swift */; };
-		CEB45AAF201CB4D0002BB845 /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A76201CB4CF002BB845 /* FingerprintProtocol.pb.swift */; };
-		CEB45AB1201CB4D0002BB845 /* LocalStorageProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A78201CB4CF002BB845 /* LocalStorageProtocol.pb.swift */; };
 		CEB45AB8201CB4D0002BB845 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */; };
 		CEB45AB9201CB4D0002BB845 /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A82201CB4CF002BB845 /* Fingerprint.swift */; };
 		CEB45ABA201CB4D0002BB845 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */; };
@@ -173,15 +181,6 @@
 		CEB45C1D201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */; };
 		CEB45C1E201CD427002BB845 /* CipherTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */; };
 		CEB45C1F201CD427002BB845 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A72201CB4CF002BB845 /* SignalMessage.swift */; };
-		CEB45C20201CD42F002BB845 /* WhisperTextProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A74201CB4CF002BB845 /* WhisperTextProtocol.pb.swift */; };
-		CEB45C21201CD42F002BB845 /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A76201CB4CF002BB845 /* FingerprintProtocol.pb.swift */; };
-		CEB45C22201CD42F002BB845 /* LocalStorageProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A78201CB4CF002BB845 /* LocalStorageProtocol.pb.swift */; };
-		CEB45C23201CD430002BB845 /* WhisperTextProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A74201CB4CF002BB845 /* WhisperTextProtocol.pb.swift */; };
-		CEB45C24201CD430002BB845 /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A76201CB4CF002BB845 /* FingerprintProtocol.pb.swift */; };
-		CEB45C25201CD430002BB845 /* LocalStorageProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A78201CB4CF002BB845 /* LocalStorageProtocol.pb.swift */; };
-		CEB45C26201CD430002BB845 /* WhisperTextProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A74201CB4CF002BB845 /* WhisperTextProtocol.pb.swift */; };
-		CEB45C27201CD430002BB845 /* FingerprintProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A76201CB4CF002BB845 /* FingerprintProtocol.pb.swift */; };
-		CEB45C28201CD430002BB845 /* LocalStorageProtocol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A78201CB4CF002BB845 /* LocalStorageProtocol.pb.swift */; };
 		CEB45C29201CD444002BB845 /* RatchetMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */; };
 		CEB45C2A201CD444002BB845 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A95201CB4D0002BB845 /* HKDF.swift */; };
 		CEB45C2B201CD444002BB845 /* RatchetChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */; };
@@ -230,14 +229,15 @@
 		CEB45C56201CD455002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB45C57201CD455002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB45C58201CD455002BB845 /* SignalProtocolSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CEB45C89201D081C002BB845 /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
-		CEB45C8B201D0A21002BB845 /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
-		CEC812E3201E35970018D42E /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
-		CEC812E4201E35970018D42E /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
-		CEC812E5201E35980018D42E /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
-		CEC812E6201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
-		CEC812E7201E35980018D42E /* SessionPublicPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */; };
-		CEC812E8201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */; };
+		CEB45C89201D081C002BB845 /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
+		CEB45C8B201D0A21002BB845 /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
+		CEC812E3201E35970018D42E /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
+		CEC812E4201E35970018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
+		CEC812E5201E35980018D42E /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
+		CEC812E6201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
+		CEC812E7201E35980018D42E /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
+		CEC812E8201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
+		CEC81310201F42020018D42E /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
 		D839E8CE4B2456E48173BB3F /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FAD81585E0F77CDB87E46F /* Pods_SignalProtocolSwift_SignalProtocolSwift_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -263,6 +263,8 @@
 		A5587219CF52013E9BE1626C /* Pods-SignalProtocolSwift-SignalProtocolSwift iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift iOS/Pods-SignalProtocolSwift-SignalProtocolSwift iOS.release.xcconfig"; sourceTree = "<group>"; };
 		AB543D11ECD3A6519E1100EF /* Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_SignalProtocolSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC72312BD1F56904A9221E09 /* Pods-SignalProtocolSwift Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift Tests/Pods-SignalProtocolSwift Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE53032B201F47920004942F /* LocalStorage.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.pb.swift; sourceTree = "<group>"; };
+		CE53032D201F4ED90004942F /* Messages.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.pb.swift; sourceTree = "<group>"; };
 		CEB45A45201CB2E6002BB845 /* SignalProtocolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB45A48201CB2E6002BB845 /* SignalProtocolSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalProtocolSwift.h; sourceTree = "<group>"; };
 		CEB45A49201CB2E6002BB845 /* Info iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info iOS.plist"; sourceTree = "<group>"; };
@@ -279,12 +281,6 @@
 		CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyDistributionMessage.swift; sourceTree = "<group>"; };
 		CEB45A71201CB4CF002BB845 /* CipherTextMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CipherTextMessage.swift; sourceTree = "<group>"; };
 		CEB45A72201CB4CF002BB845 /* SignalMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalMessage.swift; sourceTree = "<group>"; };
-		CEB45A74201CB4CF002BB845 /* WhisperTextProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperTextProtocol.pb.swift; sourceTree = "<group>"; };
-		CEB45A75201CB4CF002BB845 /* LocalStorageProtocol.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalStorageProtocol.proto; sourceTree = "<group>"; };
-		CEB45A76201CB4CF002BB845 /* FingerprintProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerprintProtocol.pb.swift; sourceTree = "<group>"; };
-		CEB45A77201CB4CF002BB845 /* WhisperTextProtocol.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WhisperTextProtocol.proto; sourceTree = "<group>"; };
-		CEB45A78201CB4CF002BB845 /* LocalStorageProtocol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageProtocol.pb.swift; sourceTree = "<group>"; };
-		CEB45A79201CB4CF002BB845 /* FingerprintProtocol.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FingerprintProtocol.proto; sourceTree = "<group>"; };
 		CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayableFingerprint.swift; sourceTree = "<group>"; };
 		CEB45A82201CB4CF002BB845 /* Fingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fingerprint.swift; sourceTree = "<group>"; };
 		CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannableFingerprint.swift; sourceTree = "<group>"; };
@@ -347,8 +343,9 @@
 		CEB45BAE201CC70C002BB845 /* TestSignedPreKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSignedPreKeyStore.swift; sourceTree = "<group>"; };
 		CEB45BBD201CC7A2002BB845 /* SignalProtocolSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocolSwiftTests.swift; sourceTree = "<group>"; };
 		CEB45BC6201CCF31002BB845 /* CurveTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveTests.swift; sourceTree = "<group>"; };
-		CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPublicPreKey.swift; sourceTree = "<group>"; };
-		CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPublicSignedPreKey.swift; sourceTree = "<group>"; };
+		CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPreKeyPublic.swift; sourceTree = "<group>"; };
+		CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSignedPreKeyPublic.swift; sourceTree = "<group>"; };
+		CEC8130F201F42020018D42E /* Fingerprint.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fingerprint.pb.swift; sourceTree = "<group>"; };
 		DD351464F8FC9A55BE05F9DD /* Pods_SignalProtocolSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocolSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38CC68B23F5243C62FF8CF9 /* Pods-SignalProtocolSwift-SignalProtocolSwift tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift tvOS/Pods-SignalProtocolSwift-SignalProtocolSwift tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FB1271EECD9B67E799F21AAA /* Pods-SignalProtocolSwift-SignalProtocolSwift watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocolSwift-SignalProtocolSwift watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocolSwift-SignalProtocolSwift watchOS/Pods-SignalProtocolSwift-SignalProtocolSwift watchOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -518,12 +515,9 @@
 		CEB45A73201CB4CF002BB845 /* ProtocolBuffers */ = {
 			isa = PBXGroup;
 			children = (
-				CEB45A74201CB4CF002BB845 /* WhisperTextProtocol.pb.swift */,
-				CEB45A75201CB4CF002BB845 /* LocalStorageProtocol.proto */,
-				CEB45A76201CB4CF002BB845 /* FingerprintProtocol.pb.swift */,
-				CEB45A77201CB4CF002BB845 /* WhisperTextProtocol.proto */,
-				CEB45A78201CB4CF002BB845 /* LocalStorageProtocol.pb.swift */,
-				CEB45A79201CB4CF002BB845 /* FingerprintProtocol.proto */,
+				CE53032D201F4ED90004942F /* Messages.pb.swift */,
+				CEC8130F201F42020018D42E /* Fingerprint.pb.swift */,
+				CE53032B201F47920004942F /* LocalStorage.pb.swift */,
 			);
 			path = ProtocolBuffers;
 			sourceTree = "<group>";
@@ -597,10 +591,10 @@
 				CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */,
 				CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */,
 				CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */,
-				CEB45C88201D081C002BB845 /* SessionPublicPreKey.swift */,
+				CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */,
 				CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */,
 				CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */,
-				CEB45C8A201D0A21002BB845 /* SessionPublicSignedPreKey.swift */,
+				CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */,
 				CEB45AA7201CB4D0002BB845 /* SessionState.swift */,
 			);
 			path = Session;
@@ -1072,13 +1066,11 @@
 				CEB45ABF201CB4D0002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45AB8201CB4D0002BB845 /* DisplayableFingerprint.swift in Sources */,
 				CEB45AC9201CB4D0002BB845 /* HKDF.swift in Sources */,
-				CEB45AAD201CB4D0002BB845 /* WhisperTextProtocol.pb.swift in Sources */,
 				CEB45AD0201CB4D0002BB845 /* DeviceConsistencySignature.swift in Sources */,
-				CEB45AAF201CB4D0002BB845 /* FingerprintProtocol.pb.swift in Sources */,
 				CEB45AA9201CB4D0002BB845 /* SenderKeyMessage.swift in Sources */,
 				CEB45AD3201CB4D0002BB845 /* SessionPreKeyBundle.swift in Sources */,
 				CEB45AD5201CB4D0002BB845 /* SessionRecord.swift in Sources */,
-				CEB45C8B201D0A21002BB845 /* SessionPublicSignedPreKey.swift in Sources */,
+				CEB45C8B201D0A21002BB845 /* SessionSignedPreKeyPublic.swift in Sources */,
 				CEB45ABC201CB4D0002BB845 /* SessionCipher.swift in Sources */,
 				CEB45AC7201CB4D0002BB845 /* SessionStoreDelegate.swift in Sources */,
 				CEB45AC4201CB4D0002BB845 /* SignalProtocolStoreContext.swift in Sources */,
@@ -1088,10 +1080,10 @@
 				CEB45AB9201CB4D0002BB845 /* Fingerprint.swift in Sources */,
 				CEB45A68201CB427002BB845 /* SignalError.swift in Sources */,
 				CEB45AD9201CB4D0002BB845 /* SessionState.swift in Sources */,
-				CEB45AB1201CB4D0002BB845 /* LocalStorageProtocol.pb.swift in Sources */,
 				CEB45A56201CB320002BB845 /* KeyPair.swift in Sources */,
 				CEB45A6B201CB4BC002BB845 /* SignalAddress.swift in Sources */,
 				CEB45A54201CB318002BB845 /* PublicKey.swift in Sources */,
+				CE53032E201F4EDA0004942F /* Messages.pb.swift in Sources */,
 				CEB45ACC201CB4D0002BB845 /* ReceiverChain.swift in Sources */,
 				CEB45ACA201CB4D0002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45AAB201CB4D0002BB845 /* CipherTextMessage.swift in Sources */,
@@ -1103,8 +1095,9 @@
 				CEB45AC6201CB4D0002BB845 /* PreKeyStoreDelegate.swift in Sources */,
 				CEB45AD7201CB4D0002BB845 /* SessionPreKey.swift in Sources */,
 				CEB45AC3201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift in Sources */,
-				CEB45C89201D081C002BB845 /* SessionPublicPreKey.swift in Sources */,
+				CEB45C89201D081C002BB845 /* SessionPreKeyPublic.swift in Sources */,
 				CEB45AA8201CB4D0002BB845 /* PreKeySignalMessage.swift in Sources */,
+				CEC81310201F42020018D42E /* Fingerprint.pb.swift in Sources */,
 				CEB45ACE201CB4D0002BB845 /* SenderMessageKey.swift in Sources */,
 				CEB45AC0201CB4D0002BB845 /* SignalCryptoProvider.swift in Sources */,
 				CEB45AAA201CB4D0002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
@@ -1118,6 +1111,7 @@
 				CEB45ABE201CB4D0002BB845 /* SenderKeyRecord.swift in Sources */,
 				CEB45A6C201CB4BC002BB845 /* SignalSenderKeyName.swift in Sources */,
 				CEB45ACD201CB4D0002BB845 /* RatchetRootKey.swift in Sources */,
+				CE53032C201F47920004942F /* LocalStorage.pb.swift in Sources */,
 				CEB45AD8201CB4D0002BB845 /* SessionBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1159,17 +1153,16 @@
 				CEB45BD4201CD40B002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
 				CEB45C02201CD421002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEB45C01201CD421002BB845 /* SignalProtocolStoreContext.swift in Sources */,
+				CE53032F201F57A70004942F /* Messages.pb.swift in Sources */,
 				CEB45C03201CD421002BB845 /* PreKeyStoreDelegate.swift in Sources */,
 				CEB45C2C201CD444002BB845 /* SenderChain.swift in Sources */,
 				CEB45C11201CD426002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C12201CD426002BB845 /* SenderKeyMessage.swift in Sources */,
 				CEB45C41201CD44A002BB845 /* SessionPreKeyBundle.swift in Sources */,
-				CEC812E4201E35970018D42E /* SessionPublicSignedPreKey.swift in Sources */,
+				CEC812E4201E35970018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
 				CEB45C43201CD44A002BB845 /* SessionRecord.swift in Sources */,
 				CEB45BCA201CD405002BB845 /* SignalAddress.swift in Sources */,
-				CEB45C20201CD42F002BB845 /* WhisperTextProtocol.pb.swift in Sources */,
 				CEB45BCB201CD405002BB845 /* SignalSenderKeyName.swift in Sources */,
-				CEB45C22201CD42F002BB845 /* LocalStorageProtocol.pb.swift in Sources */,
 				CEB45C29201CD444002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C42201CD44A002BB845 /* SessionSignedPreKey.swift in Sources */,
 				CEB45C04201CD421002BB845 /* SessionStoreDelegate.swift in Sources */,
@@ -1181,21 +1174,22 @@
 				CEB45C14201CD426002BB845 /* CipherTextMessage.swift in Sources */,
 				CEB45C2A201CD444002BB845 /* HKDF.swift in Sources */,
 				CEB45BC9201CD405002BB845 /* SignalError.swift in Sources */,
-				CEB45C21201CD42F002BB845 /* FingerprintProtocol.pb.swift in Sources */,
 				CEB45C2D201CD444002BB845 /* ReceiverChain.swift in Sources */,
 				CEB45BF9201CD41C002BB845 /* DisplayableFingerprint.swift in Sources */,
 				CEB45C2F201CD444002BB845 /* SenderMessageKey.swift in Sources */,
 				CEB45C13201CD426002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
 				CEB45C2B201CD444002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C45201CD44A002BB845 /* SessionPreKey.swift in Sources */,
+				CE530330201F57A70004942F /* Fingerprint.pb.swift in Sources */,
 				CEB45BFB201CD41C002BB845 /* ScannableFingerprint.swift in Sources */,
-				CEC812E3201E35970018D42E /* SessionPublicPreKey.swift in Sources */,
+				CEC812E3201E35970018D42E /* SessionPreKeyPublic.swift in Sources */,
 				CEB45C30201CD444002BB845 /* SenderChainKey.swift in Sources */,
 				CEB45C15201CD426002BB845 /* SignalMessage.swift in Sources */,
 				CEB45BD2201CD40B002BB845 /* DeviceConsistencySignature.swift in Sources */,
 				CEB45B48201CC648002BB845 /* SignalCommonCrypto.swift in Sources */,
 				CEB45C44201CD44A002BB845 /* PendingPreKey.swift in Sources */,
 				CEB45BFA201CD41C002BB845 /* Fingerprint.swift in Sources */,
+				CE530331201F57A70004942F /* LocalStorage.pb.swift in Sources */,
 				CEB45BE8201CD416002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BDD201CD411002BB845 /* KeyPair.swift in Sources */,
 				CEB45BDC201CD411002BB845 /* PublicKey.swift in Sources */,
@@ -1216,17 +1210,16 @@
 				CEB45BD7201CD40C002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
 				CEB45C08201CD422002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEB45C07201CD422002BB845 /* SignalProtocolStoreContext.swift in Sources */,
+				CE530332201F57A70004942F /* Messages.pb.swift in Sources */,
 				CEB45C09201CD422002BB845 /* PreKeyStoreDelegate.swift in Sources */,
 				CEB45C34201CD445002BB845 /* SenderChain.swift in Sources */,
 				CEB45C16201CD427002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C17201CD427002BB845 /* SenderKeyMessage.swift in Sources */,
 				CEB45C4F201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */,
-				CEC812E6201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */,
+				CEC812E6201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
 				CEB45C51201CD44B002BB845 /* SessionRecord.swift in Sources */,
 				CEB45BCD201CD406002BB845 /* SignalAddress.swift in Sources */,
-				CEB45C23201CD430002BB845 /* WhisperTextProtocol.pb.swift in Sources */,
 				CEB45BCE201CD406002BB845 /* SignalSenderKeyName.swift in Sources */,
-				CEB45C25201CD430002BB845 /* LocalStorageProtocol.pb.swift in Sources */,
 				CEB45C31201CD445002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C50201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */,
 				CEB45C0A201CD422002BB845 /* SessionStoreDelegate.swift in Sources */,
@@ -1238,21 +1231,22 @@
 				CEB45C19201CD427002BB845 /* CipherTextMessage.swift in Sources */,
 				CEB45C32201CD445002BB845 /* HKDF.swift in Sources */,
 				CEB45BCC201CD406002BB845 /* SignalError.swift in Sources */,
-				CEB45C24201CD430002BB845 /* FingerprintProtocol.pb.swift in Sources */,
 				CEB45C35201CD445002BB845 /* ReceiverChain.swift in Sources */,
 				CEB45BF6201CD41B002BB845 /* DisplayableFingerprint.swift in Sources */,
 				CEB45C37201CD445002BB845 /* SenderMessageKey.swift in Sources */,
 				CEB45C18201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
 				CEB45C33201CD445002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C53201CD44B002BB845 /* SessionPreKey.swift in Sources */,
+				CE530333201F57A70004942F /* Fingerprint.pb.swift in Sources */,
 				CEB45BF8201CD41B002BB845 /* ScannableFingerprint.swift in Sources */,
-				CEC812E5201E35980018D42E /* SessionPublicPreKey.swift in Sources */,
+				CEC812E5201E35980018D42E /* SessionPreKeyPublic.swift in Sources */,
 				CEB45C38201CD445002BB845 /* SenderChainKey.swift in Sources */,
 				CEB45C1A201CD427002BB845 /* SignalMessage.swift in Sources */,
 				CEB45BD5201CD40C002BB845 /* DeviceConsistencySignature.swift in Sources */,
 				CEB45B49201CC649002BB845 /* SignalCommonCrypto.swift in Sources */,
 				CEB45C52201CD44B002BB845 /* PendingPreKey.swift in Sources */,
 				CEB45BF7201CD41B002BB845 /* Fingerprint.swift in Sources */,
+				CE530334201F57A70004942F /* LocalStorage.pb.swift in Sources */,
 				CEB45BEE201CD417002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BE0201CD411002BB845 /* KeyPair.swift in Sources */,
 				CEB45BDF201CD411002BB845 /* PublicKey.swift in Sources */,
@@ -1273,17 +1267,16 @@
 				CEB45BDA201CD40C002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
 				CEB45C0E201CD422002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */,
 				CEB45C0D201CD422002BB845 /* SignalProtocolStoreContext.swift in Sources */,
+				CE530335201F57A80004942F /* Messages.pb.swift in Sources */,
 				CEB45C0F201CD422002BB845 /* PreKeyStoreDelegate.swift in Sources */,
 				CEB45C3C201CD445002BB845 /* SenderChain.swift in Sources */,
 				CEB45C1B201CD427002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C1C201CD427002BB845 /* SenderKeyMessage.swift in Sources */,
 				CEB45C48201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */,
-				CEC812E8201E35980018D42E /* SessionPublicSignedPreKey.swift in Sources */,
+				CEC812E8201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
 				CEB45C4A201CD44B002BB845 /* SessionRecord.swift in Sources */,
 				CEB45BD0201CD406002BB845 /* SignalAddress.swift in Sources */,
-				CEB45C26201CD430002BB845 /* WhisperTextProtocol.pb.swift in Sources */,
 				CEB45BD1201CD406002BB845 /* SignalSenderKeyName.swift in Sources */,
-				CEB45C28201CD430002BB845 /* LocalStorageProtocol.pb.swift in Sources */,
 				CEB45C39201CD445002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C49201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */,
 				CEB45C10201CD422002BB845 /* SessionStoreDelegate.swift in Sources */,
@@ -1295,21 +1288,22 @@
 				CEB45C1E201CD427002BB845 /* CipherTextMessage.swift in Sources */,
 				CEB45C3A201CD445002BB845 /* HKDF.swift in Sources */,
 				CEB45BCF201CD406002BB845 /* SignalError.swift in Sources */,
-				CEB45C27201CD430002BB845 /* FingerprintProtocol.pb.swift in Sources */,
 				CEB45C3D201CD445002BB845 /* ReceiverChain.swift in Sources */,
 				CEB45BFC201CD41C002BB845 /* DisplayableFingerprint.swift in Sources */,
 				CEB45C3F201CD445002BB845 /* SenderMessageKey.swift in Sources */,
 				CEB45C1D201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
 				CEB45C3B201CD445002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C4C201CD44B002BB845 /* SessionPreKey.swift in Sources */,
+				CE530336201F57A80004942F /* Fingerprint.pb.swift in Sources */,
 				CEB45BFE201CD41C002BB845 /* ScannableFingerprint.swift in Sources */,
-				CEC812E7201E35980018D42E /* SessionPublicPreKey.swift in Sources */,
+				CEC812E7201E35980018D42E /* SessionPreKeyPublic.swift in Sources */,
 				CEB45C40201CD445002BB845 /* SenderChainKey.swift in Sources */,
 				CEB45C1F201CD427002BB845 /* SignalMessage.swift in Sources */,
 				CEB45BD8201CD40C002BB845 /* DeviceConsistencySignature.swift in Sources */,
 				CEB45B4A201CC649002BB845 /* SignalCommonCrypto.swift in Sources */,
 				CEB45C4B201CD44B002BB845 /* PendingPreKey.swift in Sources */,
 				CEB45BFD201CD41C002BB845 /* Fingerprint.swift in Sources */,
+				CE530337201F57A80004942F /* LocalStorage.pb.swift in Sources */,
 				CEB45BF4201CD417002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BE3201CD412002BB845 /* KeyPair.swift in Sources */,
 				CEB45BE2201CD412002BB845 /* PublicKey.swift in Sources */,

@@ -14,7 +14,7 @@ import Foundation
  The public part of the key pair is signed with the identity key of the creator
  to provide authentication.
  */
-public struct SessionPublicSignedPreKey {
+public struct SessionSignedPreKeyPublic {
 
     /// The id of the signed pre key
     public let id: UInt32
@@ -41,22 +41,11 @@ public struct SessionPublicSignedPreKey {
         self.timestamp = timestamp
         self.signature = signature
     }
-
-    /**
-     Create a public signed pre key from the complete signed pre key.
-     - parameter signedPreKey: The signed pre key
-     */
-    init(signedPreKey: SessionSignedPreKey) {
-        self.id = signedPreKey.id
-        self.key = signedPreKey.keyPair.publicKey
-        self.timestamp = signedPreKey.timestamp
-        self.signature = signedPreKey.signature
-    }
 }
 
 // MARK: Protocol Buffers
 
-extension SessionPublicSignedPreKey {
+extension SessionSignedPreKeyPublic {
 
     /**
      Create a signed pre key from serialized data.
@@ -64,9 +53,9 @@ extension SessionPublicSignedPreKey {
      - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
      */
     public init(from data: Data) throws {
-        let object: Textsecure_SignedPreKeyRecordStructure
+        let object: Signal_SignedPreKey.PublicPart
         do {
-            object = try Textsecure_SignedPreKeyRecordStructure(serializedData: data)
+            object = try Signal_SignedPreKey.PublicPart(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not deserialize SessionSignedPreKey ProtoBuf object: \(error)")
         }
@@ -78,22 +67,22 @@ extension SessionPublicSignedPreKey {
      - parameter object: The ProtoBuf object.
      - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
      */
-    init(from object: Textsecure_SignedPreKeyRecordStructure) throws {
-        guard object.hasID, object.hasPublicKey,
+    init(from object: Signal_SignedPreKey.PublicPart) throws {
+        guard object.hasID, object.hasKey,
             object.hasSignature, object.hasTimestamp else {
                 throw SignalError(.invalidProtoBuf, "Missing data in SessionSignedPreKey object")
         }
         self.id = object.id
-        self.key = try PublicKey(from: object.publicKey)
+        self.key = try PublicKey(from: object.key)
         self.timestamp = object.timestamp
         self.signature = object.signature
     }
 
     /// Convert the public signed pre key to a ProtoBuf object
-    var object: Textsecure_SignedPreKeyRecordStructure {
-        return Textsecure_SignedPreKeyRecordStructure.with {
+    var object: Signal_SignedPreKey.PublicPart {
+        return Signal_SignedPreKey.PublicPart.with {
             $0.id = self.id
-            $0.publicKey = self.key.data
+            $0.key = self.key.data
             $0.timestamp = self.timestamp
             $0.signature = self.signature
         }
@@ -113,7 +102,7 @@ extension SessionPublicSignedPreKey {
     }
 }
 
-extension SessionPublicSignedPreKey: Equatable {
+extension SessionSignedPreKeyPublic: Equatable {
 
     /**
      Compare two public signed pre keys for equality.
@@ -121,7 +110,7 @@ extension SessionPublicSignedPreKey: Equatable {
      - parameters rhs: The second public signed pre key
      - returns: `True`, if the public signed pre keys match
      */
-    public static func ==(lhs: SessionPublicSignedPreKey, rhs: SessionPublicSignedPreKey) -> Bool {
+    public static func ==(lhs: SessionSignedPreKeyPublic, rhs: SessionSignedPreKeyPublic) -> Bool {
         return lhs.id == rhs.id &&
             lhs.key == rhs.key &&
             lhs.signature == rhs.signature &&

@@ -100,7 +100,7 @@ final class ReceiverChain {
      - parameter object: The protobuf object
      - throws: `SignaError` of type `invalidProtoBuf`, if data is missing or corrupt.
      */
-    init(from object: Textsecure_SessionStructure.Chain, version: HKDFVersion) throws {
+    init(from object: Signal_Session.Chain, version: HKDFVersion) throws {
         self.ratchetKey = try PublicKey(from: object.senderRatchetKey)
         self.chainKey = try RatchetChainKey(from: object.chainKey, version: version)
         self.messageKeys = try object.messageKeys.map { try RatchetMessageKeys(from: $0) }
@@ -113,9 +113,9 @@ final class ReceiverChain {
      - throws: `SignaError` of type `invalidProtoBuf`, if data is missing or corrupt.
      */
     convenience init(from data: Data, version: HKDFVersion) throws {
-        let object: Textsecure_SessionStructure.Chain
+        let object: Signal_Session.Chain
         do {
-            object = try Textsecure_SessionStructure.Chain(serializedData: data)
+            object = try Signal_Session.Chain(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf, "Could not create ReceiverChain protobuf object: \(error)")
         }
@@ -136,8 +136,8 @@ final class ReceiverChain {
     }
 
     /// The receiver chain converted to a protobuf object
-    var object: Textsecure_SessionStructure.Chain {
-        return Textsecure_SessionStructure.Chain.with {
+    var object: Signal_Session.Chain {
+        return Signal_Session.Chain.with {
             $0.senderRatchetKey = ratchetKey.data
             $0.chainKey = chainKey.object
             $0.messageKeys = messageKeys.map { $0.object }

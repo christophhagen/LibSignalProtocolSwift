@@ -62,8 +62,8 @@ extension DeviceConsistencyMessage {
     /**
      The message converted to a protocol buffer object.
      */
-    var object: Textsecure_DeviceConsistencyCodeMessage {
-        return Textsecure_DeviceConsistencyCodeMessage.with {
+    var object: Signal_DeviceConsistencyCodeMessage {
+        return Signal_DeviceConsistencyCodeMessage.with {
             $0.generation = self.generation
             $0.signature = self.signature.signature
         }
@@ -77,9 +77,9 @@ extension DeviceConsistencyMessage {
      - throws: `SignalError` errors
     */
     init(from data: Data, commitment: DeviceConsistencyCommitmentV0, identityKey: PublicKey) throws {
-        let object: Textsecure_DeviceConsistencyCodeMessage
+        let object: Signal_DeviceConsistencyCodeMessage
         do {
-            object = try Textsecure_DeviceConsistencyCodeMessage(serializedData: data)
+            object = try Signal_DeviceConsistencyCodeMessage(serializedData: data)
         } catch {
             throw SignalError(.invalidProtoBuf,
                               "Could not deserialize DeviceConsistencyMessage: \(error.localizedDescription)")
@@ -94,7 +94,7 @@ extension DeviceConsistencyMessage {
      - parameter identityKey: The identity key needed for verification
      - throws: `SignalError` errors
      */
-    init(from object: Textsecure_DeviceConsistencyCodeMessage,
+    init(from object: Signal_DeviceConsistencyCodeMessage,
          commitment: DeviceConsistencyCommitmentV0,
          identityKey: PublicKey) throws {
         guard object.hasSignature, object.hasGeneration else {

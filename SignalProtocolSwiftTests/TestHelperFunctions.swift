@@ -58,3 +58,7 @@ func shuffle<T>(_ buffer: inout [T]) {
         buffer[index] = a
     }
 }
+
+func hexEncodedString(_ data: Data) -> String {
+    return data.map { String(format: "0x%02hhx, ", $0) }.joined()
+}

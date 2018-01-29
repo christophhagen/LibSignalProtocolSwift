@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package Signal;
+
+message Fingerprint {
+  optional uint32 version = 1;
+  optional bytes  local   = 2;
+  optional bytes  remote  = 3;
+}
