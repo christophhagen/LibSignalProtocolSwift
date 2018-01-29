@@ -71,9 +71,6 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Functions.html#/s:19SignalProtocolSwift14getFingerprint33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
@@ -89,9 +86,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/ScannableFingerprint.html">ScannableFingerprint</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
@@ -132,9 +126,6 @@
                 <a href="Structs/Fingerprint.html">Fingerprint</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/Fingerprint/Version.html">– Version</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/GroupCipher.html">GroupCipher</a>
               </li>
               <li class="nav-group-task">
@@ -165,10 +156,7 @@
                 <a href="Structs/RatchetRootKey.html">RatchetRootKey</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a>
+                <a href="Structs/ScannableFingerprint.html">ScannableFingerprint</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/SenderChain.html">SenderChain</a>
@@ -198,13 +186,13 @@
                 <a href="Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SessionPublicPreKey.html">SessionPublicPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/SessionPublicSignedPreKey.html">SessionPublicSignedPreKey</a>
+                <a href="Structs/SessionPreKeyPublic.html">SessionPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/SignalAddress.html">SignalAddress</a>
@@ -366,81 +354,10 @@ concatenating the key data.</p>
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Comparison"></a>
-                <a name="//apple_ref/swift/Section/Comparison" class="dashAnchor"></a>
-                <a href="#/Comparison">
-                  <h3 class="section-name">Comparison</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF"></a>
-                    <a name="//apple_ref/swift/Function/createScannableFingerprint(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Create a scannable fingerprint from data.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    The result is either a <code><a href="Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a></code> or a <code><a href="Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a></code>
-
-</div>
-<div class="aside aside-throws">
-    <p class="aside-title">Throws</p>
-    <code><a href="Classes/SignalError.html">SignalError</a></code> of type <code>invalidProtoBuf</code> and <code>invalidVersion</code>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">createScannableFingerprint</span><span class="p">(</span><span class="n">from</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="Protocols/ScannableFingerprint.html">ScannableFingerprint</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>data</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The data from which the fingerprint is to be created</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The deserialized fingerprint</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-28)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-29)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

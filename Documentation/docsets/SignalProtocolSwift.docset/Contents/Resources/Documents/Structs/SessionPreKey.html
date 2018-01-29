@@ -72,9 +72,6 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Functions.html#/s:19SignalProtocolSwift14getFingerprint33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
@@ -90,9 +87,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/ScannableFingerprint.html">ScannableFingerprint</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
@@ -133,9 +127,6 @@
                 <a href="../Structs/Fingerprint.html">Fingerprint</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/Fingerprint/Version.html">– Version</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/GroupCipher.html">GroupCipher</a>
               </li>
               <li class="nav-group-task">
@@ -166,10 +157,7 @@
                 <a href="../Structs/RatchetRootKey.html">RatchetRootKey</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a>
+                <a href="../Structs/ScannableFingerprint.html">ScannableFingerprint</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SenderChain.html">SenderChain</a>
@@ -199,13 +187,13 @@
                 <a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SessionPublicPreKey.html">SessionPublicPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/SessionPublicSignedPreKey.html">SessionPublicSignedPreKey</a>
+                <a href="../Structs/SessionPreKeyPublic.html">SessionPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SignalAddress.html">SignalAddress</a>
@@ -284,9 +272,9 @@ each new session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV2ids6UInt32Vv"></a>
-                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV2ids6UInt32Vv">id</a>
+                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV06publicF0AA0deF6PublicVv"></a>
+                    <a name="//apple_ref/swift/Property/publicKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV06publicF0AA0deF6PublicVv">publicKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -294,14 +282,14 @@ each new session.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The id of the pre key</p>
+                        <p>The public data of the pre key (id and public key)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">publicKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/SessionPreKeyPublic.html">SessionPreKeyPublic</a></span></code></pre>
 
                         </div>
                       </div>
@@ -311,9 +299,9 @@ each new session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV7keyPairAA0fH0Vv"></a>
-                    <a name="//apple_ref/swift/Property/keyPair" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV7keyPairAA0fH0Vv">keyPair</a>
+                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV07privateF0AA07PrivateF0Vv"></a>
+                    <a name="//apple_ref/swift/Property/privateKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV07privateF0AA07PrivateF0Vv">privateKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -321,14 +309,14 @@ each new session.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The key pair of the pre key</p>
+                        <p>The private key of the pre key</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">keyPair</span><span class="p">:</span> <span class="kt"><a href="../Structs/KeyPair.html">KeyPair</a></span></code></pre>
+                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">privateKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PrivateKey.html">PrivateKey</a></span></code></pre>
 
                         </div>
                       </div>
@@ -451,6 +439,33 @@ each new session.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV7keyPairAA0fH0Vv"></a>
+                    <a name="//apple_ref/swift/Property/keyPair" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV7keyPairAA0fH0Vv">keyPair</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The key pair of the signed pre key</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">keyPair</span><span class="p">:</span> <span class="kt"><a href="../Structs/KeyPair.html">KeyPair</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -458,9 +473,9 @@ each new session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV6objectAA011Textsecure_eF15RecordStructureVv"></a>
+                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV6objectAA0a1_eF0Vv"></a>
                     <a name="//apple_ref/swift/Property/object" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV6objectAA011Textsecure_eF15RecordStructureVv">object</a>
+                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV6objectAA0a1_eF0Vv">object</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -475,7 +490,7 @@ each new session.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Textsecure_PreKeyRecordStructure</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Signal_PreKey</span></code></pre>
 
                         </div>
                       </div>
@@ -521,9 +536,9 @@ each new session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift13SessionPreKeyVAcA011Textsecure_eF15RecordStructureV4from_tKcfc"></a>
+                    <a name="/s:19SignalProtocolSwift13SessionPreKeyVAcA0a1_eF0V4from_tKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyVAcA011Textsecure_eF15RecordStructureV4from_tKcfc">init(from:)</a>
+                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyVAcA0a1_eF0V4from_tKcfc">init(from:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -543,7 +558,7 @@ each new session.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Textsecure_PreKeyRecordStructure</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Signal_PreKey</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -622,81 +637,10 @@ each new session.</p>
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV10publicData10Foundation0H0VyKF"></a>
-                    <a name="//apple_ref/swift/Method/publicData()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV10publicData10Foundation0H0VyKF">publicData()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The public data serialized.</p>
-<div class="aside aside-throws">
-    <p class="aside-title">Throws</p>
-    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>invalidProtoBuf</code>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">publicData</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The serialized public data.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift13SessionPreKeyV12publicObjectAA0d6PubliceF0Vv"></a>
-                    <a name="//apple_ref/swift/Property/publicObject" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift13SessionPreKeyV12publicObjectAA0d6PubliceF0Vv">publicObject</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The public components of the pre key.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">publicObject</span><span class="p">:</span> <span class="kt"><a href="../Structs/SessionPublicPreKey.html">SessionPublicPreKey</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>the public pre key</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-28)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-29)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

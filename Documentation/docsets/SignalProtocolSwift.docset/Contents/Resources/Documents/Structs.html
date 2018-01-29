@@ -71,9 +71,6 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:19SignalProtocolSwift26createScannableFingerprintAA0eF0_p10Foundation4DataV4from_tKF">createScannableFingerprint(from:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Functions.html#/s:19SignalProtocolSwift14getFingerprint33_D0BC3BD30CB8A0CCC1BF762982B2C150LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
@@ -89,9 +86,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/PreKeyStoreDelegate.html">PreKeyStoreDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/ScannableFingerprint.html">ScannableFingerprint</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/SenderKeyStoreDelegate.html">SenderKeyStoreDelegate</a>
@@ -132,9 +126,6 @@
                 <a href="Structs/Fingerprint.html">Fingerprint</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/Fingerprint/Version.html">– Version</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/GroupCipher.html">GroupCipher</a>
               </li>
               <li class="nav-group-task">
@@ -165,10 +156,7 @@
                 <a href="Structs/RatchetRootKey.html">RatchetRootKey</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/ScannableFingerprintV0.html">ScannableFingerprintV0</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/ScannableFingerprintV1.html">ScannableFingerprintV1</a>
+                <a href="Structs/ScannableFingerprint.html">ScannableFingerprint</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/SenderChain.html">SenderChain</a>
@@ -198,13 +186,13 @@
                 <a href="Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SessionPublicPreKey.html">SessionPublicPreKey</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/SessionPublicSignedPreKey.html">SessionPublicSignedPreKey</a>
+                <a href="Structs/SessionPreKeyPublic.html">SessionPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/SignalAddress.html">SignalAddress</a>
@@ -303,7 +291,7 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">DisplayableFingerprint</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DisplayableFingerprint</span></code></pre>
 
                         </div>
                       </div>
@@ -445,9 +433,9 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift25SessionPublicSignedPreKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/SessionPublicSignedPreKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift25SessionPublicSignedPreKeyV">SessionPublicSignedPreKey</a>
+                    <a name="/s:19SignalProtocolSwift25SessionSignedPreKeyPublicV"></a>
+                    <a name="//apple_ref/swift/Struct/SessionSignedPreKeyPublic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift25SessionSignedPreKeyPublicV">SessionSignedPreKeyPublic</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -459,13 +447,13 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
 The public part of the key pair is signed with the identity key of the creator
 to provide authentication.</p>
 
-                        <a href="Structs/SessionPublicSignedPreKey.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/SessionSignedPreKeyPublic.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionPublicSignedPreKey</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionSignedPreKeyPublic</span></code></pre>
 
                         </div>
                       </div>
@@ -807,38 +795,6 @@ The key has a length of <code>KeyPair.keyLength</code> byte.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift22ScannableFingerprintV0V"></a>
-                    <a name="//apple_ref/swift/Struct/ScannableFingerprintV0" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift22ScannableFingerprintV0V">ScannableFingerprintV0</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Version 0 of a scannable fingerprint.</p>
-
-                        <a href="Structs/ScannableFingerprintV0.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ScannableFingerprintV0</span><span class="p">:</span> <span class="kt"><a href="Protocols/ScannableFingerprint.html">ScannableFingerprint</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:19SignalProtocolSwift29DeviceConsistencyCommitmentV0V"></a>
                     <a name="//apple_ref/swift/Struct/DeviceConsistencyCommitmentV0" class="dashAnchor"></a>
                     <a class="token" href="#/s:19SignalProtocolSwift29DeviceConsistencyCommitmentV0V">DeviceConsistencyCommitmentV0</a>
@@ -893,38 +849,6 @@ existing sessions.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">GroupCipher</span><span class="o">&lt;</span><span class="kt">Context</span><span class="p">:</span> <span class="kt"><a href="Protocols/SignalProtocolStoreContext.html">SignalProtocolStoreContext</a></span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:19SignalProtocolSwift22ScannableFingerprintV1V"></a>
-                    <a name="//apple_ref/swift/Struct/ScannableFingerprintV1" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift22ScannableFingerprintV1V">ScannableFingerprintV1</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A fingerprint optimised to be scanned through e.g. a QR Code</p>
-
-                        <a href="Structs/ScannableFingerprintV1.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ScannableFingerprintV1</span><span class="p">:</span> <span class="kt"><a href="Protocols/ScannableFingerprint.html">ScannableFingerprint</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1069,9 +993,9 @@ each new session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:19SignalProtocolSwift19SessionPublicPreKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/SessionPublicPreKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:19SignalProtocolSwift19SessionPublicPreKeyV">SessionPublicPreKey</a>
+                    <a name="/s:19SignalProtocolSwift19SessionPreKeyPublicV"></a>
+                    <a name="//apple_ref/swift/Struct/SessionPreKeyPublic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift19SessionPreKeyPublicV">SessionPreKeyPublic</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1082,13 +1006,13 @@ each new session.</p>
                         <p>A pre key used to esatblish a session. A unique pre key is used for
 each new session.</p>
 
-                        <a href="Structs/SessionPublicPreKey.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/SessionPreKeyPublic.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionPublicPreKey</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionPreKeyPublic</span></code></pre>
 
                         </div>
                       </div>
@@ -1208,7 +1132,7 @@ each new session.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A pre key sent out as a pre key message</p>
+                        <p>A pre key sent out as a pre key message, until a message is received from the other party</p>
 
                         <a href="Structs/PendingPreKey.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1217,6 +1141,38 @@ each new session.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">PendingPreKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19SignalProtocolSwift20ScannableFingerprintV"></a>
+                    <a name="//apple_ref/swift/Struct/ScannableFingerprint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19SignalProtocolSwift20ScannableFingerprintV">ScannableFingerprint</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A fingerprint optimised to be scanned through e.g. a QR Code</p>
+
+                        <a href="Structs/ScannableFingerprint.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ScannableFingerprint</span></code></pre>
 
                         </div>
                       </div>
@@ -1435,7 +1391,7 @@ The key has a length of <code>KeyPair.keyLength</code> byte.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-28)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-29)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

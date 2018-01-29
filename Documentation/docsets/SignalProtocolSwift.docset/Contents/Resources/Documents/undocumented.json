@@ -1,9 +1,2333 @@
 {
   "warnings": [
     {
-      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/Ratchet/RatchetChainKey.swift",
-      "line": 44,
-      "symbol": "RatchetChainKey.init(kdf:key:index:)",
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": null,
+      "symbol": "Signal_Fingerprint",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 17,
+      "symbol": "_GeneratedWithProtocGenSwiftVersion",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 18,
+      "symbol": "_GeneratedWithProtocGenSwiftVersion._2",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 22,
+      "symbol": "Signal_Fingerprint",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 23,
+      "symbol": "Signal_Fingerprint.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 25,
+      "symbol": "Signal_Fingerprint.version",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 34,
+      "symbol": "Signal_Fingerprint.local",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 43,
+      "symbol": "Signal_Fingerprint.remote",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 52,
+      "symbol": "Signal_Fingerprint.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 54,
+      "symbol": "Signal_Fingerprint.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 88,
+      "symbol": "Signal_Fingerprint._version",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 89,
+      "symbol": "Signal_Fingerprint._local",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 90,
+      "symbol": "Signal_Fingerprint._remote",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 95,
+      "symbol": "_protobuf_package",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 98,
+      "symbol": "Signal_Fingerprint._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Fingerprint.pb.swift",
+      "line": 104,
+      "symbol": "Signal_Fingerprint._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_KeyPair",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_PreKey",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_PreKey.PublicPart",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_Record",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_SenderKeyRecord",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_SenderKeyState",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_SenderKeyState.SenderChainKey",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_Session",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_Session.Chain",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_Session.Chain.ChainKey",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_Session.Chain.MessageKey",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_Session.PendingPreKey",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_SignedPreKey",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": null,
+      "symbol": "Signal_SignedPreKey.PublicPart",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 17,
+      "symbol": "_GeneratedWithProtocGenSwiftVersion",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 18,
+      "symbol": "_GeneratedWithProtocGenSwiftVersion._2",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 22,
+      "symbol": "Signal_Session",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 23,
+      "symbol": "Signal_Session.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 25,
+      "symbol": "Signal_Session.sessionVersion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 34,
+      "symbol": "Signal_Session.localIdentityPublic",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 43,
+      "symbol": "Signal_Session.remoteIdentityPublic",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 52,
+      "symbol": "Signal_Session.rootKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 61,
+      "symbol": "Signal_Session.previousCounter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 70,
+      "symbol": "Signal_Session.senderChain",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 79,
+      "symbol": "Signal_Session.receiverChains",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 84,
+      "symbol": "Signal_Session.pendingPreKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 93,
+      "symbol": "Signal_Session.aliceBaseKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 102,
+      "symbol": "Signal_Session.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 104,
+      "symbol": "Signal_Session.Chain",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 105,
+      "symbol": "Signal_Session.Chain.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 107,
+      "symbol": "Signal_Session.Chain.senderRatchetKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 116,
+      "symbol": "Signal_Session.Chain.senderRatchetKeyPrivate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 125,
+      "symbol": "Signal_Session.Chain.chainKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 134,
+      "symbol": "Signal_Session.Chain.messageKeys",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 139,
+      "symbol": "Signal_Session.Chain.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 141,
+      "symbol": "Signal_Session.Chain.ChainKey",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 142,
+      "symbol": "Signal_Session.Chain.ChainKey.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 144,
+      "symbol": "Signal_Session.Chain.ChainKey.index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 153,
+      "symbol": "Signal_Session.Chain.ChainKey.key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 162,
+      "symbol": "Signal_Session.Chain.ChainKey.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 164,
+      "symbol": "Signal_Session.Chain.ChainKey.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 194,
+      "symbol": "Signal_Session.Chain.ChainKey._index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 195,
+      "symbol": "Signal_Session.Chain.ChainKey._key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 198,
+      "symbol": "Signal_Session.Chain.MessageKey",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 199,
+      "symbol": "Signal_Session.Chain.MessageKey.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 201,
+      "symbol": "Signal_Session.Chain.MessageKey.index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 210,
+      "symbol": "Signal_Session.Chain.MessageKey.cipherKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 219,
+      "symbol": "Signal_Session.Chain.MessageKey.macKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 228,
+      "symbol": "Signal_Session.Chain.MessageKey.iv",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 237,
+      "symbol": "Signal_Session.Chain.MessageKey.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 239,
+      "symbol": "Signal_Session.Chain.MessageKey.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 277,
+      "symbol": "Signal_Session.Chain.MessageKey._index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 278,
+      "symbol": "Signal_Session.Chain.MessageKey._cipherKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 279,
+      "symbol": "Signal_Session.Chain.MessageKey._macKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 280,
+      "symbol": "Signal_Session.Chain.MessageKey._iv",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 283,
+      "symbol": "Signal_Session.Chain.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 326,
+      "symbol": "Signal_Session.Chain._storage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 329,
+      "symbol": "Signal_Session.PendingPreKey",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 330,
+      "symbol": "Signal_Session.PendingPreKey.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 332,
+      "symbol": "Signal_Session.PendingPreKey.preKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 341,
+      "symbol": "Signal_Session.PendingPreKey.signedPreKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 350,
+      "symbol": "Signal_Session.PendingPreKey.baseKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 359,
+      "symbol": "Signal_Session.PendingPreKey.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 361,
+      "symbol": "Signal_Session.PendingPreKey.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 395,
+      "symbol": "Signal_Session.PendingPreKey._preKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 396,
+      "symbol": "Signal_Session.PendingPreKey._signedPreKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 397,
+      "symbol": "Signal_Session.PendingPreKey._baseKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 400,
+      "symbol": "Signal_Session.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 463,
+      "symbol": "Signal_Session._storage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 466,
+      "symbol": "Signal_Record",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 467,
+      "symbol": "Signal_Record.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 469,
+      "symbol": "Signal_Record.currentSession",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 478,
+      "symbol": "Signal_Record.previousSessions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 483,
+      "symbol": "Signal_Record.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 485,
+      "symbol": "Signal_Record.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 520,
+      "symbol": "Signal_Record._storage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 523,
+      "symbol": "Signal_PreKey",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 524,
+      "symbol": "Signal_PreKey.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 526,
+      "symbol": "Signal_PreKey.publicKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 535,
+      "symbol": "Signal_PreKey.privateKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 544,
+      "symbol": "Signal_PreKey.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 546,
+      "symbol": "Signal_PreKey.PublicPart",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 547,
+      "symbol": "Signal_PreKey.PublicPart.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 549,
+      "symbol": "Signal_PreKey.PublicPart.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 558,
+      "symbol": "Signal_PreKey.PublicPart.key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 567,
+      "symbol": "Signal_PreKey.PublicPart.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 569,
+      "symbol": "Signal_PreKey.PublicPart.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 599,
+      "symbol": "Signal_PreKey.PublicPart._id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 600,
+      "symbol": "Signal_PreKey.PublicPart._key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 603,
+      "symbol": "Signal_PreKey.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 638,
+      "symbol": "Signal_PreKey._storage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 641,
+      "symbol": "Signal_SignedPreKey",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 642,
+      "symbol": "Signal_SignedPreKey.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 644,
+      "symbol": "Signal_SignedPreKey.publicKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 653,
+      "symbol": "Signal_SignedPreKey.privateKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 662,
+      "symbol": "Signal_SignedPreKey.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 664,
+      "symbol": "Signal_SignedPreKey.PublicPart",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 665,
+      "symbol": "Signal_SignedPreKey.PublicPart.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 667,
+      "symbol": "Signal_SignedPreKey.PublicPart.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 676,
+      "symbol": "Signal_SignedPreKey.PublicPart.key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 685,
+      "symbol": "Signal_SignedPreKey.PublicPart.signature",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 694,
+      "symbol": "Signal_SignedPreKey.PublicPart.timestamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 703,
+      "symbol": "Signal_SignedPreKey.PublicPart.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 705,
+      "symbol": "Signal_SignedPreKey.PublicPart.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 743,
+      "symbol": "Signal_SignedPreKey.PublicPart._id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 744,
+      "symbol": "Signal_SignedPreKey.PublicPart._key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 745,
+      "symbol": "Signal_SignedPreKey.PublicPart._signature",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 746,
+      "symbol": "Signal_SignedPreKey.PublicPart._timestamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 749,
+      "symbol": "Signal_SignedPreKey.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 784,
+      "symbol": "Signal_SignedPreKey._storage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 787,
+      "symbol": "Signal_KeyPair",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 788,
+      "symbol": "Signal_KeyPair.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 790,
+      "symbol": "Signal_KeyPair.publicKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 799,
+      "symbol": "Signal_KeyPair.privateKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 808,
+      "symbol": "Signal_KeyPair.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 810,
+      "symbol": "Signal_KeyPair.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 840,
+      "symbol": "Signal_KeyPair._publicKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 841,
+      "symbol": "Signal_KeyPair._privateKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 844,
+      "symbol": "Signal_SenderKeyState",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 845,
+      "symbol": "Signal_SenderKeyState.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 847,
+      "symbol": "Signal_SenderKeyState.senderKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 856,
+      "symbol": "Signal_SenderKeyState.senderChainKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 865,
+      "symbol": "Signal_SenderKeyState.senderSigningKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 874,
+      "symbol": "Signal_SenderKeyState.senderMessageKeys",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 879,
+      "symbol": "Signal_SenderKeyState.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 881,
+      "symbol": "Signal_SenderKeyState.SenderChainKey",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 882,
+      "symbol": "Signal_SenderKeyState.SenderChainKey.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 884,
+      "symbol": "Signal_SenderKeyState.SenderChainKey.iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 893,
+      "symbol": "Signal_SenderKeyState.SenderChainKey.seed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 902,
+      "symbol": "Signal_SenderKeyState.SenderChainKey.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 904,
+      "symbol": "Signal_SenderKeyState.SenderChainKey.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 934,
+      "symbol": "Signal_SenderKeyState.SenderChainKey._iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 935,
+      "symbol": "Signal_SenderKeyState.SenderChainKey._seed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 938,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 939,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 941,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey.iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 950,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey.seed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 959,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 961,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 991,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey._iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 992,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey._seed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 995,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 996,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 998,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey.public",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1007,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey.private",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1016,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1018,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1048,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey._public",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1049,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey._private",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1052,
+      "symbol": "Signal_SenderKeyState.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1095,
+      "symbol": "Signal_SenderKeyState._storage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1098,
+      "symbol": "Signal_SenderKeyRecord",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1099,
+      "symbol": "Signal_SenderKeyRecord.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1101,
+      "symbol": "Signal_SenderKeyRecord.senderKeyStates",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1103,
+      "symbol": "Signal_SenderKeyRecord.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1105,
+      "symbol": "Signal_SenderKeyRecord.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1134,
+      "symbol": "_protobuf_package",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1137,
+      "symbol": "Signal_Session._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1149,
+      "symbol": "Signal_Session._StorageClass",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1150,
+      "symbol": "Signal_Session._StorageClass._sessionVersion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1151,
+      "symbol": "Signal_Session._StorageClass._localIdentityPublic",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1152,
+      "symbol": "Signal_Session._StorageClass._remoteIdentityPublic",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1153,
+      "symbol": "Signal_Session._StorageClass._rootKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1154,
+      "symbol": "Signal_Session._StorageClass._previousCounter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1155,
+      "symbol": "Signal_Session._StorageClass._senderChain",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1156,
+      "symbol": "Signal_Session._StorageClass._receiverChains",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1157,
+      "symbol": "Signal_Session._StorageClass._pendingPreKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1158,
+      "symbol": "Signal_Session._StorageClass._aliceBaseKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1160,
+      "symbol": "Signal_Session._StorageClass.defaultInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1162,
+      "symbol": "Signal_Session._StorageClass.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1164,
+      "symbol": "Signal_Session._StorageClass.init(copying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1177,
+      "symbol": "Signal_Session._uniqueStorage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1184,
+      "symbol": "Signal_Session._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1208,
+      "symbol": "Signal_Session.Chain._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1215,
+      "symbol": "Signal_Session.Chain._StorageClass",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1216,
+      "symbol": "Signal_Session.Chain._StorageClass._senderRatchetKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1217,
+      "symbol": "Signal_Session.Chain._StorageClass._senderRatchetKeyPrivate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1218,
+      "symbol": "Signal_Session.Chain._StorageClass._chainKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1219,
+      "symbol": "Signal_Session.Chain._StorageClass._messageKeys",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1221,
+      "symbol": "Signal_Session.Chain._StorageClass.defaultInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1223,
+      "symbol": "Signal_Session.Chain._StorageClass.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1225,
+      "symbol": "Signal_Session.Chain._StorageClass.init(copying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1233,
+      "symbol": "Signal_Session.Chain._uniqueStorage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1240,
+      "symbol": "Signal_Session.Chain._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1259,
+      "symbol": "Signal_Session.Chain.ChainKey._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1264,
+      "symbol": "Signal_Session.Chain.ChainKey._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1273,
+      "symbol": "Signal_Session.Chain.MessageKey._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1280,
+      "symbol": "Signal_Session.Chain.MessageKey._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1291,
+      "symbol": "Signal_Session.PendingPreKey._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1297,
+      "symbol": "Signal_Session.PendingPreKey._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1307,
+      "symbol": "Signal_Record._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1312,
+      "symbol": "Signal_Record._StorageClass",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1313,
+      "symbol": "Signal_Record._StorageClass._currentSession",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1314,
+      "symbol": "Signal_Record._StorageClass._previousSessions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1316,
+      "symbol": "Signal_Record._StorageClass.defaultInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1318,
+      "symbol": "Signal_Record._StorageClass.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1320,
+      "symbol": "Signal_Record._StorageClass.init(copying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1326,
+      "symbol": "Signal_Record._uniqueStorage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1333,
+      "symbol": "Signal_Record._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1350,
+      "symbol": "Signal_PreKey._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1355,
+      "symbol": "Signal_PreKey._StorageClass",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1356,
+      "symbol": "Signal_PreKey._StorageClass._publicKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1357,
+      "symbol": "Signal_PreKey._StorageClass._privateKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1359,
+      "symbol": "Signal_PreKey._StorageClass.defaultInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1361,
+      "symbol": "Signal_PreKey._StorageClass.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1363,
+      "symbol": "Signal_PreKey._StorageClass.init(copying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1369,
+      "symbol": "Signal_PreKey._uniqueStorage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1376,
+      "symbol": "Signal_PreKey._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1393,
+      "symbol": "Signal_PreKey.PublicPart._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1398,
+      "symbol": "Signal_PreKey.PublicPart._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1407,
+      "symbol": "Signal_SignedPreKey._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1412,
+      "symbol": "Signal_SignedPreKey._StorageClass",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1413,
+      "symbol": "Signal_SignedPreKey._StorageClass._publicKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1414,
+      "symbol": "Signal_SignedPreKey._StorageClass._privateKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1416,
+      "symbol": "Signal_SignedPreKey._StorageClass.defaultInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1418,
+      "symbol": "Signal_SignedPreKey._StorageClass.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1420,
+      "symbol": "Signal_SignedPreKey._StorageClass.init(copying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1426,
+      "symbol": "Signal_SignedPreKey._uniqueStorage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1433,
+      "symbol": "Signal_SignedPreKey._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1450,
+      "symbol": "Signal_SignedPreKey.PublicPart._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1457,
+      "symbol": "Signal_SignedPreKey.PublicPart._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1468,
+      "symbol": "Signal_KeyPair._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1473,
+      "symbol": "Signal_KeyPair._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1482,
+      "symbol": "Signal_SenderKeyState._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1489,
+      "symbol": "Signal_SenderKeyState._StorageClass",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1490,
+      "symbol": "Signal_SenderKeyState._StorageClass._senderKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1491,
+      "symbol": "Signal_SenderKeyState._StorageClass._senderChainKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1492,
+      "symbol": "Signal_SenderKeyState._StorageClass._senderSigningKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1493,
+      "symbol": "Signal_SenderKeyState._StorageClass._senderMessageKeys",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1495,
+      "symbol": "Signal_SenderKeyState._StorageClass.defaultInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1497,
+      "symbol": "Signal_SenderKeyState._StorageClass.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1499,
+      "symbol": "Signal_SenderKeyState._StorageClass.init(copying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1507,
+      "symbol": "Signal_SenderKeyState._uniqueStorage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1514,
+      "symbol": "Signal_SenderKeyState._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1533,
+      "symbol": "Signal_SenderKeyState.SenderChainKey._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1538,
+      "symbol": "Signal_SenderKeyState.SenderChainKey._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1547,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1552,
+      "symbol": "Signal_SenderKeyState.SenderMessageKey._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1561,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1566,
+      "symbol": "Signal_SenderKeyState.SenderSigningKey._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1575,
+      "symbol": "Signal_SenderKeyRecord._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/LocalStorage.pb.swift",
+      "line": 1579,
+      "symbol": "Signal_SenderKeyRecord._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": null,
+      "symbol": "Signal_DeviceConsistencyCodeMessage",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": null,
+      "symbol": "Signal_PreKeySignalMessage",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": null,
+      "symbol": "Signal_SenderKeyDistributionMessage",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": null,
+      "symbol": "Signal_SenderKeyMessage",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": null,
+      "symbol": "Signal_SignalMessage",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 17,
+      "symbol": "_GeneratedWithProtocGenSwiftVersion",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 18,
+      "symbol": "_GeneratedWithProtocGenSwiftVersion._2",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 22,
+      "symbol": "Signal_SignalMessage",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 23,
+      "symbol": "Signal_SignalMessage.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 25,
+      "symbol": "Signal_SignalMessage.ratchetKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 34,
+      "symbol": "Signal_SignalMessage.counter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 43,
+      "symbol": "Signal_SignalMessage.previousCounter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 52,
+      "symbol": "Signal_SignalMessage.ciphertext",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 61,
+      "symbol": "Signal_SignalMessage.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 63,
+      "symbol": "Signal_SignalMessage.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 101,
+      "symbol": "Signal_SignalMessage._ratchetKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 102,
+      "symbol": "Signal_SignalMessage._counter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 103,
+      "symbol": "Signal_SignalMessage._previousCounter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 104,
+      "symbol": "Signal_SignalMessage._ciphertext",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 107,
+      "symbol": "Signal_PreKeySignalMessage",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 108,
+      "symbol": "Signal_PreKeySignalMessage.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 110,
+      "symbol": "Signal_PreKeySignalMessage.preKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 119,
+      "symbol": "Signal_PreKeySignalMessage.signedPreKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 128,
+      "symbol": "Signal_PreKeySignalMessage.baseKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 137,
+      "symbol": "Signal_PreKeySignalMessage.identityKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 156,
+      "symbol": "Signal_PreKeySignalMessage.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 158,
+      "symbol": "Signal_PreKeySignalMessage.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 200,
+      "symbol": "Signal_PreKeySignalMessage._preKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 201,
+      "symbol": "Signal_PreKeySignalMessage._signedPreKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 202,
+      "symbol": "Signal_PreKeySignalMessage._baseKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 203,
+      "symbol": "Signal_PreKeySignalMessage._identityKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 204,
+      "symbol": "Signal_PreKeySignalMessage._message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 207,
+      "symbol": "Signal_SenderKeyMessage",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 208,
+      "symbol": "Signal_SenderKeyMessage.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 210,
+      "symbol": "Signal_SenderKeyMessage.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 219,
+      "symbol": "Signal_SenderKeyMessage.iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 228,
+      "symbol": "Signal_SenderKeyMessage.ciphertext",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 237,
+      "symbol": "Signal_SenderKeyMessage.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 239,
+      "symbol": "Signal_SenderKeyMessage.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 273,
+      "symbol": "Signal_SenderKeyMessage._id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 274,
+      "symbol": "Signal_SenderKeyMessage._iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 275,
+      "symbol": "Signal_SenderKeyMessage._ciphertext",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 278,
+      "symbol": "Signal_SenderKeyDistributionMessage",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 279,
+      "symbol": "Signal_SenderKeyDistributionMessage.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 281,
+      "symbol": "Signal_SenderKeyDistributionMessage.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 290,
+      "symbol": "Signal_SenderKeyDistributionMessage.iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 299,
+      "symbol": "Signal_SenderKeyDistributionMessage.chainKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 308,
+      "symbol": "Signal_SenderKeyDistributionMessage.signingKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 317,
+      "symbol": "Signal_SenderKeyDistributionMessage.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 319,
+      "symbol": "Signal_SenderKeyDistributionMessage.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 357,
+      "symbol": "Signal_SenderKeyDistributionMessage._id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 358,
+      "symbol": "Signal_SenderKeyDistributionMessage._iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 359,
+      "symbol": "Signal_SenderKeyDistributionMessage._chainKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 360,
+      "symbol": "Signal_SenderKeyDistributionMessage._signingKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 363,
+      "symbol": "Signal_DeviceConsistencyCodeMessage",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 364,
+      "symbol": "Signal_DeviceConsistencyCodeMessage.protoMessageName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 366,
+      "symbol": "Signal_DeviceConsistencyCodeMessage.generation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 375,
+      "symbol": "Signal_DeviceConsistencyCodeMessage.signature",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 384,
+      "symbol": "Signal_DeviceConsistencyCodeMessage.unknownFields",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 386,
+      "symbol": "Signal_DeviceConsistencyCodeMessage.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 416,
+      "symbol": "Signal_DeviceConsistencyCodeMessage._generation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 417,
+      "symbol": "Signal_DeviceConsistencyCodeMessage._signature",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 422,
+      "symbol": "_protobuf_package",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 425,
+      "symbol": "Signal_SignalMessage._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 432,
+      "symbol": "Signal_SignalMessage._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 443,
+      "symbol": "Signal_PreKeySignalMessage._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 451,
+      "symbol": "Signal_PreKeySignalMessage._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 463,
+      "symbol": "Signal_SenderKeyMessage._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 469,
+      "symbol": "Signal_SenderKeyMessage._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 479,
+      "symbol": "Signal_SenderKeyDistributionMessage._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 486,
+      "symbol": "Signal_SenderKeyDistributionMessage._protobuf_generated_isEqualTo(other:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 497,
+      "symbol": "Signal_DeviceConsistencyCodeMessage._protobuf_nameMap",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/SignalProtocolSwift/SignalProtocolSwift/ProtocolBuffers/Messages.pb.swift",
+      "line": 502,
+      "symbol": "Signal_DeviceConsistencyCodeMessage._protobuf_generated_isEqualTo(other:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
