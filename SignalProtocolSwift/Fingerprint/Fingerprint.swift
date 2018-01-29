@@ -20,11 +20,19 @@ public struct Fingerprint {
     /// The length of a fingerprint
     public static let length = 30
 
+    /// The number of iterations for the creation of the fingerprint
+    public static let iterations = 1024
+
     /// The displayable part of the fingerprint
-    public let displayable: DisplayableFingerprint
+    let displayable: DisplayableFingerprint
 
     /// The scannable part of the fingerprint
     public let scannable: ScannableFingerprint
+
+    /// The string to show the user
+    public var displayText: String {
+        return displayable.displayText
+    }
 
     /**
      Create a new fingerprint.
@@ -35,11 +43,12 @@ public struct Fingerprint {
      - parameter remoteIdentity: Identity data of the remote party
      - throws: `SignalError` errors
      */
-    public init(iterations: Int,
-         localStableIdentifier: String,
-         localIdentity: Data,
-         remoteStableIdentifier: String,
-         remoteIdentity: Data) throws {
+    public init(
+        localStableIdentifier: String,
+        localIdentity: Data,
+        remoteStableIdentifier: String,
+        remoteIdentity: Data,
+        iterations: Int = Fingerprint.iterations) throws {
 
         let localFingerprint = try getFingerprint(
             identity: localIdentity,
@@ -69,17 +78,18 @@ public struct Fingerprint {
      - parameter remoteIdentity: The public key of the remote party
      - throws: `SignalError` errors
      */
-    public init(iterations: Int,
-         localStableIdentifier: String,
-         localIdentity: PublicKey,
-         remoteStableIdentifier: String,
-         remoteIdentity: PublicKey) throws {
+    public init(
+        localStableIdentifier: String,
+        localIdentity: PublicKey,
+        remoteStableIdentifier: String,
+        remoteIdentity: PublicKey,
+        iterations: Int = Fingerprint.iterations) throws {
         try self.init(
-            iterations: iterations,
             localStableIdentifier: localStableIdentifier,
             localIdentity: localIdentity.data,
             remoteStableIdentifier: remoteStableIdentifier,
-            remoteIdentity: remoteIdentity.data)
+            remoteIdentity: remoteIdentity.data,
+            iterations: iterations)
     }
 
     /**
@@ -91,17 +101,29 @@ public struct Fingerprint {
      - parameter remoteIdentity: The public keys of the remote parties
      - throws: `SignalError` errors
      */
-    public init(iterations: Int,
-         localStableIdentifier: String,
-         localIdentityList: [PublicKey],
-         remoteStableIdentifier: String,
-         remoteIdentityList: [PublicKey]) throws {
+    public init(
+        localStableIdentifier: String,
+        localIdentityList: [PublicKey],
+        remoteStableIdentifier: String,
+        remoteIdentityList: [PublicKey],
+        iterations: Int = Fingerprint.iterations) throws {
         try self.init(
-            iterations: iterations,
             localStableIdentifier: localStableIdentifier,
             localIdentity: getLogicalKey(for: localIdentityList),
             remoteStableIdentifier: remoteStableIdentifier,
-            remoteIdentity: getLogicalKey(for: remoteIdentityList))
+            remoteIdentity: getLogicalKey(for: remoteIdentityList),
+            iterations: iterations)
+    }
+
+    /**
+     Compare the fingerprint to scanned fingerprint data.
+     - parameter scannedData: The serialized scannable fingerprint from the other client
+     - returns: `true`, if the fingerprints match
+     - throws: `SignalError` of type `invalidProtoBuf`
+     */
+    public func matches(_ scannedData: Data) throws -> Bool {
+        let scanned = try ScannableFingerprint(from: scannedData)
+        return scannable.matches(scanned)
     }
 }
 

@@ -9,38 +9,37 @@
 import Foundation
 
 /**
- Implement the `SenderKeyStoreDelegate` protocol to handle the Sender Key storage of the
- Signal Protocol API. The keys should be stored in a secure database and be treated as
+ Implement the `SenderKeyStore` protocol to handle the sender key storage of the
+ Signal Protocol. The keys should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol SenderKeyStoreDelegate {
+public protocol SenderKeyStore {
 
+    /// The type that distinguishes different devices/users
     associatedtype Address: Hashable
 
     /**
      Returns a copy of the sender key record corresponding to the address tuple.
 
-     - parameter senderKeyName: The address and group of the remote client
+     - parameter address: The group address of the remote client
      - returns: The Sender Key, if it exists, or nil
      */
     func senderKey(for address: Address) -> Data?
 
     /**
-     Stores a copy of the sender key record corresponding to the (groupId + senderId + deviceId) tuple.
-
+     Stores the sender key record.
      - parameter senderKey: The key to store
-     - parameter senderKeyName: The address and group of the remote client
+     - parameter address: The group address of the remote client
      - throws: `SignalError` of type `storageError`, if the record could not be stored
      */
     func store(senderKey: Data, for address: Address) throws
 
 }
 
-extension SenderKeyStoreDelegate {
+extension SenderKeyStore {
     /**
      Returns a copy of the sender key record corresponding to the address.
-
-     - parameter senderKeyName: The address and group of the remote client
+     - parameter address: The group address of the remote client
      - returns: The Sender Key, or nil if no key exists
      - throws: `SignalError` of type `invalidProtoBuf`, if the record is corrupt
      */
@@ -52,10 +51,9 @@ extension SenderKeyStoreDelegate {
     }
 
     /**
-     Stores a copy of the sender key record corresponding to the address tuple.
-
+     Stores a copy of the sender key record corresponding to the address.
      - parameter senderKey: The key to store
-     - parameter senderKeyName: The address and group of the remote client
+     - parameter address: The group address of the remote client
      - throws: `SignalErrorType.storageError`, `SignalErrorType.invalidProtoBuf`
      */
     func store(senderKey: SenderKeyRecord, for address: Address) throws {

@@ -9,11 +9,11 @@
 import Foundation
 
 /**
- Implement the `SignedPreKeyStoreDelegate` protocol to handle the Signed Pre Key storage of the
- Signal Protocol API. The keys should be stored in a secure database and be treated as
+ Implement the `SignedPreKeyStore` protocol to handle the signed pre key storage of the
+ Signal Protocol. The keys should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol SignedPreKeyStoreDelegate {
+public protocol SignedPreKeyStore {
 
     /**
      Provide a Signed Pre Key for a given id.
@@ -35,8 +35,9 @@ public protocol SignedPreKeyStoreDelegate {
      Indicate if a Signed Pre Key exists for an id.
      - parameter id: The Signed Pre Key id
      - returns: `true` if a key exists
+     - throws: `SignalError` of type `storageError`, if the key could not be accessed
      */
-    func containsSignedPreKey(for id: UInt32) -> Bool
+    func containsSignedPreKey(for id: UInt32) throws -> Bool
 
     /**
      Remove a Signed Pre Key.
@@ -48,16 +49,15 @@ public protocol SignedPreKeyStoreDelegate {
     /**
      Get all Ids for the SignedPreKeys in the store.
      - returns: An array of all ids for which a key is stored
-    */
-    func allIds() -> [UInt32]
+     - throws: `SignalError` of type `storageError`, if the key could not be accessed
+     */
+    func allIds() throws -> [UInt32]
 
-    /**
-     The id of the last SignedPreKey that was stored.
-    */
+    /// The id of the last SignedPreKey that was stored.
     var lastId: UInt32 { get }
 }
 
-extension SignedPreKeyStoreDelegate {
+extension SignedPreKeyStore {
 
     /**
      Provide a Signed Pre Key for a given id.

@@ -91,15 +91,13 @@ extension ScannableFingerprint {
      - throws: `SignalError` of type `invalidProtoBuf`
      - returns: The serialized fingerprint
      */
-    func data() throws -> Data {
+    public func data() throws -> Data {
         do {
             return try object.serializedData()
         } catch {
-            throw SignalError(.invalidProtoBuf,
-                              "Could not serialize fingerprint: \(error.localizedDescription)")
+            throw SignalError(.invalidProtoBuf, "Could not serialize fingerprint: \(error.localizedDescription)")
         }
     }
-
 }
 
 // MARK: Comparison
@@ -112,7 +110,7 @@ extension ScannableFingerprint {
      - parameter rhs: The second fingerprint
      - returns: `True` if the fingerprints match
     */
-    func matches(_ other: ScannableFingerprint) -> Bool {
+    public func matches(_ other: ScannableFingerprint) -> Bool {
         return localFingerprint == other.remoteFingerprint &&
             remoteFingerprint == other.localFingerprint
     }

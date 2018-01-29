@@ -9,11 +9,11 @@
 import Foundation
 
 /**
- Implement the `PreKeyStoreDelegate` protocol to handle the Pre Key storage of the
- Signal Protocol API. The keys should be stored in a secure database and be treated as
+ Implement the `PreKeyStore` protocol to handle the pre key storage of the
+ Signal Protocol. The keys should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol PreKeyStoreDelegate {
+public protocol PreKeyStore {
 
     /**
      Provide a Pre Key for a given id.
@@ -47,14 +47,12 @@ public protocol PreKeyStoreDelegate {
      */
     func removePreKey(for id: UInt32) throws
 
-    /**
-     Return the id of the last stored pre key.
-    */
+    /// Return the id of the last stored pre key.
     var lastId: UInt32 { get }
     
 }
 
-extension PreKeyStoreDelegate {
+extension PreKeyStore {
 
     /**
      Provide a Pre Key for a given id.

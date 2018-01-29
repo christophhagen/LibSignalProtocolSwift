@@ -73,3 +73,17 @@ public struct DisplayableFingerprint {
         return output
     }
 }
+
+extension DisplayableFingerprint: Equatable {
+
+    /**
+     Compare two displayable fingerprints for equality.
+
+     - parameter lhs: The first fingerprint
+     - parameter rhs: The second fingerprint
+     - returns: `true`, if the fingerprints are equal
+     */
+    public static func ==(lhs: DisplayableFingerprint, rhs: DisplayableFingerprint) -> Bool {
+        return lhs.displayText == rhs.displayText
+    }
+}

@@ -44,12 +44,12 @@
 		CEB45ABE201CB4D0002BB845 /* SenderKeyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */; };
 		CEB45ABF201CB4D0002BB845 /* SignalCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */; };
 		CEB45AC0201CB4D0002BB845 /* SignalCryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */; };
-		CEB45AC2201CB4D0002BB845 /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStoreDelegate.swift */; };
-		CEB45AC3201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift */; };
-		CEB45AC4201CB4D0002BB845 /* SignalProtocolStoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* SignalProtocolStoreContext.swift */; };
-		CEB45AC5201CB4D0002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStoreDelegate.swift */; };
-		CEB45AC6201CB4D0002BB845 /* PreKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStoreDelegate.swift */; };
-		CEB45AC7201CB4D0002BB845 /* SessionStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStoreDelegate.swift */; };
+		CEB45AC2201CB4D0002BB845 /* SenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */; };
+		CEB45AC3201CB4D0002BB845 /* IdentityKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */; };
+		CEB45AC4201CB4D0002BB845 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* KeyStore.swift */; };
+		CEB45AC5201CB4D0002BB845 /* SignedPrekeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */; };
+		CEB45AC6201CB4D0002BB845 /* PreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */; };
+		CEB45AC7201CB4D0002BB845 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStore.swift */; };
 		CEB45AC8201CB4D0002BB845 /* RatchetMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */; };
 		CEB45AC9201CB4D0002BB845 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A95201CB4D0002BB845 /* HKDF.swift */; };
 		CEB45ACA201CB4D0002BB845 /* RatchetChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */; };
@@ -148,24 +148,24 @@
 		CEB45BFC201CD41C002BB845 /* DisplayableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A81201CB4CF002BB845 /* DisplayableFingerprint.swift */; };
 		CEB45BFD201CD41C002BB845 /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A82201CB4CF002BB845 /* Fingerprint.swift */; };
 		CEB45BFE201CD41C002BB845 /* ScannableFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A83201CB4CF002BB845 /* ScannableFingerprint.swift */; };
-		CEB45BFF201CD421002BB845 /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStoreDelegate.swift */; };
-		CEB45C00201CD421002BB845 /* IdentityKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift */; };
-		CEB45C01201CD421002BB845 /* SignalProtocolStoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* SignalProtocolStoreContext.swift */; };
-		CEB45C02201CD421002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStoreDelegate.swift */; };
-		CEB45C03201CD421002BB845 /* PreKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStoreDelegate.swift */; };
-		CEB45C04201CD421002BB845 /* SessionStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStoreDelegate.swift */; };
-		CEB45C05201CD422002BB845 /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStoreDelegate.swift */; };
-		CEB45C06201CD422002BB845 /* IdentityKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift */; };
-		CEB45C07201CD422002BB845 /* SignalProtocolStoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* SignalProtocolStoreContext.swift */; };
-		CEB45C08201CD422002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStoreDelegate.swift */; };
-		CEB45C09201CD422002BB845 /* PreKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStoreDelegate.swift */; };
-		CEB45C0A201CD422002BB845 /* SessionStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStoreDelegate.swift */; };
-		CEB45C0B201CD422002BB845 /* SenderKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStoreDelegate.swift */; };
-		CEB45C0C201CD422002BB845 /* IdentityKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift */; };
-		CEB45C0D201CD422002BB845 /* SignalProtocolStoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* SignalProtocolStoreContext.swift */; };
-		CEB45C0E201CD422002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStoreDelegate.swift */; };
-		CEB45C0F201CD422002BB845 /* PreKeyStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStoreDelegate.swift */; };
-		CEB45C10201CD422002BB845 /* SessionStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStoreDelegate.swift */; };
+		CEB45BFF201CD421002BB845 /* SenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */; };
+		CEB45C00201CD421002BB845 /* IdentityKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */; };
+		CEB45C01201CD421002BB845 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* KeyStore.swift */; };
+		CEB45C02201CD421002BB845 /* SignedPrekeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */; };
+		CEB45C03201CD421002BB845 /* PreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */; };
+		CEB45C04201CD421002BB845 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStore.swift */; };
+		CEB45C05201CD422002BB845 /* SenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */; };
+		CEB45C06201CD422002BB845 /* IdentityKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */; };
+		CEB45C07201CD422002BB845 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* KeyStore.swift */; };
+		CEB45C08201CD422002BB845 /* SignedPrekeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */; };
+		CEB45C09201CD422002BB845 /* PreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */; };
+		CEB45C0A201CD422002BB845 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStore.swift */; };
+		CEB45C0B201CD422002BB845 /* SenderKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */; };
+		CEB45C0C201CD422002BB845 /* IdentityKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */; };
+		CEB45C0D201CD422002BB845 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F201CB4D0002BB845 /* KeyStore.swift */; };
+		CEB45C0E201CD422002BB845 /* SignedPrekeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */; };
+		CEB45C0F201CD422002BB845 /* PreKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */; };
+		CEB45C10201CD422002BB845 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A92201CB4D0002BB845 /* SessionStore.swift */; };
 		CEB45C11201CD426002BB845 /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6E201CB4CF002BB845 /* PreKeySignalMessage.swift */; };
 		CEB45C12201CD426002BB845 /* SenderKeyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6F201CB4CF002BB845 /* SenderKeyMessage.swift */; };
 		CEB45C13201CD426002BB845 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */; };
@@ -290,12 +290,12 @@
 		CEB45A88201CB4CF002BB845 /* SenderKeyRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyRecord.swift; sourceTree = "<group>"; };
 		CEB45A89201CB4CF002BB845 /* SignalCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCrypto.swift; sourceTree = "<group>"; };
 		CEB45A8A201CB4CF002BB845 /* SignalCryptoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCryptoProvider.swift; sourceTree = "<group>"; };
-		CEB45A8D201CB4D0002BB845 /* SenderKeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyStoreDelegate.swift; sourceTree = "<group>"; };
-		CEB45A8E201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityKeyStoreDelegate.swift; sourceTree = "<group>"; };
-		CEB45A8F201CB4D0002BB845 /* SignalProtocolStoreContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocolStoreContext.swift; sourceTree = "<group>"; };
-		CEB45A90201CB4D0002BB845 /* SignedPrekeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedPrekeyStoreDelegate.swift; sourceTree = "<group>"; };
-		CEB45A91201CB4D0002BB845 /* PreKeyStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKeyStoreDelegate.swift; sourceTree = "<group>"; };
-		CEB45A92201CB4D0002BB845 /* SessionStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStoreDelegate.swift; sourceTree = "<group>"; };
+		CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderKeyStore.swift; sourceTree = "<group>"; };
+		CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityKeyStore.swift; sourceTree = "<group>"; };
+		CEB45A8F201CB4D0002BB845 /* KeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStore.swift; sourceTree = "<group>"; };
+		CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedPrekeyStore.swift; sourceTree = "<group>"; };
+		CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKeyStore.swift; sourceTree = "<group>"; };
+		CEB45A92201CB4D0002BB845 /* SessionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		CEB45A94201CB4D0002BB845 /* RatchetMessageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetMessageKeys.swift; sourceTree = "<group>"; };
 		CEB45A95201CB4D0002BB845 /* HKDF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKDF.swift; sourceTree = "<group>"; };
 		CEB45A96201CB4D0002BB845 /* RatchetChainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatchetChainKey.swift; sourceTree = "<group>"; };
@@ -549,12 +549,12 @@
 		CEB45A8C201CB4D0002BB845 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
-				CEB45A8D201CB4D0002BB845 /* SenderKeyStoreDelegate.swift */,
-				CEB45A8E201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift */,
-				CEB45A8F201CB4D0002BB845 /* SignalProtocolStoreContext.swift */,
-				CEB45A90201CB4D0002BB845 /* SignedPrekeyStoreDelegate.swift */,
-				CEB45A91201CB4D0002BB845 /* PreKeyStoreDelegate.swift */,
-				CEB45A92201CB4D0002BB845 /* SessionStoreDelegate.swift */,
+				CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */,
+				CEB45A8F201CB4D0002BB845 /* KeyStore.swift */,
+				CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */,
+				CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */,
+				CEB45A92201CB4D0002BB845 /* SessionStore.swift */,
+				CEB45A90201CB4D0002BB845 /* SignedPrekeyStore.swift */,
 			);
 			path = LocalStorage;
 			sourceTree = "<group>";
@@ -614,13 +614,13 @@
 		CEB45BA7201CC70B002BB845 /* Test Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				CEB45BA8201CC70B002BB845 /* TestStore.swift */,
-				CEB45BA9201CC70B002BB845 /* TestIdentityStore.swift */,
 				CEB45BAA201CC70B002BB845 /* TestFakeCryptoProvider.swift */,
-				CEB45BAB201CC70B002BB845 /* TestSessionStore.swift */,
+				CEB45BA9201CC70B002BB845 /* TestIdentityStore.swift */,
 				CEB45BAC201CC70C002BB845 /* TestPreKeyStore.swift */,
 				CEB45BAD201CC70C002BB845 /* TestSenderKeyStore.swift */,
+				CEB45BAB201CC70B002BB845 /* TestSessionStore.swift */,
 				CEB45BAE201CC70C002BB845 /* TestSignedPreKeyStore.swift */,
+				CEB45BA8201CC70B002BB845 /* TestStore.swift */,
 			);
 			path = "Test Implementation";
 			sourceTree = "<group>";
@@ -1072,10 +1072,10 @@
 				CEB45AD5201CB4D0002BB845 /* SessionRecord.swift in Sources */,
 				CEB45C8B201D0A21002BB845 /* SessionSignedPreKeyPublic.swift in Sources */,
 				CEB45ABC201CB4D0002BB845 /* SessionCipher.swift in Sources */,
-				CEB45AC7201CB4D0002BB845 /* SessionStoreDelegate.swift in Sources */,
-				CEB45AC4201CB4D0002BB845 /* SignalProtocolStoreContext.swift in Sources */,
+				CEB45AC7201CB4D0002BB845 /* SessionStore.swift in Sources */,
+				CEB45AC4201CB4D0002BB845 /* KeyStore.swift in Sources */,
 				CEB45ACF201CB4D0002BB845 /* SenderChainKey.swift in Sources */,
-				CEB45AC2201CB4D0002BB845 /* SenderKeyStoreDelegate.swift in Sources */,
+				CEB45AC2201CB4D0002BB845 /* SenderKeyStore.swift in Sources */,
 				CEB45AD4201CB4D0002BB845 /* SessionSignedPreKey.swift in Sources */,
 				CEB45AB9201CB4D0002BB845 /* Fingerprint.swift in Sources */,
 				CEB45A68201CB427002BB845 /* SignalError.swift in Sources */,
@@ -1092,9 +1092,9 @@
 				CEB45ACB201CB4D0002BB845 /* SenderChain.swift in Sources */,
 				CEB45AD1201CB4D0002BB845 /* DeviceConsistencyMessage.swift in Sources */,
 				CEB45B47201CC640002BB845 /* SignalCommonCrypto.swift in Sources */,
-				CEB45AC6201CB4D0002BB845 /* PreKeyStoreDelegate.swift in Sources */,
+				CEB45AC6201CB4D0002BB845 /* PreKeyStore.swift in Sources */,
 				CEB45AD7201CB4D0002BB845 /* SessionPreKey.swift in Sources */,
-				CEB45AC3201CB4D0002BB845 /* IdentityKeyStoreDelegate.swift in Sources */,
+				CEB45AC3201CB4D0002BB845 /* IdentityKeyStore.swift in Sources */,
 				CEB45C89201D081C002BB845 /* SessionPreKeyPublic.swift in Sources */,
 				CEB45AA8201CB4D0002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEC81310201F42020018D42E /* Fingerprint.pb.swift in Sources */,
@@ -1106,7 +1106,7 @@
 				CEB45AAC201CB4D0002BB845 /* SignalMessage.swift in Sources */,
 				CEB45A52201CB30E002BB845 /* PrivateKey.swift in Sources */,
 				CEB45AC8201CB4D0002BB845 /* RatchetMessageKeys.swift in Sources */,
-				CEB45AC5201CB4D0002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */,
+				CEB45AC5201CB4D0002BB845 /* SignedPrekeyStore.swift in Sources */,
 				CEB45ABB201CB4D0002BB845 /* SenderKeyState.swift in Sources */,
 				CEB45ABE201CB4D0002BB845 /* SenderKeyRecord.swift in Sources */,
 				CEB45A6C201CB4BC002BB845 /* SignalSenderKeyName.swift in Sources */,
@@ -1151,10 +1151,10 @@
 			files = (
 				CEB45BE4201CD416002BB845 /* SenderKeyState.swift in Sources */,
 				CEB45BD4201CD40B002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
-				CEB45C02201CD421002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */,
-				CEB45C01201CD421002BB845 /* SignalProtocolStoreContext.swift in Sources */,
+				CEB45C02201CD421002BB845 /* SignedPrekeyStore.swift in Sources */,
+				CEB45C01201CD421002BB845 /* KeyStore.swift in Sources */,
 				CE53032F201F57A70004942F /* Messages.pb.swift in Sources */,
-				CEB45C03201CD421002BB845 /* PreKeyStoreDelegate.swift in Sources */,
+				CEB45C03201CD421002BB845 /* PreKeyStore.swift in Sources */,
 				CEB45C2C201CD444002BB845 /* SenderChain.swift in Sources */,
 				CEB45C11201CD426002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C12201CD426002BB845 /* SenderKeyMessage.swift in Sources */,
@@ -1165,7 +1165,7 @@
 				CEB45BCB201CD405002BB845 /* SignalSenderKeyName.swift in Sources */,
 				CEB45C29201CD444002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C42201CD44A002BB845 /* SessionSignedPreKey.swift in Sources */,
-				CEB45C04201CD421002BB845 /* SessionStoreDelegate.swift in Sources */,
+				CEB45C04201CD421002BB845 /* SessionStore.swift in Sources */,
 				CEB45BD3201CD40B002BB845 /* DeviceConsistencyMessage.swift in Sources */,
 				CEB45C47201CD44A002BB845 /* SessionState.swift in Sources */,
 				CEB45BE7201CD416002BB845 /* SenderKeyRecord.swift in Sources */,
@@ -1193,8 +1193,8 @@
 				CEB45BE8201CD416002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BDD201CD411002BB845 /* KeyPair.swift in Sources */,
 				CEB45BDC201CD411002BB845 /* PublicKey.swift in Sources */,
-				CEB45BFF201CD421002BB845 /* SenderKeyStoreDelegate.swift in Sources */,
-				CEB45C00201CD421002BB845 /* IdentityKeyStoreDelegate.swift in Sources */,
+				CEB45BFF201CD421002BB845 /* SenderKeyStore.swift in Sources */,
+				CEB45C00201CD421002BB845 /* IdentityKeyStore.swift in Sources */,
 				CEB45BDB201CD411002BB845 /* PrivateKey.swift in Sources */,
 				CEB45BE9201CD416002BB845 /* SignalCryptoProvider.swift in Sources */,
 				CEB45C2E201CD444002BB845 /* RatchetRootKey.swift in Sources */,
@@ -1208,10 +1208,10 @@
 			files = (
 				CEB45BEA201CD417002BB845 /* SenderKeyState.swift in Sources */,
 				CEB45BD7201CD40C002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
-				CEB45C08201CD422002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */,
-				CEB45C07201CD422002BB845 /* SignalProtocolStoreContext.swift in Sources */,
+				CEB45C08201CD422002BB845 /* SignedPrekeyStore.swift in Sources */,
+				CEB45C07201CD422002BB845 /* KeyStore.swift in Sources */,
 				CE530332201F57A70004942F /* Messages.pb.swift in Sources */,
-				CEB45C09201CD422002BB845 /* PreKeyStoreDelegate.swift in Sources */,
+				CEB45C09201CD422002BB845 /* PreKeyStore.swift in Sources */,
 				CEB45C34201CD445002BB845 /* SenderChain.swift in Sources */,
 				CEB45C16201CD427002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C17201CD427002BB845 /* SenderKeyMessage.swift in Sources */,
@@ -1222,7 +1222,7 @@
 				CEB45BCE201CD406002BB845 /* SignalSenderKeyName.swift in Sources */,
 				CEB45C31201CD445002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C50201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */,
-				CEB45C0A201CD422002BB845 /* SessionStoreDelegate.swift in Sources */,
+				CEB45C0A201CD422002BB845 /* SessionStore.swift in Sources */,
 				CEB45BD6201CD40C002BB845 /* DeviceConsistencyMessage.swift in Sources */,
 				CEB45C55201CD44B002BB845 /* SessionState.swift in Sources */,
 				CEB45BED201CD417002BB845 /* SenderKeyRecord.swift in Sources */,
@@ -1250,8 +1250,8 @@
 				CEB45BEE201CD417002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BE0201CD411002BB845 /* KeyPair.swift in Sources */,
 				CEB45BDF201CD411002BB845 /* PublicKey.swift in Sources */,
-				CEB45C05201CD422002BB845 /* SenderKeyStoreDelegate.swift in Sources */,
-				CEB45C06201CD422002BB845 /* IdentityKeyStoreDelegate.swift in Sources */,
+				CEB45C05201CD422002BB845 /* SenderKeyStore.swift in Sources */,
+				CEB45C06201CD422002BB845 /* IdentityKeyStore.swift in Sources */,
 				CEB45BDE201CD411002BB845 /* PrivateKey.swift in Sources */,
 				CEB45BEF201CD417002BB845 /* SignalCryptoProvider.swift in Sources */,
 				CEB45C36201CD445002BB845 /* RatchetRootKey.swift in Sources */,
@@ -1265,10 +1265,10 @@
 			files = (
 				CEB45BF0201CD417002BB845 /* SenderKeyState.swift in Sources */,
 				CEB45BDA201CD40C002BB845 /* DeviceConsistencyCommitment.swift in Sources */,
-				CEB45C0E201CD422002BB845 /* SignedPrekeyStoreDelegate.swift in Sources */,
-				CEB45C0D201CD422002BB845 /* SignalProtocolStoreContext.swift in Sources */,
+				CEB45C0E201CD422002BB845 /* SignedPrekeyStore.swift in Sources */,
+				CEB45C0D201CD422002BB845 /* KeyStore.swift in Sources */,
 				CE530335201F57A80004942F /* Messages.pb.swift in Sources */,
-				CEB45C0F201CD422002BB845 /* PreKeyStoreDelegate.swift in Sources */,
+				CEB45C0F201CD422002BB845 /* PreKeyStore.swift in Sources */,
 				CEB45C3C201CD445002BB845 /* SenderChain.swift in Sources */,
 				CEB45C1B201CD427002BB845 /* PreKeySignalMessage.swift in Sources */,
 				CEB45C1C201CD427002BB845 /* SenderKeyMessage.swift in Sources */,
@@ -1279,7 +1279,7 @@
 				CEB45BD1201CD406002BB845 /* SignalSenderKeyName.swift in Sources */,
 				CEB45C39201CD445002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C49201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */,
-				CEB45C10201CD422002BB845 /* SessionStoreDelegate.swift in Sources */,
+				CEB45C10201CD422002BB845 /* SessionStore.swift in Sources */,
 				CEB45BD9201CD40C002BB845 /* DeviceConsistencyMessage.swift in Sources */,
 				CEB45C4E201CD44B002BB845 /* SessionState.swift in Sources */,
 				CEB45BF3201CD417002BB845 /* SenderKeyRecord.swift in Sources */,
@@ -1307,8 +1307,8 @@
 				CEB45BF4201CD417002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BE3201CD412002BB845 /* KeyPair.swift in Sources */,
 				CEB45BE2201CD412002BB845 /* PublicKey.swift in Sources */,
-				CEB45C0B201CD422002BB845 /* SenderKeyStoreDelegate.swift in Sources */,
-				CEB45C0C201CD422002BB845 /* IdentityKeyStoreDelegate.swift in Sources */,
+				CEB45C0B201CD422002BB845 /* SenderKeyStore.swift in Sources */,
+				CEB45C0C201CD422002BB845 /* IdentityKeyStore.swift in Sources */,
 				CEB45BE1201CD412002BB845 /* PrivateKey.swift in Sources */,
 				CEB45BF5201CD417002BB845 /* SignalCryptoProvider.swift in Sources */,
 				CEB45C3E201CD445002BB845 /* RatchetRootKey.swift in Sources */,

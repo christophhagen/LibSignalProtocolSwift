@@ -23,7 +23,7 @@ import Foundation
  * their recipient name, and each logical recipient can have multiple
  * physical devices.
  */
-struct SessionBuilder<Context: SignalProtocolStoreContext> {
+struct SessionBuilder<Context: KeyStore> {
 
     /// The store to save and retrieve keys from
     var store: Context

@@ -1,5 +1,5 @@
 //
-//  SignalProtocolStoreContext.swift
+//  KeyStore.swift
 //  SignalProtocolSwift
 //
 //  Created by User on 01.11.17.
@@ -12,36 +12,45 @@ import Foundation
 /**
  Provide all local storage delegates.
  */
-public protocol SignalProtocolStoreContext {
+public protocol KeyStore {
 
-    associatedtype Address
+    // MARK: Associated types
 
-    associatedtype GroupAddress
+    /// The type that distinguishes different devices/users
+    associatedtype Address: CustomStringConvertible
 
-    associatedtype IdentityKeyStore: IdentityKeyStoreDelegate where IdentityKeyStore.Address == Address
+    /// The type that distinguishes different groups and devices/users
+    associatedtype GroupAddress: CustomStringConvertible
 
-    associatedtype SenderKeyStore: SenderKeyStoreDelegate where SenderKeyStore.Address == GroupAddress
+    /// The type of the identity key store
+    associatedtype IdentityKeyStoreType: IdentityKeyStore where IdentityKeyStoreType.Address == Address
 
-    associatedtype SessionStore: SessionStoreDelegate where SessionStore.Address == Address
+    /// The type of the sender key store
+    associatedtype SenderKeyStoreType: SenderKeyStore where SenderKeyStoreType.Address == GroupAddress
 
+    /// The type of the session key store
+    associatedtype SessionStoreType: SessionStore where SessionStoreType.Address == Address
+
+    // MARK: variables
+    
     /// The Identity Key store that stores the records for the identity key module
-    var identityKeyStore: IdentityKeyStore { get }
+    var identityKeyStore: IdentityKeyStoreType { get }
 
     /// The Pre Key store that stores the records for the pre key module
-    var preKeyStore: PreKeyStoreDelegate { get }
+    var preKeyStore: PreKeyStore { get }
 
     /// The Sender Key store that stores the records for the sender key module
-    var senderKeyStore: SenderKeyStore { get }
+    var senderKeyStore: SenderKeyStoreType { get }
 
     /// The Session store that stores the records for the session module
-    var sessionStore: SessionStore { get }
+    var sessionStore: SessionStoreType { get }
 
     /// The Signed Pre Key store that stores the records for the signed pre key module
-    var signedPreKeyStore: SignedPreKeyStoreDelegate { get }
+    var signedPreKeyStore: SignedPreKeyStore { get }
 
 }
 
-extension SignalProtocolStoreContext {
+extension KeyStore {
 
     /**
      Create a new identity key pair and store it.
@@ -102,5 +111,32 @@ extension SignalProtocolStoreContext {
             try preKeyStore.store(preKey: key)
         }
         return try keys.map { try $0.publicKey.data() }
+    }
+
+    /**
+     Create a fingerprint to compare keys with someone.
+     - note: Uses the string representation of the addresses as the stable identifier for the two parties, and needs the identity of the remoteAddress to be stored in the identity store
+     - note: The following errors can be thrown:
+     - `storageError`, if the storage is not available
+     - `invalidProtoBuf`, if the identity key is corrupt
+     - `untrustedIdentity`, if the remote identity key is not in the key store
+     - parameter remoteAddress: The address of the other party
+     - parameter localAddress: The address of the local client
+     - returns: The fingerprint to compare the keys
+     - throws: `SignalError` errors
+     */
+    public func fingerprint(for remoteAddress: Address, localAddress: Address) throws -> Fingerprint {
+
+        let localIdentity = try identityKeyStore.getIdentityKeyPublicData()
+        guard let remoteIdentity = try identityKeyStore.identity(for: remoteAddress) else {
+            throw SignalError(.untrustedIdentity, "No identity for address")
+        }
+
+        return try Fingerprint(
+            localStableIdentifier: localAddress.description,
+            localIdentity: localIdentity,
+            remoteStableIdentifier: remoteAddress.description,
+            remoteIdentity: remoteIdentity)
+
     }
 }

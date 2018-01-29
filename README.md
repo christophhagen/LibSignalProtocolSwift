@@ -8,14 +8,14 @@ information can be found [here](https://signal.org/docs/).
 ## Purpose
 
 This Swift library is intended for educational purposes only, in order to show the way the Signal Protocol works.
-It mimics the functionality and structure of the [Signal Protocol C implementation](https://github.com/signalapp/libsignal-protocol-c).
+It somewhat mimics the functionality and structure of the [Signal Protocol C implementation](https://github.com/signalapp/libsignal-protocol-c).
 
 ## Installation
 
-You can install `SignalProtocolSwift` through [Cocoapods](https://cocoapods.org), by adding the following to your `Podfile`:
+You can install `LibSignalProtocolSwift` through [Cocoapods](https://cocoapods.org), by adding the following to your `Podfile`:
 
 ````ruby
-pod 'SignalProtocolSwift', :git => 'https://github.com/christophhagen/SignalProtocolSwift'
+pod 'LibSignalProtocolSwift'
 ````
 
 [Curve25519](https://github.com/christophhagen/Curve25519) is my framework to use the elliptic curve functions in Swift.
@@ -23,12 +23,15 @@ pod 'SignalProtocolSwift', :git => 'https://github.com/christophhagen/SignalProt
 ## Prerequisites
 
 ### Local storage
-The Signal Protocol needs local storage for message keys, identities and other state information. You can provide this functionality by implementing the protocol `SignalProtocolStoreContext`, which requires five delegates for the individual data stores:
-- `IdentityKeyStoreDelegate` for storing and retrieving identity keys
-- `PreKeyStoreDelegate` for storing and retrieving pre keys
-- `SenderKeyStoreDelegate` for storing and retrieving sender keys
-- `SessionStoreDelegate` for storing and retrieving the sessions
-- `SignedPreKeyStoreDelegate` for storing and retrieving signed pre keys
+The Signal Protocol needs local storage for message keys, identities and other state information.
+You can provide this functionality by implementing the protocol `KeyStore`, which requires
+five delegates for the individual data stores:
+
+- `IdentityKeyStore` for storing and retrieving identity keys
+- `PreKeyStore` for storing and retrieving pre keys
+- `SenderKeyStore` for storing and retrieving sender keys
+- `SessionStore` for storing and retrieving the sessions
+- `SignedPreKeyStore` for storing and retrieving signed pre keys
 
 You can have a look at the [test implementation](https://github.com/christophhagen/SignalProtocolSwift/tree/master/SignalProtocolSwiftTests/Test%20Implementation) for inspiration.
 
@@ -127,7 +130,49 @@ let encryptedMessage = try session.encrypt(message)
 let decryptedMessage = try session.decrypt(message)
 ```
 
+#### Verifying identity Keys
+
+To prevent man-in-the-middle attacks it can be beneficial to compare the identity keys either
+by manually comparing the fingerprints or through scanning some sort of code (e.g. a QR-Code).
+The library provides a convenient way for this:
+
+```swift
+// Create the fingerprint
+let aliceFP = try aliceStore.fingerprint(for: bobAddress, localAddress: aliceAddress)
+
+// Display the string...
+let display = fingerprint.displayText
+
+// ... or transmit the scannable data to the other client...
+let scanData = try fingerprint.scannable.data()
+
+// ... or compare to a received fingerprint
+fingerprint.matches(scannedFingerprint)
+```
+
 ### Miscellaneous
+
+#### Client identifiers
+The library is designed to allow different identifiers to distinguish between the different users.
+The test implementation uses the `SignalAddress` struct for this, which consists of a `String` (e.g. a phone number)
+and an `Int`, the `deviceId`. However it is possible to use different structs, classes, or types, as long as they
+conform to the `Hashable`, `Equatable` and `CustomStringConvertible` protocols. For example, simple strings can be used:
+
+```swift
+class MyCustomKeyStore: KeyStore {
+
+    typealias Address = String
+
+    ...
+}
+```
+
+Now, SessionCipher can be instantiated, using `MyCustomKeyStore` :
+
+```swift
+let aliceStore = MyCustomKeyStore()
+let session = SessionCipher(store: aliceStore, remoteAddress: "Bob")
+```
 
 #### Provide custom crypto implementation
 

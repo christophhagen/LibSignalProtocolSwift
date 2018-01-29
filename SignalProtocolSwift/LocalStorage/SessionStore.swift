@@ -9,43 +9,34 @@
 import Foundation
 
 /**
- Implement the `SessionStoreDelegate` protocol to handle the Session records of the
- Signal Protocol API. The records should be stored in a secure database and be treated as
+ Implement the `SessionStore` protocol to handle the session records of the
+ Signal Protocol. The records should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol SessionStoreDelegate {
+public protocol SessionStore {
 
-    /// The address of a user or device
+    /// The type that distinguishes different devices/users
     associatedtype Address: Hashable
 
     /**
      Load a session for a given address.
-
      - parameter address: The address of the remote client
      - returns: The session record, or nil if no record exists
+     - throws: `SignalError` of type `storageError`
      */
-    func loadSession(for address: Address) -> Data?
-
-    /**
-     Retreive the recipient IDs of all active sessions for a remote client.
-
-     - parameter recipientID: The name of the remote client.
-     - returns: An array of recipient IDs
-     */
-    func subDeviceSessions(for recipientID: String) -> [UInt32]
+    func loadSession(for address: Address) throws -> Data?
 
     /**
      Store a session record for a remote client.
-
      - parameter session: The session record to store
      - parameter address: The address of the remote client
      - returns: `true` on success, `false` on error
+     - throws: `SignalError` of type `storageError`
      */
     func store(session: Data, for address: Address) throws
 
     /**
      Indicate if a record exists for the client address
-
      - parameter address: The address of the remote client
      - returns: `true` if a record exists
      */
@@ -53,23 +44,14 @@ public protocol SessionStoreDelegate {
 
     /**
      Delete a session for a remote client.
-
      - parameter address: The address of the remote client
      - returns: `true` if the session was deleted
+     - throws: `SignalError` of type `storageError`
      */
     func deleteSession(for address: Address) throws
-
-    /**
-     Delete all session records for a given client.
-
-     - parameter recipientID: The name of the remote client
-     - returns: The number of deleted records
-     */
-    func deleteAllSessions(for recipientID: String) -> Int
-
 }
 
-extension SessionStoreDelegate {
+extension SessionStore {
 
     /**
      Load a session for a given address.
@@ -78,7 +60,7 @@ extension SessionStoreDelegate {
      - throws: `SignalError` of type `storageError` for an invalid record
      */
     func loadSession(for address: Address) throws -> SessionRecord {
-        guard let record = loadSession(for: address) else {
+        guard let record = try loadSession(for: address) else {
             return SessionRecord(state: nil)
         }
         return try SessionRecord(from: record)

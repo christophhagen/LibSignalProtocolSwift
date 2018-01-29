@@ -14,7 +14,7 @@ import Foundation
  This class can be used to establish a session by processing a pre key bundle
  and for all subsequent encrypt/decrypt operations within that session.
  */
-public struct SessionCipher<Context: SignalProtocolStoreContext> {
+public struct SessionCipher<Context: KeyStore> {
 
     // MARK: Variables
 
@@ -36,7 +36,7 @@ public struct SessionCipher<Context: SignalProtocolStoreContext> {
 
      When finished, free the returned instance by calling session_cipher_free().
 
-     - parameter store: The SignalProtocolStoreContext to store all state information in
+     - parameter store: The KeyStore to store all state information in
      - parameter remoteAddress: The remote address that messages will be encrypted to or decrypted from.
      - returns: A freshly allocated session cipher instance
      */

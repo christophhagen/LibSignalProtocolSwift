@@ -9,12 +9,13 @@
 import Foundation
 
 /**
- Implement the `IdentityKeyStoreDelegate` protocol to handle the Identity Keys of the
- Signal Protocol API. The keys should be stored in a secure database and be treated as
+ Implement the `IdentityKeyStore` protocol to handle the identity keys of the
+ Signal Protocol. The keys should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol IdentityKeyStoreDelegate {
+public protocol IdentityKeyStore {
 
+    /// The type that distinguishes different devices/users
     associatedtype Address: Hashable
 
     /**
@@ -36,16 +37,14 @@ public protocol IdentityKeyStoreDelegate {
     /**
      Return the identity for the given address, if there is any.
      - note: An appropriate error should be thrown if the identity could not be accessed
+     - parameter address: The address of the remote client
      - returns: The identity for the address, or nil if no data exists
      - throws: `SignalError` of type `storageError`
      */
     func identity(for address: Address) throws -> Data?
 
     /**
-     Store a remote client's identity key as trusted. The value of key_data may be null.
-     In this case remove the key data from the identity store, but retain any metadata
-     that may be kept alongside it.
-
+     Store a remote client's identity key as trusted.
      - note: An appropriate error should be thrown if the identity could not be saved
      - parameter identity: The identity key data (may be nil, if the key should be removed)
      - parameter address: The address of the remote client
@@ -54,7 +53,7 @@ public protocol IdentityKeyStoreDelegate {
     func store(identity: Data?, for address: Address) throws
 }
 
-extension IdentityKeyStoreDelegate {
+extension IdentityKeyStore {
 
     /**
      Return the identity key pair. This key should be generated once at

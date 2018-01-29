@@ -8,30 +8,43 @@
 
 import SignalProtocolSwift
 
-class TestStore: SignalProtocolStoreContext {
+/**
+ Implement the key store for testing purposes.
+ */
+class TestStore: KeyStore {
 
+    // MARK: Typealiases
+
+    /// The identifier to distinguish between different devices/users
     typealias Address = SignalAddress
 
+    /// The identifier to distinguish between different groups and devices/users
     typealias GroupAddress = SignalSenderKeyName
 
+    /// The type implementing the identity key store
     typealias IdentityKeyStore = TestIdentityStore
 
+    /// The type implementing the sender key store
     typealias SenderKeyStore = TestSenderKeyStore
 
+    /// The type implementing the session store
     typealias SessionStore = TestSessionStore
 
-    typealias CryptoProvider = SignalCommonCrypto
+    // MARK: Variables
 
+    /// The store for the identity keys
     let identityKeyStore = TestIdentityStore()
 
-    let preKeyStore: PreKeyStoreDelegate = TestPreKeyStore()
+    /// The store for the pre keys
+    let preKeyStore: PreKeyStore = TestPreKeyStore()
 
-    let signedPreKeyStore: SignedPreKeyStoreDelegate = TestSignedPreKeyStore()
+    /// The store for the signed pre keys
+    let signedPreKeyStore: SignedPreKeyStore = TestSignedPreKeyStore()
 
+    /// The store for the sender keys
     let senderKeyStore = TestSenderKeyStore()
 
+    /// The store for the sessions
     let sessionStore = TestSessionStore()
-
-    let cryptoProvider = SignalCommonCrypto()
 }
 

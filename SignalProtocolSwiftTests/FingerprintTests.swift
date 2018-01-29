@@ -99,16 +99,16 @@ class FingerprintTests: XCTestCase {
                 return
         }
         guard let aliceFingerprint = try? Fingerprint(
-            iterations: 5200,
             localStableIdentifier: aliceId, localIdentity: aliceIdentity,
-            remoteStableIdentifier: bobId, remoteIdentity: bobIdentity) else {
+            remoteStableIdentifier: bobId, remoteIdentity: bobIdentity,
+            iterations: 5200) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
         guard let bobFingerprint = try? Fingerprint(
-            iterations: 5200,
             localStableIdentifier: bobId, localIdentity: bobIdentity,
-            remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
+            remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity,
+            iterations: 5200) else {
                 XCTFail("Could not create fingerprint for Bob")
                 return
         }
@@ -156,16 +156,16 @@ class FingerprintTests: XCTestCase {
                 return
         }
         guard let aliceFingerprint = try? Fingerprint(
-            iterations: 1024,
             localStableIdentifier: aliceId, localIdentity: aliceIdentity,
-            remoteStableIdentifier: bobId, remoteIdentity: bobIdentity) else {
+            remoteStableIdentifier: bobId, remoteIdentity: bobIdentity,
+            iterations: 1024) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
         guard let bobFingerprint = try? Fingerprint(
-                iterations: 1024,
                 localStableIdentifier: bobId, localIdentity: bobIdentity,
-            remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
+                remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity,
+                iterations: 1024) else {
                 XCTFail("Could not create fingerprint for Bob")
                 return
         }
@@ -186,17 +186,17 @@ class FingerprintTests: XCTestCase {
             return
         }
         guard let aliceFingerprint = try? Fingerprint(
-            iterations: 1024,
             localStableIdentifier: aliceId, localIdentityList: aliceKeyList,
-            remoteStableIdentifier: bobId, remoteIdentityList: bobKeyList) else {
+            remoteStableIdentifier: bobId, remoteIdentityList: bobKeyList,
+            iterations: 1024) else {
                 XCTFail("Could not create fingerprint for alice")
                 return
         }
 
         guard let bobFingerprint = try? Fingerprint(
-            iterations: 1024,
             localStableIdentifier: bobId, localIdentityList: bobKeyList,
-            remoteStableIdentifier: aliceId, remoteIdentityList: aliceKeyList) else {
+            remoteStableIdentifier: aliceId, remoteIdentityList: aliceKeyList,
+            iterations: 1024) else {
                 XCTFail("Could not create fingerprint for bob")
                 return
         }
@@ -212,16 +212,16 @@ class FingerprintTests: XCTestCase {
                 return
         }
         guard let aliceFingerprint = try? Fingerprint(
-            iterations: 1024,
             localStableIdentifier: aliceId, localIdentity: aliceIdentity,
-            remoteStableIdentifier: bobId, remoteIdentity: mitmIdentity) else {
+            remoteStableIdentifier: bobId, remoteIdentity: mitmIdentity,
+            iterations: 1024) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
         guard let bobFingerprint = try? Fingerprint(
-            iterations: 1024,
             localStableIdentifier: bobId, localIdentity: bobIdentity,
-            remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
+            remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity,
+            iterations: 1024) else {
                 XCTFail("Could not create fingerprint for Bob")
                 return
         }
@@ -243,16 +243,16 @@ class FingerprintTests: XCTestCase {
                 return
         }
         guard let aliceFingerprint = try? Fingerprint(
-            iterations: 1024,
             localStableIdentifier: aliceId + "2", localIdentity: aliceIdentity,
-            remoteStableIdentifier: bobId, remoteIdentity: bobIdentity) else {
+            remoteStableIdentifier: bobId, remoteIdentity: bobIdentity,
+            iterations: 1024) else {
                 XCTFail("Could not create fingerprint for Alice")
                 return
         }
         guard let bobFingerprint = try? Fingerprint(
-            iterations: 1024,
             localStableIdentifier: bobId, localIdentity: bobIdentity,
-            remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity) else {
+            remoteStableIdentifier: aliceId, remoteIdentity: aliceIdentity,
+            iterations: 1024) else {
                 XCTFail("Could not create fingerprint for Bob")
                 return
         }
