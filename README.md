@@ -2,7 +2,7 @@
 A Swift implementation of the Signal Protocol. The [Signal Protocol](https://en.wikipedia.org/wiki/Signal_Protocol)
 can be used for secure, end-to-end encrypted messaging in synchronous and asynchronous environments. It has
 many desirable cryptographic features and can handle missing and out-of-order messages. The Signal protocol
-is used by the [Signal Messenger](signal.org) as well as WhatsApp, Facebook, Skype and others. Additional
+is used by the [Signal Messenger](https://signal.org) as well as WhatsApp, Facebook, Skype and others. Additional
 information can be found [here](https://signal.org/docs/).
 
 ## Purpose
