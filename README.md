@@ -1,4 +1,4 @@
-# SignalProtocolSwift
+# LibSignalProtocolSwift
 A Swift implementation of the Signal Protocol. The [Signal Protocol](https://en.wikipedia.org/wiki/Signal_Protocol)
 can be used for secure, end-to-end encrypted messaging in synchronous and asynchronous environments. It has
 many desirable cryptographic features and can handle missing and out-of-order messages. The Signal protocol
@@ -37,7 +37,7 @@ five delegates for the individual data stores:
 - `SessionStore` for storing and retrieving the sessions
 - `SignedPreKeyStore` for storing and retrieving signed pre keys
 
-You can have a look at the [test implementation](https://github.com/christophhagen/SignalProtocolSwift/tree/master/SignalProtocolSwiftTests/Test%20Implementation) for inspiration.
+You can have a look at the [test implementation](https://github.com/christophhagen/LibSignalProtocolSwift/tree/master/Tests/Test%20Implementation) for inspiration.
 
 ### Server for message delivery
 The server that stores the messages for retrieval needs to store the following data for each `SignalAddress`:
