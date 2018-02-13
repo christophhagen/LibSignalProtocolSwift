@@ -182,7 +182,11 @@ let session = SessionCipher(store: aliceStore, remoteAddress: "Bob")
 
 It is possible for any custom implementation of the `SignalCryptoProvider` protocol
 to serve as the cryptographic backbone of the protocol. This can be done by
-setting the static `provider` variable of the `SignalCrypto` class.
+setting the static `provider` variable of the `SignalCrypto` class:
+
+```swift
+SignalCrypto.provider = MyCustomCryptoProvider()
+```
 
 The elliptic curve functions are handled by the same C code that is deployed in
 [libsignal-protocol-c](https://github.com/signalapp/libsignal-protocol-c)
