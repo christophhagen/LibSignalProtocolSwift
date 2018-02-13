@@ -11,7 +11,7 @@ import Foundation
 /**
  A receiver chain is the part of the ratchet that creates the message keys for the received messages.
  */
-final class ReceiverChain {
+final class ReceiverChain: ProtocolBufferEquivalent {
 
     /// The current ratchet key
     var ratchetKey: PublicKey
@@ -92,58 +92,31 @@ final class ReceiverChain {
         }
         return nil
     }
-    
+
     // MARK: Protocol Buffers
+
+    /// The receiver chain converted to a protobuf object
+    var protoObject: Signal_Session.Chain {
+        return Signal_Session.Chain.with {
+            $0.senderRatchetKey = ratchetKey.data
+            $0.chainKey = chainKey.protoObject
+            $0.messageKeys = messageKeys.map { $0.protoObject }
+        }
+    }
 
     /**
      Create a receiver chain from a protobuf object.
-     - parameter object: The protobuf object
+     - parameter protoObject: The protobuf object
      - throws: `SignaError` of type `invalidProtoBuf`, if data is missing or corrupt.
      */
-    init(from object: Signal_Session.Chain, version: HKDFVersion) throws {
-        self.ratchetKey = try PublicKey(from: object.senderRatchetKey)
-        self.chainKey = try RatchetChainKey(from: object.chainKey, version: version)
-        self.messageKeys = try object.messageKeys.map { try RatchetMessageKeys(from: $0) }
-    }
-
-    /**
-     Deserialize a receiver chain.
-     - parameter data: The serialized chain.
-     - parameter version: The KDF version of the chain key.
-     - throws: `SignaError` of type `invalidProtoBuf`, if data is missing or corrupt.
-     */
-    convenience init(from data: Data, version: HKDFVersion) throws {
-        let object: Signal_Session.Chain
-        do {
-            object = try Signal_Session.Chain(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not create ReceiverChain protobuf object: \(error)")
-        }
-        try self.init(from: object, version: version)
-    }
-
-    /**
-     Serialize the receiver chain.
-     - returns: The serialized chain.
-     - throws:
-    */
-    func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize receiver chain: \(error)")
-        }
-    }
-
-    /// The receiver chain converted to a protobuf object
-    var object: Signal_Session.Chain {
-        return Signal_Session.Chain.with {
-            $0.senderRatchetKey = ratchetKey.data
-            $0.chainKey = chainKey.object
-            $0.messageKeys = messageKeys.map { $0.object }
-        }
+    init(from protoObject: Signal_Session.Chain) throws {
+        self.ratchetKey = try PublicKey(from: protoObject.senderRatchetKey)
+        self.chainKey = try RatchetChainKey(from: protoObject.chainKey)
+        self.messageKeys = try protoObject.messageKeys.map { try RatchetMessageKeys(from: $0) }
     }
 }
+
+// MARK: Protocol Equatable
 
 extension ReceiverChain: Equatable {
     /**

@@ -22,7 +22,6 @@ class ProtocolTests: XCTestCase {
         let macKey = Data(count: RatchetMessageKeys.macKeyLength)
 
         guard let message = try? SignalMessage(
-            messageVersion: 3,
             macKey: macKey,
             senderRatchetKey: senderRatchetKey,
             counter: 2,
@@ -72,7 +71,6 @@ class ProtocolTests: XCTestCase {
         let macKey = Data(count: RatchetMessageKeys.macKeyLength)
 
         guard let message = try? SignalMessage(
-            messageVersion: 3,
             macKey: macKey,
             senderRatchetKey: senderRatchetKey,
             counter: 2,
@@ -87,7 +85,6 @@ class ProtocolTests: XCTestCase {
         let preKeyId: UInt32 = 56
 
         let preKeyMessage = PreKeySignalMessage(
-            messageVersion: 3,
             preKeyId: preKeyId,
             signedPreKeyId: 72,
             baseKey: baseKey,
@@ -104,8 +101,7 @@ class ProtocolTests: XCTestCase {
             return
         }
 
-        guard newMessage.version == preKeyMessage.version,
-            newMessage.identityKey == preKeyMessage.identityKey,
+        guard newMessage.identityKey == preKeyMessage.identityKey,
             newMessage.preKeyId == preKeyMessage.preKeyId,
             newMessage.signedPreKeyId == preKeyMessage.signedPreKeyId,
             newMessage.baseKey == preKeyMessage.baseKey,
@@ -154,8 +150,7 @@ class ProtocolTests: XCTestCase {
 
         guard message.keyId == newMessage.keyId,
             message.iteration == newMessage.iteration,
-            message.cipherText == newMessage.cipherText,
-            message.messageVersion == newMessage.messageVersion else {
+            message.cipherText == newMessage.cipherText else {
                 XCTFail("SenderKeyMessages not equal")
                 return
         }
@@ -171,7 +166,7 @@ class ProtocolTests: XCTestCase {
             id: 10, iteration: 1,
             chainKey: chainKey, signatureKey: signatureKey)
 
-        guard let serialized = try? message.data() else {
+        guard let serialized = try? message.protoData() else {
             XCTFail("Could not serialized message")
             return
         }

@@ -19,19 +19,14 @@ struct RatchetRootKey {
     /// The number of bytes for the root key
     static let secretSize = 32
 
-    /// The key derivation function for the root key
-    private let kdf: HKDF
-
     /// The current root key
     let key: Data
 
     /**
      Create a new root key from the components
-     - parameter kdf: The key derivation function
      - parameter key: The current root key
     */
-    init(kdf: HKDF, key: Data) {
-        self.kdf = kdf
+    init(key: Data) {
         self.key = key
     }
 
@@ -45,29 +40,32 @@ struct RatchetRootKey {
     func createChain(theirRatchetKey: PublicKey, ourRatchetKey: PrivateKey) throws -> (rootKey: RatchetRootKey, chainKey: RatchetChainKey) {
         let sharedSecret = try theirRatchetKey.calculateAgreement(privateKey: ourRatchetKey)
 
-        return try kdf.chainAndRootKey(material: sharedSecret, salt: key, info: RatchetRootKey.keyInfo)
+        return try HKDF.chainAndRootKey(material: sharedSecret, salt: key, info: RatchetRootKey.keyInfo)
     }
 }
 
 // MARK: Protocol Buffers
 
-extension RatchetRootKey {
+extension RatchetRootKey: ProtocolBufferSerializable {
+
+    /**
+     Return the serialized root key
+     - returns: The serialized data
+     */
+    func protoData() -> Data {
+        return key
+    }
 
     /**
      Deserialize a root key.
      - parameter data: The serialized key.
-     - parameter version: The KDF version
-    */
-    init(from data: Data, version: HKDFVersion) {
+     */
+    init(from data: Data) {
         self.key =  data
-        self.kdf = HKDF(messageVersion: version)
-    }
-
-    /// The serialized root key
-    var data: Data {
-        return key
     }
 }
+
+// MARK: Protocol Comparable
 
 extension RatchetRootKey: Comparable {
 
@@ -78,9 +76,6 @@ extension RatchetRootKey: Comparable {
      - returns: `True`, if the first key is 'smaller' than the second key
      */
     static func <(lhs: RatchetRootKey, rhs: RatchetRootKey) -> Bool {
-        guard lhs.kdf == rhs.kdf else {
-            return lhs.kdf < rhs.kdf
-        }
         guard lhs.key.count == rhs.key.count else {
             return lhs.key.count < rhs.key.count
         }
@@ -93,6 +88,8 @@ extension RatchetRootKey: Comparable {
     }
 }
 
+// MARK: Protocol Equatable
+
 extension RatchetRootKey: Equatable {
     /**
      Compare two root keys for equality.
@@ -101,6 +98,6 @@ extension RatchetRootKey: Equatable {
      - returns: `True`, if the keys are equal
      */
     static func ==(lhs: RatchetRootKey, rhs: RatchetRootKey) -> Bool {
-        return lhs.kdf == rhs.kdf && lhs.key == rhs.key
+        return lhs.key == rhs.key
     }
 }

@@ -26,56 +26,10 @@ struct PendingPreKey {
 
 // MARK: Protocol Buffers
 
-extension PendingPreKey {
-
-    /**
-     Create a pending pre key from a ProtoBuf object.
-     - parameter object: The ProtoBuf object.
-     - throws: `SignalError` error of type `invalidProtoBuf`, if data is missing or corrupt
-     */
-    init(serializedObject object: Signal_Session.PendingPreKey) throws {
-        guard object.hasBaseKey, object.hasSignedPreKeyID else {
-            throw SignalError(.invalidProtoBuf, "Missing data in object")
-        }
-        if object.hasPreKeyID {
-            self.preKeyId = object.preKeyID
-        }
-        if object.signedPreKeyID < 0 {
-            throw SignalError(.invalidProtoBuf, "Invalid SignedPreKey id \(object.signedPreKeyID)")
-        }
-        self.signedPreKeyId = UInt32(object.signedPreKeyID)
-        self.baseKey = try PublicKey(from: object.baseKey)
-    }
-
-    /**
-     Create a pending pre key from serialized data.
-     - parameter data: The serialized data.
-     - throws: `SignalError` error of type `invalidProtoBuf`, if data is missing or corrupt
-     */
-    init(from data: Data) throws {
-        do {
-            let object = try Signal_Session.PendingPreKey(serializedData: data)
-            try self.init(serializedObject: object)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not deserialize PendingPreKey: \(error.localizedDescription)")
-        }
-    }
-
-    /**
-     Serialize a pending pre key for storage.
-     - returns: The serialized data.
-     - throws: `SignalError` error of type `invalidProtoBuf`, if the ProtoBuf object could not be serialized.
-     */
-    func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize PendingPreKey: \(error.localizedDescription)")
-        }
-    }
+extension PendingPreKey: ProtocolBufferEquivalent {
 
     /// Create a ProtoBuf object for serialization.
-    var object: Signal_Session.PendingPreKey {
+    var protoObject: Signal_Session.PendingPreKey {
         return Signal_Session.PendingPreKey.with {
             if let item = preKeyId {
                 $0.preKeyID = item
@@ -83,6 +37,25 @@ extension PendingPreKey {
             $0.signedPreKeyID = Int32(self.signedPreKeyId)
             $0.baseKey = self.baseKey.data
         }
+    }
+
+    /**
+     Create a pending pre key from a ProtoBuf object.
+     - parameter object: The ProtoBuf object.
+     - throws: `SignalError` error of type `invalidProtoBuf`, if data is missing or corrupt
+     */
+    init(from protoObject: Signal_Session.PendingPreKey) throws {
+        guard protoObject.hasBaseKey, protoObject.hasSignedPreKeyID else {
+            throw SignalError(.invalidProtoBuf, "Missing data in object")
+        }
+        if protoObject.hasPreKeyID {
+            self.preKeyId = protoObject.preKeyID
+        }
+        if protoObject.signedPreKeyID < 0 {
+            throw SignalError(.invalidProtoBuf, "Invalid SignedPreKey id \(protoObject.signedPreKeyID)")
+        }
+        self.signedPreKeyId = UInt32(protoObject.signedPreKeyID)
+        self.baseKey = try PublicKey(from: protoObject.baseKey)
     }
 }
 

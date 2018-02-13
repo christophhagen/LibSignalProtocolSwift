@@ -76,7 +76,7 @@ extension SessionStore {
      - throws: `SignalError` errors
      */
     func store(session: SessionRecord, for address: Address) throws {
-        let data = try session.data()
+        let data = try session.protoData()
         try store(session: data, for: address)
     }
 }

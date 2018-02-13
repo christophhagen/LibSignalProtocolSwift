@@ -122,26 +122,16 @@ final class SenderKeyRecord {
                  signaturePublicKey: signatureKeyPair.publicKey,
                  signaturePrivateKey: signatureKeyPair.privateKey)
     }
-    
-    // MARK: Protocol Buffers
+}
+
+// MARK: Protocol Buffers
+
+extension SenderKeyRecord : ProtocolBufferEquivalent {
 
     /// The record converted to a ProtoBuf object for storage
-    var object: Signal_SenderKeyRecord {
+    var protoObject: Signal_SenderKeyRecord {
         return Signal_SenderKeyRecord.with {
-            $0.senderKeyStates = self.states.map { $0.object }
-        }
-    }
-
-    /**
-     The record converted to data for storage
-     - returns: The serialized record.
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SenderKeyRecord: \(error)")
+            $0.senderKeyStates = self.states.map { $0.protoObject }
         }
     }
 
@@ -151,26 +141,13 @@ final class SenderKeyRecord {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` `invalidProtoBuf` if the object is corrupted.
     */
-    init(from object: Signal_SenderKeyRecord) throws {
+    convenience init(from object: Signal_SenderKeyRecord) throws {
+        self.init()
         self.states = try object.senderKeyStates.map { try SenderKeyState(from: $0) }
     }
-
-    /**
-     Create a record from serialized data.
-     - note: This init takes data produced by calls to `data()`
-     - parameter data: The data
-     - throws: `SignalError` `invalidProtoBuf` if the data is corrupted.
-     */
-    convenience init(from data: Data) throws {
-        let object: Signal_SenderKeyRecord
-        do {
-            object = try Signal_SenderKeyRecord(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not create SenderKeyRecord object: \(error)")
-        }
-        try self.init(from: object)
-    }
 }
+
+// MARK: Protocol Equatable
 
 extension SenderKeyRecord: Equatable {
     /**

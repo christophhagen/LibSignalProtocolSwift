@@ -29,7 +29,7 @@ class GroupCipherTests: XCTestCase {
                 XCTFail("Could not create distribution message")
                 return
         }
-        guard let serialized = try? sentAliceDistributionMessage.data() else {
+        guard let serialized = try? sentAliceDistributionMessage.protoData() else {
             XCTFail("Could not serialize SenderKeyDistributionMessage")
             return
         }
@@ -75,7 +75,7 @@ class GroupCipherTests: XCTestCase {
                 XCTFail("Could not create distribution message")
                 return
         }
-        guard let serialized = try? sentAliceDistributionMessage.data() else {
+        guard let serialized = try? sentAliceDistributionMessage.protoData() else {
             XCTFail("Could not serialize SenderKeyDistributionMessage")
             return
         }
@@ -128,7 +128,7 @@ class GroupCipherTests: XCTestCase {
                 XCTFail("Could not create distribution message")
                 return
         }
-        guard let serialized = try? sentAliceDistributionMessage.data() else {
+        guard let serialized = try? sentAliceDistributionMessage.protoData() else {
             XCTFail("Could not serialize SenderKeyDistributionMessage")
             return
         }
@@ -223,7 +223,7 @@ class GroupCipherTests: XCTestCase {
                 return
         }
 
-        guard let serialized = try? sentAliceDistributionMessage.data() else {
+        guard let serialized = try? sentAliceDistributionMessage.protoData() else {
             XCTFail("Could not serialize SenderKeyDistributionMessage")
             return
         }

@@ -74,7 +74,7 @@ struct SessionBuilder<Context: KeyStore> {
         preKeySignalMessageV3 message: PreKeySignalMessage,
         record: SessionRecord) throws -> UInt32? {
 
-        if record.hasSessionState(version: message.version, baseKey: message.baseKey) {
+        if record.hasSessionState(baseKey: message.baseKey) {
             // We've already setup a session for this V3 message, letting bundled message fall through...
             return nil
         }

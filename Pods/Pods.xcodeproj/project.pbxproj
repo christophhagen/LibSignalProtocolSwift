@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -953,192 +953,192 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00F23AFBD4AA13706F08064045C70A44 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00F23AFBD4AA13706F08064045C70A44 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0219AB3D4DB63E643827CA14E2280479 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		02885915E98DA2FB5009952DF5BC964C /* ge_frombytes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_frombytes.c; path = Curve25519/lib/Ed25519/ge_frombytes.c; sourceTree = "<group>"; };
+		02885915E98DA2FB5009952DF5BC964C /* ge_frombytes.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_frombytes.c; path = Curve25519/lib/Ed25519/ge_frombytes.c; sourceTree = "<group>"; };
 		0350561BE6C54DBEED6946E440BCE5CF /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-dummy.m"; sourceTree = "<group>"; };
 		037D9D5A1C48822711910B5A92988C4E /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-dummy.m"; sourceTree = "<group>"; };
-		03F3AEDFCFC5F37939999C4C8B73EF07 /* xeddsa.c */ = {isa = PBXFileReference; includeInIndex = 1; name = xeddsa.c; path = Curve25519/lib/Ed25519/additions/xeddsa.c; sourceTree = "<group>"; };
+		03F3AEDFCFC5F37939999C4C8B73EF07 /* xeddsa.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = xeddsa.c; path = Curve25519/lib/Ed25519/additions/xeddsa.c; sourceTree = "<group>"; };
 		0407F80F0876E8687518D1483F81F68C /* JSONEncodingVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncodingVisitor.swift; path = Sources/SwiftProtobuf/JSONEncodingVisitor.swift; sourceTree = "<group>"; };
 		043EB31E7B6BCA9A1B4343CE2DCC72C3 /* sc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sc.h; path = Curve25519/lib/Ed25519/sc.h; sourceTree = "<group>"; };
 		04BDD643EC2F3021177CFF50A818B4CF /* CommonCryptoModule-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CommonCryptoModule-tvOS.xcconfig"; path = "../CommonCryptoModule-tvOS/CommonCryptoModule-tvOS.xcconfig"; sourceTree = "<group>"; };
 		055276290F92617E3923EB7BD1F3EBB9 /* any.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = any.pb.swift; path = Sources/SwiftProtobuf/any.pb.swift; sourceTree = "<group>"; };
-		065A5EC8548C8088B45D2A7C963C1076 /* fe_copy.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_copy.c; path = Curve25519/lib/Ed25519/fe_copy.c; sourceTree = "<group>"; };
-		06652800C396BDC078A4C89773B9F9AB /* ge_add.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_add.c; path = Curve25519/lib/Ed25519/ge_add.c; sourceTree = "<group>"; };
+		065A5EC8548C8088B45D2A7C963C1076 /* fe_copy.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_copy.c; path = Curve25519/lib/Ed25519/fe_copy.c; sourceTree = "<group>"; };
+		06652800C396BDC078A4C89773B9F9AB /* ge_add.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_add.c; path = Curve25519/lib/Ed25519/ge_add.c; sourceTree = "<group>"; };
 		068D4D114290A674B32AD2CF1AFBB283 /* pow225521.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pow225521.h; path = Curve25519/lib/Ed25519/pow225521.h; sourceTree = "<group>"; };
 		0780CE451A71A1816C2A7761BA89A778 /* ProtobufMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProtobufMap.swift; path = Sources/SwiftProtobuf/ProtobufMap.swift; sourceTree = "<group>"; };
 		099534A93131F2FA9378795E3C023698 /* JSONIntegerConverting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONIntegerConverting.swift; path = Sources/SwiftProtobuf/JSONIntegerConverting.swift; sourceTree = "<group>"; };
 		0A879361EB0DE9E4C2A8C31E327C5C64 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Curve25519-macOS/Info.plist"; sourceTree = "<group>"; };
 		0A90483864CE8C7E36CCA94AB054A551 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig"; sourceTree = "<group>"; };
-		0CF47C649825CE9FA6834EAB7D4EA0CC /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CommonCryptoModule.framework; path = "CommonCryptoModule-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CF47C649825CE9FA6834EAB7D4EA0CC /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCryptoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1170ACED9D3DD7F744177440FB4A7D /* crypto_int32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_int32.h; path = Curve25519/lib/Ed25519/nacl_includes/crypto_int32.h; sourceTree = "<group>"; };
 		0D5AC10B117CC2A8627AF9837A00D88F /* Pods-LibSignalProtocolSwift Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LibSignalProtocolSwift Tests-dummy.m"; sourceTree = "<group>"; };
-		0DC3764482E369DC7F5D0DF334478A04 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftProtobuf.framework; path = "SwiftProtobuf-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DC3764482E369DC7F5D0DF334478A04 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftProtobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E879E9A8970B12382B970AAA974A231 /* SwiftProtobuf-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftProtobuf-iOS-prefix.pch"; sourceTree = "<group>"; };
 		107E63B30FB29C3A8EB8CB7ECF7C1A4B /* crypto_additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_additions.h; path = Curve25519/lib/Ed25519/additions/crypto_additions.h; sourceTree = "<group>"; };
-		11CCFA3CC00C21C3F7965B011F8C59B4 /* ge_scalarmult.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_scalarmult.c; path = Curve25519/lib/Ed25519/additions/ge_scalarmult.c; sourceTree = "<group>"; };
+		11CCFA3CC00C21C3F7965B011F8C59B4 /* ge_scalarmult.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_scalarmult.c; path = Curve25519/lib/Ed25519/additions/ge_scalarmult.c; sourceTree = "<group>"; };
 		12995CAB79F3CF0665137702612ACE96 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		131520306D4E4B0D83DEA21E0639AC85 /* SwiftProtobuf-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "SwiftProtobuf-macOS.modulemap"; path = "../SwiftProtobuf-macOS/SwiftProtobuf-macOS.modulemap"; sourceTree = "<group>"; };
-		145B570B0F81240C5DFDFE4743F321C0 /* SwiftProtobuf-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "SwiftProtobuf-tvOS.modulemap"; path = "../SwiftProtobuf-tvOS/SwiftProtobuf-tvOS.modulemap"; sourceTree = "<group>"; };
+		131520306D4E4B0D83DEA21E0639AC85 /* SwiftProtobuf-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "SwiftProtobuf-macOS.modulemap"; path = "../SwiftProtobuf-macOS/SwiftProtobuf-macOS.modulemap"; sourceTree = "<group>"; };
+		145B570B0F81240C5DFDFE4743F321C0 /* SwiftProtobuf-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "SwiftProtobuf-tvOS.modulemap"; path = "../SwiftProtobuf-tvOS/SwiftProtobuf-tvOS.modulemap"; sourceTree = "<group>"; };
 		14B833181CD0AE6120394AC1A2364759 /* SwiftProtobuf-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftProtobuf-iOS-umbrella.h"; sourceTree = "<group>"; };
-		155A5602FF097E752F00BC74446C2C35 /* zeroize.c */ = {isa = PBXFileReference; includeInIndex = 1; name = zeroize.c; path = Curve25519/lib/Ed25519/additions/zeroize.c; sourceTree = "<group>"; };
+		155A5602FF097E752F00BC74446C2C35 /* zeroize.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = zeroize.c; path = Curve25519/lib/Ed25519/additions/zeroize.c; sourceTree = "<group>"; };
 		15863E526EEADF7C40566D2440352145 /* Google_Protobuf_Duration+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Duration+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Duration+Extensions.swift"; sourceTree = "<group>"; };
-		15B4C66883ED4F12C3EEEAE7E4211DDA /* sc_reduce.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sc_reduce.c; path = Curve25519/lib/Ed25519/sc_reduce.c; sourceTree = "<group>"; };
+		15B4C66883ED4F12C3EEEAE7E4211DDA /* sc_reduce.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sc_reduce.c; path = Curve25519/lib/Ed25519/sc_reduce.c; sourceTree = "<group>"; };
 		172271881F8F8516F10E0DAC5D10CB71 /* JSONScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONScanner.swift; path = Sources/SwiftProtobuf/JSONScanner.swift; sourceTree = "<group>"; };
 		17331EA8B84E8A6FAE486C4BABDA18EE /* Curve25519-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Curve25519-iOS-prefix.pch"; sourceTree = "<group>"; };
 		1B3CA3FF923F34640345D576DC0A5275 /* SwiftProtobuf-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftProtobuf-iOS-dummy.m"; sourceTree = "<group>"; };
 		1D811D88DD32477313D1A0B253BC9551 /* Curve25519-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Curve25519-watchOS-dummy.m"; path = "../Curve25519-watchOS/Curve25519-watchOS-dummy.m"; sourceTree = "<group>"; };
 		1FF7C0198C4AA8799A0499A963C14225 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		203647E3DC87C67BD649089DDB88485B /* CommonCryptoModule-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommonCryptoModule-iOS-umbrella.h"; sourceTree = "<group>"; };
-		20C2EEF89138E1F839C9EB609AF359F7 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.modulemap"; sourceTree = "<group>"; };
+		20C2EEF89138E1F839C9EB609AF359F7 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.modulemap"; sourceTree = "<group>"; };
 		20D4A0C74D086BAB552F5D84C1E1D6E5 /* curve25519-donna.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "curve25519-donna.h"; path = "Curve25519/pub/curve25519-donna.h"; sourceTree = "<group>"; };
-		212C0F7DD1D2B09CAFC2864B90939F81 /* ge_p3_to_montx.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p3_to_montx.c; path = Curve25519/lib/Ed25519/additions/ge_p3_to_montx.c; sourceTree = "<group>"; };
-		22A15B4AD2EE41F7E84D1D0FE5DCB019 /* ge_msub.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_msub.c; path = Curve25519/lib/Ed25519/ge_msub.c; sourceTree = "<group>"; };
+		212C0F7DD1D2B09CAFC2864B90939F81 /* ge_p3_to_montx.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p3_to_montx.c; path = Curve25519/lib/Ed25519/additions/ge_p3_to_montx.c; sourceTree = "<group>"; };
+		22A15B4AD2EE41F7E84D1D0FE5DCB019 /* ge_msub.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_msub.c; path = Curve25519/lib/Ed25519/ge_msub.c; sourceTree = "<group>"; };
 		2376AD8294920CC70B229DA1EF4F2315 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		242FC2045CF6CB4637B374A0BA7C6573 /* Curve25519-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Curve25519-watchOS-prefix.pch"; path = "../Curve25519-watchOS/Curve25519-watchOS-prefix.pch"; sourceTree = "<group>"; };
-		25874988408F572698188B3553D3B94B /* fe_mont_rhs.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_mont_rhs.c; path = Curve25519/lib/Ed25519/additions/fe_mont_rhs.c; sourceTree = "<group>"; };
+		25874988408F572698188B3553D3B94B /* fe_mont_rhs.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_mont_rhs.c; path = Curve25519/lib/Ed25519/additions/fe_mont_rhs.c; sourceTree = "<group>"; };
 		25B602981A1F52C2043295CF99C6F9F2 /* gen_constants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = gen_constants.h; path = Curve25519/lib/Ed25519/additions/generalized/gen_constants.h; sourceTree = "<group>"; };
 		265900ED47227AA1166A79C8EAD77F2E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		265D9AEE600CC52EAF1119894BFF26AF /* AnyUnpackError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyUnpackError.swift; path = Sources/SwiftProtobuf/AnyUnpackError.swift; sourceTree = "<group>"; };
-		26886DF80C8E97DF4731E39C2BC7AF89 /* ge_p1p1_to_p3.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p1p1_to_p3.c; path = Curve25519/lib/Ed25519/ge_p1p1_to_p3.c; sourceTree = "<group>"; };
-		271EBF4517BE7BC2163781C3976A0B17 /* ge_montx_to_p3.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_montx_to_p3.c; path = Curve25519/lib/Ed25519/additions/ge_montx_to_p3.c; sourceTree = "<group>"; };
+		26886DF80C8E97DF4731E39C2BC7AF89 /* ge_p1p1_to_p3.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p1p1_to_p3.c; path = Curve25519/lib/Ed25519/ge_p1p1_to_p3.c; sourceTree = "<group>"; };
+		271EBF4517BE7BC2163781C3976A0B17 /* ge_montx_to_p3.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_montx_to_p3.c; path = Curve25519/lib/Ed25519/additions/ge_montx_to_p3.c; sourceTree = "<group>"; };
 		27EF82AAAFD0D19E6D6EE4ED2572A425 /* SwiftProtobuf-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftProtobuf-tvOS.xcconfig"; path = "../SwiftProtobuf-tvOS/SwiftProtobuf-tvOS.xcconfig"; sourceTree = "<group>"; };
-		29D1914E42CC36CEDA0536684964AD92 /* ge_p3_add.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p3_add.c; path = Curve25519/lib/Ed25519/additions/generalized/ge_p3_add.c; sourceTree = "<group>"; };
-		29EF435D8DD6C3C22CA7906C8A211BD7 /* Curve25519.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Curve25519.framework; path = "Curve25519-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A050CDBECBED407FAAADAE41C0F3054 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.modulemap"; sourceTree = "<group>"; };
-		2A6C5770AB364CC31862B17453D53FB3 /* point_isreduced.c */ = {isa = PBXFileReference; includeInIndex = 1; name = point_isreduced.c; path = Curve25519/lib/Ed25519/additions/generalized/point_isreduced.c; sourceTree = "<group>"; };
+		29D1914E42CC36CEDA0536684964AD92 /* ge_p3_add.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p3_add.c; path = Curve25519/lib/Ed25519/additions/generalized/ge_p3_add.c; sourceTree = "<group>"; };
+		29EF435D8DD6C3C22CA7906C8A211BD7 /* Curve25519.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curve25519.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A050CDBECBED407FAAADAE41C0F3054 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.modulemap"; sourceTree = "<group>"; };
+		2A6C5770AB364CC31862B17453D53FB3 /* point_isreduced.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = point_isreduced.c; path = Curve25519/lib/Ed25519/additions/generalized/point_isreduced.c; sourceTree = "<group>"; };
 		2B3EEBF6D75A71DDDF2CC8CA1C54E19D /* SwiftProtobuf-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SwiftProtobuf-watchOS-dummy.m"; path = "../SwiftProtobuf-watchOS/SwiftProtobuf-watchOS-dummy.m"; sourceTree = "<group>"; };
 		2C3A88417C50AAD75DDA6F6973B28740 /* internal_fast_tests.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = internal_fast_tests.h; path = Curve25519/pub/internal_fast_tests.h; sourceTree = "<group>"; };
-		2C525ABEE4BCEC00EE988F329C1217C3 /* ge_sub.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_sub.c; path = Curve25519/lib/Ed25519/ge_sub.c; sourceTree = "<group>"; };
+		2C525ABEE4BCEC00EE988F329C1217C3 /* ge_sub.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_sub.c; path = Curve25519/lib/Ed25519/ge_sub.c; sourceTree = "<group>"; };
 		2C53C2C451E131209643C474B7694BC3 /* type.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = type.pb.swift; path = Sources/SwiftProtobuf/type.pb.swift; sourceTree = "<group>"; };
 		2C6AC029A3A2EBDC761A012C6D7BFCD6 /* Curve25519-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Curve25519-tvOS-prefix.pch"; path = "../Curve25519-tvOS/Curve25519-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		2C9FD7E8A6F324E68B380EA708FF4C84 /* gen_labelset.c */ = {isa = PBXFileReference; includeInIndex = 1; name = gen_labelset.c; path = Curve25519/lib/Ed25519/additions/generalized/gen_labelset.c; sourceTree = "<group>"; };
+		2C9FD7E8A6F324E68B380EA708FF4C84 /* gen_labelset.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = gen_labelset.c; path = Curve25519/lib/Ed25519/additions/generalized/gen_labelset.c; sourceTree = "<group>"; };
 		2DA41F507AD3F12818926BCD7507416B /* Google_Protobuf_FieldMask+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_FieldMask+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_FieldMask+Extensions.swift"; sourceTree = "<group>"; };
 		2DA713E0FAEA0646905611E7257DDD43 /* SwiftProtobuf-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftProtobuf-iOS.xcconfig"; sourceTree = "<group>"; };
 		2E0D3742D39CC7260F82C330FB5BBC65 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		2E302A627DAF81B43242B084103724D4 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-dummy.m"; sourceTree = "<group>"; };
-		3049E34BEA501A04359446ACF04778CB /* compare.c */ = {isa = PBXFileReference; includeInIndex = 1; name = compare.c; path = Curve25519/lib/Ed25519/additions/compare.c; sourceTree = "<group>"; };
-		31A3D2AE93DBB79A53954EF68F58CA7E /* SwiftProtobuf-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "SwiftProtobuf-watchOS.modulemap"; path = "../SwiftProtobuf-watchOS/SwiftProtobuf-watchOS.modulemap"; sourceTree = "<group>"; };
-		31DE2C32D7E62B51F330AA014341C145 /* ge_tobytes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_tobytes.c; path = Curve25519/lib/Ed25519/ge_tobytes.c; sourceTree = "<group>"; };
+		3049E34BEA501A04359446ACF04778CB /* compare.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = compare.c; path = Curve25519/lib/Ed25519/additions/compare.c; sourceTree = "<group>"; };
+		31A3D2AE93DBB79A53954EF68F58CA7E /* SwiftProtobuf-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "SwiftProtobuf-watchOS.modulemap"; path = "../SwiftProtobuf-watchOS/SwiftProtobuf-watchOS.modulemap"; sourceTree = "<group>"; };
+		31DE2C32D7E62B51F330AA014341C145 /* ge_tobytes.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_tobytes.c; path = Curve25519/lib/Ed25519/ge_tobytes.c; sourceTree = "<group>"; };
 		3219CFADE322302B8165B3F1274F19EF /* Message+BinaryAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Message+BinaryAdditions.swift"; path = "Sources/SwiftProtobuf/Message+BinaryAdditions.swift"; sourceTree = "<group>"; };
-		32E9C236C490D42EC61515FADE1A7AB1 /* ge_double_scalarmult.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_double_scalarmult.c; path = Curve25519/lib/Ed25519/ge_double_scalarmult.c; sourceTree = "<group>"; };
+		32E9C236C490D42EC61515FADE1A7AB1 /* ge_double_scalarmult.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_double_scalarmult.c; path = Curve25519/lib/Ed25519/ge_double_scalarmult.c; sourceTree = "<group>"; };
 		341C1DECFC947B1009634317C2701049 /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift Tests.release.xcconfig"; sourceTree = "<group>"; };
-		35E1564C3F98A345B36D8DF2CA6E517C /* gen_eddsa.c */ = {isa = PBXFileReference; includeInIndex = 1; name = gen_eddsa.c; path = Curve25519/lib/Ed25519/additions/generalized/gen_eddsa.c; sourceTree = "<group>"; };
-		361D74B525BC7EA762D04755D4F2CBD1 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.modulemap"; sourceTree = "<group>"; };
-		3756FA4E314FADB59C3D704CD9D94AF3 /* ge_precomp_0.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_precomp_0.c; path = Curve25519/lib/Ed25519/ge_precomp_0.c; sourceTree = "<group>"; };
+		35E1564C3F98A345B36D8DF2CA6E517C /* gen_eddsa.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = gen_eddsa.c; path = Curve25519/lib/Ed25519/additions/generalized/gen_eddsa.c; sourceTree = "<group>"; };
+		361D74B525BC7EA762D04755D4F2CBD1 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.modulemap"; sourceTree = "<group>"; };
+		3756FA4E314FADB59C3D704CD9D94AF3 /* ge_precomp_0.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_precomp_0.c; path = Curve25519/lib/Ed25519/ge_precomp_0.c; sourceTree = "<group>"; };
 		375CFF4C6F1F8698EF19B0904BD78628 /* CommonCryptoModule-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CommonCryptoModule-macOS.xcconfig"; path = "../CommonCryptoModule-macOS/CommonCryptoModule-macOS.xcconfig"; sourceTree = "<group>"; };
-		379C06BCF202E965617B10FF28A11003 /* blocks.c */ = {isa = PBXFileReference; includeInIndex = 1; name = blocks.c; path = Curve25519/lib/Ed25519/nacl_sha512/blocks.c; sourceTree = "<group>"; };
+		379C06BCF202E965617B10FF28A11003 /* blocks.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = blocks.c; path = Curve25519/lib/Ed25519/nacl_sha512/blocks.c; sourceTree = "<group>"; };
 		38318C6D7BDB9FD2DEDE678A05E34F36 /* Version.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Version.swift; path = Sources/SwiftProtobuf/Version.swift; sourceTree = "<group>"; };
 		3977DE0915D1307FDFB4B609B86CC28E /* SwiftProtobuf-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftProtobuf-watchOS-prefix.pch"; path = "../SwiftProtobuf-watchOS/SwiftProtobuf-watchOS-prefix.pch"; sourceTree = "<group>"; };
 		3A062A37DA08E85FA2DC2AE76AE96B84 /* CommonCryptoModule-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CommonCryptoModule-macOS-prefix.pch"; path = "../CommonCryptoModule-macOS/CommonCryptoModule-macOS-prefix.pch"; sourceTree = "<group>"; };
-		3A3171821A49EAFD20B9E0961C1FED84 /* Curve25519.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Curve25519.framework; path = "Curve25519-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A43DB3A48E15C7DB2663C5212AC9D5E /* internal_slow_tests.c */ = {isa = PBXFileReference; includeInIndex = 1; name = internal_slow_tests.c; path = Curve25519/lib/Ed25519/tests/internal_slow_tests.c; sourceTree = "<group>"; };
-		3A95B09B7253D5C265DC3C20D026321E /* fe_frombytes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_frombytes.c; path = Curve25519/lib/Ed25519/fe_frombytes.c; sourceTree = "<group>"; };
+		3A3171821A49EAFD20B9E0961C1FED84 /* Curve25519.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curve25519.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A43DB3A48E15C7DB2663C5212AC9D5E /* internal_slow_tests.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = internal_slow_tests.c; path = Curve25519/lib/Ed25519/tests/internal_slow_tests.c; sourceTree = "<group>"; };
+		3A95B09B7253D5C265DC3C20D026321E /* fe_frombytes.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_frombytes.c; path = Curve25519/lib/Ed25519/fe_frombytes.c; sourceTree = "<group>"; };
 		3D2FC85B44B229CFBAE6CEC2D78B7CCA /* CommonCryptoModule-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CommonCryptoModule-tvOS-dummy.m"; path = "../CommonCryptoModule-tvOS/CommonCryptoModule-tvOS-dummy.m"; sourceTree = "<group>"; };
-		3E41D3BBD3F5A84F46D3FE871018764A /* sc_clamp.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sc_clamp.c; path = Curve25519/lib/Ed25519/additions/sc_clamp.c; sourceTree = "<group>"; };
+		3E41D3BBD3F5A84F46D3FE871018764A /* sc_clamp.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sc_clamp.c; path = Curve25519/lib/Ed25519/additions/sc_clamp.c; sourceTree = "<group>"; };
 		3EF62D9E1B7432B163C2E40333F33510 /* internal_slow_tests.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = internal_slow_tests.h; path = Curve25519/pub/internal_slow_tests.h; sourceTree = "<group>"; };
-		40649A63079018CC1D246FC10037BD25 /* CommonCryptoModule-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CommonCryptoModule-tvOS.modulemap"; path = "../CommonCryptoModule-tvOS/CommonCryptoModule-tvOS.modulemap"; sourceTree = "<group>"; };
-		4223EC117FD316B68A16C6705645A489 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftProtobuf.framework; path = "SwiftProtobuf-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40649A63079018CC1D246FC10037BD25 /* CommonCryptoModule-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "CommonCryptoModule-tvOS.modulemap"; path = "../CommonCryptoModule-tvOS/CommonCryptoModule-tvOS.modulemap"; sourceTree = "<group>"; };
+		4223EC117FD316B68A16C6705645A489 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftProtobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4264F22FC2BFEF5617FDE8B559A59394 /* Google_Protobuf_ListValue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_ListValue+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_ListValue+Extensions.swift"; sourceTree = "<group>"; };
-		46624D93B992618EA80F6ABA4A76A247 /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CommonCryptoModule.framework; path = "CommonCryptoModule-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46624D93B992618EA80F6ABA4A76A247 /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCryptoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4682D2CF06BF1A6EBC03CC826B59C074 /* Curve25519-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Curve25519-macOS-dummy.m"; path = "../Curve25519-macOS/Curve25519-macOS-dummy.m"; sourceTree = "<group>"; };
-		4712EB478CE683267C7FBFC87666DF91 /* fe_isreduced.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_isreduced.c; path = Curve25519/lib/Ed25519/additions/fe_isreduced.c; sourceTree = "<group>"; };
+		4712EB478CE683267C7FBFC87666DF91 /* fe_isreduced.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_isreduced.c; path = Curve25519/lib/Ed25519/additions/fe_isreduced.c; sourceTree = "<group>"; };
 		473AEFFCA564110B07946BDD716830AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47C07401C9CE25E86B8A9E7E48314484 /* ge_p1p1_to_p2.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p1p1_to_p2.c; path = Curve25519/lib/Ed25519/ge_p1p1_to_p2.c; sourceTree = "<group>"; };
-		48A824EA18EEEE366EA91A763B6FC6B4 /* ge_neg.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_neg.c; path = Curve25519/lib/Ed25519/additions/ge_neg.c; sourceTree = "<group>"; };
+		47C07401C9CE25E86B8A9E7E48314484 /* ge_p1p1_to_p2.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p1p1_to_p2.c; path = Curve25519/lib/Ed25519/ge_p1p1_to_p2.c; sourceTree = "<group>"; };
+		48A824EA18EEEE366EA91A763B6FC6B4 /* ge_neg.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_neg.c; path = Curve25519/lib/Ed25519/additions/ge_neg.c; sourceTree = "<group>"; };
 		48FB77A2BDD52D6ADD3AA57375046E2F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-resources.sh"; sourceTree = "<group>"; };
-		4918A048411FA4422A59BA1A87232869 /* elligator.c */ = {isa = PBXFileReference; includeInIndex = 1; name = elligator.c; path = Curve25519/lib/Ed25519/additions/elligator.c; sourceTree = "<group>"; };
+		4918A048411FA4422A59BA1A87232869 /* elligator.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = elligator.c; path = Curve25519/lib/Ed25519/additions/elligator.c; sourceTree = "<group>"; };
 		496F53371199F4370E06250DAE74B1EF /* SwiftProtobuf-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SwiftProtobuf-tvOS-dummy.m"; path = "../SwiftProtobuf-tvOS/SwiftProtobuf-tvOS-dummy.m"; sourceTree = "<group>"; };
 		4AB4A513B5AAC71F1C92ED1C648FF5CF /* SimpleExtensionMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleExtensionMap.swift; path = Sources/SwiftProtobuf/SimpleExtensionMap.swift; sourceTree = "<group>"; };
 		4B1203E5F615E3B6C95C84517F70C214 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SwiftProtobuf-macOS/Info.plist"; sourceTree = "<group>"; };
 		4B7D56957B30B446EB152F31F4F1B403 /* Google_Protobuf_Timestamp+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Timestamp+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Timestamp+Extensions.swift"; sourceTree = "<group>"; };
-		4BE52F0436A3E61561BE31B79C0F0E45 /* internal_fast_tests.c */ = {isa = PBXFileReference; includeInIndex = 1; name = internal_fast_tests.c; path = Curve25519/lib/Ed25519/tests/internal_fast_tests.c; sourceTree = "<group>"; };
+		4BE52F0436A3E61561BE31B79C0F0E45 /* internal_fast_tests.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = internal_fast_tests.c; path = Curve25519/lib/Ed25519/tests/internal_fast_tests.c; sourceTree = "<group>"; };
 		4C41BD26292073A339646D82E61DCB32 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		4F7BACF444D0DA01D3613D027A6CC136 /* SelectiveVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectiveVisitor.swift; path = Sources/SwiftProtobuf/SelectiveVisitor.swift; sourceTree = "<group>"; };
-		5056DA138388AD9C5167F7AC93AFD3C5 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5056DA138388AD9C5167F7AC93AFD3C5 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5075300294CE9FF8CBA43F0ACF671F72 /* ge_madd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ge_madd.h; path = Curve25519/lib/Ed25519/ge_madd.h; sourceTree = "<group>"; };
-		51F8D7243EF9E1BA979430F370DD1373 /* keygen.c */ = {isa = PBXFileReference; includeInIndex = 1; name = keygen.c; path = Curve25519/lib/Ed25519/additions/keygen.c; sourceTree = "<group>"; };
+		51F8D7243EF9E1BA979430F370DD1373 /* keygen.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = keygen.c; path = Curve25519/lib/Ed25519/additions/keygen.c; sourceTree = "<group>"; };
 		52403BDCD9604569CE567341406EF378 /* crypto_uint64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_uint64.h; path = Curve25519/lib/Ed25519/nacl_includes/crypto_uint64.h; sourceTree = "<group>"; };
 		52A7D094A133C352F4E81F6A546093C0 /* crypto_sign_edwards25519sha512batch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_sign_edwards25519sha512batch.h; path = Curve25519/lib/Ed25519/nacl_includes/crypto_sign_edwards25519sha512batch.h; sourceTree = "<group>"; };
 		532687795E30D4C5B8F3885DFD23710C /* Pods-LibSignalProtocolSwift Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LibSignalProtocolSwift Tests-umbrella.h"; sourceTree = "<group>"; };
 		54BC3AD07AAB7A85A7AE8676056546E2 /* BinaryEncodingVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryEncodingVisitor.swift; path = Sources/SwiftProtobuf/BinaryEncodingVisitor.swift; sourceTree = "<group>"; };
-		55689A4727F434B0FB767F69C638021D /* gen_veddsa.c */ = {isa = PBXFileReference; includeInIndex = 1; name = gen_veddsa.c; path = Curve25519/lib/Ed25519/additions/generalized/gen_veddsa.c; sourceTree = "<group>"; };
+		55689A4727F434B0FB767F69C638021D /* gen_veddsa.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = gen_veddsa.c; path = Curve25519/lib/Ed25519/additions/generalized/gen_veddsa.c; sourceTree = "<group>"; };
 		55D91100F77B77615D469F0E9E179D7D /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		564367228307E14E0B18F5F7F72D618F /* ExtensionFieldValueSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionFieldValueSet.swift; path = Sources/SwiftProtobuf/ExtensionFieldValueSet.swift; sourceTree = "<group>"; };
-		56897445A2571DD9DCBDE12CA6399BBC /* ge_madd.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_madd.c; path = Curve25519/lib/Ed25519/ge_madd.c; sourceTree = "<group>"; };
+		56897445A2571DD9DCBDE12CA6399BBC /* ge_madd.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_madd.c; path = Curve25519/lib/Ed25519/ge_madd.c; sourceTree = "<group>"; };
 		575673992DF97A2918F1C979B19C1CAB /* FieldTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldTypes.swift; path = Sources/SwiftProtobuf/FieldTypes.swift; sourceTree = "<group>"; };
 		5774416F0CCA99277F180E6ACDB36CE1 /* Curve25519.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Curve25519.h; path = Curve25519/Curve25519.h; sourceTree = "<group>"; };
 		57BDF9FE4E4F2123F1C8A578D16816A7 /* TextFormatDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFormatDecoder.swift; path = Sources/SwiftProtobuf/TextFormatDecoder.swift; sourceTree = "<group>"; };
 		57E952E20D3B433360CD8C180D3F2423 /* gen_veddsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = gen_veddsa.h; path = Curve25519/lib/Ed25519/additions/generalized/gen_veddsa.h; sourceTree = "<group>"; };
 		58C0F898545E8553DC3148162F6BEAEE /* ExtensionFields.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionFields.swift; path = Sources/SwiftProtobuf/ExtensionFields.swift; sourceTree = "<group>"; };
 		59AEB22469C066E53332293EA93560C5 /* ge_sub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ge_sub.h; path = Curve25519/lib/Ed25519/ge_sub.h; sourceTree = "<group>"; };
-		5A86C55DC491380E6AAA6710FAAD6947 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftProtobuf.framework; path = "SwiftProtobuf-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A86C55DC491380E6AAA6710FAAD6947 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftProtobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C08BCA740D6475450EF13D448FF3E8D /* base.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = base.h; path = Curve25519/lib/Ed25519/base.h; sourceTree = "<group>"; };
 		5D1A51DF399DD7543782479BA183BE03 /* Visitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Visitor.swift; path = Sources/SwiftProtobuf/Visitor.swift; sourceTree = "<group>"; };
-		5E310E0FD7C32980AE45A747DFA038C6 /* fe_sqrt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_sqrt.c; path = Curve25519/lib/Ed25519/additions/fe_sqrt.c; sourceTree = "<group>"; };
+		5E310E0FD7C32980AE45A747DFA038C6 /* fe_sqrt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_sqrt.c; path = Curve25519/lib/Ed25519/additions/fe_sqrt.c; sourceTree = "<group>"; };
 		5E38B0BA25AB3A42AD2E61346D108549 /* CommonCryptoModule-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CommonCryptoModule-tvOS-umbrella.h"; path = "../CommonCryptoModule-tvOS/CommonCryptoModule-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		5EFCC910E7BF5230B9CD351A73F66CD2 /* TextFormatScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFormatScanner.swift; path = Sources/SwiftProtobuf/TextFormatScanner.swift; sourceTree = "<group>"; };
 		60ACD409D5787A37BDE8726909CF1A2E /* JSONDecodingError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONDecodingError.swift; path = Sources/SwiftProtobuf/JSONDecodingError.swift; sourceTree = "<group>"; };
 		60CEE1729A3811FB1379D50FC6F8E2D0 /* BinaryDecodingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDecodingOptions.swift; path = Sources/SwiftProtobuf/BinaryDecodingOptions.swift; sourceTree = "<group>"; };
-		6576F9603D6FD939A1F2C8E457EF071E /* Curve25519-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Curve25519-tvOS.modulemap"; path = "../Curve25519-tvOS/Curve25519-tvOS.modulemap"; sourceTree = "<group>"; };
+		6576F9603D6FD939A1F2C8E457EF071E /* Curve25519-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Curve25519-tvOS.modulemap"; path = "../Curve25519-tvOS/Curve25519-tvOS.modulemap"; sourceTree = "<group>"; };
 		658B201B2F861B07E8EAA867A44F7606 /* d2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = d2.h; path = Curve25519/lib/Ed25519/d2.h; sourceTree = "<group>"; };
 		65B51304CA8EDB048D99F635F69D4543 /* TimeUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeUtils.swift; path = Sources/SwiftProtobuf/TimeUtils.swift; sourceTree = "<group>"; };
-		66393724FF66983E3E20EBB71FA760CB /* fe_1.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_1.c; path = Curve25519/lib/Ed25519/fe_1.c; sourceTree = "<group>"; };
+		66393724FF66983E3E20EBB71FA760CB /* fe_1.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_1.c; path = Curve25519/lib/Ed25519/fe_1.c; sourceTree = "<group>"; };
 		664BA2DF05CB98A3617DAC502511FFC1 /* SwiftProtobuf-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftProtobuf-macOS-prefix.pch"; path = "../SwiftProtobuf-macOS/SwiftProtobuf-macOS-prefix.pch"; sourceTree = "<group>"; };
 		66A281DE581242F60525BA3F6D05DB8A /* crypto_uint32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_uint32.h; path = Curve25519/lib/Ed25519/nacl_includes/crypto_uint32.h; sourceTree = "<group>"; };
 		66E9706725DE3481C826ED8F0BD1FE67 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		675DF708DC706C344BBCC8D6392FD1F3 /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CommonCryptoModule.framework; path = "CommonCryptoModule-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		675DF708DC706C344BBCC8D6392FD1F3 /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCryptoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67EFACF72F3FAB510797AC406901EAF5 /* SwiftProtobuf-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftProtobuf-macOS-umbrella.h"; path = "../SwiftProtobuf-macOS/SwiftProtobuf-macOS-umbrella.h"; sourceTree = "<group>"; };
-		68912280850120C6325C8CFE4FC68BFF /* fe_isequal.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_isequal.c; path = Curve25519/lib/Ed25519/additions/fe_isequal.c; sourceTree = "<group>"; };
-		68C115C3D34F3CEB2B020EA7D4E9F308 /* fe_montx_to_edy.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_montx_to_edy.c; path = Curve25519/lib/Ed25519/additions/fe_montx_to_edy.c; sourceTree = "<group>"; };
-		69236675C72EF320F8666B51546A94F4 /* Pods_LibSignalProtocolSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LibSignalProtocolSwift_Tests.framework; path = "Pods-LibSignalProtocolSwift Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68912280850120C6325C8CFE4FC68BFF /* fe_isequal.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_isequal.c; path = Curve25519/lib/Ed25519/additions/fe_isequal.c; sourceTree = "<group>"; };
+		68C115C3D34F3CEB2B020EA7D4E9F308 /* fe_montx_to_edy.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_montx_to_edy.c; path = Curve25519/lib/Ed25519/additions/fe_montx_to_edy.c; sourceTree = "<group>"; };
+		69236675C72EF320F8666B51546A94F4 /* Pods_LibSignalProtocolSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		693247047D83E7D44FA976084DA97101 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6A491C8DDB1209257EE25418AA16AD94 /* Curve25519.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Curve25519.framework; path = "Curve25519-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A491C8DDB1209257EE25418AA16AD94 /* Curve25519.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curve25519.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE1854435B13701D4F229D659A2AB7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C15EE71EAEF1263CEBC0B5032ECEF6E /* ge_scalarmult_base.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_scalarmult_base.c; path = Curve25519/lib/Ed25519/ge_scalarmult_base.c; sourceTree = "<group>"; };
+		6C15EE71EAEF1263CEBC0B5032ECEF6E /* ge_scalarmult_base.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_scalarmult_base.c; path = Curve25519/lib/Ed25519/ge_scalarmult_base.c; sourceTree = "<group>"; };
 		6CEC77E1ABFEAC8FE17510E0103D027A /* CommonCryptoModule-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CommonCryptoModule-macOS-dummy.m"; path = "../CommonCryptoModule-macOS/CommonCryptoModule-macOS-dummy.m"; sourceTree = "<group>"; };
 		6E217331873A7E950FB8653D46C01886 /* Message+JSONAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Message+JSONAdditions.swift"; path = "Sources/SwiftProtobuf/Message+JSONAdditions.swift"; sourceTree = "<group>"; };
 		6FA9CCF7BC2E7D1B2270323A57C22C72 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SwiftProtobuf-watchOS/Info.plist"; sourceTree = "<group>"; };
 		72354F4154713C4A4E3A5670C8EEC302 /* CommonCryptoBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CommonCryptoBridge.h; path = CommonCryptoModule/CommonCryptoBridge/CommonCryptoBridge.h; sourceTree = "<group>"; };
-		72EC1E441E73FF36E66FC186ECB0A3DF /* fe_pow22523.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_pow22523.c; path = Curve25519/lib/Ed25519/fe_pow22523.c; sourceTree = "<group>"; };
+		72EC1E441E73FF36E66FC186ECB0A3DF /* fe_pow22523.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_pow22523.c; path = Curve25519/lib/Ed25519/fe_pow22523.c; sourceTree = "<group>"; };
 		736BB2234D3E19352873D26AC583B14E /* gen_labelset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = gen_labelset.h; path = Curve25519/lib/Ed25519/additions/generalized/gen_labelset.h; sourceTree = "<group>"; };
-		75211B353ED54AAFEB3707D115D8A855 /* SwiftProtobuf-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "SwiftProtobuf-iOS.modulemap"; sourceTree = "<group>"; };
-		75A6DC9AC630E8A0C072706F370CF9DC /* fe_invert.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_invert.c; path = Curve25519/lib/Ed25519/fe_invert.c; sourceTree = "<group>"; };
-		768F68423941D9159CB5A0C3077E6DD8 /* fe_sub.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_sub.c; path = Curve25519/lib/Ed25519/fe_sub.c; sourceTree = "<group>"; };
-		76A4C5ED7E079A886D167D1F5E47AEED /* fe_tobytes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_tobytes.c; path = Curve25519/lib/Ed25519/fe_tobytes.c; sourceTree = "<group>"; };
+		75211B353ED54AAFEB3707D115D8A855 /* SwiftProtobuf-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "SwiftProtobuf-iOS.modulemap"; sourceTree = "<group>"; };
+		75A6DC9AC630E8A0C072706F370CF9DC /* fe_invert.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_invert.c; path = Curve25519/lib/Ed25519/fe_invert.c; sourceTree = "<group>"; };
+		768F68423941D9159CB5A0C3077E6DD8 /* fe_sub.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_sub.c; path = Curve25519/lib/Ed25519/fe_sub.c; sourceTree = "<group>"; };
+		76A4C5ED7E079A886D167D1F5E47AEED /* fe_tobytes.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_tobytes.c; path = Curve25519/lib/Ed25519/fe_tobytes.c; sourceTree = "<group>"; };
 		78AEBCC57769B9FE9AEFC02ACFD12A00 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78F646494E216557136F21DF60EFD8E0 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-umbrella.h"; sourceTree = "<group>"; };
-		7984B124AB59F3F6EEAFE7F1379F4694 /* fe_isnonzero.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_isnonzero.c; path = Curve25519/lib/Ed25519/fe_isnonzero.c; sourceTree = "<group>"; };
-		7AE3EE336A2D5D180E41B91CBA91B8F4 /* hash.c */ = {isa = PBXFileReference; includeInIndex = 1; name = hash.c; path = Curve25519/lib/Ed25519/nacl_sha512/hash.c; sourceTree = "<group>"; };
+		7984B124AB59F3F6EEAFE7F1379F4694 /* fe_isnonzero.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_isnonzero.c; path = Curve25519/lib/Ed25519/fe_isnonzero.c; sourceTree = "<group>"; };
+		7AE3EE336A2D5D180E41B91CBA91B8F4 /* hash.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = hash.c; path = Curve25519/lib/Ed25519/nacl_sha512/hash.c; sourceTree = "<group>"; };
 		7B6F8AC3B687065685D51BC42DC46954 /* BinaryEncodingSizeVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryEncodingSizeVisitor.swift; path = Sources/SwiftProtobuf/BinaryEncodingSizeVisitor.swift; sourceTree = "<group>"; };
 		7BD9A76635F80CC0FE4A7919D12747B7 /* MathUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MathUtils.swift; path = Sources/SwiftProtobuf/MathUtils.swift; sourceTree = "<group>"; };
 		7C65BA2549F707DB540078646DC33FC4 /* Curve25519-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Curve25519-watchOS-umbrella.h"; path = "../Curve25519-watchOS/Curve25519-watchOS-umbrella.h"; sourceTree = "<group>"; };
-		7CB2CAC516F3210006C148C3FD66D592 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.modulemap"; sourceTree = "<group>"; };
+		7CB2CAC516F3210006C148C3FD66D592 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.modulemap"; sourceTree = "<group>"; };
 		7D4D9D99039F14C5740F2C470A727419 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7D7B131D51D912460F4907DBEEE22204 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-umbrella.h"; sourceTree = "<group>"; };
 		7EAEE08AE698FA939A8FDCF7A702038B /* empty.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = empty.pb.swift; path = Sources/SwiftProtobuf/empty.pb.swift; sourceTree = "<group>"; };
 		7F2A06B1CC86C766EAF2693F03F32F17 /* Curve25519-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Curve25519-macOS-umbrella.h"; path = "../Curve25519-macOS/Curve25519-macOS-umbrella.h"; sourceTree = "<group>"; };
 		7FEE886A0AC9A1B8AED89BC27D8BE043 /* CustomJSONCodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomJSONCodable.swift; path = Sources/SwiftProtobuf/CustomJSONCodable.swift; sourceTree = "<group>"; };
-		80DC30A1B055017C9F97101D2B51EAC3 /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CommonCryptoModule.framework; path = "CommonCryptoModule-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DC30A1B055017C9F97101D2B51EAC3 /* CommonCryptoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCryptoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B65C3D14CCF9A27A2D9BF525C9A85B /* duration.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = duration.pb.swift; path = Sources/SwiftProtobuf/duration.pb.swift; sourceTree = "<group>"; };
 		82C6B12AD18D6DB58B66646F6EF872ED /* sqrtm1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sqrtm1.h; path = Curve25519/lib/Ed25519/sqrtm1.h; sourceTree = "<group>"; };
 		84AA0CB748ACA13BF71869DA11EEAC29 /* Pods-LibSignalProtocolSwift Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LibSignalProtocolSwift Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		84CFD73603376911A505D0F3D17E5478 /* wrappers.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = wrappers.pb.swift; path = Sources/SwiftProtobuf/wrappers.pb.swift; sourceTree = "<group>"; };
-		84E95F76F104008AF603E177AB5CD035 /* sign.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sign.c; path = Curve25519/lib/Ed25519/sign.c; sourceTree = "<group>"; };
-		862A20352D442BA61ED12C635607746D /* fe_isnegative.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_isnegative.c; path = Curve25519/lib/Ed25519/fe_isnegative.c; sourceTree = "<group>"; };
-		86A2BABAF91C895AB911DC79D7F8A026 /* fe_mul.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_mul.c; path = Curve25519/lib/Ed25519/fe_mul.c; sourceTree = "<group>"; };
-		86DD4211B095EF19E470C5751C476F06 /* ge_p3_tobytes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p3_tobytes.c; path = Curve25519/lib/Ed25519/ge_p3_tobytes.c; sourceTree = "<group>"; };
+		84E95F76F104008AF603E177AB5CD035 /* sign.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sign.c; path = Curve25519/lib/Ed25519/sign.c; sourceTree = "<group>"; };
+		862A20352D442BA61ED12C635607746D /* fe_isnegative.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_isnegative.c; path = Curve25519/lib/Ed25519/fe_isnegative.c; sourceTree = "<group>"; };
+		86A2BABAF91C895AB911DC79D7F8A026 /* fe_mul.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_mul.c; path = Curve25519/lib/Ed25519/fe_mul.c; sourceTree = "<group>"; };
+		86DD4211B095EF19E470C5751C476F06 /* ge_p3_tobytes.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p3_tobytes.c; path = Curve25519/lib/Ed25519/ge_p3_tobytes.c; sourceTree = "<group>"; };
 		8792328AC042CA19193FE9D15E79D14B /* Curve25519-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Curve25519-tvOS-dummy.m"; path = "../Curve25519-tvOS/Curve25519-tvOS-dummy.m"; sourceTree = "<group>"; };
-		87B3E6C76C13C1E25A4B3F48C6BC1960 /* ge_p3_dbl.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p3_dbl.c; path = Curve25519/lib/Ed25519/ge_p3_dbl.c; sourceTree = "<group>"; };
+		87B3E6C76C13C1E25A4B3F48C6BC1960 /* ge_p3_dbl.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p3_dbl.c; path = Curve25519/lib/Ed25519/ge_p3_dbl.c; sourceTree = "<group>"; };
 		87BE76B9E69966C6476C0D7D63EA7A8C /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig"; sourceTree = "<group>"; };
 		87E3CDAB2D6EDAC948FEBFE3A271B8B4 /* Enum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Sources/SwiftProtobuf/Enum.swift; sourceTree = "<group>"; };
-		8885F9D70F9DAA906AE92CAD967BD547 /* fe_0.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_0.c; path = Curve25519/lib/Ed25519/fe_0.c; sourceTree = "<group>"; };
+		8885F9D70F9DAA906AE92CAD967BD547 /* fe_0.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_0.c; path = Curve25519/lib/Ed25519/fe_0.c; sourceTree = "<group>"; };
 		893E713746D65F442E1B964D3755B127 /* Curve25519-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Curve25519-macOS.xcconfig"; path = "../Curve25519-macOS/Curve25519-macOS.xcconfig"; sourceTree = "<group>"; };
 		8A492A494552F62A96422C74E76B8644 /* Google_Protobuf_Value+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Value+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Value+Extensions.swift"; sourceTree = "<group>"; };
-		8B023B9251C5FF8235F9BE4E99ACF487 /* Curve25519-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Curve25519-iOS.modulemap"; sourceTree = "<group>"; };
+		8B023B9251C5FF8235F9BE4E99ACF487 /* Curve25519-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Curve25519-iOS.modulemap"; sourceTree = "<group>"; };
 		8B686DFD55401CA72162FC0F74CBF20E /* Google_Protobuf_Any+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Any+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Any+Extensions.swift"; sourceTree = "<group>"; };
 		8C26072A66DF4D72790D43F565EBDAC1 /* d.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = d.h; path = Curve25519/lib/Ed25519/d.h; sourceTree = "<group>"; };
-		8CB3AC8678EEBC06004AAC7311409899 /* gen_x.c */ = {isa = PBXFileReference; includeInIndex = 1; name = gen_x.c; path = Curve25519/lib/Ed25519/additions/generalized/gen_x.c; sourceTree = "<group>"; };
+		8CB3AC8678EEBC06004AAC7311409899 /* gen_x.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = gen_x.c; path = Curve25519/lib/Ed25519/additions/generalized/gen_x.c; sourceTree = "<group>"; };
 		8CC6DAF9BEFE19EF2C0816FD315CC839 /* Pods-LibSignalProtocolSwift Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LibSignalProtocolSwift Tests-frameworks.sh"; sourceTree = "<group>"; };
 		8DA0DABCBBF0649D917F0D4CB32B64E8 /* CommonCryptoModule-watchOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CommonCryptoModule-watchOS.xcconfig"; path = "../CommonCryptoModule-watchOS/CommonCryptoModule-watchOS.xcconfig"; sourceTree = "<group>"; };
 		8DAB1D111C05A4ACD04E137FCB0451B6 /* Decoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decoder.swift; path = Sources/SwiftProtobuf/Decoder.swift; sourceTree = "<group>"; };
@@ -1147,7 +1147,7 @@
 		90D0BAAF2BFB422BE56D75B42EB1F7E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90D72CCCD777EB422C5554892D22AA69 /* SwiftProtobuf-watchOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftProtobuf-watchOS.xcconfig"; path = "../SwiftProtobuf-watchOS/SwiftProtobuf-watchOS.xcconfig"; sourceTree = "<group>"; };
 		91121570FF55CA4331B7757C04848193 /* ProtoNameProviding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProtoNameProviding.swift; path = Sources/SwiftProtobuf/ProtoNameProviding.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9490705C2968DC24EB6E5316AE7315E7 /* Empty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Empty.swift; path = CommonCryptoModule/Empty.swift; sourceTree = "<group>"; };
 		94A019FFD372137CA58F1D191985A581 /* HashVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HashVisitor.swift; path = Sources/SwiftProtobuf/HashVisitor.swift; sourceTree = "<group>"; };
 		951A975C25F8847EA8A92D2B0F130E3D /* Curve25519-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Curve25519-tvOS.xcconfig"; path = "../Curve25519-tvOS/Curve25519-tvOS.xcconfig"; sourceTree = "<group>"; };
@@ -1168,13 +1168,13 @@
 		A188B00EA9746BFF434EA9705462E899 /* FieldTag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldTag.swift; path = Sources/SwiftProtobuf/FieldTag.swift; sourceTree = "<group>"; };
 		A1D07CEEE4883BC21A0E7DFED4DEED39 /* Message+TextFormatAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Message+TextFormatAdditions.swift"; path = "Sources/SwiftProtobuf/Message+TextFormatAdditions.swift"; sourceTree = "<group>"; };
 		A2547FD75A7B06F45D7C634E5864E2A4 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		A3A9D5BB0597FF4A18A3B2AB7379F80C /* sc_isreduced.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sc_isreduced.c; path = Curve25519/lib/Ed25519/additions/generalized/sc_isreduced.c; sourceTree = "<group>"; };
+		A3A9D5BB0597FF4A18A3B2AB7379F80C /* sc_isreduced.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sc_isreduced.c; path = Curve25519/lib/Ed25519/additions/generalized/sc_isreduced.c; sourceTree = "<group>"; };
 		A3FCFE80677EA8CB9A8E6AC78524F12A /* TextFormatEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFormatEncoder.swift; path = Sources/SwiftProtobuf/TextFormatEncoder.swift; sourceTree = "<group>"; };
-		A442E5C6798A4B0D48D6C17855418564 /* CommonCryptoModule-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CommonCryptoModule-macOS.modulemap"; path = "../CommonCryptoModule-macOS/CommonCryptoModule-macOS.modulemap"; sourceTree = "<group>"; };
+		A442E5C6798A4B0D48D6C17855418564 /* CommonCryptoModule-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "CommonCryptoModule-macOS.modulemap"; path = "../CommonCryptoModule-macOS/CommonCryptoModule-macOS.modulemap"; sourceTree = "<group>"; };
 		A58A73B7E3708443F16FC1964EDB2478 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A65602A9639E711422393B3064B2A12E /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A6915D6E3E8BE50016FD6B27FF9E9038 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig"; sourceTree = "<group>"; };
-		A6E2DCF84B6B26AD5D43788CE717FFA6 /* fe_cmov.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_cmov.c; path = Curve25519/lib/Ed25519/fe_cmov.c; sourceTree = "<group>"; };
+		A6E2DCF84B6B26AD5D43788CE717FFA6 /* fe_cmov.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_cmov.c; path = Curve25519/lib/Ed25519/fe_cmov.c; sourceTree = "<group>"; };
 		A7CF62CF783A4D4EF36D4E650CDF841B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CommonCryptoModule-watchOS/Info.plist"; sourceTree = "<group>"; };
 		AA07651EE7E85086D42D101FB21785CC /* JSONDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONDecoder.swift; path = Sources/SwiftProtobuf/JSONDecoder.swift; sourceTree = "<group>"; };
 		AA4C1C98D225D4494A64B815BC615504 /* compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = compare.h; path = Curve25519/lib/Ed25519/additions/compare.h; sourceTree = "<group>"; };
@@ -1182,21 +1182,21 @@
 		AC25A6489E50F5A1FB9BC2B353D4148E /* CommonCryptoModule-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommonCryptoModule-iOS-prefix.pch"; sourceTree = "<group>"; };
 		AC9828E76A8CCEA3B630977CE77763F2 /* Google_Protobuf_Struct+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Struct+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Struct+Extensions.swift"; sourceTree = "<group>"; };
 		ACE630FA3D609E28633816652955817A /* ge_add.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ge_add.h; path = Curve25519/lib/Ed25519/ge_add.h; sourceTree = "<group>"; };
-		ACFDB8CA0C1EC08F2230242F7A18A11B /* sc_muladd.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sc_muladd.c; path = Curve25519/lib/Ed25519/sc_muladd.c; sourceTree = "<group>"; };
-		AD64DDCA0C185AA70EE1015D95E25DFB /* ge_p2_dbl.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p2_dbl.c; path = Curve25519/lib/Ed25519/ge_p2_dbl.c; sourceTree = "<group>"; };
-		ADAE2B3BBC950329FB4FCBBF58127C1B /* ge_p3_to_cached.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p3_to_cached.c; path = Curve25519/lib/Ed25519/ge_p3_to_cached.c; sourceTree = "<group>"; };
+		ACFDB8CA0C1EC08F2230242F7A18A11B /* sc_muladd.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sc_muladd.c; path = Curve25519/lib/Ed25519/sc_muladd.c; sourceTree = "<group>"; };
+		AD64DDCA0C185AA70EE1015D95E25DFB /* ge_p2_dbl.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p2_dbl.c; path = Curve25519/lib/Ed25519/ge_p2_dbl.c; sourceTree = "<group>"; };
+		ADAE2B3BBC950329FB4FCBBF58127C1B /* ge_p3_to_cached.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p3_to_cached.c; path = Curve25519/lib/Ed25519/ge_p3_to_cached.c; sourceTree = "<group>"; };
 		ADB18E3AE325E88A615543F0BB5DEDDB /* CommonCryptoModule-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CommonCryptoModule-macOS-umbrella.h"; path = "../CommonCryptoModule-macOS/CommonCryptoModule-macOS-umbrella.h"; sourceTree = "<group>"; };
-		ADF99C25EC224B30E369E95A599CB185 /* sign_modified.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sign_modified.c; path = Curve25519/lib/Ed25519/additions/sign_modified.c; sourceTree = "<group>"; };
-		AFEA02FC9DA9DC2FD9E3DE561F940AF3 /* sc_cmov.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sc_cmov.c; path = Curve25519/lib/Ed25519/additions/sc_cmov.c; sourceTree = "<group>"; };
+		ADF99C25EC224B30E369E95A599CB185 /* sign_modified.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sign_modified.c; path = Curve25519/lib/Ed25519/additions/sign_modified.c; sourceTree = "<group>"; };
+		AFEA02FC9DA9DC2FD9E3DE561F940AF3 /* sc_cmov.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sc_cmov.c; path = Curve25519/lib/Ed25519/additions/sc_cmov.c; sourceTree = "<group>"; };
 		B1C19F5217F6539E954C3121EBF398AA /* SwiftProtobuf-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftProtobuf-watchOS-umbrella.h"; path = "../SwiftProtobuf-watchOS/SwiftProtobuf-watchOS-umbrella.h"; sourceTree = "<group>"; };
 		B1DA61AB9DB3D98A5CECA4EA4B896850 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Curve25519-watchOS/Info.plist"; sourceTree = "<group>"; };
 		B1E8D31F236585CB9C516187CFC4024B /* Curve25519-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Curve25519-iOS-umbrella.h"; sourceTree = "<group>"; };
-		B23B1E5CAEB10D5929D59F542A348ED0 /* Pods-LibSignalProtocolSwift Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LibSignalProtocolSwift Tests.modulemap"; sourceTree = "<group>"; };
-		B25DD3342185E3708BFEB8673B0C7765 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftProtobuf.framework; path = "SwiftProtobuf-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23B1E5CAEB10D5929D59F542A348ED0 /* Pods-LibSignalProtocolSwift Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LibSignalProtocolSwift Tests.modulemap"; sourceTree = "<group>"; };
+		B25DD3342185E3708BFEB8673B0C7765 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftProtobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34D5D5F12508DE999A7CF1D31650EBE /* crypto_hash_sha512.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_hash_sha512.h; path = Curve25519/lib/Ed25519/additions/crypto_hash_sha512.h; sourceTree = "<group>"; };
-		B39BDAAA47443A40FDCAC2DAA197AEB7 /* Curve25519.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Curve25519.framework; path = "Curve25519-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B43BFA429B8E2C106FDFC09373CA3AFE /* ge_isneutral.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_isneutral.c; path = Curve25519/lib/Ed25519/additions/ge_isneutral.c; sourceTree = "<group>"; };
-		B4ADD50E997BF1F7207D80053460BDEB /* Curve25519-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Curve25519-watchOS.modulemap"; path = "../Curve25519-watchOS/Curve25519-watchOS.modulemap"; sourceTree = "<group>"; };
+		B39BDAAA47443A40FDCAC2DAA197AEB7 /* Curve25519.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curve25519.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B43BFA429B8E2C106FDFC09373CA3AFE /* ge_isneutral.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_isneutral.c; path = Curve25519/lib/Ed25519/additions/ge_isneutral.c; sourceTree = "<group>"; };
+		B4ADD50E997BF1F7207D80053460BDEB /* Curve25519-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Curve25519-watchOS.modulemap"; path = "../Curve25519-watchOS/Curve25519-watchOS.modulemap"; sourceTree = "<group>"; };
 		B4E2E073E55A03496571A087C7562A2D /* BinaryDelimited.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDelimited.swift; path = Sources/SwiftProtobuf/BinaryDelimited.swift; sourceTree = "<group>"; };
 		B5717C018A629007E5A6CB9D6874DECB /* crypto_sign.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_sign.h; path = Curve25519/lib/Ed25519/nacl_includes/crypto_sign.h; sourceTree = "<group>"; };
 		B592BA018E67A969C2C32836AF9393FB /* timestamp.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = timestamp.pb.swift; path = Sources/SwiftProtobuf/timestamp.pb.swift; sourceTree = "<group>"; };
@@ -1204,29 +1204,29 @@
 		B666170D7ECCE493E49177DFFA38601C /* Google_Protobuf_Wrappers+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Wrappers+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Wrappers+Extensions.swift"; sourceTree = "<group>"; };
 		B7B8015D58C87113CD0D63D29DAA06D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Curve25519-tvOS/Info.plist"; sourceTree = "<group>"; };
 		B81415198DF97ECD465FF0994790C0CF /* BinaryDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDecoder.swift; path = Sources/SwiftProtobuf/BinaryDecoder.swift; sourceTree = "<group>"; };
-		B94C3186C07ED23A7AC9C6F1CEA8A87E /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B94C3186C07ED23A7AC9C6F1CEA8A87E /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B951456B92C8C627F20778B8623A5B2C /* BinaryDecodingError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDecodingError.swift; path = Sources/SwiftProtobuf/BinaryDecodingError.swift; sourceTree = "<group>"; };
-		BA4114EC9AFC08288C6F2995CC359BB8 /* CommonCryptoModule-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CommonCryptoModule-watchOS.modulemap"; path = "../CommonCryptoModule-watchOS/CommonCryptoModule-watchOS.modulemap"; sourceTree = "<group>"; };
+		BA4114EC9AFC08288C6F2995CC359BB8 /* CommonCryptoModule-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "CommonCryptoModule-watchOS.modulemap"; path = "../CommonCryptoModule-watchOS/CommonCryptoModule-watchOS.modulemap"; sourceTree = "<group>"; };
 		BB8C4906AADF2ABDDCD6DCE9447E1656 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CommonCryptoModule-tvOS/Info.plist"; sourceTree = "<group>"; };
 		BBD246B37ADA538D20513F4C89BD7CCC /* ZigZag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZigZag.swift; path = Sources/SwiftProtobuf/ZigZag.swift; sourceTree = "<group>"; };
 		BC198D518C7785224232AB9064261CFC /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Sources/SwiftProtobuf/Message.swift; sourceTree = "<group>"; };
 		BC47B266B819190FCBB698E8A2C89C8C /* AnyMessageStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyMessageStorage.swift; path = Sources/SwiftProtobuf/AnyMessageStorage.swift; sourceTree = "<group>"; };
 		BCE908840C65E1BC2B98BB5A848B8E42 /* CommonCryptoModule-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CommonCryptoModule-iOS-dummy.m"; sourceTree = "<group>"; };
-		BCF8C27B6112F972113B9EFA007E403D /* open.c */ = {isa = PBXFileReference; includeInIndex = 1; name = open.c; path = Curve25519/lib/Ed25519/open.c; sourceTree = "<group>"; };
-		BD2F0692F4ECD947C31F0F3675F5F413 /* ge_p2_0.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p2_0.c; path = Curve25519/lib/Ed25519/ge_p2_0.c; sourceTree = "<group>"; };
+		BCF8C27B6112F972113B9EFA007E403D /* open.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = open.c; path = Curve25519/lib/Ed25519/open.c; sourceTree = "<group>"; };
+		BD2F0692F4ECD947C31F0F3675F5F413 /* ge_p2_0.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p2_0.c; path = Curve25519/lib/Ed25519/ge_p2_0.c; sourceTree = "<group>"; };
 		BE17A1DFF216B756E7DB4136EAFD2989 /* JSONEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncoder.swift; path = Sources/SwiftProtobuf/JSONEncoder.swift; sourceTree = "<group>"; };
 		C0DFB6EC300072762488FB29243A544D /* zeroize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zeroize.h; path = Curve25519/lib/Ed25519/additions/zeroize.h; sourceTree = "<group>"; };
 		C338B3D9B15D6D8E45558238210FDF78 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C552C9433F1D92121FBA610A7F91A672 /* CommonCryptoModule-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CommonCryptoModule-watchOS-prefix.pch"; path = "../CommonCryptoModule-watchOS/CommonCryptoModule-watchOS-prefix.pch"; sourceTree = "<group>"; };
 		C6274CD57A94300DDAA6CCAFE14A0FD7 /* BinaryEncodingError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryEncodingError.swift; path = Sources/SwiftProtobuf/BinaryEncodingError.swift; sourceTree = "<group>"; };
-		C6C0AC77D0B9C40028AC7DFDE31D65E5 /* fe_add.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_add.c; path = Curve25519/lib/Ed25519/fe_add.c; sourceTree = "<group>"; };
+		C6C0AC77D0B9C40028AC7DFDE31D65E5 /* fe_add.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_add.c; path = Curve25519/lib/Ed25519/fe_add.c; sourceTree = "<group>"; };
 		C72230C58F1100039FBA0D6827F99A54 /* WireFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WireFormat.swift; path = Sources/SwiftProtobuf/WireFormat.swift; sourceTree = "<group>"; };
 		C73DA65E416646EA434D25D37ED5D718 /* BinaryEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryEncoder.swift; path = Sources/SwiftProtobuf/BinaryEncoder.swift; sourceTree = "<group>"; };
-		C751AD3AB67ECCE56965D5BFC10BEE1D /* module.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = module.modulemap; path = CommonCryptoModule/CommonCryptoBridge/module.modulemap; sourceTree = "<group>"; };
+		C751AD3AB67ECCE56965D5BFC10BEE1D /* module.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = CommonCryptoModule/CommonCryptoBridge/module.modulemap; sourceTree = "<group>"; };
 		C8EF10D15F5E1987A576A278DEC70E6B /* CommonCryptoModule-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CommonCryptoModule-iOS.xcconfig"; sourceTree = "<group>"; };
 		CAC63590540023031832A649E7062F17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CCB53ED9B2F3AF119EC4424B221A804D /* ge_p2_dbl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ge_p2_dbl.h; path = Curve25519/lib/Ed25519/ge_p2_dbl.h; sourceTree = "<group>"; };
-		CE6A735B61103AFE9CD9ECDC579327A0 /* open_modified.c */ = {isa = PBXFileReference; includeInIndex = 1; name = open_modified.c; path = Curve25519/lib/Ed25519/additions/open_modified.c; sourceTree = "<group>"; };
+		CE6A735B61103AFE9CD9ECDC579327A0 /* open_modified.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = open_modified.c; path = Curve25519/lib/Ed25519/additions/open_modified.c; sourceTree = "<group>"; };
 		CEBE78C9C3CECCD679D8E32E07AA812A /* Curve25519-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Curve25519-iOS.xcconfig"; sourceTree = "<group>"; };
 		CF68F896221C2273D58D2E55149F961F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-resources.sh"; sourceTree = "<group>"; };
 		CF7B30C791588A899CA0622C4B0985A3 /* TextFormatDecodingError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFormatDecodingError.swift; path = Sources/SwiftProtobuf/TextFormatDecodingError.swift; sourceTree = "<group>"; };
@@ -1234,18 +1234,18 @@
 		D2B5F2A2CDB06684D04086BF1678244A /* crypto_verify_32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_verify_32.h; path = Curve25519/lib/Ed25519/nacl_includes/crypto_verify_32.h; sourceTree = "<group>"; };
 		D30DA5A55DD126434BE4A19E72FDC73F /* Message+AnyAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Message+AnyAdditions.swift"; path = "Sources/SwiftProtobuf/Message+AnyAdditions.swift"; sourceTree = "<group>"; };
 		D52F2D787BAB203A9A0092789A737584 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-umbrella.h"; sourceTree = "<group>"; };
-		D63383889888A53F74EE6BDF663ED3B5 /* utility.c */ = {isa = PBXFileReference; includeInIndex = 1; name = utility.c; path = Curve25519/lib/Ed25519/additions/utility.c; sourceTree = "<group>"; };
-		D66B5249CA2F809EEA4DEB5B24D69659 /* curve_sigs.c */ = {isa = PBXFileReference; includeInIndex = 1; name = curve_sigs.c; path = Curve25519/lib/Ed25519/additions/curve_sigs.c; sourceTree = "<group>"; };
+		D63383889888A53F74EE6BDF663ED3B5 /* utility.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = utility.c; path = Curve25519/lib/Ed25519/additions/utility.c; sourceTree = "<group>"; };
+		D66B5249CA2F809EEA4DEB5B24D69659 /* curve_sigs.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = curve_sigs.c; path = Curve25519/lib/Ed25519/additions/curve_sigs.c; sourceTree = "<group>"; };
 		D7C506196658BD1308181C76FBFD2F82 /* crypto_int64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto_int64.h; path = Curve25519/lib/Ed25519/nacl_includes/crypto_int64.h; sourceTree = "<group>"; };
 		D946B39850DC6B0A7076FFA2A0D74479 /* Curve25519-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Curve25519-iOS-dummy.m"; sourceTree = "<group>"; };
-		D972AD66ED30ADDF9C5F57D8B31E5AB9 /* sc_neg.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sc_neg.c; path = Curve25519/lib/Ed25519/additions/sc_neg.c; sourceTree = "<group>"; };
-		D9B87B8C0A10367709855AAFEB6C01FF /* CommonCryptoModule-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "CommonCryptoModule-iOS.modulemap"; sourceTree = "<group>"; };
+		D972AD66ED30ADDF9C5F57D8B31E5AB9 /* sc_neg.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sc_neg.c; path = Curve25519/lib/Ed25519/additions/sc_neg.c; sourceTree = "<group>"; };
+		D9B87B8C0A10367709855AAFEB6C01FF /* CommonCryptoModule-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "CommonCryptoModule-iOS.modulemap"; sourceTree = "<group>"; };
 		DA05C6FF7E014A1C54AE3CC900394878 /* SwiftProtobuf-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftProtobuf-macOS.xcconfig"; path = "../SwiftProtobuf-macOS/SwiftProtobuf-macOS.xcconfig"; sourceTree = "<group>"; };
-		DA431A0DE6C2BB0541840B7461870156 /* ge_p3_0.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p3_0.c; path = Curve25519/lib/Ed25519/ge_p3_0.c; sourceTree = "<group>"; };
+		DA431A0DE6C2BB0541840B7461870156 /* ge_p3_0.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p3_0.c; path = Curve25519/lib/Ed25519/ge_p3_0.c; sourceTree = "<group>"; };
 		DAB31CCE91518C0840B968665BDB44A5 /* NameMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NameMap.swift; path = Sources/SwiftProtobuf/NameMap.swift; sourceTree = "<group>"; };
 		DB72EDCB9570AF9B84A8C701A7EAC7F5 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LibSignalProtocolSwift Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DB76AEB18DDCF6ACB49D1D3D1DD6307A /* fe_sq.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_sq.c; path = Curve25519/lib/Ed25519/fe_sq.c; sourceTree = "<group>"; };
-		DC4F83F7813C6118800DC2BD663BF0F7 /* curve25519-donna.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "curve25519-donna.c"; path = "Curve25519/lib/curve25519-donna.c"; sourceTree = "<group>"; };
+		DB76AEB18DDCF6ACB49D1D3D1DD6307A /* fe_sq.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_sq.c; path = Curve25519/lib/Ed25519/fe_sq.c; sourceTree = "<group>"; };
+		DC4F83F7813C6118800DC2BD663BF0F7 /* curve25519-donna.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "curve25519-donna.c"; path = "Curve25519/lib/curve25519-donna.c"; sourceTree = "<group>"; };
 		DD3E3DDDF67A1B8131E400C8DD3E5CC7 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DD5563FBBF2AB9D31C06CC54ED7CBF9F /* ge_msub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ge_msub.h; path = Curve25519/lib/Ed25519/ge_msub.h; sourceTree = "<group>"; };
 		DE668F7E2869434C45DE8CCF4984FCB3 /* api.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = api.pb.swift; path = Sources/SwiftProtobuf/api.pb.swift; sourceTree = "<group>"; };
@@ -1256,17 +1256,17 @@
 		E2D60D6EEBF1CF201B79899D283B9A24 /* ProtobufAPIVersionCheck.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProtobufAPIVersionCheck.swift; path = Sources/SwiftProtobuf/ProtobufAPIVersionCheck.swift; sourceTree = "<group>"; };
 		E4A7504F4A7C72F3B7AF2D55ECEC1D77 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		E4A91C821BD0A7E0FDDDF2CDE25C6FD5 /* TextFormatEncodingVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFormatEncodingVisitor.swift; path = Sources/SwiftProtobuf/TextFormatEncodingVisitor.swift; sourceTree = "<group>"; };
-		E4C35DB89415BB454D60EEF146A5960B /* ge_p3_to_p2.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_p3_to_p2.c; path = Curve25519/lib/Ed25519/ge_p3_to_p2.c; sourceTree = "<group>"; };
+		E4C35DB89415BB454D60EEF146A5960B /* ge_p3_to_p2.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_p3_to_p2.c; path = Curve25519/lib/Ed25519/ge_p3_to_p2.c; sourceTree = "<group>"; };
 		E5931579078DE46B8EF137ED63C675C2 /* fe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fe.h; path = Curve25519/lib/Ed25519/fe.h; sourceTree = "<group>"; };
 		E5BE767F5C678BD9F76EF73ACB92E34A /* CommonCryptoModule-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CommonCryptoModule-tvOS-prefix.pch"; path = "../CommonCryptoModule-tvOS/CommonCryptoModule-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		E8874191425BCAAEB57EA2F3CE09ABD8 /* JSONDecodingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONDecodingOptions.swift; path = Sources/SwiftProtobuf/JSONDecodingOptions.swift; sourceTree = "<group>"; };
-		E91E1FABEDD0D837724A0A49C1B93F90 /* fe_sq2.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_sq2.c; path = Curve25519/lib/Ed25519/fe_sq2.c; sourceTree = "<group>"; };
+		E91E1FABEDD0D837724A0A49C1B93F90 /* fe_sq2.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_sq2.c; path = Curve25519/lib/Ed25519/fe_sq2.c; sourceTree = "<group>"; };
 		E91EB750F45EFE6941BACC5A15B2CEAE /* field_mask.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = field_mask.pb.swift; path = Sources/SwiftProtobuf/field_mask.pb.swift; sourceTree = "<group>"; };
 		E98C9A0E798A7E80C188DC8FAEDE70C4 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-dummy.m"; sourceTree = "<group>"; };
 		E9AAC651B540EB3EB73FB7C343C2E743 /* ExtensibleMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensibleMessage.swift; path = Sources/SwiftProtobuf/ExtensibleMessage.swift; sourceTree = "<group>"; };
 		EA67061196A2B56AFA178AAE3057FD50 /* ExtensionMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionMap.swift; path = Sources/SwiftProtobuf/ExtensionMap.swift; sourceTree = "<group>"; };
 		EB77D69CC0FD7E42D437E2E04D6B5CE8 /* CommonCryptoModule-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CommonCryptoModule-watchOS-umbrella.h"; path = "../CommonCryptoModule-watchOS/CommonCryptoModule-watchOS-umbrella.h"; sourceTree = "<group>"; };
-		EC47AD29A438DB999FDA03A1A94F4CCC /* ge_scalarmult_cofactor.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ge_scalarmult_cofactor.c; path = Curve25519/lib/Ed25519/additions/ge_scalarmult_cofactor.c; sourceTree = "<group>"; };
+		EC47AD29A438DB999FDA03A1A94F4CCC /* ge_scalarmult_cofactor.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ge_scalarmult_cofactor.c; path = Curve25519/lib/Ed25519/additions/ge_scalarmult_cofactor.c; sourceTree = "<group>"; };
 		EDB678C08D30D830E691FABB232E2869 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EE8E2D6D9BE71427335BCCF135612E58 /* UnknownStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnknownStorage.swift; path = Sources/SwiftProtobuf/UnknownStorage.swift; sourceTree = "<group>"; };
 		EEF4801711520CF22F026374346F0D7B /* Pods-LibSignalProtocolSwift Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LibSignalProtocolSwift Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -1274,14 +1274,14 @@
 		EF57FFF2760E2B7E8AD567C62E7A7591 /* SwiftProtobuf-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SwiftProtobuf-macOS-dummy.m"; path = "../SwiftProtobuf-macOS/SwiftProtobuf-macOS-dummy.m"; sourceTree = "<group>"; };
 		F1CE5964AF5E945CE48E82AF54CBE813 /* utility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = utility.h; path = Curve25519/lib/Ed25519/additions/utility.h; sourceTree = "<group>"; };
 		F3EF38E48956FF84512F4024A2D22461 /* Curve.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Curve.swift; path = Curve25519/Curve.swift; sourceTree = "<group>"; };
-		F4A9803B90AD3C2B95F366C80C9D6FBF /* fe_neg.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fe_neg.c; path = Curve25519/lib/Ed25519/fe_neg.c; sourceTree = "<group>"; };
+		F4A9803B90AD3C2B95F366C80C9D6FBF /* fe_neg.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fe_neg.c; path = Curve25519/lib/Ed25519/fe_neg.c; sourceTree = "<group>"; };
 		F4DE1615656319E9DF8A252B2AAEA2CA /* struct.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = struct.pb.swift; path = Sources/SwiftProtobuf/struct.pb.swift; sourceTree = "<group>"; };
 		F55EFF13E4B4CCCA907B5268087F1605 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-umbrella.h"; sourceTree = "<group>"; };
 		F577370D4995D3F61EDC896CC4C914D5 /* ge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ge.h; path = Curve25519/lib/Ed25519/ge.h; sourceTree = "<group>"; };
-		F63CAF12F485CB1BD32868F117514736 /* Curve25519-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Curve25519-macOS.modulemap"; path = "../Curve25519-macOS/Curve25519-macOS.modulemap"; sourceTree = "<group>"; };
+		F63CAF12F485CB1BD32868F117514736 /* Curve25519-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Curve25519-macOS.modulemap"; path = "../Curve25519-macOS/Curve25519-macOS.modulemap"; sourceTree = "<group>"; };
 		F6ABF2133A4969E3C08526449D2EC741 /* base2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = base2.h; path = Curve25519/lib/Ed25519/base2.h; sourceTree = "<group>"; };
 		F92B3926C1AE08045DF1865820C8F39E /* Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Internal.swift; path = Sources/SwiftProtobuf/Internal.swift; sourceTree = "<group>"; };
-		F9FE25763E8AA9C9426C75FE82AA62C0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework; path = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9FE25763E8AA9C9426C75FE82AA62C0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA14B3A8524CFBB8D9B25FA41BF05E9D /* DoubleFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoubleFormatter.swift; path = Sources/SwiftProtobuf/DoubleFormatter.swift; sourceTree = "<group>"; };
 		FA9484FC5A4E570C40AABD11F01280E7 /* xeddsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = xeddsa.h; path = Curve25519/lib/Ed25519/additions/xeddsa.h; sourceTree = "<group>"; };
 		FCF39D559E1F712F0B03CA8204CC87A6 /* SwiftProtobuf-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftProtobuf-tvOS-prefix.pch"; path = "../SwiftProtobuf-tvOS/SwiftProtobuf-tvOS-prefix.pch"; sourceTree = "<group>"; };
@@ -1522,7 +1522,6 @@
 				BBD246B37ADA538D20513F4C89BD7CCC /* ZigZag.swift */,
 				BC9C4C9356B8AF2DDE5A86A646295E61 /* Support Files */,
 			);
-			name = SwiftProtobuf;
 			path = SwiftProtobuf;
 			sourceTree = "<group>";
 		};
@@ -1816,7 +1815,6 @@
 				C0DFB6EC300072762488FB29243A544D /* zeroize.h */,
 				672EAB116F0F994D7522643EBFBD7202 /* Support Files */,
 			);
-			name = Curve25519;
 			path = Curve25519;
 			sourceTree = "<group>";
 		};
@@ -1906,7 +1904,6 @@
 				0987D8C4AA3715066304AC4551570903 /* Resources */,
 				E5E153E2D4DFDB4AA679B0F8F515CC4D /* Support Files */,
 			);
-			name = CommonCryptoModule;
 			path = CommonCryptoModule;
 			sourceTree = "<group>";
 		};
@@ -2565,7 +2562,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3488,6 +3485,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CEBE78C9C3CECCD679D8E32E07AA812A /* Curve25519-iOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3519,6 +3517,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D4D9D99039F14C5740F2C470A727419 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3553,6 +3552,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 375CFF4C6F1F8698EF19B0904BD78628 /* CommonCryptoModule-macOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3586,6 +3586,7 @@
 			baseConfigurationReference = 9FF6EA22BFE760C59CA426AC416A7A09 /* Curve25519-watchOS.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3618,6 +3619,7 @@
 			baseConfigurationReference = 9FF6EA22BFE760C59CA426AC416A7A09 /* Curve25519-watchOS.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3636,6 +3638,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -3650,6 +3653,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8EF10D15F5E1987A576A278DEC70E6B /* CommonCryptoModule-iOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3669,6 +3673,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3682,6 +3687,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CEBE78C9C3CECCD679D8E32E07AA812A /* Curve25519-iOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3701,6 +3707,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3714,6 +3721,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27EF82AAAFD0D19E6D6EE4ED2572A425 /* SwiftProtobuf-tvOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3755,6 +3763,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -3762,6 +3771,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -3808,6 +3818,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0219AB3D4DB63E643827CA14E2280479 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3842,6 +3853,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6915D6E3E8BE50016FD6B27FF9E9038 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3876,6 +3888,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB72EDCB9570AF9B84A8C701A7EAC7F5 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3910,6 +3923,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04BDD643EC2F3021177CFF50A818B4CF /* CommonCryptoModule-tvOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3928,6 +3942,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -3943,6 +3958,7 @@
 			baseConfigurationReference = 4C41BD26292073A339646D82E61DCB32 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3978,6 +3994,7 @@
 			baseConfigurationReference = 0A90483864CE8C7E36CCA94AB054A551 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4012,6 +4029,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 341C1DECFC947B1009634317C2701049 /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4046,6 +4064,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 893E713746D65F442E1B964D3755B127 /* Curve25519-macOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4079,6 +4098,7 @@
 			baseConfigurationReference = 90D72CCCD777EB422C5554892D22AA69 /* SwiftProtobuf-watchOS.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4110,6 +4130,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA05C6FF7E014A1C54AE3CC900394878 /* SwiftProtobuf-macOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4143,6 +4164,7 @@
 			baseConfigurationReference = 8DA0DABCBBF0649D917F0D4CB32B64E8 /* CommonCryptoModule-watchOS.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4184,6 +4206,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -4191,6 +4214,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -4232,6 +4256,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27EF82AAAFD0D19E6D6EE4ED2572A425 /* SwiftProtobuf-tvOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4250,6 +4275,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -4265,6 +4291,7 @@
 			baseConfigurationReference = 90D72CCCD777EB422C5554892D22AA69 /* SwiftProtobuf-watchOS.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4283,6 +4310,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -4297,6 +4325,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66E9706725DE3481C826ED8F0BD1FE67 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4332,6 +4361,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA05C6FF7E014A1C54AE3CC900394878 /* SwiftProtobuf-macOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4353,6 +4383,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -4364,6 +4395,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 375CFF4C6F1F8698EF19B0904BD78628 /* CommonCryptoModule-macOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4385,6 +4417,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -4396,6 +4429,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87BE76B9E69966C6476C0D7D63EA7A8C /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4430,6 +4464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 951A975C25F8847EA8A92D2B0F130E3D /* Curve25519-tvOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4461,6 +4496,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04BDD643EC2F3021177CFF50A818B4CF /* CommonCryptoModule-tvOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4492,6 +4528,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 693247047D83E7D44FA976084DA97101 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4526,6 +4563,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 893E713746D65F442E1B964D3755B127 /* Curve25519-macOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4547,6 +4585,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -4558,6 +4597,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8EF10D15F5E1987A576A278DEC70E6B /* CommonCryptoModule-iOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4590,6 +4630,7 @@
 			baseConfigurationReference = 8DA0DABCBBF0649D917F0D4CB32B64E8 /* CommonCryptoModule-watchOS.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4608,6 +4649,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -4622,6 +4664,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2DA713E0FAEA0646905611E7257DDD43 /* SwiftProtobuf-iOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4641,6 +4684,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4654,6 +4698,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 951A975C25F8847EA8A92D2B0F130E3D /* Curve25519-tvOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4672,6 +4717,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -4686,6 +4732,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2DA713E0FAEA0646905611E7257DDD43 /* SwiftProtobuf-iOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

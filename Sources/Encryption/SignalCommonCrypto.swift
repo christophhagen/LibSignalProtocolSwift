@@ -141,8 +141,8 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
         let operation = encrypt ? CCOperation(kCCEncrypt) : CCOperation(kCCDecrypt)
         // Create output memory that can fit the output data
         let dataLength = message.count + kCCBlockSizeAES128
-        let ptr = UnsafeMutableRawPointer.allocate(bytes: dataLength, alignedTo: MemoryLayout<UInt8>.alignment)
-        defer { ptr.deallocate(bytes: dataLength, alignedTo: MemoryLayout<UInt8>.alignment) }
+        let ptr = UnsafeMutableRawPointer.allocate(byteCount: dataLength, alignment: MemoryLayout<UInt8>.alignment)
+        defer { ptr.deallocate() }
 
         var dataOutMoved: Int = 0
         // Pointer to key
@@ -240,9 +240,9 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
         }
 
         let outputLength = CCCryptorGetOutputLength(ref, message.count, true)
-        let ptr = UnsafeMutableRawPointer.allocate(bytes: outputLength, alignedTo: MemoryLayout<UInt8>.alignment)
+        let ptr = UnsafeMutableRawPointer.allocate(byteCount: outputLength, alignment: MemoryLayout<UInt8>.alignment)
         // Release the memory before the method returns or throws an error
-        defer { ptr.deallocate(bytes: outputLength, alignedTo: MemoryLayout<UInt8>.alignment) }
+        defer { ptr.deallocate() }
 
         var updateMovedLength = 0
         status = withUnsafeMutablePointer(to: &updateMovedLength) { updatedPtr in

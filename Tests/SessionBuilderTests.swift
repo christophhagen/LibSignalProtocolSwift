@@ -86,12 +86,8 @@ class SessionBuilderTests: XCTestCase {
         }
 
         guard aliceStore.sessionStore.containsSession(for: bobAddress),
-            let loadedRecord: SessionRecord = try? aliceStore.sessionStore.loadSession(for: bobAddress) else {
+            let _: SessionRecord = try? aliceStore.sessionStore.loadSession(for: bobAddress) else {
             XCTFail("Could not load session")
-            return
-        }
-        guard loadedRecord.state.version == 3 else {
-            XCTFail("Invalid version \(loadedRecord.state.version) of session")
             return
         }
 
@@ -146,8 +142,7 @@ class SessionBuilderTests: XCTestCase {
             return
         }
         let aliceRecipientSessionState = aliceRecipientSessionRecord.state
-        guard aliceRecipientSessionState.version == 3,
-            aliceRecipientSessionState.aliceBaseKey != nil else {
+        guard aliceRecipientSessionState.aliceBaseKey != nil else {
                 XCTFail("Session Version mismatch or base key missing")
                 return
         }
@@ -667,9 +662,8 @@ class SessionBuilderTests: XCTestCase {
 
         /* Find and verify the session version in Alice's store */
         guard aliceStore.sessionStore.containsSession(for: bobAddress),
-            let record: SessionRecord = try? aliceStore.sessionStore.loadSession(for: bobAddress),
-            record.state.version == 3 else {
-                XCTFail("Alice has no valid session (version)")
+            let _: SessionRecord = try? aliceStore.sessionStore.loadSession(for: bobAddress) else {
+                XCTFail("Alice has no valid session")
                 return
         }
 
@@ -717,7 +711,6 @@ class SessionBuilderTests: XCTestCase {
 
         guard bobStore.sessionStore.containsSession(for: aliceAddress),
             let record1: SessionRecord = try? bobStore.sessionStore.loadSession(for: aliceAddress),
-            record1.state.version == 3,
             record1.state.aliceBaseKey != nil else {
                 XCTFail("Bob has no or invalid session for Alice")
                 return

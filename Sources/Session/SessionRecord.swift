@@ -11,7 +11,7 @@ import Foundation
 /**
  The record of a session (and previous sessions) with another party.
  */
-final class SessionRecord {
+final class SessionRecord: ProtocolBufferEquivalent {
 
     /// The maximum number of archived states
     private static let archivedStatesMax = 40
@@ -43,16 +43,15 @@ final class SessionRecord {
 
     /**
      Check if the session record contains a specific state.
-     - parameter version: The session version of the searched state.
      - parameter baseKey: The key used for the session.
-     - returns: `true`, if a session exists for the given version and key
+     - returns: `true`, if a session exists for the given key
      */
-    func hasSessionState(version: UInt8, baseKey: PublicKey) -> Bool {
-        if state.version == version && state.aliceBaseKey == baseKey {
+    func hasSessionState(baseKey: PublicKey) -> Bool {
+        if state.aliceBaseKey == baseKey {
             return true
         }
         return previousStates.contains {
-            $0.version == version && $0.aliceBaseKey == baseKey
+            $0.aliceBaseKey == baseKey
         }
     }
 
@@ -72,7 +71,7 @@ final class SessionRecord {
     func promoteState(state: SessionState) {
         // Remove state if it already exists
         if let baseKey = state.aliceBaseKey {
-            removeState(for: state.version, and: baseKey)
+            removeState(for: baseKey)
         }
         // Move the previously current state to the list of previous states
         previousStates.insert(self.state, at: 0)
@@ -88,61 +87,32 @@ final class SessionRecord {
 
     /**
      Remove a state from the previous states.
-     - parameter version: The session version of the searched state.
      - parameter baseKey: The key used for the session.
      */
-    private func removeState(for version: UInt8, and baseKey: PublicKey) {
-        if let i = previousStates.index(where: { $0.version == version && $0.aliceBaseKey == baseKey }) {
+    private func removeState(for baseKey: PublicKey) {
+        if let i = previousStates.index(where: { $0.aliceBaseKey == baseKey }) {
             previousStates.remove(at: i)
         }
     }
 
     // MARK: Protocol Buffers
 
-    /**
-     Serialize the record for storage.
-     - throws: `SignalError` error of type `invalidProtoBuf`, if the ProtoBuf object could not be serialized.
-     */
-    func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SessionRecord ProtoBuf object: \(error)")
-        }
-    }
-
     /// Convert the record to a ProtoBuf object for storage
-    var object: Signal_Record {
+    var protoObject: Signal_Record {
         return Signal_Record.with {
-            $0.currentSession = self.state.object
-            $0.previousSessions = self.previousStates.map { $0.object }
+            $0.currentSession = self.state.protoObject
+            $0.previousSessions = self.previousStates.map { $0.protoObject }
         }
-    }
-
-    /**
-     Create a record from serialized data.
-     - parameter data: The serialized record.
-     - throws: `SignalError` error of type `invalidProtoBuf`, if data is missing or corrupt
-     */
-    convenience init(from data: Data) throws {
-        let object: Signal_Record
-        do {
-            object = try Signal_Record(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not deserialize SessionRecord ProtoBuf object: \(error)")
-        }
-        try self.init(from: object)
-
     }
 
     /**
      Create a session record from a ProtoBuf object.
-     - parameter object: The ProtoBuf object.
+     - parameter protoObject: The ProtoBuf object.
      - throws: `SignalError` error of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from object: Signal_Record) throws {
-        self.state = try SessionState(from: object.currentSession)
-        self.previousStates = try object.previousSessions.map { try SessionState(from: $0) }
+    init(from protoObject: Signal_Record) throws {
+        self.state = try SessionState(from: protoObject.currentSession)
+        self.previousStates = try protoObject.previousSessions.map { try SessionState(from: $0) }
         self.isFresh = false
     }
 }

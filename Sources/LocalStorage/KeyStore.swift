@@ -64,9 +64,9 @@ extension KeyStore {
      */
     public func createIdentityKey() throws -> Data {
         let keyPair = try KeyPair()
-        let data = try keyPair.data()
+        let data = try keyPair.protoData()
         try identityKeyStore.store(identityKeyData: data)
-        return keyPair.publicKey.data
+        return keyPair.publicKey.protoData()
     }
 
     /**
@@ -90,7 +90,7 @@ extension KeyStore {
             id: id, timestamp: timestamp)
 
         try signedPreKeyStore.store(signedPreKey: key)
-        return try key.publicKey.data()
+        return try key.publicKey.protoData()
     }
 
     /**
@@ -110,7 +110,7 @@ extension KeyStore {
         for key in keys {
             try preKeyStore.store(preKey: key)
         }
-        return try keys.map { try $0.publicKey.data() }
+        return try keys.map { try $0.publicKey.protoData() }
     }
 
     /**

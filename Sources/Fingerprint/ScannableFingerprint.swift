@@ -44,7 +44,7 @@ public struct ScannableFingerprint {
 
 // MARK: Protocol Buffers
 
-extension ScannableFingerprint {
+extension ScannableFingerprint: ProtocolBufferEquivalent {
 
     /**
      Create a fingerprint from a ProtoBuf object.
@@ -63,39 +63,11 @@ extension ScannableFingerprint {
     }
 
     /// The fingerprint converted to a ProtoBuf object
-    var object: Signal_Fingerprint {
+    var protoObject: Signal_Fingerprint {
         return Signal_Fingerprint.with {
             $0.version = ScannableFingerprint.version
             $0.local = self.localFingerprint
             $0.remote = self.remoteFingerprint
-        }
-    }
-
-    /**
-     Create a scannable fingerprint from data.
-     - parameter data: The data from which the fingerprint is to be created
-     - throws: `SignalError` of type `invalidProtoBuf` and `invalidVersion`
-     */
-    init(from data: Data) throws {
-        let object: Signal_Fingerprint
-        do {
-            object = try Signal_Fingerprint(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not deserialize data: \(error.localizedDescription)")
-        }
-        try self.init(from: object)
-    }
-
-    /**
-    Serialize a fingerprint.
-     - throws: `SignalError` of type `invalidProtoBuf`
-     - returns: The serialized fingerprint
-     */
-    public func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize fingerprint: \(error.localizedDescription)")
         }
     }
 }

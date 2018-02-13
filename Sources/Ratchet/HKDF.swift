@@ -8,16 +8,6 @@
 import Foundation
 
 /**
- The different versions of the HKDF
- */
-enum HKDFVersion: UInt8 {
-    /// Older messages have an iteration offset of 0
-    case version2 = 2
-    /// Newer messages have an iteration offset of 1
-    case version3 = 3
-}
-
-/**
  The Key derivation function used for the Ratchet.
  */
 struct HKDF {
@@ -25,21 +15,8 @@ struct HKDF {
     /// The total number of bytes to derive when creating a new root and chain key
     private static let derivedRootSecretsSize = RatchetRootKey.secretSize + RatchetChainKey.secretSize
 
-    /// The offset for the expand iterations, depending on the version
-    private let iterationStartOffset: UInt8
-
-    /**
-     Initialize a new KDF with the message version
-     - parameter messageVersion: The version of the messages
-    */
-    init(messageVersion: HKDFVersion) {
-        switch messageVersion {
-        case .version2:
-            self.iterationStartOffset = 0
-        case .version3:
-            self.iterationStartOffset = 1
-        }
-    }
+    /// The offset for the expand iterations
+    private static let iterationStartOffset: UInt8 = 1
 
     /**
      Derive new secrets from the KDF.
@@ -52,7 +29,7 @@ struct HKDF {
      - returns: The derived bytes
      - throws: `SignalError` of type `hmacError`, if the HMAC authentication fails
      */
-    func deriveSecrets(material: Data, salt: Data, info: Data, outputLength: Int) throws -> Data {
+    static func deriveSecrets(material: Data, salt: Data, info: Data, outputLength: Int) throws -> Data {
         // Extract step
         let prk = try SignalCrypto.hmacSHA256(for: material, with: salt)
         // Expand step
@@ -69,7 +46,7 @@ struct HKDF {
      - returns: The expanded bytes
      - throws: `SignalError` of type `hmacError` if the Crypto delegate fails to calculate the HMAC
     */
-    private func expand(prk: Data, info: Data, outputLength: Int) throws -> Data {
+    private static func expand(prk: Data, info: Data, outputLength: Int) throws -> Data {
         var fraction = Double(outputLength) / Double(RatchetChainKey.hashOutputSize)
         fraction.round(.up)
         let iterations = UInt8(fraction)
@@ -96,7 +73,7 @@ struct HKDF {
      - throws: `SignalError.hmacError`, if the HMAC authentication fails
      - returns: A tuple of the root key and chain key
      */
-    func chainAndRootKey(material: Data, salt: Data, info: Data) throws -> (rootKey: RatchetRootKey, chainKey: RatchetChainKey) {
+    static func chainAndRootKey(material: Data, salt: Data, info: Data) throws -> (rootKey: RatchetRootKey, chainKey: RatchetChainKey) {
 
         let derivedSecret = try deriveSecrets(
             material: material,
@@ -105,34 +82,11 @@ struct HKDF {
             outputLength: HKDF.derivedRootSecretsSize)
 
         let rootKeySecret = derivedSecret[0..<RatchetRootKey.secretSize]
-        let newRootKey = RatchetRootKey(kdf: self, key: rootKeySecret)
+        let newRootKey = RatchetRootKey(key: rootKeySecret)
 
         let chainKeySecret = derivedSecret[RatchetRootKey.secretSize..<HKDF.derivedRootSecretsSize]
-        let newChainKey = RatchetChainKey(kdf: self, key: chainKeySecret, index: 0)
+        let newChainKey = RatchetChainKey(key: chainKeySecret, index: 0)
 
         return (newRootKey, newChainKey)
     }
 }
-
-extension HKDF: Comparable {
-    /**
-     Compare two HKDFs.
-     - parameter lhs: The first KDF.
-     - parameter rhs: The second KDF.
-     - returns: `True` if the first argument is smaller than the second.
-    */
-    static func <(lhs: HKDF, rhs: HKDF) -> Bool {
-        return lhs.iterationStartOffset < rhs.iterationStartOffset
-    }
-
-    /**
-     Compare two HKDFs for equality.
-     - parameter lhs: The first KDF.
-     - parameter rhs: The second KDF.
-     - returns: `True` if the KDFs are equal, i.e. their iteration offset matches.
-     */
-    static func ==(lhs: HKDF, rhs: HKDF) -> Bool {
-        return lhs.iterationStartOffset == rhs.iterationStartOffset
-    }
-}
-

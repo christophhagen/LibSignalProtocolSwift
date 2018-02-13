@@ -77,7 +77,7 @@ extension PreKeyStore {
      - throws: `SignalError`
      */
     public func store(preKey: SessionPreKey) throws {
-        let data = try preKey.data()
+        let data = try preKey.protoData()
         try store(preKey: data, for: preKey.publicKey.id)
     }
 }

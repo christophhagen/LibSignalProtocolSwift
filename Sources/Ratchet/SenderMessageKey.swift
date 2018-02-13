@@ -45,12 +45,11 @@ struct SenderMessageKey {
     */
     init(iteration: UInt32, seed: Data) throws {
         let salt = Data(count: RatchetChainKey.hashOutputSize)
-
-        let kdf = HKDF(messageVersion: .version3)
-        let derivative = try kdf.deriveSecrets(material: seed,
-                                               salt: salt,
-                                               info: SenderMessageKey.infoMaterial,
-                                               outputLength: SenderMessageKey.secretLength)
+        let derivative = try HKDF.deriveSecrets(
+            material: seed,
+            salt: salt,
+            info: SenderMessageKey.infoMaterial,
+            outputLength: SenderMessageKey.secretLength)
 
         self.iteration = iteration
         self.seed = seed
@@ -61,26 +60,26 @@ struct SenderMessageKey {
 
 // MARK: Protocol Buffers
 
-extension SenderMessageKey {
-
-    /**
-     Create a message key from a ProtoBuf object.
-     - parameter object: The message key ProtoBuf object.
-     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
-     */
-    init(from object: Signal_SenderKeyState.SenderMessageKey) throws {
-        guard object.hasIteration, object.hasSeed else {
-            throw SignalError(.invalidProtoBuf, "Missing data in SenderMessageKey ProtoBuf object")
-        }
-        try self.init(iteration: object.iteration, seed: object.seed)
-    }
+extension SenderMessageKey: ProtocolBufferEquivalent {
 
     /// Convert the sender chain key to a ProtoBuf object
-    var object: Signal_SenderKeyState.SenderMessageKey {
+    var protoObject: Signal_SenderKeyState.SenderMessageKey {
         return Signal_SenderKeyState.SenderMessageKey.with {
             $0.iteration = self.iteration
             $0.seed = Data(self.seed)
         }
+    }
+
+    /**
+     Create a message key from a ProtoBuf object.
+     - parameter protoObject: The message key ProtoBuf object.
+     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
+     */
+    init(from protoObject: Signal_SenderKeyState.SenderMessageKey) throws {
+        guard protoObject.hasIteration, protoObject.hasSeed else {
+            throw SignalError(.invalidProtoBuf, "Missing data in SenderMessageKey ProtoBuf object")
+        }
+        try self.init(iteration: protoObject.iteration, seed: protoObject.seed)
     }
 }
 

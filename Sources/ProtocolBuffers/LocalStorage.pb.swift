@@ -22,15 +22,6 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 struct Signal_Session: SwiftProtobuf.Message {
   static let protoMessageName: String = _protobuf_package + ".Session"
 
-  var sessionVersion: UInt32 {
-    get {return _storage._sessionVersion ?? 0}
-    set {_uniqueStorage()._sessionVersion = newValue}
-  }
-  /// Returns true if `sessionVersion` has been explicitly set.
-  var hasSessionVersion: Bool {return _storage._sessionVersion != nil}
-  /// Clears the value of `sessionVersion`. Subsequent reads from it will return its default value.
-  mutating func clearSessionVersion() {_storage._sessionVersion = nil}
-
   var localIdentityPublic: Data {
     get {return _storage._localIdentityPublic ?? SwiftProtobuf.Internal.emptyData}
     set {_uniqueStorage()._localIdentityPublic = newValue}
@@ -408,15 +399,14 @@ struct Signal_Session: SwiftProtobuf.Message {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularUInt32Field(value: &_storage._sessionVersion)
-        case 2: try decoder.decodeSingularBytesField(value: &_storage._localIdentityPublic)
-        case 3: try decoder.decodeSingularBytesField(value: &_storage._remoteIdentityPublic)
-        case 4: try decoder.decodeSingularBytesField(value: &_storage._rootKey)
-        case 5: try decoder.decodeSingularUInt32Field(value: &_storage._previousCounter)
-        case 6: try decoder.decodeSingularMessageField(value: &_storage._senderChain)
-        case 7: try decoder.decodeRepeatedMessageField(value: &_storage._receiverChains)
-        case 8: try decoder.decodeSingularMessageField(value: &_storage._pendingPreKey)
-        case 9: try decoder.decodeSingularBytesField(value: &_storage._aliceBaseKey)
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._localIdentityPublic)
+        case 2: try decoder.decodeSingularBytesField(value: &_storage._remoteIdentityPublic)
+        case 3: try decoder.decodeSingularBytesField(value: &_storage._rootKey)
+        case 4: try decoder.decodeSingularUInt32Field(value: &_storage._previousCounter)
+        case 5: try decoder.decodeSingularMessageField(value: &_storage._senderChain)
+        case 6: try decoder.decodeRepeatedMessageField(value: &_storage._receiverChains)
+        case 7: try decoder.decodeSingularMessageField(value: &_storage._pendingPreKey)
+        case 8: try decoder.decodeSingularBytesField(value: &_storage._aliceBaseKey)
         default: break
         }
       }
@@ -429,32 +419,29 @@ struct Signal_Session: SwiftProtobuf.Message {
   /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._sessionVersion {
-        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-      }
       if let v = _storage._localIdentityPublic {
-        try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
+        try visitor.visitSingularBytesField(value: v, fieldNumber: 1)
       }
       if let v = _storage._remoteIdentityPublic {
-        try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
+        try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
       }
       if let v = _storage._rootKey {
-        try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
+        try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
       }
       if let v = _storage._previousCounter {
-        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
+        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
       }
       if let v = _storage._senderChain {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
       }
       if !_storage._receiverChains.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._receiverChains, fieldNumber: 7)
+        try visitor.visitRepeatedMessageField(value: _storage._receiverChains, fieldNumber: 6)
       }
       if let v = _storage._pendingPreKey {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       }
       if let v = _storage._aliceBaseKey {
-        try visitor.visitSingularBytesField(value: v, fieldNumber: 9)
+        try visitor.visitSingularBytesField(value: v, fieldNumber: 8)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1135,19 +1122,17 @@ fileprivate let _protobuf_package = "Signal"
 
 extension Signal_Session: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "sessionVersion"),
-    2: .same(proto: "localIdentityPublic"),
-    3: .same(proto: "remoteIdentityPublic"),
-    4: .same(proto: "rootKey"),
-    5: .same(proto: "previousCounter"),
-    6: .same(proto: "senderChain"),
-    7: .same(proto: "receiverChains"),
-    8: .same(proto: "pendingPreKey"),
-    9: .same(proto: "aliceBaseKey"),
+    1: .same(proto: "localIdentityPublic"),
+    2: .same(proto: "remoteIdentityPublic"),
+    3: .same(proto: "rootKey"),
+    4: .same(proto: "previousCounter"),
+    5: .same(proto: "senderChain"),
+    6: .same(proto: "receiverChains"),
+    7: .same(proto: "pendingPreKey"),
+    8: .same(proto: "aliceBaseKey"),
   ]
 
   fileprivate class _StorageClass {
-    var _sessionVersion: UInt32? = nil
     var _localIdentityPublic: Data? = nil
     var _remoteIdentityPublic: Data? = nil
     var _rootKey: Data? = nil
@@ -1162,7 +1147,6 @@ extension Signal_Session: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     private init() {}
 
     init(copying source: _StorageClass) {
-      _sessionVersion = source._sessionVersion
       _localIdentityPublic = source._localIdentityPublic
       _remoteIdentityPublic = source._remoteIdentityPublic
       _rootKey = source._rootKey
@@ -1186,7 +1170,6 @@ extension Signal_Session: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let other_storage = _args.1
-        if _storage._sessionVersion != other_storage._sessionVersion {return false}
         if _storage._localIdentityPublic != other_storage._localIdentityPublic {return false}
         if _storage._remoteIdentityPublic != other_storage._remoteIdentityPublic {return false}
         if _storage._rootKey != other_storage._rootKey {return false}

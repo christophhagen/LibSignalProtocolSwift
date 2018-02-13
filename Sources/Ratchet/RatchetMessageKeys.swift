@@ -78,49 +78,12 @@ struct RatchetMessageKeys {
     }
 }
 
-extension RatchetMessageKeys {
+// MARK: Protocol Buffers
 
-    /**
-     Create message keys from a ProtoBuf object.
-     - parameter object: The ProtoBuf object
-     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
-     */
-    init(from object: Signal_Session.Chain.MessageKey) throws {
-        guard object.hasIndex, object.hasCipherKey, object.hasIv, object.hasMacKey else {
-            throw SignalError(.invalidProtoBuf, "Missing data in RatchetMessageKeys protobuf object")
-        }
-        self.counter = object.index
-        self.cipherKey = object.cipherKey
-        self.iv = object.iv
-        self.macKey = object.macKey
-    }
+extension RatchetMessageKeys: ProtocolBufferEquivalent {
 
-    /**
-     Deserialize the message keys.
-     - parameter data: The serialized keys
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    init(from data: Data) throws {
-        let object: Signal_Session.Chain.MessageKey
-        do {
-            object = try Signal_Session.Chain.MessageKey(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not create RatchetMessageKeys from Protobuf object: \(error)")
-        }
-        try self.init(from: object)
-    }
-
-    /**
-     Serialize the keys.
-     - returns: The serialized keys
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    func data() throws -> Data {
-        return try object.serializedData()
-    }
-    
     /// The message keys converted to a ProtoBuf object
-    var object: Signal_Session.Chain.MessageKey {
+    var protoObject: Signal_Session.Chain.MessageKey {
         return Signal_Session.Chain.MessageKey.with {
             $0.index = self.counter
             $0.cipherKey = self.cipherKey
@@ -129,7 +92,23 @@ extension RatchetMessageKeys {
         }
     }
 
+    /**
+     Create message keys from a ProtoBuf object.
+     - parameter protoObject: The ProtoBuf object
+     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
+     */
+    init(from protoObject: Signal_Session.Chain.MessageKey) throws {
+        guard protoObject.hasIndex, protoObject.hasCipherKey, protoObject.hasIv, protoObject.hasMacKey else {
+            throw SignalError(.invalidProtoBuf, "Missing data in RatchetMessageKeys protobuf object")
+        }
+        self.counter = protoObject.index
+        self.cipherKey = protoObject.cipherKey
+        self.iv = protoObject.iv
+        self.macKey = protoObject.macKey
+    }
 }
+
+// MARK: Protocol Equatable
 
 extension RatchetMessageKeys: Equatable {
     /**

@@ -61,12 +61,7 @@ public struct SessionCipher<Context: KeyStore> {
         let chainKey = senderChain.chainKey
         let messageKeys = try chainKey.messageKeys()
         let senderEphemeral = senderChain.ratchetKey.publicKey
-        let sessionVersion = record.state.version
-
-        let ciphertext = try getCiphertext(
-            messageVersion: sessionVersion,
-            messageKeys: messageKeys,
-            plaintext: message)
+        let ciphertext = try getCiphertext(messageKeys: messageKeys, plaintext: message)
 
         guard let localIdentityKey = record.state.localIdentity,
             let remoteIdentityKey = record.state.remoteIdentity else {
@@ -74,7 +69,6 @@ public struct SessionCipher<Context: KeyStore> {
         }
 
         let resultMessage = try SignalMessage(
-            messageVersion: sessionVersion,
             macKey: messageKeys.macKey,
             senderRatchetKey: senderEphemeral,
             counter: chainKey.index,
@@ -86,7 +80,6 @@ public struct SessionCipher<Context: KeyStore> {
         let preKeyMessage: PreKeySignalMessage?
         if let pendingPreKey = record.state.pendingPreKey {
             preKeyMessage = PreKeySignalMessage(
-                messageVersion: sessionVersion,
                 preKeyId: pendingPreKey.preKeyId,
                 signedPreKeyId: pendingPreKey.signedPreKeyId,
                 baseKey: pendingPreKey.baseKey,
@@ -111,11 +104,9 @@ public struct SessionCipher<Context: KeyStore> {
      - note: Possible errors:
      - `invalidMessage` if the input is not valid ciphertext.
      - `duplicateMessage` if the input is a message that has already been received.
-     - `legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
      - `invalidKeyID` when there is no local pre_key_record that corresponds to the pre key ID in the message.
      - `invalidKey` when the message is formatted incorrectly.
      - `untrustedIdentity` when the identity key of the sender is untrusted.
-     - `legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
      - `noSession` if there is no established session for this contact.
      - `invalidType` if the type of the message is not supported
     */
@@ -138,7 +129,6 @@ public struct SessionCipher<Context: KeyStore> {
      - note: Possible errors:
      - `invalidMessage` if the input is not valid ciphertext.
      - `duplicateMessage` if the input is a message that has already been received.
-     - `legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
      - `invalidKeyID` when there is no local pre_key_record that corresponds to the pre key ID in the message.
      - `invalidKey` when the message is formatted incorrectly.
      - `untrustedIdentity` when the identity key of the sender is untrusted.
@@ -166,7 +156,6 @@ public struct SessionCipher<Context: KeyStore> {
      - note: Possible errors:
      - `invalidMessage` if the input is not valid ciphertext.
      - `duplicateMessage` if the input is a message that has already been received.
-     - `legacyMessage` if the input is a message formatted by a protocol version that is no longer supported.
      - `noSession` if there is no established session for this contact.
 
      - parameter ciphertext: The SignalMessage to decrypt.
@@ -190,15 +179,6 @@ public struct SessionCipher<Context: KeyStore> {
     public func process(preKeyBundle bundle: SessionPreKeyBundle) throws {
         let builder = SessionBuilder(remoteAddress: remoteAddress, store: store)
         try builder.process(preKeyBundle: bundle)
-    }
-
-    /**
-     Gets the version of the session associated with this session cipher.
-     - throws: `SignalError`of type `storageError`
-     - returns: The session version
-     */
-    func getSessionVersion() throws -> UInt8 {
-        return try loadSession().state.version
     }
 
     // MARK: Private functions
@@ -254,10 +234,6 @@ public struct SessionCipher<Context: KeyStore> {
             throw SignalError(.invalidMessage, "Uninitialized session!")
         }
 
-        guard signalMessage.messageVersion == state.version else {
-            throw SignalError(.invalidMessage, "Message version \(signalMessage.messageVersion), but session version \(state.version)")
-        }
-
         let chainKey = try getOrCreateChainKey(state: state, theirEphemeral: signalMessage.senderRatchetKey)
 
         let messageKeys = try getOrCreateMessageKeys(
@@ -279,10 +255,7 @@ public struct SessionCipher<Context: KeyStore> {
                 throw SignalError(.invalidMessage, "Message mac not verified")
         }
 
-        let plaintext = try getPlaintext(
-            messageVersion: signalMessage.messageVersion,
-            messageKeys: messageKeys,
-            ciphertext: signalMessage.cipherText)
+        let plaintext = try getPlaintext(messageKeys: messageKeys, ciphertext: signalMessage.cipherText)
 
         state.pendingPreKey = nil
         return plaintext
@@ -380,57 +353,31 @@ public struct SessionCipher<Context: KeyStore> {
 
     /**
      Encrypt a message.
-     - parameter messageVersion: The ciphertext message version
      - parameter messageKeys: The keys used for encryption
      - parameter plaintext: The data to encrypt
      - returns: The encrypted ciphertext
      - throws: `SignalError` of type `encryptionError`
     */
-    private func getCiphertext(messageVersion: UInt8, messageKeys: RatchetMessageKeys, plaintext: Data) throws -> Data {
-
-        let iv = getIV(for: messageVersion, messageKeys: messageKeys)
+    private func getCiphertext(messageKeys: RatchetMessageKeys, plaintext: Data) throws -> Data {
         return try SignalCrypto.encrypt(
             message: plaintext,
             with: .AES_CTRnoPadding,
             key: messageKeys.cipherKey,
-            iv: iv)
-    }
-
-    /**
-     Get the initialization vector for the message version.
-     - parameter version: The message version
-     - parameter messageKeys: The message keys
-     - returns: The iv
-    */
-    private func getIV(for version: UInt8, messageKeys: RatchetMessageKeys) -> Data {
-        if version >= 3 {
-            return messageKeys.iv
-        } else {
-            var iv = Data(count: 16)
-            let counter = messageKeys.counter
-            iv[3] = UInt8(counter & 0x00FF)
-            iv[2] = UInt8((counter >> 8) & 0x00FF)
-            iv[1] = UInt8((counter >> 16) & 0x00FF)
-            iv[0] = UInt8((counter >> 24) & 0x00FF)
-            return iv
-        }
+            iv: messageKeys.iv)
     }
 
     /**
      Decrypt a message.
-     - parameter version: The ciphertext message version
      - parameter messageKeys: The keys used for encryption
      - parameter plaintext: The data to encrypt
      - returns: The encrypted ciphertext
      - throws: `SignalError` of type `encryptionError`
      */
-    private func getPlaintext(messageVersion: UInt8, messageKeys: RatchetMessageKeys, ciphertext: Data) throws -> Data {
-
-        let iv = getIV(for: messageVersion, messageKeys: messageKeys)
+    private func getPlaintext(messageKeys: RatchetMessageKeys, ciphertext: Data) throws -> Data {
         return try SignalCrypto.decrypt(
             message: ciphertext,
             with: .AES_CTRnoPadding,
             key: messageKeys.cipherKey,
-            iv: iv)
+            iv: messageKeys.iv)
     }
 }

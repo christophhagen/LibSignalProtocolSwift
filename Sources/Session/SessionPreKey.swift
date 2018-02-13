@@ -55,26 +55,13 @@ public struct SessionPreKey {
 
 // MARK: Protocol Buffers
 
-extension SessionPreKey {
+extension SessionPreKey: ProtocolBufferEquivalent {
 
     /// Convert the pre key to a ProtoBuf object
-    var object: Signal_PreKey {
+    var protoObject: Signal_PreKey {
         return Signal_PreKey.with {
-            $0.publicKey = publicKey.object
+            $0.publicKey = publicKey.protoObject
             $0.privateKey = privateKey.data
-        }
-    }
-
-    /**
-     Convert the pre key to serialized data.
-     - returns: The serialized record.
-     - throws: `SignalError` of type `invalidProtoBuf`
-    */
-    public func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SessionPreKey: \(error)")
         }
     }
 
@@ -89,20 +76,5 @@ extension SessionPreKey {
         }
         self.publicKey = try SessionPreKeyPublic(from: object.publicKey)
         self.privateKey = try PrivateKey(from: object.privateKey)
-    }
-
-    /**
-     Create a pre key from serialized data.
-     - parameter data: The serialized record.
-     - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
-     */
-    public init(from data: Data) throws {
-        let object: Signal_PreKey
-        do {
-            object = try Signal_PreKey(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not create SessionPreKey ProtoBuf object: \(error)")
-        }
-        try self.init(from: object)
     }
 }

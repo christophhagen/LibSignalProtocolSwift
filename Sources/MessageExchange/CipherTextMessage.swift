@@ -12,6 +12,7 @@ import Foundation
  The `CipherTextType` enum describes the different types of messages.
  */
 public enum CipherTextType: UInt8, CustomStringConvertible {
+
     /// A 'normal' message in an established session
     case signal = 2
     /// A pre key message to establish a new session
@@ -54,12 +55,6 @@ public enum CipherTextType: UInt8, CustomStringConvertible {
  */
 public struct CipherTextMessage {
 
-    /// The current version of the messages
-    static let currentVersion: UInt8 = 3
-
-    /// All message versions up to and including this one are unsupported
-    static let unsupportedVersion: UInt8 = 1
-
     /// The type of the message
     public var type: CipherTextType
 
@@ -79,7 +74,11 @@ public struct CipherTextMessage {
 
 // MARK: Protocol Buffers
 
-extension CipherTextMessage {
+extension CipherTextMessage: ProtocolBufferSerializable {
+
+    func protoData() -> Data {
+        return type.data + data
+    }
 
     /**
      Create a `CipherTextMessage` from a serialized record.

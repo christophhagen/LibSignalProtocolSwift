@@ -1,0 +1,19 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/User/Development/Github/LibSignalProtocolSwift/Sources/Elliptic Keys/PrivateKey.swift",
+      "line": 114,
+      "symbol": "PrivateKey.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/User/Development/Github/LibSignalProtocolSwift/Sources/Elliptic Keys/PublicKey.swift",
+      "line": 122,
+      "symbol": "PublicKey.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/User/Development/Github/LibSignalProtocolSwift"
+}

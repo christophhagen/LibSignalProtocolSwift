@@ -22,20 +22,16 @@ public struct PublicKey {
     private let key: Data
 
     /**
-     'Create a public key from a UInt8 array. Checks
+     Create a public key from a UInt8 array. Checks
      if length and type are okay.
      - parameter point: The input point as an array
-     - returns: The key, if valid, or `nil`
+     - throws: `SignalError` of type `invalidProtoBuf`
      */
     init(point: Data) throws {
-        guard point.count == Curve25519.keyLength + 1 else {
+        guard point.count == Curve25519.keyLength else {
             throw SignalError(.invalidProtoBuf, "Invalid key length \(point.count)")
         }
-
-        guard point[0] == KeyPair.DJBType else {
-            throw SignalError(.invalidProtoBuf, "Invalid key type: \(point[0])")
-        }
-        key = point.advanced(by: 1)
+        self.key = point
     }
 
     /**
@@ -118,11 +114,16 @@ extension PublicKey: Comparable {
     public static func ==(lhs: PublicKey, rhs: PublicKey) -> Bool {
         return lhs.key == rhs.key
     }
+
+    /// The serialized data of the public key
+    public var data: Data {
+        return key
+    }
 }
 
 // MARK: Protocol Buffers
 
-extension PublicKey {
+extension PublicKey: ProtocolBufferSerializable {
 
     /**
      Create a public key from a serialized record.
@@ -138,7 +139,7 @@ extension PublicKey {
      Return a byte representation of the public key
      - returns: The byte record
      */
-    var data: Data {
-        return Data([KeyPair.DJBType]) + key
+    func protoData() -> Data {
+        return data
     }
 }

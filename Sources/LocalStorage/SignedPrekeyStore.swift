@@ -82,7 +82,7 @@ extension SignedPreKeyStore {
      - throws: `SignalError` errors
      */
     public func store(signedPreKey: SessionSignedPreKey) throws {
-        let data = try signedPreKey.data()
+        let data = try signedPreKey.protoData()
         try store(signedPreKey: data, for: signedPreKey.publicKey.id)
     }
 }

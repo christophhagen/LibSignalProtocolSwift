@@ -28,9 +28,6 @@ struct RatchetChainKey {
     /// The size of the HKDF expand output
     static let hashOutputSize = 32
 
-    /// The object for the key derivation function
-    private let kdf: HKDF
-
     /// The current key of the ratchet chain, 32 byte
     var key: Data
 
@@ -39,12 +36,10 @@ struct RatchetChainKey {
 
     /**
      Create a ratchet chain key from the components
-     - parameter kdf: The key derivation function
      - parameter key: The chain key
      - parameter index: The index in the chain
      */
-    init(kdf: HKDF, key: Data, index : UInt32) {
-        self.kdf = kdf
+    init(key: Data, index : UInt32) {
         self.key = key
         self.index = index
     }
@@ -68,7 +63,7 @@ struct RatchetChainKey {
 
         let salt = Data(count: RatchetChainKey.hashOutputSize)
         let keyMaterialData =
-            try kdf.deriveSecrets(
+            try HKDF.deriveSecrets(
                 material: inputKeyMaterial,
                 salt: salt,
                 info: RatchetChainKey.keyMaterialSeed,
@@ -86,69 +81,46 @@ struct RatchetChainKey {
      */
     func next() throws -> RatchetChainKey {
         let nextKey = try getBaseMaterial(seed: RatchetChainKey.chainKeySeed)
-        return RatchetChainKey(kdf: kdf, key: nextKey, index: index + 1)
+        return RatchetChainKey(key: nextKey, index: index + 1)
     }
 }
 
-extension RatchetChainKey {
+// MARK: Protocol Buffers
 
-    /**
-     Create a chain key from a ProtoBuf object.
-     - parameter object: The ProtoBuf object
-     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
-     */
-    init(from object: Signal_Session.Chain.ChainKey, version: HKDFVersion) throws {
-        guard object.hasIndex, object.hasKey else {
-            throw SignalError(.invalidProtoBuf, "Missing data in RatchetChainKey protobuf object")
-        }
-        self.index = object.index
-        self.key = object.key
-        self.kdf = HKDF(messageVersion: version)
-    }
-
-    /**
-     Create a ratchet chain key from serialized data.
-     - note: The types of errors thrown are:
-     `invalidProtoBuf`, if data is missing or corrupt
-     - parameter data: The serialized data
-     - throws: `SignalError` errors
-     */
-    init(from data: Data, version: HKDFVersion) throws {
-        let object: Signal_Session.Chain.ChainKey
-        do {
-            object = try Signal_Session.Chain.ChainKey(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not create RatchetChainKey object: \(error)")
-        }
-        try self.init(from: object, version: version)
-    }
-
-    /**
-     Serialize the key.
-     - returns: The serialized keys
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    func data() throws -> Data {
-        return try object.serializedData()
-    }
+extension RatchetChainKey: ProtocolBufferEquivalent {
 
     /// The chain key converted to a ProtoBuf object
-    var object: Signal_Session.Chain.ChainKey {
+    var protoObject: Signal_Session.Chain.ChainKey {
         return Signal_Session.Chain.ChainKey.with {
             $0.index = self.index
             $0.key = self.key
         }
     }
+
+    /**
+     Create a chain key from a ProtoBuf object.
+     - parameter protoObject: The ProtoBuf object
+     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
+     */
+    init(from protoObject: Signal_Session.Chain.ChainKey) throws {
+        guard protoObject.hasIndex, protoObject.hasKey else {
+            throw SignalError(.invalidProtoBuf, "Missing data in RatchetChainKey protobuf object")
+        }
+        self.index = protoObject.index
+        self.key = protoObject.key
+    }
 }
+
+// MARK: Protocol Equatable
 
 extension RatchetChainKey: Equatable {
     /**
      Compare two SignalMessages for equality.
      - parameter lhs: The first message
      - parameter rhs: The second message
-     - returns: `True`, if the keys are equal
+     - returns: `True`, if the chain keys are equal
      */
     static func ==(lhs: RatchetChainKey, rhs: RatchetChainKey) -> Bool {
-        return lhs.kdf == rhs.kdf && lhs.key == rhs.key && lhs.index == rhs.index
+        return lhs.key == rhs.key && lhs.index == rhs.index
     }
 }

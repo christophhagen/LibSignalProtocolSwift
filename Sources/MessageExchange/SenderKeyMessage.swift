@@ -14,17 +14,14 @@ import Curve25519
  */
 public struct SenderKeyMessage {
 
-    /// The version of the message
-    var messageVersion: UInt8
-
     /// The id of the key that was used
-    var keyId: UInt32
+    let keyId: UInt32
 
     /// The iteration of the chain key
-    var iteration: UInt32
+    let iteration: UInt32
 
     /// The encrypted ciphertext
-    var cipherText: Data
+    let cipherText: Data
 
     /// The signature of the message
     var signature: Data
@@ -33,7 +30,7 @@ public struct SenderKeyMessage {
      Return the message serialized 
     */
     func baseMessage() throws -> CipherTextMessage {
-        return CipherTextMessage(type: .senderKey, data: try self.data())
+        return CipherTextMessage(type: .senderKey, data: try self.protoData())
     }
 
     /**
@@ -50,13 +47,12 @@ public struct SenderKeyMessage {
      - throws: `SignalError` errors
     */
     init(keyId: UInt32, iteration: UInt32, cipherText: Data, signatureKey: PrivateKey) throws {
-        self.messageVersion = CipherTextMessage.currentVersion
         self.keyId = keyId
         self.iteration = iteration
         self.cipherText = cipherText
         // Empty signature for serialization
         self.signature = Data()
-        let data = try self.data()
+        let data = try self.protoData()
         self.signature = try signatureKey.sign(message: data)
     }
 
@@ -72,7 +68,7 @@ public struct SenderKeyMessage {
         guard signature.count == Curve25519.signatureLength else {
             return false
         }
-        let record = try self.data()
+        let record = try self.protoData()
         let length = record.count - Curve25519.signatureLength
         let message = record[0..<length]
         return signatureKey.verify(signature: signature, for: message)
@@ -80,24 +76,10 @@ public struct SenderKeyMessage {
 }
 
 
-extension SenderKeyMessage {
-
-    /**
-     Serialize the message.
-     - returns: The serialized message
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    public func data() throws -> Data {
-        let version = (self.messageVersion << 4) | CipherTextMessage.currentVersion
-        do {
-            return try [version] + object.serializedData() + signature
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SenderKeyMessage: \(error)")
-        }
-    }
+extension SenderKeyMessage: ProtocolBufferEquivalent {
 
     /// Convert the sender key message to a ProtoBuf object
-    var object: Signal_SenderKeyMessage {
+    var protoObject: Signal_SenderKeyMessage {
         return Signal_SenderKeyMessage.with {
             $0.id = self.keyId
             $0.iteration = self.iteration
@@ -106,12 +88,44 @@ extension SenderKeyMessage {
     }
 
     /**
+     Create a sender key message from a ProtoBuf object.
+     - note: The types of errors thrown are:
+     `invalidProtoBuf`, if data is missing or corrupt
+     - parameter object: The ProtoBuf object
+     - throws: `SignalError` errors
+     */
+    init(from object: Signal_SenderKeyMessage) throws {
+        guard object.hasID, object.hasIteration, object.hasCiphertext else {
+            throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyMessage object")
+        }
+        self.keyId = object.id
+        self.iteration = object.iteration
+        self.cipherText = object.ciphertext
+        self.signature = Data()
+    }
+
+}
+
+extension SenderKeyMessage: ProtocolBufferSerializable {
+
+    /**
+     Serialize the message.
+     - returns: The serialized message
+     - throws: `SignalError` of type `invalidProtoBuf`
+     */
+    public func protoData() throws -> Data {
+        do {
+            return try protoObject.serializedData() + signature
+        } catch {
+            throw SignalError(.invalidProtoBuf, "Could not serialize SenderKeyMessage: \(error)")
+        }
+    }
+
+    /**
      Create a sender key message from serialized data.
      - note: The types of errors thrown are:
      `invalidProtoBuf`, if data is missing or corrupt
      `invalidSignature`, if the signature length is incorrect
-     `legacyMessage`, if the message version is older than the current version
-     `invalidVersion`, if the message version is newer than the current version
      - parameter data: The serialized data
      - throws: `SignalError` errors
      */
@@ -119,49 +133,19 @@ extension SenderKeyMessage {
         guard data.count > Curve25519.signatureLength else {
             throw SignalError(.invalidProtoBuf, "Too few bytes in data for SenderKeyMessage")
         }
-        let version = (data[0] & 0xF0) >> 4
         let length = data.count - Curve25519.signatureLength
         guard length > 1 else {
             throw SignalError(.invalidProtoBuf, "Too few bytes in data for SenderKeyMessage")
         }
-        let content = data[1..<length]
-        let signature = data[length..<data.count]
+        let content = data[0..<length]
+        let signature = data[length...]
         let object: Signal_SenderKeyMessage
         do {
             object = try Signal_SenderKeyMessage(serializedData: content)
         } catch {
            throw SignalError(.invalidProtoBuf, "Could not create sender key message object: \(error)")
         }
-        try self.init(from: object, version: version, signature: signature)
-    }
-
-    /**
-     Create a sender key message from a ProtoBuf object.
-     - note: The types of errors thrown are:
-     `invalidProtoBuf`, if data is missing or corrupt
-     `invalidSignature`, if the signature length is incorrect
-     `legacyMessage`, if the message version is older than the current version
-     `invalidVersion`, if the message version is newer than the current version
-     - parameter object: The ProtoBuf object
-     - throws: `SignalError` errors
-     */
-    init(from object: Signal_SenderKeyMessage, version: UInt8, signature: Data) throws {
-        if version < CipherTextMessage.currentVersion {
-            throw SignalError(.legacyMessage, "Old SenderKeyMessage version \(version)")
-        }
-        if version > CipherTextMessage.currentVersion {
-            throw SignalError(.invalidVersion, "Unknown SenderKeyMessage version \(version)")
-        }
-        guard object.hasID, object.hasIteration, object.hasCiphertext else {
-            throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyMessage object")
-        }
-        guard signature.count == Curve25519.signatureLength else {
-            throw SignalError(.invalidSignature, "Invalid signature length \(signature.count)")
-        }
-        self.keyId = object.id
-        self.iteration = object.iteration
-        self.cipherText = object.ciphertext
-        self.messageVersion = version
+        try self.init(from: object)
         self.signature = signature
     }
 }

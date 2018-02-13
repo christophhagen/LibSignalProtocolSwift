@@ -78,7 +78,7 @@ extension IdentityKeyStore {
      - throws: `SignalError` errors
      */
     func store(identityKey: KeyPair) throws {
-        try store(identityKeyData: try identityKey.data())
+        try store(identityKeyData: try identityKey.protoData())
     }
 
     /**

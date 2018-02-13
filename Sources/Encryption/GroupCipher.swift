@@ -35,8 +35,6 @@ public struct GroupCipher<Context: KeyStore> {
      - note: Possible errors are:
      - `invalidType`, if the message is not a distribution message
      - `invalidProtoBuf`, if data is missing or corrupt, or an invalid sender key was stored
-     - `legacyMessage`, if the message version is older than the current version
-     - `invalidVersion`, if the message version is newer than the current version
      - `storageError`, if the sender key could not be saved in the store
      - parameter message: The distribution message
      - throws: `SignalError` errors.

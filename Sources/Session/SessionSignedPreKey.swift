@@ -60,21 +60,14 @@ public struct SessionSignedPreKey {
 
 // MARK: Protocol Buffers
 
-extension SessionSignedPreKey {
+extension SessionSignedPreKey: ProtocolBufferEquivalent {
 
-    /**
-     Create a signed pre key from serialized data.
-     - parameter data: The serialized record.
-     - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
-     */
-    public init(from data: Data) throws {
-        let object: Signal_SignedPreKey
-        do {
-            object = try Signal_SignedPreKey(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not deserialize SessionSignedPreKey ProtoBuf object: \(error)")
+    /// Convert the signed pre key to a ProtoBuf object
+    var protoObject: Signal_SignedPreKey {
+        return Signal_SignedPreKey.with {
+            $0.publicKey = self.publicKey.protoObject
+            $0.privateKey = self.privateKey.data
         }
-        try self.init(from: object)
     }
 
     /**
@@ -82,35 +75,16 @@ extension SessionSignedPreKey {
      - parameter object: The ProtoBuf object.
      - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
      */
-    init(from object: Signal_SignedPreKey) throws {
-        guard object.hasPublicKey, object.hasPrivateKey else {
+    init(from protoObject: Signal_SignedPreKey) throws {
+        guard protoObject.hasPublicKey, protoObject.hasPrivateKey else {
                 throw SignalError(.invalidProtoBuf, "Missing data in SessionSignedPreKey object")
         }
-        self.publicKey = try SessionSignedPreKeyPublic(from: object.publicKey)
-        self.privateKey = try PrivateKey(from: object.privateKey)
-    }
-
-    /// Convert the signed pre key to a ProtoBuf object
-    var object: Signal_SignedPreKey {
-        return Signal_SignedPreKey.with {
-            $0.publicKey = self.publicKey.object
-            $0.privateKey = self.privateKey.data
-        }
-    }
-
-    /**
-     Convert the signed pre key to serialized data.
-     - returns: The serialized record.
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    public func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SessionSignedPreKey ProtoBuf object: \(error)")
-        }
+        self.publicKey = try SessionSignedPreKeyPublic(from: protoObject.publicKey)
+        self.privateKey = try PrivateKey(from: protoObject.privateKey)
     }
 }
+
+// MARK: Protocol Equatable
 
 extension SessionSignedPreKey: Equatable {
 

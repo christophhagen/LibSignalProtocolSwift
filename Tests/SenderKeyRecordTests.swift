@@ -33,7 +33,7 @@ class SenderKeyRecordTests: XCTestCase {
         }
         state.add(messageKey: messageKey)
 
-        guard let record = try? state.data() else {
+        guard let record = try? state.protoData() else {
             XCTFail("Could not serialize SenderKeyState")
             return
         }
@@ -59,7 +59,7 @@ class SenderKeyRecordTests: XCTestCase {
     func testSerializeSenderKeyRecord() {
         let record = SenderKeyRecord()
 
-        guard let serialized = try? record.data() else {
+        guard let serialized = try? record.protoData() else {
             XCTFail("Could not serialize SenderKeyRecord")
             return
         }
@@ -109,7 +109,7 @@ class SenderKeyRecordTests: XCTestCase {
             chainKey: senderKey2,
             signatureKeyPair: senderSigningKey2)
 
-        guard let serialized = try? record.data() else {
+        guard let serialized = try? record.protoData() else {
             XCTFail("Could not serialize SenderKeyRecord")
             return
         }

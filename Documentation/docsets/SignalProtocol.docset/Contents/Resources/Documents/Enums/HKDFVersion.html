@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HKDFVersion Enum Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/HKDFVersion" class="dashAnchor"></a>
+    <a title="HKDFVersion Enum Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">LibSignalProtocolSwift Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/christophhagen/LibSignalProtocolSwift"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">LibSignalProtocolSwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        HKDFVersion Enum Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverChain.html">ReceiverChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyRecord.html">SenderKeyRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SenderKeyState.html">SenderKeyState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionRecord.html">SessionRecord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionState.html">SessionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignalError.html">SignalError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CipherTextType.html">CipherTextType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HKDFVersion.html">HKDFVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SignalErrorType.html">SignalErrorType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:22LibSignalProtocolSwift14getFingerprint33_6A8261713B71FB60AB9C03E79A4B86FFLL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:22LibSignalProtocolSwift13getLogicalKey33_6A8261713B71FB60AB9C03E79A4B86FFLL10Foundation4DataVSayAA06PublicG0VG3for_tF">getLogicalKey(for:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KeyStore.html">KeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreKeyStore.html">PreKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SenderKeyStore.html">SenderKeyStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionStore.html">SessionStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SignedPreKeyStore.html">SignedPreKeyStore</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyCommitmentV0.html">DeviceConsistencyCommitmentV0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencyMessage.html">DeviceConsistencyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DeviceConsistencySignature.html">DeviceConsistencySignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Fingerprint.html">Fingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GroupCipher.html">GroupCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HKDF.html">HKDF</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyPair.html">KeyPair</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PendingPreKey.html">PendingPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PrivateKey.html">PrivateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicKey.html">PublicKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetChainKey.html">RatchetChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RatchetRootKey.html">RatchetRootKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScannableFingerprint.html">ScannableFingerprint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChain.html">SenderChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderChainKey.html">SenderChainKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyDistributionMessage.html">SenderKeyDistributionMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderKeyMessage.html">SenderKeyMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SenderMessageKey.html">SenderMessageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionBuilder.html">SessionBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionCipher.html">SessionCipher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKey.html">SessionPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionPreKeyPublic.html">SessionPreKeyPublic</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKey.html">SessionSignedPreKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalAddress.html">SignalAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalCrypto.html">SignalCrypto</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalMessage.html">SignalMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22LibSignalProtocolSwift22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>HKDFVersion</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">HKDFVersion</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                </div>
+              </div>
+            <p>The different versions of the HKDF</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22LibSignalProtocolSwift11HKDFVersionO8version2A2CmF"></a>
+                    <a name="//apple_ref/swift/Element/version2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22LibSignalProtocolSwift11HKDFVersionO8version2A2CmF">version2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Older messages have an iteration offset of 0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">version2</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22LibSignalProtocolSwift11HKDFVersionO8version3A2CmF"></a>
+                    <a name="//apple_ref/swift/Element/version3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22LibSignalProtocolSwift11HKDFVersionO8version3A2CmF">version3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Newer messages have an iteration offset of 1</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">version3</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-01-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

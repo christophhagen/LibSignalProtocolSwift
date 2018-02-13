@@ -39,9 +39,6 @@ public enum SignalErrorType: String {
     /// The message structure is invalid
     case invalidMessage = "Invalid message"
 
-    /// The version of the message or object is unsupported
-    case invalidVersion = "Invalid version"
-
     /// The length of a message or stored object is incorrect
     case invalidLength = "Invalid length"
 
@@ -59,9 +56,6 @@ public enum SignalErrorType: String {
 
     /// A serialized record or message is not in valid protocol buffer format
     case invalidProtoBuf = "Invalid protoBuf"
-
-    /// The version of two fingerprints is not equal
-    case fPVersionMismatch = "Fingerprint version mismatch"
 
     /// The identity of two fingerprints is not equal
     case fPIdentityMismatch = "Fingerprint identity mismatch"

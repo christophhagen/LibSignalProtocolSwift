@@ -46,20 +46,6 @@ struct DeviceConsistencyMessage {
 extension DeviceConsistencyMessage {
 
     /**
-     The message serialized through a protocol buffer.
-     - throws: `SignalError` of type `invalidProtoBuf`
-     - returns: The serialized record of the message
-    */
-    func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf,
-                              "Could not serialize DeviceConsistencyMessage: \(error.localizedDescription)")
-        }
-    }
-
-    /**
      The message converted to a protocol buffer object.
      */
     var object: Signal_DeviceConsistencyCodeMessage {
@@ -67,24 +53,6 @@ extension DeviceConsistencyMessage {
             $0.generation = self.generation
             $0.signature = self.signature.signature
         }
-    }
-
-    /**
-     Create a consistency message from a serialized protocol buffer record.
-     - parameter data: The serialized data
-     - parameter commitment: The commitment needed for verification
-     - parameter identityKey: The identity key needed for verification
-     - throws: `SignalError` errors
-    */
-    init(from data: Data, commitment: DeviceConsistencyCommitmentV0, identityKey: PublicKey) throws {
-        let object: Signal_DeviceConsistencyCodeMessage
-        do {
-            object = try Signal_DeviceConsistencyCodeMessage(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf,
-                              "Could not deserialize DeviceConsistencyMessage: \(error.localizedDescription)")
-        }
-        try self.init(from: object, commitment: commitment, identityKey: identityKey)
     }
 
     /**
@@ -108,4 +76,41 @@ extension DeviceConsistencyMessage {
         self.generation = object.generation
         self.signature = DeviceConsistencySignature(signature: object.signature, vrfOutput: vrfOutput)
     }
+}
+
+extension DeviceConsistencyMessage {
+
+    /**
+     The message serialized through a protocol buffer.
+     - throws: `SignalError` of type `invalidProtoBuf`
+     - returns: The serialized record of the message
+     */
+    func data() throws -> Data {
+        do {
+            return try object.serializedData()
+        } catch {
+            throw SignalError(.invalidProtoBuf,
+                              "Could not serialize DeviceConsistencyMessage: \(error.localizedDescription)")
+        }
+    }
+
+    /**
+     Create a consistency message from a serialized protocol buffer record.
+     - parameter data: The serialized data
+     - parameter commitment: The commitment needed for verification
+     - parameter identityKey: The identity key needed for verification
+     - throws: `SignalError` errors
+    */
+    init(from data: Data, commitment: DeviceConsistencyCommitmentV0, identityKey: PublicKey) throws {
+        let object: Signal_DeviceConsistencyCodeMessage
+        do {
+            object = try Signal_DeviceConsistencyCodeMessage(serializedData: data)
+        } catch {
+            throw SignalError(.invalidProtoBuf,
+                              "Could not deserialize DeviceConsistencyMessage: \(error.localizedDescription)")
+        }
+        try self.init(from: object, commitment: commitment, identityKey: identityKey)
+    }
+
+
 }

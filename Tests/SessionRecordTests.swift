@@ -22,7 +22,7 @@ class SessionRecordTests: XCTestCase {
             return
         }
         let record = SessionRecord(state: state)
-        guard let recordSerialized = try? record.data() else {
+        guard let recordSerialized = try? record.protoData() else {
             XCTFail("Could not serialize record")
             return
         }
@@ -71,7 +71,7 @@ class SessionRecordTests: XCTestCase {
             return
         }
 
-        guard let recordSerialized = try? record.data() else {
+        guard let recordSerialized = try? record.protoData() else {
             XCTFail("Could not serialize record")
             return
         }
@@ -93,14 +93,13 @@ class SessionRecordTests: XCTestCase {
     }
 
     func testSessionReceiverChainCount() {
-        let kdf = HKDF(messageVersion: .version2)
         let keySeed = Data(repeating: 0x42, count: 32)
 
         /* Create 7 instances of receiver chain data */
         var chainKeys = [RatchetChainKey]()
         var ratchetKeys = [PublicKey]()
         for _ in 0..<7 {
-            let key = RatchetChainKey(kdf: kdf, key: keySeed, index: 0)
+            let key = RatchetChainKey(key: keySeed, index: 0)
             chainKeys.append(key)
             do {
                 try ratchetKeys.append(KeyPair().publicKey)
@@ -141,9 +140,6 @@ class SessionRecordTests: XCTestCase {
 
     private func fillTestSessionState(state: SessionState, ratchetKey1: PublicKey?, ratchetKey2: PublicKey?) -> Bool {
 
-        /* Set the session version */
-        state.version = 2
-
         /* Set local and remote identity keys */
         do {
             state.localIdentity = try KeyPair().publicKey
@@ -154,9 +150,8 @@ class SessionRecordTests: XCTestCase {
         }
 
         /* Set the root key */
-        let kdf = HKDF(messageVersion: .version2)
         let keySeed = Data(repeating: 0x42, count: 32)
-        state.rootKey = RatchetRootKey(kdf: kdf, key: keySeed)
+        state.rootKey = RatchetRootKey(key: keySeed)
 
         /* Set the previous counter */
         state.previousCounter = 4
@@ -164,7 +159,7 @@ class SessionRecordTests: XCTestCase {
         /* Set the sender chain */
         do {
             let senderRatchetKeyPair = try KeyPair()
-            let ratchetChainkey = RatchetChainKey(kdf: kdf, key: keySeed, index: 0)
+            let ratchetChainkey = RatchetChainKey(key: keySeed, index: 0)
             state.senderChain = SenderChain(ratchetKey: senderRatchetKeyPair, chainKey: ratchetChainkey)
         } catch {
             XCTFail("Could not create ratchet key pair")
@@ -173,7 +168,7 @@ class SessionRecordTests: XCTestCase {
 
         /* Set the receiver chains */
         if let key = ratchetKey1 {
-            let chainKey = RatchetChainKey(kdf: kdf, key: keySeed, index: 0)
+            let chainKey = RatchetChainKey(key: keySeed, index: 0)
             let chain = ReceiverChain(ratchetKey: key, chainKey: chainKey)
             state.add(receiverChain: chain)
             do {
@@ -189,7 +184,7 @@ class SessionRecordTests: XCTestCase {
         }
 
         if let key = ratchetKey2 {
-            let chainKey = RatchetChainKey(kdf: kdf, key: keySeed, index: 0)
+            let chainKey = RatchetChainKey(key: keySeed, index: 0)
             let chain = ReceiverChain(ratchetKey: key, chainKey: chainKey)
             state.add(receiverChain: chain)
             do {

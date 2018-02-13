@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftProtobuf
 
 
 /**
@@ -122,54 +123,26 @@ public struct KeyPair {
 /**
  Provide the possibility to convert a `KeyPair` from and to bytes
  */
-extension KeyPair {
-
-    /**
-     Create a key pair from a serialized record.
-     - parameter data: The serialized key pair.
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    init(from data: Data) throws {
-        let object: Signal_KeyPair
-        do {
-            object = try Signal_KeyPair(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not create key pair from data: \(error)")
-        }
-        try self.init(from: object)
-    }
+extension KeyPair: ProtocolBufferEquivalent {
 
     /**
      Create a key pair from a protobuf object.
-     - parameter object: The protobuf object.
+     - parameter protoObject: The protobuf object.
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    init(from object: Signal_KeyPair) throws {
-        guard object.hasPublicKey, object.hasPrivateKey else {
+    init(from protoObject: Signal_KeyPair) throws {
+        guard protoObject.hasPublicKey, protoObject.hasPrivateKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in KeyPair ProtoBuf object")
         }
-        self.publicKey = try PublicKey(from: object.publicKey)
-        self.privateKey = try PrivateKey(from: object.privateKey)
+        self.publicKey = try PublicKey(from: protoObject.publicKey)
+        self.privateKey = try PrivateKey(from: protoObject.privateKey)
     }
 
     /// The key pair converted to a ProtoBuf object
-    var object: Signal_KeyPair {
+    var protoObject: Signal_KeyPair {
         return Signal_KeyPair.with {
             $0.publicKey = self.publicKey.data
             $0.privateKey = self.privateKey.data
-        }
-    }
-
-    /**
-     Return a serialized record of the key pair
-     - returns: The serialized record
-     - throws: `SignalError` of type `invalidProtoBuf`
-     */
-    func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize KeyPair: \(error)")
         }
     }
 }

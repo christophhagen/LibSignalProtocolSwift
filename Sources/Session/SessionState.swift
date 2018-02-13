@@ -42,19 +42,13 @@ struct SymmetricParameters {
 /**
  A session state contains all data needed for communicating with a remote party.
  */
-final class SessionState {
-
-    /// The current version of the message encryption
-    private static let cipherTextCurrentVersion: UInt8 = 3
+final class SessionState: ProtocolBufferEquivalent {
 
     /// The maximum number of receiver chains for the remote party
     private static let maxReceiverChains = 5
 
     /// The info material used for the derivation of chain and root keys
     private static let keyInfo = "WhisperText".data(using: .utf8)!
-
-    /// The version of the session
-    var version: UInt8 = 2
 
     /// The last counter in the previous sender chain
     var previousCounter: UInt32 = 0
@@ -212,7 +206,6 @@ final class SessionState {
             ratchetKey: theirRatchetKey,
             chainKey: derivedChain))
 
-        self.version = SessionState.cipherTextCurrentVersion
         self.remoteIdentity = theirIdentityKey
         self.localIdentity = ourIdentityKey.publicKey
         self.senderChain = SenderChain(
@@ -247,7 +240,6 @@ final class SessionState {
         let secret = secret1 + secret2 + secret3 + secret4 + secret5
         let (derivedRoot, derivedChain) = try calculateDerivedKeys(secret: secret)
 
-        self.version = SessionState.cipherTextCurrentVersion
         self.remoteIdentity = theirIdentityKey
         self.localIdentity = ourIdentityKey.publicKey
         self.senderChain = SenderChain(ratchetKey: ourRatchetKey, chainKey: derivedChain)
@@ -286,72 +278,15 @@ final class SessionState {
      - returns: The root and chain key
      */
     private func calculateDerivedKeys(secret: Data) throws -> (rootKey: RatchetRootKey, chainKey: RatchetChainKey) {
-
-        let kdf = HKDF(messageVersion: .version3)
         let salt = Data(count: RatchetChainKey.hashOutputSize)
-
-        return try kdf.chainAndRootKey(material: secret, salt: salt, info: SessionState.keyInfo)
+        return try HKDF.chainAndRootKey(material: secret, salt: salt, info: SessionState.keyInfo)
     }
 
     // MARK: Protocol Buffers
 
-    /**
-     Create a state from a protobuf object.
-     - parameter object: The protobuf object.
-     - throws: `SignalError` of type `.invalidProtoBuf`
-     */
-    init(from object: Signal_Session) throws {
-        guard object.hasSessionVersion else {
-            throw SignalError(.invalidProtoBuf, "Missing session version in SessionState ProtoBuf object")
-        }
-        if object.sessionVersion > UInt8.max {
-            throw SignalError(.invalidProtoBuf, "Invalid session version \(object.sessionVersion)")
-        }
-        self.version = UInt8(object.sessionVersion)
-        if object.hasLocalIdentityPublic {
-            self.localIdentity = try PublicKey(from: object.localIdentityPublic)
-        }
-        if object.hasRemoteIdentityPublic {
-            self.remoteIdentity = try PublicKey(from: object.remoteIdentityPublic)
-        }
-        guard let kdfVersion = HKDFVersion(rawValue: version) else {
-            throw SignalError(.invalidVersion, "Invalid KDF version \(version)")
-        }
-        if object.hasRootKey {
-            self.rootKey = RatchetRootKey(from: object.rootKey, version: kdfVersion)
-        }
-        self.previousCounter = object.previousCounter
-        if object.hasSenderChain {
-            self.senderChain = try SenderChain(from: object.senderChain, version: kdfVersion)
-        }
-        self.receiverChains = try object.receiverChains.map { try ReceiverChain(from: $0, version: kdfVersion) }
-        if object.hasPendingPreKey {
-            self.pendingPreKey = try PendingPreKey(serializedObject: object.pendingPreKey)
-        }
-        if object.hasAliceBaseKey {
-            self.aliceBaseKey = try PublicKey(from: object.aliceBaseKey)
-        }
-    }
-
-    /**
-     Create a state from serialized data.
-     - parameter data: The serialized record.
-     - throws: `SignalError` of type `.invalidProtoBuf`
-     */
-    convenience init(from data: Data) throws {
-        let object: Signal_Session
-        do {
-            object = try Signal_Session(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Invalid SessionState record: \(error)")
-        }
-        try self.init(from: object)
-    }
-
     /// The state converted to a protobuf object
-    var object: Signal_Session {
+    var protoObject: Signal_Session {
         return Signal_Session.with {
-            $0.sessionVersion = UInt32(self.version)
             if let item = self.localIdentity {
                 $0.localIdentityPublic = item.data
             }
@@ -359,15 +294,15 @@ final class SessionState {
                 $0.remoteIdentityPublic = item.data
             }
             if let item = self.rootKey {
-                $0.rootKey = item.data
+                $0.rootKey = item.protoData()
             }
             $0.previousCounter = self.previousCounter
             if let item = self.senderChain {
-                $0.senderChain = item.object
+                $0.senderChain = item.protoObject
             }
-            $0.receiverChains = receiverChains.map { $0.object }
+            $0.receiverChains = receiverChains.map { $0.protoObject }
             if let item = self.pendingPreKey {
-                $0.pendingPreKey = item.object
+                $0.pendingPreKey = item.protoObject
             }
             if let item = self.aliceBaseKey {
                 $0.aliceBaseKey = item.data
@@ -376,15 +311,30 @@ final class SessionState {
     }
 
     /**
-     Serialize the session state.
-     - returns: The serialized record
+     Create a state from a protobuf object.
+     - parameter protoObject: The protobuf object.
      - throws: `SignalError` of type `.invalidProtoBuf`
      */
-    func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SessionState: \(error)")
+    init(from protoObject: Signal_Session) throws {
+        if protoObject.hasLocalIdentityPublic {
+            self.localIdentity = try PublicKey(from: protoObject.localIdentityPublic)
+        }
+        if protoObject.hasRemoteIdentityPublic {
+            self.remoteIdentity = try PublicKey(from: protoObject.remoteIdentityPublic)
+        }
+        if protoObject.hasRootKey {
+            self.rootKey = RatchetRootKey(from: protoObject.rootKey)
+        }
+        self.previousCounter = protoObject.previousCounter
+        if protoObject.hasSenderChain {
+            self.senderChain = try SenderChain(from: protoObject.senderChain)
+        }
+        self.receiverChains = try protoObject.receiverChains.map { try ReceiverChain(from: $0) }
+        if protoObject.hasPendingPreKey {
+            self.pendingPreKey = try PendingPreKey(from: protoObject.pendingPreKey)
+        }
+        if protoObject.hasAliceBaseKey {
+            self.aliceBaseKey = try PublicKey(from: protoObject.aliceBaseKey)
         }
     }
 }
@@ -400,8 +350,7 @@ extension SessionState: Equatable {
      - returns: `true` if the states are equal
      */
     static func ==(lhs: SessionState, rhs: SessionState) -> Bool {
-        guard lhs.version == rhs.version,
-            lhs.previousCounter == rhs.previousCounter else {
+        guard lhs.previousCounter == rhs.previousCounter else {
                 return false
         }
         guard lhs.localIdentity == rhs.localIdentity,

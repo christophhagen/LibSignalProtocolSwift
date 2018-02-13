@@ -51,29 +51,31 @@ struct SenderChainKey {
 
 // MARK: Protocol Buffers
 
-extension SenderChainKey {
-
-    /**
-     Create a chain key from a ProtoBuf object.
-     - parameter object: The chain key ProtoBuf object.
-     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
-     */
-    init(from object: Signal_SenderKeyState.SenderChainKey) throws {
-        guard object.hasSeed, object.hasIteration else {
-            throw SignalError(.invalidProtoBuf, "Missing data in SenderChainKey Protobuf object")
-        }
-        self.chainKey = object.seed
-        self.iteration = object.iteration
-    }
+extension SenderChainKey: ProtocolBufferEquivalent {
 
     /// Convert the sender chain key to a ProtoBuf object
-    var object: Signal_SenderKeyState.SenderChainKey {
+    var protoObject: Signal_SenderKeyState.SenderChainKey {
         return Signal_SenderKeyState.SenderChainKey.with {
             $0.seed = self.chainKey
             $0.iteration = self.iteration
         }
     }
+
+    /**
+     Create a chain key from a ProtoBuf object.
+     - parameter protoObject: The chain key ProtoBuf object.
+     - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
+     */
+    init(from protoObject: Signal_SenderKeyState.SenderChainKey) throws {
+        guard protoObject.hasSeed, protoObject.hasIteration else {
+            throw SignalError(.invalidProtoBuf, "Missing data in SenderChainKey Protobuf object")
+        }
+        self.chainKey = protoObject.seed
+        self.iteration = protoObject.iteration
+    }
 }
+
+// MARK: Protocol Equatable
 
 extension SenderChainKey: Equatable {
     /**

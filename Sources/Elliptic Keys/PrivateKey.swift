@@ -5,10 +5,8 @@
 //  Created by User on 27.01.18.
 //  Copyright © 2018 User. All rights reserved.
 //
-
 import Foundation
 import Curve25519
-
 
 /**
  The private part of an elliptic curve key pair.
@@ -112,6 +110,11 @@ public struct PrivateKey {
     func calculateAgreement(publicKey: PublicKey) throws -> Data {
         return try publicKey.calculateAgreement(privateKey: self)
     }
+
+    /// The serialized data of the private key
+    var data: Data {
+        return key
+    }
 }
 
 extension PrivateKey: Equatable {
@@ -128,7 +131,7 @@ extension PrivateKey: Equatable {
 
 // MARK: Protocol Buffers
 
-extension PrivateKey {
+extension PrivateKey: ProtocolBufferSerializable {
 
     /**
      Create a private key from a byte record.
@@ -141,7 +144,7 @@ extension PrivateKey {
     }
 
     /// Convert the key to serialized data
-    var data: Data {
+    func protoData() -> Data {
         return key
     }
 }

@@ -30,19 +30,17 @@ message Session {
         optional bytes  baseKey        = 3;
     }
 
-    optional uint32 sessionVersion       = 1;
-    optional bytes localIdentityPublic   = 2;
-    optional bytes remoteIdentityPublic  = 3;
+    optional bytes localIdentityPublic   = 1;
+    optional bytes remoteIdentityPublic  = 2;
 
-    optional bytes rootKey               = 4;
-    optional uint32 previousCounter      = 5;
+    optional bytes rootKey               = 3;
+    optional uint32 previousCounter      = 4;
 
-    optional Chain senderChain           = 6;
-    repeated Chain receiverChains        = 7;
+    optional Chain senderChain           = 5;
+    repeated Chain receiverChains        = 6;
 
-    optional PendingPreKey pendingPreKey = 8;
-
-    optional bytes aliceBaseKey          = 9;
+    optional PendingPreKey pendingPreKey = 7;
+    optional bytes aliceBaseKey          = 8;
 }
 
 message Record {

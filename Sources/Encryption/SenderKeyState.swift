@@ -14,7 +14,7 @@ import Foundation
  and generates new keys for messages.
  Each session can have multiple states.
  */
-final class SenderKeyState {
+final class SenderKeyState: ProtocolBufferEquivalent {
 
     /// The maximum number of message keys stored
     static let messageKeyMaximum = 2000
@@ -122,18 +122,8 @@ final class SenderKeyState {
         // Get message key and advance chain key
         return try chainKey.messageKey()
     }
-    
-    // MARK: Protocol Buffers
 
-    /**
-     Create a SenderKeyState from serialized data.
-     - note: This function can be used together with `data()`, to store and retrieve objects from databases.
-     - parameter data: The serialized data.
-    */
-    convenience init(from data: Data) throws {
-        let object = try Signal_SenderKeyState(serializedData: data)
-        try self.init(from: object)
-    }
+    // MARK: Protocol Buffers
 
     /**
      Create a SenderKeyState from a ProtoBuf object.
@@ -155,34 +145,22 @@ final class SenderKeyState {
     }
 
     /// The state converted to a ProtoBuf object
-    var object: Signal_SenderKeyState {
+    var protoObject: Signal_SenderKeyState {
         return Signal_SenderKeyState.with {
             $0.senderKeyID = self.keyId
-            $0.senderChainKey = self.chainKey.object
+            $0.senderChainKey = self.chainKey.protoObject
             $0.senderSigningKey = Signal_SenderKeyState.SenderSigningKey.with {
                 $0.public = self.signaturePublicKey.data
                 if let key = self.signaturePrivateKey {
                     $0.private = key.data
                 }
             }
-            $0.senderMessageKeys = self.messageKeys.map { $0.object }
-        }
-    }
-
-    /**
-    The state converted to serialized data for storage.
-     - note: Use `init(from:)` to deserialize an object
-     - throws: `SignalError` of type `invalidProtoBuf`, if the state can't be serialized
-     - returns: The serialized state
-    */
-    func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SenderKeyState: \(error)")
+            $0.senderMessageKeys = self.messageKeys.map { $0.protoObject }
         }
     }
 }
+
+// MARK: Protocol Equatable
 
 extension SenderKeyState: Equatable {
 

@@ -31,7 +31,7 @@ public struct SenderKeyDistributionMessage {
      - throws: `SignalError` of type `invalidProtoBuf` if the serialization fails
     */
     public func baseMessage() throws -> CipherTextMessage {
-        return CipherTextMessage(type: .senderKeyDistribution, data: try self.data())
+        return CipherTextMessage(type: .senderKeyDistribution, data: try self.protoData())
     }
 
     /**
@@ -69,24 +69,10 @@ extension SenderKeyDistributionMessage: Equatable {
 
 // MARK: Protocol buffers
 
-extension SenderKeyDistributionMessage {
-
-    /**
-     Convert the distribution message to serialized data.
-     - returns: Serialized data
-     - throws: `SignalError` of type `invalidProtoBuf`, if the serialization fails
-    */
-    public func data() throws -> Data {
-        let version = (CipherTextMessage.currentVersion << 4) | CipherTextMessage.currentVersion
-        do {
-            return try Data([version]) + object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SenderKeyDistributionMessage: \(error)")
-        }
-    }
+extension SenderKeyDistributionMessage: ProtocolBufferEquivalent {
 
     /// Convert the distribution message to a ProtoBuf object
-    var object: Signal_SenderKeyDistributionMessage {
+    var protoObject: Signal_SenderKeyDistributionMessage {
         return Signal_SenderKeyDistributionMessage.with {
             $0.id = self.id
             $0.iteration = self.iteration
@@ -96,47 +82,18 @@ extension SenderKeyDistributionMessage {
     }
 
     /**
-     Create a distribution message from serialized data.
-     - note: The types of errors thrown are:
-     - `invalidProtoBuf`, if data is missing or corrupt
-     - `legacyMessage`, if the message version is older than the current version
-     - `invalidVersion`, if the message version is newer than the current version
-     - parameter data: The serialized data
-     - throws: `SignalError` errors
-    */
-    public init(from data: Data) throws {
-        guard data.count > 1 else {
-            throw SignalError(.invalidProtoBuf, "No data in SenderKeyDistributionMessage ProtoBuf data")
-        }
-        let version = (data[0] & 0xF0) >> 4
-        if version < CipherTextMessage.currentVersion {
-            throw SignalError(.legacyMessage, "Old message version \(version)")
-        }
-        if version > CipherTextMessage.currentVersion {
-            throw SignalError(.invalidVersion, "Unknown version \(version)")
-        }
-        let object: Signal_SenderKeyDistributionMessage
-        do {
-            object = try Signal_SenderKeyDistributionMessage(serializedData: data.advanced(by: 1))
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not create distribution message object: \(error)")
-        }
-        try self.init(from: object, version: version)
-    }
-
-    /**
      Create a distribution message from a ProtoBuf object.
-     - parameter object: The ProtoBuf object
+     - parameter protoObject: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from object: Signal_SenderKeyDistributionMessage, version: UInt8) throws {
-        guard object.hasID, object.hasIteration, object.hasChainKey, object.hasSigningKey else {
+    init(from protoObject: Signal_SenderKeyDistributionMessage) throws {
+        guard protoObject.hasID, protoObject.hasIteration, protoObject.hasChainKey, protoObject.hasSigningKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyDistributionMessage Protobuf object")
         }
 
-        self.id = object.id
-        self.iteration = object.iteration
-        self.chainKey = object.chainKey
-        self.signatureKey = try PublicKey(from: object.signingKey)
+        self.id = protoObject.id
+        self.iteration = protoObject.iteration
+        self.chainKey = protoObject.chainKey
+        self.signatureKey = try PublicKey(from: protoObject.signingKey)
     }
 }

@@ -57,7 +57,7 @@ extension SenderKeyStore {
      - throws: `SignalErrorType.storageError`, `SignalErrorType.invalidProtoBuf`
      */
     func store(senderKey: SenderKeyRecord, for address: Address) throws {
-        let data = try senderKey.data()
+        let data = try senderKey.protoData()
         try store(senderKey: data, for: address)
     }
 }

@@ -45,41 +45,10 @@ public struct SessionSignedPreKeyPublic {
 
 // MARK: Protocol Buffers
 
-extension SessionSignedPreKeyPublic {
-
-    /**
-     Create a signed pre key from serialized data.
-     - parameter data: The serialized record.
-     - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
-     */
-    public init(from data: Data) throws {
-        let object: Signal_SignedPreKey.PublicPart
-        do {
-            object = try Signal_SignedPreKey.PublicPart(serializedData: data)
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not deserialize SessionSignedPreKey ProtoBuf object: \(error)")
-        }
-        try self.init(from: object)
-    }
-
-    /**
-     Create a signed pre key from a ProtoBuf object.
-     - parameter object: The ProtoBuf object.
-     - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
-     */
-    init(from object: Signal_SignedPreKey.PublicPart) throws {
-        guard object.hasID, object.hasKey,
-            object.hasSignature, object.hasTimestamp else {
-                throw SignalError(.invalidProtoBuf, "Missing data in SessionSignedPreKey object")
-        }
-        self.id = object.id
-        self.key = try PublicKey(from: object.key)
-        self.timestamp = object.timestamp
-        self.signature = object.signature
-    }
+extension SessionSignedPreKeyPublic: ProtocolBufferEquivalent {
 
     /// Convert the public signed pre key to a ProtoBuf object
-    var object: Signal_SignedPreKey.PublicPart {
+    var protoObject: Signal_SignedPreKey.PublicPart {
         return Signal_SignedPreKey.PublicPart.with {
             $0.id = self.id
             $0.key = self.key.data
@@ -89,18 +58,23 @@ extension SessionSignedPreKeyPublic {
     }
 
     /**
-     Convert the signed pre key to serialized data.
-     - returns: The serialized record.
-     - throws: `SignalError` of type `invalidProtoBuf`
+     Create a signed pre key from a ProtoBuf object.
+     - parameter protoObject: The ProtoBuf object.
+     - throws: `SignalError` of type `invalidProtoBuf` if data is corrupt or missing
      */
-    public func data() throws -> Data {
-        do {
-            return try object.serializedData()
-        } catch {
-            throw SignalError(.invalidProtoBuf, "Could not serialize SessionSignedPreKey ProtoBuf object: \(error)")
+    init(from protoObject: Signal_SignedPreKey.PublicPart) throws {
+        guard protoObject.hasID, protoObject.hasKey,
+            protoObject.hasSignature, protoObject.hasTimestamp else {
+                throw SignalError(.invalidProtoBuf, "Missing data in SessionSignedPreKey object")
         }
+        self.id = protoObject.id
+        self.key = try PublicKey(from: protoObject.key)
+        self.timestamp = protoObject.timestamp
+        self.signature = protoObject.signature
     }
 }
+
+// MARK: Protocol Equatable
 
 extension SessionSignedPreKeyPublic: Equatable {
 
