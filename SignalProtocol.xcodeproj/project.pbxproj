@@ -300,7 +300,7 @@
 		CE8CC11620334CCD002F410A /* ProtocolBufferSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolBufferSerializable.swift; sourceTree = "<group>"; };
 		CEB45A45201CB2E6002BB845 /* SignalProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB45A48201CB2E6002BB845 /* SignalProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalProtocol.h; sourceTree = "<group>"; };
-		CEB45A49201CB2E6002BB845 /* Info iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info iOS.plist"; sourceTree = "<group>"; };
+		CEB45A49201CB2E6002BB845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB45A51201CB30E002BB845 /* PrivateKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
 		CEB45A53201CB318002BB845 /* PublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
 		CEB45A55201CB320002BB845 /* KeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
@@ -348,11 +348,8 @@
 		CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionBuilder.swift; sourceTree = "<group>"; };
 		CEB45AA7201CB4D0002BB845 /* SessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
 		CEB45AFD201CC35A002BB845 /* SignalProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEB45B00201CC35A002BB845 /* Info macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info macOS.plist"; sourceTree = "<group>"; };
 		CEB45B0A201CC383002BB845 /* SignalProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEB45B0D201CC383002BB845 /* Info tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info tvOS.plist"; sourceTree = "<group>"; };
 		CEB45B17201CC39B002BB845 /* SignalProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEB45B1A201CC39C002BB845 /* Info watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info watchOS.plist"; sourceTree = "<group>"; };
 		CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCommonCrypto.swift; sourceTree = "<group>"; };
 		CEB45B7B201CC6F5002BB845 /* TestHelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelperFunctions.swift; sourceTree = "<group>"; };
 		CEB45B7C201CC6F5002BB845 /* HKDFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKDFTests.swift; sourceTree = "<group>"; };
@@ -662,10 +659,7 @@
 		CEB45B1F201CC3FB002BB845 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				CEB45A49201CB2E6002BB845 /* Info iOS.plist */,
-				CEB45B00201CC35A002BB845 /* Info macOS.plist */,
-				CEB45B0D201CC383002BB845 /* Info tvOS.plist */,
-				CEB45B1A201CC39C002BB845 /* Info watchOS.plist */,
+				CEB45A49201CB2E6002BB845 /* Info.plist */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -1513,7 +1507,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info iOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SignalProtocol-iOS";
@@ -1538,7 +1532,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info iOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SignalProtocol-iOS";
@@ -1595,7 +1589,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info macOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SignalProtocol-macOS";
@@ -1620,7 +1614,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info macOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SignalProtocol-macOS";
@@ -1643,7 +1637,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info tvOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SwiftProtocol-tvOS";
@@ -1667,7 +1661,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info tvOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SwiftProtocol-tvOS";
@@ -1692,7 +1686,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info watchOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SwiftProtocol-watchOS";
@@ -1717,7 +1711,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info watchOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SwiftProtocol-watchOS";
