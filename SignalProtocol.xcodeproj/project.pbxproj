@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B6FBFBA2C8C9FF5D69B311D /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7902E99C38165D76252D6E /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework */; };
 		0D42425BFD7593388FC5AA07 /* Pods_SignalProtocol_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A564740F727F89A5F7667C /* Pods_SignalProtocol_Tests.framework */; };
-		0EA9EB8490D4830E4A24A496 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799DB0BEC5C4E31FE5C015C0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */; };
-		33E288FEA97D46623AEA83D3 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8525D4832B0D5C24C4E16EF /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */; };
-		4E0E0ACED89CCB50150250E6 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6035B4D73420FBA48D8E8C87 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */; };
 		70FC031FEC07D9B9120BF739 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6AEC7559D93BB880B17780 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework */; };
 		A6F5009CFAD46388BC1EC3D6 /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8645CBB0EC8EA86EA2C81A /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework */; };
 		CE53032C201F47920004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
@@ -252,7 +249,6 @@
 		CEC812E7201E35980018D42E /* SessionPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */; };
 		CEC812E8201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
 		CEC81310201F42020018D42E /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
-		D23E638B310AB90839DAFB81 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AAEEC9F0758C419B37B8F9 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */; };
 		E81BBF70E3EB45B7159D33A6 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B36827A5FED4B90A9B1D2A9 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework */; };
 		F3639E1929C97B455626C01E /* Pods_LibSignalProtocolSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3983CBE20B66BFD08D0E61B /* Pods_LibSignalProtocolSwift_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -390,7 +386,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EA9EB8490D4830E4A24A496 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework in Frameworks */,
 				70FC031FEC07D9B9120BF739 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +404,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D23E638B310AB90839DAFB81 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework in Frameworks */,
 				A6F5009CFAD46388BC1EC3D6 /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +412,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E0E0ACED89CCB50150250E6 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework in Frameworks */,
 				0B6FBFBA2C8C9FF5D69B311D /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +420,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33E288FEA97D46623AEA83D3 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework in Frameworks */,
 				E81BBF70E3EB45B7159D33A6 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1519,7 +1511,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1544,7 +1536,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1600,7 +1592,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1608,7 +1600,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SignalProtocol-macOS";
 				PRODUCT_NAME = SignalProtocol;
 				SDKROOT = macosx;
@@ -1626,7 +1617,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1634,7 +1625,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info/Info macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "christophhagen.SignalProtocol-macOS";
 				PRODUCT_NAME = SignalProtocol;
 				SDKROOT = macosx;
@@ -1651,7 +1641,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1664,7 +1654,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
 			};
 			name = Debug;
 		};
@@ -1676,7 +1665,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1689,7 +1678,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
 			};
 			name = Release;
 		};
@@ -1702,7 +1690,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1715,7 +1703,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
 			name = Debug;
 		};
@@ -1728,7 +1715,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8WR4M6QQ4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1741,7 +1728,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
 			name = Release;
 		};
