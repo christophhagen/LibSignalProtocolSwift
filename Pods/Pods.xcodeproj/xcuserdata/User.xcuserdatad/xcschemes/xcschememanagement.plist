@@ -44,27 +44,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LibSignalProtocolSwift Tests.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift-SignalProtocol iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift-SignalProtocol macOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift-SignalProtocol tvOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.xcscheme</key>
+		<key>Pods-LibSignalProtocolSwift-SignalProtocol watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.xcscheme</key>
+		<key>Pods-SignalProtocol Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

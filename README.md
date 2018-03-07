@@ -148,7 +148,7 @@ let aliceFP = try aliceStore.fingerprint(for: bobAddress, localAddress: aliceAdd
 let display = fingerprint.displayText
 
 // ... or transmit the scannable data to the other client...
-let scanData = try fingerprint.scannable.data()
+let scanData = try fingerprint.scannable.protoData()
 
 // ... or compare to a received fingerprint
 fingerprint.matches(scannedFingerprint)

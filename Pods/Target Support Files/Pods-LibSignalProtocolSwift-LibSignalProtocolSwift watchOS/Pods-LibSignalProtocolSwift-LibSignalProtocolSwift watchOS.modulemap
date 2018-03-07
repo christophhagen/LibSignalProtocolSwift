@@ -1,6 +1,0 @@
-framework module Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS {
-  umbrella header "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

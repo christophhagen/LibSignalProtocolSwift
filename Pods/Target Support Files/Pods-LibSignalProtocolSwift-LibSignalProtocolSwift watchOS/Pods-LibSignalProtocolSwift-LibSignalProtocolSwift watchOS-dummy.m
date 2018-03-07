@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS : NSObject
-@end
-@implementation PodsDummy_Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS
-@end

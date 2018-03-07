@@ -40,7 +40,7 @@ extension ProtocolBufferConvertible {
      - throws: `SignalError` of type `invalidProtoBuf`
      - returns: The serialized object
      */
-    func protoData() throws -> Data {
+    public func protoData() throws -> Data {
         do {
             return try asProtoObject().serializedData()
         } catch {
@@ -53,7 +53,7 @@ extension ProtocolBufferConvertible {
      - parameter protoData: The serialized data
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    init(from protoData: Data) throws {
+    public init(from protoData: Data) throws {
         let protoObject: ProtocolBufferClass
         do {
             protoObject = try ProtocolBufferClass(serializedData: protoData)

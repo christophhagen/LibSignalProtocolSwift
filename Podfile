@@ -15,10 +15,10 @@ abstract_target 'LibSignalProtocolSwift' do
 
 
   # iOS
-  target 'LibSignalProtocolSwift iOS' do
+  target 'SignalProtocol iOS' do
     platform :ios, '9.0'
     
-    target 'LibSignalProtocolSwift Tests' do
+    target 'SignalProtocol Tests' do
       inherit! :search_paths
       # Pods for testing
 
@@ -27,21 +27,21 @@ abstract_target 'LibSignalProtocolSwift' do
 
 
   # macOS
-  target 'LibSignalProtocolSwift macOS' do
+  target 'SignalProtocol macOS' do
     platform :osx, '10.9'
     # Pods for LibSignalProtocolSwift macOS
   end
 
 
   # tvOS
-  target 'LibSignalProtocolSwift tvOS' do
+  target 'SignalProtocol tvOS' do
     platform :tvos, '9.0'
     # Pods for LibSignalProtocolSwift tvOS
   end
 
 
   # watchOS
-  target 'LibSignalProtocolSwift watchOS' do
+  target 'SignalProtocol watchOS' do
     platform :watchos, '4.0'
     # Pods for LibSignalProtocolSwift watchOS
   end

@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6FBFBA2C8C9FF5D69B311D /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7902E99C38165D76252D6E /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework */; };
+		0D42425BFD7593388FC5AA07 /* Pods_SignalProtocol_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A564740F727F89A5F7667C /* Pods_SignalProtocol_Tests.framework */; };
 		0EA9EB8490D4830E4A24A496 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799DB0BEC5C4E31FE5C015C0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */; };
 		33E288FEA97D46623AEA83D3 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8525D4832B0D5C24C4E16EF /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */; };
 		4E0E0ACED89CCB50150250E6 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6035B4D73420FBA48D8E8C87 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */; };
+		70FC031FEC07D9B9120BF739 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6AEC7559D93BB880B17780 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework */; };
+		A6F5009CFAD46388BC1EC3D6 /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8645CBB0EC8EA86EA2C81A /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework */; };
 		CE53032C201F47920004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
 		CE53032E201F4EDA0004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
 		CE53032F201F57A70004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
@@ -249,6 +253,7 @@
 		CEC812E8201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
 		CEC81310201F42020018D42E /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
 		D23E638B310AB90839DAFB81 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AAEEC9F0758C419B37B8F9 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */; };
+		E81BBF70E3EB45B7159D33A6 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B36827A5FED4B90A9B1D2A9 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework */; };
 		F3639E1929C97B455626C01E /* Pods_LibSignalProtocolSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3983CBE20B66BFD08D0E61B /* Pods_LibSignalProtocolSwift_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -266,13 +271,27 @@
 		0588A7BDBCA1935B64A6BA0E /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests.release.xcconfig"; sourceTree = "<group>"; };
 		28002907ED809589F09EB000 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		29E9BCC88FAE8F7B6853418F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		2C02505AF64F7D5FF3B3A1B6 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol iOS/Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig"; sourceTree = "<group>"; };
 		39F4F105459C0844F2C69040 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig"; sourceTree = "<group>"; };
+		3B8441AFCC007D3D7D40DC84 /* Pods-LibSignalProtocolSwift-SignalProtocol macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol macOS/Pods-LibSignalProtocolSwift-SignalProtocol macOS.release.xcconfig"; sourceTree = "<group>"; };
+		3E877FB426DFE9171C7FC2A7 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol iOS/Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4BCC771444C85FCF3BA7E181 /* Pods-LibSignalProtocolSwift-SignalProtocol watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol watchOS/Pods-LibSignalProtocolSwift-SignalProtocol watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		5A7902E99C38165D76252D6E /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6035B4D73420FBA48D8E8C87 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675AB85B69229BBDCF4D6A55 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6A4C6C3F3AF9176905093F56 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6DC49A2A631FEA153EE59002 /* Pods-LibSignalProtocolSwift-SignalProtocol tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol tvOS/Pods-LibSignalProtocolSwift-SignalProtocol tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		799DB0BEC5C4E31FE5C015C0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A6FE34FBD6D1A74687D0537 /* Pods-LibSignalProtocolSwift-SignalProtocol watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol watchOS/Pods-LibSignalProtocolSwift-SignalProtocol watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8B36827A5FED4B90A9B1D2A9 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		973114A3203026BCD427CBB2 /* Pods-LibSignalProtocolSwift-SignalProtocol tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol tvOS/Pods-LibSignalProtocolSwift-SignalProtocol tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9B8645CBB0EC8EA86EA2C81A /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4749068EEB5A978CFD6DC9F /* Pods-SignalProtocol Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A4A564740F727F89A5F7667C /* Pods_SignalProtocol_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocol_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4ACAA024EC0DB4712F2CEE4 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		A5D615CE42D80BB561C62973 /* Pods-SignalProtocol Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AC32D0B8C2CE3F2E193CA4E9 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		AF6AEC7559D93BB880B17780 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18BE61307E0184CD9C283B0 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig"; sourceTree = "<group>"; };
 		B7425D62A58F2EADAC8CF796 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B8525D4832B0D5C24C4E16EF /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,6 +382,7 @@
 		CEB45C88201D081C002BB845 /* SessionPreKeyPublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPreKeyPublic.swift; sourceTree = "<group>"; };
 		CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSignedPreKeyPublic.swift; sourceTree = "<group>"; };
 		CEC8130F201F42020018D42E /* Fingerprint.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fingerprint.pb.swift; sourceTree = "<group>"; };
+		E67DEB52A96D5572F6F3E85E /* Pods-LibSignalProtocolSwift-SignalProtocol macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol macOS/Pods-LibSignalProtocolSwift-SignalProtocol macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EA9EB8490D4830E4A24A496 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework in Frameworks */,
+				70FC031FEC07D9B9120BF739 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +401,7 @@
 			files = (
 				CEB45A60201CB3AE002BB845 /* SignalProtocol.framework in Frameworks */,
 				F3639E1929C97B455626C01E /* Pods_LibSignalProtocolSwift_Tests.framework in Frameworks */,
+				0D42425BFD7593388FC5AA07 /* Pods_SignalProtocol_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D23E638B310AB90839DAFB81 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework in Frameworks */,
+				A6F5009CFAD46388BC1EC3D6 /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0E0ACED89CCB50150250E6 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework in Frameworks */,
+				0B6FBFBA2C8C9FF5D69B311D /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33E288FEA97D46623AEA83D3 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework in Frameworks */,
+				E81BBF70E3EB45B7159D33A6 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +443,11 @@
 				B8AAEEC9F0758C419B37B8F9 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */,
 				6035B4D73420FBA48D8E8C87 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */,
 				B8525D4832B0D5C24C4E16EF /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */,
+				AF6AEC7559D93BB880B17780 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework */,
+				9B8645CBB0EC8EA86EA2C81A /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework */,
+				5A7902E99C38165D76252D6E /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework */,
+				8B36827A5FED4B90A9B1D2A9 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework */,
+				A4A564740F727F89A5F7667C /* Pods_SignalProtocol_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -435,6 +465,16 @@
 				A4ACAA024EC0DB4712F2CEE4 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */,
 				AC32D0B8C2CE3F2E193CA4E9 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */,
 				29E9BCC88FAE8F7B6853418F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */,
+				3E877FB426DFE9171C7FC2A7 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig */,
+				2C02505AF64F7D5FF3B3A1B6 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig */,
+				E67DEB52A96D5572F6F3E85E /* Pods-LibSignalProtocolSwift-SignalProtocol macOS.debug.xcconfig */,
+				3B8441AFCC007D3D7D40DC84 /* Pods-LibSignalProtocolSwift-SignalProtocol macOS.release.xcconfig */,
+				973114A3203026BCD427CBB2 /* Pods-LibSignalProtocolSwift-SignalProtocol tvOS.debug.xcconfig */,
+				6DC49A2A631FEA153EE59002 /* Pods-LibSignalProtocolSwift-SignalProtocol tvOS.release.xcconfig */,
+				7A6FE34FBD6D1A74687D0537 /* Pods-LibSignalProtocolSwift-SignalProtocol watchOS.debug.xcconfig */,
+				4BCC771444C85FCF3BA7E181 /* Pods-LibSignalProtocolSwift-SignalProtocol watchOS.release.xcconfig */,
+				A4749068EEB5A978CFD6DC9F /* Pods-SignalProtocol Tests.debug.xcconfig */,
+				A5D615CE42D80BB561C62973 /* Pods-SignalProtocol Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -895,7 +935,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-SignalProtocol iOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -913,7 +953,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-SignalProtocol macOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -926,7 +966,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CommonCryptoModule-iOS/CommonCryptoModule.framework",
 				"${BUILT_PRODUCTS_DIR}/Curve25519-iOS/Curve25519.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf-iOS/SwiftProtobuf.framework",
@@ -939,7 +979,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8D4BFD0C5EFD8D25B0BEDD5C /* [CP] Copy Pods Resources */ = {
@@ -954,7 +994,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol macOS/Pods-LibSignalProtocolSwift-SignalProtocol macOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		92F9DA4E9B587E0A0227DF46 /* [CP] Check Pods Manifest.lock */ = {
@@ -968,7 +1008,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-SignalProtocol tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -987,7 +1027,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol iOS/Pods-LibSignalProtocolSwift-SignalProtocol iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AFF5EC6DE8CA0B7FA981932F /* [CP] Check Pods Manifest.lock */ = {
@@ -1001,7 +1041,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SignalProtocol Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1020,7 +1060,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol watchOS/Pods-LibSignalProtocolSwift-SignalProtocol watchOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D967844D80309D439757CABA /* [CP] Copy Pods Resources */ = {
@@ -1035,7 +1075,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC86084F26A3FB111B585340 /* [CP] Check Pods Manifest.lock */ = {
@@ -1049,7 +1089,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LibSignalProtocolSwift-SignalProtocol watchOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1068,7 +1108,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol tvOS/Pods-LibSignalProtocolSwift-SignalProtocol tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1472,7 +1512,7 @@
 		};
 		CEB45A4E201CB2E6002BB845 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A4C6C3F3AF9176905093F56 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */;
+			baseConfigurationReference = 3E877FB426DFE9171C7FC2A7 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1497,7 +1537,7 @@
 		};
 		CEB45A4F201CB2E6002BB845 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39F4F105459C0844F2C69040 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */;
+			baseConfigurationReference = 2C02505AF64F7D5FF3B3A1B6 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1521,7 +1561,7 @@
 		};
 		CEB45A63201CB3AE002BB845 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28002907ED809589F09EB000 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */;
+			baseConfigurationReference = A4749068EEB5A978CFD6DC9F /* Pods-SignalProtocol Tests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1537,7 +1577,7 @@
 		};
 		CEB45A64201CB3AE002BB845 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0588A7BDBCA1935B64A6BA0E /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */;
+			baseConfigurationReference = A5D615CE42D80BB561C62973 /* Pods-SignalProtocol Tests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1553,7 +1593,7 @@
 		};
 		CEB45B03201CC35A002BB845 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7425D62A58F2EADAC8CF796 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */;
+			baseConfigurationReference = E67DEB52A96D5572F6F3E85E /* Pods-LibSignalProtocolSwift-SignalProtocol macOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1579,7 +1619,7 @@
 		};
 		CEB45B04201CC35A002BB845 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B18BE61307E0184CD9C283B0 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */;
+			baseConfigurationReference = 3B8441AFCC007D3D7D40DC84 /* Pods-LibSignalProtocolSwift-SignalProtocol macOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1605,7 +1645,7 @@
 		};
 		CEB45B10201CC383002BB845 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 675AB85B69229BBDCF4D6A55 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */;
+			baseConfigurationReference = 973114A3203026BCD427CBB2 /* Pods-LibSignalProtocolSwift-SignalProtocol tvOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1630,7 +1670,7 @@
 		};
 		CEB45B11201CC383002BB845 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4ACAA024EC0DB4712F2CEE4 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */;
+			baseConfigurationReference = 6DC49A2A631FEA153EE59002 /* Pods-LibSignalProtocolSwift-SignalProtocol tvOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1655,7 +1695,7 @@
 		};
 		CEB45B1D201CC39C002BB845 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC32D0B8C2CE3F2E193CA4E9 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */;
+			baseConfigurationReference = 7A6FE34FBD6D1A74687D0537 /* Pods-LibSignalProtocolSwift-SignalProtocol watchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1681,7 +1721,7 @@
 		};
 		CEB45B1E201CC39C002BB845 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29E9BCC88FAE8F7B6853418F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */;
+			baseConfigurationReference = 4BCC771444C85FCF3BA7E181 /* Pods-LibSignalProtocolSwift-SignalProtocol watchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;

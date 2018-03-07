@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_LibSignalProtocolSwift_TestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_LibSignalProtocolSwift_TestsVersionString[];
+FOUNDATION_EXPORT double Pods_SignalProtocol_TestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SignalProtocol_TestsVersionString[];
 
