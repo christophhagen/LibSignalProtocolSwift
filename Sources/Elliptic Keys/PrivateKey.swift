@@ -139,12 +139,12 @@ extension PrivateKey: ProtocolBufferSerializable {
      - returns: The private key
      - throws: `SignalError.invalidProtoBuf`
      */
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         try self.init(point: data)
     }
 
     /// Convert the key to serialized data
-    func protoData() -> Data {
+    public func protoData() -> Data {
         return key
     }
 }

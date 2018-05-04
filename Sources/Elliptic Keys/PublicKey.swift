@@ -131,7 +131,7 @@ extension PublicKey: ProtocolBufferSerializable {
      - returns: The object
      - throws: `SignalError.invalidProtoBuf`
      */
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         try self.init(point: data)
     }
 
@@ -139,7 +139,7 @@ extension PublicKey: ProtocolBufferSerializable {
      Return a byte representation of the public key
      - returns: The byte record
      */
-    func protoData() -> Data {
+    public func protoData() -> Data {
         return data
     }
 }
