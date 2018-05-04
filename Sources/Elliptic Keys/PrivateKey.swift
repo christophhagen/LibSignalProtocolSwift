@@ -75,7 +75,7 @@ public struct PrivateKey {
      `invalidSignature`, if the message could not be signed.
      `noRandomBytes`, if the crypto provider could not provide random bytes.
      */
-    func sign(message: Data) throws -> Data {
+    public func sign(message: Data) throws -> Data {
         let random = try SignalCrypto.random(bytes: Curve25519.signatureLength)
 
         do {
@@ -107,7 +107,7 @@ public struct PrivateKey {
      - parameter publicKey: The public key from the other party
      - returns: The agreement data, or `nil` on error
      */
-    func calculateAgreement(publicKey: PublicKey) throws -> Data {
+    public func calculateAgreement(publicKey: PublicKey) throws -> Data {
         return try publicKey.calculateAgreement(privateKey: self)
     }
 

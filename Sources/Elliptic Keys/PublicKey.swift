@@ -54,7 +54,7 @@ public struct PublicKey {
      - parameter message: The message for which the signature is checked
      - returns: True, if the signature is valid
      */
-    func verify(signature: Data, for message: Data) -> Bool {
+    public func verify(signature: Data, for message: Data) -> Bool {
         return Curve25519.verify(signature: signature, for: message, publicKey: key)
     }
 
@@ -79,7 +79,7 @@ public struct PublicKey {
      - parameter privateKey: The private key from the other party
      - returns: The agreement data, or `nil` on error
      */
-    func calculateAgreement(privateKey: PrivateKey) throws -> Data {
+    public func calculateAgreement(privateKey: PrivateKey) throws -> Data {
         do {
           return try Curve25519.calculateAgreement(privateKey: privateKey.data, publicKey: key)
         } catch {
