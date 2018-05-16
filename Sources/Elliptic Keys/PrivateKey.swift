@@ -58,7 +58,7 @@ public struct PrivateKey {
 
     /**
      Create a new random private key.
-     - throws: Any error from `signalCryptoRandom(bytes:)`
+     - throws: Any error from `SignalCrypto.random(bytes:)`
      */
     public init() throws {
         var random = try SignalCrypto.random(bytes: Curve25519.keyLength)
