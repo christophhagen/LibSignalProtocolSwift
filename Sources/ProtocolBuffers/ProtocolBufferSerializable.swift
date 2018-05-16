@@ -11,7 +11,7 @@ import Foundation
 /**
  All types that conform to `Serializable` can be converted to and from data.
  */
-protocol ProtocolBufferSerializable {
+public protocol ProtocolBufferSerializable {
 
     /**
      Convert the object to data.

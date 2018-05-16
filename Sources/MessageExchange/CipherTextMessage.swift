@@ -76,7 +76,7 @@ public struct CipherTextMessage {
 
 extension CipherTextMessage: ProtocolBufferSerializable {
 
-    func protoData() -> Data {
+    public func protoData() -> Data {
         return type.data + data
     }
 

@@ -139,4 +139,19 @@ extension KeyStore {
             remoteIdentity: remoteIdentity)
 
     }
+    
+    /**
+     Sign a message with the identity key.
+     - parameter message: The message to sign
+     - throws: SignalError errors
+     - note:
+     - invalidSignature, if the message could not be signed.
+     - noRandomBytes, if the crypto provider could not provide random bytes.
+     - storageError if the key data could not be accessed
+     - invalidProtBuf if the data is corrupt
+     - returns: The signature of the message, `KeyPair.signatureLength` bytes
+     */
+    public func sign(message: Data) throws -> Data {
+        return try identityKeyStore.getIdentityKey().privateKey.sign(message: message)
+    }
 }
