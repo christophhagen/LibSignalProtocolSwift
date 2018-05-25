@@ -37,7 +37,7 @@ public struct SignalCrypto {
     /**
      Authenticate a message with the HMAC based on SHA256.
      - parameter message: The message to authenticate
-     - salt: The salt for the HMAC.
+     - parameter salt: The salt for the HMAC.
      - returns: The HMAC
      - throws: Should only throw errors of type `SignalError.hmacError`
      */
