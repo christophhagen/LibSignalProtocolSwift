@@ -113,7 +113,7 @@ public struct SignalCrypto {
      - returns: The pre keys
      - throws: `SignalError` errors
      */
-    public static func generatePreKeys(start: UInt32, count: Int) throws -> [SessionPreKey] {
+    static func generatePreKeys(start: UInt32, count: Int) throws -> [SessionPreKey] {
         var dict = [SessionPreKey]()
 
         for i in 0..<UInt32(count) {
@@ -135,7 +135,7 @@ public struct SignalCrypto {
      - parameter timestamp: the current time, defaults to seconds from 1970
      - throws: `SignalError` errors
      */
-    public static func generateSignedPreKey(identityKey: PrivateKey, id: UInt32, timestamp: UInt64 = UInt64(Date().timeIntervalSince1970)) throws -> SessionSignedPreKey {
+    static func generateSignedPreKey(identityKey: PrivateKey, id: UInt32, timestamp: UInt64 = UInt64(Date().timeIntervalSince1970)) throws -> SessionSignedPreKey {
         return try SessionSignedPreKey(id: id, signatureKey: identityKey, timestamp: timestamp)
     }
 

@@ -13,10 +13,10 @@ import Foundation
  The public part of the key pair is signed with the identity key of the creator
  to provide authentication.
  */
-public struct SessionSignedPreKey {
+struct SessionSignedPreKey {
 
     /// The public data of the signed pre key
-    public let publicKey: SessionSignedPreKeyPublic
+    let publicKey: SessionSignedPreKeyPublic
 
     /// The private key of the signed pre key
     let privateKey: PrivateKey
@@ -49,6 +49,9 @@ public struct SessionSignedPreKey {
         let keyPair = try KeyPair()
         let signature = try signatureKey.sign(message: keyPair.publicKey.data)
         self.publicKey = SessionSignedPreKeyPublic(id: id, timestamp: timestamp, key: keyPair.publicKey, signature: signature)
+        guard publicKey.verify(with: try signatureKey.publicKey()) else {
+            throw SignalError(.invalidSignature)
+        }
         self.privateKey = keyPair.privateKey
     }
 
@@ -94,7 +97,7 @@ extension SessionSignedPreKey: Equatable {
      - parameters rhs: The second signed pre key
      - returns: `True`, if the signed pre keys match
      */
-    public static func ==(lhs: SessionSignedPreKey, rhs: SessionSignedPreKey) -> Bool {
+    static func ==(lhs: SessionSignedPreKey, rhs: SessionSignedPreKey) -> Bool {
         return lhs.privateKey == rhs.privateKey &&
             lhs.publicKey == rhs.publicKey
     }

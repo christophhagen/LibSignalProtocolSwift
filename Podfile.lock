@@ -8,6 +8,12 @@ DEPENDENCIES:
   - Curve25519
   - SwiftProtobuf
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CommonCryptoModule
+    - Curve25519
+    - SwiftProtobuf
+
 SPEC CHECKSUMS:
   CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
   Curve25519: 849314b353906cffa572125f31c2d006ce635f32
@@ -15,4 +21,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b5550621b144cb6064196a28676c938b681e2db2
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2

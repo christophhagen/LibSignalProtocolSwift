@@ -12,6 +12,11 @@ import SignalProtocol
  Implement the `IdentityKeyStore` protocol to handle the identity keys of the Signal Protocol.
  */
 class TestIdentityStore: IdentityKeyStore {
+    
+    required init(with keyPair: Data) {
+        self.identityKey = keyPair
+    }
+    
 
     /// The type that distinguishes different devices/users
     typealias Address = SignalAddress

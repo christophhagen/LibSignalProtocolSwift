@@ -41,7 +41,7 @@ public struct SessionPreKeyBundle {
      - parameter signedPreKeySignature: The signature of the signed pre key
      - parameter identityKey: The identity key of the remote party
     */
-    public init(
+    init(
         preKeyId: UInt32,
         preKeyPublic: PublicKey?,
         signedPreKeyId: UInt32,

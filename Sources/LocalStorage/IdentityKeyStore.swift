@@ -19,8 +19,14 @@ public protocol IdentityKeyStore {
     associatedtype Address: Hashable
 
     /**
+     Create the identity key store with an existing identity key pair data
+     */
+    init(with keyPair: Data)
+    
+    /**
      Return the identity key pair. This key should be generated once at
-     install time by calling `SignalCrypto.generateIdentityKeyPair()`.
+     install time by calling `SignalCrypto.generateIdentityKeyPair()`,
+     or given to the constructor.
      - note: An appropriate error should be thrown, if no identity key exists
      - returns: The identity key pair data
      - throws: `SignalError` of type `storageError`

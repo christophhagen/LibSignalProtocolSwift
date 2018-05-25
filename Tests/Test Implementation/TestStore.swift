@@ -11,7 +11,7 @@ import SignalProtocol
 /**
  Implement the key store for testing purposes.
  */
-class TestStore: KeyStore {
+class TestStore: GroupKeyStore {
 
     // MARK: Typealiases
 
@@ -33,7 +33,7 @@ class TestStore: KeyStore {
     // MARK: Variables
 
     /// The store for the identity keys
-    let identityKeyStore = TestIdentityStore()
+    let identityKeyStore: TestIdentityStore
 
     /// The store for the pre keys
     let preKeyStore: PreKeyStore = TestPreKeyStore()
@@ -46,5 +46,13 @@ class TestStore: KeyStore {
 
     /// The store for the sessions
     let sessionStore = TestSessionStore()
+    
+    init(with keyPair: Data) {
+        self.identityKeyStore = TestIdentityStore(with: keyPair)
+    }
+    
+    init() {
+        self.identityKeyStore = TestIdentityStore()
+    }
 }
 
