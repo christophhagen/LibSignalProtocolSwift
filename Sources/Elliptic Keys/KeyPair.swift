@@ -35,6 +35,16 @@ public struct KeyPair {
         self.publicKey = publicKey
         self.privateKey = privateKey
     }
+    
+    /**
+     Create a key pair from existing public and private keys
+     - parameter privateKey: The private part of the key pair
+     - throws `SignalError.curveError` if the public key could not be created
+     */
+    public init(privateKey: PrivateKey) throws {
+        self.publicKey = try PublicKey(privateKey: privateKey)
+        self.privateKey = privateKey
+    }
 
     /**
      Create a new random key pair.

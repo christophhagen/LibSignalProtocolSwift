@@ -12,13 +12,13 @@ import Foundation
  A pre key used to esatblish a session. A unique pre key is used for
  each new session.
  */
-public struct SessionPreKey {
+struct SessionPreKey {
 
     /// The upper bound (inclusive) of the pre key id
     static let mediumMaxValue: UInt32 = 0xFFFFFF
 
     /// The public data of the pre key (id and public key)
-    public let publicKey: SessionPreKeyPublic
+    let publicKey: SessionPreKeyPublic
 
     /// The private key of the pre key
     let privateKey: PrivateKey
@@ -42,7 +42,7 @@ public struct SessionPreKey {
      - throws: `SignalError` errors
     */
     init(index: UInt32) throws {
-        let id = (index - 1) % (SessionPreKey.mediumMaxValue - 1) + 1
+        let id = (index &- 1) % (SessionPreKey.mediumMaxValue - 1) + 1
         let keyPair = try KeyPair()
         self.init(id: id, keyPair: keyPair)
     }

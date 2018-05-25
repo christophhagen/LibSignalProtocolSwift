@@ -19,15 +19,10 @@ public protocol KeyStore {
     /// The type that distinguishes different devices/users
     associatedtype Address: CustomStringConvertible
 
-    /// The type that distinguishes different groups and devices/users
-    associatedtype GroupAddress: CustomStringConvertible
-
     /// The type of the identity key store
     associatedtype IdentityKeyStoreType: IdentityKeyStore where IdentityKeyStoreType.Address == Address
 
-    /// The type of the sender key store
-    associatedtype SenderKeyStoreType: SenderKeyStore where SenderKeyStoreType.Address == GroupAddress
-
+    
     /// The type of the session key store
     associatedtype SessionStoreType: SessionStore where SessionStoreType.Address == Address
 
@@ -38,9 +33,6 @@ public protocol KeyStore {
 
     /// The Pre Key store that stores the records for the pre key module
     var preKeyStore: PreKeyStore { get }
-
-    /// The Sender Key store that stores the records for the sender key module
-    var senderKeyStore: SenderKeyStoreType { get }
 
     /// The Session store that stores the records for the session module
     var sessionStore: SessionStoreType { get }

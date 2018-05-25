@@ -12,13 +12,13 @@ import Foundation
  A pre key used to esatblish a session. A unique pre key is used for
  each new session.
  */
-public struct SessionPreKeyPublic {
+struct SessionPreKeyPublic {
 
     /// The id of the pre key
-    public let id: UInt32
+    let id: UInt32
 
     /// The key pair of the pre key
-    public let key: PublicKey
+    let key: PublicKey
 
     /**
      Create a public pre key from the components

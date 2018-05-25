@@ -110,7 +110,12 @@ struct SessionBuilder<Context: KeyStore> {
 
     /**
      Build a new session from a `SessionPreKeyBundle` retrieved from a server.
-
+     
+     - note: Possible errors:
+     - `untrustedIdentity`, the identity key of the bundle is untrusted
+     - `invalidSignature` if the signed pre key signature is invalid
+     - `storageError` if the key stores could not be accessed
+     - `invalidProtobuf` if data is corrupt
      - parameter bundle: A pre key bundle for the destination recipient, retrieved from a server.
      - throws: `SignalError` errors
      */
@@ -121,7 +126,7 @@ struct SessionBuilder<Context: KeyStore> {
 
         guard bundle.identityKey.verify(signature: bundle.signedPreKeySignature,
                                         for: bundle.signedPreKeyPublic.data) else {
-            throw SignalError(.invalidSignature, "Invalid message signature")
+            throw SignalError(.invalidSignature, "Invalid signed pre key signature")
         }
 
         let session: SessionRecord = try store.sessionStore.loadSession(for: remoteAddress)

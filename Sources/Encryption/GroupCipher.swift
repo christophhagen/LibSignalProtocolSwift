@@ -12,7 +12,7 @@ import Foundation
  Use a `GroupCipher` to encrypt and decrypt group messages for already
  existing sessions.
  */
-public struct GroupCipher<Context: KeyStore> {
+public struct GroupCipher<Context: GroupKeyStore> {
 
     /// The store where the keys are stored
     private let store: Context

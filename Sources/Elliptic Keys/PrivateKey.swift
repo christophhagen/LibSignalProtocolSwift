@@ -115,6 +115,22 @@ public struct PrivateKey {
     var data: Data {
         return key
     }
+    
+    /**
+     Create the corresponding key pair for the private key
+     - throws `SignalError.curveError` if the public key could not be created
+     */
+    func keyPair() throws -> KeyPair {
+        return try KeyPair(privateKey: self)
+    }
+    
+    /**
+     Create the corresponding public key for the private key
+     - throws `SignalError.curveError` if the public key could not be created
+     */
+    func publicKey() throws -> PublicKey {
+        return try PublicKey(privateKey: self)
+    }
 }
 
 extension PrivateKey: Equatable {

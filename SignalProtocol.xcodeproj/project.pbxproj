@@ -9,8 +9,20 @@
 /* Begin PBXBuildFile section */
 		0B6FBFBA2C8C9FF5D69B311D /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7902E99C38165D76252D6E /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework */; };
 		0D42425BFD7593388FC5AA07 /* Pods_SignalProtocol_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A564740F727F89A5F7667C /* Pods_SignalProtocol_Tests.framework */; };
-		70FC031FEC07D9B9120BF739 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6AEC7559D93BB880B17780 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework */; };
+		598C6FFC20AEDDA400BC0F78 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
+		598C6FFD20AEDDA500BC0F78 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
+		598C6FFE20AEDDA500BC0F78 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
+		598C6FFF20AEDDA500BC0F78 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
+		598C700120AEDFA200BC0F78 /* SignedKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598C700020AEDFA200BC0F78 /* SignedKeyTests.swift */; };
+		59F4D64120B6B75D0028A271 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
+		59F4D64220B6B75D0028A271 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
+		59F4D64E20B834360028A271 /* GroupKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4D64D20B834360028A271 /* GroupKeyStore.swift */; };
+		59F4D64F20B834360028A271 /* GroupKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4D64D20B834360028A271 /* GroupKeyStore.swift */; };
+		59F4D65020B834360028A271 /* GroupKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4D64D20B834360028A271 /* GroupKeyStore.swift */; };
+		59F4D65120B834360028A271 /* GroupKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4D64D20B834360028A271 /* GroupKeyStore.swift */; };
+		686404313EDD3C42481B84A3 /* Pods_SignalProtocol_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598C700220AEE11B00BC0F78 /* Pods_SignalProtocol_Tests.framework */; };
 		A6F5009CFAD46388BC1EC3D6 /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8645CBB0EC8EA86EA2C81A /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework */; };
+		C7CE91B39F765D4FE4091E68 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6AEC7559D93BB880B17780 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework */; };
 		CE53032C201F47920004942F /* LocalStorage.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032B201F47920004942F /* LocalStorage.pb.swift */; };
 		CE53032E201F4EDA0004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
 		CE53032F201F57A70004942F /* Messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53032D201F4ED90004942F /* Messages.pb.swift */; };
@@ -40,8 +52,6 @@
 		CEB45A56201CB320002BB845 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A55201CB320002BB845 /* KeyPair.swift */; };
 		CEB45A60201CB3AE002BB845 /* SignalProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB45A45201CB2E6002BB845 /* SignalProtocol.framework */; };
 		CEB45A68201CB427002BB845 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A67201CB427002BB845 /* SignalError.swift */; };
-		CEB45A6B201CB4BC002BB845 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
-		CEB45A6C201CB4BC002BB845 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
 		CEB45AA8201CB4D0002BB845 /* PreKeySignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6E201CB4CF002BB845 /* PreKeySignalMessage.swift */; };
 		CEB45AA9201CB4D0002BB845 /* SenderKeyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6F201CB4CF002BB845 /* SenderKeyMessage.swift */; };
 		CEB45AAA201CB4D0002BB845 /* SenderKeyDistributionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A70201CB4CF002BB845 /* SenderKeyDistributionMessage.swift */; };
@@ -78,7 +88,6 @@
 		CEB45AD5201CB4D0002BB845 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */; };
 		CEB45AD6201CB4D0002BB845 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */; };
 		CEB45AD7201CB4D0002BB845 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */; };
-		CEB45AD8201CB4D0002BB845 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
 		CEB45AD9201CB4D0002BB845 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA7201CB4D0002BB845 /* SessionState.swift */; };
 		CEB45B47201CC640002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */; };
 		CEB45B48201CC648002BB845 /* SignalCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45B2B201CC62B002BB845 /* SignalCommonCrypto.swift */; };
@@ -106,14 +115,8 @@
 		CEB45BBF201CC7A6002BB845 /* SignalProtocolSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BBD201CC7A2002BB845 /* SignalProtocolSwiftTests.swift */; };
 		CEB45BC8201CD03A002BB845 /* CurveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45BC6201CCF31002BB845 /* CurveTests.swift */; };
 		CEB45BC9201CD405002BB845 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A67201CB427002BB845 /* SignalError.swift */; };
-		CEB45BCA201CD405002BB845 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
-		CEB45BCB201CD405002BB845 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
 		CEB45BCC201CD406002BB845 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A67201CB427002BB845 /* SignalError.swift */; };
-		CEB45BCD201CD406002BB845 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
-		CEB45BCE201CD406002BB845 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
 		CEB45BCF201CD406002BB845 /* SignalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A67201CB427002BB845 /* SignalError.swift */; };
-		CEB45BD0201CD406002BB845 /* SignalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A69201CB4BC002BB845 /* SignalAddress.swift */; };
-		CEB45BD1201CD406002BB845 /* SignalSenderKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */; };
 		CEB45BD2201CD40B002BB845 /* DeviceConsistencySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9D201CB4D0002BB845 /* DeviceConsistencySignature.swift */; };
 		CEB45BD3201CD40B002BB845 /* DeviceConsistencyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9E201CB4D0002BB845 /* DeviceConsistencyMessage.swift */; };
 		CEB45BD4201CD40B002BB845 /* DeviceConsistencyCommitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A9F201CB4D0002BB845 /* DeviceConsistencyCommitment.swift */; };
@@ -221,21 +224,18 @@
 		CEB45C43201CD44A002BB845 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */; };
 		CEB45C44201CD44A002BB845 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */; };
 		CEB45C45201CD44A002BB845 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */; };
-		CEB45C46201CD44A002BB845 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
 		CEB45C47201CD44A002BB845 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA7201CB4D0002BB845 /* SessionState.swift */; };
 		CEB45C48201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */; };
 		CEB45C49201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */; };
 		CEB45C4A201CD44B002BB845 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */; };
 		CEB45C4B201CD44B002BB845 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */; };
 		CEB45C4C201CD44B002BB845 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */; };
-		CEB45C4D201CD44B002BB845 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
 		CEB45C4E201CD44B002BB845 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA7201CB4D0002BB845 /* SessionState.swift */; };
 		CEB45C4F201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA1201CB4D0002BB845 /* SessionPreKeyBundle.swift */; };
 		CEB45C50201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA2201CB4D0002BB845 /* SessionSignedPreKey.swift */; };
 		CEB45C51201CD44B002BB845 /* SessionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA3201CB4D0002BB845 /* SessionRecord.swift */; };
 		CEB45C52201CD44B002BB845 /* PendingPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA4201CB4D0002BB845 /* PendingPreKey.swift */; };
 		CEB45C53201CD44B002BB845 /* SessionPreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA5201CB4D0002BB845 /* SessionPreKey.swift */; };
-		CEB45C54201CD44B002BB845 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA6201CB4D0002BB845 /* SessionBuilder.swift */; };
 		CEB45C55201CD44B002BB845 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA7201CB4D0002BB845 /* SessionState.swift */; };
 		CEB45C56201CD455002BB845 /* SignalProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB45C57201CD455002BB845 /* SignalProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB45A48201CB2E6002BB845 /* SignalProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -250,7 +250,6 @@
 		CEC812E8201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45C8A201D0A21002BB845 /* SessionSignedPreKeyPublic.swift */; };
 		CEC81310201F42020018D42E /* Fingerprint.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8130F201F42020018D42E /* Fingerprint.pb.swift */; };
 		E81BBF70E3EB45B7159D33A6 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B36827A5FED4B90A9B1D2A9 /* Pods_LibSignalProtocolSwift_SignalProtocol_watchOS.framework */; };
-		F3639E1929C97B455626C01E /* Pods_LibSignalProtocolSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3983CBE20B66BFD08D0E61B /* Pods_LibSignalProtocolSwift_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,18 +263,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0588A7BDBCA1935B64A6BA0E /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests.release.xcconfig"; sourceTree = "<group>"; };
-		28002907ED809589F09EB000 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift Tests/Pods-LibSignalProtocolSwift Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		29E9BCC88FAE8F7B6853418F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		2C02505AF64F7D5FF3B3A1B6 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol iOS/Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig"; sourceTree = "<group>"; };
-		39F4F105459C0844F2C69040 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig"; sourceTree = "<group>"; };
 		3B8441AFCC007D3D7D40DC84 /* Pods-LibSignalProtocolSwift-SignalProtocol macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol macOS/Pods-LibSignalProtocolSwift-SignalProtocol macOS.release.xcconfig"; sourceTree = "<group>"; };
 		3E877FB426DFE9171C7FC2A7 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol iOS/Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4BCC771444C85FCF3BA7E181 /* Pods-LibSignalProtocolSwift-SignalProtocol watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol watchOS/Pods-LibSignalProtocolSwift-SignalProtocol watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		598C6FFA20AEDC6F00BC0F78 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		598C700020AEDFA200BC0F78 /* SignedKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedKeyTests.swift; sourceTree = "<group>"; };
+		598C700220AEE11B00BC0F78 /* Pods_SignalProtocol_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_SignalProtocol_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F4D64D20B834360028A271 /* GroupKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupKeyStore.swift; sourceTree = "<group>"; };
 		5A7902E99C38165D76252D6E /* Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_SignalProtocol_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6035B4D73420FBA48D8E8C87 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		675AB85B69229BBDCF4D6A55 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6A4C6C3F3AF9176905093F56 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6DC49A2A631FEA153EE59002 /* Pods-LibSignalProtocolSwift-SignalProtocol tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol tvOS/Pods-LibSignalProtocolSwift-SignalProtocol tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		799DB0BEC5C4E31FE5C015C0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6FE34FBD6D1A74687D0537 /* Pods-LibSignalProtocolSwift-SignalProtocol watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-SignalProtocol watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol watchOS/Pods-LibSignalProtocolSwift-SignalProtocol watchOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -284,15 +281,10 @@
 		9B8645CBB0EC8EA86EA2C81A /* Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_SignalProtocol_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4749068EEB5A978CFD6DC9F /* Pods-SignalProtocol Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4A564740F727F89A5F7667C /* Pods_SignalProtocol_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignalProtocol_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4ACAA024EC0DB4712F2CEE4 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		A5D615CE42D80BB561C62973 /* Pods-SignalProtocol Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalProtocol Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests.release.xcconfig"; sourceTree = "<group>"; };
-		AC32D0B8C2CE3F2E193CA4E9 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AF6AEC7559D93BB880B17780 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B18BE61307E0184CD9C283B0 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig"; sourceTree = "<group>"; };
-		B7425D62A58F2EADAC8CF796 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS/Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B8525D4832B0D5C24C4E16EF /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AAEEC9F0758C419B37B8F9 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3983CBE20B66BFD08D0E61B /* Pods_LibSignalProtocolSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibSignalProtocolSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE53032B201F47920004942F /* LocalStorage.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.pb.swift; sourceTree = "<group>"; };
 		CE53032D201F4ED90004942F /* Messages.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.pb.swift; sourceTree = "<group>"; };
 		CE8CC10F20334361002F410A /* ProtocolBufferConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolBufferConvertible.swift; sourceTree = "<group>"; };
@@ -383,7 +375,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70FC031FEC07D9B9120BF739 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework in Frameworks */,
+				C7CE91B39F765D4FE4091E68 /* Pods_LibSignalProtocolSwift_SignalProtocol_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,8 +384,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB45A60201CB3AE002BB845 /* SignalProtocol.framework in Frameworks */,
-				F3639E1929C97B455626C01E /* Pods_LibSignalProtocolSwift_Tests.framework in Frameworks */,
 				0D42425BFD7593388FC5AA07 /* Pods_SignalProtocol_Tests.framework in Frameworks */,
+				686404313EDD3C42481B84A3 /* Pods_SignalProtocol_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +419,7 @@
 		0731231B4A4F0CB36E9870C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C3983CBE20B66BFD08D0E61B /* Pods_LibSignalProtocolSwift_Tests.framework */,
+				598C700220AEE11B00BC0F78 /* Pods_SignalProtocol_Tests.framework */,
 				799DB0BEC5C4E31FE5C015C0 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_iOS.framework */,
 				B8AAEEC9F0758C419B37B8F9 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_macOS.framework */,
 				6035B4D73420FBA48D8E8C87 /* Pods_LibSignalProtocolSwift_LibSignalProtocolSwift_tvOS.framework */,
@@ -444,16 +436,6 @@
 		4F2D33E7A01A9794D5D7846E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				28002907ED809589F09EB000 /* Pods-LibSignalProtocolSwift Tests.debug.xcconfig */,
-				0588A7BDBCA1935B64A6BA0E /* Pods-LibSignalProtocolSwift Tests.release.xcconfig */,
-				6A4C6C3F3AF9176905093F56 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.debug.xcconfig */,
-				39F4F105459C0844F2C69040 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift iOS.release.xcconfig */,
-				B7425D62A58F2EADAC8CF796 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.debug.xcconfig */,
-				B18BE61307E0184CD9C283B0 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift macOS.release.xcconfig */,
-				675AB85B69229BBDCF4D6A55 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.debug.xcconfig */,
-				A4ACAA024EC0DB4712F2CEE4 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift tvOS.release.xcconfig */,
-				AC32D0B8C2CE3F2E193CA4E9 /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.debug.xcconfig */,
-				29E9BCC88FAE8F7B6853418F /* Pods-LibSignalProtocolSwift-LibSignalProtocolSwift watchOS.release.xcconfig */,
 				3E877FB426DFE9171C7FC2A7 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.debug.xcconfig */,
 				2C02505AF64F7D5FF3B3A1B6 /* Pods-LibSignalProtocolSwift-SignalProtocol iOS.release.xcconfig */,
 				E67DEB52A96D5572F6F3E85E /* Pods-LibSignalProtocolSwift-SignalProtocol macOS.debug.xcconfig */,
@@ -471,6 +453,7 @@
 		CEB45A3B201CB2E6002BB845 = {
 			isa = PBXGroup;
 			children = (
+				598C6FFA20AEDC6F00BC0F78 /* README.md */,
 				CEB45A47201CB2E6002BB845 /* Sources */,
 				CEB45A5C201CB3AE002BB845 /* Tests */,
 				CEB45A46201CB2E6002BB845 /* Products */,
@@ -537,6 +520,7 @@
 				CEB45B83201CC6F6002BB845 /* SessionCipherTests.swift */,
 				CEB45B7D201CC6F6002BB845 /* SessionRecordTests.swift */,
 				CEB45BBD201CC7A2002BB845 /* SignalProtocolSwiftTests.swift */,
+				598C700020AEDFA200BC0F78 /* SignedKeyTests.swift */,
 				CEB45BA7201CC70B002BB845 /* Test Implementation */,
 				CEB45B7B201CC6F5002BB845 /* TestHelperFunctions.swift */,
 			);
@@ -547,8 +531,6 @@
 			isa = PBXGroup;
 			children = (
 				CEB45A67201CB427002BB845 /* SignalError.swift */,
-				CEB45A69201CB4BC002BB845 /* SignalAddress.swift */,
-				CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */,
 			);
 			path = Additional;
 			sourceTree = "<group>";
@@ -607,6 +589,7 @@
 			children = (
 				CEB45A8E201CB4D0002BB845 /* IdentityKeyStore.swift */,
 				CEB45A8F201CB4D0002BB845 /* KeyStore.swift */,
+				59F4D64D20B834360028A271 /* GroupKeyStore.swift */,
 				CEB45A91201CB4D0002BB845 /* PreKeyStore.swift */,
 				CEB45A8D201CB4D0002BB845 /* SenderKeyStore.swift */,
 				CEB45A92201CB4D0002BB845 /* SessionStore.swift */,
@@ -667,6 +650,8 @@
 		CEB45BA7201CC70B002BB845 /* Test Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				CEB45A69201CB4BC002BB845 /* SignalAddress.swift */,
+				CEB45A6A201CB4BC002BB845 /* SignalSenderKeyName.swift */,
 				CEB45BAA201CC70B002BB845 /* TestFakeCryptoProvider.swift */,
 				CEB45BA9201CC70B002BB845 /* TestIdentityStore.swift */,
 				CEB45BAC201CC70C002BB845 /* TestPreKeyStore.swift */,
@@ -725,7 +710,6 @@
 				CEB45A41201CB2E6002BB845 /* Frameworks */,
 				CEB45A42201CB2E6002BB845 /* Headers */,
 				CEB45A43201CB2E6002BB845 /* Resources */,
-				A61AC41F31B5D64114A0B80D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -745,7 +729,6 @@
 				CEB45A58201CB3AE002BB845 /* Frameworks */,
 				CEB45A59201CB3AE002BB845 /* Resources */,
 				8B7C075EB17967B331B6CAEC /* [CP] Embed Pods Frameworks */,
-				D967844D80309D439757CABA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -766,7 +749,6 @@
 				CEB45AF9201CC35A002BB845 /* Frameworks */,
 				CEB45AFA201CC35A002BB845 /* Headers */,
 				CEB45AFB201CC35A002BB845 /* Resources */,
-				8D4BFD0C5EFD8D25B0BEDD5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -786,7 +768,6 @@
 				CEB45B06201CC383002BB845 /* Frameworks */,
 				CEB45B07201CC383002BB845 /* Headers */,
 				CEB45B08201CC383002BB845 /* Resources */,
-				E21B5A747F88E3FC82391D70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -806,7 +787,6 @@
 				CEB45B13201CC39B002BB845 /* Frameworks */,
 				CEB45B14201CC39B002BB845 /* Headers */,
 				CEB45B15201CC39B002BB845 /* Resources */,
-				B22FCB165FA7DFEC628540DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -968,21 +948,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8D4BFD0C5EFD8D25B0BEDD5C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol macOS/Pods-LibSignalProtocolSwift-SignalProtocol macOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		92F9DA4E9B587E0A0227DF46 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -999,21 +964,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A61AC41F31B5D64114A0B80D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol iOS/Pods-LibSignalProtocolSwift-SignalProtocol iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AFF5EC6DE8CA0B7FA981932F /* [CP] Check Pods Manifest.lock */ = {
@@ -1034,36 +984,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B22FCB165FA7DFEC628540DB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol watchOS/Pods-LibSignalProtocolSwift-SignalProtocol watchOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D967844D80309D439757CABA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalProtocol Tests/Pods-SignalProtocol Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DC86084F26A3FB111B585340 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1080,21 +1000,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E21B5A747F88E3FC82391D70 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibSignalProtocolSwift-SignalProtocol tvOS/Pods-LibSignalProtocolSwift-SignalProtocol tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1124,7 +1029,6 @@
 				CEB45A68201CB427002BB845 /* SignalError.swift in Sources */,
 				CEB45AD9201CB4D0002BB845 /* SessionState.swift in Sources */,
 				CEB45A56201CB320002BB845 /* KeyPair.swift in Sources */,
-				CEB45A6B201CB4BC002BB845 /* SignalAddress.swift in Sources */,
 				CEB45A54201CB318002BB845 /* PublicKey.swift in Sources */,
 				CE53032E201F4EDA0004942F /* Messages.pb.swift in Sources */,
 				CEB45ACC201CB4D0002BB845 /* ReceiverChain.swift in Sources */,
@@ -1138,6 +1042,7 @@
 				CEB45B47201CC640002BB845 /* SignalCommonCrypto.swift in Sources */,
 				CEB45AC6201CB4D0002BB845 /* PreKeyStore.swift in Sources */,
 				CEB45AD7201CB4D0002BB845 /* SessionPreKey.swift in Sources */,
+				598C6FFC20AEDDA400BC0F78 /* SessionBuilder.swift in Sources */,
 				CEB45AC3201CB4D0002BB845 /* IdentityKeyStore.swift in Sources */,
 				CEB45C89201D081C002BB845 /* SessionPreKeyPublic.swift in Sources */,
 				CEB45AA8201CB4D0002BB845 /* PreKeySignalMessage.swift in Sources */,
@@ -1149,14 +1054,13 @@
 				CEB45ABA201CB4D0002BB845 /* ScannableFingerprint.swift in Sources */,
 				CEB45AAC201CB4D0002BB845 /* SignalMessage.swift in Sources */,
 				CEB45A52201CB30E002BB845 /* PrivateKey.swift in Sources */,
+				59F4D64E20B834360028A271 /* GroupKeyStore.swift in Sources */,
 				CEB45AC8201CB4D0002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45AC5201CB4D0002BB845 /* SignedPrekeyStore.swift in Sources */,
 				CEB45ABB201CB4D0002BB845 /* SenderKeyState.swift in Sources */,
 				CEB45ABE201CB4D0002BB845 /* SenderKeyRecord.swift in Sources */,
-				CEB45A6C201CB4BC002BB845 /* SignalSenderKeyName.swift in Sources */,
 				CEB45ACD201CB4D0002BB845 /* RatchetRootKey.swift in Sources */,
 				CE53032C201F47920004942F /* LocalStorage.pb.swift in Sources */,
-				CEB45AD8201CB4D0002BB845 /* SessionBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1165,8 +1069,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB45BA6201CC6FD002BB845 /* TestHelperFunctions.swift in Sources */,
+				598C700120AEDFA200BC0F78 /* SignedKeyTests.swift in Sources */,
+				59F4D64120B6B75D0028A271 /* SignalAddress.swift in Sources */,
 				CEB45B9B201CC6FD002BB845 /* FingerprintTests.swift in Sources */,
 				CEB45BB9201CC716002BB845 /* TestSessionStore.swift in Sources */,
+				59F4D64220B6B75D0028A271 /* SignalSenderKeyName.swift in Sources */,
 				CEB45BBF201CC7A6002BB845 /* SignalProtocolSwiftTests.swift in Sources */,
 				CEB45BA3201CC6FD002BB845 /* SessionCipherTests.swift in Sources */,
 				CEB45B9E201CC6FD002BB845 /* KeyHelperTests.swift in Sources */,
@@ -1205,8 +1112,6 @@
 				CEB45C41201CD44A002BB845 /* SessionPreKeyBundle.swift in Sources */,
 				CEC812E4201E35970018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
 				CEB45C43201CD44A002BB845 /* SessionRecord.swift in Sources */,
-				CEB45BCA201CD405002BB845 /* SignalAddress.swift in Sources */,
-				CEB45BCB201CD405002BB845 /* SignalSenderKeyName.swift in Sources */,
 				CE8CC11820337117002F410A /* ProtocolBufferEquivalent.swift in Sources */,
 				CEB45C29201CD444002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C42201CD44A002BB845 /* SessionSignedPreKey.swift in Sources */,
@@ -1226,6 +1131,7 @@
 				CEB45C13201CD426002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
 				CEB45C2B201CD444002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C45201CD44A002BB845 /* SessionPreKey.swift in Sources */,
+				598C6FFD20AEDDA500BC0F78 /* SessionBuilder.swift in Sources */,
 				CE530330201F57A70004942F /* Fingerprint.pb.swift in Sources */,
 				CEB45BFB201CD41C002BB845 /* ScannableFingerprint.swift in Sources */,
 				CEC812E3201E35970018D42E /* SessionPreKeyPublic.swift in Sources */,
@@ -1238,13 +1144,13 @@
 				CE530331201F57A70004942F /* LocalStorage.pb.swift in Sources */,
 				CEB45BE8201CD416002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BDD201CD411002BB845 /* KeyPair.swift in Sources */,
+				59F4D64F20B834360028A271 /* GroupKeyStore.swift in Sources */,
 				CEB45BDC201CD411002BB845 /* PublicKey.swift in Sources */,
 				CEB45BFF201CD421002BB845 /* SenderKeyStore.swift in Sources */,
 				CEB45C00201CD421002BB845 /* IdentityKeyStore.swift in Sources */,
 				CEB45BDB201CD411002BB845 /* PrivateKey.swift in Sources */,
 				CEB45BE9201CD416002BB845 /* SignalCryptoProvider.swift in Sources */,
 				CEB45C2E201CD444002BB845 /* RatchetRootKey.swift in Sources */,
-				CEB45C46201CD44A002BB845 /* SessionBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1265,8 +1171,6 @@
 				CEB45C4F201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */,
 				CEC812E6201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
 				CEB45C51201CD44B002BB845 /* SessionRecord.swift in Sources */,
-				CEB45BCD201CD406002BB845 /* SignalAddress.swift in Sources */,
-				CEB45BCE201CD406002BB845 /* SignalSenderKeyName.swift in Sources */,
 				CE8CC11A20337118002F410A /* ProtocolBufferEquivalent.swift in Sources */,
 				CEB45C31201CD445002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C50201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */,
@@ -1286,6 +1190,7 @@
 				CEB45C18201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
 				CEB45C33201CD445002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C53201CD44B002BB845 /* SessionPreKey.swift in Sources */,
+				598C6FFE20AEDDA500BC0F78 /* SessionBuilder.swift in Sources */,
 				CE530333201F57A70004942F /* Fingerprint.pb.swift in Sources */,
 				CEB45BF8201CD41B002BB845 /* ScannableFingerprint.swift in Sources */,
 				CEC812E5201E35980018D42E /* SessionPreKeyPublic.swift in Sources */,
@@ -1298,13 +1203,13 @@
 				CE530334201F57A70004942F /* LocalStorage.pb.swift in Sources */,
 				CEB45BEE201CD417002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BE0201CD411002BB845 /* KeyPair.swift in Sources */,
+				59F4D65020B834360028A271 /* GroupKeyStore.swift in Sources */,
 				CEB45BDF201CD411002BB845 /* PublicKey.swift in Sources */,
 				CEB45C05201CD422002BB845 /* SenderKeyStore.swift in Sources */,
 				CEB45C06201CD422002BB845 /* IdentityKeyStore.swift in Sources */,
 				CEB45BDE201CD411002BB845 /* PrivateKey.swift in Sources */,
 				CEB45BEF201CD417002BB845 /* SignalCryptoProvider.swift in Sources */,
 				CEB45C36201CD445002BB845 /* RatchetRootKey.swift in Sources */,
-				CEB45C54201CD44B002BB845 /* SessionBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1325,8 +1230,6 @@
 				CEB45C48201CD44B002BB845 /* SessionPreKeyBundle.swift in Sources */,
 				CEC812E8201E35980018D42E /* SessionSignedPreKeyPublic.swift in Sources */,
 				CEB45C4A201CD44B002BB845 /* SessionRecord.swift in Sources */,
-				CEB45BD0201CD406002BB845 /* SignalAddress.swift in Sources */,
-				CEB45BD1201CD406002BB845 /* SignalSenderKeyName.swift in Sources */,
 				CE8CC11C20337119002F410A /* ProtocolBufferEquivalent.swift in Sources */,
 				CEB45C39201CD445002BB845 /* RatchetMessageKeys.swift in Sources */,
 				CEB45C49201CD44B002BB845 /* SessionSignedPreKey.swift in Sources */,
@@ -1346,6 +1249,7 @@
 				CEB45C1D201CD427002BB845 /* SenderKeyDistributionMessage.swift in Sources */,
 				CEB45C3B201CD445002BB845 /* RatchetChainKey.swift in Sources */,
 				CEB45C4C201CD44B002BB845 /* SessionPreKey.swift in Sources */,
+				598C6FFF20AEDDA500BC0F78 /* SessionBuilder.swift in Sources */,
 				CE530336201F57A80004942F /* Fingerprint.pb.swift in Sources */,
 				CEB45BFE201CD41C002BB845 /* ScannableFingerprint.swift in Sources */,
 				CEC812E7201E35980018D42E /* SessionPreKeyPublic.swift in Sources */,
@@ -1358,13 +1262,13 @@
 				CE530337201F57A80004942F /* LocalStorage.pb.swift in Sources */,
 				CEB45BF4201CD417002BB845 /* SignalCrypto.swift in Sources */,
 				CEB45BE3201CD412002BB845 /* KeyPair.swift in Sources */,
+				59F4D65120B834360028A271 /* GroupKeyStore.swift in Sources */,
 				CEB45BE2201CD412002BB845 /* PublicKey.swift in Sources */,
 				CEB45C0B201CD422002BB845 /* SenderKeyStore.swift in Sources */,
 				CEB45C0C201CD422002BB845 /* IdentityKeyStore.swift in Sources */,
 				CEB45BE1201CD412002BB845 /* PrivateKey.swift in Sources */,
 				CEB45BF5201CD417002BB845 /* SignalCryptoProvider.swift in Sources */,
 				CEB45C3E201CD445002BB845 /* RatchetRootKey.swift in Sources */,
-				CEB45C4D201CD44B002BB845 /* SessionBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

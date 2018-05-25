@@ -68,7 +68,7 @@ extension SignedPreKeyStore {
      - returns: The Signed Pre Key
      - throws: `SignalError` errors
      */
-    public func signedPreKey(for id: UInt32) throws -> SessionSignedPreKey {
+    func signedPreKey(for id: UInt32) throws -> SessionSignedPreKey {
         let record = try signedPreKey(for: id)
         return try SessionSignedPreKey(from: record)
     }
@@ -81,7 +81,7 @@ extension SignedPreKeyStore {
      - parameter signedPreKey: The Signed Pre Key to store
      - throws: `SignalError` errors
      */
-    public func store(signedPreKey: SessionSignedPreKey) throws {
+    func store(signedPreKey: SessionSignedPreKey) throws {
         let data = try signedPreKey.protoData()
         try store(signedPreKey: data, for: signedPreKey.publicKey.id)
     }
