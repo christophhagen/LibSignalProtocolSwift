@@ -38,7 +38,7 @@ public struct PublicKey {
      Generate a public key from a given private key.
      Fails if the key could not be generated.
      - parameter privateKey: The private key of the pair
-     - throws `SignalError.curveError` if the public key could not be created
+     - throws: `SignalError.curveError` if the public key could not be created
      */
     public init(privateKey: PrivateKey) throws {
         do {
