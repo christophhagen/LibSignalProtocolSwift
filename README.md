@@ -29,13 +29,17 @@ import SignalProtocol
 ### Local storage
 The Signal Protocol needs local storage for message keys, identities and other state information.
 You can provide this functionality by implementing the protocol `KeyStore`, which requires
-five delegates for the individual data stores:
+four delegates for the individual data stores:
 
 - `IdentityKeyStore` for storing and retrieving identity keys
 - `PreKeyStore` for storing and retrieving pre keys
-- `SenderKeyStore` for storing and retrieving sender keys
 - `SessionStore` for storing and retrieving the sessions
 - `SignedPreKeyStore` for storing and retrieving signed pre keys
+
+#### Optional
+There is a feature for group updates, where only one administrator can send, and the others can only receive. If you want this functionality, then implement the `GroupKeyStore` protocol, with the additional delegate  `SenderKeyStore` for storing and retrieving sender keys.
+
+### Sample implementation
 
 You can have a look at the [test implementation](https://github.com/christophhagen/LibSignalProtocolSwift/tree/master/Tests/Test%20Implementation) for inspiration.
 
