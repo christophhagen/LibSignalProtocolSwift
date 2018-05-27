@@ -16,7 +16,7 @@ class SignedKeyTests: XCTestCase {
         let key = try! KeyPair()
         let aliceStore = TestStore(with: try! key.protoData())
         
-        guard let signedKeyData = try? aliceStore.createSignedPrekey(id: 1) else {
+        guard let signedKeyData = try? aliceStore.updateSignedPrekey() else {
             XCTFail("Could not create signed pre key data")
             return
         }
