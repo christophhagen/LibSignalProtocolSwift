@@ -45,8 +45,8 @@ You can have a look at the [test implementation](https://github.com/christophhag
 
 ### Server for message delivery
 The server that stores the messages for retrieval needs to store the following data for each `SignalAddress`:
-- `Public Identity Key Data`: The public part of the identity key of the device
-- `Signed Pre Key Data`: The current signed pre key
+- `Public Identity Key`: The public part of the identity key of the device
+- `Signed Pre Key`: The current signed pre key
 - `Pre Keys`: A number of unsigned pre keys
 - `Messages`: The messages to deliver to that address, including the sender
 
@@ -74,10 +74,10 @@ let identity = try SignalCrypto.generateIdentityKeyPair()
 let publicKey: Data = try bobStore.getPublicIdentityKey()
 
 // Create pre keys and save them in the store
-let preKeys: [Data] = try bobStore.createPreKeys(start: 1, count: 10)
+let preKeys: [Data] = try bobStore.createPreKeys(count: 10)
 
 // Create a signed pre key and save it in the store
-let signedPreKey: Data = try bobStore.createSignedPrekey(id: 1)
+let signedPreKey: Data = try bobStore.updateSignedPrekey()
 
 // Upload publicKey, preKeys, and signedPreKey to the server
 ````
