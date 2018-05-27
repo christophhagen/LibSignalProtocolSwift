@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
     spec.summary = 'A Swift implementation of the Signal Protocol'
     spec.license = 'MIT'
 
-    spec.version = '1.1.0'
+    spec.version = '1.1.1'
     spec.source = {
         :git => 'https://github.com/christophhagen/LibSignalProtocolSwift.git',
         :tag => spec.version
