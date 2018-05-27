@@ -45,20 +45,18 @@ public protocol KeyStore {
 extension KeyStore {
 
     /**
-     Create a new identity key pair and store it.
+     Sign a message with the identity key.
      - note: Possible errors:
-     - `noRandomBytes` if the crypto provider can't provide random bytes.
-     - `curveError` if no public key could be created from the random private key.
-     - `invalidProtoBuf` if the key pair could no be serialized
-     - `storageError` if the data could not be saved
+     - `storageError` if the key data could not be accessed
+     - `invalidProtBuf` if the data is corrupt
+     - `invalidSignature` if the message could not be signed.
+     - `noRandomBytes` if the crypto provider could not provide random bytes
      - returns: The public key data for uploading to the server
      - throws: `SignalError` errors
      */
-    public func createIdentityKey() throws -> Data {
-        let keyPair = try KeyPair()
-        let data = try keyPair.protoData()
-        try identityKeyStore.store(identityKeyData: data)
-        return keyPair.publicKey.protoData()
+    public func signatureWithIdentityKey(message: Data) throws -> Data {
+        let privateKey = try identityKeyStore.getIdentityKey().privateKey
+        return try privateKey.sign(message: message)
     }
 
     /**

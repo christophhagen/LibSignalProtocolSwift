@@ -19,11 +19,6 @@ public protocol IdentityKeyStore {
     associatedtype Address: Hashable
 
     /**
-     Create the identity key store with an existing identity key pair data
-     */
-    init(with keyPair: Data)
-    
-    /**
      Return the identity key pair. This key should be generated once at
      install time by calling `SignalCrypto.generateIdentityKeyPair()`,
      or given to the constructor.
@@ -32,13 +27,6 @@ public protocol IdentityKeyStore {
      - throws: `SignalError` of type `storageError`
      */
     func getIdentityKeyData() throws -> Data
-
-    /**
-     Save the identity key pair.
-     - parameter identityKeyData: The data to store
-     - throws: `SignalError` of type `storageError`, if the data could not be saved
-     */
-    func store(identityKeyData: Data) throws
 
     /**
      Return the identity for the given address, if there is any.
@@ -76,15 +64,18 @@ extension IdentityKeyStore {
     }
 
     /**
-     Save the identity key pair.
+     Return the public identity key. This key should be generated once at
+     install time by calling `KeyStore.generateIdentityKeyPair()`.
      - note: Possible errors:
-     - `invalidProtBuf` if key could not be converted to data
-     - `storageError`, if the data could not be saved
-     - parameter identityKeyData: The data to store
+     - `storageError` if the key data could not be accessed
+     - `invalidProtBuf` if the data is corrupt
+     - returns: The public identity key data
      - throws: `SignalError` errors
      */
-    func store(identityKey: KeyPair) throws {
-        try store(identityKeyData: try identityKey.protoData())
+    func getPublicIdentityKey() throws -> Data {
+        let identity = try getIdentityKeyData()
+        let pair = try KeyPair(from: identity)
+        return pair.publicKey.data
     }
 
     /**

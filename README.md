@@ -65,8 +65,13 @@ The standard process to establish an encrypted session between two devices (two 
 Before any secure communication can happen, at least one user needs to upload all necessary ingredients for a `PreKeyBundle` to the server.
 
 ````swift
-// Create the identity key and store it (only done once)
-let identity: Data = try bobStore.createIdentityKey()
+// Create the identity key ata install time
+let identity = try SignalCrypto.generateIdentityKeyPair()
+
+// Store the data in the key store
+
+// Get the public key from the store
+let publicKey: Data = try bobStore.getPublicIdentityKey()
 
 // Create pre keys and save them in the store
 let preKeys: [Data] = try bobStore.createPreKeys(start: 1, count: 10)
@@ -74,7 +79,7 @@ let preKeys: [Data] = try bobStore.createPreKeys(start: 1, count: 10)
 // Create a signed pre key and save it in the store
 let signedPreKey: Data = try bobStore.createSignedPrekey(id: 1)
 
-// Upload identity, preKeys, and signedPreKey to the server
+// Upload publicKey, preKeys, and signedPreKey to the server
 ````
 
 ### Creating a session from a PreKeyBundle
