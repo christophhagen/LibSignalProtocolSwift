@@ -13,7 +13,7 @@ import Foundation
  Signal Protocol. The keys should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol PreKeyStore {
+public protocol PreKeyStore: class {
 
     /**
      Provide a Pre Key for a given id.
@@ -48,7 +48,7 @@ public protocol PreKeyStore {
     func removePreKey(for id: UInt32) throws
 
     /// Return the id of the last stored pre key.
-    var lastId: UInt32 { get }
+    var lastId: UInt32 { get set }
     
 }
 

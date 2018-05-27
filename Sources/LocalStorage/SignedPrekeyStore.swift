@@ -13,7 +13,7 @@ import Foundation
  Signal Protocol. The keys should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol SignedPreKeyStore {
+public protocol SignedPreKeyStore: class {
 
     /**
      Provide a Signed Pre Key for a given id.
@@ -54,7 +54,7 @@ public protocol SignedPreKeyStore {
     func allIds() throws -> [UInt32]
 
     /// The id of the last SignedPreKey that was stored.
-    var lastId: UInt32 { get }
+    var lastId: UInt32 { get set }
 }
 
 extension SignedPreKeyStore {

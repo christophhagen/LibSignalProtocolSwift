@@ -12,7 +12,7 @@ import Foundation
 /**
  Provide all local storage delegates.
  */
-public protocol KeyStore {
+public protocol KeyStore: class {
 
     // MARK: Associated types
 
@@ -22,7 +22,6 @@ public protocol KeyStore {
     /// The type of the identity key store
     associatedtype IdentityKeyStoreType: IdentityKeyStore where IdentityKeyStoreType.Address == Address
 
-    
     /// The type of the session key store
     associatedtype SessionStoreType: SessionStore where SessionStoreType.Address == Address
 
@@ -68,18 +67,27 @@ extension KeyStore {
      - `invalidSignature`, if the message could not be signed.
      - `storageError`, if the identity key could not be accessed, or if the key could not be stored
      - `invalidProtobuf`, if the key could not be serialized
-     - parameter id: The id of the signed pre key
      - parameter timestamp: The timestamp of the key, defaults to seconds since 1970
      - returns: The public data of the generated signed pre key for uploading
      - throws: `SignalError`
     */
-    public func createSignedPrekey(id: UInt32, timestamp: UInt64 = UInt64(Date().timeIntervalSince1970)) throws -> Data {
+    public func updateSignedPrekey(timestamp: UInt64 = UInt64(Date().timeIntervalSince1970)) throws -> Data {
+        let currentId = signedPreKeyStore.lastId
+        let nextId = currentId &+ 1
         let privateKey = try identityKeyStore.getIdentityKey().privateKey
         let key = try SignalCrypto.generateSignedPreKey(
             identityKey: privateKey,
-            id: id, timestamp: timestamp)
+            id: nextId, timestamp: timestamp)
 
         try signedPreKeyStore.store(signedPreKey: key)
+        signedPreKeyStore.lastId = nextId
+
+        // Delete old key
+        let oldId = currentId &- 1
+        if try signedPreKeyStore.containsSignedPreKey(for: oldId) {
+            try signedPreKeyStore.removeSignedPreKey(for: oldId)
+        }
+
         return try key.publicKey.protoData()
     }
 
@@ -90,16 +98,17 @@ extension KeyStore {
      - `curveError` if no public key could be created from a random private key.
      - `storageError`, if the keys could not be stored
      - `invalidProtoBuf`, if the keys could not be serialized
-     - parameter start: the starting pre key ID, inclusive.
      - parameter count: the number of pre keys to generate.
      - returns: The public data of the pre keys for uploading
      - throws: `SignalError` errors
     */
-    public func createPreKeys(start: UInt32, count: Int) throws -> [Data] {
+    public func createPreKeys(count: Int) throws -> [Data] {
+        let start = preKeyStore.lastId &+ 1
         let keys = try SignalCrypto.generatePreKeys(start: start, count: count)
         for key in keys {
             try preKeyStore.store(preKey: key)
         }
+        preKeyStore.lastId = start &+ UInt32(count)
         return try keys.map { try $0.publicKey.protoData() }
     }
 

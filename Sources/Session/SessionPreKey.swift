@@ -42,7 +42,7 @@ struct SessionPreKey {
      - throws: `SignalError` errors
     */
     init(index: UInt32) throws {
-        let id = (index &- 1) % (SessionPreKey.mediumMaxValue - 1) + 1
+        let id = index
         let keyPair = try KeyPair()
         self.init(id: id, keyPair: keyPair)
     }

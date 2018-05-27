@@ -13,7 +13,7 @@ import Foundation
  Signal Protocol. The keys should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol IdentityKeyStore {
+public protocol IdentityKeyStore: class {
 
     /// The type that distinguishes different devices/users
     associatedtype Address: Hashable
