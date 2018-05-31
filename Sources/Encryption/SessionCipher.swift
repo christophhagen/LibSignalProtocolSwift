@@ -185,10 +185,13 @@ public struct SessionCipher<Context: KeyStore> {
 
     /**
      Load the session record for the remote address
-     - throws: `SignalError`of type `storageError`
+     - throws: `SignalError` of type `storageError`
      - returns: The session record
     */
     private func loadSession() throws -> SessionRecord {
+        guard store.sessionStore.containsSession(for: remoteAddress) else {
+            throw SignalError(.noSession, "No session for address")
+        }
         return try store.sessionStore.loadSession(for: remoteAddress)
     }
 
