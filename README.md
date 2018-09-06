@@ -143,7 +143,7 @@ let encryptedMessage = try session.encrypt(message)
 // Get message from the server
 
 // Receive message from Alice
-let session = SessionCipher(store: aliceStore, remoteAddress: aliceAddress)
+let session = SessionCipher(store: bobStore, remoteAddress: aliceAddress)
 
 // Decrypt
 let decryptedMessage = try session.decrypt(message)
