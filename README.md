@@ -115,7 +115,7 @@ Let's continue the above example and assume Bob receives the message from Alice.
 // Get the message from the server
 
 // Create the session
-let session = Session(for: aliceAddress)
+let session = SessionCipher(store: bobStore, remoteAddress: aliceAddress)
 
 // Process the message
 let decryptedMessage = try session.decrypt(preKeyMessage)
@@ -130,6 +130,9 @@ Now Alice and Bob can both send and receive messages at will.
 // Compose a message
 let message =  "Hello there".data(using: .utf8)!
 
+// Send message to Bob
+let session = SessionCipher(store: aliceStore, remoteAddress: bobAddress)
+
 // Encrypt
 let encryptedMessage = try session.encrypt(message)
 ```
@@ -138,6 +141,9 @@ let encryptedMessage = try session.encrypt(message)
 
 ```swift
 // Get message from the server
+
+// Receive message from Alice
+let session = SessionCipher(store: aliceStore, remoteAddress: aliceAddress)
 
 // Decrypt
 let decryptedMessage = try session.decrypt(message)
