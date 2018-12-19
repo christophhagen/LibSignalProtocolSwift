@@ -189,9 +189,6 @@ public struct SessionCipher<Context: KeyStore> {
      - returns: The session record
     */
     private func loadSession() throws -> SessionRecord {
-        guard store.sessionStore.containsSession(for: remoteAddress) else {
-            throw SignalError(.noSession, "No session for address")
-        }
         return try store.sessionStore.loadSession(for: remoteAddress)
     }
 
