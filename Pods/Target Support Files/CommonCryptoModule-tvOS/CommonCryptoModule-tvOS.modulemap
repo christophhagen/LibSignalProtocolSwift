@@ -1,6 +1,0 @@
-framework module CommonCryptoModule {
-  umbrella header "CommonCryptoModule-tvOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
