@@ -1,19 +1,19 @@
 {
   "warnings": [
     {
-      "file": "/Users/User/Development/Github/LibSignalProtocolSwift/Sources/Elliptic Keys/PrivateKey.swift",
-      "line": 114,
-      "symbol": "PrivateKey.data",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/user/Development/LibSignalProtocolSwift/Sources/Additional/SignalError.swift",
+      "line": 33,
+      "symbol": "SignalErrorType.invalidIV",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/User/Development/Github/LibSignalProtocolSwift/Sources/Elliptic Keys/PublicKey.swift",
-      "line": 122,
-      "symbol": "PublicKey.data",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/user/Development/LibSignalProtocolSwift/Sources/LocalStorage/GroupKeyStore.swift",
+      "line": 11,
+      "symbol": "GroupKeyStore",
+      "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/User/Development/Github/LibSignalProtocolSwift"
+  "source_directory": "/Users/user/Development/LibSignalProtocolSwift"
 }

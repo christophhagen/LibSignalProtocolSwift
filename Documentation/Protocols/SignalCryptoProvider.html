@@ -52,7 +52,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CipherTextType.html">CipherTextType</a>
@@ -69,16 +69,19 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL8identity16stableIdentifier10iterations10Foundation4DataVAI_SSSitKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVSayAA06PublicE0VG3for_tF">getLogicalKey(for:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL3for10Foundation4DataVSayAA06PublicE0VG_tF">getLogicalKey(for:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/GroupKeyStore.html">GroupKeyStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
               </li>
@@ -103,7 +106,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Structs.html">Structs</a>
+            <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
@@ -193,9 +196,6 @@
                 <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalAddress.html">SignalAddress</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
               </li>
               <li class="nav-group-task">
@@ -205,15 +205,12 @@
                 <a href="../Structs/SignalMessage.html">SignalMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Typealiases.html">Typealiases</a>
+            <a href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14SignalProtocol22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
@@ -228,7 +225,7 @@
             <h1>SignalCryptoProvider</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignalCryptoProvider</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignalCryptoProvider</span></code></pre>
 
                 </div>
               </div>
@@ -243,9 +240,9 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A14CryptoProviderP6random10Foundation4DataVSi5bytes_tKF"></a>
+                    <a name="/s:14SignalProtocol0A14CryptoProviderP6random5bytes10Foundation4DataVSi_tKF"></a>
                     <a name="//apple_ref/swift/Method/random(bytes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP6random10Foundation4DataVSi5bytes_tKF">random(bytes:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP6random5bytes10Foundation4DataVSi_tKF">random(bytes:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -265,7 +262,7 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">random</span><span class="p">(</span><span class="nv">bytes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">random</span><span class="p">(</span><span class="nv">bytes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -298,9 +295,9 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A14CryptoProviderP10hmacSHA25610Foundation4DataVAG3for_AG4withtKF"></a>
+                    <a name="/s:14SignalProtocol0A14CryptoProviderP10hmacSHA2563for4with10Foundation4DataVAI_AItKF"></a>
                     <a name="//apple_ref/swift/Method/hmacSHA256(for:with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP10hmacSHA25610Foundation4DataVAG3for_AG4withtKF">hmacSHA256(for:with:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP10hmacSHA2563for4with10Foundation4DataVAI_AItKF">hmacSHA256(for:with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -321,7 +318,7 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">hmacSHA256</span><span class="p">(</span><span class="k">for</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">salt</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">hmacSHA256</span><span class="p">(</span><span class="k">for</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">salt</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -354,9 +351,9 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A14CryptoProviderP6sha51210Foundation4DataVAG3for_tKF"></a>
+                    <a name="/s:14SignalProtocol0A14CryptoProviderP6sha5123for10Foundation4DataVAH_tKF"></a>
                     <a name="//apple_ref/swift/Method/sha512(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP6sha51210Foundation4DataVAG3for_tKF">sha512(for:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP6sha5123for10Foundation4DataVAH_tKF">sha512(for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -376,7 +373,7 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">sha512</span><span class="p">(</span><span class="k">for</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sha512</span><span class="p">(</span><span class="k">for</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -409,9 +406,9 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A14CryptoProviderP7encrypt10Foundation4DataVAG7message_AA0A16EncryptionSchemeO4withAG3keyAG2ivtKF"></a>
+                    <a name="/s:14SignalProtocol0A14CryptoProviderP7encrypt7message4with3key2iv10Foundation4DataVAK_AA0A16EncryptionSchemeOA2KtKF"></a>
                     <a name="//apple_ref/swift/Method/encrypt(message:with:key:iv:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP7encrypt10Foundation4DataVAG7message_AA0A16EncryptionSchemeO4withAG3keyAG2ivtKF">encrypt(message:with:key:iv:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP7encrypt7message4with3key2iv10Foundation4DataVAK_AA0A16EncryptionSchemeOA2KtKF">encrypt(message:with:key:iv:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -431,7 +428,7 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -459,7 +456,7 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                               </td>
                               <td>
                                 <div>
-                                  <p>The encryption type to use, see <code>SignalEncryptionScheme</code></p>
+                                  <p>The encryption type to use, see <code><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></code></p>
                                 </div>
                               </td>
                             </tr>
@@ -500,9 +497,9 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A14CryptoProviderP7decrypt10Foundation4DataVAG7message_AA0A16EncryptionSchemeO4withAG3keyAG2ivtKF"></a>
+                    <a name="/s:14SignalProtocol0A14CryptoProviderP7decrypt7message4with3key2iv10Foundation4DataVAK_AA0A16EncryptionSchemeOA2KtKF"></a>
                     <a name="//apple_ref/swift/Method/decrypt(message:with:key:iv:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP7decrypt10Foundation4DataVAG7message_AA0A16EncryptionSchemeO4withAG3keyAG2ivtKF">decrypt(message:with:key:iv:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP7decrypt7message4with3key2iv10Foundation4DataVAK_AA0A16EncryptionSchemeOA2KtKF">decrypt(message:with:key:iv:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -522,7 +519,7 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -550,7 +547,7 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
                               </td>
                               <td>
                                 <div>
-                                  <p>The encryption type to use, see <code>SignalEncryptionScheme</code></p>
+                                  <p>The encryption type to use, see <code><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></code></p>
                                 </div>
                               </td>
                             </tr>
@@ -593,8 +590,8 @@ by setting the static <code>provider</code> variable of the SignalCrypto class</
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2019-04-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

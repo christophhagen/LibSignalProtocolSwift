@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Structs  Reference</title>
+    <title>Structures  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,8 @@
     
   </head>
   <body>
-    <a title="Structs  Reference"></a>
+    <a name="//apple_ref/swift/Section/Structures" class="dashAnchor"></a>
+    <a title="Structures  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">SignalProtocol Docs</a> (100% documented)</p>
@@ -21,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="index.html">SignalProtocol Reference</a>
         <img id="carat" src="img/carat.png" />
-        Structs  Reference
+        Structures  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -51,7 +52,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Enums.html">Enums</a>
+            <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/CipherTextType.html">CipherTextType</a>
@@ -68,16 +69,19 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+                <a href="Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL8identity16stableIdentifier10iterations10Foundation4DataVAI_SSSitKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVSayAA06PublicE0VG3for_tF">getLogicalKey(for:)</a>
+                <a href="Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL3for10Foundation4DataVSayAA06PublicE0VG_tF">getLogicalKey(for:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/GroupKeyStore.html">GroupKeyStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
               </li>
@@ -102,7 +106,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Structs.html">Structs</a>
+            <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/CipherTextMessage.html">CipherTextMessage</a>
@@ -192,9 +196,6 @@
                 <a href="Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SignalAddress.html">SignalAddress</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
               </li>
               <li class="nav-group-task">
@@ -204,15 +205,12 @@
                 <a href="Structs/SignalMessage.html">SignalMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/SymmetricParameters.html">SymmetricParameters</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Typealiases.html">Typealiases</a>
+            <a href="Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Typealiases.html#/s:14SignalProtocol22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
@@ -224,8 +222,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Structs</h1>
-            <p>The following structs are available globally.</p>
+            <h1>Structures</h1>
+            <p>The following structures are available globally.</p>
 
           </section>
           <section class="section task-group-section">
@@ -234,9 +232,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A6CryptoV"></a>
-                    <a name="//apple_ref/swift/Struct/SignalCrypto" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A6CryptoV">SignalCrypto</a>
+                    <a name="/s:14SignalProtocol29DeviceConsistencyCommitmentV0V"></a>
+                    <a name="//apple_ref/swift/Struct/DeviceConsistencyCommitmentV0" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol29DeviceConsistencyCommitmentV0V">DeviceConsistencyCommitmentV0</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -244,19 +242,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The <code>SignalCrypto</code> struct exposes all necessary cryptocraphic functions to the protocol.
-By default CommonCrypto is used to provide these functions, but a custom provider can be
-implemented as well.
-Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a></code> protocol and set the <code>
-</code>SignalCrypto.provider` variable to customise the implementation.</p>
+                        <p>Create commitments that are hashes of the identity keys of different devices.
+These can be used to ensure that all identities are consistent across multiple
+devices.</p>
 
-                        <a href="Structs/SignalCrypto.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/DeviceConsistencyCommitmentV0.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalCrypto</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">DeviceConsistencyCommitmentV0</span></code></pre>
 
                         </div>
                       </div>
@@ -270,9 +266,9 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol22DisplayableFingerprintV"></a>
-                    <a name="//apple_ref/swift/Struct/DisplayableFingerprint" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol22DisplayableFingerprintV">DisplayableFingerprint</a>
+                    <a name="/s:14SignalProtocol24DeviceConsistencyMessageV"></a>
+                    <a name="//apple_ref/swift/Struct/DeviceConsistencyMessage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol24DeviceConsistencyMessageV">DeviceConsistencyMessage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -280,47 +276,16 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Fingerprint to verify the keys specifically for displaying to the user</p>
+                        <p>Device consistency messages can be sent between multiple devices to verify that the
+identity keys and are consistent across devices.</p>
 
-                        <a href="Structs/DisplayableFingerprint.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/DeviceConsistencyMessage.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DisplayableFingerprint</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol4HKDFV"></a>
-                    <a name="//apple_ref/swift/Struct/HKDF" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol4HKDFV">HKDF</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The Key derivation function used for the Ratchet.</p>
-
-                        <a href="Structs/HKDF.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">HKDF</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">DeviceConsistencyMessage</span></code></pre>
 
                         </div>
                       </div>
@@ -352,7 +317,7 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">DeviceConsistencySignature</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">DeviceConsistencySignature</span></code></pre>
 
                         </div>
                       </div>
@@ -366,9 +331,9 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol16SenderKeyMessageV"></a>
-                    <a name="//apple_ref/swift/Struct/SenderKeyMessage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol16SenderKeyMessageV">SenderKeyMessage</a>
+                    <a name="/s:14SignalProtocol7KeyPairV"></a>
+                    <a name="//apple_ref/swift/Struct/KeyPair" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol7KeyPairV">KeyPair</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -376,15 +341,15 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A sender key message is used to send an encrypted message in an existing group session.</p>
+                        <p>A pair of public and private key for elliptic curve cryptopgraphy</p>
 
-                        <a href="Structs/SenderKeyMessage.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/KeyPair.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SenderKeyMessage</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">KeyPair</span></code></pre>
 
                         </div>
                       </div>
@@ -398,9 +363,9 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol19SessionPreKeyBundleV"></a>
-                    <a name="//apple_ref/swift/Struct/SessionPreKeyBundle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol19SessionPreKeyBundleV">SessionPreKeyBundle</a>
+                    <a name="/s:14SignalProtocol10PrivateKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/PrivateKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol10PrivateKeyV">PrivateKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -408,15 +373,16 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Pre key bundles are used to establish new sessions.</p>
+                        <p>The private part of an elliptic curve key pair.
+The key has a length of <code>KeyPair.keyLength</code> byte.</p>
 
-                        <a href="Structs/SessionPreKeyBundle.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/PrivateKey.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionPreKeyBundle</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PrivateKey</span></code></pre>
 
                         </div>
                       </div>
@@ -430,9 +396,9 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol25SessionSignedPreKeyPublicV"></a>
-                    <a name="//apple_ref/swift/Struct/SessionSignedPreKeyPublic" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol25SessionSignedPreKeyPublicV">SessionSignedPreKeyPublic</a>
+                    <a name="/s:14SignalProtocol9PublicKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/PublicKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol9PublicKeyV">PublicKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -440,17 +406,49 @@ Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoP
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A public signed pre key is used as part of a session bundle to establish a new session.
-The public part of the key pair is signed with the identity key of the creator
-to provide authentication.</p>
+                        <p>The public part of an elliptic curve key pair.
+The key has a length of <code>KeyPair.keyLength</code> byte.</p>
 
-                        <a href="Structs/SessionSignedPreKeyPublic.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/PublicKey.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionSignedPreKeyPublic</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PublicKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol11GroupCipherV"></a>
+                    <a name="//apple_ref/swift/Struct/GroupCipher" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol11GroupCipherV">GroupCipher</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use a <code>GroupCipher</code> to encrypt and decrypt group messages for already
+existing sessions.</p>
+
+                        <a href="Structs/GroupCipher.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">GroupCipher</span><span class="o">&lt;</span><span class="kt">Context</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Context</span> <span class="p">:</span> <span class="kt"><a href="Protocols/GroupKeyStore.html">GroupKeyStore</a></span></code></pre>
 
                         </div>
                       </div>
@@ -485,432 +483,7 @@ and for all subsequent encrypt/decrypt operations within that session.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionCipher</span><span class="o">&lt;</span><span class="kt">Context</span><span class="p">:</span> <span class="kt"><a href="Protocols/KeyStore.html">KeyStore</a></span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol14SenderChainKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/SenderChainKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol14SenderChainKeyV">SenderChainKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A key in the sender chain.</p>
-
-                        <a href="Structs/SenderChainKey.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">SenderChainKey</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol19SessionSignedPreKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/SessionSignedPreKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol19SessionSignedPreKeyV">SessionSignedPreKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A signed pre key is used as part of a session bundle to establish a new session.
-The public part of the key pair is signed with the identity key of the creator
-to provide authentication.</p>
-
-                        <a href="Structs/SessionSignedPreKey.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionSignedPreKey</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol11FingerprintV"></a>
-                    <a name="//apple_ref/swift/Struct/Fingerprint" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintV">Fingerprint</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A fingerprint can be used to ensure that the identities of a communication channel
-match, and to detect MITM attacks.</p>
-
-                        <a href="Structs/Fingerprint.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Fingerprint</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol19SymmetricParametersV"></a>
-                    <a name="//apple_ref/swift/Struct/SymmetricParameters" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol19SymmetricParametersV">SymmetricParameters</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>All parameters needed to establish a session</p>
-
-                        <a href="Structs/SymmetricParameters.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">SymmetricParameters</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol7KeyPairV"></a>
-                    <a name="//apple_ref/swift/Struct/KeyPair" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol7KeyPairV">KeyPair</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A pair of public and private key for elliptic curve cryptopgraphy</p>
-
-                        <a href="Structs/KeyPair.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">KeyPair</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol0A7AddressV"></a>
-                    <a name="//apple_ref/swift/Struct/SignalAddress" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7AddressV">SignalAddress</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A <code>SignalAddress</code> identifies a single device of a Signal user, with a user
-<code>identifier</code> (such as a phone number), and the <code>deviceId</code> which specifies the device</p>
-
-                        <a href="Structs/SignalAddress.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalAddress</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol9PublicKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/PublicKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol9PublicKeyV">PublicKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The public part of an elliptic curve key pair.
-The key has a length of <code>KeyPair.keyLength</code> byte.</p>
-
-                        <a href="Structs/PublicKey.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PublicKey</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol15RatchetChainKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/RatchetChainKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol15RatchetChainKeyV">RatchetChainKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A chain key for the ratchet.</p>
-
-                        <a href="Structs/RatchetChainKey.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">RatchetChainKey</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol17CipherTextMessageV"></a>
-                    <a name="//apple_ref/swift/Struct/CipherTextMessage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol17CipherTextMessageV">CipherTextMessage</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A <code>CipherTextMessage</code> encapsulates an encrypted message and the type-</p>
-
-                        <a href="Structs/CipherTextMessage.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CipherTextMessage</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol29DeviceConsistencyCommitmentV0V"></a>
-                    <a name="//apple_ref/swift/Struct/DeviceConsistencyCommitmentV0" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol29DeviceConsistencyCommitmentV0V">DeviceConsistencyCommitmentV0</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Create commitments that are hashes of the identity keys of different devices.
-These can be used to ensure that all identities are consistent across multiple
-devices.</p>
-
-                        <a href="Structs/DeviceConsistencyCommitmentV0.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">DeviceConsistencyCommitmentV0</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol11GroupCipherV"></a>
-                    <a name="//apple_ref/swift/Struct/GroupCipher" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11GroupCipherV">GroupCipher</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Use a <code>GroupCipher</code> to encrypt and decrypt group messages for already
-existing sessions.</p>
-
-                        <a href="Structs/GroupCipher.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">GroupCipher</span><span class="o">&lt;</span><span class="kt">Context</span><span class="p">:</span> <span class="kt"><a href="Protocols/KeyStore.html">KeyStore</a></span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol11SenderChainV"></a>
-                    <a name="//apple_ref/swift/Struct/SenderChain" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11SenderChainV">SenderChain</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The sender chain of a ratchet used to encrypt messages for sending.</p>
-
-                        <a href="Structs/SenderChain.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">SenderChain</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol24DeviceConsistencyMessageV"></a>
-                    <a name="//apple_ref/swift/Struct/DeviceConsistencyMessage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol24DeviceConsistencyMessageV">DeviceConsistencyMessage</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Device consistency messages can be sent between multiple devices to verify that the
-identity keys and are consistent across devices.</p>
-
-                        <a href="Structs/DeviceConsistencyMessage.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">DeviceConsistencyMessage</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionCipher</span><span class="o">&lt;</span><span class="kt">Context</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Context</span> <span class="p">:</span> <span class="kt"><a href="Protocols/KeyStore.html">KeyStore</a></span></code></pre>
 
                         </div>
                       </div>
@@ -943,7 +516,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalCommonCrypto</span><span class="p">:</span> <span class="kt"><a href="Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalCommonCrypto</span> <span class="p">:</span> <span class="kt"><a href="Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a></span></code></pre>
 
                         </div>
                       </div>
@@ -957,9 +530,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionPreKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/SessionPreKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionPreKeyV">SessionPreKey</a>
+                    <a name="/s:14SignalProtocol0A6CryptoV"></a>
+                    <a name="//apple_ref/swift/Struct/SignalCrypto" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol0A6CryptoV">SignalCrypto</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -967,16 +540,19 @@ CommonCrypto.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A pre key used to esatblish a session. A unique pre key is used for
-each new session.</p>
+                        <p>The <code>SignalCrypto</code> struct exposes all necessary cryptocraphic functions to the protocol.
+By default CommonCrypto is used to provide these functions, but a custom provider can be
+implemented as well.
+Implement a provider that conforms to the <code><a href="Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a></code> protocol and set the <code>
+</code>SignalCrypto.provider` variable to customise the implementation.</p>
 
-                        <a href="Structs/SessionPreKey.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/SignalCrypto.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionPreKey</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalCrypto</span></code></pre>
 
                         </div>
                       </div>
@@ -990,9 +566,9 @@ each new session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol19SessionPreKeyPublicV"></a>
-                    <a name="//apple_ref/swift/Struct/SessionPreKeyPublic" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol19SessionPreKeyPublicV">SessionPreKeyPublic</a>
+                    <a name="/s:14SignalProtocol22DisplayableFingerprintV"></a>
+                    <a name="//apple_ref/swift/Struct/DisplayableFingerprint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol22DisplayableFingerprintV">DisplayableFingerprint</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1000,16 +576,15 @@ each new session.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A pre key used to esatblish a session. A unique pre key is used for
-each new session.</p>
+                        <p>A Fingerprint to verify the keys specifically for displaying to the user</p>
 
-                        <a href="Structs/SessionPreKeyPublic.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/DisplayableFingerprint.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionPreKeyPublic</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DisplayableFingerprint</span></code></pre>
 
                         </div>
                       </div>
@@ -1023,9 +598,9 @@ each new session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol06PreKeyA7MessageV"></a>
-                    <a name="//apple_ref/swift/Struct/PreKeySignalMessage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol06PreKeyA7MessageV">PreKeySignalMessage</a>
+                    <a name="/s:14SignalProtocol11FingerprintV"></a>
+                    <a name="//apple_ref/swift/Struct/Fingerprint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV">Fingerprint</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1033,111 +608,16 @@ each new session.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A <code>PreKeySignalMessage</code> can be used to establish a new session.</p>
+                        <p>A fingerprint can be used to ensure that the identities of a communication channel
+match, and to detect MITM attacks.</p>
 
-                        <a href="Structs/PreKeySignalMessage.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/Fingerprint.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PreKeySignalMessage</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol16SenderMessageKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/SenderMessageKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol16SenderMessageKeyV">SenderMessageKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A message key in a chain to encrypt/decrypt messages</p>
-
-                        <a href="Structs/SenderMessageKey.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">SenderMessageKey</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol28SenderKeyDistributionMessageV"></a>
-                    <a name="//apple_ref/swift/Struct/SenderKeyDistributionMessage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol28SenderKeyDistributionMessageV">SenderKeyDistributionMessage</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p><code>SenderKeyDistributionMessage</code>s are used to establish group sessions.</p>
-
-                        <a href="Structs/SenderKeyDistributionMessage.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SenderKeyDistributionMessage</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol13PendingPreKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/PendingPreKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13PendingPreKeyV">PendingPreKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A pre key sent out as a pre key message, until a message is received from the other party</p>
-
-                        <a href="Structs/PendingPreKey.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">PendingPreKey</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Fingerprint</span></code></pre>
 
                         </div>
                       </div>
@@ -1169,7 +649,135 @@ each new session.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ScannableFingerprint</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ScannableFingerprint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol17CipherTextMessageV"></a>
+                    <a name="//apple_ref/swift/Struct/CipherTextMessage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol17CipherTextMessageV">CipherTextMessage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>CipherTextMessage</code> encapsulates an encrypted message and the type-</p>
+
+                        <a href="Structs/CipherTextMessage.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CipherTextMessage</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol06PreKeyA7MessageV"></a>
+                    <a name="//apple_ref/swift/Struct/PreKeySignalMessage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol06PreKeyA7MessageV">PreKeySignalMessage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>PreKeySignalMessage</code> can be used to establish a new session.</p>
+
+                        <a href="Structs/PreKeySignalMessage.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PreKeySignalMessage</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol28SenderKeyDistributionMessageV"></a>
+                    <a name="//apple_ref/swift/Struct/SenderKeyDistributionMessage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol28SenderKeyDistributionMessageV">SenderKeyDistributionMessage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>SenderKeyDistributionMessage</code>s are used to establish group sessions.</p>
+
+                        <a href="Structs/SenderKeyDistributionMessage.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SenderKeyDistributionMessage</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol16SenderKeyMessageV"></a>
+                    <a name="//apple_ref/swift/Struct/SenderKeyMessage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol16SenderKeyMessageV">SenderKeyMessage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A sender key message is used to send an encrypted message in an existing group session.</p>
+
+                        <a href="Structs/SenderKeyMessage.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SenderKeyMessage</span></code></pre>
 
                         </div>
                       </div>
@@ -1201,7 +809,7 @@ each new session.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalMessage</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalMessage</span></code></pre>
 
                         </div>
                       </div>
@@ -1215,9 +823,9 @@ each new session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol10PrivateKeyV"></a>
-                    <a name="//apple_ref/swift/Struct/PrivateKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol10PrivateKeyV">PrivateKey</a>
+                    <a name="/s:14SignalProtocol4HKDFV"></a>
+                    <a name="//apple_ref/swift/Struct/HKDF" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol4HKDFV">HKDF</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1225,16 +833,47 @@ each new session.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The private part of an elliptic curve key pair.
-The key has a length of <code>KeyPair.keyLength</code> byte.</p>
+                        <p>The Key derivation function used for the Ratchet.</p>
 
-                        <a href="Structs/PrivateKey.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/HKDF.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PrivateKey</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">HKDF</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol15RatchetChainKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/RatchetChainKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol15RatchetChainKeyV">RatchetChainKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A chain key for the ratchet.</p>
+
+                        <a href="Structs/RatchetChainKey.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">RatchetChainKey</span></code></pre>
 
                         </div>
                       </div>
@@ -1266,39 +905,7 @@ The key has a length of <code>KeyPair.keyLength</code> byte.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">RatchetMessageKeys</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol0A13SenderKeyNameV"></a>
-                    <a name="//apple_ref/swift/Struct/SignalSenderKeyName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A13SenderKeyNameV">SignalSenderKeyName</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A representation of a (group + sender + device) tuple</p>
-
-                        <a href="Structs/SignalSenderKeyName.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalSenderKeyName</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">RatchetMessageKeys</span></code></pre>
 
                         </div>
                       </div>
@@ -1330,7 +937,135 @@ The key has a length of <code>KeyPair.keyLength</code> byte.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">RatchetRootKey</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">RatchetRootKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol11SenderChainV"></a>
+                    <a name="//apple_ref/swift/Struct/SenderChain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol11SenderChainV">SenderChain</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The sender chain of a ratchet used to encrypt messages for sending.</p>
+
+                        <a href="Structs/SenderChain.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SenderChain</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol14SenderChainKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/SenderChainKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol14SenderChainKeyV">SenderChainKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A key in the sender chain.</p>
+
+                        <a href="Structs/SenderChainKey.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SenderChainKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol16SenderMessageKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/SenderMessageKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol16SenderMessageKeyV">SenderMessageKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A message key in a chain to encrypt/decrypt messages</p>
+
+                        <a href="Structs/SenderMessageKey.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SenderMessageKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol13PendingPreKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/PendingPreKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol13PendingPreKeyV">PendingPreKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A pre key sent out as a pre key message, until a message is received from the other party</p>
+
+                        <a href="Structs/PendingPreKey.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">PendingPreKey</span></code></pre>
 
                         </div>
                       </div>
@@ -1376,7 +1111,205 @@ The key has a length of <code>KeyPair.keyLength</code> byte.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">SessionBuilder</span><span class="o">&lt;</span><span class="kt">Context</span><span class="p">:</span> <span class="kt"><a href="Protocols/KeyStore.html">KeyStore</a></span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SessionBuilder</span><span class="o">&lt;</span><span class="kt">Context</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Context</span> <span class="p">:</span> <span class="kt"><a href="Protocols/KeyStore.html">KeyStore</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol13SessionPreKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/SessionPreKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionPreKeyV">SessionPreKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A pre key used to esatblish a session. A unique pre key is used for
+each new session.</p>
+
+                        <a href="Structs/SessionPreKey.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SessionPreKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol19SessionPreKeyBundleV"></a>
+                    <a name="//apple_ref/swift/Struct/SessionPreKeyBundle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol19SessionPreKeyBundleV">SessionPreKeyBundle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pre key bundles are used to establish new sessions.</p>
+
+                        <a href="Structs/SessionPreKeyBundle.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionPreKeyBundle</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol19SessionPreKeyPublicV"></a>
+                    <a name="//apple_ref/swift/Struct/SessionPreKeyPublic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol19SessionPreKeyPublicV">SessionPreKeyPublic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A pre key used to esatblish a session. A unique pre key is used for
+each new session.</p>
+
+                        <a href="Structs/SessionPreKeyPublic.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SessionPreKeyPublic</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol19SessionSignedPreKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/SessionSignedPreKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol19SessionSignedPreKeyV">SessionSignedPreKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A signed pre key is used as part of a session bundle to establish a new session.
+The public part of the key pair is signed with the identity key of the creator
+to provide authentication.</p>
+
+                        <a href="Structs/SessionSignedPreKey.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SessionSignedPreKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol25SessionSignedPreKeyPublicV"></a>
+                    <a name="//apple_ref/swift/Struct/SessionSignedPreKeyPublic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol25SessionSignedPreKeyPublicV">SessionSignedPreKeyPublic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A public signed pre key is used as part of a session bundle to establish a new session.
+The public part of the key pair is signed with the identity key of the creator
+to provide authentication.</p>
+
+                        <a href="Structs/SessionSignedPreKeyPublic.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SessionSignedPreKeyPublic</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol19SymmetricParametersV"></a>
+                    <a name="//apple_ref/swift/Struct/SymmetricParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol19SymmetricParametersV">SymmetricParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>All parameters needed to establish a session</p>
+
+                        <a href="Structs/SymmetricParameters.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SymmetricParameters</span></code></pre>
 
                         </div>
                       </div>
@@ -1388,8 +1321,8 @@ The key has a length of <code>KeyPair.keyLength</code> byte.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2019-04-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

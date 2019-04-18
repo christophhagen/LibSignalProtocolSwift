@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SignalMessage Struct Reference</title>
+    <title>SignalMessage Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <a name="//apple_ref/swift/Struct/SignalMessage" class="dashAnchor"></a>
-    <a title="SignalMessage Struct Reference"></a>
+    <a title="SignalMessage Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">SignalProtocol Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">SignalProtocol Reference</a>
         <img id="carat" src="../img/carat.png" />
-        SignalMessage Struct Reference
+        SignalMessage Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -52,7 +52,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CipherTextType.html">CipherTextType</a>
@@ -69,16 +69,19 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL8identity16stableIdentifier10iterations10Foundation4DataVAI_SSSitKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVSayAA06PublicE0VG3for_tF">getLogicalKey(for:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL3for10Foundation4DataVSayAA06PublicE0VG_tF">getLogicalKey(for:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/GroupKeyStore.html">GroupKeyStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
               </li>
@@ -103,7 +106,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Structs.html">Structs</a>
+            <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
@@ -193,9 +196,6 @@
                 <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalAddress.html">SignalAddress</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
               </li>
               <li class="nav-group-task">
@@ -205,15 +205,12 @@
                 <a href="../Structs/SignalMessage.html">SignalMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Typealiases.html">Typealiases</a>
+            <a href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14SignalProtocol22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
@@ -228,7 +225,7 @@
             <h1>SignalMessage</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalMessage</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalMessage</span></code></pre>
 
                 </div>
               </div>
@@ -241,9 +238,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV9macLengthSivZ"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV9macLengthSivpZ"></a>
                     <a name="//apple_ref/swift/Variable/macLength" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV9macLengthSivZ">macLength</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV9macLengthSivpZ">macLength</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -258,7 +255,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">macLength</span> <span class="o">=</span> <span class="mi">8</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">macLength</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -268,9 +265,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV16senderRatchetKeyAA06PublicF0Vv"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV16senderRatchetKeyAA06PublicF0Vvp"></a>
                     <a name="//apple_ref/swift/Property/senderRatchetKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV16senderRatchetKeyAA06PublicF0Vv">senderRatchetKey</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV16senderRatchetKeyAA06PublicF0Vvp">senderRatchetKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -285,7 +282,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">senderRatchetKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">senderRatchetKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span></code></pre>
 
                         </div>
                       </div>
@@ -295,9 +292,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV7counters6UInt32Vv"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV7counters6UInt32Vvp"></a>
                     <a name="//apple_ref/swift/Property/counter" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV7counters6UInt32Vv">counter</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV7counters6UInt32Vvp">counter</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -312,7 +309,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">counter</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">counter</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
 
                         </div>
                       </div>
@@ -322,9 +319,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV15previousCounters6UInt32Vv"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV15previousCounters6UInt32Vvp"></a>
                     <a name="//apple_ref/swift/Property/previousCounter" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV15previousCounters6UInt32Vv">previousCounter</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV15previousCounters6UInt32Vvp">previousCounter</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -339,7 +336,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">previousCounter</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">previousCounter</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
 
                         </div>
                       </div>
@@ -349,9 +346,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV10cipherText10Foundation4DataVv"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV10cipherText10Foundation4DataVvp"></a>
                     <a name="//apple_ref/swift/Property/cipherText" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV10cipherText10Foundation4DataVv">cipherText</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV10cipherText10Foundation4DataVvp">cipherText</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -366,7 +363,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">cipherText</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cipherText</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -376,9 +373,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV3mac10Foundation4DataVv"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV3mac10Foundation4DataVvp"></a>
                     <a name="//apple_ref/swift/Property/mac" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV3mac10Foundation4DataVv">mac</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV3mac10Foundation4DataVvp">mac</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -393,7 +390,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">mac</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">mac</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -403,9 +400,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageVAC10Foundation4DataV6macKey_AA06PublicG0V013senderRatchetG0s6UInt32V7counterAL15previousCounterAF10cipherTextAI0i8IdentityG0AI08receiverqG0tKcfc"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV6macKey013senderRatchetE07counter15previousCounter10cipherText0f8IdentityE008receivermE0AC10Foundation4DataV_AA06PublicE0Vs6UInt32VAqm2OtKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(macKey:senderRatchetKey:counter:previousCounter:cipherText:senderIdentityKey:receiverIdentityKey:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageVAC10Foundation4DataV6macKey_AA06PublicG0V013senderRatchetG0s6UInt32V7counterAL15previousCounterAF10cipherTextAI0i8IdentityG0AI08receiverqG0tKcfc">init(macKey:senderRatchetKey:counter:previousCounter:cipherText:senderIdentityKey:receiverIdentityKey:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV6macKey013senderRatchetE07counter15previousCounter10cipherText0f8IdentityE008receivermE0AC10Foundation4DataV_AA06PublicE0Vs6UInt32VAqm2OtKcfc">init(macKey:senderRatchetKey:counter:previousCounter:cipherText:senderIdentityKey:receiverIdentityKey:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -426,13 +423,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">macKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
-         <span class="nv">senderRatchetKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-         <span class="nv">counter</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">,</span>
-         <span class="nv">previousCounter</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">,</span>
-         <span class="nv">cipherText</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
-         <span class="nv">senderIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-         <span class="nv">receiverIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">macKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+     <span class="nv">senderRatchetKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+     <span class="nv">counter</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">,</span>
+     <span class="nv">previousCounter</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">,</span>
+     <span class="nv">cipherText</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+     <span class="nv">senderIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+     <span class="nv">receiverIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -533,9 +530,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV6getMac33_029A73FDA84781D7F94A8B7C987F870FLL10Foundation4DataVAA9PublicKeyV014senderIdentityQ0_AJ08receiversQ0AH03macQ0AH7messagetKF"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV6getMac33_029A73FDA84781D7F94A8B7C987F870FLL17senderIdentityKey08receiveroP003macP07message10Foundation4DataVAA06PublicP0V_An2LtKF"></a>
                     <a name="//apple_ref/swift/Method/getMac(senderIdentityKey:receiverIdentityKey:macKey:message:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV6getMac33_029A73FDA84781D7F94A8B7C987F870FLL10Foundation4DataVAA9PublicKeyV014senderIdentityQ0_AJ08receiversQ0AH03macQ0AH7messagetKF">getMac(senderIdentityKey:receiverIdentityKey:macKey:message:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV6getMac33_029A73FDA84781D7F94A8B7C987F870FLL17senderIdentityKey08receiveroP003macP07message10Foundation4DataVAA06PublicP0V_An2LtKF">getMac(senderIdentityKey:receiverIdentityKey:macKey:message:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -543,7 +540,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Calculate the MAC of the message. The length of the MAC is specified by <code><a href="../Structs/SignalMessage.html#/s:14SignalProtocol0A7MessageV9macLengthSivZ">SignalMessage.macLength</a></code></p>
+                        <p>Calculate the MAC of the message. The length of the MAC is specified by <code><a href="../Structs/SignalMessage.html#/s:14SignalProtocol0A7MessageV9macLengthSivpZ">SignalMessage.macLength</a></code></p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>hmacError</code>, if the message HMAC could not be calculated
@@ -555,10 +552,10 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getMac</span><span class="p">(</span><span class="nv">senderIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-                        <span class="nv">receiverIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-                        <span class="nv">macKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
-                        <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getMac</span><span class="p">(</span><span class="nv">senderIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+                    <span class="nv">receiverIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+                    <span class="nv">macKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+                    <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -627,9 +624,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV9verifyMacSbAA9PublicKeyV014senderIdentityG0_AF08receiveriG010Foundation4DataV03macG0tKF"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV9verifyMac17senderIdentityKey08receivergH003macH0SbAA06PublicH0V_AI10Foundation4DataVtKF"></a>
                     <a name="//apple_ref/swift/Method/verifyMac(senderIdentityKey:receiverIdentityKey:macKey:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV9verifyMacSbAA9PublicKeyV014senderIdentityG0_AF08receiveriG010Foundation4DataV03macG0tKF">verifyMac(senderIdentityKey:receiverIdentityKey:macKey:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV9verifyMac17senderIdentityKey08receivergH003macH0SbAA06PublicH0V_AI10Foundation4DataVtKF">verifyMac(senderIdentityKey:receiverIdentityKey:macKey:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -650,9 +647,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">verifyMac</span><span class="p">(</span><span class="nv">senderIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-                   <span class="nv">receiverIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-                   <span class="nv">macKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">verifyMac</span><span class="p">(</span><span class="nv">senderIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+               <span class="nv">receiverIdentityKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+               <span class="nv">macKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -731,7 +728,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">baseMessage</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CipherTextMessage.html">CipherTextMessage</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">baseMessage</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CipherTextMessage.html">CipherTextMessage</a></span></code></pre>
 
                         </div>
                       </div>
@@ -745,13 +742,20 @@
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Protocol%20Buffers"></a>
+                <a name="//apple_ref/swift/Section/Protocol Buffers" class="dashAnchor"></a>
+                <a href="#/Protocol%20Buffers">
+                  <h3 class="section-name">Protocol Buffers</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV11protoObjectAA0a1_aC0Vv"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV11protoObjectAA0a1_aC0Vvp"></a>
                     <a name="//apple_ref/swift/Property/protoObject" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV11protoObjectAA0a1_aC0Vv">protoObject</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV11protoObjectAA0a1_aC0Vvp">protoObject</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -766,7 +770,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">protoObject</span><span class="p">:</span> <span class="kt">Signal_SignalMessage</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">protoObject</span><span class="p">:</span> <span class="kt">Signal_SignalMessage</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -776,9 +780,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageVAcA0a1_aC0V4from_tKcfc"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV4fromAcA0a1_aC0V_tKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageVAcA0a1_aC0V4from_tKcfc">init(from:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV4fromAcA0a1_aC0V_tKcfc">init(from:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -798,7 +802,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">protoObject</span><span class="p">:</span> <span class="kt">Signal_SignalMessage</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">protoObject</span><span class="p">:</span> <span class="kt">Signal_SignalMessage</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -827,6 +831,13 @@
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Protocol%20Buffers2"></a>
+                <a name="//apple_ref/swift/Section/Protocol Buffers" class="dashAnchor"></a>
+                <a href="#/Protocol%20Buffers2">
+                  <h3 class="section-name">Protocol Buffers</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -853,7 +864,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">protoData</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">protoData</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -867,9 +878,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageVAC10Foundation4DataV4from_tKcfc"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV4fromAC10Foundation4DataV_tKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageVAC10Foundation4DataV4from_tKcfc">init(from:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV4fromAC10Foundation4DataV_tKcfc">init(from:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -897,7 +908,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -926,13 +937,20 @@
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Protocol%20Buffers3"></a>
+                <a name="//apple_ref/swift/Section/Protocol Buffers" class="dashAnchor"></a>
+                <a href="#/Protocol%20Buffers3">
+                  <h3 class="section-name">Protocol Buffers</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A7MessageV2eeoiSbAC_ACtFZ"></a>
+                    <a name="/s:14SignalProtocol0A7MessageV2eeoiySbAC_ACtFZ"></a>
                     <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A7MessageV2eeoiSbAC_ACtFZ">==(_:_:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A7MessageV2eeoiySbAC_ACtFZ">==(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -952,7 +970,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">SignalMessage</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">SignalMessage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">SignalMessage</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">SignalMessage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -999,8 +1017,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2019-04-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

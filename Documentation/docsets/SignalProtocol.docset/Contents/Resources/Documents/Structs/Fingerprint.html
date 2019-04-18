@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fingerprint Struct Reference</title>
+    <title>Fingerprint Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <a name="//apple_ref/swift/Struct/Fingerprint" class="dashAnchor"></a>
-    <a title="Fingerprint Struct Reference"></a>
+    <a title="Fingerprint Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">SignalProtocol Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">SignalProtocol Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Fingerprint Struct Reference
+        Fingerprint Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -52,7 +52,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CipherTextType.html">CipherTextType</a>
@@ -69,16 +69,19 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL8identity16stableIdentifier10iterations10Foundation4DataVAI_SSSitKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVSayAA06PublicE0VG3for_tF">getLogicalKey(for:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL3for10Foundation4DataVSayAA06PublicE0VG_tF">getLogicalKey(for:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/GroupKeyStore.html">GroupKeyStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
               </li>
@@ -103,7 +106,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Structs.html">Structs</a>
+            <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
@@ -193,9 +196,6 @@
                 <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalAddress.html">SignalAddress</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
               </li>
               <li class="nav-group-task">
@@ -205,15 +205,12 @@
                 <a href="../Structs/SignalMessage.html">SignalMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Typealiases.html">Typealiases</a>
+            <a href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14SignalProtocol22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
@@ -228,7 +225,7 @@
             <h1>Fingerprint</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Fingerprint</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Fingerprint</span></code></pre>
 
                 </div>
               </div>
@@ -242,9 +239,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintV7versions5UInt8VvZ"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV7versions5UInt8VvpZ"></a>
                     <a name="//apple_ref/swift/Variable/version" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintV7versions5UInt8VvZ">version</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV7versions5UInt8VvpZ">version</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -259,7 +256,7 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">UInt8</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
 
                         </div>
                       </div>
@@ -269,9 +266,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintV6lengthSivZ"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV6lengthSivpZ"></a>
                     <a name="//apple_ref/swift/Variable/length" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintV6lengthSivZ">length</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV6lengthSivpZ">length</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -286,7 +283,7 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">length</span> <span class="o">=</span> <span class="mi">30</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -296,9 +293,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintV10iterationsSivZ"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV10iterationsSivpZ"></a>
                     <a name="//apple_ref/swift/Variable/iterations" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintV10iterationsSivZ">iterations</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV10iterationsSivpZ">iterations</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -313,7 +310,7 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">iterations</span> <span class="o">=</span> <span class="mi">1024</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -323,9 +320,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintV11displayableAA011DisplayableC0Vv"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV11displayableAA011DisplayableC0Vvp"></a>
                     <a name="//apple_ref/swift/Property/displayable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintV11displayableAA011DisplayableC0Vv">displayable</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV11displayableAA011DisplayableC0Vvp">displayable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -340,7 +337,7 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">displayable</span><span class="p">:</span> <span class="kt"><a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">displayable</span><span class="p">:</span> <span class="kt"><a href="../Structs/DisplayableFingerprint.html">DisplayableFingerprint</a></span></code></pre>
 
                         </div>
                       </div>
@@ -350,9 +347,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintV9scannableAA09ScannableC0Vv"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV9scannableAA09ScannableC0Vvp"></a>
                     <a name="//apple_ref/swift/Property/scannable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintV9scannableAA09ScannableC0Vv">scannable</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV9scannableAA09ScannableC0Vvp">scannable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -367,7 +364,7 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">scannable</span><span class="p">:</span> <span class="kt"><a href="../Structs/ScannableFingerprint.html">ScannableFingerprint</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">scannable</span><span class="p">:</span> <span class="kt"><a href="../Structs/ScannableFingerprint.html">ScannableFingerprint</a></span></code></pre>
 
                         </div>
                       </div>
@@ -377,9 +374,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintV11displayTextSSv"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV11displayTextSSvp"></a>
                     <a name="//apple_ref/swift/Property/displayText" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintV11displayTextSSv">displayText</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV11displayTextSSvp">displayText</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -394,7 +391,7 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">displayText</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">displayText</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -404,9 +401,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintVACSS21localStableIdentifier_10Foundation4DataV0D8IdentitySS06remoteeF0AG0jI0Si10iterationstKcfc"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV21localStableIdentifier0D8Identity06remoteeF00hG010iterationsACSS_10Foundation4DataVSSAKSitKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(localStableIdentifier:localIdentity:remoteStableIdentifier:remoteIdentity:iterations:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintVACSS21localStableIdentifier_10Foundation4DataV0D8IdentitySS06remoteeF0AG0jI0Si10iterationstKcfc">init(localStableIdentifier:localIdentity:remoteStableIdentifier:remoteIdentity:iterations:)</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV21localStableIdentifier0D8Identity06remoteeF00hG010iterationsACSS_10Foundation4DataVSSAKSitKcfc">init(localStableIdentifier:localIdentity:remoteStableIdentifier:remoteIdentity:iterations:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -426,12 +423,12 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
-        <span class="nv">localStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">localIdentity</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
-        <span class="nv">remoteStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">remoteIdentity</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
-        <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Fingerprint</span><span class="o">.</span><span class="n"><a href="../Structs/Fingerprint.html#/s:14SignalProtocol11FingerprintV10iterationsSivZ">iterations</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">localStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">localIdentity</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+    <span class="nv">remoteStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">remoteIdentity</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+    <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Fingerprint</span><span class="o">.</span><span class="n"><a href="../Structs/Fingerprint.html#/s:14SignalProtocol11FingerprintV10iterationsSivpZ">iterations</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -508,9 +505,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintVACSS21localStableIdentifier_AA9PublicKeyV0D8IdentitySS06remoteeF0AF0jI0Si10iterationstKcfc"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV21localStableIdentifier0D8Identity06remoteeF00hG010iterationsACSS_AA9PublicKeyVSSAJSitKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(localStableIdentifier:localIdentity:remoteStableIdentifier:remoteIdentity:iterations:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintVACSS21localStableIdentifier_AA9PublicKeyV0D8IdentitySS06remoteeF0AF0jI0Si10iterationstKcfc">init(localStableIdentifier:localIdentity:remoteStableIdentifier:remoteIdentity:iterations:)</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV21localStableIdentifier0D8Identity06remoteeF00hG010iterationsACSS_AA9PublicKeyVSSAJSitKcfc">init(localStableIdentifier:localIdentity:remoteStableIdentifier:remoteIdentity:iterations:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -530,12 +527,12 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
-        <span class="nv">localStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">localIdentity</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-        <span class="nv">remoteStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">remoteIdentity</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-        <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Fingerprint</span><span class="o">.</span><span class="n"><a href="../Structs/Fingerprint.html#/s:14SignalProtocol11FingerprintV10iterationsSivZ">iterations</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">localStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">localIdentity</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+    <span class="nv">remoteStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">remoteIdentity</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+    <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Fingerprint</span><span class="o">.</span><span class="n"><a href="../Structs/Fingerprint.html#/s:14SignalProtocol11FingerprintV10iterationsSivpZ">iterations</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -612,9 +609,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintVACSS21localStableIdentifier_SayAA9PublicKeyVG0D12IdentityListSS06remoteeF0AG0kiJ0Si10iterationstKcfc"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV21localStableIdentifier0D12IdentityList06remoteeF00igH010iterationsACSS_SayAA9PublicKeyVGSSAKSitKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(localStableIdentifier:localIdentityList:remoteStableIdentifier:remoteIdentityList:iterations:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintVACSS21localStableIdentifier_SayAA9PublicKeyVG0D12IdentityListSS06remoteeF0AG0kiJ0Si10iterationstKcfc">init(localStableIdentifier:localIdentityList:remoteStableIdentifier:remoteIdentityList:iterations:)</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV21localStableIdentifier0D12IdentityList06remoteeF00igH010iterationsACSS_SayAA9PublicKeyVGSSAKSitKcfc">init(localStableIdentifier:localIdentityList:remoteStableIdentifier:remoteIdentityList:iterations:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -634,12 +631,12 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
-        <span class="nv">localStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">localIdentityList</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">],</span>
-        <span class="nv">remoteStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">remoteIdentityList</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">],</span>
-        <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Fingerprint</span><span class="o">.</span><span class="n"><a href="../Structs/Fingerprint.html#/s:14SignalProtocol11FingerprintV10iterationsSivZ">iterations</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">localStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">localIdentityList</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">],</span>
+    <span class="nv">remoteStableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">remoteIdentityList</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">],</span>
+    <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Fingerprint</span><span class="o">.</span><span class="n"><a href="../Structs/Fingerprint.html#/s:14SignalProtocol11FingerprintV10iterationsSivpZ">iterations</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -716,9 +713,9 @@ match, and to detect MITM attacks.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol11FingerprintV7matchesSb10Foundation4DataVKF"></a>
+                    <a name="/s:14SignalProtocol11FingerprintV7matchesySb10Foundation4DataVKF"></a>
                     <a name="//apple_ref/swift/Method/matches(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11FingerprintV7matchesSb10Foundation4DataVKF">matches(_:)</a>
+                    <a class="token" href="#/s:14SignalProtocol11FingerprintV7matchesySb10Foundation4DataVKF">matches(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -738,7 +735,7 @@ match, and to detect MITM attacks.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">matches</span><span class="p">(</span><span class="n">_</span> <span class="nv">scannedData</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">matches</span><span class="p">(</span><span class="n">_</span> <span class="nv">scannedData</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -773,8 +770,8 @@ match, and to detect MITM attacks.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2019-04-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

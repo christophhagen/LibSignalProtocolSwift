@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ A group key store stores the encryption keys for group messaging
+ */
 public protocol GroupKeyStore: KeyStore {
     
     /// The type that distinguishes different groups and devices/users

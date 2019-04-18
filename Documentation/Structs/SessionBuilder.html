@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SessionBuilder Struct Reference</title>
+    <title>SessionBuilder Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <a name="//apple_ref/swift/Struct/SessionBuilder" class="dashAnchor"></a>
-    <a title="SessionBuilder Struct Reference"></a>
+    <a title="SessionBuilder Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">SignalProtocol Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">SignalProtocol Reference</a>
         <img id="carat" src="../img/carat.png" />
-        SessionBuilder Struct Reference
+        SessionBuilder Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -52,7 +52,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CipherTextType.html">CipherTextType</a>
@@ -69,16 +69,19 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL8identity16stableIdentifier10iterations10Foundation4DataVAI_SSSitKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVSayAA06PublicE0VG3for_tF">getLogicalKey(for:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL3for10Foundation4DataVSayAA06PublicE0VG_tF">getLogicalKey(for:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/GroupKeyStore.html">GroupKeyStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
               </li>
@@ -103,7 +106,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Structs.html">Structs</a>
+            <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
@@ -193,9 +196,6 @@
                 <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalAddress.html">SignalAddress</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
               </li>
               <li class="nav-group-task">
@@ -205,15 +205,12 @@
                 <a href="../Structs/SignalMessage.html">SignalMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Typealiases.html">Typealiases</a>
+            <a href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14SignalProtocol22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
@@ -228,7 +225,7 @@
             <h1>SessionBuilder</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">SessionBuilder</span><span class="o">&lt;</span><span class="kt">Context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KeyStore.html">KeyStore</a></span><span class="o">&gt;</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SessionBuilder</span><span class="o">&lt;</span><span class="kt">Context</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Context</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/KeyStore.html">KeyStore</a></span></code></pre>
 
                 </div>
               </div>
@@ -255,9 +252,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol14SessionBuilderV5storexv"></a>
+                    <a name="/s:14SignalProtocol14SessionBuilderV5storexvp"></a>
                     <a name="//apple_ref/swift/Property/store" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV5storexv">store</a>
+                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV5storexvp">store</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -272,7 +269,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">Context</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">Context</span></code></pre>
 
                         </div>
                       </div>
@@ -282,9 +279,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol14SessionBuilderV13remoteAddress0F0Qzv"></a>
+                    <a name="/s:14SignalProtocol14SessionBuilderV13remoteAddress0F0Qzvp"></a>
                     <a name="//apple_ref/swift/Property/remoteAddress" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV13remoteAddress0F0Qzv">remoteAddress</a>
+                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV13remoteAddress0F0Qzvp">remoteAddress</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -299,7 +296,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">remoteAddress</span><span class="p">:</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">remoteAddress</span><span class="p">:</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span></code></pre>
 
                         </div>
                       </div>
@@ -309,9 +306,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol14SessionBuilderVACyxG7AddressQz06remoteE0_x5storetcfc"></a>
+                    <a name="/s:14SignalProtocol14SessionBuilderV13remoteAddress5storeACyxG0F0Qz_xtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(remoteAddress:store:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderVACyxG7AddressQz06remoteE0_x5storetcfc">init(remoteAddress:store:)</a>
+                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV13remoteAddress5storeACyxG0F0Qz_xtcfc">init(remoteAddress:store:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -326,7 +323,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">remoteAddress</span><span class="p">:</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span><span class="p">,</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">remoteAddress</span><span class="p">:</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span><span class="p">,</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -367,9 +364,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol14SessionBuilderV7processs6UInt32VSgAA06PreKeyA7MessageV03prehaI0_AA0C6RecordC07sessionK0tKF"></a>
+                    <a name="/s:14SignalProtocol14SessionBuilderV7process06preKeyA7Message13sessionRecords6UInt32VSgAA03PregaH0V_AA0cJ0CtKF"></a>
                     <a name="//apple_ref/swift/Method/process(preKeySignalMessage:sessionRecord:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV7processs6UInt32VSgAA06PreKeyA7MessageV03prehaI0_AA0C6RecordC07sessionK0tKF">process(preKeySignalMessage:sessionRecord:)</a>
+                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV7process06preKeyA7Message13sessionRecords6UInt32VSgAA03PregaH0V_AA0cJ0CtKF">process(preKeySignalMessage:sessionRecord:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -393,7 +390,7 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">preKeySignalMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a></span><span class="p">,</span> <span class="n">sessionRecord</span> <span class="nv">record</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionRecord.html">SessionRecord</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">preKeySignalMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a></span><span class="p">,</span> <span class="n">sessionRecord</span> <span class="nv">record</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionRecord.html">SessionRecord</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -409,7 +406,7 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
                               </td>
                               <td>
                                 <div>
-                                  <p>The received <code>PreKeySignalMessage</code>.</p>
+                                  <p>The received <code><a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a></code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -426,9 +423,9 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol14SessionBuilderV7process33_F6D411A86E796CC268F629D07027DC59LLs6UInt32VSgAA06PreKeyA7MessageV03prepaQ2V3_AA0C6RecordC6recordtKF"></a>
+                    <a name="/s:14SignalProtocol14SessionBuilderV7process33_F6D411A86E796CC268F629D07027DC59LL06preKeyA9MessageV36records6UInt32VSgAA03PreoaP0V_AA0C6RecordCtKF"></a>
                     <a name="//apple_ref/swift/Method/process(preKeySignalMessageV3:record:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV7process33_F6D411A86E796CC268F629D07027DC59LLs6UInt32VSgAA06PreKeyA7MessageV03prepaQ2V3_AA0C6RecordC6recordtKF">process(preKeySignalMessageV3:record:)</a>
+                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV7process33_F6D411A86E796CC268F629D07027DC59LL06preKeyA9MessageV36records6UInt32VSgAA03PreoaP0V_AA0C6RecordCtKF">process(preKeySignalMessageV3:record:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -448,9 +445,9 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">process</span><span class="p">(</span>
-        <span class="n">preKeySignalMessageV3</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a></span><span class="p">,</span>
-        <span class="nv">record</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionRecord.html">SessionRecord</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">process</span><span class="p">(</span>
+    <span class="n">preKeySignalMessageV3</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a></span><span class="p">,</span>
+    <span class="nv">record</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionRecord.html">SessionRecord</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -466,7 +463,7 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
                               </td>
                               <td>
                                 <div>
-                                  <p>The received <code>PreKeySignalMessage</code>.</p>
+                                  <p>The received <code><a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a></code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -483,9 +480,9 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol14SessionBuilderV7processyAA0C12PreKeyBundleV03pregH0_tKF"></a>
+                    <a name="/s:14SignalProtocol14SessionBuilderV7process12preKeyBundleyAA0c3PregH0V_tKF"></a>
                     <a name="//apple_ref/swift/Method/process(preKeyBundle:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV7processyAA0C12PreKeyBundleV03pregH0_tKF">process(preKeyBundle:)</a>
+                    <a class="token" href="#/s:14SignalProtocol14SessionBuilderV7process12preKeyBundleyAA0c3PregH0V_tKF">process(preKeyBundle:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -494,6 +491,15 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Build a new session from a <code><a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a></code> retrieved from a server.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Possible errors:
+
+</div>
+<li><code>untrustedIdentity</code>, the identity key of the bundle is untrusted</li>
+<li><code>invalidSignature</code> if the signed pre key signature is invalid</li>
+<li><code>storageError</code> if the key stores could not be accessed</li>
+<li><code>invalidProtobuf</code> if data is corrupt</li>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     <code><a href="../Classes/SignalError.html">SignalError</a></code> errors
@@ -505,7 +511,7 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">preKeyBundle</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt"><a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">preKeyBundle</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt"><a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -536,8 +542,8 @@ PreKeyRecord that corresponds to the PreKey ID in the message.
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2019-04-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

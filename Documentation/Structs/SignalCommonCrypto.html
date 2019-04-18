@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SignalCommonCrypto Struct Reference</title>
+    <title>SignalCommonCrypto Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <a name="//apple_ref/swift/Struct/SignalCommonCrypto" class="dashAnchor"></a>
-    <a title="SignalCommonCrypto Struct Reference"></a>
+    <a title="SignalCommonCrypto Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">SignalProtocol Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">SignalProtocol Reference</a>
         <img id="carat" src="../img/carat.png" />
-        SignalCommonCrypto Struct Reference
+        SignalCommonCrypto Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -52,7 +52,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CipherTextType.html">CipherTextType</a>
@@ -69,16 +69,19 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL8identity16stableIdentifier10iterations10Foundation4DataVAI_SSSitKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVSayAA06PublicE0VG3for_tF">getLogicalKey(for:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL3for10Foundation4DataVSayAA06PublicE0VG_tF">getLogicalKey(for:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/GroupKeyStore.html">GroupKeyStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
               </li>
@@ -103,7 +106,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Structs.html">Structs</a>
+            <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
@@ -193,9 +196,6 @@
                 <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalAddress.html">SignalAddress</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
               </li>
               <li class="nav-group-task">
@@ -205,15 +205,12 @@
                 <a href="../Structs/SignalMessage.html">SignalMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Typealiases.html">Typealiases</a>
+            <a href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14SignalProtocol22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
@@ -228,7 +225,7 @@
             <h1>SignalCommonCrypto</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalCommonCrypto</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SignalCommonCrypto</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SignalCryptoProvider.html">SignalCryptoProvider</a></span></code></pre>
 
                 </div>
               </div>
@@ -249,9 +246,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV6random10Foundation4DataVSi5bytes_tKF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV6random5bytes10Foundation4DataVSi_tKF"></a>
                     <a name="//apple_ref/swift/Method/random(bytes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV6random10Foundation4DataVSi5bytes_tKF">random(bytes:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV6random5bytes10Foundation4DataVSi_tKF">random(bytes:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -271,7 +268,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">random</span><span class="p">(</span><span class="nv">bytes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">random</span><span class="p">(</span><span class="nv">bytes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -304,9 +301,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV10hmacSHA25610Foundation4DataVAG3for_AG4withtF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV10hmacSHA2563for4with10Foundation4DataVAI_AItF"></a>
                     <a name="//apple_ref/swift/Method/hmacSHA256(for:with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV10hmacSHA25610Foundation4DataVAG3for_AG4withtF">hmacSHA256(for:with:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV10hmacSHA2563for4with10Foundation4DataVAI_AItF">hmacSHA256(for:with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -321,7 +318,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hmacSHA256</span><span class="p">(</span><span class="k">for</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">salt</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hmacSHA256</span><span class="p">(</span><span class="k">for</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">salt</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -366,9 +363,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV6sha51210Foundation4DataVAG3for_tKF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV6sha5123for10Foundation4DataVAH_tKF"></a>
                     <a name="//apple_ref/swift/Method/sha512(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV6sha51210Foundation4DataVAG3for_tKF">sha512(for:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV6sha5123for10Foundation4DataVAH_tKF">sha512(for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -388,7 +385,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sha512</span><span class="p">(</span><span class="k">for</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sha512</span><span class="p">(</span><span class="k">for</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -421,9 +418,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV7encrypt10Foundation4DataVAG7message_AA0A16EncryptionSchemeO4withAG3keyAG2ivtKF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV7encrypt7message4with3key2iv10Foundation4DataVAK_AA0A16EncryptionSchemeOA2KtKF"></a>
                     <a name="//apple_ref/swift/Method/encrypt(message:with:key:iv:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7encrypt10Foundation4DataVAG7message_AA0A16EncryptionSchemeO4withAG3keyAG2ivtKF">encrypt(message:with:key:iv:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7encrypt7message4with3key2iv10Foundation4DataVAK_AA0A16EncryptionSchemeOA2KtKF">encrypt(message:with:key:iv:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -443,7 +440,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -483,7 +480,7 @@ CommonCrypto.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The key for encryption (<code>kCCKeySizeAES128</code> bytes)</p>
+                                  <p>The key for encryption (<code>kCCKeySizeAES256</code> bytes)</p>
                                 </div>
                               </td>
                             </tr>
@@ -495,7 +492,7 @@ CommonCrypto.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The initialization vector</p>
+                                  <p>The initialization vector (<code>kCCBlockSizeAES128</code> bytes)</p>
                                 </div>
                               </td>
                             </tr>
@@ -512,9 +509,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV7decrypt10Foundation4DataVAG7message_AA0A16EncryptionSchemeO4withAG3keyAG2ivtKF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV7decrypt7message4with3key2iv10Foundation4DataVAK_AA0A16EncryptionSchemeOA2KtKF"></a>
                     <a name="//apple_ref/swift/Method/decrypt(message:with:key:iv:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7decrypt10Foundation4DataVAG7message_AA0A16EncryptionSchemeO4withAG3keyAG2ivtKF">decrypt(message:with:key:iv:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7decrypt7message4with3key2iv10Foundation4DataVAK_AA0A16EncryptionSchemeOA2KtKF">decrypt(message:with:key:iv:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -534,7 +531,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">with</span> <span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Enums/SignalEncryptionScheme.html">SignalEncryptionScheme</a></span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -574,7 +571,7 @@ CommonCrypto.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The key for decryption (<code>kCCKeySizeAES128</code> bytes)</p>
+                                  <p>The key for decryption (<code>kCCKeySizeAES256</code> bytes)</p>
                                 </div>
                               </td>
                             </tr>
@@ -586,7 +583,7 @@ CommonCrypto.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The initialization vector</p>
+                                  <p>The initialization vector (<code>kCCBlockSizeAES128</code> bytes)</p>
                                 </div>
                               </td>
                             </tr>
@@ -614,9 +611,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV7process33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVAH3cbc_AH3keyAH2ivSb7encrypttKF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV7process33_D160775F74C6E7CFC24EE3D0CD6C233BLL3cbc3key2iv7encrypt10Foundation4DataVAL_A2LSbtKF"></a>
                     <a name="//apple_ref/swift/Method/process(cbc:key:iv:encrypt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7process33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVAH3cbc_AH3keyAH2ivSb7encrypttKF">process(cbc:key:iv:encrypt:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7process33_D160775F74C6E7CFC24EE3D0CD6C233BLL3cbc3key2iv7encrypt10Foundation4DataVAL_A2LSbtKF">process(cbc:key:iv:encrypt:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -636,7 +633,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">cbc</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">encrypt</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">cbc</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">encrypt</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -705,9 +702,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV7encrypt33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVAH3ctr_AH3keyAH2ivtKF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV7encrypt33_D160775F74C6E7CFC24EE3D0CD6C233BLL3ctr3key2iv10Foundation4DataVAK_A2KtKF"></a>
                     <a name="//apple_ref/swift/Method/encrypt(ctr:key:iv:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7encrypt33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVAH3ctr_AH3keyAH2ivtKF">encrypt(ctr:key:iv:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7encrypt33_D160775F74C6E7CFC24EE3D0CD6C233BLL3ctr3key2iv10Foundation4DataVAK_A2KtKF">encrypt(ctr:key:iv:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -727,7 +724,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">ctr</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">ctr</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -784,9 +781,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV7decrypt33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVAH3ctr_AH3keyAH2ivtKF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV7decrypt33_D160775F74C6E7CFC24EE3D0CD6C233BLL3ctr3key2iv10Foundation4DataVAK_A2KtKF"></a>
                     <a name="//apple_ref/swift/Method/decrypt(ctr:key:iv:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7decrypt33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVAH3ctr_AH3keyAH2ivtKF">decrypt(ctr:key:iv:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7decrypt33_D160775F74C6E7CFC24EE3D0CD6C233BLL3ctr3key2iv10Foundation4DataVAK_A2KtKF">decrypt(ctr:key:iv:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -806,7 +803,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">ctr</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">ctr</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -863,9 +860,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV7process33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVAH3ctr_AH3keyAH2ivSb7encrypttKF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV7process33_D160775F74C6E7CFC24EE3D0CD6C233BLL3ctr3key2iv7encrypt10Foundation4DataVAL_A2LSbtKF"></a>
                     <a name="//apple_ref/swift/Method/process(ctr:key:iv:encrypt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7process33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVAH3ctr_AH3keyAH2ivSb7encrypttKF">process(ctr:key:iv:encrypt:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7process33_D160775F74C6E7CFC24EE3D0CD6C233BLL3ctr3key2iv7encrypt10Foundation4DataVAL_A2LSbtKF">process(ctr:key:iv:encrypt:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -885,7 +882,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">ctr</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">encrypt</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">ctr</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">iv</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">encrypt</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -954,9 +951,9 @@ CommonCrypto.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A12CommonCryptoV7toArray33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVSv4from_Si5counttF"></a>
+                    <a name="/s:14SignalProtocol0A12CommonCryptoV7toArray33_D160775F74C6E7CFC24EE3D0CD6C233BLL4from5count10Foundation4DataVSv_SitF"></a>
                     <a name="//apple_ref/swift/Method/toArray(from:count:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7toArray33_D160775F74C6E7CFC24EE3D0CD6C233BLL10Foundation4DataVSv4from_Si5counttF">toArray(from:count:)</a>
+                    <a class="token" href="#/s:14SignalProtocol0A12CommonCryptoV7toArray33_D160775F74C6E7CFC24EE3D0CD6C233BLL4from5count10Foundation4DataVSv_SitF">toArray(from:count:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -971,7 +968,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">toArray</span><span class="p">(</span><span class="n">from</span> <span class="nv">ptr</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">toArray</span><span class="p">(</span><span class="n">from</span> <span class="nv">ptr</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -1033,7 +1030,7 @@ CommonCrypto.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -1045,8 +1042,8 @@ CommonCrypto.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2019-04-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

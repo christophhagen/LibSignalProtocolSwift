@@ -10,6 +10,7 @@
     
   </head>
   <body>
+    <a name="//apple_ref/swift/Section/Protocols" class="dashAnchor"></a>
     <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
@@ -51,7 +52,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Enums.html">Enums</a>
+            <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/CipherTextType.html">CipherTextType</a>
@@ -68,16 +69,19 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+                <a href="Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL8identity16stableIdentifier10iterations10Foundation4DataVAI_SSSitKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVSayAA06PublicE0VG3for_tF">getLogicalKey(for:)</a>
+                <a href="Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL3for10Foundation4DataVSayAA06PublicE0VG_tF">getLogicalKey(for:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/GroupKeyStore.html">GroupKeyStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
               </li>
@@ -102,7 +106,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Structs.html">Structs</a>
+            <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/CipherTextMessage.html">CipherTextMessage</a>
@@ -192,9 +196,6 @@
                 <a href="Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SignalAddress.html">SignalAddress</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
               </li>
               <li class="nav-group-task">
@@ -204,15 +205,12 @@
                 <a href="Structs/SignalMessage.html">SignalMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/SymmetricParameters.html">SymmetricParameters</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Typealiases.html">Typealiases</a>
+            <a href="Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Typealiases.html#/s:14SignalProtocol22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
@@ -234,9 +232,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol12SessionStoreP"></a>
-                    <a name="//apple_ref/swift/Protocol/SessionStore" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol12SessionStoreP">SessionStore</a>
+                    <a name="/s:14SignalProtocol0A14CryptoProviderP"></a>
+                    <a name="//apple_ref/swift/Protocol/SignalCryptoProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP">SignalCryptoProvider</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -244,17 +242,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Implement the <code>SessionStore</code> protocol to handle the session records of the
-Signal Protocol. The records should be stored in a secure database and be treated as
-unspecified data blobs.</p>
+                        <p>The <code>SignalCryptoProvider</code> protocol can be implemented to provide a custom
+implementation of the cryptographic functions. Set the crypto provider
+by setting the static <code>provider</code> variable of the SignalCrypto class</p>
 
-                        <a href="Protocols/SessionStore.html" class="slightly-smaller">See more</a>
+                        <a href="Protocols/SignalCryptoProvider.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SessionStore</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignalCryptoProvider</span></code></pre>
 
                         </div>
                       </div>
@@ -268,9 +266,9 @@ unspecified data blobs.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol8KeyStoreP"></a>
-                    <a name="//apple_ref/swift/Protocol/KeyStore" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol8KeyStoreP">KeyStore</a>
+                    <a name="/s:14SignalProtocol13GroupKeyStoreP"></a>
+                    <a name="//apple_ref/swift/Protocol/GroupKeyStore" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol13GroupKeyStoreP">GroupKeyStore</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -278,83 +276,15 @@ unspecified data blobs.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Provide all local storage delegates.</p>
+                        <p>A group key store stores the encryption keys for group messaging</p>
 
-                        <a href="Protocols/KeyStore.html" class="slightly-smaller">See more</a>
+                        <a href="Protocols/GroupKeyStore.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">KeyStore</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol14SenderKeyStoreP"></a>
-                    <a name="//apple_ref/swift/Protocol/SenderKeyStore" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol14SenderKeyStoreP">SenderKeyStore</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Implement the <code>SenderKeyStore</code> protocol to handle the sender key storage of the
-Signal Protocol. The keys should be stored in a secure database and be treated as
-unspecified data blobs.</p>
-
-                        <a href="Protocols/SenderKeyStore.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SenderKeyStore</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SignalProtocol11PreKeyStoreP"></a>
-                    <a name="//apple_ref/swift/Protocol/PreKeyStore" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol11PreKeyStoreP">PreKeyStore</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Implement the <code>PreKeyStore</code> protocol to handle the pre key storage of the
-Signal Protocol. The keys should be stored in a secure database and be treated as
-unspecified data blobs.</p>
-
-                        <a href="Protocols/PreKeyStore.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PreKeyStore</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">GroupKeyStore</span> <span class="p">:</span> <span class="kt"><a href="Protocols/KeyStore.html">KeyStore</a></span></code></pre>
 
                         </div>
                       </div>
@@ -388,7 +318,7 @@ unspecified data blobs.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">IdentityKeyStore</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">IdentityKeyStore</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>
@@ -402,9 +332,9 @@ unspecified data blobs.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol0A14CryptoProviderP"></a>
-                    <a name="//apple_ref/swift/Protocol/SignalCryptoProvider" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol0A14CryptoProviderP">SignalCryptoProvider</a>
+                    <a name="/s:14SignalProtocol8KeyStoreP"></a>
+                    <a name="//apple_ref/swift/Protocol/KeyStore" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol8KeyStoreP">KeyStore</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -412,17 +342,117 @@ unspecified data blobs.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The <code>SignalCryptoProvider</code> protocol can be implemented to provide a custom
-implementation of the cryptographic functions. Set the crypto provider
-by setting the static <code>provider</code> variable of the SignalCrypto class</p>
+                        <p>Provide all local storage delegates.</p>
 
-                        <a href="Protocols/SignalCryptoProvider.html" class="slightly-smaller">See more</a>
+                        <a href="Protocols/KeyStore.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignalCryptoProvider</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">KeyStore</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol11PreKeyStoreP"></a>
+                    <a name="//apple_ref/swift/Protocol/PreKeyStore" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol11PreKeyStoreP">PreKeyStore</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement the <code>PreKeyStore</code> protocol to handle the pre key storage of the
+Signal Protocol. The keys should be stored in a secure database and be treated as
+unspecified data blobs.</p>
+
+                        <a href="Protocols/PreKeyStore.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PreKeyStore</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol14SenderKeyStoreP"></a>
+                    <a name="//apple_ref/swift/Protocol/SenderKeyStore" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol14SenderKeyStoreP">SenderKeyStore</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement the <code>SenderKeyStore</code> protocol to handle the sender key storage of the
+Signal Protocol. The keys should be stored in a secure database and be treated as
+unspecified data blobs.</p>
+
+                        <a href="Protocols/SenderKeyStore.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SenderKeyStore</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SignalProtocol12SessionStoreP"></a>
+                    <a name="//apple_ref/swift/Protocol/SessionStore" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SignalProtocol12SessionStoreP">SessionStore</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement the <code>SessionStore</code> protocol to handle the session records of the
+Signal Protocol. The records should be stored in a secure database and be treated as
+unspecified data blobs.</p>
+
+                        <a href="Protocols/SessionStore.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SessionStore</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>
@@ -456,7 +486,7 @@ unspecified data blobs.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignedPreKeyStore</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SignedPreKeyStore</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>
@@ -468,8 +498,8 @@ unspecified data blobs.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2019-04-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

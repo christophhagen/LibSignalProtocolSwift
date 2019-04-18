@@ -15,7 +15,7 @@ It somewhat mimics the functionality and structure of the [Signal Protocol C imp
 You can install `LibSignalProtocolSwift` through [Cocoapods](https://cocoapods.org), by adding the following to your `Podfile`:
 
 ````ruby
-pod 'LibSignalProtocolSwift'
+pod 'LibSignalProtocolSwift', '~> 1.3'
 ````
 
 After installation the Framework can be accessed by importing it:

@@ -30,6 +30,7 @@ public enum SignalErrorType: String {
     /// An invalid key produced an error
     case invalidKey = "Invalid key"
     
+    /// The initialization vector has the wrong length
     case invalidIV = "Invalid iv"
 
     /// The (key) id is invalid

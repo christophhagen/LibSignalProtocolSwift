@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SessionCipher Struct Reference</title>
+    <title>SessionCipher Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <a name="//apple_ref/swift/Struct/SessionCipher" class="dashAnchor"></a>
-    <a title="SessionCipher Struct Reference"></a>
+    <a title="SessionCipher Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">SignalProtocol Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">SignalProtocol Reference</a>
         <img id="carat" src="../img/carat.png" />
-        SessionCipher Struct Reference
+        SessionCipher Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -52,7 +52,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CipherTextType.html">CipherTextType</a>
@@ -69,16 +69,19 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVAF8identity_SS16stableIdentifierSi10iterationstKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol14getFingerprint33_4D265CAC7D325782566EF400BD6F4359LL8identity16stableIdentifier10iterations10Foundation4DataVAI_SSSitKF">getFingerprint(identity:stableIdentifier:iterations:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL10Foundation4DataVSayAA06PublicE0VG3for_tF">getLogicalKey(for:)</a>
+                <a href="../Functions.html#/s:14SignalProtocol13getLogicalKey33_4D265CAC7D325782566EF400BD6F4359LL3for10Foundation4DataVSayAA06PublicE0VG_tF">getLogicalKey(for:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/GroupKeyStore.html">GroupKeyStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/IdentityKeyStore.html">IdentityKeyStore</a>
               </li>
@@ -103,7 +106,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Structs.html">Structs</a>
+            <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/CipherTextMessage.html">CipherTextMessage</a>
@@ -193,9 +196,6 @@
                 <a href="../Structs/SessionSignedPreKeyPublic.html">SessionSignedPreKeyPublic</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalAddress.html">SignalAddress</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SignalCommonCrypto.html">SignalCommonCrypto</a>
               </li>
               <li class="nav-group-task">
@@ -205,15 +205,12 @@
                 <a href="../Structs/SignalMessage.html">SignalMessage</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SignalSenderKeyName.html">SignalSenderKeyName</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/SymmetricParameters.html">SymmetricParameters</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Typealiases.html">Typealiases</a>
+            <a href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14SignalProtocol22RatchetIdentityKeyPaira">RatchetIdentityKeyPair</a>
@@ -228,7 +225,7 @@
             <h1>SessionCipher</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionCipher</span><span class="o">&lt;</span><span class="kt">Context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KeyStore.html">KeyStore</a></span><span class="o">&gt;</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SessionCipher</span><span class="o">&lt;</span><span class="kt">Context</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Context</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/KeyStore.html">KeyStore</a></span></code></pre>
 
                 </div>
               </div>
@@ -251,9 +248,9 @@ and for all subsequent encrypt/decrypt operations within that session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV5store33_A7B7CE7E72D1FD6B1E024448F80198D3LLxv"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV5store33_A7B7CE7E72D1FD6B1E024448F80198D3LLxvp"></a>
                     <a name="//apple_ref/swift/Property/store" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV5store33_A7B7CE7E72D1FD6B1E024448F80198D3LLxv">store</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV5store33_A7B7CE7E72D1FD6B1E024448F80198D3LLxvp">store</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -268,7 +265,7 @@ and for all subsequent encrypt/decrypt operations within that session.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">Context</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">Context</span></code></pre>
 
                         </div>
                       </div>
@@ -278,9 +275,9 @@ and for all subsequent encrypt/decrypt operations within that session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV13remoteAddress33_A7B7CE7E72D1FD6B1E024448F80198D3LL0F0Qzv"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV13remoteAddress33_A7B7CE7E72D1FD6B1E024448F80198D3LL0F0Qzvp"></a>
                     <a name="//apple_ref/swift/Property/remoteAddress" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV13remoteAddress33_A7B7CE7E72D1FD6B1E024448F80198D3LL0F0Qzv">remoteAddress</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV13remoteAddress33_A7B7CE7E72D1FD6B1E024448F80198D3LL0F0Qzvp">remoteAddress</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -295,7 +292,7 @@ and for all subsequent encrypt/decrypt operations within that session.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">remoteAddress</span><span class="p">:</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">remoteAddress</span><span class="p">:</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span></code></pre>
 
                         </div>
                       </div>
@@ -316,9 +313,9 @@ and for all subsequent encrypt/decrypt operations within that session.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherVACyxGx5store_7AddressQz06remoteF0tcfc"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV5store13remoteAddressACyxGx_0G0Qztcfc"></a>
                     <a name="//apple_ref/swift/Method/init(store:remoteAddress:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherVACyxGx5store_7AddressQz06remoteF0tcfc">init(store:remoteAddress:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV5store13remoteAddressACyxGx_0G0Qztcfc">init(store:remoteAddress:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -340,7 +337,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">store</span><span class="p">:</span> <span class="kt">Context</span><span class="p">,</span> <span class="nv">remoteAddress</span><span class="p">:</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">store</span><span class="p">:</span> <span class="kt">Context</span><span class="p">,</span> <span class="nv">remoteAddress</span><span class="p">:</span> <span class="kt">Context</span><span class="o">.</span><span class="kt">Address</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -396,9 +393,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV7encryptAA0D11TextMessageV10Foundation4DataVKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV7encryptyAA0D11TextMessageV10Foundation4DataVKF"></a>
                     <a name="//apple_ref/swift/Method/encrypt(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7encryptAA0D11TextMessageV10Foundation4DataVKF">encrypt(_:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7encryptyAA0D11TextMessageV10Foundation4DataVKF">encrypt(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -418,7 +415,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CipherTextMessage.html">CipherTextMessage</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/CipherTextMessage.html">CipherTextMessage</a></span></code></pre>
 
                         </div>
                       </div>
@@ -451,9 +448,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt10Foundation4DataVAA0D11TextMessageVKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV7decrypty10Foundation4DataVAA0D11TextMessageVKF"></a>
                     <a name="//apple_ref/swift/Method/decrypt(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt10Foundation4DataVAA0D11TextMessageVKF">decrypt(_:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypty10Foundation4DataVAA0D11TextMessageVKF">decrypt(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -480,7 +477,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Structs/CipherTextMessage.html">CipherTextMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Structs/CipherTextMessage.html">CipherTextMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -490,9 +487,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt10Foundation4DataVAA06PreKeyA7MessageV03preiaJ0_tKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt06preKeyA7Message10Foundation4DataVAA03PregaH0V_tKF"></a>
                     <a name="//apple_ref/swift/Method/decrypt(preKeySignalMessage:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt10Foundation4DataVAA06PreKeyA7MessageV03preiaJ0_tKF">decrypt(preKeySignalMessage:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt06preKeyA7Message10Foundation4DataVAA03PregaH0V_tKF">decrypt(preKeySignalMessage:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -522,7 +519,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">preKeySignalMessage</span> <span class="nv">ciphertext</span><span class="p">:</span> <span class="kt"><a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">preKeySignalMessage</span> <span class="nv">ciphertext</span><span class="p">:</span> <span class="kt"><a href="../Structs/PreKeySignalMessage.html">PreKeySignalMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -555,9 +552,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt10Foundation4DataVAA0A7MessageV06signalH0_tKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt13signalMessage10Foundation4DataVAA0aG0V_tKF"></a>
                     <a name="//apple_ref/swift/Method/decrypt(signalMessage:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt10Foundation4DataVAA0A7MessageV06signalH0_tKF">decrypt(signalMessage:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt13signalMessage10Foundation4DataVAA0aG0V_tKF">decrypt(signalMessage:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -585,7 +582,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">signalMessage</span> <span class="nv">ciphertext</span><span class="p">:</span> <span class="kt"><a href="../Structs/SignalMessage.html">SignalMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">signalMessage</span> <span class="nv">ciphertext</span><span class="p">:</span> <span class="kt"><a href="../Structs/SignalMessage.html">SignalMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -618,9 +615,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV7processyAA0C12PreKeyBundleV03pregH0_tKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV7process12preKeyBundleyAA0c3PregH0V_tKF"></a>
                     <a name="//apple_ref/swift/Method/process(preKeyBundle:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7processyAA0C12PreKeyBundleV03pregH0_tKF">process(preKeyBundle:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7process12preKeyBundleyAA0c3PregH0V_tKF">process(preKeyBundle:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -640,7 +637,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">preKeyBundle</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt"><a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="n">preKeyBundle</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt"><a href="../Structs/SessionPreKeyBundle.html">SessionPreKeyBundle</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -693,7 +690,7 @@ session cipher.</p>
                         <p>Load the session record for the remote address</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
-    <code><a href="../Classes/SignalError.html">SignalError</a></code>of type <code>storageError</code>
+    <code><a href="../Classes/SignalError.html">SignalError</a></code> of type <code>storageError</code>
 
 </div>
 
@@ -702,7 +699,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">loadSession</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/SessionRecord.html">SessionRecord</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">loadSession</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/SessionRecord.html">SessionRecord</a></span></code></pre>
 
                         </div>
                       </div>
@@ -716,9 +713,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt33_A7B7CE7E72D1FD6B1E024448F80198D3LL10Foundation4DataVAA0C6RecordC4from_AA0A7MessageV3andtKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt33_A7B7CE7E72D1FD6B1E024448F80198D3LL4from3and10Foundation4DataVAA0C6RecordC_AA0A7MessageVtKF"></a>
                     <a name="//apple_ref/swift/Method/decrypt(from:and:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt33_A7B7CE7E72D1FD6B1E024448F80198D3LL10Foundation4DataVAA0C6RecordC4from_AA0A7MessageV3andtKF">decrypt(from:and:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt33_A7B7CE7E72D1FD6B1E024448F80198D3LL4from3and10Foundation4DataVAA0C6RecordC_AA0A7MessageVtKF">decrypt(from:and:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -738,7 +735,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">from</span> <span class="nv">record</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionRecord.html">SessionRecord</a></span><span class="p">,</span> <span class="n">and</span> <span class="nv">signalMessage</span><span class="p">:</span> <span class="kt"><a href="../Structs/SignalMessage.html">SignalMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">from</span> <span class="nv">record</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionRecord.html">SessionRecord</a></span><span class="p">,</span> <span class="n">and</span> <span class="nv">signalMessage</span><span class="p">:</span> <span class="kt"><a href="../Structs/SignalMessage.html">SignalMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -754,7 +751,7 @@ session cipher.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>SessionRecord</code> containing the sessions</p>
+                                  <p>The <code><a href="../Classes/SessionRecord.html">SessionRecord</a></code> containing the sessions</p>
                                 </div>
                               </td>
                             </tr>
@@ -783,9 +780,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt33_A7B7CE7E72D1FD6B1E024448F80198D3LL10Foundation4DataVAA0C5StateC4from_AA0A7MessageV3andtKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV7decrypt33_A7B7CE7E72D1FD6B1E024448F80198D3LL4from3and10Foundation4DataVAA0C5StateC_AA0A7MessageVtKF"></a>
                     <a name="//apple_ref/swift/Method/decrypt(from:and:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt33_A7B7CE7E72D1FD6B1E024448F80198D3LL10Foundation4DataVAA0C5StateC4from_AA0A7MessageV3andtKF">decrypt(from:and:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV7decrypt33_A7B7CE7E72D1FD6B1E024448F80198D3LL4from3and10Foundation4DataVAA0C5StateC_AA0A7MessageVtKF">decrypt(from:and:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -805,7 +802,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">from</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionState.html">SessionState</a></span><span class="p">,</span> <span class="n">and</span> <span class="nv">signalMessage</span><span class="p">:</span> <span class="kt"><a href="../Structs/SignalMessage.html">SignalMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">from</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionState.html">SessionState</a></span><span class="p">,</span> <span class="n">and</span> <span class="nv">signalMessage</span><span class="p">:</span> <span class="kt"><a href="../Structs/SignalMessage.html">SignalMessage</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -821,7 +818,7 @@ session cipher.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The <code>SessionState</code> to try</p>
+                                  <p>The <code><a href="../Classes/SessionState.html">SessionState</a></code> to try</p>
                                 </div>
                               </td>
                             </tr>
@@ -850,9 +847,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV22getOrCreateMessageKeys33_A7B7CE7E72D1FD6B1E024448F80198D3LLAA07RatchethI0VAA0C5StateC5state_AA9PublicKeyV14theirEphemeralAA0t5ChainX0V05chainX0s6UInt32V7countertKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV22getOrCreateMessageKeys33_A7B7CE7E72D1FD6B1E024448F80198D3LL5state14theirEphemeral8chainKey7counterAA07RatchethI0VAA0C5StateC_AA06PublicX0VAA0z5ChainX0Vs6UInt32VtKF"></a>
                     <a name="//apple_ref/swift/Method/getOrCreateMessageKeys(state:theirEphemeral:chainKey:counter:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV22getOrCreateMessageKeys33_A7B7CE7E72D1FD6B1E024448F80198D3LLAA07RatchethI0VAA0C5StateC5state_AA9PublicKeyV14theirEphemeralAA0t5ChainX0V05chainX0s6UInt32V7countertKF">getOrCreateMessageKeys(state:theirEphemeral:chainKey:counter:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV22getOrCreateMessageKeys33_A7B7CE7E72D1FD6B1E024448F80198D3LL5state14theirEphemeral8chainKey7counterAA07RatchethI0VAA0C5StateC_AA06PublicX0VAA0z5ChainX0Vs6UInt32VtKF">getOrCreateMessageKeys(state:theirEphemeral:chainKey:counter:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -872,11 +869,11 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getOrCreateMessageKeys</span><span class="p">(</span>
-        <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionState.html">SessionState</a></span><span class="p">,</span>
-        <span class="nv">theirEphemeral</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
-        <span class="nv">chainKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span><span class="p">,</span>
-        <span class="nv">counter</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getOrCreateMessageKeys</span><span class="p">(</span>
+    <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionState.html">SessionState</a></span><span class="p">,</span>
+    <span class="nv">theirEphemeral</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span>
+    <span class="nv">chainKey</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span><span class="p">,</span>
+    <span class="nv">counter</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a></span></code></pre>
 
                         </div>
                       </div>
@@ -945,9 +942,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV19getOrCreateChainKey33_A7B7CE7E72D1FD6B1E024448F80198D3LLAA07RatchethI0VAA0C5StateC5state_AA06PublicI0V14theirEphemeraltKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV19getOrCreateChainKey33_A7B7CE7E72D1FD6B1E024448F80198D3LL5state14theirEphemeralAA07RatchethI0VAA0C5StateC_AA06PublicI0VtKF"></a>
                     <a name="//apple_ref/swift/Method/getOrCreateChainKey(state:theirEphemeral:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV19getOrCreateChainKey33_A7B7CE7E72D1FD6B1E024448F80198D3LLAA07RatchethI0VAA0C5StateC5state_AA06PublicI0V14theirEphemeraltKF">getOrCreateChainKey(state:theirEphemeral:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV19getOrCreateChainKey33_A7B7CE7E72D1FD6B1E024448F80198D3LL5state14theirEphemeralAA07RatchethI0VAA0C5StateC_AA06PublicI0VtKF">getOrCreateChainKey(state:theirEphemeral:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -967,7 +964,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getOrCreateChainKey</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionState.html">SessionState</a></span><span class="p">,</span> <span class="nv">theirEphemeral</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getOrCreateChainKey</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/SessionState.html">SessionState</a></span><span class="p">,</span> <span class="nv">theirEphemeral</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/RatchetChainKey.html">RatchetChainKey</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1012,9 +1009,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV13getCiphertext33_A7B7CE7E72D1FD6B1E024448F80198D3LL10Foundation4DataVAA18RatchetMessageKeysV07messageU0_AH9plaintexttKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV13getCiphertext33_A7B7CE7E72D1FD6B1E024448F80198D3LL11messageKeys9plaintext10Foundation4DataVAA014RatchetMessageR0V_AJtKF"></a>
                     <a name="//apple_ref/swift/Method/getCiphertext(messageKeys:plaintext:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV13getCiphertext33_A7B7CE7E72D1FD6B1E024448F80198D3LL10Foundation4DataVAA18RatchetMessageKeysV07messageU0_AH9plaintexttKF">getCiphertext(messageKeys:plaintext:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV13getCiphertext33_A7B7CE7E72D1FD6B1E024448F80198D3LL11messageKeys9plaintext10Foundation4DataVAA014RatchetMessageR0V_AJtKF">getCiphertext(messageKeys:plaintext:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1034,7 +1031,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getCiphertext</span><span class="p">(</span><span class="nv">messageKeys</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a></span><span class="p">,</span> <span class="nv">plaintext</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getCiphertext</span><span class="p">(</span><span class="nv">messageKeys</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a></span><span class="p">,</span> <span class="nv">plaintext</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -1079,9 +1076,9 @@ session cipher.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SignalProtocol13SessionCipherV12getPlaintext33_A7B7CE7E72D1FD6B1E024448F80198D3LL10Foundation4DataVAA18RatchetMessageKeysV07messageU0_AH10ciphertexttKF"></a>
+                    <a name="/s:14SignalProtocol13SessionCipherV12getPlaintext33_A7B7CE7E72D1FD6B1E024448F80198D3LL11messageKeys10ciphertext10Foundation4DataVAA014RatchetMessageR0V_AJtKF"></a>
                     <a name="//apple_ref/swift/Method/getPlaintext(messageKeys:ciphertext:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV12getPlaintext33_A7B7CE7E72D1FD6B1E024448F80198D3LL10Foundation4DataVAA18RatchetMessageKeysV07messageU0_AH10ciphertexttKF">getPlaintext(messageKeys:ciphertext:)</a>
+                    <a class="token" href="#/s:14SignalProtocol13SessionCipherV12getPlaintext33_A7B7CE7E72D1FD6B1E024448F80198D3LL11messageKeys10ciphertext10Foundation4DataVAA014RatchetMessageR0V_AJtKF">getPlaintext(messageKeys:ciphertext:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1101,7 +1098,7 @@ session cipher.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getPlaintext</span><span class="p">(</span><span class="nv">messageKeys</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a></span><span class="p">,</span> <span class="nv">ciphertext</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">getPlaintext</span><span class="p">(</span><span class="nv">messageKeys</span><span class="p">:</span> <span class="kt"><a href="../Structs/RatchetMessageKeys.html">RatchetMessageKeys</a></span><span class="p">,</span> <span class="nv">ciphertext</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -1148,8 +1145,8 @@ session cipher.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2018-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/christophhagen" target="_blank" rel="external">Christoph Hagen</a>. All rights reserved. (Last updated: 2019-04-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
