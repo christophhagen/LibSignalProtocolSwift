@@ -43,6 +43,7 @@ class GroupCipherTests: XCTestCase {
         
         /* Encrypt a test message from Alice */
         let alicePlaintext = "smert ze smert".data(using: .utf8)!
+
         guard let message = try? aliceGroupCipher.encrypt(alicePlaintext) else {
             XCTFail("could not encrypt message")
             return

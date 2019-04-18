@@ -146,7 +146,7 @@ public struct SignalCrypto {
      */
     static func generateSenderKeyId() throws -> UInt32 {
         let data = try random(bytes: 4)
-        let value: UInt32 = data.withUnsafeBytes { $0.pointee }
+        let value = data.withUnsafeBytes { $0.baseAddress!.assumingMemoryBound(to: UInt32.self).pointee }
         return value & 0x7FFFFFFF
     }
 

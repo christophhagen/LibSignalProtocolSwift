@@ -90,7 +90,7 @@ final class SessionRecord: ProtocolBufferEquivalent {
      - parameter baseKey: The key used for the session.
      */
     private func removeState(for baseKey: PublicKey) {
-        if let i = previousStates.index(where: { $0.aliceBaseKey == baseKey }) {
+        if let i = previousStates.firstIndex(where: { $0.aliceBaseKey == baseKey }) {
             previousStates.remove(at: i)
         }
     }

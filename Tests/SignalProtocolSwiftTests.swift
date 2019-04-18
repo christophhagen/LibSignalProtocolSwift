@@ -85,7 +85,7 @@ class SignalProtocolSwiftTests: XCTestCase {
                 return
             }
         } catch {
-            XCTFail("Could not encrypt/decrypt message")
+            XCTFail("Could not encrypt/decrypt message: \(error)")
             return
         }
     }

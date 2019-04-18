@@ -44,18 +44,7 @@ extension SignalAddress: Equatable {
     }
 }
 
-extension SignalAddress: Hashable {
-
-    /**
-     A hash value of the address, constructed by summing the
-     hash of the identifier and the hash of the deviceId.
-     - Note: The hash value is not guaranteed to be stable across different
-     invocations of the same program. Do not persist the hash value across program runs.
-    */
-    public var hashValue: Int {
-        return identifier.hashValue &+ deviceId.hashValue
-    }
-}
+extension SignalAddress: Hashable { }
 
 extension SignalAddress: CustomStringConvertible {
 

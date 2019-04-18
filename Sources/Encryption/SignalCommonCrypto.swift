@@ -45,11 +45,11 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
         let bytes = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
         withUnsafeMutablePointer(to: &context) { (ptr: UnsafeMutablePointer<CCHmacContext>) in
             // Pointer to salt
-            salt.withUnsafeBytes {(ptr2: UnsafePointer<UInt8>) in
-                let saltPtr = UnsafeRawPointer(ptr2)
+            salt.withUnsafeBytes { ptr2 in
+                let saltPtr = ptr2.baseAddress!
                 // Pointer to message
-                message.withUnsafeBytes {(ptr3: UnsafePointer<UInt8>) in
-                    let messagePtr = UnsafeRawPointer(ptr3)
+                message.withUnsafeBytes { ptr3 in
+                    let messagePtr = ptr3.baseAddress!
                     // Authenticate
                     CCHmacInit(ptr, CCHmacAlgorithm(kCCHmacAlgSHA256), saltPtr, salt.count)
                     CCHmacUpdate(ptr, messagePtr, message.count)
@@ -68,20 +68,24 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
      - throws: `SignalError.digestError`
      */
     public func sha512(for message: Data) throws -> Data {
+        guard message.count > 0 else {
+            throw SignalError(.invalidMessage, "Message length is 0")
+        }
         var context = CC_SHA512_CTX()
         return try withUnsafeMutablePointer(to: &context) { contextPtr in
             CC_SHA512_Init(contextPtr)
             // Pointer to message
-            let result: Int32 = message.withUnsafeBytes {(ptr2: UnsafePointer<UInt8>) in
-                let messagePtr = UnsafeRawPointer(ptr2)
+            let result: Int32 = message.withUnsafeBytes {ptr2 in
+                let messagePtr = ptr2.baseAddress!
                 return CC_SHA512_Update(contextPtr, messagePtr, CC_LONG(message.count))
             }
             guard result == 1 else {
                 throw SignalError(.digestError, "Error on SHA512 Update: \(result)")
             }
             var md = Data(count: Int(CC_SHA512_DIGEST_LENGTH))
-            let result2 = md.withUnsafeMutableBytes {
-                CC_SHA512_Final($0, contextPtr)
+            let result2: Int32 = md.withUnsafeMutableBytes { ptr4 in
+                let a = ptr4.baseAddress!.assumingMemoryBound(to: UInt8.self)
+                return CC_SHA512_Final(a, contextPtr)
             }
             guard result2 == 1 else {
                 throw SignalError(.digestError, "Error on SHA512 Final: \(result)")
@@ -89,17 +93,26 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
             return md
         }
     }
-
+    
     /**
      Encrypt a message with AES
      - parameter message: The input message to encrypt
      - parameter cipher: THe encryption scheme to use
-     - parameter key: The key for encryption (`kCCKeySizeAES128` bytes)
-     - parameter iv: The initialization vector
+     - parameter key: The key for encryption (`kCCKeySizeAES256` bytes)
+     - parameter iv: The initialization vector (`kCCBlockSizeAES128` bytes)
      - returns: The encrypted message
      - throws: `SignalError.encryptionError`
      */
     public func encrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data {
+        guard key.count == kCCKeySizeAES256 else {
+            throw SignalError(.invalidKey, "Invalid key length")
+        }
+        guard message.count > 0 else {
+            throw SignalError(.invalidMessage, "Message length is 0")
+        }
+        guard iv.count == kCCBlockSizeAES128 else {
+            throw SignalError(.invalidIV, "The length of the IV is not correct")
+        }
         switch cipher {
         case .AES_CBCwithPKCS5:
             return try process(cbc: message, key: key, iv: iv, encrypt: true)
@@ -112,12 +125,21 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
      Decrypt a message with AES
      - parameter message: The input message to decrypt
      - parameter cipher: THe encryption scheme to use
-     - parameter key: The key for decryption (`kCCKeySizeAES128` bytes)
-     - parameter iv: The initialization vector
+     - parameter key: The key for decryption (`kCCKeySizeAES256` bytes)
+     - parameter iv: The initialization vector (`kCCBlockSizeAES128` bytes)
      - returns: The decrypted message
      - throws: `SignalError.decryptionError`
      */
     public func decrypt(message: Data, with cipher: SignalEncryptionScheme, key: Data, iv: Data) throws -> Data {
+        guard key.count == kCCKeySizeAES256 else {
+            throw SignalError(.invalidKey, "Invalid key length")
+        }
+        guard message.count > 0 else {
+            throw SignalError(.invalidMessage, "Message length is 0")
+        }
+        guard iv.count == kCCBlockSizeAES128 else {
+            throw SignalError(.invalidIV, "The length of the IV is not correct")
+        }
         switch cipher {
         case .AES_CBCwithPKCS5:
             return try process(cbc: message, key: key, iv: iv, encrypt: false)
@@ -146,14 +168,14 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
 
         var dataOutMoved: Int = 0
         // Pointer to key
-        let status: Int32 = key.withUnsafeBytes { (ptr1: UnsafePointer<UInt8>) in
-            let keyPtr = UnsafeRawPointer(ptr1)
+        let status: Int32 = key.withUnsafeBytes { ptr1 in
+            let keyPtr = ptr1.baseAddress!
             // Pointer to IV
-            return iv.withUnsafeBytes { (ptr2: UnsafePointer<UInt8>) in
-                let ivPtr = UnsafeRawPointer(ptr2)
+            return iv.withUnsafeBytes { ptr2 in
+                let ivPtr = ptr2.baseAddress!
                 // Pointer to message
-                return message.withUnsafeBytes { (ptr3: UnsafePointer<UInt8>) in
-                    let messagePtr = UnsafeRawPointer(ptr3)
+                return message.withUnsafeBytes { ptr3 in
+                    let messagePtr = ptr3.baseAddress!
                     // Options
                     let algorithm = CCAlgorithm(kCCAlgorithmAES)
                     let padding = CCOptions(kCCOptionPKCS7Padding)
@@ -212,11 +234,12 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
      */
     private func process(ctr message: Data, key: Data, iv: Data, encrypt: Bool) throws -> Data {
         var cryptoRef: CCCryptorRef? = nil
-        var status: Int32 = key.withUnsafeBytes { (ptr1: UnsafePointer<UInt8>) in
-            let keyPtr = UnsafeRawPointer(ptr1)
+        
+        var status: Int32 = key.withUnsafeBytes { ptr1 in
+            let keyPtr = ptr1.baseAddress!
             // Pointer to IV
-            return iv.withUnsafeBytes { (ptr2: UnsafePointer<UInt8>) in
-                let ivPtr = UnsafeRawPointer(ptr2)
+            return iv.withUnsafeBytes { ptr2 in
+                let ivPtr = ptr2.baseAddress!
                 let operation = encrypt ? CCOperation(kCCEncrypt) : CCOperation(kCCDecrypt)
                 let mode = CCMode(kCCModeCTR)
                 let algorithm = CCAlgorithm(kCCAlgorithmAES)
@@ -246,8 +269,8 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
 
         var updateMovedLength = 0
         status = withUnsafeMutablePointer(to: &updateMovedLength) { updatedPtr in
-            message.withUnsafeBytes { (ptr3: UnsafePointer<UInt8>) in
-                let messagePtr = UnsafeRawPointer(ptr3)
+            message.withUnsafeBytes { ptr3 in
+                let messagePtr = ptr3.baseAddress!
                 return CCCryptorUpdate(ref, messagePtr, message.count, ptr, outputLength, updatedPtr)
             }
         }

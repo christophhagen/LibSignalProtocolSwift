@@ -19,8 +19,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Signal_Fingerprint: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Fingerprint"
+struct Signal_Fingerprint {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var version: UInt32 {
     get {return _version ?? 0}
@@ -53,10 +55,23 @@ struct Signal_Fingerprint: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
+  fileprivate var _version: UInt32? = nil
+  fileprivate var _local: Data? = nil
+  fileprivate var _remote: Data? = nil
+}
+
+// MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+fileprivate let _protobuf_package = "Signal"
+
+extension Signal_Fingerprint: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Fingerprint"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "version"),
+    2: .same(proto: "local"),
+    3: .same(proto: "remote"),
+  ]
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -68,10 +83,6 @@ struct Signal_Fingerprint: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._version {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
@@ -84,22 +95,6 @@ struct Signal_Fingerprint: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
-
-  fileprivate var _version: UInt32? = nil
-  fileprivate var _local: Data? = nil
-  fileprivate var _remote: Data? = nil
-}
-
-// MARK: - Code below here is support for the SwiftProtobuf runtime.
-
-fileprivate let _protobuf_package = "Signal"
-
-extension Signal_Fingerprint: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "version"),
-    2: .same(proto: "local"),
-    3: .same(proto: "remote"),
-  ]
 
   func _protobuf_generated_isEqualTo(other: Signal_Fingerprint) -> Bool {
     if self._version != other._version {return false}

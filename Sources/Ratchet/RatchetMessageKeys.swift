@@ -74,7 +74,11 @@ struct RatchetMessageKeys {
         let length2 = RatchetMessageKeys.cipherKeyLength + RatchetMessageKeys.macKeyLength
         self.macKey = material[RatchetMessageKeys.cipherKeyLength..<length2]
         self.iv = material[length2..<RatchetMessageKeys.derivedMessageSecretsSize]
-        self.counter = material.advanced(by: RatchetMessageKeys.derivedMessageSecretsSize).withUnsafeBytes { $0.pointee }
+        self.counter = material
+            .advanced(by: RatchetMessageKeys.derivedMessageSecretsSize)
+            .withUnsafeBytes { ptr in
+            ptr.baseAddress!.assumingMemoryBound(to: UInt32.self).pointee
+        }
     }
 }
 

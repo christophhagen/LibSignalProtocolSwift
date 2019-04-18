@@ -19,8 +19,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Signal_SignalMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SignalMessage"
+struct Signal_SignalMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var ratchetKey: Data {
     get {return _ratchetKey ?? SwiftProtobuf.Internal.emptyData}
@@ -62,50 +64,16 @@ struct Signal_SignalMessage: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularBytesField(value: &self._ratchetKey)
-      case 2: try decoder.decodeSingularUInt32Field(value: &self._counter)
-      case 3: try decoder.decodeSingularUInt32Field(value: &self._previousCounter)
-      case 4: try decoder.decodeSingularBytesField(value: &self._ciphertext)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._ratchetKey {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 1)
-    }
-    if let v = self._counter {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._previousCounter {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._ciphertext {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _ratchetKey: Data? = nil
   fileprivate var _counter: UInt32? = nil
   fileprivate var _previousCounter: UInt32? = nil
   fileprivate var _ciphertext: Data? = nil
 }
 
-struct Signal_PreKeySignalMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".PreKeySignalMessage"
+struct Signal_PreKeySignalMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var preKeyID: UInt32 {
     get {return _preKeyID ?? 0}
@@ -157,46 +125,6 @@ struct Signal_PreKeySignalMessage: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt32Field(value: &self._preKeyID)
-      case 2: try decoder.decodeSingularBytesField(value: &self._baseKey)
-      case 3: try decoder.decodeSingularBytesField(value: &self._identityKey)
-      case 4: try decoder.decodeSingularBytesField(value: &self._message)
-      case 6: try decoder.decodeSingularUInt32Field(value: &self._signedPreKeyID)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._preKeyID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._baseKey {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
-    if let v = self._identityKey {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
-    if let v = self._message {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    if let v = self._signedPreKeyID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _preKeyID: UInt32? = nil
   fileprivate var _signedPreKeyID: UInt32? = nil
   fileprivate var _baseKey: Data? = nil
@@ -204,8 +132,10 @@ struct Signal_PreKeySignalMessage: SwiftProtobuf.Message {
   fileprivate var _message: Data? = nil
 }
 
-struct Signal_SenderKeyMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SenderKeyMessage"
+struct Signal_SenderKeyMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var id: UInt32 {
     get {return _id ?? 0}
@@ -238,45 +168,15 @@ struct Signal_SenderKeyMessage: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt32Field(value: &self._id)
-      case 2: try decoder.decodeSingularUInt32Field(value: &self._iteration)
-      case 3: try decoder.decodeSingularBytesField(value: &self._ciphertext)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._id {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._iteration {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._ciphertext {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _id: UInt32? = nil
   fileprivate var _iteration: UInt32? = nil
   fileprivate var _ciphertext: Data? = nil
 }
 
-struct Signal_SenderKeyDistributionMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SenderKeyDistributionMessage"
+struct Signal_SenderKeyDistributionMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var id: UInt32 {
     get {return _id ?? 0}
@@ -318,50 +218,16 @@ struct Signal_SenderKeyDistributionMessage: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt32Field(value: &self._id)
-      case 2: try decoder.decodeSingularUInt32Field(value: &self._iteration)
-      case 3: try decoder.decodeSingularBytesField(value: &self._chainKey)
-      case 4: try decoder.decodeSingularBytesField(value: &self._signingKey)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._id {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._iteration {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._chainKey {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
-    if let v = self._signingKey {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _id: UInt32? = nil
   fileprivate var _iteration: UInt32? = nil
   fileprivate var _chainKey: Data? = nil
   fileprivate var _signingKey: Data? = nil
 }
 
-struct Signal_DeviceConsistencyCodeMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeviceConsistencyCodeMessage"
+struct Signal_DeviceConsistencyCodeMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var generation: UInt32 {
     get {return _generation ?? 0}
@@ -385,34 +251,6 @@ struct Signal_DeviceConsistencyCodeMessage: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt32Field(value: &self._generation)
-      case 2: try decoder.decodeSingularBytesField(value: &self._signature)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._generation {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._signature {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _generation: UInt32? = nil
   fileprivate var _signature: Data? = nil
 }
@@ -421,13 +259,42 @@ struct Signal_DeviceConsistencyCodeMessage: SwiftProtobuf.Message {
 
 fileprivate let _protobuf_package = "Signal"
 
-extension Signal_SignalMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Signal_SignalMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SignalMessage"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "ratchetKey"),
     2: .same(proto: "counter"),
     3: .same(proto: "previousCounter"),
     4: .same(proto: "ciphertext"),
   ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBytesField(value: &self._ratchetKey)
+      case 2: try decoder.decodeSingularUInt32Field(value: &self._counter)
+      case 3: try decoder.decodeSingularUInt32Field(value: &self._previousCounter)
+      case 4: try decoder.decodeSingularBytesField(value: &self._ciphertext)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._ratchetKey {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 1)
+    }
+    if let v = self._counter {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
+    }
+    if let v = self._previousCounter {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
+    }
+    if let v = self._ciphertext {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
 
   func _protobuf_generated_isEqualTo(other: Signal_SignalMessage) -> Bool {
     if self._ratchetKey != other._ratchetKey {return false}
@@ -439,7 +306,8 @@ extension Signal_SignalMessage: SwiftProtobuf._MessageImplementationBase, SwiftP
   }
 }
 
-extension Signal_PreKeySignalMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Signal_PreKeySignalMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".PreKeySignalMessage"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "preKeyId"),
     6: .same(proto: "signedPreKeyId"),
@@ -447,6 +315,38 @@ extension Signal_PreKeySignalMessage: SwiftProtobuf._MessageImplementationBase, 
     3: .same(proto: "identityKey"),
     4: .same(proto: "message"),
   ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt32Field(value: &self._preKeyID)
+      case 2: try decoder.decodeSingularBytesField(value: &self._baseKey)
+      case 3: try decoder.decodeSingularBytesField(value: &self._identityKey)
+      case 4: try decoder.decodeSingularBytesField(value: &self._message)
+      case 6: try decoder.decodeSingularUInt32Field(value: &self._signedPreKeyID)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._preKeyID {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+    }
+    if let v = self._baseKey {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
+    }
+    if let v = self._identityKey {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
+    }
+    if let v = self._message {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
+    }
+    if let v = self._signedPreKeyID {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
 
   func _protobuf_generated_isEqualTo(other: Signal_PreKeySignalMessage) -> Bool {
     if self._preKeyID != other._preKeyID {return false}
@@ -459,12 +359,37 @@ extension Signal_PreKeySignalMessage: SwiftProtobuf._MessageImplementationBase, 
   }
 }
 
-extension Signal_SenderKeyMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Signal_SenderKeyMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SenderKeyMessage"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "iteration"),
     3: .same(proto: "ciphertext"),
   ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt32Field(value: &self._id)
+      case 2: try decoder.decodeSingularUInt32Field(value: &self._iteration)
+      case 3: try decoder.decodeSingularBytesField(value: &self._ciphertext)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._id {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+    }
+    if let v = self._iteration {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
+    }
+    if let v = self._ciphertext {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
 
   func _protobuf_generated_isEqualTo(other: Signal_SenderKeyMessage) -> Bool {
     if self._id != other._id {return false}
@@ -475,13 +400,42 @@ extension Signal_SenderKeyMessage: SwiftProtobuf._MessageImplementationBase, Swi
   }
 }
 
-extension Signal_SenderKeyDistributionMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Signal_SenderKeyDistributionMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SenderKeyDistributionMessage"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "iteration"),
     3: .same(proto: "chainKey"),
     4: .same(proto: "signingKey"),
   ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt32Field(value: &self._id)
+      case 2: try decoder.decodeSingularUInt32Field(value: &self._iteration)
+      case 3: try decoder.decodeSingularBytesField(value: &self._chainKey)
+      case 4: try decoder.decodeSingularBytesField(value: &self._signingKey)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._id {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+    }
+    if let v = self._iteration {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
+    }
+    if let v = self._chainKey {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
+    }
+    if let v = self._signingKey {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
 
   func _protobuf_generated_isEqualTo(other: Signal_SenderKeyDistributionMessage) -> Bool {
     if self._id != other._id {return false}
@@ -493,11 +447,32 @@ extension Signal_SenderKeyDistributionMessage: SwiftProtobuf._MessageImplementat
   }
 }
 
-extension Signal_DeviceConsistencyCodeMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Signal_DeviceConsistencyCodeMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeviceConsistencyCodeMessage"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "generation"),
     2: .same(proto: "signature"),
   ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt32Field(value: &self._generation)
+      case 2: try decoder.decodeSingularBytesField(value: &self._signature)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._generation {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+    }
+    if let v = self._signature {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
 
   func _protobuf_generated_isEqualTo(other: Signal_DeviceConsistencyCodeMessage) -> Bool {
     if self._generation != other._generation {return false}

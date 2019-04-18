@@ -29,6 +29,8 @@ public enum SignalErrorType: String {
 
     /// An invalid key produced an error
     case invalidKey = "Invalid key"
+    
+    case invalidIV = "Invalid iv"
 
     /// The (key) id is invalid
     case invalidId = "Invalid Id"

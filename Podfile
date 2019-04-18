@@ -5,10 +5,10 @@ abstract_target 'LibSignalProtocolSwift' do
   # Pods for LibSignalProtocolSwift
 
   # Protocol Buffers in Swift
-  pod 'SwiftProtobuf'
+  pod 'SwiftProtobuf', '~> 1.5.0'
 
   # Elliptic Curve functions
-  pod 'Curve25519'
+  pod 'Curve25519', '~> 1.1'
 
   # Cryptographic functions powered by CommonCrypto
   pod 'CommonCryptoModule', '~> 1.0.2'

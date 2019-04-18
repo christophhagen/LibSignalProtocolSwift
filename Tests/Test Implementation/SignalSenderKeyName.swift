@@ -30,6 +30,7 @@ public struct SignalSenderKeyName {
 }
 
 extension SignalSenderKeyName: Equatable {
+    
     /**
      Compare two `SignalSenderKeyName`. Two `SignalSenderKeyName` objects are
      equal if their identifier and sender are equal.
@@ -42,17 +43,7 @@ extension SignalSenderKeyName: Equatable {
     }
 }
 
-extension SignalSenderKeyName: Hashable {
-    /**
-     A hash value of the address, constructed by summing the
-     hash of the `sender` and the hash of the `groupId`.
-     - Note: The hash value is not guaranteed to be stable across different
-     invocations of the same program. Do not persist the hash value across program runs.
-     */
-    public var hashValue: Int {
-        return sender.hashValue &+ groupId.hashValue
-    }
-}
+extension SignalSenderKeyName: Hashable { }
 
 extension SignalSenderKeyName: CustomStringConvertible {
 

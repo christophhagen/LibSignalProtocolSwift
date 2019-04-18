@@ -1,7 +1,7 @@
 PODS:
   - CommonCryptoModule (1.0.2)
-  - Curve25519 (1.0)
-  - SwiftProtobuf (1.0.3)
+  - Curve25519 (1.1)
+  - SwiftProtobuf (1.5.0)
 
 DEPENDENCIES:
   - CommonCryptoModule (~> 1.0.2)
@@ -16,8 +16,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
-  Curve25519: 849314b353906cffa572125f31c2d006ce635f32
-  SwiftProtobuf: 5ccc0e4054e37c75800e5744acb2aa80bb72b39c
+  Curve25519: 5f595e906bd962248665978e2992a1fe96e2d831
+  SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
 
 PODFILE CHECKSUM: b5550621b144cb6064196a28676c938b681e2db2
 
