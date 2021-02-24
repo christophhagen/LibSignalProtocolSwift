@@ -25,7 +25,7 @@ public struct GroupCipher<Context: GroupKeyStore> {
      - parameter store: The store where the keys are stored
      - parameter senderKeyId: The id of the remote client
     */
-    init(address: Context.GroupAddress, store: Context) {
+    public init(address: Context.GroupAddress, store: Context) {
         self.store = store
         self.address = address
     }
