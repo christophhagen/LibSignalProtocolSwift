@@ -9,7 +9,6 @@
 import Foundation
 import SwiftProtobuf
 
-
 /**
  A pair of public and private key for elliptic curve cryptopgraphy
  */

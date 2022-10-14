@@ -13,7 +13,7 @@ import Foundation
  Signal Protocol. The keys should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol PreKeyStore: class {
+public protocol PreKeyStore: AnyObject {
 
     /**
      Provide a Pre Key for a given id.

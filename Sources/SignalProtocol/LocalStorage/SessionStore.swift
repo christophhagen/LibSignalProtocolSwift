@@ -13,7 +13,7 @@ import Foundation
  Signal Protocol. The records should be stored in a secure database and be treated as
  unspecified data blobs. 
  */
-public protocol SessionStore: class {
+public protocol SessionStore: AnyObject {
 
     /// The type that distinguishes different devices/users
     associatedtype Address: Hashable

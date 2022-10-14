@@ -12,7 +12,7 @@ import Foundation
 /**
  Provide all local storage delegates.
  */
-public protocol KeyStore: class {
+public protocol KeyStore: AnyObject {
 
     // MARK: Associated types
 
