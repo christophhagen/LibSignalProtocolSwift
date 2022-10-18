@@ -139,7 +139,7 @@ extension KeyPair: ProtocolBufferEquivalent {
      - parameter protoObject: The protobuf object.
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    init(from protoObject: Signal_KeyPair) throws {
+    public init(from protoObject: Signal_KeyPair) throws {
         guard protoObject.hasPublicKey, protoObject.hasPrivateKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in KeyPair ProtoBuf object")
         }
@@ -148,7 +148,7 @@ extension KeyPair: ProtocolBufferEquivalent {
     }
 
     /// The key pair converted to a ProtoBuf object
-    var protoObject: Signal_KeyPair {
+    public var protoObject: Signal_KeyPair {
         return Signal_KeyPair.with {
             $0.publicKey = self.publicKey.data
             $0.privateKey = self.privateKey.data

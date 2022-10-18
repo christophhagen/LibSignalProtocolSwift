@@ -130,7 +130,7 @@ public struct SignalMessage {
 extension SignalMessage: ProtocolBufferEquivalent {
 
     /// Convert signal message to a ProtoBuf object
-    var protoObject: Signal_SignalMessage {
+    public var protoObject: Signal_SignalMessage {
         return Signal_SignalMessage.with {
             $0.ciphertext = self.cipherText
             $0.counter = self.counter
@@ -144,7 +144,7 @@ extension SignalMessage: ProtocolBufferEquivalent {
      - parameter protoObject: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from protoObject: Signal_SignalMessage) throws {
+    public init(from protoObject: Signal_SignalMessage) throws {
         guard protoObject.hasCiphertext, protoObject.hasCounter,
             protoObject.hasRatchetKey, protoObject.hasPreviousCounter else {
                 throw SignalError(.invalidProtoBuf, "Missing data in SignalMessage ProtoBuf object")

@@ -68,7 +68,7 @@ extension PreKeySignalMessage: ProtocolBufferConvertible {
      - returns: The object
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    func asProtoObject() throws -> Signal_PreKeySignalMessage {
+    public func asProtoObject() throws -> Signal_PreKeySignalMessage {
         return try Signal_PreKeySignalMessage.with {
             if let id = self.preKeyId {
                 $0.preKeyID = id
@@ -87,7 +87,7 @@ extension PreKeySignalMessage: ProtocolBufferConvertible {
      - parameter object: The serialized data.
      - throws: `SignalError` errors
      */
-    init(from object: Signal_PreKeySignalMessage) throws {
+    public init(from object: Signal_PreKeySignalMessage) throws {
         guard object.hasBaseKey, object.hasMessage, object.hasIdentityKey,
             object.hasSignedPreKeyID else {
                 throw SignalError(.invalidProtoBuf, "Missing data in PreKeySignalMessage")

@@ -13,7 +13,7 @@ import SwiftProtobuf
  All types that conform to `ProtocolBufferConvertible` can be converted to and from a specific
  protobuf class.
  */
-protocol ProtocolBufferConvertible: ProtocolBufferSerializable {
+public protocol ProtocolBufferConvertible: ProtocolBufferSerializable {
 
     /// The class type that the type can be converted to
     associatedtype ProtocolBufferClass: SwiftProtobuf.Message
@@ -33,14 +33,14 @@ protocol ProtocolBufferConvertible: ProtocolBufferSerializable {
     init(from protoObject: ProtocolBufferClass) throws
 }
 
-extension ProtocolBufferConvertible {
+public extension ProtocolBufferConvertible {
 
     /**
      Convert the object to data.
      - throws: `SignalError` of type `invalidProtoBuf`
      - returns: The serialized object
      */
-    public func protoData() throws -> Data {
+    func protoData() throws -> Data {
         do {
             return try asProtoObject().serializedData()
         } catch {
@@ -53,7 +53,7 @@ extension ProtocolBufferConvertible {
      - parameter protoData: The serialized data
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    public init(from protoData: Data) throws {
+    init(from protoData: Data) throws {
         let protoObject: ProtocolBufferClass
         do {
             protoObject = try ProtocolBufferClass(serializedData: protoData)

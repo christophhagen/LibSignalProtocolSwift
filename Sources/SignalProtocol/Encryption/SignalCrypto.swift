@@ -91,7 +91,11 @@ public struct SignalCrypto {
      `curveError` if no public key could be created from the random private key.
      */
     public static func generateIdentityKeyPair() throws -> Data {
-        return try KeyPair().protoData()
+        do {
+            return try KeyPair().protoData()
+        } catch {
+            throw error
+        }
     }
 
     /**

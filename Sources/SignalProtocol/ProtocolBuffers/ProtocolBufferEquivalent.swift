@@ -12,7 +12,7 @@ import Foundation
  All types that conform to `ProtocolBufferConvertible` can be converted to and from a specific
  protobuf class.
  */
-protocol ProtocolBufferEquivalent: ProtocolBufferConvertible {
+public protocol ProtocolBufferEquivalent: ProtocolBufferConvertible {
 
     /// The object converted to a protobuf object.
     var protoObject: ProtocolBufferClass { get }
@@ -21,7 +21,7 @@ protocol ProtocolBufferEquivalent: ProtocolBufferConvertible {
 /**
  Default implementation to provide the `object()` function for all types that conform to `ProtocolBufferEquivalent`.
  */
-extension ProtocolBufferEquivalent {
+public extension ProtocolBufferEquivalent {
 
     /**
      Convert the object to a protobuf object.

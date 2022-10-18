@@ -79,7 +79,7 @@ public struct SenderKeyMessage {
 extension SenderKeyMessage: ProtocolBufferEquivalent {
 
     /// Convert the sender key message to a ProtoBuf object
-    var protoObject: Signal_SenderKeyMessage {
+    public var protoObject: Signal_SenderKeyMessage {
         return Signal_SenderKeyMessage.with {
             $0.id = self.keyId
             $0.iteration = self.iteration
@@ -94,7 +94,7 @@ extension SenderKeyMessage: ProtocolBufferEquivalent {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` errors
      */
-    init(from object: Signal_SenderKeyMessage) throws {
+    public init(from object: Signal_SenderKeyMessage) throws {
         guard object.hasID, object.hasIteration, object.hasCiphertext else {
             throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyMessage object")
         }

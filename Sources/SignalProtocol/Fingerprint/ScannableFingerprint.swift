@@ -51,7 +51,7 @@ extension ScannableFingerprint: ProtocolBufferEquivalent {
      - parameter object: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`
      */
-    init(from object: Signal_Fingerprint) throws {
+    public init(from object: Signal_Fingerprint) throws {
         guard object.hasLocal, object.hasRemote, object.hasVersion else {
             throw SignalError(.invalidProtoBuf, "Missing data in Fingerprint protobuf")
         }
@@ -63,7 +63,7 @@ extension ScannableFingerprint: ProtocolBufferEquivalent {
     }
 
     /// The fingerprint converted to a ProtoBuf object
-    var protoObject: Signal_Fingerprint {
+    public var protoObject: Signal_Fingerprint {
         return Signal_Fingerprint.with {
             $0.version = ScannableFingerprint.version
             $0.local = self.localFingerprint

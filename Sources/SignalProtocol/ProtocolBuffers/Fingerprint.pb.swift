@@ -15,92 +15,92 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+    struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+    typealias Version = _2
 }
 
-struct Signal_Fingerprint {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var version: UInt32 {
-    get {return _version ?? 0}
-    set {_version = newValue}
-  }
-  /// Returns true if `version` has been explicitly set.
-  var hasVersion: Bool {return self._version != nil}
-  /// Clears the value of `version`. Subsequent reads from it will return its default value.
-  mutating func clearVersion() {self._version = nil}
-
-  var local: Data {
-    get {return _local ?? SwiftProtobuf.Internal.emptyData}
-    set {_local = newValue}
-  }
-  /// Returns true if `local` has been explicitly set.
-  var hasLocal: Bool {return self._local != nil}
-  /// Clears the value of `local`. Subsequent reads from it will return its default value.
-  mutating func clearLocal() {self._local = nil}
-
-  var remote: Data {
-    get {return _remote ?? SwiftProtobuf.Internal.emptyData}
-    set {_remote = newValue}
-  }
-  /// Returns true if `remote` has been explicitly set.
-  var hasRemote: Bool {return self._remote != nil}
-  /// Clears the value of `remote`. Subsequent reads from it will return its default value.
-  mutating func clearRemote() {self._remote = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _version: UInt32? = nil
-  fileprivate var _local: Data? = nil
-  fileprivate var _remote: Data? = nil
+public struct Signal_Fingerprint {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+    
+    var version: UInt32 {
+        get {return _version ?? 0}
+        set {_version = newValue}
+    }
+    /// Returns true if `version` has been explicitly set.
+    var hasVersion: Bool {return self._version != nil}
+    /// Clears the value of `version`. Subsequent reads from it will return its default value.
+    mutating func clearVersion() {self._version = nil}
+    
+    var local: Data {
+        get {return _local ?? SwiftProtobuf.Internal.emptyData}
+        set {_local = newValue}
+    }
+    /// Returns true if `local` has been explicitly set.
+    var hasLocal: Bool {return self._local != nil}
+    /// Clears the value of `local`. Subsequent reads from it will return its default value.
+    mutating func clearLocal() {self._local = nil}
+    
+    var remote: Data {
+        get {return _remote ?? SwiftProtobuf.Internal.emptyData}
+        set {_remote = newValue}
+    }
+    /// Returns true if `remote` has been explicitly set.
+    var hasRemote: Bool {return self._remote != nil}
+    /// Clears the value of `remote`. Subsequent reads from it will return its default value.
+    mutating func clearRemote() {self._remote = nil}
+    
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+    
+    public init() {}
+    
+    fileprivate var _version: UInt32? = nil
+    fileprivate var _local: Data? = nil
+    fileprivate var _remote: Data? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Signal"
+//fileprivate let _protobuf_package = "Signal"
 
 extension Signal_Fingerprint: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Fingerprint"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "version"),
-    2: .same(proto: "local"),
-    3: .same(proto: "remote"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt32Field(value: &self._version)
-      case 2: try decoder.decodeSingularBytesField(value: &self._local)
-      case 3: try decoder.decodeSingularBytesField(value: &self._remote)
-      default: break
-      }
+    static public let protoMessageName: String = _protobuf_package + ".Fingerprint"
+    static public let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+        1: .same(proto: "version"),
+        2: .same(proto: "local"),
+        3: .same(proto: "remote"),
+    ]
+    
+    mutating public func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+        while let fieldNumber = try decoder.nextFieldNumber() {
+            switch fieldNumber {
+            case 1: try decoder.decodeSingularUInt32Field(value: &self._version)
+            case 2: try decoder.decodeSingularBytesField(value: &self._local)
+            case 3: try decoder.decodeSingularBytesField(value: &self._remote)
+            default: break
+            }
+        }
     }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._version {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+    
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+        if let v = self._version {
+            try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+        }
+        if let v = self._local {
+            try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
+        }
+        if let v = self._remote {
+            try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
+        }
+        try unknownFields.traverse(visitor: &visitor)
     }
-    if let v = self._local {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
+    
+    public func _protobuf_generated_isEqualTo(other: Signal_Fingerprint) -> Bool {
+        if self._version != other._version {return false}
+        if self._local != other._local {return false}
+        if self._remote != other._remote {return false}
+        if unknownFields != other.unknownFields {return false}
+        return true
     }
-    if let v = self._remote {
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  func _protobuf_generated_isEqualTo(other: Signal_Fingerprint) -> Bool {
-    if self._version != other._version {return false}
-    if self._local != other._local {return false}
-    if self._remote != other._remote {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
 }

@@ -72,7 +72,7 @@ extension SenderKeyDistributionMessage: Equatable {
 extension SenderKeyDistributionMessage: ProtocolBufferEquivalent {
 
     /// Convert the distribution message to a ProtoBuf object
-    var protoObject: Signal_SenderKeyDistributionMessage {
+    public var protoObject: Signal_SenderKeyDistributionMessage {
         return Signal_SenderKeyDistributionMessage.with {
             $0.id = self.id
             $0.iteration = self.iteration
@@ -86,7 +86,7 @@ extension SenderKeyDistributionMessage: ProtocolBufferEquivalent {
      - parameter protoObject: The ProtoBuf object
      - throws: `SignalError` of type `invalidProtoBuf`, if data is missing or corrupt
      */
-    init(from protoObject: Signal_SenderKeyDistributionMessage) throws {
+    public init(from protoObject: Signal_SenderKeyDistributionMessage) throws {
         guard protoObject.hasID, protoObject.hasIteration, protoObject.hasChainKey, protoObject.hasSigningKey else {
             throw SignalError(.invalidProtoBuf, "Missing data in SenderKeyDistributionMessage Protobuf object")
         }

@@ -68,7 +68,7 @@ extension KeyStore {
      - `storageError`, if the identity key could not be accessed, or if the key could not be stored
      - `invalidProtobuf`, if the key could not be serialized
      - parameter timestamp: The timestamp of the key, defaults to seconds since 1970
-     - returns: The public data of the generated signed pre key for uploading
+     - returns: The public data pre key object of the generated signed pre key for uploading
      - throws: `SignalError`
     */
     public func updateSignedPrekey(timestamp: UInt64 = UInt64(Date().timeIntervalSince1970)) throws -> Data {

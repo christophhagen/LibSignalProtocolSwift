@@ -88,6 +88,7 @@ extension IdentityKeyStore {
      */
     public func getIdentityKeyPublicData() throws -> Data {
         let identity = try getIdentityKeyData()
+        print(identity)
         let key = try KeyPair(from: identity)
         return key.publicKey.data
     }
