@@ -109,6 +109,18 @@ class SenderKeyRecordTests: XCTestCase {
             chainKey: senderKey2,
             signatureKeyPair: senderSigningKey2)
 
+        guard let state = record.state(for: stateId1) else {
+            XCTFail("\(stateId1) missed")
+            return
+        }
+        XCTAssertEqual(state.keyId, stateId1)
+
+        guard let state = record.state(for: stateId2) else {
+            XCTFail("\(stateId2) missed")
+            return
+        }
+        XCTAssertEqual(state.keyId, stateId2)
+        
         guard let serialized = try? record.protoData() else {
             XCTFail("Could not serialize SenderKeyRecord")
             return
