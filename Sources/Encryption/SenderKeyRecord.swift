@@ -44,7 +44,7 @@ final class SenderKeyRecord {
     func state(for id: UInt32) -> SenderKeyState? {
         for item in states {
             if item.keyId == id {
-                return state
+                return item
             }
         }
         return nil
