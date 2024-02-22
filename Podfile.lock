@@ -1,24 +1,36 @@
 PODS:
-  - CommonCryptoModule (1.0.2)
-  - Curve25519 (1.1)
+  - CCurve25519 (1.0.5)
+  - Curve25519 (2.0.0):
+    - CCurve25519
+  - LibSignalProtocolSwift (1.3):
+    - Curve25519
+    - SwiftProtobuf
   - SwiftProtobuf (1.5.0)
 
 DEPENDENCIES:
-  - CommonCryptoModule (~> 1.0.2)
-  - Curve25519
-  - SwiftProtobuf
+  - CCurve25519 (from `/Users/lidawen/Documents/work/IM5/signal-archive/VoderXCCurve25519`)
+  - Curve25519 (from `/Users/lidawen/Documents/work/IM5/signal-archive/VoderXCurve25519`)
+  - LibSignalProtocolSwift (from `./`)
+  - SwiftProtobuf (~> 1.5.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - CommonCryptoModule
-    - Curve25519
+  trunk:
     - SwiftProtobuf
 
+EXTERNAL SOURCES:
+  CCurve25519:
+    :path: "/Users/lidawen/Documents/work/IM5/signal-archive/VoderXCCurve25519"
+  Curve25519:
+    :path: "/Users/lidawen/Documents/work/IM5/signal-archive/VoderXCurve25519"
+  LibSignalProtocolSwift:
+    :path: "./"
+
 SPEC CHECKSUMS:
-  CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
-  Curve25519: 5f595e906bd962248665978e2992a1fe96e2d831
+  CCurve25519: 7355dde30d817aa9169f240d8c3ff42737cb09bb
+  Curve25519: 4f318c0a22c57e0f873c7aa90693b5bb82e7ecd8
+  LibSignalProtocolSwift: 8c27bce031d8afa9b924d87211d1ab4de8bc261d
   SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
 
-PODFILE CHECKSUM: b5550621b144cb6064196a28676c938b681e2db2
+PODFILE CHECKSUM: f7d49e62af10fe374085ff5e7eae87d03cf6e45e
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.15.2
