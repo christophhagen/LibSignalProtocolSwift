@@ -24,8 +24,8 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
      - throws: `SignalError.noRandomBytes`
      */
     public func random(bytes: Int) throws -> Data {
-        let random = [UInt8](repeating: 0, count: bytes)
-        let result = SecRandomCopyBytes(nil, bytes, UnsafeMutableRawPointer(mutating: random))
+        var random = [UInt8](repeating: 0, count: bytes)
+        let result = SecRandomCopyBytes(nil, bytes, &random)
 
         guard result == errSecSuccess else {
             throw SignalError(.noRandomBytes, "Error getting random bytes: \(result)")
@@ -42,7 +42,7 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
     public func hmacSHA256(for message: Data, with salt: Data) -> Data {
         var context = CCHmacContext()
 
-        let bytes = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+        var bytes = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
         withUnsafeMutablePointer(to: &context) { (ptr: UnsafeMutablePointer<CCHmacContext>) in
             // Pointer to salt
             salt.withUnsafeBytes { ptr2 in
@@ -53,7 +53,7 @@ public struct SignalCommonCrypto: SignalCryptoProvider {
                     // Authenticate
                     CCHmacInit(ptr, CCHmacAlgorithm(kCCHmacAlgSHA256), saltPtr, salt.count)
                     CCHmacUpdate(ptr, messagePtr, message.count)
-                    CCHmacFinal(ptr, UnsafeMutableRawPointer(mutating: bytes))
+                    CCHmacFinal(ptr, &bytes)
                 }
             }
         }
