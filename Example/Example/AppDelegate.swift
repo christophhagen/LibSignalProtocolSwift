@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  TestsHost
+//  Example
 //
 //  Created by Dart Li on 2024/2/22.
 //
