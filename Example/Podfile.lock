@@ -1,0 +1,29 @@
+PODS:
+  - Curve25519 (1.1)
+  - LibSignalProtocolSwift (1.3):
+    - Curve25519
+    - SwiftProtobuf
+  - SwiftProtobuf (1.5.0)
+
+DEPENDENCIES:
+  - Curve25519 (~> 1.1)
+  - LibSignalProtocolSwift (from `../`)
+  - SwiftProtobuf (~> 1.5.0)
+
+SPEC REPOS:
+  trunk:
+    - Curve25519
+    - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  LibSignalProtocolSwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Curve25519: 5f595e906bd962248665978e2992a1fe96e2d831
+  LibSignalProtocolSwift: 8c27bce031d8afa9b924d87211d1ab4de8bc261d
+  SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
+
+PODFILE CHECKSUM: 89b1f02ad779a2754314912bc0e45d187aaea95b
+
+COCOAPODS: 1.15.2

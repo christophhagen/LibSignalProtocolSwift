@@ -1,0 +1,38 @@
+#use_frameworks!
+#use_modular_headers!
+
+target 'Example' do
+
+  # Pods for LibSignalProtocolSwift
+  pod 'LibSignalProtocolSwift', :path => "../"
+  # Protocol Buffers in Swift
+  pod 'SwiftProtobuf', '~> 1.5.0'
+
+  # Elliptic Curve functions
+ pod 'Curve25519', '~> 1.1'
+  
+  target 'ExampleTests' do
+    inherit! :search_paths
+  end
+end
+
+post_install do |installer|
+  fix_targets_version(installer)
+  fix_xcode14_pods_sign(installer)
+end
+
+def fix_targets_version(installer)
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+    end
+  end
+end
+
+def fix_xcode14_pods_sign(installer)
+  installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGN_IDENTITY'] = ''
+      end
+  end
+end
